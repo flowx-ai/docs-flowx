@@ -1,6 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
+require('dotenv').config();
+
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const urlEmbed = require('./src/remark/url-embed');
@@ -9,7 +11,7 @@ const urlEmbed = require('./src/remark/url-embed');
 const config = {
   title: 'What is FLOWX.AI?',
   tagline: 'Find out more',
-  url: 'https://docs-docosaurus.flowxai.dev',
+  url: process.env.URL,
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
