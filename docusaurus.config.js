@@ -9,7 +9,7 @@ const urlEmbed = require('./src/remark/url-embed');
 const config = {
   title: 'What is FLOWX.AI?',
   tagline: 'Find out more',
-  url: 'https://flowx.ai',
+  url: 'https://docs-docosaurus.flowxai.dev',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
