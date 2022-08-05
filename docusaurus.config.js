@@ -9,7 +9,7 @@ const urlEmbed = require('./src/remark/url-embed');
 const config = {
   title: 'What is FLOWX.AI?',
   tagline: 'Find out more',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://flowx.ai',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -73,8 +73,8 @@ const config = {
           },
           {to: '/release-notes', label: 'Release Notes', position: 'left'},
           {to: '/faqs', label: 'FAQs', position: 'left'},
-          {to: '/support', label: 'Support', position: 'right'},
-          {to: '/contact', label: 'Contact', position: 'right'},
+          {to: 'https://support.flowx.ai/', label: 'Support', position: 'right'},
+          {to: 'https://www.flowx.ai/contact-us', label: 'Contact', position: 'right'},
         ],
       },
       footer: {
@@ -84,8 +84,12 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Docs',
+                label: 'What is FLOWX.AI?',
                 to: '/docs/intro',
+              },
+              {
+                label: 'Getting Started',
+                to: '/docs/getting-started/building-your-first-proc',
               },
             ],
           },
@@ -123,10 +127,19 @@ const config = {
   
     plugins: [
       require.resolve('docusaurus-plugin-image-zoom'),
+      [
+        require.resolve("@cmfcmf/docusaurus-search-local"),
+        {
+          indexDocs: true,
+          indexBlog: false,
+          indexPages: true,
+          language: "en"
+        }
+      ],
     ],
-
     
     
 };
 
 module.exports = config;
+

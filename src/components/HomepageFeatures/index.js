@@ -8,7 +8,7 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_prototyping_process_re_7a6p.svg').default,
     description: (
       <>
-        DWe’ve built our platform with the aim of empowering everyone to build amazing customer experiences, no matter the skill level or the burden of legacy tech. 
+        We’ve built our platform with the aim of empowering everyone to build amazing customer experiences, no matter the skill level or the burden of legacy tech. 
       </>
     ),
   },

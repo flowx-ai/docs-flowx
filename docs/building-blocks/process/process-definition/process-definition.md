@@ -1,6 +1,6 @@
 # Process definition
 
-At the core of the platform are the process definitions. These are the blueprint of the business process, made up of [nodes](broken-reference) that are linked by sequences.
+At the core of the platform are the process definitions. These are the blueprint of the business process, made up of [nodes] that are linked by sequences.
 
 While designing the FLOWX.AI components, we've tried to keep them as close to their BPMN counterparts as possible:
 
