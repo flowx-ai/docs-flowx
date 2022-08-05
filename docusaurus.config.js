@@ -11,7 +11,7 @@ const config = {
   tagline: 'Find out more',
   url: 'https://flowx.ai',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
@@ -91,6 +91,12 @@ const config = {
                 label: 'Getting Started',
                 to: '/docs/getting-started/building-your-first-proc',
               },
+              {
+                label: 'Platform Overview',
+                to: '/docs/platform-overview/frameworks-and-standards/',
+              },
+          
+              
             ],
           },
 
@@ -98,8 +104,16 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
+                label: 'Academy',
+                to: 'https://academy.flowx.ai/',
+              },
+              {
+                label: 'Newsroom',
+                to: 'https://blog.flowx.ai/newsroom',
+              },
+              {
+                label: 'Request Demo',
+                to: 'https://www.flowx.ai/',
               },
             ],
           },

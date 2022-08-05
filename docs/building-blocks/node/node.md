@@ -1,5 +1,6 @@
 ---
 id: node
+sidebar_position: 2
 ---
 
 # Node

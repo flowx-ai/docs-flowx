@@ -22,7 +22,7 @@ const sidebars = {
     },
     {
       type: 'html',
-      value: 'Getting Started', // This is the "Title" item.
+      value: 'GETTING STARTED', // This is the "Title" item.
       className: 'sidebar-title',
     },
 
@@ -38,7 +38,7 @@ const sidebars = {
 
     {
       type: 'html',
-      value: 'Platform Overview', // This is the "Title" item.
+      value: 'PLATFORM OVERVIEW', // This is the "Title" item.
       className: 'sidebar-title',
     },
    
@@ -55,7 +55,7 @@ const sidebars = {
 
     {
       type: 'html',
-      value: 'Building Blocks', // This is the "Title" item.
+      value: 'BUILDING BLOCKS', // This is the "Title" item.
       className: 'sidebar-title',
     },
   
