@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Input Form field
 
 ![Input](../../img/input_form_field.png)

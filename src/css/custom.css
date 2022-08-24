@@ -37,3 +37,18 @@
   border-radius: 6px;
 }
 
+.postcall {
+  background-color: green;
+  color: white;
+  padding: 3px 8px;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.getcall {
+  background-color: rgb(15, 38, 244);
+  color: white;
+  padding: 3px 8px;
+  text-align: center;
+  border-radius: 15px;
+}

@@ -70,10 +70,4 @@ To start a subprocess, we can, for example, create the following minimum configu
 
 ![](../img/subprocess_action_example.png)
 
-## Values 
 
-For more details, please check the following page:
-
-{% content-ref url="../message-send-received-task-node.md" %}
-[message-send-received-task-node.md](../message-send-received-task-node.md)
-{% endcontent-ref %}

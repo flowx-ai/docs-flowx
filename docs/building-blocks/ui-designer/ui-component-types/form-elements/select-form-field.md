@@ -1,17 +1,21 @@
+---
+sidebar_position: 2
+---
+
 # Select Form field
 
 ![](../../img/select_form_field.png)
 
-This is a select element that allows a user to select from a predefined list.&#x20;
+This is a select element that allows a user to select from a predefined list.
 
-A select list has multiple values that are defined by two parameters, a Label that will be displayed in the dropdown and a code that will be saved. For example, you can have a _Woman_ label with **F** value and _Man_ with **M** which means that when you select _Woman_ on the process instance **F** will be available for the **Select** key.&#x20;
+A select list has multiple values that are defined by two parameters, a Label that will be displayed in the dropdown and a code that will be saved. For example, you can have a _Woman_ label with **F** value and _Man_ with **M** which means that when you select _Woman_ on the process instance **F** will be available for the **Select** key.
 
 The available configuration options for this form element are:
 
 #### Select Settings
 
 1. **General**
-   * **Key** - creates the biding between form element and process data so it can be later used in [decisions](../../../node/nodes-types/exclusive-gateway-node.md), [business rules ](../../../node/nodes-types/task-node/)or [integrations](../../../node/nodes-types/message-send-received-task-node.md)
+   * **Key** - creates the biding between form element and process data so it can be later used in [decisions](../../../node/nodes-types/exclusive-gateway-node.md), [business rules](../../../node/nodes-types/task-node/)or [integrations](../../../node/nodes-types/message-send-received-task-node.md)
 2. **Flowx props**&#x20;
    * **Field Placeholder** - placeholder when the field has no value
    * **Field Label** - the label of the input
@@ -19,9 +23,9 @@ The available configuration options for this form element are:
    * **Empty message** - text displayed for custom type when no results are found
 3. **Validators** - multiple validators can be added to a select (more details [here](../../validators.md))
 4. **Data source**
-   * **Default Value -** auto-fills the select with this value. Going back to the example with Woman label with F value and Man with M to have a default value of Woman we need to configure here F
+   * **Default Value** - auto-fills the select with this value. Going back to the example with Woman label with F value and Man with M to have a default value of Woman we need to configure here F
    * **Source Type** - it can be Static, Enumeration, or Process Data
-   * **Select Options -** label - value pairs can be defined here (values from CMS and defined options together are not possible)
+   * **Select Options** - label - value pairs can be defined here (values from CMS and defined options together are not possible)
 5. **Expressions**
    * **Hide** - javascript expressions used to hide components when they're truthy
    * **Disabled expressions** - javascript expressions that should be evaluated as true or false. It's important to make sure that hidden fields also have the same expression configured under expressions -> hide
@@ -45,15 +49,15 @@ To create this kind of process, we need the following elements:
 * a [**start**](../../../node/nodes-types/start-end-error-node.md#start-node) node and an [**end**](../../../node/nodes-types/start-end-error-node.md#end-node) node
 * a [**start milestone** ](../../../node/nodes-types/milestone-node.md)node (add a [page](../../../node/nodes-types/milestone-node.md#page) UI element to it) and an **end milestone** node
 
-![](<../../../../.gitbook/assets/2022-07-12 08.50.14.gif>)
+![](../../img/dynamic_dropdown1.gif)
 
-* a **** [**task node**](../../../node/nodes-types/task-node/) **** (this will be used to set which data will be displayed on the dropdowns)
+* a [**task node**](../../../node/nodes-types/task-node/)(this will be used to set which data will be displayed on the dropdowns)
 
-![](<../../../../.gitbook/assets/image (188) (1).png>)
+![](../../img/dynamic_dropdown2.png)
 
-* a [**user task node**](../../../node/nodes-types/user-task-node/) **** (here we have the client forms and here we add the SELECT elements)
+* a [**user task node**](../../../node/nodes-types/user-task-node/)(here we have the client forms and here we add the SELECT elements)
 
-![](<../../../../.gitbook/assets/2022-07-12 09.06.57.gif>)
+![](../../img/dynamic_dropdown3.gif)
 
 #### Creating the process
 
@@ -72,20 +76,20 @@ Follow the next steps to create the process from scratch:
    * **Mandatory**
    * **Language** (we used an [**MVEL**](../../../../overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md) script to create a list of objects)
 
-![](<../../../../.gitbook/assets/2022-07-12 09.41.16 (1).gif>)
+![](../../img/configure_nodes_dropdown.gif)
 
-&#x20; 3\.  On the **user task node,** add a new **Action** (submit action, this will validate the forms and save the date) with the following properties:
+3.  On the **user task node,** add a new **Action** (submit action, this will validate the forms and save the date) with the following properties:
 
 * Action type - **Save Data**
 * **Manual**
 * **Mandatory**
-* **Data to send** (the key where the data will be sent) **-** `application`
+* **Data to send** (the key where the data will be sent) - `application`
 
-![](<../../../../.gitbook/assets/2022-07-12 09.56.30 (1).gif>)
+![](../../img/dynamic6.gif)
 
 Below you can find the MVEL script used in the above example:
 
-```mel
+```
 output.put("application",
 {
     "client": {
@@ -169,8 +173,8 @@ Follow the next steps to configure the UI needed:
    * **Type** - fill
    * **Add ui action** (add the submit action attached earlier to the user task node)
 
-![](<../../../../.gitbook/assets/2022-07-12 10.59.30.gif>)
+![](../../img/dynamic_dropdowns_4.gif)
 
-8\. Test and run the process by clicking **Start process**.
+8. Test and run the process by clicking **Start process**.
 
-![](<../../../../.gitbook/assets/2022-07-12 12.17.11.gif>)
+![](../../img/dynamic_dropdowns5.gif)
