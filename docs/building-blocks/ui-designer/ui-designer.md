@@ -20,17 +20,17 @@ To access the UI Designer, follow the next steps:
 
 ![](./img/access_ui_designer.gif)
 
-{% hint style="warning" %}
+:::caution
 The UI designer is available for [User task](../node/nodes-types/user-task-node/) nodes and [Milestone](../node/nodes-types/milestone-node.md) nodes (nodes that require human interaction).
-{% endhint %}
+:::
 
 ### Using the UI Designer
 
 After adding a specific component to the node, the right-side menu will display more configuration options.
 
-{% hint style="warning" %}
+:::caution
 Depending on the component type different properties are available for configuration.&#x20;
-{% endhint %}
+:::
 
 ![](./img/use_ui_designer.gif)
 
@@ -41,7 +41,7 @@ For example, for a [form group](component-types/root-components/form-group.md) e
 1. **General -** where you define the **Key** and **Message**
    * **Key -** used to bind form element to process model
    * **Message** - :exclamation:available for [Root components](component-types/root-components/); describes the data pushed to the frontend application when the process reaches this [user task](../node/nodes-types/user-task-node/); should be a valid JSON
-2. **Flowx props** - **** depending on the component type, custom properties will be available here
+2. **Flowx props** - depending on the component type, custom properties will be available here
 3. **Expressions (Hide)** -  javascript expressions used to hide components when they're truthy
 
 ![](./img/ui_designer_settings.png)
@@ -50,9 +50,9 @@ For example, for a [form group](component-types/root-components/form-group.md) e
 
 1. **Class** - add CSS classes to each of the pre-defined components
 2. **Layout** -  available for components that group children, more details about layouts can be found [here](https://tburleson-layouts-demos.firebaseapp.com/#/docs). The following properties can be edited:
-   * Direction&#x20;
-   * Alignment&#x20;
-   * Gap&#x20;
+   * Direction
+   * Alignment
+   * Gap
 3. **Spacing** - margin, and padding can be adjusted using spacing
 4. **Sizing** - use sizing to edit width, height, min W/H, max W/H or overflow
 5. **Typography** - use to manipulate fonts, font color, text indentation etc.
