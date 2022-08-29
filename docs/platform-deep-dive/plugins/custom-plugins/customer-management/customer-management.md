@@ -1,4 +1,4 @@
-# Customer management
+# 📦 Customer management
 
 Light CRM uses an Elastic Search engine to user retrieve details using partial match on big databases.
 

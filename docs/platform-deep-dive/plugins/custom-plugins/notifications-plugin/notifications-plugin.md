@@ -1,4 +1,4 @@
-# Notifications plugin
+# 📦 Notifications plugin
 
 The notifications plugin can be easily added to your custom FLOWX deployment to **enhance the core platform capabilities with functionality specific to sending various notifications.**
 

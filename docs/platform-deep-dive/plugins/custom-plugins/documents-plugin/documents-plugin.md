@@ -1,4 +1,4 @@
-# Documents plugin
+# 📦 Documents plugin
 
 The documents plugin can be easily added to your custom FLOWX deployment to **enhance the core platform capabilities with functionality specific to document handling**.
 

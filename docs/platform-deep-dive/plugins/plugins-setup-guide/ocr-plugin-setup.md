@@ -70,6 +70,6 @@ MINIO_OCR_SIGNATURE_BUCKET: extracted-signatures
 MINIO_OCR_SIGNATURE_FILENAME: extracted_signature_{}.pn
 ```
 
-{% hint style="warning" %}
+:::caution
 The Engine is listening for messages on topics with names of a certain pattern, make sure to use correct outgoing topic names when configuring the notifications plugin.
-{% endhint %}
+:::

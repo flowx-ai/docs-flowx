@@ -1,4 +1,4 @@
-# OCR plugin
+# 📦 OCR plugin
 
 The plugin is used to easily read barcodes or extract handwritten signatures from pdf documents.
 

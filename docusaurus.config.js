@@ -39,7 +39,6 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           remarkPlugins: [urlEmbed],
-
           },
         blog: {
           showReadingTime: true,
@@ -58,13 +57,20 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     
     ({
+
+      docs: {
+        sidebar: {
+          autoCollapseCategories: true,
+          hideable: true,
+        },
+      },
       
       navbar: {
         title: 'FLOWX.AI DocPortal',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
-          
+          width: 40,
         },
         items: [
           {
@@ -153,8 +159,6 @@ const config = {
         }
       ],
     ],
-    
-    
 };
 
 module.exports = config;

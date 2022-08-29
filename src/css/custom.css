@@ -52,3 +52,8 @@
   text-align: center;
   border-radius: 15px;
 }
+
+.card1 {
+  max-height: fit-content;
+  --ifm-global-shadow-lw: 0 0 0 0 !important;
+}
