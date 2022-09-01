@@ -9,9 +9,7 @@ sidebar_position: 2
 
 This node is used to configure messages that should be sent to external systems.
 
-
-
-![Message send task](./img/message_send_task.png)
+![Message send task](./img/message_send_task.png#center)
 
 ### Configuring a message send task node
 

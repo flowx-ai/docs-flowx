@@ -7,7 +7,7 @@ If multiple operations can be done in parallel a Parallel Gateway can be used. T
 
 ## Configuring a Parallel Gateway node
 
-![](./img/gateway_parallel.png)
+![](./img/gateway_parallel.png#center)
 
 This kind of node has no special configuration and can start 2 or more parallel paths. It is important to keep in mind that the close Parallel node, required to close the parallel section will wait for all branches to finish before moving to next node.
 

@@ -125,9 +125,9 @@ Each action available in the service corresponds to a Kafka event. A separate Ka
 
 `KAFKA_TOPIC_PROCESS_SCHEDULE_OUT_STOP`
 
-{% hint style="warning" %}
+:::caution
 The Engine is listening for messages on topics with names of a certain pattern, make sure to use correct outgoing topic names when configuring the notifications plugin.
-{% endhint %}
+:::
 
 ### Web socket configuration
 

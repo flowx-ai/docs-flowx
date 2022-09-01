@@ -14,7 +14,7 @@ This type of node will be used in several cases:
 
 ## Configuring task nodes
 
-![Task node](../img/service_task.png)
+![Task node](../img/service_task.png#center)
 
 One or more actions can be configured on a task node. The actions are executed in the configured order.
 

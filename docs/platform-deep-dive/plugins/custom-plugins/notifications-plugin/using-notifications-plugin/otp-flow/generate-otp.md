@@ -13,9 +13,9 @@ Kafka topic names can be set by using environment variables:
 * `KAFKA_TOPIC_OTP_GENERATE_IN`
 * `KAFKA_TOPIC_OTP_GENERATE_OUT` - after the OTP was generated and send to the user, this is the topic used to send the response back to the Engine.
 
-{% hint style="warning" %}
+:::caution
 The Engine is listening for messages on topics with names of a certain pattern, make sure to use an outgoing topic name that matches the pattern configured in the Engine.
-{% endhint %}
+:::
 
 ## Request to generate an OTP
 

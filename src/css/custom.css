@@ -15,6 +15,10 @@
   --ifm-color-primary-lightest: #fed164;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-font-family-base: 'Rubik', sans-serif;
+  --ifm-font-size-base: 108%;
+  --doc-sidebar-width: 310px !important;
+
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -27,6 +31,7 @@
   --ifm-color-primary-lighter: #fdc53b;
   --ifm-color-primary-lightest: #fed164;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-font-family-base: 'Rubik', sans-serif;
 }
 
 .badge {
@@ -57,3 +62,13 @@
   max-height: fit-content;
   --ifm-global-shadow-lw: 0 0 0 0 !important;
 }
+
+img[src*='#center'] {
+  display: block;
+  margin: auto;
+}
+
+.menu__link--active {
+  font-weight: bold;
+}
+

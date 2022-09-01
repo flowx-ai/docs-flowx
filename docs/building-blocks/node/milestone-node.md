@@ -4,13 +4,10 @@ sidebar_position: 7
 
 # Milestone node
 
-A **milestone node** is used to define how [user tasks](user-task-node.md) (which are placed between two milestones - **start milestone** and **end milestone**) will be displayed.mi
+A **milestone node** is used to define how [user tasks](user-task-node.md) (which are placed between two milestones - **start milestone** and **end milestone**) will be displayed.
 
-
-
-![Start milestone node](./img/milestone_node_start.png)
-
-![End milestone node](./img/milestone_node_end.png)
+![Start milestone node](./img/milestone_node_start.png#center)
+![End milestone node](./img/milestone_node_end.png#center)
 
 Multiple options are available for displaying the content:
 

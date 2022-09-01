@@ -10,7 +10,7 @@ There might be cases when extra functionality is needed on certain nodes.
 
 A node that provides advanced options for starting subprocesses.
 
-![](./img/subprocess_run_node.png)
+![](./img/subprocess_run_node.png#center)
 
 
 [Subprocess](../process/subprocess.md)

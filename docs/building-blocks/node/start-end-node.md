@@ -9,7 +9,7 @@ Let's go through all the options for configuring start and end nodes for a proce
 
 The start node represents the beginning of a process and it is mandatory to add one when creating a process.
 
-![Start node](./img/start_node.png)
+![Start node](./img/start_node.png#center)
 
 A process can have one or more start nodes. If you defined multiple start nodes, each should have a start condition value configured. When starting a new process instance the desired start condition should be used.
 

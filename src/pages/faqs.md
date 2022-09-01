@@ -1,4 +1,4 @@
-# FAQs
+# FAQs:question:
 
 <br/>
 
@@ -12,7 +12,7 @@ No. Redis is only used as a caching solution and not for persistent storage. How
 
 You should include the following bit of css in the html template:
 
-```
+```css
 @page {
     @bottom-left {
         content: element(footer);

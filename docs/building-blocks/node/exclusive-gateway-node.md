@@ -8,7 +8,7 @@ Flow decisions can be configured using an Exclusive Gateway. Using this node wil
 
 ## Configuring an Exclusive Gateway node
 
-![Exclusive gateway](./img/gateway_exclusive.png)
+![Exclusive gateway](./img/gateway_exclusive.png#center)
 
 
 To configure this kind of node, it is useful to previously configure the **in** and **out** sequence from the gateway process.
