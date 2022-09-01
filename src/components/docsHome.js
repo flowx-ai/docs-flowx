@@ -74,6 +74,10 @@
                    <Link href={useBaseUrl("docs/building-blocks/process/")}>
                      📌  <b>Designer</b>
                    </Link>
+                   <br></br>
+                   <Link href={"https://academy.flowx.ai"}>
+                     📌  <b>Academy - Your first FLOWX.AI process</b>
+                   </Link>
                  </div>
                </div>
              </div>

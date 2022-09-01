@@ -13,32 +13,32 @@ Follow the Release Notes space to find all the information on the features and i
 
 Q3 - July 2022
 
-* [v2.10.0]
+* [v2.10.0](./v2.10.0-july-2022/v2.10.0-july-2022.md)
 
 Q2 - June 2022
 
-* [v2.9.0]
-* [v2.8.1]
+* [v2.9.0](./v2.9.0-june-2022/v2.9.0-june-2022.md)
+* [v2.8.1](./v2.8.1-june-2022/v2.8.1-june-2022.md)
 
 Q2 - May 2022
 
-* [v2.8.0]
-* [v2.7.0]
-* [v2.6.0]
+* [v2.8.0](./v2.8.0-may-2022/v2.8.0-may-2022.md)
+* [v2.7.0](./v2.7.0-may-2022/v2.7.0-may-2022.md)
+* [v2.6.0](./v2.6.0-may-2022/v2.6.0-may-2022.md)
 
 Q2 - April 2022
 
-* [v.2.5.0]
+* [v.2.5.0](./v2.5.0-april-2022/v2.5.0-april-2022.md)
 
 Q1 - March 2022
 
-* [v2.4.0]
-* [v2.3.0]
-* [v2.2.0]
+* [v2.4.0](./v2.4.0-march-2022/v2.4.0-march-2022.md)
+* [v2.3.0](./v2.3.0-march-2022/v2.3.0-march-2022.md)
+* [v2.2.0](./v2.2.0-march-2022/v2.2.0-march-2022.md)
 
 Q1 - February 2022
 
-* [v2.0.0]
+* [v2.0.0](./v2.0.0-feb-2022/v2.0.0-feb-2022.md)
 
 </details>
 

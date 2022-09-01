@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'Rubik Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Rubik Regular'), url('/fonts/Rubik-Regular.woff2') format('woff2');
+}
+
+
+@font-face {
+    font-family: 'Rubik Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Rubik Italic'), url('/fonts/Rubik-Italic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Rubik Black';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Rubik Black'), url('/fonts/Rubik-Black.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Rubik Black Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Rubik Black Italic'), url('/fonts/Rubik-BlackItalic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Rubik Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Rubik Bold'), url('/fonts/Rubik-Bold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Rubik Bold Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Rubik Bold Italic'), url('/fonts/Rubik-BoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Rubik Extra Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Rubik Extra Bold'), url('/fonts/Rubik-ExtraBold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Rubik Extra Bold Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Rubik Extra Bold Italic'), url('/fonts/Rubik-ExtraBoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Rubik Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Rubik Light'), url('/fonts/Rubik-Light.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Rubik Ligh Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Rubik Light Italic'), url('/fonts/Rubik-LightItalic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Rubik Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Rubik Medium'), url('/fonts/Rubik-Medium.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Rubik Medium Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Rubik Medium Italic'), url('/fonts/Rubik-MediumItalic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Rubik Semi Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Rubik Semi Bold'), url('/fonts/Rubik-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Rubik Semi Bold Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Rubik Semi Bold Italic'), url('/fonts/Rubik-SemiBoldItalic.woff2') format('woff2');
+}
