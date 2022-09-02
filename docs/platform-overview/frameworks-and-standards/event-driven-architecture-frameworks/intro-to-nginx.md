@@ -2,7 +2,7 @@
 
 ### What is NGINX?
 
-[NGINX ](https://www.nginx.com/)is a free, open-source, high-performance web server with a rich feature set, simple configuration, and low resource consumption that can also function as a reverse proxy, load balancer, mail proxy, HTTP cache, and many other things.
+[NGINX](https://www.nginx.com/) is a free, open-source, high-performance web server with a rich feature set, simple configuration, and low resource consumption that can also function as a reverse proxy, load balancer, mail proxy, HTTP cache, and many other things.
 
 ### How NGINX is working?
 
@@ -25,18 +25,18 @@ For more information, check the following section:
 FLOWX Designer is using NGINX ingress controller for the following actions:
 
 1. For routing calls to plugins
-2. For routing calls to the [FLOWX Engine](core-components/flowx-engine/):
+2. For routing calls to the [FLOWX Engine](../../../platform-deep-dive/core-components/flowx-engine.md):
 
 * Viewing current instances of processes running in the FLOWX engine
 * Testing process definitions from the FLOWX Designer - route the API calls and WebSocket communications to the FLOWX engine backend
 * Accessing REST API of the backend microservice
 
-&#x20; 3\. For configuring the Single Page Application (SPA) -  FLOWX Designer SPA will use the backend service to manage the platform via REST calls
+3. For configuring the Single Page Application (SPA) -  FLOWX Designer SPA will use the backend service to manage the platform via REST calls
 
 In the following section, you can find a suggested NGINX setup, the one used by FLOWX.AI:
 
 
-[designer-setup-guide](flowx-designer/designer-setup-guide/)
+[Designer setup guide](../../../flowx-designer/designer-setup-guide/designer-setup-guide.md)
 
 
 ### Installing NGINX Open Source

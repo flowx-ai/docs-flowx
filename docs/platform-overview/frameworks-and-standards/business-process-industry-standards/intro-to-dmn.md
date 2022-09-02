@@ -5,7 +5,7 @@ As we've seen in the previous chapter, Business Process Model and Notation ([**B
 ![Process with gateways](./img/process_with_gateways.png)
 
 :::info
-For more information on how to define DMN gateway decisions, check the [Exclusive gateway node] section.
+For more information on how to define DMN gateway decisions, check the [**Exclusive gateway node**](../../../building-blocks/node/exclusive-gateway-node.md) section.
 :::
 
 We needed **a convenient way of specifying the business rules** and we picked two possible ways of writing business rules:
@@ -13,7 +13,7 @@ We needed **a convenient way of specifying the business rules** and we picked tw
 * defining them as DMN decisions
 
 :::info
-You can now define a DMN Business Rule Action directly in FLOWX Designer. For more information, check the [DMN Business Rule Action] section.
+You can now define a DMN Business Rule Action directly in FLOWX Designer. For more information, check the [**DMN Business Rule Action**](../../../building-blocks/node/task-node/business-rule-action/dmn-business-rule-action.md) section.
 :::
 
 * adding [MVEL](intro-to-mvel.md#what-is-mvel) scripts
@@ -149,8 +149,8 @@ You can use this XML example with FLOWX Designer, adding it to a Business Rule A
 
 As mentioned previously, DMN can be used with FLOWX Designer for the following scenarios:
 
-* For defining gateway decisions, using [exclusive gateways](../../../flowx-elements/node/nodes-types/exclusive-gateway-node).
-* For defining [business rules actions](../../../flowx-elements/node/nodes-types/task-node/business-rule-action/dmn-business-rule-action) attached to a [task node](../../../flowx-elements/node/nodes-types/task-node/).
+* For defining gateway decisions, using [exclusive gateways](../../../building-blocks/node/exclusive-gateway-node.md).
+* For defining [business rules actions](../../../building-blocks/node/task-node/business-rule-action/business-rule-action.md) attached to a [task node](../../../building-blocks/node/task-node/task-node.md).
 
 ### In depth docs
 

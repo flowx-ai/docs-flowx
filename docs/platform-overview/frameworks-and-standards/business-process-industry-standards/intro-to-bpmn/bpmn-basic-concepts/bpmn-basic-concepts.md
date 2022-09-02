@@ -20,8 +20,8 @@ There are 3 types of events:
 
 | Start Event Icon                                                                    | End Event Icon                                                                     |
 | ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| ![](./img/event_start.png)  | ![](./img/event_end.png)
-| Event that triggers the process                                                     | Event that defines the state that terminates the process                           |
+| ![](./img/event_start.png#center)  | ![](./img/event_end.png#center)
+| event that triggers the process                                                     | event that defines the state that terminates the process                           |
 
 ### Intermediate events
 
@@ -33,7 +33,7 @@ There are 3 types of events:
 
 | Send Message Event Icon                                                                              | Receive Message Event Icon                                                                               |
 | ---------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| ![](./img/message_send.png) | ![](./img/message_receive.png) |
+| ![](./img/message_send.png#center) | ![](./img/message_receive.png#center) |
 | outgoing message                                                                                     | incoming message                                                                                         |
 
 ### Activities
@@ -46,7 +46,7 @@ There are 3 types of events:
 
 | User task                                                                         | Service task                                                                                                |
 | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| ![](./img/user_task.png) |  ![](./img/service_task.png)                      |
+| ![](./img/user_task.png#center) |  ![](./img/service_task.png#center)                      |
 | a task that requires the human to perform an action                               | a task that uses a Web service, an automated application, or other kinds of service in completing the task. |
 
 **Send Task**
@@ -83,7 +83,7 @@ In many cases, you want to split up the flow within your business process. For e
 
 | Exclusive gateway (XOR)                                                                   | Parallel gateway (AND)                                                                    |
 | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-|  |   |
+|   ![](../../img/gateway_exclusive.png#center)                                                    |       ![](../../img/gateway_parallel.png#center)                                                 |
 | <ul><li>defines a decision point</li></ul>                                                | <ul><li>no decision making; </li><li>all outgoing branches are activated</li></ul>        |
 
 **Closing gateway**

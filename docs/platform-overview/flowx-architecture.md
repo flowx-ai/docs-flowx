@@ -2,15 +2,15 @@
 
 Let's go through the main components of the FLOWX.AI platform:
 
-* **FLOWX.AI SDKs** - used in the [Web (Angular)], [iOS], and [Android] applications to render the process screens and orchestrate the [custom components]
+* **FLOWX.AI SDKs** - used in the [Web (Angular)](../platform-deep-dive/core-components/renderer-sdks/angular-renderer.md), [iOS](../platform-deep-dive/core-components/renderer-sdks/ios-renderer.md), and [Android](../platform-deep-dive/core-components/renderer-sdks/android-renderer.md) applications to render the process screens and orchestrate the [custom components](../building-blocks/ui-designer/ui-component-types/root-components/custom.md)
 * **FLOWX.AI Designer** - is a collaborative, no-code, web-based application development environment that enables users to create web and mobile applications without having to know how to code:
   * Develop processes based on [BPMN 2.0](./frameworks-and-standards/business-process-industry-standards/intro-to-bpmn)
   * Configure user interfaces for the processes for both generated and custom screens
   * Define business rules and validations via [DMN](./frameworks-and-standards/business-process-industry-standards/intro-to-dmn) files or via the [MVEL](./frameworks-and-standards/business-process-industry-standards/intro-to-mvel), or other supported [scripting languages]
   * Create [integration connectors] in a visual manner
   * Create data models for your applications
-  * Adding new capabilities by using [plugins]
-  * Manage [users access]
+  * Adding new capabilities by using [plugins](../platform-deep-dive/plugins/plugins.md)
+  * Manage [users access](../platform-deep-dive/user-roles-management/swimlanes.md)
 
 **Microservices:**
 
@@ -19,7 +19,7 @@ Let's go through the main components of the FLOWX.AI platform:
 * **FLOWX.AI Scheduler** (part of the core components) - used to store/edit process definitions&#x20;
 * **FLOWX.AI Content Management** (part of the core components) - can be quickly deployed on the chosen infrastructure, preloaded with the needed taxonomies or contents, and then connected to the FLOWX Engine through Kafka events
 * **FLOWX.AI License Manager** (part of the core components) - is used for displaying reports regarding the usage of the platform in the FLOWX.AI Designer
-* **FLOWX.AI Plugins** - the platform comes with some ready-made integrations, such as a [document management] solution, a plugin for sending various types of [notifications], an [OCR] plugin, and a task management plugin&#x20;
+* **FLOWX.AI Plugins** - the platform comes with some ready-made integrations, such as a [document management] solution, a plugin for sending various types of [notifications](../platform-deep-dive/plugins/custom-plugins/notifications-plugin/notifications-plugin.md), an [OCR](../platform-deep-dive/plugins/custom-plugins/ocr-plugin.md) plugin, and a task management plugin
 
 ![](./img/architecture_diagram.png)
 
@@ -36,26 +36,26 @@ You can use FLOWX.AI Engine to do the following:
 * manage integrations, so you can hook it up to existing CRMs, ERPs, KYC, transaction data and many more
 * to read process definitions (if it is connected to the same DB as FLOWX.AI Admin
 
-[FLOWX.AI Engine] runs the business processes, coordinating integrations and the omnichannel UI. It is a [Kafka-based](./frameworks-and-standards/event-driven-architecture-frameworks/intro-to-kafka-concepts) event-driven platform, that is able to orchestrate, generate and integrate with any type of legacy system, without expensive or risky upgrades.&#x20;
+[FLOWX.AI Engine](../platform-deep-dive/core-components/flowx-engine.md) runs the business processes, coordinating integrations and the omnichannel UI. It is a [Kafka-based](./frameworks-and-standards/event-driven-architecture-frameworks/intro-to-kafka-concepts) event-driven platform, that is able to orchestrate, generate and integrate with any type of legacy system, without expensive or risky upgrades.&#x20;
 
 This is extremely important because often, digital apps used by a bank’s clients, for example, are limited by the load imposed by the core banking system. And the customers see blocked screens and endlessly spinning flywheels. FLOWX.AI buffers this load, offering a 0.2s response time, thus the customer never has to wait for data to load.
 
 
-[flowx-engine]
+[FLOWX.AI Engine](../platform-deep-dive/core-components/flowx-engine.md)
 
 
 ### FLOWX.AI Designer
 
-FLOWX.AI Designer is built to administrate everything in FLOWX. It is a web application that runs in the browser, meaning that it resides out of a FLOWX deployment.
+[FLOWX.AI Designer](../flowx-designer/flowx-designer.md) is built to administrate everything in FLOWX. It is a web application that runs in the browser, meaning that it resides out of a FLOWX deployment.
 
 The platform has **no-code/low-code capabilities**, meaning applications can be developed in a visual way, available for anyone with a powerful business idea. So we’re talking about business analysts,  product managers - people without advanced programming skills, and also experienced developers.
 
-The process visual designer works on [BPMN 2.0 standard](./frameworks-and-standards/business-process-industry-standards/intro-to-bpmn/bpmn-basic-concepts/bpmn-basic-concepts) - meaning that the learning curve for business analysts or product managers is quite fast. Thus, creating new applications (e.g. onboarding an SME client for banks) or adding new functionality (allow personal data changes in an app) takes only 10 days, instead of 6 to 8 months.
+The process visual designer works on [BPMN 2.0 standard](../platform-overview/frameworks-and-standards/business-process-industry-standards/business-process-industry-standards.md) - meaning that the learning curve for business analysts or product managers is quite fast. Thus, creating new applications (e.g. onboarding an SME client for banks) or adding new functionality (allow personal data changes in an app) takes only 10 days, instead of 6 to 8 months.
 
 However, we do support custom CSS or custom screens. Because we’re aware each brand is different and each has its own CI, so you need to have the ability to create UIs that respect your brand guidelines.
 
 
-[Broken link]
+[FLOWX.AI Designer](../flowx-designer/flowx-designer.md)
  
 
 ### FLOWX.AI  SDKs
@@ -65,15 +65,15 @@ Also, we provide web and native mobile SDKs, so that every app you create is aut
 Unlike other no-code/low-code platforms which provide templates or building blocks for the UI, ours is generated on the fly, as a business analyst creates the process and the data points. This feature reduces the need to use UX/UI expertise, the UI being generated respecting state-of-the-art UI frameworks.
 
 
-[renderer-sdks]
+[Renderer SDKs](../platform-deep-dive/core-components/renderer-sdks/angular-renderer.md)
 
 
-### FLOWX.AI Content Management&#x20;
+### FLOWX.AI Content Management
 
-This is another Java microservice that enables you to store and manage content. **The go-to place for all taxonomies.** The extension offers a convenient way of managing various content pieces such as lists or content translations. Anything that is under content management is managed by the [CMS backend service]. To store content, the service will use a MongoDB database (unstructured database). For example, each time you edit an [enumeration], the FLOWX.AI Designer will send an HTTP request to the microservice.
+This is another Java microservice that enables you to store and manage content. **The go-to place for all taxonomies.** The extension offers a convenient way of managing various content pieces such as lists or content translations. Anything that is under content management is managed by the [CMS backend service](../platform-deep-dive/platform-setup-guide/cms-setup-guide/cms-setup-guide.md). To store content, the service will use a MongoDB database (unstructured database). For example, each time you edit an [enumeration](../platform-deep-dive/core-components/core-extensions/content-management/enumerations.md), the FLOWX.AI Designer will send an HTTP request to the microservice.
 
 
-[headless-cms]
+[Content Management](../platform-deep-dive/core-components/core-extensions/content-management/content-management.md)
 
 
 ### FLOWX.AI Scheduler
@@ -87,7 +87,7 @@ When you start a process, the process must have an expiry date.
 Scheduler microservice communicates with the FLOWX.AI Engine through Kafka Event Queue => it creates a new message (write some data) then will send that message to Kafka (with the scheduler address) -> when the reminder time comes up, the scheduler will put back a new message in the Kafka layer with engine's destination (time + ID of the process).
 
 
-[scheduler]
+[Scheduler](../platform-deep-dive/core-components/core-extensions/scheduler.md)
 
 
 ### Authorization & Session manager
@@ -112,21 +112,21 @@ Below you can find an example of a mortgage process flow:
 
 Plugins are bits of functionality that allow you to expand the functionality of the platform - for example, we have the following custom plugins:
 
-* [FLOWX.AI Notifications Plugin]
-* [FLOWX.AI Documents Plugin]
-* [FLOWX.AI OCR Plugin]
-* [FLOWX.AI Task Management Plugin]task-management/)
+* [FLOWX.AI Notifications Plugin](../platform-deep-dive/plugins/custom-plugins/notifications-plugin/notifications-plugin.md)
+* [FLOWX.AI Documents Plugin](../platform-deep-dive/plugins/custom-plugins/documents-plugin/documents-plugin.md)
+* [FLOWX.AI OCR Plugin](../platform-deep-dive/plugins/custom-plugins/ocr-plugin.md)
+* [FLOWX.AI Task Management Plugin](../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md)
 
 ![](./img/plugins_architecture.png)
 
-[Broken link]
+[Plugins](../platform-deep-dive/plugins/plugins.md)
 
 
 ### Integrations
 
-Connecting your legacy systems or third-party apps to the FLOWX Engine is easily done through [custom integrations]. These can be developed using your preferred tech stack, the only requirement is that they connect to Kafka. These could include legacy APIs, custom file exchange solutions, or RPA.
+Connecting your legacy systems or third-party apps to the FLOWX.AI Engine is easily done through [custom integrations](../platform-deep-dive/integrations/integrations.md). These can be developed using your preferred tech stack, the only requirement is that they connect to Kafka. These could include legacy APIs, custom file exchange solutions, or RPA.
 
 ![](./img/integrations_architecture.png)
 
 
-[Broken link]
+[Integrations](../platform-deep-dive/integrations/integrations.md)

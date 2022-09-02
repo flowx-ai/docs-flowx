@@ -12,18 +12,18 @@ Kubernetes, as an open platform, enables you to build applications using your pr
 
 * A proper way of managing containers
 * High availability
-* Scalability&#x20;
+* Scalability
 * Disaster recovery
 
-### **Key Kubernetes Concepts**
+### Key Kubernetes Concepts
 
-#### **Node & PODs**
+#### Node & PODs
 
 A Kubernetes node is a machine that runs containerized workloads as part of a Kubernetes cluster. A node can be a physical machine or a virtual machine, and can be hosted on-premises or in the cloud.
 
 A pod is composed of one or more containers that are colocated on the same host and share a network stack as well as other resources such as volumes. Pods are the foundation upon which Kubernetes applications are built.
 
-Kubernetes uses pods **** to run an instance of your application. A pod represents a single instance of your application.
+Kubernetes uses pods to run an instance of your application. A pod represents a single instance of your application.
 
 Pods are typically ephemeral, disposable resources. Individually scheduled pods miss some of the high availability and redundancy Kubernetes features. Instead, pods are deployed and managed by Kubernetes _Controllers_, such as the Deployment Controller.
 
@@ -38,16 +38,16 @@ Pods are typically ephemeral, disposable resources. Individually scheduled pods 
 FlowX.AI offers a predefined NGINX setup as Ingress Controller. The [NGINX Ingress Controller](https://www.nginx.com/products/nginx-ingress-controller/) works with the [NGINX](https://www.nginx.com/resources/glossary/nginx/) web server (as a proxy). For more information, check the below sections:
 
 
-[intro-to-nginx.md](intro-to-nginx)
+[Intro to NGINX](intro-to-nginx)
 
-[designer-setup-guide](flowx-designer/designer-setup-guide/)
+[Designer setup guide](../../../flowx-designer/designer-setup-guide/designer-setup-guide.md)
 
 
 #### ConfigMap & Secret
 
 **ConfigMap** is an API object that makes it possible to store configuration for use by other objects. A ConfigMap, unlike most Kubernetes objects with a spec, has `data` and `binaryData` fields. As values, these fields accept key-value pairs. The `data` field and `binaryData` are both optional. The data field is intended to hold UTF-8 strings, whereas the `binaryData` field is intended to hold binary data as base64-encoded strings.
 
-::: info
+:::info
 The name of a ConfigMap must be a valid [DNS subdomain name](https://www.ietf.org/rfc/rfc1035.txt).
 :::
 

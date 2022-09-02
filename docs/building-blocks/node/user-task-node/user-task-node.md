@@ -4,13 +4,13 @@ sidebar_position: 4
 
 # User task node
 
-This node represents an interaction with the user. It is used to display a piece of UI (defined in the [UI Designer](../../../configure-a-template-config-element/) or a [custom Angular component](../../../configure-a-template-config-element/component-types/root-components/custom.md)). You can also define actions available for the users to interact with the process.
+This node represents an interaction with the user. It is used to display a piece of UI (defined in the [UI Designer](../../ui-designer/ui-designer.md) or a [custom Angular component](../../ui-designer/ui-component-types/root-components/custom.md). You can also define actions available for the users to interact with the process.
 
 ### Configuring a user task node
 
 ![User Task Node](../img/user_task_node.png#center)
 
-User task nodes allow you to define and configure UI templates and possible [actions](../../actions.md) for a certain template config node (ex: [button components](../../../configure-a-template-config-element/component-types/buttons.md), file upload components).
+User task nodes allow you to define and configure UI templates and possible [actions](../../actions.md) for a certain template config node (ex: [button components](../../ui-designer/ui-component-types/buttons.md).
 
 #### General Config
 
@@ -24,8 +24,8 @@ User task nodes allow you to define and configure UI templates and possible [act
 When encountering a step with `canGoBack` switched to false, all steps found behind it will become unavailable.
 :::
 
-* [**Swimlane**](../../../user-roles-management/swimlanes.md) - choose a swimlane (if there are multiple swimlanes on the process) to make sure only certain user roles have access only for certain process nodes- if there are no multiple swimlanes, the value is **Default**
-* [**Stage** ](../../../../plugins/custom-plugins/task-management/using-stages.md)- assign a stage to the node
+* [**Swimlane**](../../../platform-deep-dive/user-roles-management/swimlanes.md) - choose a swimlane (if there are multiple swimlanes on the process) to make sure only certain user roles have access only for certain process nodes- if there are no multiple swimlanes, the value is **Default**
+* [**Stage** ](../../../platform-deep-dive/plugins/custom-plugins/task-management/using-stages.md)- assign a stage to the node
 
 #### Response Timeout 
 
@@ -35,22 +35,23 @@ When encountering a step with `canGoBack` switched to false, all steps found beh
 
 #### Data stream topics
 
-* **Topic Name** - the topic name where the [process engine](../../../../core-components/flowx-engine/) listens for the response (this should be added to the platform and match the topic naming rule for the engine to listen to it) - available for UPDATES topics (Kafka receive events)
+* **Topic Name** - the topic name where the [process engine](../../../platform-deep-dive/core-components/flowx-engine.md) listens for the response (this should be added to the platform and match the topic naming rule for the engine to listen to it) - available for UPDATES topics (Kafka receive events)
 
-    :::warning
-    A naming pattern must be defined on the [process engine configuration](../../../../core-components/platform-setup-guide/flowx-engine-setup-guide/#kafka-configuration) to use the defined topics. It is important to know that all the events that start with a configured pattern will be consumed by the Engine. For example, `KAFKA_TOPIC_PATTERN` is the topic name pattern where the Engine listens for incoming Kafka events.
-    :::
-* **Key Name** - will hold the result received from the external system, if the key already exists in the process values, it will be overwritten&#x20;
+:::warning
+A naming pattern must be defined on the [process engine configuration](../../../platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide/flowx-engine-setup-guide.md) to use the defined topics. It is important to know that all the events that start with a configured pattern will be consumed by the Engine. For example, `KAFKA_TOPIC_PATTERN` is the topic name pattern where the Engine listens for incoming Kafka events.
+:::
+
+* **Key Name** - will hold the result received from the external system, if the key already exists in the process values, it will be overwritten
 
 #### Task Management
 
-* **Update task management** - force [Task Manager Plugin ](../../../../plugins/custom-plugins/task-management/)to update information about this process after this node
+* **Update task management** - force [Task Manager Plugin](../../../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md) to update information about this process after this node
 
 ![](../img/user_task_node_task_mngmnt.png)
 
 ### Configuring the UI
 
-The FLOWX Designer includes an intuitive [UI Designer](../../../configure-a-template-config-element/) (drag-and-drop editor) for creating diverse UI templates. You can use various elements from basic [buttons](../../../configure-a-template-config-element/component-types/buttons.md), indicators, and [forms](../../../configure-a-template-config-element/component-types/form-elements/), but also predefined [collections](../../../configure-a-template-config-element/component-types/collection/) or [prototypes](../../../configure-a-template-config-element/component-types/collection/collection-prototype.md).
+The FLOWX Designer includes an intuitive [UI Designer](../../ui-designer/ui-designer.md) (drag-and-drop editor) for creating diverse UI templates. You can use various elements from basic [buttons](../../ui-designer/ui-component-types/buttons.md), indicators, and [forms](../../ui-designer/ui-component-types/form-elements/), but also predefined [collections](../../ui-designer/ui-component-types/collection/collection.md) or [prototypes](../../ui-designer/ui-component-types/collection/collection_prototype.md).
 
 #### **Accessing the UI Designer**
 
@@ -63,13 +64,11 @@ To access the UI Designer, follow the next steps:
 
 ![](../img/task_node_ui_designer.gif)
 
-{% content-ref url="../../../configure-a-template-config-element/" %}
-[configure-a-template-config-element](../../../configure-a-template-config-element/)
-{% endcontent-ref %}
+[Configure a template config element](../../ui-designer/ui-designer.md#)
 
 #### Predefined components
 
-UI can be defined using the available components provided by FLOWX, using the [UI Designer ](../../../configure-a-template-config-element/)available at node level.
+UI can be defined using the available components provided by FLOWX, using the UI Designer available at node level.
 
 Predefined components can be split in 3 categories:
 
@@ -77,13 +76,13 @@ Predefined components can be split in 3 categories:
 
 These elements are used to group different types of components, each having a different purpose:
 
-* [**Form Group**](../../../configure-a-template-config-element/component-types/root-components/form-group.md) -  used to group and configure the layout for multiple **form elements.**
-* [**Container**](../../../configure-a-template-config-element/component-types/root-components/container.md) - used to group and configure the layout for multiple **components** of any type.
-* [**Custom**](../../../configure-a-template-config-element/component-types/root-components/custom.md) - these are Angular components developed in the container application and passed to the SDK at runtime, identified here by the component name
+* [**Form Group**](../../ui-designer/ui-component-types/root-components/form-group.md) -  used to group and configure the layout for multiple **form elements.**
+* [**Container**](../../ui-designer/ui-component-types/root-components/container.md) - used to group and configure the layout for multiple **components** of any type.
+* [**Custom**](../../ui-designer/ui-component-types/root-components/custom.md) - these are Angular components developed in the container application and passed to the SDK at runtime, identified here by the component name
 
 More details in the following section:
 
-[Root components](../../../configure-a-template-config-element/component-types/root-components/)
+[Root components](../../ui-designer/ui-component-types/root-components/root-components.md)
 
 
 **2. Components**
@@ -104,42 +103,38 @@ Available children for **Form Group** and **Container** are:
 
 More details in the following section:
 
-
-[Component types](component types)
-
+[Component types](../../ui-designer/ui-component-types/ui-component-types.md)
 
 **3. Form elements**
 
 This type of elements are used to allow the user to input data, and can be added only in a **Form** Component. They have have multiple properties that can be managed.
 
-1. [**Input**](input) - FLOWX form element that allows you to generate an input form filed
-2. [**Select**](../../../configure-a-template-config-element/component-types/form-elements/select-form-field.md) - to add a dropdown
-3. [**Checkbox**](../../../configure-a-template-config-element/component-types/form-elements/checkbox-form-field.md) - the user can select zero or more input from a set of options
-4. [**Radio**](../../../configure-a-template-config-element/component-types/form-elements/radio-form-field.md) - the user is required to select one and only one input from a set of options
-5. [**Datepicker**](../../../configure-a-template-config-element/component-types/form-elements/datepicker-form-field.md) - to select a date from a calendar picker
-6. [**Switch**](../../../configure-a-template-config-element/component-types/form-elements/switch-form-filed.md) - allows the user to toggle an option on or off
+1. [**Input**](../../ui-designer/ui-component-types/form-elements/input-form-field.md) - FLOWX form element that allows you to generate an input form filed
+2. [**Select**](../../ui-designer/ui-component-types/form-elements/select-form-field.md) - to add a dropdown
+3. [**Checkbox**](../../ui-designer/ui-component-types/form-elements/checkbox-form-field.md) - the user can select zero or more input from a set of options
+4. [**Radio**](../../ui-designer/ui-component-types/form-elements/radio-form-field.md) - the user is required to select one and only one input from a set of options
+5. [**Datepicker**](../../ui-designer/ui-component-types/form-elements/datepicker-form-field.md) - to select a date from a calendar picker
+6. [**Switch**](../../ui-designer/ui-component-types/form-elements/switch-form-field.md) - allows the user to toggle an option on or off
 
 More details in the following section:
 
-[Form elements](form elements)
+[Form elements](../../ui-designer/ui-component-types/form-elements/form-elements.md)
 
 #### Custom components
 
-These are components developed in the web application and referenced here by component identifier. This will dictate where the component is displayed in the component hierarchy and what actions are available for the component.&#x20;
+These are components developed in the web application and referenced here by component identifier. This will dictate where the component is displayed in the component hierarchy and what actions are available for the component.
 
 To add a custom component in the template config tree, we need to know its unique identifier and the data it should receive from the process model.
 
 More details in the following section:
 
-
-[custom](custom)
-
+[Custom](../../ui-designer/ui-component-types/root-components/custom.md
 
 The sections that can be configured are as follows:
 
 1. **Message** - configure what data will be pushed to the frontend application
 2. **Input keys** - used to define the process model paths from which the components will receive its data
-3. [**UI Actions**](ui actions) - actions defined here will be made available to the custom component. Multiple actions can be configured on a custom component and mapped to different triggers when developing it. Naming each action suggestively is important so the frontend engineer developing the component knows what actions should be triggered by certain events.
+3. [**UI Actions**](../../ui-designer/ui-actions.md) - actions defined here will be made available to the custom component. Multiple actions can be configured on a custom component and mapped to different triggers when developing it. Naming each action suggestively is important so the frontend engineer developing the component knows what actions should be triggered by certain events.
 
 More information about configuration, [here](using ui designer).
 

@@ -44,7 +44,7 @@
                    📌 <b>Architecture</b>
                    </Link>
                    <br></br>
-                   <Link href={useBaseUrl("/release-notes")}>
+                   <Link href={useBaseUrl("/release-notes/release-notes")}>
                    📌 <b>Release Notes</b>
                    </Link>
                  </div>
@@ -71,12 +71,12 @@
                      📌  <b>Building blocks</b>
                    </Link>
                    <br></br>
-                   <Link href={useBaseUrl("docs/building-blocks/process/")}>
+                   <Link href={useBaseUrl("docs/flowx-designer")}>
                      📌  <b>Designer</b>
                    </Link>
                    <br></br>
                    <Link href={"https://academy.flowx.ai"}>
-                     📌  <b>Academy - Your first FLOWX.AI process</b>
+                     📌  <b>Academy - Your first FLOWX.AI processs</b>
                    </Link>
                  </div>
                </div>
@@ -114,11 +114,11 @@
                    <Link href={useBaseUrl("/faqs")}>📌 <b>FAQs</b></Link>
                    <br></br>
                    <Link href={useBaseUrl("docs/expedition/expedition_qs")}>
-                   📌 <b>Troubleshooting</b>
+                   📌 <b>Troubleshooting [TBD]</b>
                    </Link>
                    <br></br>
                    <Link href={useBaseUrl("docs/expedition/expedition_apiint")}>
-                   📌 <b>Best practices</b>
+                   📌 <b>Best practices [TBD]</b>
                    </Link>
                    <br></br>
                    <br></br>

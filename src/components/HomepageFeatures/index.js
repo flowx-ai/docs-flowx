@@ -13,7 +13,7 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Low code / Full code',
+    title: 'No code / Full code',
     Svg: require('@site/static/img/undraw_software_engineer_re_tnjc.svg').default,
     description: (
       <> 

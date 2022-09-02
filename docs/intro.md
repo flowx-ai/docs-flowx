@@ -43,7 +43,7 @@ If you have any questions regarding the content here or anything else that might
 
 So, to start with, let’s dive into FLOWX.AI! :rocket:
 
-[link]
+[Quick start](./getting-started/learn-more)
 
 Read about the frameworks and standards used to build the platform:
 
@@ -51,9 +51,9 @@ Read about the frameworks and standards used to build the platform:
 
 Find about the core platform components:
 
-[FLOWX Architecture]
+[FLOWX Architecture](./platform-overview/flowx-architecture)
 
 See the Release Notes:
 
-[Realease notes](/release-notes)
+[Realease notes](../release-notes/release-notes)
 

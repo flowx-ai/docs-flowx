@@ -10,10 +10,9 @@ sidebar_position: 1
 **Why is it useful?** The script can read and write the data available on the process at the moment the script is executed. For this reason, it is very important to understand what data is available on the process when the script is executed.
 :::
 
-Business rules can be attached to a node by using actions with [**action rules**](../../../actions.md#action-rules) on them. These can be specified using [DMN rules](dmn-business-rule-action.md), [MVEL](../../../../../overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md) expressions, or scripts written in Javascript, Python, or Groovy.&#x20;
+Business rules can be attached to a node by using actions with [**action rules**](../../../actions.md#action-rules) on them. These can be specified using [DMN rules](dmn-business-rule-action.md), [MVEL](../../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md) expressions, or scripts written in Javascript, Python, or Groovy.
 
-
-[supported-scripts.md](../../../supported-scripts)
+[Supported scripts](../../../supported-scripts)
 
 ![Business rule action](./img/business_rule_action.png)
 
@@ -115,6 +114,4 @@ output.put("identificationData", createActionForCustomer("action1", input.client
 
 For more information about each type of Business Rule Action, check the following sections:
 
-{% content-ref url="dmn-business-rule-action.md" %}
-[dmn-business-rule-action.md](dmn-business-rule-action.md)
-{% endcontent-ref %}
+[DMN Business Rule Action](dmn-business-rule-action.md)
