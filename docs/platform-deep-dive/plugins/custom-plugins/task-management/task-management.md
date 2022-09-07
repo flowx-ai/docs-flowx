@@ -21,7 +21,7 @@ Inside the **Task details** tab you can find the following information about a p
 ![Task details](../../../img/task_mngmnt_task_details.png)
 
 :::caution
-Specific roles need to be defined in a process in order to use all the task management features. More details, [here](../../../core-components/platform-setup-guide/flowx-engine-setup-guide/configuring-access-roles-for-processes.md).
+Specific roles need to be defined in a process in order to use all the task management features. More details, [here](../../../platform-setup-guide/flowx-engine-setup-guide/configuring-access-roles-for-processes.md).
 :::
 
 ### Statuses & Definitions in Task Manager

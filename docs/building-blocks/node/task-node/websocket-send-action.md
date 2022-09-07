@@ -69,7 +69,7 @@ If you need to start a new process using a **Websocket Send Action**, you can do
 * **Target Process** - is used to specify to what running process instance should this message be sent - **Active process** or **Parent process**
 
 :::info
-If you are defining this action on a [**subprocess**](../../../process/subprocess.md), you can send the message to the parent process using **Target Process: Parent process**.
+If you are defining this action on a [**subprocess**](../../process/subprocess), you can send the message to the parent process using **Target Process: Parent process**.
 :::
 
 #### Data to send
