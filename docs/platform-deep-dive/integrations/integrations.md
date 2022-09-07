@@ -21,7 +21,7 @@ Creating integrations for the FLOWX platform is pretty straightforward, you can 
 To create an integration follow the next steps:
 
 1. Create a Microservice (we'll refer to it as a Connector) that can listen for and react to Kafka events, using your preferred tech stack. Add custom logic for handling the received data from Kafka and obtaining related info from legacy systems. And finally, send the data back to Kafka.
-2. Add the related configuration in the [process definition](../../building-blocks/process/process-definition/process-definition.md), you will have to add a [message](broken-reference) send action in one of the [nodes](broken-reference) to send the needed data to the [connector]().
+2. Add the related configuration in the [process definition](../../building-blocks/process/process-definition/process-definition.md), you will have to add a [message](../../building-blocks/node/message-send-received-task-node.md) send action in one of the [nodes](../../building-blocks/node/node.md) to send the needed data to the connector.
 3. When the response from the custom integration is ready, send it back to the engine, keep in mind, that your process will wait in a receive message node.
 
 Here's the startup code for a Java Connector Microservice:
