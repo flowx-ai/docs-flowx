@@ -164,7 +164,7 @@ const config = {
           indexDocs: true,
           indexBlog: false,
           indexPages: true,
-          indexDocSidebarParentCategories: 0,
+          indexDocSidebarParentCategories: 2,
           language: "en"
         }
       ],
