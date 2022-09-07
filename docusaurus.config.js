@@ -162,13 +162,16 @@ const config = {
         require.resolve("@cmfcmf/docusaurus-search-local"),
         {
           indexDocs: true,
-          titleBoost: 5,
-          contentBoost: 1,
-          tagsBoost: 3,
-          parentCategoriesBoost: 2,
           indexBlog: false,
           indexPages: true,
-          language: "en"
+          language: "en",
+
+          lunr: {
+            titleBoost: 5,
+            contentBoost: 1,
+            tagsBoost: 3,
+            parentCategoriesBoost: 2,
+          }
         }
       ],
 
