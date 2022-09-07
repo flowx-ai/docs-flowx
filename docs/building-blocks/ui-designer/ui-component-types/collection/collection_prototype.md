@@ -52,7 +52,7 @@ The above configuration will render:
 
 ## Adding elements with UI Actions
 
-There are a few differences you need to take into consideration when configuring elements that make use of **UI Actions** inside a [Collection Prototype](collection-prototype.md).
+There are a few differences you need to take into consideration when configuring elements that make use of **UI Actions** inside a **Collection Prototype**.
 
 To showcase these differences, we'll use the next example:
 
@@ -62,11 +62,11 @@ We have a [Collection](./) with two employees and we want to provide the user wi
 
 ### Step 1 - Defining the Node Action
 
-To select one employee from the list, we first must add an [Action](../../../node/actions.md) to the [User Task Node](../../../node/nodes-types/user-task-node/) this UI is attached to:
+To select one employee from the list, we first must add an [Action](../../../actions.md) to the [User Task Node](../../../node/user-task-node/user-task-node.md) this UI is attached to:
 
 ![Node Action that saves the selected employee to the process's data.](../../img/col_prototype_node_action.png)
 
-This **save-item** [Action](../../../node/actions.md) is **manual** (since it will be triggered by the user) and **optionally** (since selecting an employee is not a requirement to go to the next [Node](../../../node/) in the process).
+This **save-item** action is **manual** (since it will be triggered by the user) and **optionally** (since selecting an employee is not a requirement to go to the next [Node](../../../node/) in the process).
 
 To allow the user to change his mind about the selected employee, this action is also marked as **Repeatable**.
 
@@ -74,16 +74,16 @@ Keep in mind to check the **Data to send** section. Here we are telling the plat
 
 ### Step 2 - Adding the Button & UI Action
 
-Now that we have a [Node Action](../../../node/actions.md) defined, we can go ahead and add the **Select** button in the UI of the [User Task](../../../node/nodes-types/user-task-node/) which contains the Employees Collection.
+Now that we have a [Node Action](../../../actions.md) defined, we can go ahead and add the **Select** button in the UI of the [User Task](../../../node/user-task-node/user-task-node.md) which contains the Employees Collection.
 
 ![Select employee button and its UI Action configuration](../../img/col_prototype_add_button.png)
 
-**Collection Item Save Key** field has an important role in the UI Action configuration of the **Select** button. This field represents how we pass the value of the **Employee** that the user has selected to the [Node Action](../../../node/actions.md) that we created in [**Step 1**](collection-prototype.md#step-1-defining-the-node-action), named _save-item_.
+**Collection Item Save Key** field has an important role in the UI Action configuration of the **Select** button. This field represents how we pass the value of the **Employee** that the user has selected to the [Node Action](../../../actions.md) that we created in [**Step 1**](#step-1---defining-the-node-action), named _save-item_.
 
 In our example, we set **Collection Item Save Key** to be `selectedEmployee` .
 
 :::warning
-**IMPORTANT:** `selectedEmployee` key is how we expose the data from the **Collection** to the [Node Action](../../../node/actions.md). It is **imperative** that the name in the **Collection Item Save Key** is the same as the one used in the **Data to send** input in the [Node Action](../../../node/actions.md).
+**IMPORTANT:** `selectedEmployee` key is how we expose the data from the **Collection** to the [Node Action](../../../actions.md). It is **imperative** that the name in the **Collection Item Save Key** is the same as the one used in the **Data to send** input in the Node Action.
 :::
 
 The button and UI action are mostly configured as any other Button and UI Action would be configured.

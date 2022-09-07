@@ -7,14 +7,14 @@ A task node is a task that uses a Web service, an automated application, or othe
 
 This type of node will be used in several cases:
 
-* a [business rule](./#business-rules) needs to be run on the process instance data
-* a [subprocess](../../../process/subprocess.md) needs to be started
+* a [business rule](#business-rule-action) needs to be run on the process instance data
+* a [subprocess](./start-subprocess-action.md) needs to be started
 * a subprocess needs to send data to the parent process
 * some data needs to be sent to the frontend applications
 
 ## Configuring task nodes
 
-![Task node](../img/service_task.png)
+![Task node](../img/service_task.png#center)
 
 One or more actions can be configured on a task node. The actions are executed in the configured order.
 
@@ -27,14 +27,14 @@ Node configuration is done by accessing the **Node Config** tab. You have the fo
 
 ![](../img/task_node_general_config.png)
 
-{% hint style="info" %}
+:::info
 When encountering a step with `canGoBack` switched to false, all steps found behind it will become unavailable.
-{% endhint %}
+:::
 
-* ****[**Swimlane**](../../../user-roles-management/swimlanes.md) - choose a swimlane (if there are multiple swimlanes on the process) to make sure only certain user roles have access only for certain process nodes- if there are no multiple swimlanes, the value is **Default**
-* ****[**Stage** ](../../../../plugins/custom-plugins/task-management/using-stages.md)- assign a stage to the node
+* [**Swimlane**](../../../user-roles-management/swimlanes.md) - choose a swimlane (if there are multiple swimlanes on the process) to make sure only certain user roles have access only for certain process nodes- if there are no multiple swimlanes, the value is **Default**
+* [**Stage** ](../../../../plugins/custom-plugins/task-management/using-stages.md)- assign a stage to the node
 
-#### Response Timeout &#x20;
+#### Response Timeout
 
 * **Response timeout** - can be triggered if, for example, a topic that you define and add in the [Data stream topics](./#data-stream-topics) tab does not respect the pattern, the format used for this is [ISO 8601 duration format ](https://www.digi.com/resources/documentation/digidocs/90001437-13/reference/r\_iso\_8601\_duration\_format.htm)(for example, a delay of 30s will be set up like `PT30S`)
 
@@ -42,7 +42,7 @@ When encountering a step with `canGoBack` switched to false, all steps found beh
 
 #### Data stream topics
 
-*   **Topic Name** - the topic name where the [process engine](../../../../core-components/flowx-engine/) listens for the response (this should be added to the platform and match the topic naming rule for the engine to listen to it) - available for UPDATES topics (Kafka receive events)
+*   **Topic Name** - the topic name where the [process engine](../../../platform-deep-dive/core-components/flowx-engine.md) listens for the response (this should be added to the platform and match the topic naming rule for the engine to listen to it) - available for UPDATES topics (Kafka receive events)
 
     :::warning
     A naming pattern must be defined on the [process engine configuration](../../../../core-components/platform-setup-guide/flowx-engine-setup-guide/#kafka-configuration) to use the defined topics. It is important to know that all the events that start with a configured pattern will be consumed by the Engine. For example, `KAFKA_TOPIC_PATTERN` is the topic name pattern where the Engine listens for incoming Kafka events.
@@ -51,7 +51,7 @@ When encountering a step with `canGoBack` switched to false, all steps found beh
 
 #### Task Management
 
-* **Update task management** - force [Task Manager Plugin ](../../../../plugins/custom-plugins/task-management/)to update information about this process after this node
+* **Update task management** - force [Task Manager Plugin ](../../../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md)to update information about this process after this node
 
 ![](../img/task_node_task_management.png)
 
@@ -78,27 +78,23 @@ Multiple options are available when configuring an action on a task node. To con
 
 A [business rule](business-rule-action/) is a Task action that allows a script to run. For now, the following script languages are supported:
 
-* &#x20;[Mvel](../../../../overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md)&#x20;
-* JavaScript&#x20;
-* Python&#x20;
-* Groovy&#x20;
-* [DMN](../../../../overview/frameworks-and-standards/business-process-industry-standards/intro-to-dmn.md) - more details about a DMN business rule configuration can be found [here](business-rule-action/dmn-business-rule-action.md)
+* [Mvel](../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md)
+* JavaScript
+* Python
+* Groovy
+* [DMN](../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-dmn.md) - more details about a DMN business rule configuration can be found [here](business-rule-action/dmn-business-rule-action.md)
 
 For more details on how to configure a Business Rule Action, check the following section:
 
-{% content-ref url="business-rule-action/" %}
-[business-rule-action](business-rule-action/)
-{% endcontent-ref %}
+
+[Business rule action](business-rule-action/)
 
 ### Websocket Send Action
 
-Being an event-driven platform FLOWX uses web socket communication in order to push events from the frontend application.&#x20;
-
+Being an event-driven platform FLOWX uses web socket communication in order to push events from the frontend application.
 For more details on how to configure a Websocket Send Action, check the following section:
 
-{% content-ref url="websocket-send-action.md" %}
-[websocket-send-action.md](websocket-send-action.md)
-{% endcontent-ref %}
+[Websocket send action](websocket-send-action.md)
 
 ### Upload File Action
 
@@ -106,26 +102,20 @@ Upload file action will be used to upload a file from the frontend application a
 
 For more details on how to configure an Upload File Action, check the following section:
 
-{% content-ref url="upload-file-action.md" %}
-[upload-file-action.md](upload-file-action.md)
-{% endcontent-ref %}
+[Upload file action](upload-file-action.md)
 
 ### Start Subprocess Action
 
-In order to create reusability between business processes, as well as split complex processes into smaller, easier-to-maintain flows, the start subprocess business rule can be used to trigger the same sequence multiple times.&#x20;
+In order to create reusability between business processes, as well as split complex processes into smaller, easier-to-maintain flows, the start subprocess business rule can be used to trigger the same sequence multiple times.
 
 For more details on how to configure a Business Rule Action, check the following section:
 
-{% content-ref url="start-subprocess-action.md" %}
-[start-subprocess-action.md](start-subprocess-action.md)
-{% endcontent-ref %}
+[Start subprocess action](start-subprocess-action.md)
 
 ### Append Params to Parent Process&#x20;
 
-Used for copying data in the subprocess from its parent process.&#x20;
-
+Used for copying data in the subprocess from its parent process.
 For more details about the configuration, check the following section:
 
-{% content-ref url="append-params-to-parent-process.md" %}
-[append-params-to-parent-process.md](append-params-to-parent-process.md)
-{% endcontent-ref %}
+
+[Append params to parent process](append-params-to-parent-process.md)

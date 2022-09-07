@@ -7,12 +7,12 @@ sidebar_position: 4
 :::info
 **What is it?** A **Start Subprocess Action** is an action that allows you to start a subprocess from another (parent) process.
 
-**Why is it important?**  Using [**subprocesses**](../../../process/subprocess.md) is a good way to split the complexity of your business flow into multiple, simple and reusable processes.&#x20;
+**Why is it important?**  Using [**subprocesses**](../../process/subprocess.md) is a good way to split the complexity of your business flow into multiple, simple and reusable processes.
 :::
 
 ### Configuring a Start Subprocess Action
 
-After you create a process designed to be used as a [subprocess](../../../process/subprocess.md), you will need to start it from another (parent) [process](../../../process/). To do this, you need to add a **Start Subprocess Action** on a [**Task Node** ](./)from the parent process.
+After you create a process designed to be used as a [subprocess](../../process/subprocess.md), you will need to start it from another (parent) [process](../../process/process.md). To do this, you need to add a **Start Subprocess Action** on a [**Task Node** ](./)from the parent process.
 
 The following properties must be configured:
 
@@ -34,7 +34,7 @@ The following properties must be configured:
 
 #### **Back in steps**
 
-* **Allow BACK on this action** - back in process is a functionality that allows you to go back in a business process and redo a series of previous actions in the process. For more details, check [_Moving a token backwards in a process_](../../../../flowx-designer/managing-a-process-flow/moving-a-token-backwards-in-a-process.md) section.
+* **Allow BACK on this action** - back in process is a functionality that allows you to go back in a business process and redo a series of previous actions in the process. For more details, check [**Moving a token backwards in a process**](../../../flowx-designer/managing-a-process-flow/moving-a-token-backwards-in-a-process.md) section.
 
 #### **Parameters**
 
@@ -48,7 +48,7 @@ The following properties must be configured:
 
 #### Data to send
 
-* **Keys** - are used when data is sent from the frontend via an action to validate the data (you can find more information in the [User Task configuration](../user-task-node/) section)
+* **Keys** - are used when data is sent from the frontend via an action to validate the data (you can find more information in the [**User Task configuration**](../user-task-node/) section)
 
 :::warning
 **Data to send** option is configurable only when the action **trigger type** is **Manual**.
@@ -70,10 +70,4 @@ To start a subprocess, we can, for example, create the following minimum configu
 
 ![](../img/subprocess_action_example.png)
 
-## Values 
 
-For more details, please check the following page:
-
-{% content-ref url="../message-send-received-task-node.md" %}
-[message-send-received-task-node.md](../message-send-received-task-node.md)
-{% endcontent-ref %}

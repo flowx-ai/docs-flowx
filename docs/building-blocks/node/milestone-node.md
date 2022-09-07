@@ -4,24 +4,21 @@ sidebar_position: 7
 
 # Milestone node
 
-A **milestone node** is used to define how [user tasks](user-task-node.md) (which are placed between two milestones - **start milestone** and **end milestone**) will be displayed.mi
+A **milestone node** is used to define how [user tasks](./user-task-node/user-task-node.md) (which are placed between two milestones - **start milestone** and **end milestone**) will be displayed.
 
-
-
-![Start milestone node](./img/milestone_node_start.png)
-
-![End milestone node](./img/milestone_node_end.png)
+![Start milestone node](./img/milestone_node_start.png#center)
+![End milestone node](./img/milestone_node_end.png#center)
 
 Multiple options are available for displaying the content:
 
 * [Modal](milestone-node.md#modal)
 * [Page](milestone-node.md#page)
-* [Stepper + Steps](milestone-node.md#stepper-+-steps)
+* [Stepper + Steps](milestone-node.md#stepper--steps)
 * [Container](milestone-node.md#container)
 
 ## Configuring a Milestone node
 
-A combination of [**start**](start-end-error-node.md#start-node-configuration) and [**end**](start-end-error-node.md#end-node-configuration) nodes can be used to achieve all kinds of a grouping of multiple user task nodes.
+A combination of [**start**](../node/start-end-node.md#configuring-a-start-node) and [**end**](./start-end-node.md#configuring-an-end-node) nodes can be used to achieve all kinds of a grouping of multiple user task nodes.
 
 To configure a user task to be displayed in a Modal:
 
@@ -32,11 +29,11 @@ To configure a user task to be displayed in a Modal:
 
 ![](./img/milestone_node_modal_config.gif)
 
-5. Select the **start milestone node** and open [UI Designer](/docs/building-blocks/ui-designer.md) - here you can choose from multiple templates of how to display the content.
+5. Select the **start milestone node** and open [UI Designer](../ui-designer/ui-designer.md) - here you can choose from multiple templates of how to display the content.
 
 6. For example, drag and drop the **modal** template to the canvas.
 
-7. No additional information is required for displaying a **user task** in a modal view but you can do multiple customizations via the different configurations using the [UI Designer](configure-a-template-config-element/).
+7. No additional information is required for displaying a **user task** in a modal view but you can do multiple customizations via the different configurations using the UI Designer.
 
 ![Modal template](./img/milestone_node_modal_config1.gif)
 
@@ -66,7 +63,7 @@ To create a stepper architecture:
 
 For more information about how to create a process with a Stepper + Steps structure, and how to configure the UI, check the following section:
 
-[Create a User Interface](../../../flowx-designer/managing-a-process-flow/)
+[Create a User Interface](../../flowx-designer/managing-a-process-flow/creating-a-user-interface.md)
 
 ### Container
 

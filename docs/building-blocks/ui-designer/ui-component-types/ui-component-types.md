@@ -1,6 +1,10 @@
+---
+sidebar_position: 1
+---
+
 # UI Component types
 
-Different UI component types can be configured using UI Designer. The components can be configured only using [user task](../../node/nodes-types/user-task-node/) nodes or [milestone](../../node/nodes-types/milestone-node.md) nodes.
+Different UI component types can be configured using UI Designer. The components can be configured only using [user task](../../node/user-task-node/user-task-node.md) nodes or [milestone](../../node/milestone-node.md) nodes.
 
 ### User task node UI components
 
@@ -18,8 +22,8 @@ Different UI component types can be configured using UI Designer. The components
 
 <summary>Collection</summary>
 
-* [Collection](./#collection)
-* [Collection Prototype](collection/collection-prototype.md)
+* [Collection](../ui-component-types/collection/collection.md)
+* [Collection Prototype](../ui-component-types/collection/collection_prototype.md)
 
 </details>
 
@@ -28,7 +32,7 @@ Different UI component types can be configured using UI Designer. The components
 <summary>Buttons</summary>
 
 * [Button](buttons.md)
-* [File Upload](../../node/nodes-types/task-node/upload-file-action.md)
+* [File Upload](../ui-component-types/buttons.md#file-upload-button)
 
 </details>
 
@@ -51,7 +55,7 @@ Different UI component types can be configured using UI Designer. The components
 * [Select](form-elements/select-form-field.md)
 * [Checkbox](form-elements/checkbox-form-field.md)
 * [Radio](form-elements/radio-form-field.md)
-* [Switch](form-elements/switch-form-filed.md)
+* [Switch](./form-elements/switch-form-field.md)
 * [Datepicker](form-elements/datepicker-form-field.md)
 
 </details>

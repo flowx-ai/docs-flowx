@@ -21,11 +21,11 @@ Kafka encourages you to see the world as sequences of events, which it models as
 
 ### Topics
 
-Because the world is filled with so many events, Kafka gives us a means to organize them and keep them in order: topics. A topic is an ordered log of events. When an external system writes an event to Kafka, it is appended to the end of a topic.&#x20;
+Because the world is filled with so many events, Kafka gives us a means to organize them and keep them in order: topics. A topic is an ordered log of events. When an external system writes an event to Kafka, it is appended to the end of a topic.
 
-In FLOWX.AI, Kafka handles all communication between the [FLOWX Engine ](core-components/flowx-engine/)and external plugins and integrations. It is also used for notifying running process instances when certain events occur.  More information about KAFKA configuration on the section below:
+In FLOWX.AI, Kafka handles all communication between the [FLOWX Engine ](../../../platform-deep-dive/core-components/flowx-engine.md) and external plugins and integrations. It is also used for notifying running process instances when certain events occur.  More information about KAFKA configuration on the section below:
 
-[flowx-engine-setup-guide](core-components/platform-setup-guide/flowx-engine-setup-guide/)
+[Flowx engine setup guide](../../../platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide/flowx-engine-setup-guide.md)
 
 
 ### Producer
@@ -34,13 +34,13 @@ A producer is an external application that writes messages to a Kafka cluster, c
 
 ### Consumer
 
-The consumer is an external application that reads messages from Kafka topics and does some work with them, like filtering, aggregating, or enriching them with other information sources.&#x20;
+The consumer is an external application that reads messages from Kafka topics and does some work with them, like filtering, aggregating, or enriching them with other information sources.
 
 
-[how-to-create-a-kafka-producer.md](integrations/creating-a-custom-integration/how-to-create-a-kafka-producer)
+[How to create a Kafka producer](../../../platform-deep-dive/integrations/creating-a-kafka-producer.md)
 
 
-[how-to-create-a-kafka-consumer.md](integrations/creating-a-custom-integration/how-to-create-a-kafka-consumer)
+[How to create a Kafka consumer](../../../platform-deep-dive/integrations/creating-a-kafka-consumer.md)
 
 
 ## In-depth docs

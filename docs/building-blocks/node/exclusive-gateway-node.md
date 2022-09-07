@@ -8,7 +8,7 @@ Flow decisions can be configured using an Exclusive Gateway. Using this node wil
 
 ## Configuring an Exclusive Gateway node
 
-![Exclusive gateway](./img/gateway_exclusive.png)
+![Exclusive gateway](./img/gateway_exclusive.png#center)
 
 
 To configure this kind of node, it is useful to previously configure the **in** and **out** sequence from the gateway process.
@@ -24,14 +24,14 @@ To configure this kind of node, it is useful to previously configure the **in** 
 When encountering a step with `canGoBack` switched to false, all steps found behind it will become unavailable.
 :::
 
-* [**Swimlane**](swimlanes) - choose a swimlane (if there are multiple swimlanes on the process) to make sure only certain user roles have access only for certain process nodes- if there are no multiple swimlanes, the value is **Default**
-* [**Stage** ](stage)- assign a stage to the node
+* [**Swimlane**](../../platform-deep-dive/user-roles-management/swimlanes.md) - choose a swimlane (if there are multiple swimlanes on the process) to make sure only certain user roles have access only for certain process nodes- if there are no multiple swimlanes, the value is **Default**
+* [**Stage** ](../../platform-deep-dive/plugins/custom-plugins/task-management/using-stages.md)- assign a stage to the node
 
 ![](./img/gateway_exclusive_stages.png)
 
 #### Gateway Decisions
 
-* **Language** - when configuring the condition, [MVEL](/docs/platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md) (or [DMN](#configuring-a-dmn-exclusive-gateway-node) will be used and you should enter an expression that will be evaluated as **true** or **false**
+* **Language** - when configuring the condition, [MVEL](/docs/platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md) (or [DMN](#configuring-a-dmn-exclusive-gateway-node)) will be used and you should enter an expression that will be evaluated as **true** or **false**
 * **Conditions** - selecting the **Gateway Decisions** tab of the gateway we can see that we can configure a list of conditions (**if, else if, else**) and **select** from a dropdown where we should go if the condition is **true**
 
 :::warning

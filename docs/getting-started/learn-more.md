@@ -1,18 +1,10 @@
 ---
 sidebar_position: 3
+hide-title: true
 title: Learn more
 ---
 
-# Learn more
+import Docs from "../../src/components/docsHome";
 
-Read about the frameworks and standards used to build the platform:
+<Docs />
 
-[Broken link]
-
-Find out about the core platform components:
-
-[Broken link]
-
-See the Release Notes so you will never miss something:
-
-[Broken link]

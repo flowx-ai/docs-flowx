@@ -8,9 +8,9 @@ id: intro-to-bpmn
 
 Business Process Model and Notation (BPMN) is a graphical representation for specifying business processes in a business process model.
 
-It is **the most widely used standard for business process diagrams**. It is intended to be used directly by the stakeholders who design, manage and realize business processes, but at the same time be precise enough to allow BPMN diagrams to be translated into software process components.&#x20;
+It is **the most widely used standard for business process diagrams**. It is intended to be used directly by the stakeholders who design, manage and realize business processes, but at the same time be precise enough to allow BPMN diagrams to be translated into software process components.
 
-This is why we chose it for modeling the process flows. :sparkles:&#x20;
+This is why we chose it for modeling the process flows. :sparkles:
 
 ## BPMN 2.0 elements
 
@@ -26,7 +26,7 @@ Events describe something that happens during the course of a process. There are
 
 ### Activities
 
-An activity represents a unit of work to be performed by the business process. An activity can be atomic (a task) or can represent a group of more activities (a sub-process).&#x20;
+An activity represents a unit of work to be performed by the business process. An activity can be atomic (a task) or can represent a group of more activities (a sub-process).
 
 ![various types of activities](./img/activities.png)
 
@@ -36,7 +36,7 @@ Gateways are used to control how a process flows. They act as a decision point t
 
 ![exclusive and parallel gateways](./img/gateways.png)
 
-### **Pools and lanes** <a href="#pools-and-lanes" id="pools-and-lanes"></a>
+### Pools and lanes <a href="#pools-and-lanes" id="pools-and-lanes"></a>
 
 Pools and lanes are used in order to group the process steps by process participants. To show that certain user roles are responsible for performing specific process steps you can divide the process using lanes.
 

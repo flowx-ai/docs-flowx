@@ -10,10 +10,9 @@ sidebar_position: 1
 **Why is it useful?** The script can read and write the data available on the process at the moment the script is executed. For this reason, it is very important to understand what data is available on the process when the script is executed.
 :::
 
-Business rules can be attached to a node by using actions with [**action rules**](../../../actions.md#action-rules) on them. These can be specified using [DMN rules](dmn-business-rule-action.md), [MVEL](../../../../../overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md) expressions, or scripts written in Javascript, Python, or Groovy.&#x20;
+Business rules can be attached to a node by using actions with [**action rules**](../../../actions.md#action-rules) on them. These can be specified using [DMN rules](dmn-business-rule-action.md), [MVEL](../../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md) expressions, or scripts written in Javascript, Python, or Groovy.
 
-
-[supported-scripts.md](../../../supported-scripts)
+[Supported scripts](../../../supported-scripts)
 
 ![Business rule action](./img/business_rule_action.png)
 
@@ -70,7 +69,7 @@ Let's take look at the following example. We have some data about the gender of 
 ### :warning: Flattened vs unflattened keys
 
 :::warning
-With version **2.5.0** we introduced unflattened keys inside business rules. Flattened keys are now obsolete. You are notified when you need to delete and recreate a business rule so it contains an unflattened key.
+With version [**2.5.0**](/release-notes/v2.5.0-april-2022) we introduced unflattened keys inside business rules. Flattened keys are now obsolete. You are notified when you need to delete and recreate a business rule so it contains an unflattened key.
 :::
 
 ![Obsolete business rule](./img/obsolete_business_rule.png)
@@ -78,7 +77,7 @@ With version **2.5.0** we introduced unflattened keys inside business rules. Fla
 1. Here is an example of a flattened key inside a business rule:
 
 :::danger
-Example for deprecated versions previous to [**v2.5.0**](../../../../../overview/release-notes/v2.5.0-april-2022/)****
+Example for deprecated versions previous to [**v2.5.0**](/release-notes/v2.5.0-april-2022)
 :::
 
 ```
@@ -97,7 +96,7 @@ def createActionForCustomer (name, cnp)
 2. Here is an example of an unflattened key inside a business rule:
 
 :::success
-Example available for [**v2.5.0**](../../../../../overview/release-notes/v2.5.0-april-2022/) **** version and higher
+Example available for [**v2.5.0**](/release-notes/v2.5.0-april-2022) version and higher
 :::
 
 ```
@@ -115,6 +114,4 @@ output.put("identificationData", createActionForCustomer("action1", input.client
 
 For more information about each type of Business Rule Action, check the following sections:
 
-{% content-ref url="dmn-business-rule-action.md" %}
-[dmn-business-rule-action.md](dmn-business-rule-action.md)
-{% endcontent-ref %}
+[DMN Business Rule Action](dmn-business-rule-action.md)

@@ -50,5 +50,3 @@ This is what the BPMN diagram looks like:
 :::tip
 Download sample [here](./assets/sample_bpmn_process_new_credit_card.bpmn).
 :::
-
-<span class="badge">New</span>

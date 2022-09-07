@@ -9,7 +9,7 @@ const urlEmbed = require('./src/remark/url-embed');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'What is FLOWX.AI?',
+  title: 'FLOWX.AI Docs',
   tagline: 'Find out more',
   url: process.env.URL,
   baseUrl: '/',
@@ -39,16 +39,13 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           remarkPlugins: [urlEmbed],
-
           },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          
-        },
+
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: [
+          require.resolve('./src/css/custom.css'),
+          require.resolve('./src/css/rubik.css'),
+          ]
         },
       }),
     ],
@@ -58,13 +55,20 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     
     ({
+
+      docs: {
+        sidebar: {
+          autoCollapseCategories: true,
+          hideable: true,
+        },
+      },
       
       navbar: {
         title: 'FLOWX.AI DocPortal',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
-          
+          width: 40,
         },
         items: [
           {
@@ -73,7 +77,13 @@ const config = {
             position: 'left',
             label: 'Documentation',
           },
-          {to: '/release-notes', label: 'Release Notes', position: 'left'},
+          {
+            type: 'doc',
+            docId: 'release-notes',
+            docsPluginId: 'release-notes',
+            position: 'left',
+            label: 'Release Notes',
+          },
           {to: '/faqs', label: 'FAQs', position: 'left'},
           {to: 'https://support.flowx.ai/', label: 'Support', position: 'right'},
           {to: 'https://www.flowx.ai/contact-us', label: 'Contact', position: 'right'},
@@ -120,13 +130,18 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} FLOWX.AI `,
+        logo: {
+          height: 100,
+          alt: 'Meta Open Source Logo',
+          src: '/img/logo_footer.svg',
+          href: 'https://flowx.ai',
+        },
+        copyright: `Copyright © FLOWX.AI ${new Date().getFullYear()}`,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
-
 
       zoom: {
         selector: '.markdown :not(em) > img',
@@ -152,9 +167,20 @@ const config = {
           language: "en"
         }
       ],
+
+      [
+        "@docusaurus/plugin-content-docs",
+        {
+          id: "release-notes",
+          sidebarPath: require.resolve("./releases.sidebars.js"),
+          routeBasePath: "release-notes",
+          path: "release-notes",
+          showLastUpdateTime: true,
+          remarkPlugins: [urlEmbed],
+        },
+      ],
+
     ],
-    
-    
 };
 
 module.exports = config;

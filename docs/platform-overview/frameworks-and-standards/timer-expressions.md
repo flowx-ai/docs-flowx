@@ -9,7 +9,7 @@ There are two timer expressions formats supported:
 
 ### **Cron Expressions**
 
-A cron expression is a string made up of **six mandatory subexpressions (fields) that each specifies an aspect of the schedule** (for example,  `* * * * * *_`). These fields, separated by white space, can contain any of the allowed values with various combinations of the allowed characters for that field.
+A cron expression is a string made up of **six mandatory subexpressions (fields) that each specifies an aspect of the schedule** (for example,  `* * * * * *`). These fields, separated by white space, can contain any of the allowed values with various combinations of the allowed characters for that field.
 
 :::info
 A field may be an asterisk (`*`), which always stands for “first-last”. For the day-of-the-month or day-of-the-week fields, a question mark (`?`) may be used instead of an asterisk.
@@ -33,7 +33,7 @@ More details:
 
 #### Cron Expressions are used in the following example:
 
-* [**Process definition**](flowx-elements/process/process-definition) - **Expiry time** - a user can set up an `expiryTime` function on a process, for example, a delay of 30s will be set up like:
+* [**Process definition**](../../building-blocks/process/process-definition/process-definition.md) - **Expiry time** - a user can set up an `expiryTime` function on a process, for example, a delay of 30s will be set up like:
 
 ![](./img/timer_process_settings.png)
 
@@ -47,7 +47,7 @@ More details:
 
 #### ISO 8601 format is used in the following examples:
 
-* [**Node config**](flowx-elements/node/) - **Response Timeout** - can be triggered if, for example, a topic that you define and add in the **Data stream topics** tab does not respect the pattern
+* [**Node config**](../../building-blocks/node/node.md) - **Response Timeout** - can be triggered if, for example, a topic that you define and add in the **Data stream topics** tab does not respect the pattern
 
 ISO 8601 dates and times:
 
@@ -64,6 +64,6 @@ ISO 8601 dates and times:
 
 ![](./img/timer_response_timeout.png)
 
-* [**Actions**](flowx-elements/node/actions) - **Timer expression** - it can be used if a delay is required on that action
+* [**Actions**](../../building-blocks/actions.mdß) - **Timer expression** - it can be used if a delay is required on that action
 
 ![](./img/timer_action_edit.png)

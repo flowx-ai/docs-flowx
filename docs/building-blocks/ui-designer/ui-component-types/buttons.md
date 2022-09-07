@@ -17,7 +17,7 @@ Sections that can be configured regarding general settings:
    * Label
 2. Styling - where extra CSS can be added
 3. Expressions -  you can add here `if` expressions that will be evaluated to be true or false
-4. **UI Action -** that defines what action will trigger ([more details on how to configure](ui-actions)))
+4. **UI Action -** that defines what action will trigger ([more details on how to configure](../ui-actions.md))
 
 ![Button configuration for a save action](../img/button_config.png)
 
