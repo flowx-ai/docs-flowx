@@ -76,7 +76,7 @@ img[src*='#center'] {
 }
 
 @media (max-width: 996px) {
-   .navbar__items--right .navbar__brand {
+   .navbar__title {
     display: none;
   }
 }
