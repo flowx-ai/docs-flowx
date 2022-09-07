@@ -22,5 +22,4 @@ While the token moves from one node to the next, it might move from one swimlane
 
 The users will be notified when they can no longer interact with the process or when they can resume actions on the process.
 
-
-[configuring-access-roles-for-processes](../../core-components/platform-setup-guide/flowx-engine-setup-guide/configuring-access-roles-for-processes)
+[Configuring access roles for processes](../platform-setup-guide/flowx-engine-setup-guide/configuring-access-roles-for-processes.md)

@@ -71,3 +71,6 @@ img[src*='#center'] {
   font-weight: bold;
 }
 
+.image-scaled {
+  transform: scale(0.80);
+}

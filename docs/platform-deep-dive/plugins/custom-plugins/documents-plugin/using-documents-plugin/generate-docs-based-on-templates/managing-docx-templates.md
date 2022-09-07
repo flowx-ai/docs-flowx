@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+--- 
+
 # Managing docx templates
 
 ## Defining a DOCX template format

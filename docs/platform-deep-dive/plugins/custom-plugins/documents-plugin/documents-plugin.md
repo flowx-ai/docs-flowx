@@ -14,12 +14,8 @@ It can be quickly deployed on the chosen infrastructure, preloaded with the need
 
 Let's go through the steps needed in order to deploy and set up the plugin:
 
-{% content-ref url="../../plugins-setup-guide/documents-plugin-setup/" %}
-[documents-plugin-setup](../../plugins-setup-guide/documents-plugin-setup/)
-{% endcontent-ref %}
+[Documents plugin setup](../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md)
 
 We've prepared some examples of various use cases where this plugin would be useful:
 
-{% content-ref url="using-the-plugin/" %}
-[using-the-plugin](using-the-plugin/)
-{% endcontent-ref %}
+[Using the plugin](./using-documents-plugin/using-documents-plugin.md)

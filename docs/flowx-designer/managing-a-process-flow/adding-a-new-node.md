@@ -6,18 +6,18 @@ sidebar_position: 2
 
 Once you create a new process definition, you can start configuring it by adding new nodes.
 
-You can choose between a series of available node types below. For an overview of what each node represents, see [BPMN 2.0 basic concepts](https://app.gitbook.com/@flowx-ai/s/flowx-docs/\~/drafts/-MWUDp87GMzNmryEgBSx/visual-studio/what-is-the-visual-studio):
+You can choose between a series of available node types below. For an overview of what each node represents, see [BPMN 2.0 basic concepts](../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-bpmn/bpmn-basic-concepts/bpmn-basic-concepts.md):
 
-* [start event](../../flowx-elements/node/nodes-types/start-end-error-node.md)
-* [end event](../../flowx-elements/node/nodes-types/start-end-error-node.md)
-* [service task](../../flowx-elements/node/nodes-types/task-node/)
-* [user task](../../flowx-elements/node/nodes-types/user-task-node/)
-* [parallel gateway](../../flowx-elements/node/nodes-types/parallel-gateway.md)
-* [exclusive gateway](../../flowx-elements/node/nodes-types/exclusive-gateway-node.md)
-* [message send event](../../flowx-elements/node/nodes-types/message-send-received-task-node.md)
-* [message receive event](../../flowx-elements/node/nodes-types/message-send-received-task-node.md)
-* [start milestone](../../flowx-elements/node/nodes-types/milestone-node.md)
-* [end milestone](../../flowx-elements/node/nodes-types/milestone-node.md)
+* [start event](../../building-blocks/node/start-end-node.md)
+* [end event](../../building-blocks/node/start-end-node.md)
+* [service task](../../building-blocks/node/task-node/task-node.md)
+* [user task](../../building-blocks/node/user-task-node/user-task-node.md)
+* [parallel gateway](../../building-blocks/node/parallel-gateway.md)
+* [exclusive gateway](../../building-blocks/node/exclusive-gateway-node.md)
+* [message send event](../../building-blocks/node/message-send-received-task-node.md)
+* [message receive event](../../building-blocks/node/message-send-received-task-node.md)
+* [start milestone](../../building-blocks/node/milestone-node.md)
+* [end milestone](../../building-blocks/node/milestone-node.md)
 
 ### Steps for creating a new node
 
@@ -33,7 +33,7 @@ To create a new node on an existing process:
 
 ![](../img/process_flow_adding_a_node.gif)
 
-For each new node, you can set its name, and a set of values (timeout, topic name, key name) and you can also add various [actions](../../flowx-elements/node/actions) to it.
+For each new node, you can set its name, and a set of values (timeout, topic name, key name) and you can also add various [actions](../../building-blocks/actions.md) to it.
 
 [Node](../../building-blocks/node)
 

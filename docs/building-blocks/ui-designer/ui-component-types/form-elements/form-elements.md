@@ -2,28 +2,17 @@
 
 Form elements are used to capture user input. There are many different types of form elements such as simple form, input, textarea, select, checkbox, radio, switch, and datepicker.
 
-![Form elements](../../img/form_elements.png)
+![Form elements](../../img/form_elements.png#center)
 
-{% content-ref url="input-form-field.md" %}
-[input-form-field.md](input-form-field.md)
-{% endcontent-ref %}
 
-{% content-ref url="select-form-field.md" %}
-[select-form-field.md](select-form-field.md)
-{% endcontent-ref %}
+[Input form field](input-form-field.md)
 
-{% content-ref url="checkbox-form-field.md" %}
-[checkbox-form-field.md](checkbox-form-field.md)
-{% endcontent-ref %}
+[Select form field](select-form-field.md)
 
-{% content-ref url="radio-form-field.md" %}
-[radio-form-field.md](radio-form-field.md)
-{% endcontent-ref %}
+[Checkbox form field](checkbox-form-field.md)
 
-{% content-ref url="datepicker-form-field.md" %}
-[datepicker-form-field.md](datepicker-form-field.md)
-{% endcontent-ref %}
+[Radio form field](radio-form-field.md)
 
-{% content-ref url="switch-form-filed.md" %}
-[switch-form-filed.md](switch-form-filed.md)
-{% endcontent-ref %}
+[Datepicker form field](datepicker-form-field.md)
+
+[Switch form field](switch-form-field.md)

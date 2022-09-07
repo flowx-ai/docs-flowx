@@ -1,3 +1,7 @@
+---
+sidebar_position: 5
+---
+
 # Updating / deleting document files
 
 The documents plugin ca also be used to make updates to the files stored for the documents, it is possible to update files or delete them from a document.

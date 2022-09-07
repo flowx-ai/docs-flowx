@@ -7,8 +7,8 @@ It can be quickly deployed on the chosen infrastructure and then connected to th
 Let's go through the steps needed in order to deploy and set up the service:
 
 
-[license-engine-setup-guide](../platform-setup-guide/license-engine-setup-guide/)
+[License engine setup guide](../platform-setup-guide/license-engine-setup-guide/)
 
 Multiple roles are available in the license engine, here are the steps for configuring them:
 
-[configuring-access-roles-old.md](../platform-setup-guide/license-engine-setup-guide/configuring-access-roles-old)
+[Configuring access roles (old)](../../platform-setup-guide/license-engine-setup-guide/configuring-access-roles-old.md)

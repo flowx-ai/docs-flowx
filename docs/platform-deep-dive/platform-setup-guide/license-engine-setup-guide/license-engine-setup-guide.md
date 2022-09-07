@@ -18,7 +18,7 @@ The service comes with most of the needed configuration properties filled in, bu
 
 Basic Postgres configuration - helm values.yaml
 
-```
+```yaml
   licencedb:
     existingSecret: {{secretName}}
     metrics:
@@ -65,9 +65,9 @@ The following variables need to be set in order to connect to the identity manag
 
 `SECURITY_OAUTH2_REALM`
 
-{% content-ref url="configuring-access-roles-old.md" %}
-[configuring-access-roles-old.md](configuring-access-roles-old.md)
-{% endcontent-ref %}
+
+[Configuring access roles (old)](configuring-access-roles-old.md)
+
 
 ### License datasource configuration
 

@@ -1,10 +1,10 @@
 # Designer Setup guide
 
-The [FLOWX Designer](broken-reference) app is made up of a backend microservice and a frontend app. The backend microservice handles saving and editing process definitions. It provides the REST API used by the FLOWX Designer. The processes defined here will be handled by the [FLOWX Engine](../../core-components/flowx-engine/).
+The [FLOWX Designer](../flowx-designer.md) app is made up of a backend microservice and a frontend app. The backend microservice handles saving and editing process definitions. It provides the REST API used by the FLOWX Designer. The processes defined here will be handled by the [FLOWX Engine](../../platform-deep-dive/core-components/flowx-engine.md).
 
 Follow to next steps in order to set them up in your environment.
 
-## Managing Prerequisites
+## **Managing Prerequisites**
 
 The backend microservice uses most of the same resources as the FLOWX Engine.
 
@@ -18,11 +18,11 @@ The backend microservice needs to be able to connect to the Kafka cluster in cas
 
 ### NGINX
 
-It would be best if the FLOWX Designer used a separate [NGINX ](../../overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-nginx.md)load balancer from the Engine. This is used in order to route API calls from the [SPA](./#for-configuring-the-spa) (single page application) to the backend service, to the engine and to various plugins.
+It would be best if the FLOWX Designer used a separate [NGINX ](../../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-nginx.md)load balancer from the Engine. This is used in order to route API calls from the [SPA](designer-setup-guide.md#for-configuring-the-spa) (single page application) to the backend service, to the engine and to various plugins.
 
 This is used in order to route API calls from the SPA (single page application) to the backend service, to the engine, and to various plugins.&#x20;
 
-The FLOWX Designer SPA will use the backend service to manage the platform via REST calls, will use API calls to manage specific content for the plugins and will use REST and [WebSocket](../../flowx-elements/node/nodes-types/task-node/websocket-send-action) calls to connect to the engine.
+The FLOWX Designer SPA will use the backend service to manage the platform via REST calls, will use API calls to manage specific content for the plugins and will use REST and [WebSocket](../../building-blocks/node/task-node/websocket-send-action.md) calls to connect to the engine.
 
 Here's an example/suggestion of an NGINX setup:
 
@@ -84,7 +84,7 @@ spec:
           servicePort: 80
 ```
 
-2\. For testing process definitions from the FlowX Designer, we need to route API calls and WebSocket communication to the Engine backend.
+2. For testing process definitions from the FlowX Designer, we need to route API calls and WebSocket communication to the Engine backend.
 
 setup for routing REST calls:
 
@@ -136,7 +136,7 @@ spec:
           servicePort: 80
 ```
 
-3\. For accessing the REST API of the backend microservice
+3. For accessing the REST API of the backend microservice
 
 ```jsx
 apiVersion: extensions/v1beta1
@@ -189,27 +189,27 @@ spec:
     secretName: {{tls secret}}
 ```
 
-## Configuring the Backend Microservice
+## **Configuring the Backend Microservice**
 
-### Datasource c**onfiguration**
+### Datasource configuration
 
-To store process definitions the Admin microservice connects to the same Postgres / Oracle database as the Engine. Make sure to set the needed database connection details.&#x20;
+To store process definitions the Admin microservice connects to the same Postgres / Oracle database as the Engine. Make sure to set the needed database connection details.
 
 The following configuration details need to be added using environment variables:
 
 `SPRING_DATASOURCE_URL`
 
-`SPRING_DATASOURCE_USERNAME`&#x20;
+`SPRING_DATASOURCE_USERNAME`
 
-`SPRING_DATASOURCE_PASSWORD`&#x20;
+`SPRING_DATASOURCE_PASSWORD`
 
 :::danger
 You will need to make sure that the user, password, connection link and db name are configured correctly, otherwise, you will receive errors at start time.
 ::::
 
-{% hint style="info" %}
-The database schema is managed by a [liquibase](https://www.liquibase.org/) script **** provided with the Engine.
-{% endhint %}
+:::info
+The database schema is managed by a [liquibase](https://www.liquibase.org/) script provided with the Engine.
+:::
 
 ### Kafka configuration
 
@@ -249,7 +249,7 @@ A specific service account should be configured in the OpenID provider to allow 
 
 [Configuring access rights for admin](configuring-access-rights-for-admin)
 
-## Steps to deploy Frontend app
+## **Steps to deploy Frontend app**
 
 The FLOWX Designer is a SPA application that is packaged in a docker image with `nginx:1.19.10`. The web application allows an authenticated user to administrate the FLOWX platform.
 

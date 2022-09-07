@@ -21,10 +21,10 @@ Creating integrations for the FLOWX platform is pretty straightforward, you can 
 To create an integration follow the next steps:
 
 1. Create a Microservice (we'll refer to it as a Connector) that can listen for and react to Kafka events, using your preferred tech stack. Add custom logic for handling the received data from Kafka and obtaining related info from legacy systems. And finally, send the data back to Kafka.
-2. Add the related configuration in the [process definition](broken-reference), you will have to add a [message](broken-reference) send action in one of the [nodes](broken-reference) to send the needed data to the [connector](./#how-to-build-a-connector).
+2. Add the related configuration in the [process definition](../../building-blocks/process/process-definition/process-definition.md), you will have to add a [message](broken-reference) send action in one of the [nodes](broken-reference) to send the needed data to the [connector]().
 3. When the response from the custom integration is ready, send it back to the engine, keep in mind, that your process will wait in a receive message node.
 
-Here's the startup code for a Java Connector Microservice:&#x20;
+Here's the startup code for a Java Connector Microservice:
 
 [Quickstart connector](https://github.com/flowx-ai/quickstart-connector)
 
@@ -45,9 +45,9 @@ Connectors should act as a light business logic layer that:
 * Converts data from one domain to another (date formats, list of values, units, etc.)
 * Adds information that is required by the integration but is not important for the process (a flag, generates a GUID for tracing, etc.)
 
-[creating-a-kafka-consumer](creating-a-kafka-consumer)
+[Creating a Kafka consumer](creating-a-kafka-consumer)
 
-[creating-a-kafka-producer](creating-a-kafka-producer)
+[Creating a Kafka producer](creating-a-kafka-producer)
 
 Keep in mind that you are in an event-driven architecture and the communication between the engine and the connector is asynchronous. The connectors will need to be designed in such a way that they do not bloat the platform. Depending on the communication type between the connector and the legacy system you might need to also add custom implementation for load balancing requests, scaling the connector, and such.
 

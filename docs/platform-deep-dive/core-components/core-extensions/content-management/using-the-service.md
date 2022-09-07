@@ -18,9 +18,9 @@ Kafka topic names can be set by using environment variables:
 * `KAFKA_TOPIC_REQUEST_CONTENT_IN`
 * `KAFKA_TOPIC_REQUEST_CONTENT_OUT`
 
-{% hint style="warning" %}
+:::caution
 The Engine is listening for messages on topics with names of a certain pattern, make sure to use an outgoing topic name that matches the pattern configured in the Engine.
-{% endhint %}
+:::
 
 ### Example: Request a label by language or source system code
 
@@ -28,7 +28,7 @@ Used to translate custom codes into labels using the specified [language](langua
 
 Various external systems and integrations might use different labels for the same information. In the processes, it is easier to use the corresponding code and translate this into the needed label when necessary: for example when sending data to other integrations, when generating documents, etc.
 
-You will need to add a [Kafka send event](../../../flowx-elements/node/nodes-types/message-send-received-task-node.md#configuring-a-kafka-send-action) in your process definition using the FLOWX Designer to make a request to the CMS service.
+You will need to add a [Kafka send event](../../../../building-blocks/node/message-send-received-task-node.md) CMS service.
 
 The following values are expected in the request body:
 

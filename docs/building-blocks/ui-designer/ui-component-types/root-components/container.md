@@ -26,10 +26,8 @@ Properties that can be configured:
 
 The above example of properties will generate the following output (the button being displayed on the right side of the container, under the form with three form elements):
 
-![](../../img/ui_designer_container_settings.png
+![](../../img/Screenshot%202022-06-07%20at%2015.26.28.png)
 
 For more information about styling and layout configuration, check the following section:
 
-{% content-ref url="../../" %}
-[..](../../)
-{% endcontent-ref %}
+[UI Designer](../../ui-designer.md#styling)

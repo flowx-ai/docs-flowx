@@ -16,6 +16,6 @@ Now that we've covered the main components and building blocks of the FLOWX Plat
 
 [Adding more flow branches](adding-more-flow-branches)
 
-[Create a user interface](create-a-user-interface.md)
+[Create a user interface](creating-a-user-interface)
 
 After following all the above steps you should be able to replicate an end-to-end process flow and know how FLOWX Designer works. :pencil2:

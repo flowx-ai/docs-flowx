@@ -1,5 +1,4 @@
 ---
-id: node
 sidebar_position: 2
 ---
 

@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # FLOWX.AI Engine Setup guide
 
 ## Infrastructure Prerequisites
@@ -10,7 +14,7 @@ A basic Postgres configuration:
 
 *   helm values.yaml:
 
-    ```javascript
+    ```yaml
       onboardingdb:
         existingSecret: {{secretName}}
         metrics:
@@ -159,7 +163,7 @@ It is important to know that all the events that start with a configured pattern
 #### **Topics related to the scheduler extension**
 
 
-[scheduler](../../core-extensions/scheduler/)
+[Scheduler](../../core-components/core-extensions/scheduler.md)
 
 
 `KAFKA_TOPIC_PROCESS_EXPIRE_IN` - the topic name that the Engine listens on for requests to expire processes
@@ -170,7 +174,7 @@ It is important to know that all the events that start with a configured pattern
 
 `KAFKA_TOPIC_PROCESS_SCHEDULE_IN_RUN_ACTION` - the topic name that the Engine listens on for requests to run scheduled actions
 
-[using-the-scheduler](../../core-extensions/scheduler/using-the-scheduler)
+[Using the scheduler](../../core-components/core-extensions/scheduler.md#using-the-scheduler)
 
 
 #### **Processes can also be started by sending messages to a Kafka topic.**
@@ -200,7 +204,7 @@ The following variables need to be set in order to connect to the identity manag
 `SECURITY_OAUTH2_REALM`
 
 
-[configuring-access-roles-for-processes](configuring-access-roles-for-processes)
+[Configuring access roles for processes](configuring-access-roles-for-processes)
 
 
 ### Debugging

@@ -60,7 +60,7 @@ Kafka is a unified platform for handling all the real-time data feeds. Kafka sup
 
 Kafka is very fast and performs 2 million writes/sec. Kafka persists all data to the disk, which essentially means that all the writes go to the page cache of the OS (RAM). This makes it very efficient to transfer data from a page cache to a network socket.
 
-[intro-to-kafka](../overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-kafka)
+[Intro to Kafka](../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-kafka-concepts.md)
 
 [Kafka documentation](https://kafka.apache.org/documentation/)
 
@@ -90,7 +90,7 @@ PostgreSQL, also known as Postgres, is a free and open-source relational databas
 
 #### MongoDB
 
-MongoDB is a [source-available](https://en.wikipedia.org/wiki/Source-available) [cross-platform](https://en.wikipedia.org/wiki/Cross-platform) [document-oriented database](https://en.wikipedia.org/wiki/Document-oriented\_database) program. Classified as a [NoSQL](https://en.wikipedia.org/wiki/NoSQL) database program, MongoDB uses [JSON](https://en.wikipedia.org/wiki/JSON)-like documents with optional [schemas](https://en.wikipedia.org/wiki/Database\_schema).
+MongoDB is a source-available cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional [schemas](https://en.wikipedia.org/wiki/Database\_schema).
 
 Used by FLOWX.AI to store business process data and configuration information on the core/plugin components.
 
@@ -107,7 +107,7 @@ It is also be used as a Pub/Sub messaging solution, allowing messages to be pass
 It is used by FLOWX.AI for caching the process definitions-related data.
 
 
-[intro-to-redis](../overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-redis.md)
+[Intro to Redis](../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-redis.md)
 
 
 [Redis documentation](https://redis.io/docs/)
@@ -121,7 +121,7 @@ FLOWX utilizes the Nginx engine as a load balancer and for routing the web traff
 The FLOWX.AI Designer SPA will use the backend service to manage the platform via REST calls, will use API calls to manage specific content for the plugins, and will use REST and WebSocket calls to connect to the engine.
 
 
-[intro-to-nginx](../overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-nginx)
+[Intro to NGINX](../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-nginx.md)
 
 
 [NGINX documentation](https://nginx.org/en/docs/)

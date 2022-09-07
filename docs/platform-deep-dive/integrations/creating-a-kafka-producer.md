@@ -1,7 +1,7 @@
 # Creating a Kafka producer 
 
 :::tip
-using Spring Boot
+This guide is created using Spring Boot.
 :::
 
 Here are some tips regarding needed configurations and code samples for implementing a Kafka producer using Java.

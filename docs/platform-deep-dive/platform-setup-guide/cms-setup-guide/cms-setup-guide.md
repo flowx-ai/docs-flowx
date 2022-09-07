@@ -6,7 +6,7 @@ It has the following dependencies:
 
 * a [mongodb](https://www.mongodb.com/2) database
 * it needs to be able to connect to the same Kafka instance as the one used by the engine
-* a [redis](https://redis.io/) instance for caching&#x20;
+* a [redis](https://redis.io/) instance for caching
 
 The service comes with most of the needed configuration properties filled in, but there are a few that need to be set up using some custom environment variables.
 
@@ -16,7 +16,7 @@ The service comes with most of the needed configuration properties filled in, bu
 
 Basic Mongo configuration - helm values.yaml
 
-```
+```yaml
 cms-mdb:
     existingSecret: {{secretName}}
     mongodbDatabase: {{CmsDatabaseName}}
@@ -44,7 +44,7 @@ cms-mdb:
 
 ### **Redis server** <a href="#faa668e8-966f-468a-8009-f4e903e01d14" id="faa668e8-966f-468a-8009-f4e903e01d14"></a>
 
-The service can use the [Redis component](https://app.gitbook.com/@flowx-ai/s/flowx-docs/flowx-engine/setup-guide#2-redis-server) already deployed for the engine.
+The service can use the [Redis component](../../../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-redis.md) already deployed for the engine.
 
 ## Configuration <a href="#bad24571-ff23-4ec3-83d9-8a2ace74a6b4" id="bad24571-ff23-4ec3-83d9-8a2ace74a6b4"></a>
 

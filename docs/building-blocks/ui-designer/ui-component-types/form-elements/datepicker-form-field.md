@@ -13,7 +13,7 @@ The available configuration options for this form element are:
 #### Datepicker settings
 
 1. General
-   * **Key** - creates the biding between form element and process data so it can be later used in [decisions](../../../node/nodes-types/exclusive-gateway-node.md), [business rules ](../../../node/nodes-types/task-node/)or [integrations](../../../node/nodes-types/message-send-received-task-node.md)
+   * **Key** - creates the biding between form element and process data so it can be later used in [decisions](../../../node/exclusive-gateway-node.md), [business rules](../../../node/task-node/task-node.md) or [integrations](../../../node/message-send-received-task-node.md)
 2. Flowx props
    * **Field Placeholder** - placeholder when the field has no value
    * **Field Label** - the label of the input

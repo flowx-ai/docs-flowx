@@ -10,7 +10,7 @@ This node represents an interaction with the user. It is used to display a piece
 
 ![User Task Node](../img/user_task_node.png#center)
 
-User task nodes allow you to define and configure UI templates and possible [actions](../../actions.md) for a certain template config node (ex: [button components](../../ui-designer/ui-component-types/buttons.md).
+User task nodes allow you to define and configure UI templates and possible [actions](../../actions.md) for a certain template config node (ex: [button components](../../ui-designer/ui-component-types/buttons.md)).
 
 #### General Config
 

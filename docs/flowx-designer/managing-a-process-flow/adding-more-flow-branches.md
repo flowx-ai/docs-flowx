@@ -4,9 +4,9 @@ sidebar_position: 5
 
 # Adding more flow branches
 
-To split the process flow into more steps, you just need to use a [parallel gateway](../../flowx-elements/node/nodes-types/parallel-gateway) node type.
+To split the process flow into more steps, you just need to use a [parallel gateway](../../building-blocks/node/parallel-gateway.md) node type.
 
-![Parallel Gateway](../img/process_flowx_parallel.png)
+![Parallel Gateway](../img/process_flowx_parallel.png#center)
 
 ### Steps for creating a flow with two branches
 
@@ -21,4 +21,4 @@ To create a flow with two branches:
 
 ![Visual Guide Parallel Gateway](../img/process_flow_adding_branches.gif)
 
-[Parallel Gateway](../../flowx-elements/node/nodes-types/parallel-gateway)
+[Parallel Gateway](../../building-blocks/node/parallel-gateway.md)

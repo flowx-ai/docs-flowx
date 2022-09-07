@@ -6,12 +6,12 @@ Light CRM uses an Elastic Search engine to user retrieve details using partial m
 
 #### Prerequisites and configurations
 
-[customer-management-plugin-configuration.md](../../plugins-setup-guide/customer-management-plugin-configuration)
+[Customer Management plugin configuration](../../plugins-setup-guide/customer-management-plugin-configuration.md)
 
 #### Setup communication between the engine and the plugin
 
-[using-the-crm-plugin](using-the-crm-plugin/)
+[Using the CRM plugin](../../custom-plugins/customer-management/using-the-crm-plugin.md)
 
 #### Examples
 
-[crm-plugin-example.md](crm-plugin-example)
+[CRM plugin example](../../custom-plugins/customer-management/crm-plugin-example.md)

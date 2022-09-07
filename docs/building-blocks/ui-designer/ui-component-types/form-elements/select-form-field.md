@@ -15,7 +15,7 @@ The available configuration options for this form element are:
 #### Select Settings
 
 1. **General**
-   * **Key** - creates the biding between form element and process data so it can be later used in [decisions](../../../node/nodes-types/exclusive-gateway-node.md), [business rules](../../../node/nodes-types/task-node/)or [integrations](../../../node/nodes-types/message-send-received-task-node.md)
+   * **Key** - creates the biding between form element and process data so it can be later used in [decisions](../../../node/exclusive-gateway-node.md), [business rules](../../../node/task-node/task-node.md) or [integrations](../../../node/message-send-received-task-node.md)
 2. **Flowx props**&#x20;
    * **Field Placeholder** - placeholder when the field has no value
    * **Field Label** - the label of the input
@@ -46,16 +46,16 @@ As mentioned previously, you can create dropdowns including static data, enumera
 
 To create this kind of process, we need the following elements:
 
-* a [**start**](../../../node/nodes-types/start-end-error-node.md#start-node) node and an [**end**](../../../node/nodes-types/start-end-error-node.md#end-node) node
-* a [**start milestone** ](../../../node/nodes-types/milestone-node.md)node (add a [page](../../../node/nodes-types/milestone-node.md#page) UI element to it) and an **end milestone** node
+* a [**start**](../../../node/start-end-node.md#start-node) node and an [**end**](../../../node/start-end-node.md#end-node) node
+* a [**start milestone**](../../../node/start-end-node.md#start-node) UI element to it and an [**end milestone**](../../../node/milestone-node.md) node
 
 ![](../../img/dynamic_dropdown1.gif)
 
-* a [**task node**](../../../node/nodes-types/task-node/)(this will be used to set which data will be displayed on the dropdowns)
+* a [**task node**](../../../node/task-node/task-node.md) (this will be used to set which data will be displayed on the dropdowns)
 
 ![](../../img/dynamic_dropdown2.png)
 
-* a [**user task node**](../../../node/nodes-types/user-task-node/)(here we have the client forms and here we add the SELECT elements)
+* a [**user task node**](../../../node/user-task-node/user-task-node.md) (here we have the client forms and here we add the SELECT elements)
 
 ![](../../img/dynamic_dropdown3.gif)
 
@@ -74,7 +74,7 @@ Follow the next steps to create the process from scratch:
    * Action type - **Business Rule**
    * **Automatic**
    * **Mandatory**
-   * **Language** (we used an [**MVEL**](../../../../overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md) script to create a list of objects)
+   * **Language** (we used an [**MVEL**](../../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md) script to create a list of objects)
 
 ![](../../img/configure_nodes_dropdown.gif)
 
@@ -89,7 +89,7 @@ Follow the next steps to create the process from scratch:
 
 Below you can find the MVEL script used in the above example:
 
-```
+```mvel
 output.put("application",
 {
     "client": {

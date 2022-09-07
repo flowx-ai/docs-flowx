@@ -12,7 +12,7 @@ sidebar_position: 3
 
 ### Configuring an Upload File Action
 
-Multiple options are available for this type of action and can be configured via the FLOWX Designer. To configure an Upload File Action, use the **Actions** tab at the [task node level](../../../../flowx-designer/managing-a-process-flow/adding-an-action-to-a-node.md), which has the following configuration options:
+Multiple options are available for this type of action and can be configured via the FLOWX Designer. To configure an Upload File Action, use the **Actions** tab at the [task node level](../../../flowx-designer/managing-a-process-flow/adding-an-action-to-a-node), which has the following configuration options:
 
 * [Action Edit](upload-file-action.md#action-edit)
 * [Back in steps (for Manual actions)](upload-file-action.md#back-in-steps)

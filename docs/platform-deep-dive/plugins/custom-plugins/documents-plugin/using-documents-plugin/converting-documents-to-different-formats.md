@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # Converting documents to different formats
 
 Convert a document to a different format, for example convert a pdf to jpeg.

@@ -1,14 +1,14 @@
 # Append Params to Parent Process
 
 :::info
-**What is it?**  It is a type of action that allows you to send data from a [subprocess](../../../process/subprocess.md) to a parent [process](../../../process/).
+**What is it?**  It is a type of action that allows you to send data from a [subprocess](../../process/subprocess.md) to a parent [process](../../process/process.md).
 
 **Why is it important?**   If you are using subprocesses that produce data that needs to be sent back to the main process, you can do that by using an **Append Params to Parent Process** action.
 :::
 
 ### Configuring an Append Params to Parent Process
 
-After you create a process designed to be used as a [subprocess](../../../process/subprocess.md), you can configure the action. To do this, you need to add an **Append Params to Parent Process** on a [**Task Node** ](./)in the subprocess.
+After you create a process designed to be used as a [subprocess](../../process/subprocess.md), you can configure the action. To do this, you need to add an **Append Params to Parent Process** on a [**Task Node** ](./)in the subprocess.
 
 The following properties must be configured:
 
@@ -21,16 +21,16 @@ The following properties must be configured:
 
 * **Name** - used internally to make a distinction between different actions on nodes in the process. We recommend defining an action naming standard to be able to quickly find the process actions
 * **Order** - if multiple actions are defined on the same node, the running order should be set using this option
-* **Timer expression** - it can be used if a delay is required on that action. The format used for this is [ISO 8601 duration format ](https://www.digi.com/resources/documentation/digidocs/90001437-13/reference/r\_iso\_8601\_duration\_format.htm)(for example, a delay of 30 seconds will be set up as `PT30S`)
+* **Timer expression** - it can be used if a delay is required on that action. The format used for this is [ISO 8601 duration format ](https://www.digi.com/resources/documentation/digidocs/90001437-13/reference/r_iso_8601_duration_format.htm)(for example, a delay of 30 seconds will be set up as `PT30S`)
 * **Action type** - should be set to **Append Params to Parent Process**
 * **Trigger type** (options are Automatic/Manual) - choose if this action should be triggered automatically (when the process flow reaches this step) or manually (triggered by the user); in most use cases, this will be set to automatic
-* **Required type** (options are Mandatory/Optional) - automatic actions can only be defined as mandatory. Manual actions can be defined as mandatory or optional.&#x20;
-* **Repeatable** - should be checked if the action can be triggered multiple times&#x20;
+* **Required type** (options are Mandatory/Optional) - automatic actions can only be defined as mandatory. Manual actions can be defined as mandatory or optional.
+* **Repeatable** - should be checked if the action can be triggered multiple times;
 * **Autorun Children** - when this is switched on, the child actions (the ones defined as mandatory and automatic) will run immediately after the execution of the parent action is finalized
 
 #### **Back in steps**
 
-* **Allow BACK on this action** - back in process is a functionality that allows you to go back in a business process and redo a series of previous actions in the process. For more details, check [_Moving a token backwards in a process_](../../../../flowx-designer/managing-a-process-flow/moving-a-token-backwards-in-a-process.md) section
+* **Allow BACK on this action** - back in process is a functionality that allows you to go back in a business process and redo a series of previous actions in the process. For more details, check [**Moving a token backwards in a process**](../../../flowx-designer/managing-a-process-flow/moving-a-token-backwards-in-a-process.md) section
 
 #### **Parameters**
 

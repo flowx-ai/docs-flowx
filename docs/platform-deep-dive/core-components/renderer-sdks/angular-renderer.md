@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Using the Angular Renderer
 
 ## Angular project requirements
@@ -15,7 +19,9 @@ ng new my-flowx-app
 To install the npm libraries provided by FLOWX you will need to obtain access to the private FLOWX Nexus registry. Please consult with your project DevOps.
 :::
 
-The library uses Angular version **@angular\~11.0.4**, npm version 6.14.11 and node 12
+:::important
+The library uses Angular version **@angular\~13.2.0**, **npm v8.1.2** and **node v16.13.2**.
+:::
 
 Use the following command to install the **renderer** library and its required dependencies:
 

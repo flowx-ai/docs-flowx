@@ -1,8 +1,10 @@
+---
+sidebar_position: 3
+---
+
 # Using the Android Renderer
 
 ## Project requirements
-
-
 
 The Android Renderer sdk was built using the following tool versions:
 

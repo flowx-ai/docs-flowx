@@ -12,13 +12,13 @@ sidebar_position: 2
 
 #### Process Definitions
 
-* create, view, run and edit [processes](../flowx-elements/process/)
+* create, view, run and edit [processes](../building-blocks/process/process.md)
 * view versioning history
 
 #### Active Process
 
-* view active [process instances](../flowx-elements/process/active-process/process-instance)
-* [token ](../flowx-elements/token)instance and its content
+* view active [process instances](../building-blocks/process/process-instance/process-instance.md)
+* [token](../building-blocks/token.md) instance and its content
 * [subprocesses](../flowx-elements/process/subprocess)
 
 </details>
@@ -49,7 +49,7 @@ sidebar_position: 2
 
 * used for multiple source systems, if multiple enumerations values are needed to communicate with other systems
 
-[Example here](../core-components/core-extensions/headless-cms/using-the-service.md#example-request-a-label-by-language-or-source-system-code)
+[Example here](../platform-deep-dive/core-components/core-extensions/content-management/using-the-service.md#example-request-a-label-by-language-or-source-system-code)
 
 </details>
 
@@ -60,23 +60,23 @@ sidebar_position: 2
 #### Task manager
 
 * it is a plugin suitable for back-officers and supervisors as it can be used to easily track and assign activities/tasks inside a company
-* for more information, check the [Task Manager](../plugins/custom-plugins/task-management/) section
+* for more information, check the [Task Management](../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md) section
 
 #### Notification templates
 
 * send various types of notifications: SMS, push notifications to mobile devices, emails
 * forward custom notifications to external outgoing services
-* generate and validate [OTP](../plugins/custom-plugins/notifications/using-the-plugin/otp-flow/) passwords for user identity verification
-* for more information, check the [Notification templates plugin ](../plugins/custom-plugins/notifications/)section
+* generate and validate [OTP](../platform-deep-dive/plugins/custom-plugins/notifications-plugin/using-notifications-plugin/otp-flow/otp-flow.md) passwords for user identity verification
+* for more information, check the [Notification templates plugin](../platform-deep-dive/plugins/custom-plugins/notifications-plugin/notifications-plugin.md) section
 
-#### Document templates&#x20;
+#### Document templates
 
 * store and make changes to documents
 * generate documents based on predefined templates (docx or HTML) and custom process related data
 * convert documents between various formats
 * splitting bulk documents into smaller separate documents
 * editing documents to add generated barcodes/signatures and pictures
-* for more information, check the [Document templates plugin](../plugins/custom-plugins/document-management/) section
+* for more information, check the [Document templates plugin](../platform-deep-dive/plugins/custom-plugins/documents-plugin/documents-plugin.md) section
 
 </details>
 
@@ -125,17 +125,17 @@ A process definition is uniquely identified by its name and version number.
 
 ![Process Definitions](./img/designer_process_definitions.gif)
 
-[Process definition](../flowx-elements/process/process-definition)
+[Process definition](../building-blocks/process/process-definition/process-definition.md)
 
-[Managing a process flow](managing-a-process-flow/)
+[Managing a process flow](./managing-a-process-flow/managing-a-process-flow.md)
 
 ## Viewing active process instances
 
-The complete list of active[ process instances](../flowx-elements/process/active-process/process-instance.md) is visible from the FLOWX Designer. They can be filtered by [process definition](../flowx-elements/process/process-definition.md) names and searched by their unique id. You can also view the current process instance status and data.
+The complete list of active[process instances](../building-blocks/process/process-instance/process-instance.md) is visible from the FLOWX Designer. They can be filtered by [process definition](../building-blocks/process/process-definition/process-definition.md) names and searched by their unique id. You can also view the current process instance status and data.
 
 ![Active process](./img/designer_active_process.png)
 
-[Process instance](../flowx-elements/process/active-process/process-instance)
+[Process instance](../building-blocks/process/process-instance/process-instance.md)
 
 ## Managing CMS
 
@@ -143,9 +143,9 @@ Using the content management feature you can perform multiple actions that enabl
 
 ![Content Management](./img/designer_cms.gif)
 
-[Headless CMS](../core-components/core-extensions/headless-cms/)
+[Headless CMS](../platform-deep-dive/core-components/core-extensions/content-management/content-management.md)
 
-[CMS Setup Guide](../core-components/platform-setup-guide/cms-setup-guide/)
+[CMS Setup Guide](../platform-deep-dive/platform-setup-guide/cms-setup-guide/cms-setup-guide.md)
 
 ## Managing tasks
 
@@ -153,7 +153,7 @@ The Task Manager plugin has the scope to show a process that you defined in Desi
 
 ![Task Management](./img/designer_task_manager.png)
 
-[Task Management](../plugins/custom-plugins/task-management/)
+[Task Management](../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md)
 
 ## Managing notification templates
 
@@ -161,15 +161,15 @@ The notification templates plugin can be viewed, edited, and activated/inactivat
 
 ![](./img/designer_notification_templates.png)
 
-[Notifications](../plugins/custom-plugins/notifications/)
+[Notifications](../platform-deep-dive/plugins/custom-plugins/notifications-plugin/notifications-plugin.md)
 
 ## Managing document templates
 
-One of the main features of the [document management plugin](../plugins/custom-plugins/document-management/) is the ability to generate new documents based on custom templates and prefilled with data related to the current process instance.
+One of the main features of the [document management plugin](../platform-deep-dive/plugins/custom-plugins/documents-plugin/documents-plugin.md) is the ability to generate new documents based on custom templates and prefilled with data related to the current process instance.
 
 ![Document templates plugin](./img/designer_documents.png)
 
-[Document management](../plugins/custom-plugins/document-management/)
+[Document management](../platform-deep-dive/plugins/custom-plugins/documents-plugin/documents-plugin.md)
 
 ## Managing generic parameters
 

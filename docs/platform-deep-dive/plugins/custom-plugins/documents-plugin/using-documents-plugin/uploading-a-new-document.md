@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # Uploading a new document
 
 Documents management can be done via the REST API, for example adding various general documents needed in the processes, but it can also be integrated in the process steps via Kafka events.

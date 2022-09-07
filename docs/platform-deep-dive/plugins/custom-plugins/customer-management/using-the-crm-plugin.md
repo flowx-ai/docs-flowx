@@ -6,9 +6,8 @@ The customer management plugin offers the possibility of retrieving customer det
 
 The plugin listens for incoming requests on a Kafka topic and sends the reply to the Engine on an outgoing topic.
 
-{% content-ref url="kafka-topics-for-customer-management.md" %}
-[kafka-topics-for-customer-management.md](kafka-topics-for-customer-management.md)
-{% endcontent-ref %}
+
+[Kafka topics for Customer Management](#kafka-topics-for-customer-management)
 
 
 ## Kafka topics for customer management

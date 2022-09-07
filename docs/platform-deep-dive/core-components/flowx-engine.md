@@ -138,7 +138,7 @@ If none of these keys have values, all the parameter values from the parent proc
 
 </details>
 
-[flowx-engine-setup-guide](platform-setup-guide/flowx-engine-setup-guide)
+[FLOWX.AI Engine setup guide](../platform-setup-guide/flowx-engine-setup-guide/flowx-engine-setup-guide.md)
 
 ## Triggering or skipping nodes on a process based on Flow Names
 
@@ -148,6 +148,8 @@ For these cases, we have added the possibility of defining flow names. For each 
 
 When starting a process, in case a value is set on the _flowName_ key in the values map, it will be used in order to decide which nodes to be included in a certain process instance. This means that if an adult starts the bank onboarding process, no extra key will be added when starting the process, so the extra nodes that have the _enroll\_minor_ flow name set will not be included. Those nodes will only be included in case a minor person starts an onboarding process.
 
+:::info
 If no _flowName_ value is set on a node, this means the node will be included in all possible flows.
+:::
 
 A node could also be a part of multiple flow names.

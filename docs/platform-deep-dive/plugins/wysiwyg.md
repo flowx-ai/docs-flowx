@@ -1,6 +1,6 @@
 # WYSIWYG Editor
 
-FLOWX Designer's WYSIWYG ( **"What You See Is What You Get**") editor enables you to create and modify [notification](custom-plugins/notifications/) and [document](custom-plugins/document-management/) templates without the need for complicated coding from the developers. WYSIWYG editors make the creation/editing of any type of document or notification easier for the end-user. 
+FLOWX Designer's WYSIWYG ( **"What You See Is What You Get**") editor enables you to create and modify [notification](./custom-plugins/notifications-plugin/notifications-plugin.md) and [document](./custom-plugins/documents-plugin/documents-plugin.md) templates without the need for complicated coding from the developers. WYSIWYG editors make the creation/editing of any type of document or notification easier for the end-user. 
 
 Displaying how the document will be published or printed on the screen, the user can adjust the text, graphics, photos, or other document/notification elements before generating the final output.
 
@@ -26,11 +26,11 @@ The **Source** button can be used to switch to the HTML editor. You can use the 
 
 ### Document Templates
 
-One of the main features of the [document management plugin](custom-plugins/document-management/) is the ability to generate new documents based on custom templates and prefilled with data related to the current process instance.
+One of the main features of the [document management plugin](./custom-plugins/documents-plugin/documents-plugin.md) is the ability to generate new documents based on custom templates and prefilled with data related to the current process instance.
 
 ![Document template](../img/wysiwyg_document_template.png)
 
-[document-management](custom-plugins/document-management/)
+[Documents plugin](./custom-plugins/documents-plugin/documents-plugin.md)
 
 ### Notification Templates
 
@@ -41,7 +41,7 @@ Notification WYSIWYG body has some additional fields (other than documents templ
 
 ![Notification template](../img/wysiwyg_notif_template.png)
 
-[managing-notification-templates.md](custom-plugins/notifications/using-the-plugin/managing-notification-templates)
+[Managing notifications templates](custom-plugins/notifications/using-the-plugin/managing-notification-templates)
 
 ### Data Model
 

@@ -58,7 +58,7 @@ To create a stepper structure:
 ## Adding second input and a submit action
 
 1. Go to your **user task** node and add a new input via **Node UI designer**.
-2. Now go back to the process and add a new [**action rule**](../../flowx-elements/node/actions.md):
+2. Now go back to the process and add a new [**action rule**](../../building-blocks/actions.md):
    * first of all we need to configure the action - the action is called when the button is pressed - the action should be **Manual** (not automatic because it is triggered by a user)
    * we need to keep in mind the name of the action - `saveDataFirstStep`
 3. Go back to the Node UI designer and add a button (we need to link the **button** to the **action** based on the name).

@@ -4,9 +4,9 @@ sidebar_position: 1
 
 # Creating a new process definition
 
-The first step of defining your business process in the FLOWX Designer is adding a new [process definition](../../flowx-elements/process/process-definition.md) for it.
+The first step of defining your business process in the FLOWX Designer is adding a new [process definition](../../building-blocks/process/process-definition/process-definition.md) for it.
 
-This should include at least one [START](../../flowx-elements/node/nodes-types/start-end-error-node.md) and [END](../../flowx-elements/node/nodes-types/start-end-error-node.md) node.
+This should include at least one [START](../../building-blocks/node/start-end-node.md#start-node) and [END](../../building-blocks/node/start-end-node.md#end-node) node.
 
 ### Steps for creating a new process definition
 

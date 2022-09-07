@@ -8,13 +8,13 @@ sidebar_position: 6
 
 ## Supported scripts
 
-Scripts are used to define and run [actions](actions.md) but also properties inside [nodes](nodes-types/). For now, the following script languages are supported:
+Scripts are used to define and run [actions](actions.md) but also properties inside [nodes](./node/node.md). For now, the following script languages are supported:
 
-* [Python](supported-scripts.md#python) (Jython)
+* [Python](#python) (Jython)
 * [DMN](supported-scripts.md#dmn)
 * [MVEL](supported-scripts.md#mvel)
 * [Groovy](supported-scripts.md#groovy)
-* [JavaScript](supported-scripts.md#javascript) (Nashorn Engine)
+* [JavaScript](supported-scripts.md#nashorn-engine-javascript) (Nashorn Engine)
 
 | Scripting Language          | Version |
 | --------------------------- | ------- |
@@ -24,10 +24,10 @@ Scripts are used to define and run [actions](actions.md) but also properties ins
 | Groovy                      | 3.0.8   |
 | Nashorn engine (JavaScript) | 15.4    |   
 
-## Python&#x20;
+## Python
 
 :::info
-We use **Jython**.&#x20;
+We use **Jython**.
 :::
 
 **Jython** is an implementation of the high-level, dynamic, object-oriented language [Python](http://www.python.org/) seamlessly integrated with the [Java](http://www.javasoft.com/) platform. Jython is an open-source solution.

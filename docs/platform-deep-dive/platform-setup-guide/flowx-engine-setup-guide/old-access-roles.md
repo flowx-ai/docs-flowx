@@ -35,7 +35,7 @@ where `START` and `VIEW` are the possible operations to be performed on the defi
 
 Operation permissions can also be set on specific nodes in order to restrict the access to the actions defined on that node. This can be done in a similar way to setting operation permissions on process definitions. The operation name to be used for nodes is `NODE_RUN`.
 
-As nodes also hold the definitions for [the user interface](https://docs.flowx.ai/flowx-designer/building-blocks#template-configs), deciding which user role can see a certain UI template can also be done by using node permissions. The templates linked to a node can only be viewed by a user that has the `NODE_RUN` permission on that node, if the access on that node is restricted.
+As nodes also hold the definitions for the user interface, deciding which user role can see a certain UI template can also be done by using node permissions. The templates linked to a node can only be viewed by a user that has the `NODE_RUN` permission on that node, if the access on that node is restricted.
 
 ### Access to a process definition
 
@@ -43,7 +43,7 @@ You can restrict access to process definitions by user roles. This can be done b
 
 Start by adding the needed roles in the database. These need to match the roles configured in the identity provider solution. Each role can have one or more permissions defined on it. Permissions can be applied to all users or only to the owner of the specific resource (for example the person that started the process instance).
 
-After saving a new process definition, you can also save specific user roles for it to restrict user access.&#x20;
+After saving a new process definition, you can also save specific user roles for it to restrict user access.
 
 Access rights can be defined on the following operations that can be performed on a process definition:
 
@@ -65,4 +65,4 @@ where `START` and `VIEW` are the possible operations to be performed on the defi
 
 Operation permissions can also be set on specific nodes in order to restrict the access to the actions defined on that node. This can be done in a similar way to setting operation permissions on process definitions. The operation name to be used for nodes is `NODE_RUN`.
 
-As nodes also hold the definitions for [the user interface](https://docs.flowx.ai/flowx-designer/building-blocks#template-configs), deciding which user role can see a certain UI template can also be done by using node permissions. The templates linked to a node can only be viewed by a user that has the `NODE_RUN` permission on that node, if the access on that node is restricted.
+As nodes also hold the definitions for the user interface, deciding which user role can see a certain UI template can also be done by using node permissions. The templates linked to a node can only be viewed by a user that has the `NODE_RUN` permission on that node, if the access on that node is restricted.

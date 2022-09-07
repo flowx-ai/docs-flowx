@@ -44,7 +44,7 @@ To add a new substitution tag, follow the next steps.
 public func getTag(withKey key: String) -> String?
 ```
 
-All substitution tags will be retrieved by the [SDK](../../renderer-sdks/) before starting the first process and will be stored in memory.&#x20;
+All substitution tags will be retrieved by the [SDK](../../renderer-sdks/angular-renderer.md) before starting the first process and will be stored in memory.
 
 Whenever the container app needs a substitution tag value for populating the UI of the custom components, it can request the substitution tag using the method above, providing the key.
 
@@ -54,9 +54,9 @@ For example, substitution tags can be used to localize the content inside an app
 
 #### Localizing the app
 
-{% hint style="info" %}
-You must first check and configure the FLOWX Angular Renderer to be able to replicate this example. Click [here](renderer-sdks/using-the-angular-renderer) for more information.
-{% endhint %}
+:::info
+You must first check and configure the FLOWX Angular Renderer to be able to replicate this example. Click [here](../../renderer-sdks/angular-renderer.md#using-the-angular-renderer) for more information.
+:::
 
 The `flxLocalize` pipe is found in the `FlxLocalizationModule`.
 

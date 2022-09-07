@@ -41,13 +41,13 @@ Actions can be:
 
 Some actions can be set to run immediately after another action is performed. In order to achieve this, we need to set the `parentName` field on the action to be used as a callback. The callback actions can be performed when a certain message is received by the Engine. In order for this to happen the `callbacksForAction` header needs to be set on the message. Callback actions can also be configured to run immediately after the parent action is run, by setting the `autoRunChildren` flag to true for the parent action.
 
-[Business Rule Action](./node/task-node/business-rule-action/dmn-business-rule-action.md)
+[Business Rule Action](./node/task-node/business-rule-action/business-rule-action.md)
 
 ### Action params
 
 **Action params** are used to set extra values for actions. They are stored as key/value pairs. For example, we can set a topic to use for sending outgoing messages or the message format to be sent to the front-end.
 
-The decision that needs to be defined on an exclusive gateway is defined using a **node rule**. Similar to action rules, these can be set using [DMN](../../overview/frameworks-and-standards/business-process-industry-standards/intro-to-dmn.md) or [MVEL](../../overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md).
+The decision that needs to be defined on an exclusive gateway is defined using a **node rule**. Similar to action rules, these can be set using [DMN](../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-dmn.md) or [MVEL](../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md).
 
 There are two possible kinds of actions:&#x20;
 

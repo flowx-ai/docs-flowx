@@ -1,3 +1,7 @@
+---
+sidebar_position: 4
+---
+
 # Splitting a document
 
 Split a document into multiple parts. This might be the case, for example, when the client uploads a set of documents as a bulk scanned file that needs to be split into more separate files.
@@ -9,9 +13,9 @@ Kafka topic names can be set by using environment variables:
 * `KAFKA_TOPIC_DOCUMENT_SPLIT_IN`
 * `KAFKA_TOPIC_DOCUMENT_SPLIT_OUT`
 
-{% hint style="warning" %}
+:::caution
 The Engine is listening for messages on topics with names of a certain pattern, make sure to use an outgoing topic name that matches the pattern configured in the Engine.
-{% endhint %}
+:::
 
 ## Request to split documents
 

@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # Generating from docx templates
 
 Used to generate documents based on previously defined document templates. The following example covers generating documents using DOCX templates.

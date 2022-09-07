@@ -1,3 +1,4 @@
+
 # Managing HTML templates
 
 ## Defining a HTML template format
@@ -251,6 +252,4 @@ POST `{{documentUrl}}/internal/html/templates/convert` - converts a docx file to
 ## Examples
 
 
-[html template example]
-
-[Download pdf generated based on the html example](/build/assets/files/html_generated_document.pdf)
+[Download pdf generated based on the html example](.assets/html_generated_document.pdf)

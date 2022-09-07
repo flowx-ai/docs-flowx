@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 ---
+
 # Parallel Gateway
 
 If multiple operations can be done in parallel a Parallel Gateway can be used. This kind of node will open a parallel section of the process, very useful for integrations that can be done in parallel, without waiting for each other. Each parallel section should be also closed by another parallel Gateway node.

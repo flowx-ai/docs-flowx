@@ -4,7 +4,12 @@ sidebar_position: 3
 
 # Validators
 
+
+<div className= "image-scaled">
+
 ![](./img/validators.png)
+
+</div>
 
 Data validation can be enforced using Validators.
 
@@ -32,59 +37,97 @@ It's also possible to build custom validators inside the container application a
 
 A required validator checks if the value exists.
 
-Important to be used with other validators like a [minlength](validators.md#2.-minlength) one to check if there is no value at all.
+Important to be used with other validators like a [minlength](#2-minlength) one to check if there is no value at all.
+
+<div className= "image-scaled">
 
 ![required validator](./img/validators.png)
+
+</div>
 
 #### 2. minlength
 
 Checks if the value has a minimum number of characters (no character at all will not trigger this validator so better use it together with a required validator).
 
+<div className= "image-scaled">
+
 ![minlength validator](./img/validator_minlength.png)
+
+</div>
 
 #### 3. maxlength
 
 Checks if the value has a maximum number of characters (no character at all will not trigger this validator so better used with a required one).
 
+
+<div className= "image-scaled">
+
 ![maxlength validator](./img/validator_maxlength.png)
+
+</div>
 
 #### 4. min
 
 Checks if a numeric value is smaller (no character will trigger this validator so better use it with a required one).
 
+
+<div className= "image-scaled">
+
 ![min validator](./img/validator_min.png)
+
+</div>
 
 #### 5. max
 
 Checks if a numeric value is smaller (no character will trigger this validator so better use it with a required one).
 
+<div className= "image-scaled">
+
 ![max validator](./img/validator_max.png)
+
+</div>
 
 #### 6. email
 
 Checks if you entered an email (no character will not trigger this validator so better used with a required one).
 
+<div className= "image-scaled">
+
 ![email validator](./img/validator_email.png)
+
+</div>
 
 #### 7. pattern
 
 Checks if you entered a string that respects a pattern (in this case, a regex).
 
+<div className= "image-scaled">
+
 ![](./img/validator_pattern.png)
+
+</div>
 
 #### 8. isSameOrBeforeToday
 
-It can be added to [datepicker](component-types/form-elements/datepicker-form-field.md) fields.
+It can be added to [datepicker](./ui-component-types/form-elements/datepicker-form-field.md) fields.
 
 Checks a date is today or in the past (no character will trigger this validator so better use it with a required one).
 
+<div className= "image-scaled">
+
 ![isSameOrBeforeToday](./img/validator_issameday.png)
+
+</div>
 
 #### 9. isSameOrAfterToday
 
 Checks a date is today or in the past (no character will trigger this validator so better use it with a required one).
 
+<div className= "image-scaled">
+
 ![](./img/validator_issamedayafter.png)
+
+</div>
 
 ### Custom validators
 
@@ -99,6 +142,10 @@ Available configurations are:
 
 **NOTE:** the error that the validator returns **MUST** match the validator name.
 
+<div className= "image-scaled">
+
 ![custom validator](./img/validator_custom.png)
 
-For more details about custom validators please check this [link](../../core-components/renderer-sdks/using-the-angular-renderer.md).
+</div>
+
+For more details about custom validators please check this [link](../../platform-deep-dive/core-components/renderer-sdks/angular-renderer.md).
