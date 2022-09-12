@@ -18,7 +18,7 @@ The engine is also responsible with updating the UI when some actions occur. Thi
 
 The new instances will be started by making a request to the  [FLOWX.AI Engine](../../../platform-deep-dive/core-components/flowx-engine.md). This will be handled by the web / mobile application that was created.
 
-![](./img/process_instance_diagram.png)
+![](../../img/process_instance_diagram.png)
 
 To be able to start a new process instance, the current user needs to have the appropriate role/permissions:
 

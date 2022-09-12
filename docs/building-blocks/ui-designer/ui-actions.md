@@ -6,7 +6,7 @@ sidebar_position: 2
 
 A generated [button](./ui-component-types/buttons.md) or [custom component](./ui-component-types/root-components/custom.md) can be linked to an [action](../actions.md) via a UI Action. If the action is just a method to interact with the process the UI Action adds information about how that UI should react: should a loader appear after executing the action, should a modal be dismissed, or if some default data should be sent back to the process.
 
-UI actions create a link between an [**action**](../actions.md) and a [**button**](./ui-component-types/buttons.md) component or a [**custom component**](com./ui-component-types/root-components/custom.md). This informs the button to execute the given action when pressed. Other options are available for configuration when setting an action to a button and are detailed below:
+UI actions create a link between an [**action**](../actions.md) and a [**button**](./ui-component-types/buttons.md) component or a [**custom component**](./ui-component-types/root-components/custom.md). This informs the button to execute the given action when pressed. Other options are available for configuration when setting an action to a button and are detailed below:
 
 ![](./img/ui_actions.gif)
 

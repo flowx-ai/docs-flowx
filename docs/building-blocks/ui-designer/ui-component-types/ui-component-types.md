@@ -84,6 +84,6 @@ Different UI component types can be configured using UI Designer. The components
 * Modal
 * Container
 
-For more information about Milestone node UI components, click [here](../../node/nodes-types/milestone-node.md).
+For more information about Milestone node UI components, click [here](../../node/milestone-node.md).
 
 </details>

@@ -31,8 +31,8 @@ Node configuration is done by accessing the **Node Config** tab. You have the fo
 When encountering a step with `canGoBack` switched to false, all steps found behind it will become unavailable.
 :::
 
-* [**Swimlane**](../../../user-roles-management/swimlanes.md) - choose a swimlane (if there are multiple swimlanes on the process) to make sure only certain user roles have access only for certain process nodes- if there are no multiple swimlanes, the value is **Default**
-* [**Stage** ](../../../../plugins/custom-plugins/task-management/using-stages.md)- assign a stage to the node
+* [**Swimlane**](../../../platform-deep-dive/user-roles-management/swimlanes.md) - choose a swimlane (if there are multiple swimlanes on the process) to make sure only certain user roles have access only for certain process nodes- if there are no multiple swimlanes, the value is **Default**
+* [**Stage** ](../../../platform-deep-dive/plugins/custom-plugins/task-management/using-stages.md)- assign a stage to the node
 
 #### Response Timeout
 

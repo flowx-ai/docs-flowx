@@ -164,7 +164,14 @@ const config = {
           indexDocs: true,
           indexBlog: false,
           indexPages: true,
-          language: "en"
+          language: "en",
+
+          lunr: {
+            titleBoost: 5,
+            contentBoost: 1,
+            tagsBoost: 3,
+            parentCategoriesBoost: 2,
+          }
         }
       ],
 

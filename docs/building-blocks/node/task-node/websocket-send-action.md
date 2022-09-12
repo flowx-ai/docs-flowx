@@ -69,7 +69,7 @@ If you need to start a new process using a **Websocket Send Action**, you can do
 * **Target Process** - is used to specify to what running process instance should this message be sent - **Active process** or **Parent process**
 
 :::info
-If you are defining this action on a [**subprocess**](../../../process/subprocess.md), you can send the message to the parent process using **Target Process: Parent process**.
+If you are defining this action on a [**subprocess**](../../process/subprocess), you can send the message to the parent process using **Target Process: Parent process**.
 :::
 
 #### Data to send
@@ -84,7 +84,7 @@ If you are defining this action on a [**subprocess**](../../../process/subproces
 
 #### Send Update Data example
 
-To send the latest value from the [process instance](../../process/process-instance/process-instance.md) data found at `application.client.firstName` key, to the frontend app, you can do the following:
+To send the latest value from the [process instance](../../process/active-process/process-instance/process-instance.md) data found at `application.client.firstName` key, to the frontend app, you can do the following:
 
 1. Add a **Websocket Send Action.**
 2. Set the **Message Type** to **Default** (this is default value for `data`).
