@@ -9,4 +9,4 @@ While designing the FLOWX.AI components, we've tried to keep them as close to th
 Once a process is defined and set as published on the platform, it can be executed, monitored, and optimized. When a business process is started, a new instance of the definition is created.
 
 
-[Process instance](process-instance)
+[Process instance](../active-process/process-instance/process-instance.md)

@@ -25,7 +25,7 @@ The Document plugin is preconfigured with the following default users roles for 
   * edit - ROLE\_DOCUMENT\_TEMPLATES\_EDIT
   * admin - ROLE\_DOCUMENT\_TEMPLATES\_ADMIN
 
-:::cautions
+:::caution ROLES
 These roles need to be defined in the chosen identity provider solution.
 :::
 

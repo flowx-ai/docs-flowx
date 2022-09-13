@@ -13,10 +13,10 @@ It also offers the possibility of tracking what notifications have been sent and
 Let's go through the steps needed in order to deploy and set up the plugin:
 
 
-[notifications-plugin-setup](../../plugins-setup-guide/notifications-plugin-setup/)
+[Notifications plugins setup](../../plugins-setup-guide/notifications-plugin-setup/)
 
 
 We've prepared some examples of various use cases where this plugin would be useful:
 
 
-[using-the-plugin](using-the-plugin/)
+[Using the plugin](./using-notifications-plugin/)

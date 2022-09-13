@@ -49,4 +49,4 @@ It offers an easy-to-use interface for handling documents on both REST and event
 
 ![](../../img/crm_plugin_archi.svg)
 
-[customer-management](custom-plugins/customer-management/)
+[Customer management](./customer-management/customer-management.md)

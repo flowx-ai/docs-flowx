@@ -44,7 +44,7 @@
                    📌 <b>Architecture</b>
                    </Link>
                    <br></br>
-                   <Link href={useBaseUrl("/release-notes/release-notes")}>
+                   <Link href={useBaseUrl("/release-notes")}>
                    📌 <b>Release Notes</b>
                    </Link>
                  </div>
@@ -113,11 +113,11 @@
                  <div className="card__body">
                    <Link href={useBaseUrl("/faqs")}>📌 <b>FAQs</b></Link>
                    <br></br>
-                   <Link href={useBaseUrl("docs/expedition/expedition_qs")}>
+                   <Link href={useBaseUrl("")}>
                    📌 <b>Troubleshooting [TBD]</b>
                    </Link>
                    <br></br>
-                   <Link href={useBaseUrl("docs/expedition/expedition_apiint")}>
+                   <Link href={useBaseUrl("")}>
                    📌 <b>Best practices [TBD]</b>
                    </Link>
                    <br></br>

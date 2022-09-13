@@ -19,9 +19,9 @@ After all the setup is in place, you can start adding the custom actions to the 
 
 Let's go through a few examples. These cover both the configuration part and the integration with the engine for all the use cases covered by the plugin.
 
-[managing-notification-templates.md](managing-notification-templates)
+[Managing notification templates](managing-notification-templates.md)
 
-[send-a-notification.md](send-a-notification)
+[Send a notification](sending-a-notification.md)
 
 [send-an-email-with-attachments.md](send-an-email-with-attachments)
 

@@ -14,7 +14,7 @@ The properties that can be configured are as follows:
 
 1. **Identifier** - this will enable the custom component to be displayed in the component hierarchy and what actions are available for the component
 2. **Input keys** - used to define the process model paths from which the components will receive their data&#x20;
-3. [**UI Actions**](ui-actions) - actions defined here will be made available to the custom component
+3. [**UI Actions**](../../ui-actions.md) - actions defined here will be made available to the custom component
 
 ![](../../img/ui_designer_custom_settings.png)
 
