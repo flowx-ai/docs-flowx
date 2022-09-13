@@ -55,5 +55,5 @@ Find about the core platform components:
 
 See the Release Notes:
 
-[Realease notes](../release-notes/release-notes)
+[Realease notes](/release-notes)
 

@@ -252,4 +252,4 @@ POST `{{documentUrl}}/internal/html/templates/convert` - converts a docx file to
 ## Examples
 
 
-[Download pdf generated based on the html example](.assets/html_generated_document.pdf)
+[Download pdf generated based on the html example](./assets/files/html_generated_document.pdf)

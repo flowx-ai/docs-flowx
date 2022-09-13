@@ -20,9 +20,9 @@
 
 ## Additional configuration
 
-{% hint style="warning" %}
+:::danger
 The access rights-related configuration needs to be set up for each microservice. Default options are preconfigured. They can be overwritten using environment variables.
-{% endhint %}
+:::
 
 In order to configure the roles for the users of the designer app, they need to be added to the identity provider solution.
 
@@ -87,31 +87,20 @@ A complete list of all the default roles:
 
 For more details you can check the next links:
 
-{% content-ref url="../../../flowx-designer/designer-setup-guide/configuring-access-rights-for-admin.md" %}
-[configuring-access-rights-for-admin.md](../../../flowx-designer/designer-setup-guide/configuring-access-rights-for-admin.md)
-{% endcontent-ref %}
 
-{% content-ref url="../../../core-components/platform-setup-guide/flowx-engine-setup-guide/configuring-access-rights-for-engine.md" %}
-[configuring-access-rights-for-engine.md](../../../core-components/platform-setup-guide/flowx-engine-setup-guide/configuring-access-rights-for-engine.md)
-{% endcontent-ref %}
+[Configuring access rights for admin](../../docs/flowx-designer/designer-setup-guide/configuring-access-rights-for-admin)
 
-{% content-ref url="../../../core-components/platform-setup-guide/license-engine-setup-guide/configuring-access-rights-for-license.md" %}
-[configuring-access-rights-for-license.md](../../../core-components/platform-setup-guide/license-engine-setup-guide/configuring-access-rights-for-license.md)
-{% endcontent-ref %}
 
-{% content-ref url="../../../core-components/platform-setup-guide/cms-setup-guide/configuring-access-rights-for-cms.md" %}
-[configuring-access-rights-for-cms.md](../../../core-components/platform-setup-guide/cms-setup-guide/configuring-access-rights-for-cms.md)
-{% endcontent-ref %}
+[Configurig access rights for engine](../../docs/platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide/configuring-access-rights-for-engine)
 
-{% content-ref url="../../../plugins/plugins-setup-guide/task-management-plugin-setup/configuring-access-rights-for-task-management.md" %}
-[configuring-access-rights-for-task-management.md](../../../plugins/plugins-setup-guide/task-management-plugin-setup/configuring-access-rights-for-task-management.md)
-{% endcontent-ref %}
+[Configuring access rights for license](../../docs/platform-deep-dive/platform-setup-guide/license-engine-setup-guide/configuring-access-rights-for-license)
 
-{% content-ref url="../../../plugins/plugins-setup-guide/notifications-plugin-setup/configuring-access-rights-for-notifications.md" %}
-[configuring-access-rights-for-notifications.md](../../../plugins/plugins-setup-guide/notifications-plugin-setup/configuring-access-rights-for-notifications.md)
-{% endcontent-ref %}
+[Configuring access rights for CMS](../../docs/platform-deep-dive/platform-setup-guide/cms-setup-guide/configuring-access-rights-for-cms)
 
-{% content-ref url="../../../plugins/plugins-setup-guide/documents-plugin-setup/configuring-access-rights-for-documents.md" %}
-[configuring-access-rights-for-documents.md](../../../plugins/plugins-setup-guide/documents-plugin-setup/configuring-access-rights-for-documents.md)
-{% endcontent-ref %}
+[Configuring access rights for task management](../../docs/platform-deep-dive/plugins/plugins-setup-guide/task-management-plugin-setup/configuring-access-rights-for-task-management)
+
+[Configuring access rights for notifications](../../docs/platform-deep-dive/plugins/plugins-setup-guide/notifications-plugin-setup/configuring-access-rights-for-notifications)
+
+[Configuring access rights for documents](../../docs/platform-deep-dive/plugins/plugins-setup-guide/documents-plugin-setup/configuring-access-rights-for-documents)
+
 
