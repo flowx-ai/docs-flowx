@@ -7,7 +7,7 @@ Let's go through the configuration updates that need to be made in order for the
 #### On **flowx-process-engine**
 
 :::info
-There are no mandatory configuration changes related to this release, but there were a few updates to Engine related logging options. All logging related configuration options can be viewed [here](../../../core-components/platform-setup-guide/flowx-engine-setup-guide/#logging).
+There are no mandatory configuration changes related to this release, but there were a few updates to Engine related logging options. All logging related configuration options can be viewed [here](../../docs/platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide#logging).
 :::
 
 ### Components Dependencies <a href="#components-dependencies" id="components-dependencies"></a>

@@ -19,7 +19,7 @@ The new role must also be configured in the identity provider and set to the use
 If this role is not configured in your identity provider solution, the users will not see any process instances in the FlowX Designer.
 :::
 
-[Configuring access roles for processes](../../../core-components/platform-setup-guide/flowx-engine-setup-guide/configuring-access-roles-for-processes)
+[Configuring access roles for processes](../../docs/platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide/configuring-access-roles-for-processes)
 
 We now introduced more advanced **debugging features**, in this version, there is the possibility to take a snapshot of the process status after each action, this comes with an exponential increase of database usage so the next flag I suggest you have it true on debugging media and false production ones
 
@@ -28,7 +28,7 @@ application:
     debug: ${PROCESS_DEBUG:false} 
 ```
 
-[Flowx engine setup guide](../../../core-components/platform-setup-guide/flowx-engine-setup-guide/)
+[Flowx engine setup guide](../../docs/platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide)
 
 #### New Kafka topics
 
@@ -40,17 +40,17 @@ A few additional Kafka topics must be added:
 * `topicNameParentNotify: "${KAFKA_TOPIC_PARENT_NOTIFY}"` - Topic used for sub-processes to notify parent process when finished
 
 
-[Flowx engine setup guide](../../../core-components/platform-setup-guide/flowx-engine-setup-guide/)}
+[Flowx engine setup guide](../../docs/platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide)
 
 ### On notifications
 
 #### Application configuration
 
-Some more granular log levels were added, please see [the setup guide](../../../plugins/plugins-setup-guide/notifications-plugin-setup/#logging) for the complete list of logging related configuration options.&#x20;
+Some more granular log levels were added, please see [the setup guide](../../docs/platform-deep-dive/plugins/plugins-setup-guide/notifications-plugin-setup#logging) for the complete list of logging related configuration options.&#x20;
 
-The Redis related configuration options have been enhanced to add the possibility of specifying the cache key where the entries should be stored. Please see the complete [Redis related configuration options](../../../plugins/plugins-setup-guide/notifications-plugin-setup/#redis-configuration).
+The Redis related configuration options have been enhanced to add the possibility of specifying the cache key where the entries should be stored. Please see the complete [Redis related configuration options](../../docs/platform-deep-dive/plugins/plugins-setup-guide/notifications-plugin-setup#redis-configuration).
 
-[Notifications plugins setup](../../../plugins/plugins-setup-guide/notifications-plugin-setup/)
+[Notifications plugins setup](../../docs/platform-deep-dive/plugins/plugins-setup-guide/notifications-plugin-setup)
 
 ### Components Dependencies
 

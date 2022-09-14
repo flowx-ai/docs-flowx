@@ -1,6 +1,6 @@
 # Using allocation rules
 
-Allocation rules are meant to define when tasks should be auto-assigned to users when they reach a [swimlane](../../../flowx-elements/user-roles-management/swimlanes) that has a specific role configured (for example, specific tasks will be assigned fo_r_ the _front office_ and specific tasks for the _back office_ only).
+Allocation rules are meant to define when tasks should be auto-assigned to users when they reach a [swimlane](../../../user-roles-management/swimlanes.md) that has a specific role configured (for example, specific tasks will be assigned fo_r_ the _front office_ and specific tasks for the _back office_ only).
 
 ![](../../../img/allocation_rules.png)
 
@@ -21,11 +21,12 @@ To access the allocation rules, follow the next steps:
 
 To add process and allocation rules, follow the next steps:&#x20;
 
-1. Click **Add process** button, in the top-right corner. (More details on how to create/configure a process are [here](../../../flowx-designer/managing-a-process-flow/creating-a-new-process-definition).
+1. Click **Add process** button, in the top-right corner. (More details on how to create/configure a process are [here](../../../../flowx-designer/managing-a-process-flow/creating-a-new-process-definition.md).
+
 
 ![](../../../img/adding_process_and_allocation.png)
 
-2.  Select a [**process definition**](../../../flowx-elements/process/process-definition) from the drop-down list.
+2.  Select a [**process definition**](../../../../building-blocks/process/process-definition/process-definition.md) from the drop-down list.
 
 3.  Click **Add swimlane allocations button (+)** to add allocations.
 

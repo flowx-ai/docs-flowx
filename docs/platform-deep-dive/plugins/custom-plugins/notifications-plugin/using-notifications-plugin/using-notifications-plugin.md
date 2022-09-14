@@ -23,8 +23,8 @@ Let's go through a few examples. These cover both the configuration part and the
 
 [Send a notification](sending-a-notification.md)
 
-[send-an-email-with-attachments.md](send-an-email-with-attachments)
+[Send an email with attachments](sending-an-email-with-attachments.md)
 
-[forward-notifications-to-an-external-system.md](forward-notifications-to-an-external-system)
+[Forward notifications to an external system](forwarding-notifications-to-an-external-system.md)
 
-[otp-flow](otp-flow/)
+[OTP flow](./otp-flow/otp-flow.md)
