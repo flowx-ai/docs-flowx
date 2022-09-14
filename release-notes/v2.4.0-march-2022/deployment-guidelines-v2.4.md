@@ -26,11 +26,11 @@ The access rights-related configuration needs to be set up for each microservice
 
 In order to configure the roles for the users of the designer app, they need to be added to the identity provider solution.
 
-If you are using Keycloak or Red Hat Single Sign-On (RH-SSO) you can import the default roles automatically and create a `superAdmin` group using the following script. This will give users in that group full control of development environments:&#x20;
+If you are using Keycloak or Red Hat Single Sign-On (RH-SSO) you can import the default roles automatically and create a `superAdmin` group using the following script. This will give users in that group full control of development environments:
 
-{% file src="../../../.gitbook/assets/importUsers.py" %}
-python 3 script
-{% endfile %}
+:::tip
+Python 3 script + Roles, download [here](../assets/importUsers.zip)
+:::
 
 You need to edit the script parameters - `baseAuthUrl`, `username`, `password`,  `realm`, and the name of the group for super admins.
 
