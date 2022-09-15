@@ -51,7 +51,7 @@ function BreadcrumbsItem({children, active, index, addMicrodata}) {
   );
 }
 function HomeBreadcrumbItem() {
-  const homeHref = useBaseUrl('/docs/intro/');
+  const homeHref = useBaseUrl('/docs/intro');
   return (
     <li className="breadcrumbs__item">
       <Link
