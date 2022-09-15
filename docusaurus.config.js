@@ -116,8 +116,8 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Academy',
-                to: 'https://academy.flowx.ai/',
+                label: 'Contact Us',
+                to: 'https://www.flowx.ai/contact-us',
               },
               {
                 label: 'Newsroom',
@@ -126,6 +126,24 @@ const config = {
               {
                 label: 'Request Demo',
                 to: 'https://www.flowx.ai/',
+              },
+            ],
+          },
+
+          {
+            title: 'Resources',
+            items: [
+              {
+                label: 'Academy',
+                to: 'https://academy.flowx.ai/',
+              },
+              {
+                label: 'Platform',
+                to: 'https://www.flowx.ai/platform',
+              },
+              {
+                label: 'Podcasts',
+                to: 'https://unbounded.flowx.ai/',
               },
             ],
           },
