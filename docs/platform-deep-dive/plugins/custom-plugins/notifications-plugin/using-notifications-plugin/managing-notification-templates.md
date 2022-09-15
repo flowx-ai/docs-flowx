@@ -9,13 +9,13 @@ Notification templates can be easily managed using FLOWX Designer.
 To configure a document template, first, you need to select some information stored in the **Body**:
 
 1. **Type** - could be either MAIL or SMS notifications
-2. [**Forward on Kafka**](forward-notifications-to-an-external-system) - if this box is checked, the notification is not being sent directly by the plugin to the destination, but forwarded to another adapter
+2. [**Forward on Kafka**](forwarding-notifications-to-an-external-system.md) - if this box is checked, the notification is not being sent directly by the plugin to the destination, but forwarded to another adapter
 3. **Language** - choose the language for your notification template
 4. **Subject** - enter a subject
 
 #### Editing the content
 
-You can edit the content of a notification template by using the [WYSIWYG ](../../../wysiwyg-editor) editor embedded in the body of the notification templates body.
+You can edit the content of a notification template by using the [WYSIWYG ](../../../wysiwyg.md) editor embedded in the body of the notification templates body.
 
 ### Configuring the data model
 

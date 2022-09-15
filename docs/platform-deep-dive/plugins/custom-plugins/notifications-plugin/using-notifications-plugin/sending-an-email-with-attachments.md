@@ -4,7 +4,7 @@ Using the notification plugin for sending emails with attachments needs the same
 
 The notification template needs to be saved and the corresponding Kafka topic needs to be set.
 
-[send-a-notification](send-a-notification)
+[Send a notification](sending-a-notification.md)
 
 ## **Defining process actions**
 
@@ -12,7 +12,7 @@ The notification template needs to be saved and the corresponding Kafka topic ne
 
 Let's pick a simple use-case, say we need to send a copy of a contract signed by a new customer. Before setting the action for the notification, another action will be needed in order to first save the new contract using the documents plugin.
 
-[uploading-a-new-document](../../document-management/using-the-plugin/uploading-a-new-document)
+[Uploading a new document](../../documents-plugin/using-documents-plugin/uploading-a-new-document.md)
 
 The steps for sending the notification are the following:
 

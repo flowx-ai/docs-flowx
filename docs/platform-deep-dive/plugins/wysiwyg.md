@@ -41,7 +41,7 @@ Notification WYSIWYG body has some additional fields (other than documents templ
 
 ![Notification template](../img/wysiwyg_notif_template.png)
 
-[Managing notifications templates](custom-plugins/notifications/using-the-plugin/managing-notification-templates)
+[Managing notifications templates](./custom-plugins/notifications-plugin/using-notifications-plugin/managing-notification-templates.md)
 
 ### Data Model
 

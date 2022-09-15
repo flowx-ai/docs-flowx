@@ -2,7 +2,7 @@
 
 ## Component versions
 
-|             :ballot\_box\_with\_check:  | 2.7.0      | 2.6.0   | 2.5.0   | 2.4.0   | 2.3.0   | 2.2.0   | 2.1.0     | 2.0.0     | 1.16.0  | 1.15    | 1.14    | 1.13.0  | 1.12.0 | 1.11.0  |
+|             :ballot_box_with_check:  | 2.7.0      | 2.6.0   | 2.5.0   | 2.4.0   | 2.3.0   | 2.2.0   | 2.1.0     | 2.0.0     | 1.16.0  | 1.15    | 1.14    | 1.13.0  | 1.12.0 | 1.11.0  |
 | --------------------------------------- | ---------- | ------- | ------- | ------- | ------- | ------- | --------- | --------- | ------- | ------- | ------- | ------- | ------ | ------- |
 | **Process engine**                      | **0.4.42** | 0.4.36  | 0.4.29  | 0.4.22  | 0.4.21  | 0.4.18  | 0.4.13    | 0.4.12    | 0.4.4   | 0.3.26  | 0.3.21  | 0.3.14  | 0.3.9  | 0.3.7   |
 | **Designer**                            | **2.23.0** | 2.19.2  | 2.18.2  | 2.17.4  | 2.15.2  | 2.14.4  | 2.11.2    | 2.10.0    | 2.5.0   | 2.1.1   | 1.21.0  | 1.16.3  | 1.15.2 | 1.14.0  |
@@ -18,7 +18,7 @@
 | **Customer Management Plugin**          | 0.1.22     | 0.1.22  | 0.1.20  | 0.1.20  | 0.1.18  | 0.1.18  | 0.1.18    | 0.1.18    | 0.1.16  | 0.1.10  | 0.1.10  | 0.1.10  | NA     | 0.1.6   |
 | **Task Management Plugin**              | 0.0.27     | 0.0.27  | 0.0.22  | 0.0.22  | 0.0.21  | 0.0.21  | 0.0.16    | 0.0.16    | 0.0.14  |         |         |         |        |         |
 
-## Additional configuration&#x20;
+## Additional configuration
 
 :::danger
 The access rights-related configuration needs to be set up for each microservice. Default options are preconfigured. They can be overwritten using environment variables.
@@ -26,11 +26,11 @@ The access rights-related configuration needs to be set up for each microservice
 
 In order to configure the roles for the users of the designer app, they need to be added to the identity provider solution.
 
-If you are using Keycloak or Red Hat Single Sign-On (RH-SSO) you can import the default roles automatically and create a `superAdmin` group using the following script. This will give users in that group full control of development environments:&#x20;
+If you are using Keycloak or Red Hat Single Sign-On (RH-SSO) you can import the default roles automatically and create a `superAdmin` group using the following script. This will give users in that group full control of development environments:
 
-{% file src="../../../.gitbook/assets/importUsers.py" %}
-python 3 script
-{% endfile %}
+:::tip
+Python 3 script + Roles, download [here](../assets/importUsers.zip)
+:::
 
 You need to edit the script parameters - `baseAuthUrl`, `username`, `password`,  `realm`, and the name of the group for super admins.
 
@@ -91,17 +91,17 @@ A complete list of all the default roles:
 For more details you can check the next links:
 
 
-[Configuring access rights for admin](../../../flowx-designer/designer-setup-guide/configuring-access-rights-for-admin)
+[Configuring access rights for admin](../../docs/flowx-designer/designer-setup-guide/configuring-access-rights-for-admin)
 
-[Configuring access rights for engine](../../../core-components/platform-setup-guide/flowx-engine-setup-guide/configuring-access-rights-for-engine)
+[Configuring access rights for engine](../../docs/platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide/configuring-access-rights-for-engine)
 
-[Configuring access rights for license](../../../core-components/platform-setup-guide/license-engine-setup-guide/configuring-access-rights-for-license)
+[Configuring access rights for license](../../docs/platform-deep-dive/platform-setup-guide/license-engine-setup-guide/configuring-access-rights-for-license)
 
-[Configuring access rights for CMS](../../../core-components/platform-setup-guide/cms-setup-guide/configuring-access-rights-for-cms)
+[Configuring access rights for CMS](../../docs/platform-deep-dive/platform-setup-guide/cms-setup-guide/configuring-access-rights-for-cms)
 
-[Configuring access rights for Task Management](../../../plugins/plugins-setup-guide/task-management-plugin-setup/configuring-access-rights-for-task-management)
+[Configuring access rights for Task Management](../../docs/platform-deep-dive/plugins/plugins-setup-guide/task-management-plugin-setup/configuring-access-rights-for-task-management)
 
-[Configuring access rights for notifications](../../../plugins/plugins-setup-guide/notifications-plugin-setup/configuring-access-rights-for-notifications)
+[Configuring access rights for notifications](../../docs/platform-deep-dive/plugins/plugins-setup-guide/notifications-plugin-setup/configuring-access-rights-for-notifications)
 
-[Configuring access rights for documents](../../../plugins/plugins-setup-guide/documents-plugin-setup/configuring-access-rights-for-documents)
+[Configuring access rights for documents](../../docs/platform-deep-dive/plugins/plugins-setup-guide/documents-plugin-setup/configuring-access-rights-for-documents)
 

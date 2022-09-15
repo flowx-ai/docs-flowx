@@ -46,7 +46,7 @@ New roles added for **Process allocation settings:**
 For more information on how to configure access rights for Process allocation settings, check the following section:
 
 
-[configuring-access-rights-for-task-management](../../../plugins/plugins-setup-guide/task-management-plugin-setup/configuring-access-rights-for-task-management.)
+[Configuring access rights for task management](../../docs/platform-deep-dive/plugins/plugins-setup-guide/task-management-plugin-setup/configuring-access-rights-for-task-management)
 
 New roles added for **Out of office** feature:
 
@@ -56,9 +56,7 @@ New roles added for **Out of office** feature:
 | manage-out-of-office-users | edit    | ROLE\_TASK\_MANAGER\_OOO\_EDIT  | Task Management Plugin |
 | manage-out-of-office-users | admin   | ROLE\_TASK\_MANAGER\_OOO\_ADMIN | Task Management Plugin |
 
-
-[configuring-access-rights-for-task-management](../../../plugins/plugins-setup-guide/task-management-plugin-setup/configuring-access-rights-for-task-management)
-
+[Configuring access rights for task management](../../docs/platform-deep-dive/plugins/plugins-setup-guide/task-management-plugin-setup/configuring-access-rights-for-task-management)
 
 ### Jaeger tracing
 

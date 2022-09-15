@@ -44,7 +44,7 @@ New roles added for **Integrations Management:**
 For more information on how to configure access rights for Integration Management, check the following section:
 
 
-[Configuring access rights for integration management](configuring-access-rights-for-integration-management)
+[Configuring access rights for integration management](../../docs/platform-deep-dive/core-components/core-extensions/integration-management/configuring-access-rights-for-intgr-mngmnt)
 
 New roles added for **Content Management**:
 
@@ -54,5 +54,5 @@ New roles added for **Content Management**:
 | manage-taxonomies | edit    | ROLE\_CMS\_TAXONOMIES\_EDIT                            | CMS          |
 
 
-[Configuring access rights for CMS](configuring-access-rights-for-cms)
+[Configuring access rights for CMS](../../docs/platform-deep-dive/platform-setup-guide/cms-setup-guide/configuring-access-rights-for-cms)
 

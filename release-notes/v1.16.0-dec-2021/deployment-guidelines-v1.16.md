@@ -14,7 +14,7 @@ A few additional Kafka topics must be added:
 #### On svc-flowx-admin
 
 :::info
-A service account must be configured in the OpenID provider to be able to access the new feature, please see the [configuration details](../../../flowx-designer/designer-setup-guide/#access-roles).
+A service account must be configured in the OpenID provider to be able to access the new feature, please see the [configuration details](../../docs/flowx-designer/designer-setup-guide/configuring-access-rights-for-admin).
 :::
 
 ### Components Dependencies

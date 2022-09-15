@@ -22,7 +22,7 @@ Integration management is preconfigured with the following default users roles f
   * admin - ROLE\_ADMIN\_MANAGE\_INTEGRATIONS\_ADMIN
 
 :::warning
-These roles need to be defined in the chosen identity provider solution. It can be either kyecloak, RH-SSO, or another identity provider solution. For more details on how to define service accounts, check the [Access rights](broken-reference) section.
+These roles need to be defined in the chosen identity provider solution. It can be either kyecloak, RH-SSO, or another identity provider solution. For more details on how to define service accounts, check the [Access rights](integration-management.md) section.
 :::
 
 In case other custom roles are needed, you can configure them using environment variables. More than one role can be set for each access scope.

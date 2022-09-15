@@ -26,7 +26,7 @@ A new additional kafka topic must be added:
 
 `KAFKA_TOPIC_NOTIFICATION_INTERNAL_OUT`
 
-[Send a notification](../../../plugins/custom-plugins/notifications/using-the-plugin/send-a-notification)
+[Send a notification](../../docs/platform-deep-dive/plugins/custom-plugins/notifications-plugin/using-notifications-plugin/sending-a-notification)
 
 :::caution
 The Engine is listening for messages on topics with names of a certain pattern, make sure to use correct outgoing topic names when configuring the notification plugin.
