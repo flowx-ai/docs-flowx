@@ -36,6 +36,14 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          lastVersion: 'current',
+          versions:{
+            current:{
+              label: '2.11.0',
+              path: '',
+              badge: true,
+            },
+          },
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           remarkPlugins: [urlEmbed],
@@ -71,6 +79,12 @@ const config = {
           width: 40,
         },
         items: [
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
+            dropdownItemsAfter: [{to: '/release-notes', label: 'All versions'}],
+            dropdownActiveClassDisabled: true,
+          },
           {
             type: 'doc',
             docId: 'intro',
