@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# What is FLOWX.AI?
+# What is FLOWX.AI??
 
 **FLOWX** is an AI multi-experience development platform that sits on top of legacy systems and creates **unified, scalable digital experiences.**
 
