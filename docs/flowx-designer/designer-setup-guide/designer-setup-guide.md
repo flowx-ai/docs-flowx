@@ -223,6 +223,15 @@ Kafka is used only for saving audit logs. Only a producer needs to be configured
 [How to create a Kafka producer](../../platform-deep-dive/integrations/creating-a-kafka-producer)
 
 
+### Redis configuration
+
+The following values should be set with the corresponding Redis-related values:
+
+`SPRING_REDIS_HOST`
+
+`SPRING_REDIS_PASSWORD`
+
+
 ### Logging
 
 The following environment variables could be set in order to control log levels:
