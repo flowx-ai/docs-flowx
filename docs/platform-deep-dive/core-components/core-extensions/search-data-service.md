@@ -1,15 +1,15 @@
 # Search data service
 
-Search data is a microservice that searches for data in an another processes.
+Search data is a microservice that searches for data in another process.
 
-The search data service enables you to create a process that is able to perform a search/look for data (using  Kafka Send/ Kafka receive actions) in another process.
+The search data service enables you to create a process that can perform a search/look for data (using [Kafka send](../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) / [Kafka receive](../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) actions) in another process.
 
 :::tip
 Using elastic search the service will be able to search for keys that are indexed there via existing mechanics.
 ::: 
 
 :::caution
-Elastic Search indexing must be switched on the FLOWX.AI Engine configuration. This can be done by adding the following variable: `
+Elastic search indexing must be switched on the FLOWX.AI Engine configuration. You can find more details in the [**Search data service setup guide**](../../platform-setup-guide/search-data-service-setup-guide.md).
 :::
 
 ## Using search data
@@ -19,11 +19,19 @@ Use case:
 * display results about other processes where the search key was found
 
 1. Create a process using Process Designer.
-2. From the newly created process where you want to perform the search, configure a send event via a Kafka send action
-3. Configure the following items:
-    + Topic name: in
-    + Headers - required
-    + Body message:
+2. From the newly created process where you want to perform the search, add a [Task Node](../../../building-blocks/node/task-node). 
+3. Configure a send event via a [Kafka send action](../../../building-blocks/node/message-send-received-task-node.md#example-of-a-message-send-event).
+![](../../img/kafka_send_action_search.png)
+4. Configure the following items:
+    + **Topic name** - the Kafka topic on which the search service listens for requests; ❗️respect the [naming pattern](../../platform-setup-guide/flowx-engine-setup-guide/flowx-engine-setup-guide.md#kafka-configuration)
+	+ **Data to send** - (key) - used when data is sent from the frontend via an action to validate the data (you can find more information in the User Task configuration section)
+    + **Headers** - required
+    + **Body message**:
+
+		+ `searchKey` - it will hold the result received from the elastic search
+		+ `value` - value of the key
+		+ `processDefinitionNames` - the process definition names where to perform the search
+		+ `processStartDateAfter` - the service will look into process definitions created after the defined date
 
 ```javascript
 {
@@ -36,14 +44,20 @@ Use case:
 }
 ```
 
-4. A custom microservice (a core extension) will receive this event and will search the value of the process in the elastic search.
-    * this microservice will have a service account for secure interactions with elasticsearch.
+* Example (dummy values extracted from a process):
 
-5. It will respond to engine via a Kafka topic:
-    + topic name - out
-    + Headers - will be thrown back
-    + Body message will look like this:
-        + if there is no result:
+![](../../img/topics_headers_body.png)
+
+5. A custom microservice (a core extension) will receive this event and will search the value of the process in the elastic search.
+6. It will respond to the engine via a Kafka topic.
+
+:::tip
+The topic must be defined in the **Node config** of the **User task** where you previously added the Kafka Send Action.
+:::
+
+The **body message** of the response will look like this:
+
+	❗️If there is no result:
 
 ```javascript
 {
@@ -53,8 +67,17 @@ Use case:
 	"toManyResults": true|false
 }
 ```
+
+
+* Example (dummy values extracted from a process):
+
+:::tip
+To access the view of your process variables, tokens and subprocesses go to **FLOWX.AI Designer > Active process > Process Instances**. Here you will find the response.
+::: 
+
+![](../../img/search_data_no_result.png)
     
-* if there is a list of results - up to 50 - if toManyResults is true
+	❗️If there is a list of results:
 
 ```javascript
 {
@@ -68,34 +91,14 @@ Use case:
 	"toManyResults": true|false
 }
 ```
+**NOTE**: You will receive up to 50 results - if `toManyResults` is true.
 
-## Example
 
-Let's assume we have 3 processes:
-1. One that adds data
-2. One for data identification
-3. One used for searching data in other process.
+* Example (dummy values extracted from a process):
 
-### Configure the add data process
+![](../../img/search_data_response.png)
 
-### Configure the identification  process
 
-### Configure the search data process
+Let's go now through the steps needed to deploy and set up the service:
 
-#### Topics
-
-* Topic Name (address) - the Kafka topic on which the search service listens for requests
-
-##### Message
-
-* searchKey  -  it will hold the result received from the elastic search
-* value - 
-* processDefinitionNames
-* processStartDateAfter 
-
-#### Advanced configuration
-
-* Show headers:
-
-#### Data to send
-* searchValue2 - (key) are used when data is sent from the frontend via an action to validate the data (you can find more information in the User Task configuration section)
+[Search data service setup guide](../..//platform-setup-guide/search-data-service-setup-guide.md)
