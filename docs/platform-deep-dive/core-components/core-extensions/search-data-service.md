@@ -2,10 +2,10 @@
 
 Search data is a microservice that searches for data in another process.
 
-The search data service enables you to create a process that can perform a search/look for data (using [Kafka send](../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) / [Kafka receive](../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) actions) in another process.
+The new search data microservice enables you to create a process that can perform a search/look for data (using [Kafka send](../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) / [Kafka receive](../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) actions) in other processes.
 
 :::tip
-Using elastic search the service will be able to search for keys that are indexed there via existing mechanics.
+Using elastic search, the new search microservice will be able to search for keys that are indexed in ES, via existing mechanics.
 ::: 
 
 :::caution

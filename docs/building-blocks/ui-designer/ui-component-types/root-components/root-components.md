@@ -9,6 +9,7 @@ Root components are used to group different types of components, each having a d
 * [**Form Group**](form-group.md) - used to group and configure the layout for multiple [**form elements**](../form-elements/)
 * [**Container**](container.md) - used to group and configure the layout for multiple **components** of any type
 * [**Custom** ](custom.md)- these are Angular components developed in the container application and passed to the SDK at runtime, identified here by the component name
+* [**Card**](card.md) - acts like a [**Container**](container.md) component; it also has the option to become an accordion 
 
 ![](../../img/root_components.gif)
 
