@@ -37,9 +37,6 @@ The following variables need to be set in order to connect to the identity manag
 
 `SECURITY_OAUTH2_REALM`
 
-
-This feature can be enabled by setting the `FLOWX_DEBUG` environment variable to true.
-
 ### Logging
 
 The following environment variables could be set in order to control log levels:
