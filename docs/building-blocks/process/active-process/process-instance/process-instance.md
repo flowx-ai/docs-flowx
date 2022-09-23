@@ -1,6 +1,12 @@
+---
+sidebar_position: 1
+---
+
 # Process instance
 
-Once a process is defined and added on the platform, it can be executed, monitored and optimized. When a business process starts, we create an **instance** of the definition.
+Once a process is defined and added on the platform, it can be executed, monitored and optimized. When a business process starts, we create an **instance** of the definition. 
+
+![](../../img/proc_instance_progress.png)
 
 Think of the process instance as if the process definition is the blueprint of a house and the instance is the house.
 
