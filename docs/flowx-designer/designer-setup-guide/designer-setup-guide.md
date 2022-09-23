@@ -215,7 +215,7 @@ The database schema is managed by a [liquibase](https://www.liquibase.org/) scri
 
 Kafka is used only for saving audit logs. Only a producer needs to be configured. The environment variables that need to be set are:
 
-`KAFKA_BOOTSTRAP_SERVERS` - the Kafka boostrap servers url
+`KAFKA_BOOTSTRAP_SERVERS` - the Kafka bootstrap servers URL
 
 `KAFKA_TOPIC_AUDIT_OUT` - the topic where audit logs will be sent
 
@@ -255,6 +255,10 @@ A specific service account should be configured in the OpenID provider to allow 
 `SECURITY_OAUTH2_SERVICE_ACCOUNT_ADMIN_CLIENT_ID` - the openid service account username
 
 `SECURITY_OAUTH2_SERVICE_ACCOUNT_ADMIN_CLIENT_SECRET` - the openid service account client secret
+
+Configuration needed to clear the offline sessions of a user session from the identity provider solution:
+
+`FLOWX_AUTHENTICATE_CLIENTID` 
 
 [Configuring access rights for admin](configuring-access-rights-for-admin)
 

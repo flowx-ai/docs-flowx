@@ -37,17 +37,8 @@ The following variables need to be set in order to connect to the identity manag
 
 `SECURITY_OAUTH2_REALM`
 
-### Redis configuration
 
-The following values should be set with the corresponding Redis-related values. 
-
-`SPRING_REDIS_PASSWORD`
-
-### Debugging
-
-Advanced debugging features can be enabled. When this happens, snapshots of the process status will be taken after each action and can be later used for debugging purposes. This feature comes with an exponential increase in database usage, so we suggest having the flag set to true on debugging media and false production ones.
-
-This feature can be enabled by setting the FLOWX_DEBUG environment variable to true.
+This feature can be enabled by setting the `FLOWX_DEBUG` environment variable to true.
 
 ### Logging
 
@@ -58,5 +49,3 @@ The following environment variables could be set in order to control log levels:
 `LOGGING_LEVEL_ROOT` - root spring boot microservice logs
 
 `LOGGING_LEVEL_APP` - app level logs
-
-`LOGGING_LEVEL_SOCKET` - WebSocket-related logs, included in `LOGGING_LEVEL_APP`

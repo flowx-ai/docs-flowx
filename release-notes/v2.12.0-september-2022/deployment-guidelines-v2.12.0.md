@@ -71,6 +71,24 @@ DELETE /cloned-process_instance-1
 
 ### Admin
 
+:::tip
+New configurations available for the **Admin** microservice.
+:::
+
+#### Client ID
+
 A new configuration was added in the **admin** microservice setup guide to clear the offline sessions of a user session from the identity provider solution (keycloak).
 
 `FLOWX_AUTHENTICATE_CLIENTID`
+
+#### Redis
+
+Redis configuration
+
+The following values should be set with the corresponding Redis-related values:
+
+`SPRING_REDIS_HOST`
+
+`SPRING_REDIS_PASSWORD`
+
+[Admin setup guide](../../docs/flowx-designer/designer-setup-guide)
