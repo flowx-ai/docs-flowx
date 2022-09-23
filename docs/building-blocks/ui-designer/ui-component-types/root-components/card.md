@@ -2,6 +2,8 @@
 
 A card is a simple element that allows component grouping and alignment. It has the option to enable/disable an accordion element.
 
+![](../../../../../release-notes/img/card_element1.gif)
+
 Properties that can be configured:
 
 #### **Settings**
