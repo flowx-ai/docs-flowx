@@ -36,7 +36,7 @@ To access Integration management:
 
 For more details on how to configure access rights for Integrations Management, check the following section:
 
-[Configuring access rights fo Integration Management](configuring-access-rights-for-intgr-mngmnt.md)
+[Configuring access rights for Integration Management](configuring-access-rights-for-intgr-mngmnt.md)
 
 
 ## Creating a new integration
@@ -45,13 +45,12 @@ To create a new integration, see the steps described in [Accessing Integration m
 
 1. Click **New integration** and fill in the details:
    * **Name** - the name of the integration
-   * **Identifier** - fill in a unique identifier for your integration
    * (Optional) **System name** - used for multiple source systems, if multiple enumerations values are needed to communicate with other systems
 2. Click **Add**.
 
 <div class="image-scaled">
 
-![Add new integration](../../../img/add_new_integration.png)
+![Add new integration](../../../img/%20add_new_integration.png)
 
 </div>
 
@@ -61,9 +60,8 @@ After you added a new integration, you can configure scenarios by following the 
 
 1. Open the newly created **integration**.
 2. Click the **arrow** icon to expand the **drop-down list** with scenarios.
-3. Click **+ Add new scenario** button and fill in the details:
-   * **Name** - the name of the scenario
-   * **Identifier** - fill in a unique identifier for your scenario
+3. Click **+ Add new scenario** button and fill in the **name** of the scenario.
+
 
 ![Add new scenario](../../../img/add_new_scenario.png)
 
@@ -74,56 +72,71 @@ You have multiple scenarios that you can configure on an integration. For exampl
 After you created a scenario you can configure the **data model** for it by following the next steps:
 
 1. Select a **scenario** then click the **eye icon** to open the configuration.
-2. You have multiple **properties** that you need to configure:
+2. You have two tabs **Send** and **Receive**, corresponding to the type of the actions: [Kafka Send](../../../../building-blocks/node/message-send-received-task-node.md#message-send-task) and [Kafka Receive](../../../../building-blocks/node/message-send-received-task-node.md#message-receive-task).
+3. You have multiple **properties** that you need to configure:
 
-* [**Topics** ](./#configuring-topics)
-* [**Input model**](./#configuring-input-model)
-* [**Output model** ](./#configuring-output-model)
-* [**Headers**](./#headers)
+* **Send** scenario:
+  * [**Topics** ](#configuring-topics-for-send-scenario)
+  * [**Message data model**](#configuring-message-data-model)
+  * [**Headers**](#headers)
 
-### Configuring topics
+* **Receive** scenario:
+
+  * [**Topics** ](#configuring-topics-for-receive-scenario)
+  * [**Message data model**](#configuring-message-data-model)
+
+
+### Topics
+
+#### Configuring topics for Send scenario
 
 Topics are defined depending on the environment where you want to use them. You need to configure the following details:
 
-* **Output topic (out)** - the information that the [FLOWX.AI Engine ](../../flowx-engine/)is sending to the plugin or to the adapter
-* **Input topic (in)** - the information that the FLOWX.AI Engine is reading, coming from the plugin or from the adapter
+* **Input (in)** - the information that the FLOWX.AI Engine is reading, coming from the plugin or from the adapter
 * **Environment** - the environment where the topic should be used (if you leave this field empty, all the environments will be selected)
 
 <div class="image-scaled">
 
-![](../../../img/add_new_topic.png)
+![](../../../img/add_send_topics.png)
 
 </div>
 
-### Configuring Input model
+#### Configuring topics for Receive scenario
 
-The input data model represents the content of the message that the adapters or plugins send to the FLOWX.AI Engine.
+* **Input (out)** - the information that the FLOWX.AI Engine is reading, coming from the plugin or from the adapter
+* **Environment** - the environment where the topic should be used (if you leave this field empty, all the environments will be selected)
 
-![](../../../img/topic_input_model.png)
+### Configuring message data model
 
-To configure a new input model, follow the next steps:
+**SEND scenario**: The message data model represents the content of the message that the adapters or plugins send to the FLOWX.AI Engine.
+
+**RECEIVE scenario**: The output data model represents the content of the message that FLOWX.AI Engine sends to the adapters or plugins.
+
+![](../../../img/send_message_dat_model.png)
+
+To configure a new message data model, follow the next steps:
 
 1. Open FLOWX.AI Admin.
 2. From the left-side menu, select **Integration Management**.
 3. Select an **integration**.
+4. Select the type of the scenario then click "**+**" button.
 
 The following details need to be configured:
 
-* **Property name** - the name of the property
-* **Property types:**
+* **Property name** - the name of the property types:
   * STRING
   * NUMBER
   * BOOLEAN
-  * OBJECT - you can add multiple values inside an OBJECT
-![](../../../img/input_model_properties.png) 
+  * OBJECT - you can add multiple values types inside an OBJECT
+![](../../../img/intgr_object.png) 
   * OBJECT_REF - used for values that are already defined in the process
-  * ARRAY -  for arrays you must specify the **Item type**
+  * ARRAY - for arrays you must specify the **Item type**
 ![](../../../img/input_model_item_type.png)
   * ARRAY_REF - used for values that are already defined in the process
   * ENUM - a special data type that enables for a variable to be a set of predefined constants
 
 * **Description** - description of the input
-* **Example value -** example value based on the type of the input
+* **Example value** - example value based on the type of the input
 * **Mandatory** - could be mandatory or not
 
 <div class="image-scaled">
@@ -132,28 +145,10 @@ The following details need to be configured:
 
 </div>
 
-### Configuring Output model
-
-The output data model represents the content of the message that FLOWX.AI Engine sends to the adapters or plugins.
-
-![](../../../img/output_model.png)
-
-The following details need to be configured:
-
-* **Property name** - the name of the property
-* **Type** - STRING, NUMBER, BOOLEAN, OBJECT, ARRAY or ENUM
-* **Description** -  description of the input
-* **Example value** -example value based on the type of the input
-
-<div class="image-scaled">
-
-![](../../../img/output_model_properties.png)
-
-</div>
 
 ### Headers
 
-The only header configured in the above example is - `processInstanceId`.
+All integrations have `processInstanceId` as a default header parameter.
 
 :::info
 If you have actions that contain [callbacks](../../../../building-blocks/actions.md#defining-callbacks), multiple headers can be added, like the action name or the name of the node.
@@ -181,4 +176,4 @@ Data stream topics are used to select the integration and the key on which the r
 
 If your integration has scenarios that are already used in another process, you will always be notified.
 
-![](../../../img/integrations_already_in_use.png)
+![](../../../img/integrations_in_use.png)

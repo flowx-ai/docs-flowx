@@ -39,7 +39,7 @@ const config = {
           lastVersion: 'current',
           versions:{
             current:{
-              label: '2.11.0',
+              label: '2.12.0',
               path: '',
               badge: true,
             },

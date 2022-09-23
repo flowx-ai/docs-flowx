@@ -1,0 +1,2 @@
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qin case the configuration is not properly made, the deactivated user will still be able to interact with the application until auth token expires\\E$"}
+{"rule":"EN_UNPAIRED_BRACKETS","sentence":"^\\QThe search data service enables you to create a process that can perform a search/look for data (using Kafka Send(../ Kafka receive actions) in another process.\\E$"}

@@ -176,6 +176,12 @@ It is important to know that all the events that start with a configured pattern
 
 [Using the scheduler](../../core-components/core-extensions/scheduler.md#using-the-scheduler)
 
+#### **Topics related to the Search Data service
+
+`KAFKA_TOPIC_DATA_SEARCH_IN` - the topic name that the Engine listens on for requests to search for processes
+
+`KAFKA_TOPIC_DATA_SEARCH_OUT` - the topic name used by the Engine to reply after finding a process
+
 
 #### **Processes can also be started by sending messages to a Kafka topic.**
 
