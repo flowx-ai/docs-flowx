@@ -101,6 +101,11 @@ const config = {
           {to: '/faqs', label: 'FAQs', position: 'left'},
           {to: 'https://support.flowx.ai/', label: 'Support', position: 'right'},
           {to: 'https://www.flowx.ai/contact-us', label: 'Contact', position: 'right'},
+
+          {
+            type: 'search',
+            position: 'left',
+          }
         ],
       },
       footer: {
@@ -164,8 +169,8 @@ const config = {
         ],
         logo: {
           height: 100,
-          alt: 'Meta Open Source Logo',
-          src: '/img/logo_footer.svg',
+          alt: 'FLOWX.AI logo',
+          src: '/img/Flowx_logo_footer.svg',
           href: 'https://flowx.ai',
         },
         copyright: `Copyright © FLOWX.AI ${new Date().getFullYear()}`,
@@ -191,19 +196,18 @@ const config = {
     plugins: [
       require.resolve('docusaurus-plugin-image-zoom'),
       [
-        require.resolve("@cmfcmf/docusaurus-search-local"),
+        require.resolve("@easyops-cn/docusaurus-search-local"),
         {
-          indexDocs: true,
-          indexBlog: false,
           indexPages: true,
-          language: "en",
-
-          lunr: {
-            titleBoost: 5,
-            contentBoost: 1,
-            tagsBoost: 3,
-            parentCategoriesBoost: 2,
-          }
+          indexDocs: true,
+          docsRouteBasePath: "docs/",
+          hashed: true,
+          language: ["en"],
+          highlightSearchTermsOnTargetPage: false,
+          searchResultContextMaxLength: 35,
+          searchResultLimits: 10,
+          searchBarShortcut: true,
+          searchBarShortcutHint: true,
         }
       ],
 

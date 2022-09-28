@@ -64,7 +64,7 @@ The **body message** of the response will look like this:
 	"searchKey": "application.client.name",
 	"result": [],
 	"processStartDate": date,
-	"toManyResults": true|false
+	"tooManyResults": true|false
 }
 ```
 
@@ -88,10 +88,10 @@ To access the view of your process variables, tokens and subprocesses go to **FL
 			"processStartDate": date,
 			"data" : {"all data in elastic for that process"}
 	}],
-	"toManyResults": true|false
+	"tooManyResults": true|false
 }
 ```
-**NOTE**: You will receive up to 50 results - if `toManyResults` is true.
+**NOTE**: You will receive up to 50 results - if `tooManyResults` is true.
 
 
 * Example (dummy values extracted from a process):
