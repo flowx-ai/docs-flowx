@@ -170,7 +170,7 @@ const config = {
         logo: {
           height: 100,
           alt: 'FLOWX.AI logo',
-          src: '/img/Flowx_logo_footer.svg',
+          src: '/img/FlowX_logo_footer.svg',
           href: 'https://flowx.ai',
         },
         copyright: `Copyright © FLOWX.AI ${new Date().getFullYear()}`,
@@ -208,6 +208,7 @@ const config = {
           searchResultLimits: 10,
           searchBarShortcut: true,
           searchBarShortcutHint: true,
+          explicitSearchResultPath: false,
         }
       ],
 
