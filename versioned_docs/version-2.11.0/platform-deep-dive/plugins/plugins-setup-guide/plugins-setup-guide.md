@@ -20,7 +20,7 @@ Let's go into more details on setting up and using each of them:
 #### More details about the customer management plugin
 
 
-[Customet Management plugin configuration](customer-management-plugin-configuration)
+[Customer Management plugin configuration](customer-management-plugin-configuration)
 
 
 #### More details about the OCR plugin
