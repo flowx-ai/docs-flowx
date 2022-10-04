@@ -41,7 +41,8 @@ A basic configuration for minio:
 * A basic helm values.yaml
 
   ```jsx
-
+  MINIO_ACCESS_KEY: minio.access-key
+  MINIO_SECRET_KEY: minio.secret-key
   ```
 
 ## Configuration
@@ -52,7 +53,7 @@ Configuration for the two components should be grouped in a pod with two contain
 
 * Internal queue system
 * Kafka configuration
-* Minio Configuration
+* Min.io Configuration
 
 ```jsx
 CELERY_BROKER_URL: amqp://users:users_328947@jx-ocr-queue:5672
@@ -67,7 +68,7 @@ MINIO_HOST: minio-service:9000
 MINIO_LOCATION: zone
 MINIO_OCR_SCANS_BUCKET: pdf-scans
 MINIO_OCR_SIGNATURE_BUCKET: extracted-signatures
-MINIO_OCR_SIGNATURE_FILENAME: extracted_signature_{}.pn
+MINIO_OCR_SIGNATURE_FILENAME: extracted_signature_{}.png
 ```
 
 :::caution

@@ -30,7 +30,7 @@ With FLOWX you **build omnichannel experiences across all digital channels**, be
 
 **The UI is generated on the fly, by our AI model.** This means that you don’t need coding or design skills to create interfaces. Of course, you can inject your own code for CSS styling, apply your own design system with logo, corporate colors and fonts - but this is just if you want it. By default, you don’t need it.
 
-And of course, when it comes to processes, **we support a no-code/low-code framework that makes the platform available to any citizen developer**. This brings speed to development, since there is no disconnect between business and IT, supports agile ways of working and overall, has a positive impact over creativity and innovation.
+And of course, when it comes to processes, **we support a no-code/full-code framework that makes the platform available to any citizen developer**. This brings speed to development, since there is no disconnect between business and IT, supports agile ways of working and overall, has a positive impact over creativity and innovation.
 
 
 ## Next steps

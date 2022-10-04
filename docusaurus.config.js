@@ -208,7 +208,6 @@ const config = {
           searchResultLimits: 10,
           searchBarShortcut: true,
           searchBarShortcutHint: true,
-          explicitSearchResultPath: false,
         }
       ],
 

@@ -57,9 +57,9 @@ The Task management plugin is preconfigured with the following default users rol
   * edit - ROLE\_TASK\_MANAGER\_OOO\_EDIT
   * admin - ROLE\_TASK\_MANAGER\_OOO\_ADMIN
 
-{% hint style="warning" %}
+:::caution
 These roles need to be defined in the chosen identity provider solution.
-{% endhint %}
+:::
 
 In case other custom roles are needed, you can configure them using environment variables. More than one role can be set for each access scope.
 

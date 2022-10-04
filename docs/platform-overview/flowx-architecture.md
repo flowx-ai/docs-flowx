@@ -48,7 +48,7 @@ This is extremely important because often, digital apps used by a bank’s clien
 
 [FLOWX.AI Designer](../flowx-designer/flowx-designer.md) is built to administrate everything in FLOWX. It is a web application that runs in the browser, meaning that it resides out of a FLOWX deployment.
 
-The platform has **no-code/low-code capabilities**, meaning applications can be developed in a visual way, available for anyone with a powerful business idea. So we’re talking about business analysts,  product managers - people without advanced programming skills, and also experienced developers.
+The platform has **no-code/full-code capabilities**, meaning applications can be developed in a visual way, available for anyone with a powerful business idea. So we’re talking about business analysts, product managers - people without advanced programming skills, and also experienced developers.
 
 The process visual designer works on [BPMN 2.0 standard](../platform-overview/frameworks-and-standards/business-process-industry-standards/business-process-industry-standards.md) - meaning that the learning curve for business analysts or product managers is quite fast. Thus, creating new applications (e.g. onboarding an SME client for banks) or adding new functionality (allow personal data changes in an app) takes only 10 days, instead of 6 to 8 months.
 
@@ -62,7 +62,7 @@ However, we do support custom CSS or custom screens. Because we’re aware each 
 
 Also, we provide web and native mobile SDKs, so that every app you create is automatically an omnichannel one: it can be displayed in a browser, embedded in an internet banking interface, or in a mobile banking app. Or even deployed as a standalone app in Google Play or AppStore.
 
-Unlike other no-code/low-code platforms which provide templates or building blocks for the UI, ours is generated on the fly, as a business analyst creates the process and the data points. This feature reduces the need to use UX/UI expertise, the UI being generated respecting state-of-the-art UI frameworks.
+Unlike other no-code/full-code platforms which provide templates or building blocks for the UI, ours is generated on the fly, as a business analyst creates the process and the data points. This feature reduces the need to use UX/UI expertise, the UI being generated respecting state-of-the-art UI frameworks.
 
 
 [Renderer SDKs](../platform-deep-dive/core-components/renderer-sdks/angular-renderer.md)

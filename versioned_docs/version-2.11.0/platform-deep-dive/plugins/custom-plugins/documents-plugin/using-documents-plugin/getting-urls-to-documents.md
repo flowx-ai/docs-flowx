@@ -11,9 +11,9 @@ Kafka topic names can be set by using environment variables:
 * `KAFKA_TOPIC_DOCUMENT_GET_URLS_IN` - the topic that listens for the request from the engine
 * `KAFKA_TOPIC_DOCUMENT_GET_URLS_OUT` - the topic on which the engine will expect the reply
 
-{% hint style="warning" %}
+:::caution
 The Engine is listening for messages on topics with names of a certain pattern, make sure to use an outgoing topic name that matches the pattern configured in the Engine.
-{% endhint %}
+:::
 
 ## Request to retrieve URLs
 

@@ -7,9 +7,9 @@ Kafka topic names can be set by using environment variables:
 * `KAFKA_TOPIC_OTP_VALIDATE_IN` - Event send on this topic with an OTP and an identifier will check if the OTP is valid
 * `KAFKA_TOPIC_OTP_VALIDATE_OUT` - Response to the request to validate an OTP will be send back to the Engine on this topic.
 
-{% hint style="warning" %}
+:::caution
 The Engine is listening for messages on topics with names of a certain pattern, make sure to use an outgoing topic name that matches the pattern configured in the Engine.
-{% endhint %}
+:::
 
 ## Request to validate an OTP
 

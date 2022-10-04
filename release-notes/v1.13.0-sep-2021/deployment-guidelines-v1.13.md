@@ -14,9 +14,9 @@ Add a new entry data with the config anonymization
 
 * `data: anonymization: ${ANONYMIZE_DATA:true}`
 
-{% hint style="info" %}
+:::info
 Delete from config, element related to **license key, profiles key and liquibase**, see below
-{% endhint %}
+:::
 
 ```
 license :
