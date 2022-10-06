@@ -65,7 +65,7 @@ The CMS service is preconfigured with the following default users roles for each
   * import: 
     * ROLE_MEDIA_LIBRARY_IMPORT
     * ROLE_MEDIA_LIBRARY_EDIT
-    * ROLE_MEDIA_LIBRARY_ADMIN
+    * ROLE_MEDIA_LIBRARY_EDIT
   * read:
     * ROLE_MEDIA_LIBRARY_READ
     * ROLE_MEDIA_LIBRARY_EDIT

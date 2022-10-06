@@ -35,7 +35,7 @@ Do not forget, when upgrading to a new platform version, always check and make s
 |----------------------	|---------	|-------------------------------------------------------------------------------------------------------------	|--------------------	|
 | manage-media-library 	| import  	| ROLE_MEDIA_LIBRARY_IMPORT; ROLE_MEDIA_LIBRARY_EDIT; ROLE_MEDIA_LIBRARY_EDIT                                 	| Content Management 	|
 | manage-media-library 	| read    	| ROLE_MEDIA_LIBRARY_READ; ROLE_MEDIA_LIBRARY_EDIT; ROLE_MEDIA_LIBRARY_ADMIN; ROLE_MEDIA_LIBRARY_IMPORT 	      | Content Management 	|
-| manage-media-library 	| edit    	| ROLE_MEDIA_LIBRARY_EDI; ROLE_MEDIA_LIBRARY_ADMIN                                                         	    | Content Management 	|
+| manage-media-library 	| edit    	| ROLE_MEDIA_LIBRARY_EDIT; ROLE_MEDIA_LIBRARY_ADMIN                                                         	    | Content Management 	|
 | manage-media-library 	| admin   	| ROLE_MEDIA_LIBRARY_ADMIN                                                                                    	| Content Management 	|
 
 For more information on how to configure access rights for Media Library, check the following section:
@@ -51,9 +51,13 @@ Added requirements for Media Library with S3 storage:
 
 `KAFKA_TOPIC_AUDIT_OUT` - topic key for sending audit logs. Default value: `ai.flowx.audit.log`
 
+[Admin setup guide](../../docs/flowx-designer/designer-setup-guide)
+
 ### Engine setup guide
 
 `KAFKA_TOPIC_AUDIT_OUT` - topic key for sending audit logs. Default value: `ai.flowx.audit.log`
+
+[Engine setup guide](../../docs/platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide)
 
 ### CMS setup guide
 
@@ -68,3 +72,5 @@ Added requirements for Media Library with s3 storage:
 `APPLICATION_FILE_STORAGE_S3_CREATE_BUCKET`
 
 `APPLICATION_FILE_STORAGE_S3_PUBLIC_URL`
+
+[CMS setup guide](../../docs/platform-deep-dive/platform-setup-guide/cms-setup-guide)

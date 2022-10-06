@@ -111,9 +111,19 @@ Audit records can be filtered by using the following options:
 
 ![](../../img/audit_filter_by_event.png)
 
-* user - single selection
-* subject - single selection
-* subject identifier - exact match
+* User - single selection, type at least 4 characters
+* Subject - single selection
+* Subject identifier - exact match
 
+### Audit log details
 
+You can access audit log details window by clicking the eye icon on the right of each entry in the list.
+
+Here you have the following information:
+
+* Event
+* URL
+* Body 
+
+![](../../img/audit_log_details.png)
 
