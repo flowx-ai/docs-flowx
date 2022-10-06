@@ -20,9 +20,78 @@ The **token** is used to describe the current position in the process. The token
 
 The engine is also responsible with updating the UI when some actions occur. This is done by sending messages via **sockets**.
 
+## Process status
+
+To check the status of your process or to debug/troubleshoot a failed process, follow the next steps:
+
+1. Open **FLOWX Designer**.
+2. Go to **Processes -> Active Process -> Process instances**.
+3. Click **Process status** button.
+
+![](../../img/process_status.png)
+
+### Process status data
+
+![](../../img/process_status_data.png)
+
+* **Status** - status of the process instance
+  * CREATED
+  * STARTED
+  * DISMISSED
+  * EXPIRED
+  * FINISHED
+* **Process definition** -  the name of the process
+* **Active process instance** - process instance UUID (a copy action is also available)
+* **Variables** - variables are displayed as an expanded JSON
+
+![](../../img/process_variables.png)
+
+* **Tokens** - a token represents a state within a process instance (it describes the current position in the process flow)
+
+![](../../img/process_tokens.png)
+
+:::info
+For more information about token status details, [here](../../../token).
+:::
+
+* **Subprocesses** - :exclamation:displayed only if the current [process instance](process-instance.md) generated a [subprocess](../../subprocess.md) instance
+* **Exceptions** - are errors that are letting you know where the process is blocked (they also allow you to access directly the node where the process is breaking so you can edit it); :exclamation:displayed only if exceptions were thrown on the process
+
+![](../../img/process_exceptions.png)
+
+:::info
+For more information about **Exceptions**, check the following section:
+:::
+
+[Failed process start](../failed-process-start.md)
+
+* **Audit Log** - display events registered for process instances, tokens, tasks and exceptions reverse chronologically by timestamp
+
+![](../../img/process_status_audit.png)
+
+[Audit](../../../../platform-deep-dive/core-components/core-extensions/audit)
+
+Inside the breadcrumb menu (top-right corner):
+
+* **Go to process definition** **button** - you can open the process right away and start editing it
+* **Version** - version of the process definition
+* **Started** - when the process instance started
+* **Ended** - when the process instance ended
+
+![](../../img/process_export_smth.png)
+
+### Color coding
+
+Inside the **Process status** view, some nodes are highlighted with different colors so you can easily debug in case of a process failure.
+
+* **Green** - nodes highlighted with green mark the nodes passed by the [token](../../../token.md)
+* **Red** - the node highlighted with red marks the node where the token is stuck (process failure)
+
+![](../../img/color_coding.gif)
+
 ## Starting a new process instance
 
-The new instances will be started by making a request to the  [FLOWX.AI Engine](../../../../platform-deep-dive/core-components/flowx-engine). This will be handled by the web / mobile application that was created.
+The new instances will be started by making a request to the [FLOWX.AI Engine](../../../../platform-deep-dive/core-components/flowx-engine). This will be handled by the web / mobile application that was created.
 
 ![](../../img/process_instance_diagram.png)
 
@@ -33,7 +102,7 @@ To be able to start a new process instance, the current user needs to have the a
 When starting a new process instance, we can also set it to [inherit some values from a previous process instance](../../../../platform-deep-dive/core-components/flowx-engine.md#orchestration)
 ## Troubleshooting possible errors
 
-If everything was configured correctly,  the new process instance is added in the database and visible in the UI.
+If everything was configured correctly, the new process instance is added in the database and visible in the UI.
 
 ### Possible errors
 

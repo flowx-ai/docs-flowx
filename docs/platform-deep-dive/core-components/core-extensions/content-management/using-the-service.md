@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Using the service
 
 After you deployed the CMS service in your infrastructure, you can start defining and using custom content types, such as different lists (which can have different values for the same code depending on the external system that is used), blog posts etc.

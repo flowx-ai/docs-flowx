@@ -1,0 +1,119 @@
+# Audit log
+
+The Audit log service groups all audit events in a single place. The following details are available:
+
+<details>
+
+<summary> Timestamp </summary>
+
+* The timpestamp is displayed in a reversed chronologically order.
+
+</details>
+
+<details>
+
+<summary> User </summary>
+
+* The entity assigned: could be username or system.
+
+</details>
+
+<details>
+
+<summary> Section </summary>
+
+Possible values:
+
+* Process Instance
+* Process designer
+* Process Versioning
+* BPMN Diagram
+* UI Designer
+
+</details>
+    
+<details>
+
+<summary> Subject </summary>
+
+Possible values:
+    
+* Process Instance
+* Token
+* Task
+* Exception
+* Process definition
+* Node
+* Action
+* UI Component
+* General Settings
+* Swimlane
+* Connector
+
+</details>
+
+<details>
+
+<summary>Event</summary>
+
+Possible values:
+
+* Create
+* Update
+* Update bulk
+* Update state
+* Export
+* Import
+* Delete
+* Clone
+* Start
+* Start with inherit
+* Advance
+* View
+* Expire
+* Message Send
+* Message Receive
+* Notification receive
+* Run scheduled action
+* Execute action
+* Finish
+* Dismiss
+* Retry
+* Abort
+* Assign
+* Unassign
+* Hold
+* Unhold
+
+</details>
+
+<details>
+
+<summary> Subject identifier </summary>
+
+* Subject identifier - the unique identifier is related to the subject, there are different types of identifiers based on the selected subject.
+
+</details>
+
+<details>
+
+<summary> Status </summary>
+
+* Status - **success** or **error**
+
+</details>
+
+![](../../../../release-notes/img/audit_log_new.png)
+
+Audit records can be filtered by using the following options:
+
+* Filter by event date 
+
+![](../../img/audit_filter_by_event.png)
+
+* user - single selection
+* subject - single selection
+* subject identifier - exact match
+
+
+

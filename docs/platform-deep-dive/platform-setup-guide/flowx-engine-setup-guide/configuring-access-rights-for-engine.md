@@ -20,10 +20,18 @@ Available scopes:
 The Engine service is preconfigured with the following default users roles for each of the access scopes mentioned above:
 
 * manage-processes
-  * edit - `ROLE_ADMIN_MANAGE_PROCESS_EDIT`
+  * edit:
+    * ROLE_ADMIN_MANAGE_PROCESS_EDIT
+    * ROLE_ADMIN_MANAGE_PROCESS_ADMIN
+  * admin:
+    * ROLE_ADMIN_MANAGE_PROCESS_EDIT
+    * ROLE_ADMIN_MANAGE_PROCESS_ADMIN
 * manage-instances
-  * read - `ROLE_ENGINE_MANAGE_INSTANCE_READ`
-  * admin - `ROLE_ENGINE_MANAGE_INSTANCE_ADMIN`
+  * read:
+    * ROLE_ENGINE_MANAGE_INSTANCE_READ
+    * ROLE_ENGINE_MANAGE_INSTANCE_ADMIN
+  * admin:
+    * ROLE_ENGINE_MANAGE_INSTANCE_ADMIN
 
 :::warning
 These roles need to be defined in the chosen identity provider solution.

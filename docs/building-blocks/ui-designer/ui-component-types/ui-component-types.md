@@ -15,6 +15,7 @@ Different UI component types can be configured using UI Designer. The components
 * [Container](root-components/container.md)
 * [Form Group](root-components/form-group.md)
 * [Custom](root-components/custom.md)
+* [Card](root-components/card.md)
 
 </details>
 
@@ -49,7 +50,7 @@ Different UI component types can be configured using UI Designer. The components
 
 <summary>Forms</summary>
 
-* [Form](form-elements/)
+* [Form](form-elements)
 * [Input](form-elements/input-form-field.md)
 * Textarea
 * [Select](form-elements/select-form-field.md)

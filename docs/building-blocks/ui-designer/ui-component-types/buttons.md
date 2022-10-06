@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Buttons
 
-There are  two types of buttons, similar to each other but with different purposes:
+There are   two types of buttons, similar to each other but with different purposes:
 
 ### Button
 

@@ -26,6 +26,6 @@ The available configuration options for this form element are:
 
 * valid CSS properties (more details [here](../../#styling))
 
-A checkbox with three options and a column layout will look like this.&#x20;
+A checkbox with three options and a column layout will look like this.
 
 ![](../../img/checkbox_styling.png)
