@@ -81,7 +81,6 @@ This config is used for general purpose properties.
 |---------------|-----------------------------------------------------------------------|-------------------------|-----------------------------|
 | baseURL       | The base URL used for REST networking                                 | String                  | Mandatory                   |
 | imageBaseURL  | The base URL used for media library images                            | String                  | Mandatory                   |
-| socketBaseURL | The URL user for socket networking                                    | URL                     | Mandatory                   |
 | language      | The language used for retrieving enumerations and substitution tags   | String                  | Mandatory. Defaults to "en" |
 | stepViewType  | The type of the custom step view class                                | FXStepViewProtocol.Type | Optional                    |
 | logEnabled    | Value indicating whether console logging is enabled. Default is false | Bool                    | Optional                    |
@@ -92,7 +91,6 @@ This config is used for general purpose properties.
 FXConfig.sharedInstance.configure { (config) in
     config.baseURL = myBaseURL
     config.imageBaseURL = myImageBaseURL
-    config.socketBaseURL = mySocketBaseURL
     config.language = "en" 
     config.logEnabled = true
     config.stepViewType = CustomStepView.self
@@ -146,11 +144,11 @@ You can start a process by calling the following method.
 The container app is responsible with presenting the navigation controller holding the process navigation.
 
 ```
-public func startOrRestartProcess(navigationController: UINavigationController,
-                                  name: String,
-                                  params: [String: Any]?,
-                                  isModal: Bool = false,
-                                  showLoader: Bool = false)
+public func startProcess(navigationController: UINavigationController,
+                         name: String,
+                         params: [String: Any]?,
+                         isModal: Bool = false,
+                         showLoader: Bool = false)
 ```
 
 `navigationController` - the instance of UINavigationController which will hold the process navigation stack
@@ -166,11 +164,11 @@ public func startOrRestartProcess(navigationController: UINavigationController,
 #### Sample
 
 ```
-FlowX.sharedInstance.startOrRestartProcess(navigationController: processNavigationController,
-                                           name: processName,
-                                           params: startParams,
-                                           isModal: true
-                                           showLoader: true)
+FlowX.sharedInstance.startProcess(navigationController: processNavigationController,
+                                  name: processName,
+                                  params: startParams,
+                                  isModal: true
+                                  showLoader: true)
 
 self.present(processNavigationController, animated: true, completion: nil)
 ```
