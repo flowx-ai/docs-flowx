@@ -20,10 +20,20 @@ Available scopes:
 The Notification plugin is preconfigured with the following default users roles for each of the access scopes mentioned above:
 
 * manage-notification-templates
-  * import - ROLE\_NOTIFICATION\_TEMPLATES\_IMPORT
-  * read - ROLE\_NOTIFICATION\_TEMPLATES\_READ
-  * edit - ROLE\_NOTIFICATION\_TEMPLATES\_EDIT
-  * admin - ROLE\_NOTIFICATION\_TEMPLATES\_ADMIN
+  * import
+    * ROLE_NOTIFICATION_TEMPLATES_IMPORT
+    * ROLE_NOTIFICATION_TEMPLATES_EDIT
+    * ROLE_NOTIFICATION_TEMPLATES_ADMIN
+  * read:
+    * ROLE_NOTIFICATION_TEMPLATES_READ
+    * ROLE_NOTIFICATION_TEMPLATES_IMPORT
+    * ROLE_NOTIFICATION_TEMPLATES_EDIT
+    * ROLE_NOTIFICATION_TEMPLATES_ADMIN
+  * edit:
+    * ROLE_NOTIFICATION_TEMPLATES_EDIT"
+    * ROLE_NOTIFICATION_TEMPLATES_ADMIN"
+  * admin:
+    * ROLE_NOTIFICATION_TEMPLATES_ADMIN
 
 :::caution
 These roles need to be defined in the chosen identity provider solution.

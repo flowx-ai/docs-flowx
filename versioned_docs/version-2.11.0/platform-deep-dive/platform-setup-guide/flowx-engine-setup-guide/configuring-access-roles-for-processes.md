@@ -62,9 +62,9 @@ Before they can be used in the process definition the business filter attributes
 
 Active process instances and their related data can be viewed from the FLOWX Designer. A user needs to be assigned to a specific role in the identity provider solution to be able to view this information.
 
-By default, this role is named `FLOWX_ADMIN`, but its name can be changed from the application configuration of the Engine by setting the following environment variable:
+By default, this role is named `FLOWX_ROLE`, but its name can be changed from the application configuration of the Engine by setting the following environment variable:
 
-`FLOWX_ROLES_ADMIN`
+`FLOWX_PROCESS_DEFAULTROLES`
 
 When viewing process instance-related data, it can be configured whether to hide specific sensitive user data. This can be configured using the `FLOWX_DATA_ANONYMIZATION` environment variable.
 

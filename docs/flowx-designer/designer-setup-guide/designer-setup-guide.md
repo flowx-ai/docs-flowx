@@ -217,7 +217,8 @@ Kafka is used only for saving audit logs. Only a producer needs to be configured
 
 `KAFKA_BOOTSTRAP_SERVERS` - the Kafka bootstrap servers URL
 
-`KAFKA_TOPIC_AUDIT_OUT` - the topic where audit logs will be sent
+`KAFKA_TOPIC_AUDIT_OUT` - topic key for sending audit logs. Default value: `ai.flowx.audit.log`
+
 
 
 [How to create a Kafka producer](../../platform-deep-dive/integrations/creating-a-kafka-producer)
@@ -276,4 +277,5 @@ flowx-process-renderer:
     KEYCLOAK_ISSUER: {{openid provider - ex: https://something/auth/realms/realmName}}
     KEYCLOAK_REDIRECT_URI: {{url of the SPA}}
     KEYCLOAK_CLIENT_ID: {{client ID}}
+    STATIC_ASSETS_PATH: {{mediaLibrary.s3.publicUrl }}/{{env}}
 ```

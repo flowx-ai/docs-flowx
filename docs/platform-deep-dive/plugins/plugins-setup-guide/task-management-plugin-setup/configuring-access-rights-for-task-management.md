@@ -12,7 +12,7 @@ Available scopes:
 
 * read - users are able to view tasks
 
-2\.  **manage-hooks** - for configuring access for managing hooks
+2.  **manage-hooks** - for configuring access for managing hooks
 
 Available scopes:
 
@@ -21,7 +21,7 @@ Available scopes:
 * edit - users are able to edit hooks
 * admin - users are able to delete hooks
 
-3\.  **manage-process-allocation-settings** - for configuring access for managing process allocation settings
+3.  **manage-process-allocation-settings** - for configuring access for managing process allocation settings
 
 Available scopes:
 
@@ -30,7 +30,7 @@ Available scopes:
 * edit - users are able to edit access - create/edit allocation rules
 * admin - users are able to delete allocation rules
 
-4\.  **manage-out-of-office-users** - for configuring access for managing out-of-office users
+4.  **manage-out-of-office-users** - for configuring access for managing out-of-office users
 
 Available scopes:
 
@@ -41,25 +41,52 @@ Available scopes:
 The Task management plugin is preconfigured with the following default users roles for each of the access scopes mentioned above:
 
 * manage-tasks
-  * read - ROLE\_TASK\_MANAGER\_TASKS\_READ
+  * read:
+    * ROLE_TASK_MANAGER_TASKS_READ
 * manage-hooks
-  * import - ROLE\_TASK\_MANAGER\_HOOKS\_IMPORT
-  * read - ROLE\_TASK\_MANAGER\_HOOKS\_READ
-  * edit - ROLE\_TASK\_MANAGER\_HOOKS\_EDIT
-  * admin - ROLE\_TASK\_MANAGER\_HOOKS\_ADMIN
+  * import:
+    * ROLE_TASK_MANAGER_HOOKS_IMPORT
+    * ROLE_TASK_MANAGER_HOOKS_EDIT
+    * ROLE_TASK_MANAGER_HOOKS_ADMIN
+  * read: 
+    * ROLE_TASK_MANAGER_HOOKS_READ
+    * ROLE_TASK_MANAGER_HOOKS_IMPORT
+    * ROLE_TASK_MANAGER_HOOKS_EDIT
+    * ROLE_TASK_MANAGER_HOOKS_ADMIN
+  * edit:
+    * ROLE_TASK_MANAGER_HOOKS_EDIT
+    * ROLE_TASK_MANAGER_HOOKS_ADMIN
+  * admin:
+    * ROLE_TASK_MANAGER_HOOKS_ADMIN
 * manage-process-allocation-settings
-  * import - ROLE\_TASK\_MANAGER\_PROCESS\_ALLOCATION\_SETTINGS\_IMPORT
-  * read - ROLE\_TASK\_MANAGER\_PROCESS\_ALLOCATION\_SETTINGS\_READ
-  * edit - ROLE\_TASK\_MANAGER\_PROCESS\_ALLOCATION\_SETTINGS\_EDIT
-  * admin - ROLE\_TASK\_MANAGER\_PROCESS\_ALLOCATION\_SETTINGS\_ADMIN
+  * import:
+    * ROLE_TASK_MANAGER_PROCESS_ALLOCATION_SETTINGS_IMPORT
+    * ROLE_TASK_MANAGER_PROCESS_ALLOCATION_SETTINGS_EDIT
+    * ROLE_TASK_MANAGER_PROCESS_ALLOCATION_SETTINGS_ADMIN
+  * read:
+    * ROLE_TASK_MANAGER_PROCESS_ALLOCATION_SETTINGS_READ
+    * ROLE_TASK_MANAGER_PROCESS_ALLOCATION_SETTINGS_IMPORT
+    * ROLE_TASK_MANAGER_PROCESS_ALLOCATION_SETTINGS_EDIT
+    * ROLE_TASK_MANAGER_PROCESS_ALLOCATION_SETTINGS_ADMIN
+  * edit:
+    * ROLE_TASK_MANAGER_PROCESS_ALLOCATION_SETTINGS_EDIT
+    * ROLE_TASK_MANAGER_PROCESS_ALLOCATION_SETTINGS_ADMIN
+  * admin:
+    * ROLE_TASK_MANAGER_PROCESS_ALLOCATION_SETTINGS_ADMIN
 * manage-out-of-office-users
-  * read - ROLE\_TASK\_MANAGER\_OOO\_READ
-  * edit - ROLE\_TASK\_MANAGER\_OOO\_EDIT
-  * admin - ROLE\_TASK\_MANAGER\_OOO\_ADMIN
+  * read:
+    * ROLE_TASK_MANAGER_OOO_READ
+    * ROLE_TASK_MANAGER_OOO_EDIT
+    * ROLE_TASK_MANAGER_OOO_ADMIN
+  * edit:
+    * ROLE_TASK_MANAGER_OOO_EDIT
+    * ROLE_TASK_MANAGER_OOO_ADMIN
+  * admin:
+    * ROLE_TASK_MANAGER_OOO_ADMIN
 
-{% hint style="warning" %}
+:::caution
 These roles need to be defined in the chosen identity provider solution.
-{% endhint %}
+:::
 
 In case other custom roles are needed, you can configure them using environment variables. More than one role can be set for each access scope.
 
