@@ -139,7 +139,7 @@ You might want to use this method in a variety of scenarios, for instance when t
 
 ### How to start a process
 
-You can start a process by calling the following method.
+You can start a process by calling the method below.
 
 The container app is responsible with presenting the navigation controller holding the process navigation.
 
@@ -172,6 +172,26 @@ FlowX.sharedInstance.startProcess(navigationController: processNavigationControl
 
 self.present(processNavigationController, animated: true, completion: nil)
 ```
+
+### How to resume a process
+
+You can resume a process by calling the method below.
+
+```
+public func continueExistingProcess(uuid: String,
+                                    name: String,
+                                    navigationController: UINavigationController,
+                                    isModal: Bool = false) {
+```
+
+`uuid` - the UUID string of the process
+
+`name` - the name of the process
+
+`navigationController` - the instance of UINavigationController which will hold the process navigation stack
+
+`isModal` - a boolean indicating whether the process navigation is modally displayed. When the process navigation is displayed modally, a close bar button item is displayed on each screen displayed throughout the process navigation.
+
 
 ### How to end a process
 
