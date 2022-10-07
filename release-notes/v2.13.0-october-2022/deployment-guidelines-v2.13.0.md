@@ -4,6 +4,10 @@
 Do not forget, when upgrading to a new platform version, always check and make sure your installed component versions match the versions stated in the release. To do that, go to **FLOWX.AI Designer > Platform Status**.
 :::
 
+:::caution Process compatibility
+After updating to **2.13.0** FLOWX.AI release, importing old processes definitions in the new platform release is not possible (available for exports from **<2.12.0** releases).
+:::
+
 ![](../img/release_platform_version_check.png)
 
 ## Component versions
@@ -25,6 +29,19 @@ Do not forget, when upgrading to a new platform version, always check and make s
 | **Task Management Plugin**              |  **0.0.42** |   0.0.40    |   0.0.37    | 0.0.29     | 0.0.28     | 0.0.28  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.22  | 0.0.22  | 0.0.21  | 0.0.21  | 0.0.16    | 0.0.16    | 0.0.14  |         |         |         |        |         |
 | **Data search**                         |  **0.0.8**  |   0.0.6     |             |            |            |         |         |         |         |         |         |         |         |           |           |         |         |         |         |        |         |
 | **Audit Core**                          |  0.0.5      |             |             |            |            |         |         |         |         |         |         |         |         |           |           |         |         |         |         |        |         |
+
+### 2.13.0 recommended versions
+
+| FLOWX.AI Platform Version 	| Component name 	| Recommended version (tested version) 	|
+|---------------------------	|----------------	|--------------------------------------	|
+| 2.13                      	| Keycloak       	| 18.0.x                               	|
+| 2.13                      	| Kafka          	| 2.8.x                                	|
+| 2.13                      	| PostgreSQL     	| 14.3.0                               	|
+| 2.13                      	| MongoDB        	| 5.0.8                                	|
+| 2.13                      	| Redis          	| 6.2.6                                	|
+| 2.13                      	| Elastisearch   	| 7.17                                 	|
+| 2.13                      	| S3 (Min.IO)    	| 2020.7.24                            	|
+| 2.13                      	| OracleDB       	| 19.8.0.0.0                           	|
 
 ## Additional configuration
 
