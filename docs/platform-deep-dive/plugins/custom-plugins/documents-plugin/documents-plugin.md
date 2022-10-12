@@ -5,12 +5,12 @@ The documents plugin can be easily added to your custom FLOWX deployment to **en
 The plugin offers the possibility to:
 
 * store and make changes to documents
-* generate documents based on predefined templates (docx or HTML) and custom process related data
+* generate documents based on predefined templates (pdf or HTML) and custom process related data
 * convert documents between various formats
 * splitting bulk documents into smaller separate documents
 * editing documents to add generated barcodes/signatures and pictures
 
-It can be quickly deployed on the chosen infrastructure, preloaded with the needed industry-specific document templates using a REST interface and then connected to the FLOWX Engine through Kafka events.
+It can be quickly deployed on the chosen infrastructure, preloaded with the needed industry-specific document templates using an intuitive WYSIWYG editor, and then connected to the FLOWX.AI Engine through Kafka events.
 
 Let's go through the steps needed in order to deploy and set up the plugin:
 

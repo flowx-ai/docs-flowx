@@ -2,9 +2,9 @@
 sidebar_position: 2
 ---
 
-# Generating from docx templates
+# Generating from pdf templates
 
-Used to generate documents based on previously defined document templates. The following example covers generating documents using DOCX templates.
+Used to generate documents based on previously defined document templates. The following example covers generating documents using PDF templates.
 
 ## Define needed Kafka topics
 

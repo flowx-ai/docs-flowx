@@ -208,6 +208,7 @@ const config = {
           searchResultLimits: 10,
           searchBarShortcut: true,
           searchBarShortcutHint: true,
+          docsPluginIdForPreferredVersion: "2.12.0"
         }
       ],
 

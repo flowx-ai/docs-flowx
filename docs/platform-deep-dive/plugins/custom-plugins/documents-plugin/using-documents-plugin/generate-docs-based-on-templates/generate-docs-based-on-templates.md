@@ -8,7 +8,7 @@ One of the main features of the document management plugin is the ability to gen
 
 ![](../../../../../img/docs_plugin_template.png)
 
-The plugin supports using both docx and html template types.
+The plugin supports using both PDF and HTML template types.
 
 Let's go through the specific details for defining and managing such custom templates and of adding the process actions for generating documents:
 
