@@ -6,8 +6,8 @@ Used to generate documents based on previously defined document templates. The f
 
 Kafka topic names can be set by using environment variables:
 
-* `KAFKA_TOPIC_DOCUMENT_GENERATE_HTML_IN`
-* `KAFKA_TOPIC_DOCUMENT_GENERATE_HTML_OUT`
+* `KAFKA_TOPIC_DOCUMENT_GENERATE_HTML_IN`: ai.flowx.in.qa.document.html.generate.v1
+* `KAFKA_TOPIC_DOCUMENT_GENERATE_HTML_OUT`: ai.flowx.updates.qa.document.html.generate.v1
 
 :::caution
 The Engine is listening for messages on topics with names of a certain pattern, make sure to use an outgoing topic name that matches the pattern configured in the Engine.
@@ -22,10 +22,8 @@ Values expected in the request body:
   * customId = client ID
   * templateName = the name of the template to be used
   * language
-  * version
-  * draft
   * includeBarcode
-  * data = a map containing the values that should be replaced in the document template; the keys used in the map should match the ones defined in the html template
+  * data = a map containing the values that should be replaced in the document template; the keys used in the map should match the ones defined in the HTML template
 
 Example:
 
@@ -37,8 +35,6 @@ Example:
         "customId": "123456",
         "templateName": "html_test_template",
         "language": "en",
-        "version": 1,
-        "draft": false,
         "data": {
             "offerName": "The greatest offer - deluxe edition",
             "companyName": "Test Company SRL",

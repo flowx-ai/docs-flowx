@@ -14,39 +14,22 @@ Kafka topic names can be set by using environment variables:
 
 Let's pick a simple use-case, say we need to send a new welcome letter when we onboard a new customer. The steps are the following:
 
-**Step 1:** Configure the template that you want to use for the welcome email, you will need to make a request to the API for adding this new template.
+1. Configure the template that you want to use for the welcome email. 
+2. To configure a document template, first, you need to select some information stored in the Body:
 
-Make a `POST` request to `NOTIFICATION_URL/api/template` with the following body:
+* **Type** - MAIL (for email notifications)
+* **Forward on Kafka** - if this box is checked, the notification is not being sent directly by the plugin to the destination, but forwarded to another adapter
+* **Language** - choose the language for your notification template
+* **Subject** - enter a subject
 
-```
-{
-    "name": "welcomeLetter",
-    "type": "MAIL",
-    "strategyType": "MAIL",
-    "active": true,
-    "context": [],
-    "language": "ro",
-    "subject": "Welcome!",
-    "body": "<!DOCTYPE html> <html xmlns:th='<http://www.thymeleaf.org>'> <head> <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' /> </head> <body> <p>Hello!</p> <p th:text='${lastName}'></p> <p th:text='${firstName}'></p></body> </html>",
-    "params": [
-        {
-            "key": "lastName",
-            "mandatory": false
-        },
-        {
-            "key": "firstName",
-            "mandatory": false
-        },
-        {
-            "key": "clientId",
-            "mandatory": true
-        }
-    ]
-}
-```
+3. You can edit the content of a notification template by using the WYSIWYG editor embedded in the body of the notification templates.
 
-**Step 2:** Check that the needed topic is configured correctly `KAFKA_TOPIC_NOTIFICATION_EXTERNAL_OUT`
+![](../../../../img/notification_email.png)
 
-**Step 3:** Use the FLOWX Designer to add a new Kafka send event to the correct node in the process definition
+4. Configure the data model for the template.
 
-**Step 4:** Add the proper configuration to the action, the Kafka topic and message to be sent.
+![](../../../../img/data_model_notif.png)
+
+5. Use the FLOWX.AI Designer to add a new Kafka send event to the correct node in the process definition.
+6. Open your process definition and check that the needed topic is configured correctly `KAFKA_TOPIC_NOTIFICATION_EXTERNAL_OUT`
+7. Add the proper configuration to the action, the Kafka topic and message to be sent.

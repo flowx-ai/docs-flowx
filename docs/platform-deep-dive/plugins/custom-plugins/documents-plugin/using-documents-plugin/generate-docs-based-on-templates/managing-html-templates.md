@@ -1,7 +1,7 @@
 
 # Managing HTML templates
 
-## Defining a HTML template format
+## Defining an HTML template format
 
 The template can support the following types of parameters:
 
@@ -11,7 +11,7 @@ Use case: include the company name and registration number in an offer document
 
 ![](../../../../../img/docplugin_managing_html_template.png)
 
-Html template specifications:
+HTML template specifications:
 
 ```
 <p><strong>Lorem ipsum: <span th:text=\"${companyName}\"></span></strong>, dolor sit amet <strong><span th:text=\"${cui}\"></span></strong>.</p>
@@ -252,5 +252,5 @@ POST `{{documentUrl}}/internal/html/templates/convert` - converts a docx file to
 ## Examples
 
 :::tip
-Download pdf generated based on the html example, [**here**](../../../../../assets/html_generated_document.pdf).
+Download pdf generated based on the HTML example, [**here**](../../../../../assets/html_generated_document.pdf).
 :::

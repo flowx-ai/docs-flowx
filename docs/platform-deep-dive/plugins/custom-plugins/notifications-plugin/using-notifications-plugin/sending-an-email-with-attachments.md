@@ -1,8 +1,10 @@
+---
+sidebar_position: 3
+---
+
 # Sending an email with attachments
 
-Using the notification plugin for sending emails with attachments needs the same configuration as sending regular notifications.
-
-The notification template needs to be saved and the corresponding Kafka topic needs to be set.
+Using the notification plugin for sending emails with attachments needs the same topic configuration as sending regular notifications. The notification template needs to be saved and the corresponding Kafka topic needs to be set.
 
 [Send a notification](sending-a-notification.md)
 
@@ -11,6 +13,8 @@ The notification template needs to be saved and the corresponding Kafka topic ne
 ### Example: send an email notification with attached files from a business flow
 
 Let's pick a simple use-case, say we need to send a copy of a contract signed by a new customer. Before setting the action for the notification, another action will be needed in order to first save the new contract using the documents plugin.
+
+![](../../../../img/send_email_notif_attach.jpeg)
 
 [Uploading a new document](../../documents-plugin/using-documents-plugin/uploading-a-new-document.md)
 

@@ -19,13 +19,13 @@ The available configuration options for this form element are:
    * **Default Value** - the default value of the checkbox
    * **Source Type** - it can be Static, Enumeration, or Process Data
 4. **Expressions**
-   * **Hide** - javascript expressions used to hide components when they're truthy
-   * **Disabled expressions** - javascript expressions that should be evaluated as true or false. It's important to make sure that hidden fields also have the same expression configured under expressions -> hide
+   * **Hide** - JavaScript expressions used to hide components when they're truthy
+   * **Disabled expressions** - JavaScript expressions that should be evaluated as true or false. It's important to make sure that disabled fields have the same expression configured under the path **expressions → hide**
 
 #### Checkbox styling
 
 * valid CSS properties (more details [here](../../#styling))
 
-A checkbox with three options and a column layout will look like this.&#x20;
+A checkbox with three options and a column layout will look like this.
 
 ![](../../img/checkbox_styling.png)

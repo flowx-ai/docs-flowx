@@ -1,12 +1,22 @@
 # 📦 Documents plugin
 
-The documents plugin can be easily added to your custom FLOWX deployment to **enhance the core platform capabilities with functionality specific to document handling**.
+The document plugin can be easily added to your custom FLOWX.AI deployment to **enhance the core platform capabilities with functionality specific to document handling**.
+
+![](../../../img/doc_plugin_general.png)
 
 The plugin offers the possibility to:
 
 * store and make changes to documents
-* generate documents based on predefined templates (pdf or HTML) and custom process related data
-* convert documents between various formats
+* generate documents based on predefined templates and custom process related data
+* create via WYSIWYG editor
+
+![](../../../img/doc_plugin_wysiwyg.png)
+    
+* import already created templates
+
+![](../../../img/doc_plugin_create_import.png)
+
+* convert documents from pdf to jpeg
 * splitting bulk documents into smaller separate documents
 * editing documents to add generated barcodes/signatures and pictures
 

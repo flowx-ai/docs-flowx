@@ -4,166 +4,115 @@ sidebar_position: 2
 
 # Uploading a new document
 
-Documents management can be done via the REST API, for example adding various general documents needed in the processes, but it can also be integrated in the process steps via Kafka events.
+Documents upload can be integrated in a process definition by adding a user task node with an **Upload action** attached. This way you can interact with the process, and you can choose which file to upload.
 
-## REST API
-
-The plugin has the following options for managing documents and files via REST:
-
-POST `{{documentUrl}}/internal/documents` - Create a document metadata
-
-POST `{{documentUrl}}/internal/documents/upload` - Create the document metadata and upload the file
-
-POST `{{documentUrl}}/internal/documents/DOCUMENT_ID/upload` - Upload a file
-
-GET `{{documentUrl}}/internal/documents` - Get all documents
-
-GET `{{documentUrl}}/internal/documents/DOCUMENT_ID` - Get document by id
-
-GET `{{documentUrl}}/internal/documents/DOCUMENT_ID/files` - Get all files of a document
-
-GET `{{documentUrl}}/internal/files/DOCUMENT_ID` - Get file by id
-
-GET `{{documentUrl}}/internal/files/FILE_ID/download` - Download file by id
-
-DELETE `{{documentUrl}}/internal/documents/DOCUMENT_ID` - Delete document by id
-
-DELETE `{{documentUrl}}/internal/documents/DOCUMENT_ID` - Delete document by type
-
-DELETE `{{documentUrl}}/internal/files/FILE_ID` - Delete file by id
-
-### Steps for managing a document
-
-**Step 1:** Check if a document with the specific type exists:
-
-```
-GET {{documentUrl}}/internal/documents
-```
-
-possible response of a document with one file uploaded:
-
-```
-[
-    {
-        "createdBy": "anonymous",
-        "createdDate": "2020-12-12T10:26:37.807+0000",
-        "lastModifiedBy": null,
-        "lastModifiedDate": null,
-        "id": 1001,
-        "currentFile": {
-            "createdBy": "anonymous",
-            "createdDate": "2020-12-12T10:26:37.820+0000",
-            "lastModifiedBy": null,
-            "lastModifiedDate": null,
-            "id": 2,
-            "name": "REQUEST.pdf",
-            "size": 142655,
-            "mimeType": "application/pdf",
-            "path": "file/REQUEST.pdf",
-            "deleted": false,
-            "notes": "write_completed",
-            "parentId": null,
-            "childIds": [],
-            "encryptionKey": null,
-            "destinationSystem": "minio",
-            "cloned": false
-        },
-        "files": [
-            {
-                "createdBy": "anonymous",
-                "createdDate": "2020-12-12T10:26:37.820+0000",
-                "lastModifiedBy": null,
-                "lastModifiedDate": null,
-                "id": 2,
-                "name": "REQUEST.pdf",
-                "size": 142655,
-                "mimeType": "application/pdf",
-                "path": "file/REQUEST.pdf",
-                "deleted": false,
-                "notes": "write_completed",
-                "parentId": null,
-                "childIds": [],
-                "encryptionKey": null,
-                "destinationSystem": "minio",
-                "cloned": false
-            }
-        ],
-        "documentType": "REQUEST",
-        "documentTypeDescription": null,
-        "processInstanceId": null,
-        "customId": null,
-        "deleted": false,
-        "systemOwner": "account"
-    }
-]
-```
-
-**Step 2:** If you want to upload a new version of this file you should use:
-
-```
-POST {{documentUrl}}/internal/documents/{{documentId}}/upload
-form-data body with file 
-```
-
-**Step 3:** If you want to create a new document use:
-
-```
-POST {{documentUrl}}/internal/documents/upload
-form-data body with file +
-{
-    "documentType": "SOME_TYPE"
-}
-```
-
-## Defining process actions
-
-### Define needed Kafka topics
-
-Kafka topic names can be set by using environment variables:
-
-* `KAFKA_TOPIC_DOCUMENT_PERSIST_IN`
-* `KAFKA_TOPIC_DOCUMENT_PERSIST_OUT`
-
-:::caution
-The Engine is listening for messages on topics with names of a certain pattern, make sure to use an outgoing topic name that matches the pattern configured in the Engine.
+:::info
+User task nodes allow you to define and configure UI templates and possible actions for a certain template config node (ex: upload file button).
 :::
 
-### Persist a document uploaded to a business process
+![](../../../../img/docs_upload_proc.png)
 
-**Step 1:** Go to the Visual Flow Designer and add a Kafka send event
+To upload a document using a process, follow the next steps.
 
-**Step 2:** Configure the Kafka send event with the name of the template, `KAFKA_PERSIST_IN_TOPIC` value for the Kafka topic and the specific body
+## Defining the process
 
-**Step 3:** Go to the Visual Flow Designer and add a Kafka receive event
+1. Create a process definition.
+2. Add the needed nodes:
+    * start/end nodes
+    * start/end milestone nodes
+    * user task node
+3. configure the user task node:
+    * Configure the node
+    * Configure the upload action:
+        * Topics
+        * Document type
+        * Folder
+    * (UI) Configure the upload button
 
-**Step 4:** Configure on what topic you want to receive the response, on the value of K`AFKA_PERSIST_OUT_TOPIC`
 
-### Save a document
+## Configuring the process definition
 
-Used to save documents for specific clients. E.g. save client image
+### User task node
 
-#### Request
+#### **Node Config**
 
-Values expected in the request body:
+* **Swimlane** - choose a swimlane (if there are multiple swimlanes on the process) to make sure only certain user roles have access only for certain process nodes - if there are no multiple swimlanes, the value is Default
+* **Stage** - assign a stage to the node
+* **Topic Name** - the topic name where the process engine listens for the response (this should be added to the platform and match the topic naming rule for the engine to listen to it) - will be set to `ai.flowx.updates.qa.persist.files.v1` (the value extracted from `KAFKA_TOPIC_DOCUMENT_PERSIST_IN`) 
 
-* payload = document payload
-* documentType = document type
-* documentLabel = document label
-* customId = client ID
-* shouldOverride = boolean, true to override an existing document already saved, false not to override
 
-Example: `{ "payload": "IMAGE_BASE64", "documentType": "ID_PIC", "documentLabel": "User photo", "customId": "FX04689", "shouldOverride": true }`
+:::caution
+A naming pattern must be defined on the process engine configuration to use the defined topics. It is important to know that all the events that start with a configured pattern will be consumed by the Engine. For example, KAFKA_TOPIC_PATTERN is the topic name pattern where the Engine listens for incoming Kafka events.
+:::
 
-#### Reply
+**Key Name** - will hold the result received from the external system, if the key already exists in the process values, it will be overwritten
+
+
+![](../../../../img/doc_upload_file_con.png)
+
+#### **Actions**
+
+##### Actions edit
+
+* **Action type** - should be set to **Upload File**
+* **Trigger type** (options are Automatic/Manual) - should be manual (triggered by the user)
+* **Required type** (options are Mandatory/Optional) - should be set as optional
+* **Repeteable** - should be checked if the action can be triggered multiple times
+* **Autorun Children** - when this is switched on, the child actions (the ones defined as mandatory and automatic) will run immediately after the execution of the parent action is finalized
+
+![](../../../../img/action_edit_doc_plugin.png)
+
+##### Parameters
+
+* **Topics** - will be set to - `ai.flowx.in.document.persist.v1` (the value extracted from `KAFKA_TOPIC_DOCUMENT_PERSIST_IN`)
+* **Document Type** - BULK
+* **Folder** - allows you to configure a value by which the file will be identified in the future
+* **Advanced configuration** (Show headers)- this represents a JSON value that will be sent on the headers of the Kafka message
+
+:::info
+Kafka topic names can be set by using (overwriting) the following environment variables in the deployment:
+
+KAFKA_TOPIC_DOCUMENT_PERSIST_IN - default value: `ai.flowx.in.qa.document.persist.v1`
+
+KAFKA_TOPIC_DOCUMENT_PERSIST_OUT - default value: `ai.flowx.updates.qa.document.persist.v1`
+
+The above examples of topics are extracted from an internal testing environment, when setting topics for another environments, follow the next pattern, for example, `ai.flowx.updates.{{environment}}.document.persist.v1`.
+
+:::
+
+![](../../../../img/doc_plugin_upload_param.png)
+
+### Milestone node
+
+You can configure a start milestone node and an end milestone node before and after a user task. After adding the milestones, you can add a modal template (in this case a **Page**) to the start milestone node to display a modal screen (like in the example above).
+
+![](../../../../../building-blocks/node/img/milestone_page.png)
+
+## Reply
 
 Values expected in the reply body:
 
-* customId = client ID
-* fileId = file ID
-* documentType = document type
-* documentLabel = document label
-* minioPath = minio path for the converted file
-* downloadPath = download path for the converted file
-* error = error description
+* customId
+* fileId
+* documentType
+* documentLabel
+* minioPath
+* downloadPath
+* noOfPages
 
-Example: `{ "customId": "FX04689", "fileId": 18002, "documentType": "BULK", "documentLabel": null, "minioPath": "flowx-qa-194303/FX04689/18002_BULK.pdf", "downloadPath": "internal/files/18002/download", "error": null }`
+:::info
+You can view the response by accessing the 
+
+![](../../../../img/audit_log_doc_upload.png)
+
+
+       {
+        "customId" : "1234_727605",
+        "fileId" : 4718,
+        "documentType" : "BULK",
+        "documentLabel" : null,
+        "minioPath" : "bucket-path-qa-process-id-727605/1234_726254/4718_BULK.png",
+        "downloadPath" : "internal/files/4714/download",
+        "noOfPages" : null,
+        "error" : null
+    }

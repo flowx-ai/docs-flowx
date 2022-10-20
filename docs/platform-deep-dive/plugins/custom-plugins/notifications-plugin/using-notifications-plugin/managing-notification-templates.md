@@ -1,10 +1,14 @@
+---
+sidebar_position: 1
+---
+
 # Managing notification templates
 
-Notification templates can be easily managed using FLOWX Designer.
+You can create and manage notification templates using FLOWX.AI Designer web application, accessing the dedicated section.
 
-![Notification template](../../../../img/notifications_template.png)
+![](../../../../img/notif_overview.png)
 
-### Configuring the body
+### Configuring a template
 
 To configure a document template, first, you need to select some information stored in the **Body**:
 
@@ -13,9 +17,11 @@ To configure a document template, first, you need to select some information sto
 3. **Language** - choose the language for your notification template
 4. **Subject** - enter a subject
 
+![Notification template](../../../../img/notifications_template.png)
+
 #### Editing the content
 
-You can edit the content of a notification template by using the [WYSIWYG ](../../../wysiwyg.md) editor embedded in the body of the notification templates body.
+You can edit the content of a notification template by using the [WYSIWYG](../../../wysiwyg.md) editor embedded in the body of the notification templates body.
 
 ### Configuring the data model
 
@@ -34,6 +40,8 @@ After you defined some parameters in the **Data Model** tab, you can type "**#**
 
 ![Data model](../../../../img/data_model1.gif)
 
+[WYSIWYG Editor](../../../wysiwyg.md)
+
 ### Testing the template
 
 You can use the test function to make sure your template configuration is working as it should before publishing it.
@@ -43,3 +51,13 @@ You can use the test function to make sure your template configuration is workin
 In the example above, some keys that are marked as mandatory were not used in the template, letting you know that you've missed some important information. After you enter all the mandatory keys, the notification test will go through:
 
 ![](../../../../img/notifications_email.png)
+
+### Other actions
+
+When opening the contextual menu (accessible by clicking on the breadcrumbs button), you have multiple actions to work with the notifications templates:
+
+* Publish template - publish a template (it will be then displayed in the **Published** tab), you can also clone published templates
+* Export template - export a template (JSON format)
+* Show history - (version history and last edited)
+
+![](../../../../img/notif_export_etc.png)
