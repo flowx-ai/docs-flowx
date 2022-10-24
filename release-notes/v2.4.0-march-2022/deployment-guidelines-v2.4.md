@@ -32,7 +32,7 @@ If you are using Keycloak or Red Hat Single Sign-On (RH-SSO) you can import the 
 Python 3 script + Roles, download [here](../assets/importUsers.zip)
 :::
 
-You need to edit the script parameters - `baseAuthUrl`, `username`, `password`,  `realm`, and the name of the group for super admins.
+You need to edit the script parameters - `baseAuthUrl`, `username`, `password`, `realm`, and the name of the group for super admins.
 
 The requests package is needed in order to run the script. It can be installed with the following command:
 

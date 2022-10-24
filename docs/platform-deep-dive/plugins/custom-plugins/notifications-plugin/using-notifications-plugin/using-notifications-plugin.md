@@ -13,6 +13,9 @@ The topic names configured for the plugin should match the ones used when config
 * the Engine is listening for messages on topics with names of a certain pattern, make sure to use an outgoing topic name that matches the pattern configured in the Engine
 * to make a request to the plugin, the process definition needs to have an action of type `Kafka send` that has an action parameter with key `topicName` and the needed topic name as a value
 * to receive the reply from the plugin, the process definition needs to have a receiving node with a node value with key `topicName` and the topic name as the value
+
+More details: [here](../../../../platform-setup-guide/flowx-engine-setup-guide/flowx-engine-setup-guide.md#kafka-configuration)
+
 :::
 
 After all the setup is in place, you can start adding custom actions to the processes.

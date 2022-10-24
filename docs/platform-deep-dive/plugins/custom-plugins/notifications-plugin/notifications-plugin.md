@@ -4,7 +4,12 @@ The notifications plugin can be easily added to your custom FLOWX.AI deployment 
 
 The plugin offers the possibility to:
 
-* send various types of notifications: SMS to mobile devices, or emails
+* send various types of notifications: email notifications or SMS templates to mobile devices
+
+:::caution
+To send notifications via SMS channel, a third party provider for SMS communication is needed, for example, [Twilio](https://www.twilio.com/).
+:::
+
 * forward custom notifications to external outgoing services
 * generate and validate OTP passwords for user identity verification
 

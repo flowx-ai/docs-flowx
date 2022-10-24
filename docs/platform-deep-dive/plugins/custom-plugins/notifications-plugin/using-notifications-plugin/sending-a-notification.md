@@ -8,11 +8,13 @@ The plugin can be used for sending many kinds of notifications such as emails or
 
 ## **Configuring the process**
 
-* use FLOWX.AI Designer app
-* add a [**Message send task**](../../../../../building-blocks/node/message-send-received-task-node.md#message-send-task) and a [**Message received task**](../../../).
-* configure the needed actions 
+To configure a business process that sends notifications you must follow the next steps:
+
+* use FLOWX.AI Designer app to create/edit a [notification template](./managing-notification-templates.md)
+* use Process Designer to add a [**Message send task**](../../../../../building-blocks/node/message-send-received-task-node.md#message-send-task) and a [**Message received task**](../../../)
+* configure the needed [actions](../../../../../building-blocks/actions.md)
 * configure the request body
-* configure the needed Kafka topics
+* configure the needed [Kafka topics](../../../plugins-setup-guide/notifications-plugin-setup/notifications-plugin-setup.md)
 
 The following values are expected in the request body:
 
@@ -63,8 +65,22 @@ Let's pick a simple use-case, say we need to send a new welcome letter when we o
 
 ![](../../../../img/notif_params_send.png)
 
-4. On the **Message received task** add the needed topic to receive the kafka response - `KAFKA_TOPIC_NOTIFICATION_INTERNAL_OUT` - `ai.flowx.updates.qa.notification`.
+4. On the **Message received task** add the needed topic to receive the kafka response - `KAFKA_TOPIC_NOTIFICATION_INTERNAL_OUT` - `ai.flowx.updates.qa.notification.request.v1`.
 
 ![](../../../../img/generate_notif_receive.png)
 
-5. Run the process and look for the response.
+5. Run the process and look for the response (you can view it via the **Audit log**) or checking the responses on the Kafka topic defined at `KAFKA_TOPIC_NOTIFICATION_INTERNAL_OUT` variable.
+
+![](../../../../img/notif_send_resp.png)
+
+
+Response example at `KAFKA_TOPIC_NOTIFICATION_INTERNAL_OUT`:
+
+```
+{
+  "identifier": null,
+  "templateName": "welcomeLetter",
+  "language": "en",
+  "error": null
+}
+```
