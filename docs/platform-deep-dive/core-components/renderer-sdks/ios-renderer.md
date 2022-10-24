@@ -13,7 +13,22 @@ The minimum requirements are:
 
 ## Installing the library
 
-The iOS Renderer is available through Cocoapods dependency manager.
+The iOS Renderer is available through Cocoapods and Swift Package Manager.
+
+### Swift Package Manager
+
+In Xcode, click `File` -> `Add Packages...`, enter FlowX repo's URL `https://github.com/flowx-ai/flowx-ios-sdk`.
+Set the dependency rule to `Up To Next Major` and add package.
+
+If you are developing a framework and use FlowX as a dependency, add to your `Package.swift` file:
+
+```
+dependencies: [
+    .package(url: "https://github.com/flowx-ai/flowx-ios-sdk", .upToNextMajor(from: "0.96.0"))
+]
+```
+
+### Cocoapods
 
 #### Prerequisites
 
@@ -24,7 +39,7 @@ The iOS Renderer is available through Cocoapods dependency manager.
 Add the private trunk repo to your local Cocoapods installation with the command:
 
 ```
-pod repo add repo-specs-name git@github.com/[repo-specs-name].git
+pod repo add flowx-specs git@github.com:flowx-ai/flowx-ios-specs.git
 ```
 
 #### Adding the dependency
@@ -32,7 +47,7 @@ pod repo add repo-specs-name git@github.com/[repo-specs-name].git
 Add the source of the private repository in the Podfile
 
 ```
-source 'git@github.com/[repo-specs-name].git'
+source 'git@github.com/flowx-ios-specs.git'
 ```
 
 Add the pod and then run `pod install`
@@ -41,7 +56,7 @@ Add the pod and then run `pod install`
 pod 'FlowX'
 ```
 
-#### Library dependencies
+### Library dependencies
 
 * Socket.IO-Client-Swift
 * Alamofire
@@ -50,7 +65,7 @@ pod 'FlowX'
 
 ## Configuring the library
 
-The SDK has 3 types of configurations, available through 3 shared instances.
+The SDK has 2 configurations, available through shared instances.
 
 It is recommended to call the configuration methods at app launch.
 
@@ -63,9 +78,9 @@ This config is used for general purpose properties.
 #### Properties
 
 | Name          | Description                                                           | Type                    | Requirement                 |
-| ------------- | --------------------------------------------------------------------- | ----------------------- | --------------------------- |
+|---------------|-----------------------------------------------------------------------|-------------------------|-----------------------------|
 | baseURL       | The base URL used for REST networking                                 | String                  | Mandatory                   |
-| socketBaseURL | The URL user for socket networking                                    | URL                     | Mandatory                   |
+| imageBaseURL  | The base URL used for media library images                            | String                  | Mandatory                   |
 | language      | The language used for retrieving enumerations and substitution tags   | String                  | Mandatory. Defaults to "en" |
 | stepViewType  | The type of the custom step view class                                | FXStepViewProtocol.Type | Optional                    |
 | logEnabled    | Value indicating whether console logging is enabled. Default is false | Bool                    | Optional                    |
@@ -74,8 +89,8 @@ This config is used for general purpose properties.
 
 ```
 FXConfig.sharedInstance.configure { (config) in
-    config.baseURL = environmentConfig.baseURL
-    config.socketBaseURL = environmentConfig.socketBaseURL
+    config.baseURL = myBaseURL
+    config.imageBaseURL = myImageBaseURL
     config.language = "en" 
     config.logEnabled = true
     config.stepViewType = CustomStepView.self
@@ -93,58 +108,20 @@ The library expects a session instance managed by the container app. Request ada
 | Name           | Description                                         | Type    |
 | -------------- | --------------------------------------------------- | ------- |
 | sessionManager | Alamofire session instance used for REST networking | Session |
-| token          | JWT authentication token                            | String  |
+| token          | JWT authentication access token                     | String  |
 
 #### Sample
 
 ```
 FXSessionConfig.sharedInstance.configure { config in
-    config.sessionManager = sessionManager()
-    config.token = environmentConfig.authorizationToken
+    config.sessionManager = mySessionManager
+    config.token = myAccessToken
 }   
-```
-
-### FXTheme
-
-This config is used for providing custom theming properties, such as colors and fonts.
-
-| Name                 | Description | Type    |
-| -------------------- | ----------- | ------- |
-| primaryColor         |             | UIColor |
-| primaryDisabledColor |             | UIColor |
-| blackColor           |             | UIColor |
-| whiteColor           |             | UIColor |
-| gray1Color           |             | UIColor |
-| gray2Color           |             | UIColor |
-| gray3Color           |             | UIColor |
-| gray4Color           |             | UIColor |
-| gray5Color           |             | UIColor |
-| accentColor          |             | UIColor |
-| successColor         |             | UIColor |
-| warningColor         |             | UIColor |
-| errorColor           |             | UIColor |
-| heading1Font         |             | UIFont  |
-| heading2Font         |             | UIFont  |
-| heading3Font         |             | UIFont  |
-| heading4Font         |             | UIFont  |
-| paragraph1Font       |             | UIFont  |
-| paragraph2Font       |             | UIFont  |
-| captionFont          |             | UIFont  |
-| buttonFont           |             | UIFont  |
-| linkFont             |             | UIFont  |
-| smallButtonFont      |             | UIFont  |
-
-#### Sample
-
-```
-FXTheme.sharedInstance.configure { config in
-    config.primaryColor = UIColor(red: 60.0/255.0, green: 170.0/255.0, blue: 170.0/255.0, alpha: 1.0)
-}
 ```
 
 ## Using the library
 
-The following library's public APIs are called using the shared instance of FlowX, `FlowX.sharedInstance`.
+The library's public APIs are called using the shared instance of FlowX, `FlowX.sharedInstance`.
 
 ### How to start and end FlowX session
 
@@ -156,21 +133,22 @@ This is optional, as the session starts lazily when the first process is started
 
 When you want to end a FlowX session, you can call the `endSession()` method. This also does a complete clean-up of the started processes.
 
-You might want to use this method in a different scenario, for instance when the user logs out.
+You might want to use this method in a variety of scenarios, for instance when the user logs out.
 
 `FlowX.sharedInstance.endSession()`
 
 ### How to start a process
 
-You can start a process by calling the following method.
+You can start a process by calling the method below.
 
 The container app is responsible with presenting the navigation controller holding the process navigation.
 
 ```
-public func startOrRestartProcess(navigationController: UINavigationController,
-                                  name: String,
-                                  params: [String: Any]?,
-                                  isModal: Bool = false)
+public func startProcess(navigationController: UINavigationController,
+                         name: String,
+                         params: [String: Any]?,
+                         isModal: Bool = false,
+                         showLoader: Bool = false)
 ```
 
 `navigationController` - the instance of UINavigationController which will hold the process navigation stack
@@ -179,20 +157,41 @@ public func startOrRestartProcess(navigationController: UINavigationController,
 
 `params` - the start parameters, if any
 
-`isModal` - a boolean indicating whether the process is modally displayed.
+`isModal` - a boolean indicating whether the process navigation is modally displayed. When the process navigation is displayed modally, a close bar button item is displayed on each screen displayed throughout the process navigation.
 
+`showLoader` - a boolean indicating whether the loader should be displayed when starting the process.
+ 
 #### Sample
 
 ```
-FlowX.sharedInstance.startOrRestartProcess(navigationController: processNavigationController,
-                                           name: processName,
-                                           params: startParams,
-                                           isModal: true)
-```
+FlowX.sharedInstance.startProcess(navigationController: processNavigationController,
+                                  name: processName,
+                                  params: startParams,
+                                  isModal: true
+                                  showLoader: true)
 
-```
 self.present(processNavigationController, animated: true, completion: nil)
 ```
+
+### How to resume a process
+
+You can resume a process by calling the method below.
+
+```
+public func continueExistingProcess(uuid: String,
+                                    name: String,
+                                    navigationController: UINavigationController,
+                                    isModal: Bool = false) {
+```
+
+`uuid` - the UUID string of the process
+
+`name` - the name of the process
+
+`navigationController` - the instance of UINavigationController which will hold the process navigation stack
+
+`isModal` - a boolean indicating whether the process navigation is modally displayed. When the process navigation is displayed modally, a close bar button item is displayed on each screen displayed throughout the process navigation.
+
 
 ### How to end a process
 
@@ -208,36 +207,59 @@ For example, it could be used for modally displayed processes that are dismissed
 FlowX.sharedInstance.stopProcess(name: processName)
 ```
 
-### How to run an action
+### How to run an action from a custom component
 
 The custom components which the container app provides will contain FlowX actions to be executed. In order to run an action you need to call the following method:
 
 ```
-public func runAction(action: [String: Any],
+public func runAction(action: ProcessActionModel,
                       params: [String: Any]? = nil)
 ```
 
-`action` - the action object provided in the original `data` dictionary
+`action` - the `ProcessActionModel` action object
 
 `params` - the parameters for the action
 
-### How to run an upload action
+### How to run an upload action from a custom component
 
 ```
-public func runUploadAction(action: [String: Any],
-                             image: UIImage)
+public func runUploadAction(action: ProcessActionModel,
+                            image: UIImage)
 ```
+
+`action` - the `ProcessActionModel` action object
 
 `image` - the image to upload
 
 ```
-public func runUploadAction(action: [String: Any],
-                           fileURL: URL)
+public func runUploadAction(action: ProcessActionModel,
+                            fileURL: URL)
 ```
+
+`action` - the `ProcessActionModel` action object
 
 `fileURL` - the local URL of the image
 
-### Getting a substitution tag by key
+### Getting a substitution tag value by key
+
+```
+public func getTag(withKey key: String) -> String?
+```
+
+All substitution tags will be retrieved by the SDK before starting the first process and will be stored in memory.&#x20;
+
+Whenever the container app needs a substitution tag value for populating the UI of the custom components, it can request the substitution tag using the method above, providing the key.
+
+### Getting a media item url by key
+
+```
+public func getMediaItemURL(withKey key: String) -> String?
+```
+
+All media items will be retrieved by the SDK before starting the first process and will be stored in memory.
+
+Whenever the container app needs a media item url for populating the UI of the custom components, it can request the url using the method above, providing the key.
+
 
 ```
 public func getTag(withKey key: String) -> String?
@@ -265,6 +287,8 @@ public protocol FXDataSource: AnyObject {
     
     func viewFor(componentIdentifier: String) -> FXView?
     
+    func viewFor(componentIdentifier: String, customComponentViewModel: FXCustomComponentViewModel) -> AnyView?
+
     func navigationController() -> UINavigationController?
 
     func errorReceivedForAction(name: String?)
@@ -278,11 +302,16 @@ public protocol FXDataSource: AnyObject {
 
 * `func controllerFor(componentIdentifier: String) -> FXController?`
 
-This method is used for providing a custom component view controller, by the component identifier.
+This method is used for providing a custom component UIKit view controller, identified by the componentIdentifier argument.
 
 * `func viewFor(componentIdentifier: String) -> FXView?`
 
-The method is used for providing a custom view used in a generated screen, by the component identifier
+This method is used for providing a custom UIKit view, identified by the componentIdentifier argument.
+
+* `func viewFor(componentIdentifier: String, customComponentViewModel: FXCustomComponentViewModel) -> AnyView?`
+
+This method is used for providing a custom SwiftUI view, identified by the componentIdentifier argument.
+A view model is provided as an ObservableObject to be added as @ObservedObject inside the SwiftUI view.
 
 * `func navigationController() -> UINavigationController?`
 
@@ -304,12 +333,13 @@ The container app is responsible with dismissing the UI and calling the stop pro
 
 #### FXController
 
-FXController is an open class, which helps the container app provide custom component screens to the renderer. It needs to be subclassed for each custom screen.
+FXController is an open class, which helps the container app provide UIKit custom component screens to the renderer. It needs to be subclassed for each custom screen.
 
 ```
 open class FXController: UIViewController {
     
-    public var data: [String: Any]?
+    internal(set) public var data: [String: Any]?
+    internal(set) public var actions: [ProcessActionModel]?
 
     open func titleForScreen() -> String? {
         return nil
@@ -326,11 +356,13 @@ open class FXController: UIViewController {
 }
 ```
 
+* `internal(set) public var data: [String: Any]?`
 
+`data` is a dictionary property, containing the data model for the custom component.
 
-* `var data: [String: Any]?`
+* `internal(set) public var actions: [ProcessActionModel]?`
 
-`data` is a dictionary property, containing the two keys needed by the custom component, `data` and `actions`.&#x20;
+`actions` is the array of actions provided to the custom component.
 
 * `func titleForScreen() -> String?`
 
@@ -348,18 +380,24 @@ This method is called by the renderer when an already displayed view controller 
 
 #### FXView
 
-FXView is a protocol that helps the container app provide custom subviews of a generated screen to the renderer. It needs to be implemented by `UIView` instances. Similar to `FXController` it has a data property and a populate method.
+FXView is a protocol that helps the container app provide custom UIKit subviews of a generated screen to the renderer. It needs to be implemented by `UIView` instances. Similar to `FXController` it has data and actions properties and a populate method.
 
 ```
 public protocol FXView: UIView {
     var data: [String: Any]? { get set }
+    var actions: [ProcessActionModel]? { get set }
+
     func populateUI(data: [String: Any]?)
 }
 ```
 
 * `var data: [String: Any]?`
 
-`data` is a dictionary property containing the information needed by the custom view.
+`data` is a dictionary property containing the data model needed by the custom view.
+
+* `var actions: [ProcessActionModel]?`
+
+`actions` is the array of actions provided to the custom view.
 
 * `func populateUI(data: [String: Any]?)`
 
@@ -372,5 +410,28 @@ It is the container app's responsibility to make sure that the initial state of 
 ```
 override var intrinsicContentSize: CGSize {
     return CGSize(width: UIScreen.main.bounds.width, height: 100)
+}
+```
+
+#### FXCustomComponentViewModel
+
+`FXCustomComponentViewModel` is a class implementing the `ObservableObject` protocol. It is used for managing the state of custom SwiftUI views.
+It has two published properties, for data and actions. 
+
+```
+    @Published public var data: [String: Any] = [:]
+    @Published public var actions: [ProcessActionModel] = []
+```
+
+Example
+
+```
+struct SampleView: View {
+    
+    @ObservedObject var viewModel: FXCustomComponentViewModel
+            
+    var body: some View {
+        Text("Lorem")
+    }
 }
 ```
