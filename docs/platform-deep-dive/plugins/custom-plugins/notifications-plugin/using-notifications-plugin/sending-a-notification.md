@@ -34,7 +34,7 @@ Check the detailed example below.
 
 ![](../../../../img/notification_archi_send.png)
 
-### Define needed Kafka topics <a href="#define-needed-kafka-topics" id="define-needed-kafka-topics"></a>
+### Define needed Kafka topics
 
 Kafka topic names can be set by using environment variables:
 

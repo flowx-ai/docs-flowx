@@ -115,7 +115,7 @@ All the data produced by the service will be stored in Redis under a specific ke
 
 `SPRING_CACHE_REDIS_KEY_PREFIX`
 
-### **Kafka configuration** <a href="#63673403-7b21-440b-a173-211fd5c9a86e" id="63673403-7b21-440b-a173-211fd5c9a86e"></a>
+### **Kafka configuration**
 
 The following Kafka related configurations can be set by using environment variables:
 

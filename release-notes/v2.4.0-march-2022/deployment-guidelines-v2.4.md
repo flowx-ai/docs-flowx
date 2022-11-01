@@ -56,7 +56,7 @@ A complete list of all the default roles:
 | manage-processes                    | read    | ROLE\_ADMIN\_MANAGE\_PROCESS\_READ    | Admin           |
 | manage-processes                    | edit    | ROLE\_ADMIN\_MANAGE\_PROCESS\_EDIT    | Admin           |
 | manage-processes                    | admin   | ROLE\_ADMIN\_MANAGE\_PROCESS\_ADMIN   | Admin           |
-| <p></p><p>manage-configurations</p> | import  | ROLE\_ADMIN\_MANAGE\_CONFIG\_IMPORT   | Admin           |
+| manage-configurations               | import  | ROLE\_ADMIN\_MANAGE\_CONFIG\_IMPORT   | Admin           |
 | manage-configurations               | read    | ROLE\_ADMIN\_MANAGE\_CONFIG\_READ     | Admin           |
 | manage-configurations               | edit    | ROLE\_ADMIN\_MANAGE\_CONFIG\_EDIT     | Admin           |
 | manage-configurations               | admin   | ROLE\_ADMIN\_MANAGE\_CONFIG\_ADMIN    | Admin           |

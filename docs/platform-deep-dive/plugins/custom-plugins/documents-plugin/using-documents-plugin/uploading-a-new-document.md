@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Uploading a new document
 
-Documents upload can be integrated in a process definition by adding a user task node with an **Upload action** attached. This way you can interact with the process, and you can choose which file to upload.
+Documents upload can be integrated into a process definition by adding a user task node with an **Upload action** attached. This way you can interact with the process, and you can choose which file to upload.
 
 :::info
 User task nodes allow you to define and configure UI templates and possible actions for a certain template config node (ex: upload file button).
@@ -57,7 +57,7 @@ A naming pattern must be defined on the process engine configuration to use the 
 * **Action type** - should be set to **Upload File**
 * **Trigger type** (options are Automatic/Manual) - should be manual (triggered by the user)
 * **Required type** (options are Mandatory/Optional) - should be set as optional
-* **Repeteable** - should be checked if the action can be triggered multiple times
+* **Reputable** - should be checked if the action can be triggered multiple times
 * **Autorun Children** - when this is switched on, the child actions (the ones defined as mandatory and automatic) will run immediately after the execution of the parent action is finalized
 
 ![](../../../../img/action_edit_doc_plugin.png)
@@ -76,7 +76,7 @@ KAFKA_TOPIC_DOCUMENT_PERSIST_IN - default value: `ai.flowx.in.qa.document.persis
 
 KAFKA_TOPIC_DOCUMENT_PERSIST_OUT - default value: `ai.flowx.updates.qa.document.persist.v1`
 
-The above examples of topics are extracted from an internal testing environment, when setting topics for another environments, follow the next pattern, for example, `ai.flowx.updates.{{environment}}.document.persist.v1`.
+The above examples of topics are extracted from an internal testing environment, when setting topics for other environments, follow the next pattern, for example, `ai.flowx.updates.{{environment}}.document.persist.v1`.
 
 :::
 
@@ -88,7 +88,7 @@ You can configure a start milestone node and an end milestone node before and af
 
 ![](../../../../../building-blocks/node/img/milestone_page.png)
 
-## Reply
+## Receiving the reply
 
 Values expected in the reply body:
 
@@ -101,12 +101,13 @@ Values expected in the reply body:
 * noOfPages
 
 :::info
-You can view the response by accessing the 
+You can view the response by accessing the **Audit log** menu.
+:::
 
 ![](../../../../img/audit_log_doc_upload.png)
 
-
-       {
+```json
+    {
         "customId" : "1234_727605",
         "fileId" : 4718,
         "documentType" : "BULK",
@@ -116,3 +117,4 @@ You can view the response by accessing the
         "noOfPages" : null,
         "error" : null
     }
+```

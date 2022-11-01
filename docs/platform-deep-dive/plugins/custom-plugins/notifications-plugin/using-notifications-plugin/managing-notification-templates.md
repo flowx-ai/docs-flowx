@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Managing notification templates
 
-You can create and manage notification templates using FLOWX.AI Designer web application, accessing the dedicated section.
+You can create and manage notification templates using FLOWX.AI Designer web app, by accessing the dedicated section.
 
 ![](../../../../img/notif_overview.png)
 
@@ -13,7 +13,7 @@ You can create and manage notification templates using FLOWX.AI Designer web app
 To configure a document template, first, you need to select some information stored in the **Body**:
 
 1. **Type** - could be either MAIL or SMS notifications
-2. [**Forward on Kafka**](forwarding-notifications-to-an-external-system.md) - if this box is checked, the notification is not being sent directly by the plugin to the destination, but forwarded to another adapter (this is mandatory for SMS notifications templates)
+2. [**Forward on Kafka**](forwarding-notifications-to-an-external-system.md) - if this checkbox is ticked, the notification is not being sent directly by the plugin to the destination, but forwarded to another adapter (this is mandatory for SMS notifications templates, as they require an external adapter)
 3. **Language** - choose the language for your notification template
 4. **Subject** - enter a subject
 
@@ -44,11 +44,11 @@ After you defined some parameters in the **Data Model** tab, you can type "**#**
 
 ### Testing the template
 
-You can use the test function to make sure your template configuration is working as it should before publishing it.
+You can use the test function to ensure that your template configuration is working as it should before publishing it.
 
 ![](../../../../img/testing_notif_template.gif)
 
-In the example above, some keys that are marked as mandatory were not used in the template, letting you know that you've missed some important information. After you enter all the mandatory keys, the notification test will go through:
+In the example above, some keys (marked as mandatory) were not used in the template, letting you know that you've missed some important information. After you enter all the mandatory keys, the notification test will go through:
 
 ![](../../../../img/notifications_email.png)
 

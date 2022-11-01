@@ -4,8 +4,8 @@
 
 Kafka topic names can be set by using environment variables:
 
-* `KAFKA_TOPIC_OTP_VALIDATE_IN` - Event send on this topic with an OTP and an identifier will check if the OTP is valid
-* `KAFKA_TOPIC_OTP_VALIDATE_OUT` - Response to the request to validate an OTP will be sent back to the Engine on this topic.
+* `KAFKA_TOPIC_OTP_VALIDATE_IN` - the event sent on this topic (with an OTP and an identifier) will check if the OTP is valid
+* `KAFKA_TOPIC_OTP_VALIDATE_OUT` - the response for this request will validate an OTP, the reply is sent back to the Engine on this topic
 
 :::caution
 The Engine is listening for messages on topics with names of a certain pattern, make sure to use an outgoing topic name that matches the pattern configured in the Engine.
@@ -16,7 +16,7 @@ The Engine is listening for messages on topics with names of a certain pattern, 
 Values expected in the request body:
 
 * processInstanceId = process instance ID
-* client id = the users unique ID in the system
+* client id = the user unique ID in the system
 * channel = notification channel: SMS/MAIL
 * otp = OTP code that you received, used to compare with the one that was sent from the system
 
@@ -35,7 +35,7 @@ Example:
 
 Values expected in the reply body:
 
-* client id = the users unique id in the system
+* client id = the user unique id in the system
 * channel = notification channel used
 * otpValid = confirmation if the provided OTP code was the same as the one sent from the system
 
@@ -49,11 +49,11 @@ Similar to the generation of the OTP you can validate the OTP that was generated
 
 1. Check that the needed topics are configured correctly: (`KAFKA_TOPIC_OTP_VALIDATE_IN` and `KAFKA_TOPIC_OTP_VALIDATE_OUT`)
 2. Add the actions for sending the request to validate the OTP on the node that contains the 'Generate OTP' actions
-3. Add the proper configuration to the action, the Kafka topic and message to be sent.
+3. Add the proper configuration to the action, the Kafka topic and configure the body message.
 
 ![](../../../../../img/validate_otp_temp.png)
 
-4. Add a node to the process definition (for the [Kafka receive event])
+4. Add a node to the process definition (for the [Kafka receive event](../../../../../../building-blocks/node/message-send-received-task-node.md#message-receive-task))
 5. Configure on what key you want to receive the response on the process instance parameters
 
 ![](../../../../../img/validate_otp3.png)

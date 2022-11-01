@@ -69,7 +69,7 @@ The Kafka topic where you want to generate the template must match the topic def
 4. Add a **barcode**.
 
 :::info
-* if you want a **default barcode**, add on the message the following parameter: `includeBarCode: true`.
+* if you want a **default barcode**, add to the body message the following parameter: `includeBarCode: true`.
 * if you want a **custom barcode**, set `includeBarCode: false` and fill in the `data` you want to add to it.
 :::
 
@@ -85,9 +85,9 @@ The Kafka topic where you want to generate the template must match the topic def
 
 ![](../../img/ocr_upload_file.png)
 
-8. The response will be available at **`KAFKA_TOPIC_DOCUMENT_PERSIST_OUT`** topic through a callback action/ subprocess.
-9. Next, send the response to the OCR Kafka topic defined at **`KAFKA_TOPIC_OCR_IN`** (the path to the Min.io file)
-10. Display the result of the OCR validation at **`KAFKA_TOPIC_OCR_OUT`**.
+8. The response will be sent back to the kafka topic defined at **`KAFKA_TOPIC_DOCUMENT_PERSIST_OUT`** environment variable through a callback action/ subprocess.
+9. Next, send the response to the OCR Kafka topic defined at **`KAFKA_TOPIC_OCR_IN`** variable (representing the path to the Min.io file)
+10. Display the result of the OCR validation at the kafka topic defined at **`KAFKA_TOPIC_OCR_OUT`**. 
 
 ### Setup guide
 

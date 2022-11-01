@@ -34,7 +34,7 @@ socket.io-client
 
 ## Using the library
 
-Once installed,  **FlxProcessModule** will be imported in the **AppModule** `FlxProcessModule.forRoot({})`.
+Once installed, **FlxProcessModule** will be imported in the **AppModule** `FlxProcessModule.forRoot({})`.
 
 You MUST also import the dependencies of **FlxProcessModule**: **HttpClientModule** from **@angular/common/http** and **IconModule** from **paperflow-web-components**.
 
@@ -172,12 +172,13 @@ FlxProcessModule.forRoot({
 The error that the validator returns **MUST** match the validator name.
 :::
 
-The  component is the main container of the UI, which will build and render the components configured via the **FlowX Designer**. It accepts the following inputs:
+The component is the main container of the UI, which will build and render the components configured via the **FlowX Designer**. It accepts the following inputs:
 
 ```markup
   # example
   <flx-process-renderer
     [apiUrl]="baseApiUrl"
+    [staticAssetsPath]="staticUrl"
     [processApiPath]="processApiPath"
     [processName]="processName"
     [processStartData]="processStartData"
@@ -192,13 +193,14 @@ The  component is the main container of the UI, which will build and render the 
 | Name             | Description                                                                                                                                                                             | Type    | Mandatory | Default value | Example                                          |
 | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | --------- | ------------- | ------------------------------------------------ |
 | baseApiUrl       | Your base url                                                                                                                                                                           | string  | true      | -             | [https://yourDomain.dev](https://yourdomain.dev) |
-| processApiPath   | Engine api prefix                                                                                                                                                                       | string  | true      | -             | /onboarding                                      |
+| processApiPath   | Engine API prefix                                                                                                                                                                       | string  | true      | -             | /onboarding                                      |
+| staticUrl        | Static asset url                                                                                                                                                                        | string  | false     | -             |                                                  |
 | processName      | Identifies a process                                                                                                                                                                    | string  | true      | -             | client\_identification                           |
 | processStartData | Data required to start the process                                                                                                                                                      | json    | true      | -             | { "firstName": "John", "lastName": "Smith"}      |
 | debugLogs        | When set to true this will print WS messages in the console                                                                                                                             | boolean | false     | false         | -                                                |
 | language         | Language used to localize the application.                                                                                                                                              | string  | false     | ro-RO         | -                                                |
-| keepState        | <p>By default all process data is reset when the process renderer component gets destroyed. Setting this to true will keep process data even if the viewport gets destroyed</p><p> </p> | boolean | false     | false         | -                                                |
-| isDraft          | When true allows starting a process in draft state. \*Note that  isDraft = true requires that processName be the **id** (number) of the process and NOT the name.                       | boolean | false     | false         | -                                                |
+| keepState        | <p>By default all process data is reset when the process renderer component gets destroyed. Setting this to true will keep process data even if the viewport gets destroyed</p><p></p>  | boolean | false     | false         | -                                                |
+| isDraft          | When true allows starting a process in draft state. \*Note that isDraft = true requires that processName be the **id** (number) of the process and NOT the name.                        | boolean | false     | false         | -                                                |
 
 #### Data and actions
 

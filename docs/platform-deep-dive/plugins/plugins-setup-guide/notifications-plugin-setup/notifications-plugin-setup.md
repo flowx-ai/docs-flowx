@@ -9,7 +9,7 @@ The Notifications plugin is available as a docker image and it has the following
 
 The plugin comes with most of the needed configuration properties filled in, but there are a few that need to be set up using some custom environment variables.
 
-## Dependencies <a href="#2939ce6e-c291-40c2-b3d6-1e789b1617d7" id="2939ce6e-c291-40c2-b3d6-1e789b1617d7"></a>
+## Dependencies 
 
 ### Mongo database
 
@@ -83,7 +83,7 @@ All the data produced by the service will be stored in Redis under a specific ke
 
 `SPRING_CACHE_REDIS_KEY_PREFIX`
 
-### Kafka configuration <a href="#63673403-7b21-440b-a173-211fd5c9a86e" id="63673403-7b21-440b-a173-211fd5c9a86e"></a>
+### Kafka configuration 
 
 The following Kafka related configurations can be set by using environment variables:
 
