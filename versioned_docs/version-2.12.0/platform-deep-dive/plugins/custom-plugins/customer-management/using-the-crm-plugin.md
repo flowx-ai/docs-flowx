@@ -14,7 +14,12 @@ The plugin listens for incoming requests on a Kafka topic and sends the reply to
 
 ### Customer Search
 
-`KAFKA_TOPIC_CUSTOMER_SEARCH_IN` - Used to search customers in the customer management.
+:::info
+The kafka topics used for the Customer Management plugin can be defined/overwritten using the following environment variables (that can be found in the deployment of the service):
+* `KAFKA_TOPIC_CUSTOMER_SEARCH_IN` - used to search customers in the customer management plugin
+* `KAFKA_TOPIC_CUSTOMER_SEARCH_OUT` - used to get the response from the customer management plugin to the Engine.
+:::
+
 
 The request sent to the plugin can use any key that was previously configured in the elaticsearch index where the customers are saved.
 
@@ -128,8 +133,6 @@ Example 3 - using "FirstName", "DateOfBirth" and "LegalForm" keys:
 "LegalForm": "PF"
 }
 ```
-
-`KAFKA_TOPIC_CUSTOMER_SEARCH_OUT` - Used to get the response from the customer management plugin to the Engine.
 
 Keys description:
 

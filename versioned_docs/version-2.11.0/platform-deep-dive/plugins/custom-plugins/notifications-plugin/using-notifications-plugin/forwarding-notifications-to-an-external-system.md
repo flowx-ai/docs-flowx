@@ -1,8 +1,12 @@
+---
+sidebar_position: 4
+---
+
 # Forward notifications to an external system
 
-If the Notification service is not directly connected to a SMTP / SMS server and you want to use an external system for sending the notifications, you can use the notification plugin just to forward the notifications to your custom implementation.
+If the Notification service is not directly connected to an SMTP / SMS server and you want to use an external system for sending the notifications, you can use the notification plugin just to forward the notifications to your custom implementation.
 
-### Define needed Kafka topics <a href="#define-needed-kafka-topics" id="define-needed-kafka-topics"></a>
+### Define needed Kafka topics
 
 Kafka topic names can be set by using environment variables:
 
@@ -12,41 +16,54 @@ Kafka topic names can be set by using environment variables:
 
 ### Example: send a notification from a business flow
 
-Let's pick a simple use-case, say we need to send a new welcome letter when we onboard a new customer. The steps are the following:
+Let's pick a simple use case. Imagine we need to send a new welcome letter when we onboard a new customer. You must follow the next steps:
 
-**Step 1:** Configure the template that you want to use for the welcome email, you will need to make a request to the API for adding this new template.
+1. Configure the [template](managing-notification-templates.md) that you want to use for the welcome email, use the [WYSIWYG Editor](../../../wysiwyg.md)
 
-Make a `POST` request to `NOTIFICATION_URL/api/template` with the following body:
+:::caution
+Make sure that the **Forward on Kafka** checkbox is ticked, so the notification will be forwarded to an external adapter.
+:::
 
-```
+2. Configure the data model for the template. 
+
+3.  To configure a document template, first, you need to define some information stored in the [Body](../../../wysiwyg.md#notification-templates):
+
+* **Type** - MAIL (for email notifications)
+* ❗️**Forward on Kafka** - if this box is checked, the notification is not being sent directly by the plugin to the destination, but forwarded to another adapter
+* **Language** - choose the language for your notification template
+* **Subject** - enter a subject
+
+![](../../../../img/notification_email.png)
+
+
+![](../../../../img/data_model_notif.png)
+
+4. Use the FLOWX.AI Designer to create a process definition.
+5. Add a [**Kafka send event node**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) and a [**Kafka receive event node**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) (one to send the request, one to receive the reply).
+5. Check if the needed topic (defined at the following environment variable) is configured correctly: `KAFKA_TOPIC_NOTIFICATION_INTERNAL_IN`.
+6. Add the proper configuration to the action, the Kafka topic, and the body message.
+
+![](../../../../img/notif_params_send.png)
+
+:::info
+**Forward on Kafka** option will forward the notification to an external adapter, make sure the needed Kafka topic for forwarding is defined/overwritten using the following environment variable: `KAFKA_TOPIC_EXTERNAL_OUT`.
+:::
+
+7. Run the process and look for the response (you can view it via the **Audit log**) or by checking the responses on the Kafka topic
+
+![](../../../../img/notif_send_resp.png)
+
+
+Response example at `KAFKA_TOPIC_NOTIFICATION_INTERNAL_OUT`:
+
+```json
 {
-    "name": "welcomeLetter",
-    "type": "MAIL",
-    "strategyType": "MAIL",
-    "active": true,
-    "context": [],
-    "language": "ro",
-    "subject": "Welcome!",
-    "body": "<!DOCTYPE html> <html xmlns:th='<http://www.thymeleaf.org>'> <head> <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' /> </head> <body> <p>Hello!</p> <p th:text='${lastName}'></p> <p th:text='${firstName}'></p></body> </html>",
-    "params": [
-        {
-            "key": "lastName",
-            "mandatory": false
-        },
-        {
-            "key": "firstName",
-            "mandatory": false
-        },
-        {
-            "key": "clientId",
-            "mandatory": true
-        }
-    ]
+  "templateName": "welcomeLetter",
+  "receivers": [
+    "john.doe@mail.com"
+  ],
+  "channel": "MAIL",
+  "language": "en"
 }
+
 ```
-
-**Step 2:** Check that the needed topic is configured correctly `KAFKA_TOPIC_NOTIFICATION_EXTERNAL_OUT`
-
-**Step 3:** Use the FLOWX Designer to add a new Kafka send event to the correct node in the process definition
-
-**Step 4:** Add the proper configuration to the action, the Kafka topic and message to be sent.

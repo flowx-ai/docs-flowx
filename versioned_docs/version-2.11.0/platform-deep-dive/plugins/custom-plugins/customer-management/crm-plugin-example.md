@@ -2,12 +2,17 @@
 
 ## Integrate a customer search in a business flow
 
-Follow the steps below in order to used the user personal number to perform a search query in the customer management plugin.
+Follow the next steps to use the user personal number to perform a search query in the customer management plugin.
 
-**Step 1**: Go to the Visual Flow Designer and add a Kafka send event
+1. Open FLOWX.AI Designer web app and create a process.
+2. Add a [**Kafka send event**](../../../../building-blocks/node/message-send-received-task-node.md#message-send-task) node.
+3. Configure the [**Kafka send event**](../../../../building-blocks/node/message-send-received-task-node.md#message-send-task) node by adding the following elements:
+* Kafka topic - defined at `KAFKA_TOPIC_CUSTOMER_SEARCH_IN` environment variable
+* Message body:
+  * 
 
-**Step 2**: Configure the Kafka send event with the name of the template, `KAFKA_TOPIC_CUSTOMER_SEARCH_IN` value for the Kafka topic and the specific body
 
 **Step 3**: Go to the FLOWX.AI Designer and add a Kafka receive event
 
-**Step 4**: Configure on what key you want to receive the response from the crm, on the value of `KAFKA_TOPIC_CUSTOMER_SEARCH_OUT`
+**Step 4**: Configure on what key you want to receive the response from the CRM, on the value of `KAFKA_TOPIC_CUSTOMER_SEARCH_OUT`
+

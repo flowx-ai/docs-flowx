@@ -1,15 +1,15 @@
-# Plugins Setup guide
+# Plugins setup guides
 
-In order to set up a plugin in your environment, you will have to go through the following steps:
+To set up a plugin in your environment, you must go through the next steps:
 
-* make sure you have all the prerequisites deployed on your environment (for example a Redis cache instance, a DB instance, etc)
+* make sure you have all the prerequisites deployed on your environment (for example a [Redis](../../../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-redis.md) cache instance, a DB instance, etc)
 * make the necessary configurations for each plugin (DB connection data, related Kafka topic names, etc)
 
 Once you have deployed the necessary plugins in your environment, you can start integrating them in your process definitions.
 
 All of them listen for Kafka events sent by the Engine and performed certain actions depending on the received data. They can also send data back to the Engine.
 
-Some of them require some custom templates to be configured, for these cases, REST APIs are provided.
+Some of them require some custom templates to be configured, for these cases, a [WYSIWYG Editor](../wysiwyg.md) is provided.
 
 Let's go into more details on setting up and using each of them:
 
@@ -20,7 +20,7 @@ Let's go into more details on setting up and using each of them:
 #### More details about the customer management plugin
 
 
-[Customet Management plugin configuration](customer-management-plugin-configuration)
+[Customer Management plugin configuration](customer-management-plugin-configuration)
 
 
 #### More details about the OCR plugin

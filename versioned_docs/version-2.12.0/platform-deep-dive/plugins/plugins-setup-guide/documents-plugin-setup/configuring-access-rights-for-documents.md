@@ -20,10 +20,20 @@ Available scopes:
 The Document plugin is preconfigured with the following default users roles for each of the access scopes mentioned above:
 
 * manage-document-templates
-  * import - ROLE\_DOCUMENT\_TEMPLATES\_IMPORT
-  * read - ROLE\_DOCUMENT\_TEMPLATES\_READ
-  * edit - ROLE\_DOCUMENT\_TEMPLATES\_EDIT
-  * admin - ROLE\_DOCUMENT\_TEMPLATES\_ADMIN
+  * import:
+    * ROLE_DOCUMENT_TEMPLATES_IMPORT
+    * ROLE_DOCUMENT_TEMPLATES_EDIT
+    * ROLE_DOCUMENT_TEMPLATES_ADMIN
+  * read
+    * ROLE_DOCUMENT_TEMPLATES_READ
+    * ROLE_DOCUMENT_TEMPLATES_IMPORT
+    * ROLE_DOCUMENT_TEMPLATES_EDIT
+    * ROLE_DOCUMENT_TEMPLATES_ADMIN
+  * edit:
+    * ROLE_DOCUMENT_TEMPLATES_EDIT
+    * ROLE_DOCUMENT_TEMPLATES_ADMIN
+  * admin:
+    * ROLE_DOCUMENT_TEMPLATES_ADMIN
 
 :::caution ROLES
 These roles need to be defined in the chosen identity provider solution.

@@ -53,7 +53,7 @@ Configuration for the two components should be grouped in a pod with two contain
 
 * Internal queue system
 * Kafka configuration
-* Minio Configuration
+* Min.io Configuration
 
 ```jsx
 CELERY_BROKER_URL: amqp://users:users_328947@jx-ocr-queue:5672
