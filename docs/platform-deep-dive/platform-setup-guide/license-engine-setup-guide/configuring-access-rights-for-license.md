@@ -17,9 +17,15 @@ Available scopes:
 The License component is preconfigured with the following default users roles for each of the access scopes mentioned above:
 
 * manage-licenses
-  * read - `ROLE_LICENSE_MANAGE_READ`
-  * edit - `ROLE_LICENSE_MANAGE_EDIT`
-  * admin - `ROLE_LICENSE_MANAGE_ADMIN`
+  * read:
+    * ROLE_LICENSE_MANAGE_READ
+    * ROLE_LICENSE_MANAGE_EDIT
+    * ROLE_LICENSE_MANAGE_ADMIN
+  * edit:
+    * ROLE_LICENSE_MANAGE_EDIT
+    * ROLE_LICENSE_MANAGE_ADMIN
+  * admin:
+    * ROLE_LICENSE_MANAGE_ADMIN
 
 :::warning
 These roles need to be defined in the chosen identity provider solution.

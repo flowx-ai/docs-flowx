@@ -1,6 +1,6 @@
 # Configuring access rights for Integration Management
 
-Granular access rights can be configured for restricting access to the Integration Management plugin component.
+Granular access rights can be configured for restricting access to the Integration Management plugin component. These access rights must be configured in the Designer (admin) deployment.
 
 The following access authorizations are provided, with the specified access scopes:
 
@@ -16,10 +16,20 @@ Available scopes:
 Integration management is preconfigured with the following default users roles for each of the access scopes mentioned above:
 
 * manage-integrations
-  * import - ROLE\_ADMIN\_MANAGE\_INTEGRATIONS\_IMPORT
-  * read - ROLE\_ADMIN\_MANAGE\_INTEGRATIONS\_READ
-  * edit - ROLE\_ADMIN\_MANAGE\_INTEGRATIONS\_EDIT
-  * admin - ROLE\_ADMIN\_MANAGE\_INTEGRATIONS\_ADMIN
+  * import:
+    * ROLE_ADMIN_MANAGE_INTEGRATIONS_IMPORT
+    * ROLE_ADMIN_MANAGE_INTEGRATIONS_EDIT
+    * ROLE_ADMIN_MANAGE_INTEGRATIONS_ADMIN
+  * read:
+    * ROLE_ADMIN_MANAGE_INTEGRATIONS_READ
+    * ROLE_ADMIN_MANAGE_INTEGRATIONS_IMPORT
+    * ROLE_ADMIN_MANAGE_INTEGRATIONS_EDIT
+    * ROLE_ADMIN_MANAGE_INTEGRATIONS_ADMIN
+  * edit:
+    * ROLE_ADMIN_MANAGE_INTEGRATIONS_EDIT
+    * ROLE_ADMIN_MANAGE_INTEGRATIONS_ADMIN
+  * admin:
+    * ROLE_ADMIN_MANAGE_INTEGRATIONS_ADMIN
 
 :::warning
 These roles need to be defined in the chosen identity provider solution. It can be either kyecloak, RH-SSO, or another identity provider solution. For more details on how to define service accounts, check the [Access rights](integration-management.md) section.

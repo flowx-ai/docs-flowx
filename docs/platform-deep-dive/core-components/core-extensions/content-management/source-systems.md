@@ -1,3 +1,7 @@
+---
+sidebar_position: 8
+---
+
 # Source systems
 
 If multiple enumerations values are needed to communicate with other systems, source systems can be used.

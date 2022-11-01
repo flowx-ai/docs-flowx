@@ -105,3 +105,13 @@ The following environment variables could be set in order to control log levels:
 `LOGGING_LEVEL_APP` - app level logs
 
 `LOGGING_LEVEL_MONGO_DRIVER` - logs related to mongo driver
+
+### File storage
+
+`APPLICATION_FILE_STORAGE_S3_SERVER_URL`
+
+`APPLICATION_FILE_STORAGE_S3_BUCKET_NAME` 
+
+`APPLICATION_FILE_STORAGE_S3_ROOT_DIRECTORY`
+
+`APPLICATION_FILE_STORAGE_S3_CREATE_BUCKET` 
