@@ -22,10 +22,10 @@ Values expected in the request body:
 
 Example:
 
-```
+```json
 { 
     "processInstanceId": 12345, 
-    "clientId": "1871201460101, 
+    "clientId": "1871201460101", 
     "channel": "MAIL", 
     "otp": "1111" 
 }

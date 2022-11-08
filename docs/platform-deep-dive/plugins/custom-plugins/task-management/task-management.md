@@ -58,7 +58,7 @@ You can also set Task Manager to send more information about your process by swi
 
 **To set up Task Management to send extra updates on your process, follow the next steps:**
 
-1. Go to **Flowx.AI Designer** and open your **process definition.**
+1. Go to **Flowx.AI Designer** and open your **process definition**.
 2. Click **Edit** button.
 3. Select a **node** (after reaching this particular node task manager will trigger the updates).
 4. Switch on the **Update task management?** button.

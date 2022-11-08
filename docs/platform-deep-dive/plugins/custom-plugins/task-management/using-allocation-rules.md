@@ -1,6 +1,6 @@
 # Using allocation rules
 
-Allocation rules are meant to define when tasks should be auto-assigned to users when they reach a [swimlane](../../../user-roles-management/swimlanes.md) that has a specific role configured (for example, specific tasks will be assigned fo_r_ the _front office_ and specific tasks for the _back office_ only).
+Allocation rules are meant to define when tasks should be auto-assigned to users when they reach a [swimlane](../../../user-roles-management/swimlanes.md) that has a specific role configured (for example, specific tasks will be assigned for the _front office_ and specific tasks for the _back office_ only).
 
 ![](../../../img/allocation_rules.png)
 
@@ -68,10 +68,10 @@ To edit allocation rules, follow the next steps:
 
 ### Viewing allocation rules&#x20;
 
-The allocation rules list displays all the configured swimlanes grouped by process:&#x20;
+The allocation rules list displays all the configured swimlanes grouped by process:
 
 1. **Process** - the process definition name where the swimlanes were configured
-2. **Swimlane** -  the name of the swimlane
+2. **Swimlane** - the name of the swimlane
 3. **Allocation** - applied allocation rules
 4. **Edited at** - the last time when an allocation was edited
 5. **Edited by** - the user who edited/created the allocation rules

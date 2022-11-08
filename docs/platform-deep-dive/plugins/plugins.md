@@ -32,7 +32,7 @@ To interact with plugins, you need to understand a few details about them:
 
 The currently available plugins are:
 
-* **Documents** - easily generate, host and access any kind of documents
-* **Notifications** - enhance your project with the option of sending custom emails or SMS notifications
-* **OCR** - helps you scan your documents and integrate them into a business process
-* **Task management** - a plugin suitable for back-officers and supervisors as it can be used to easily track and assign activities/tasks inside a company.
+* [**Documents**](./custom-plugins/documents-plugin/documents-plugin.md) - easily generate, host and access any kind of documents
+* [**Notifications**](./custom-plugins/notifications-plugin/notifications-plugin.md) - enhance your project with the option of sending custom emails or SMS notifications
+* [**OCR**](./custom-plugins/ocr-plugin.md) - helps you scan your documents and integrate them into a business process
+* [**Task management**](./custom-plugins/task-management/task-management.md) - a plugin suitable for back-officers and supervisors as it can be used to easily track and assign activities/tasks inside a company.

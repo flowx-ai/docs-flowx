@@ -76,7 +76,7 @@ Let's pick a simple use-case, say we need to send a new welcome letter when we o
 
 Response example at `KAFKA_TOPIC_NOTIFICATION_INTERNAL_OUT`:
 
-```
+```json
 {
   "identifier": null,
   "templateName": "welcomeLetter",

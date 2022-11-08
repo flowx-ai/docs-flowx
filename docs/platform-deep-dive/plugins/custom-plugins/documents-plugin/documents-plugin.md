@@ -32,7 +32,7 @@ It can be easily used and integrated into your business [processes definitions](
 
 [Kafka receive event node](../../../../building-blocks/node/message-send-received-task-node.md#message-receive-task)
 
-Let's go through the steps needed in order to deploy and set up the plugin:
+Let's go through the steps needed to deploy and set up the plugin:
 
 [Documents plugin setup](../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md)
 

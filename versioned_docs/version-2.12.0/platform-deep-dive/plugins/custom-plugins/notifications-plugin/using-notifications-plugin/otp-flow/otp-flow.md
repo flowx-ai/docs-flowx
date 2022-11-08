@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # OTP flow
 
-The notifications plugin can also be used for handling the one time password (OTP) generation and validation flow.
+The notifications plugin can also be used for handling the one-time password (OTP) generation and validation flow.
 
 The flow is made of two steps, the OTP generation and the OTP validation.
 

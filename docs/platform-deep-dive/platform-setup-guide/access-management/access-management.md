@@ -6,6 +6,7 @@ Identity and access management (IAM) is **a framework of business processes, pol
 
 :::info
 We support Keycloak, an Open Source Identity and Access Management solution (or other solutions based on the Keycloak project).
+:::
 
 ### What is an Identity Provider (IdP)?
 
@@ -65,7 +66,7 @@ Configuration examples:
 
 [Setup user federation LDAP](https://documentation.abas.cloud/en/abas-keycloak/setup-user-federation-ldap.html)
 
-[LDAP Keyckoak](https://blog.please-open.it/ldap-keycloak/)
+[LDAP Keycloak](https://blog.please-open.it/ldap-keycloak/)
 
 #### SAML, OpenID Connect, OAuth 2.0
 
