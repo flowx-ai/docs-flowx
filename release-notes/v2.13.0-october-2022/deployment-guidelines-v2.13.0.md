@@ -39,7 +39,7 @@ After updating to **2.13.0** FLOWX.AI release, importing old processes definitio
 | 2.13                      	| PostgreSQL     	| 14.3.0                               	|
 | 2.13                      	| MongoDB        	| 5.0.8                                	|
 | 2.13                      	| Redis          	| 6.2.6                                	|
-| 2.13                      	| Elastisearch   	| 7.17                                 	|
+| 2.13                      	| Elasticsearch   	| 7.17                                 	|
 | 2.13                      	| S3 (Min.IO)    	| 2020.7.24                            	|
 | 2.13                      	| OracleDB       	| 19.8.0.0.0                           	|
 
