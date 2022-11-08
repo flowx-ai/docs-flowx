@@ -4,29 +4,56 @@ sidebar_position: 3
 
 # Converting documents to different formats
 
-Convert a document to a different format, for example convert a pdf to jpeg.
+:::caution
+Currently, the supported conversion method is from **PDF** to **JPEG**.
+:::
 
-## Define needed Kafka topics
+## Sending the request
 
-Kafka topic names can be set by using environment variables:
 
-* `KAFKA_TOPIC_FILE_CONVERT_IN`
-* `KAFKA_TOPIC_FILE_CONVERT_OUT`
+To create a process that converts from PDF to JPEG format:
+
+1. Create a process in which you add a [**Kafka send event**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) node and a [**Kafka receive event**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) node (one to send the request, one to receive the reply). 
+
+2. Configure the first node (**Kafka send event**) - add a **Kafka send action**. 
+![](../../../../img/pdf_to_jpeg.png)
+
+3. Add the [**Kafka topic**](../../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md#kafka-configuration) where to send the request:
+
+![](../../../../img/doc_kafka_topic.png)
+
+4. Fill in the body message request:
+
+![](../../../../img/doc_message_body.png)
+
+* `fileId` = file ID that will be converted 
+* `to` = file extension to convert to
+
+
+:::info
+Kafka topic names can be set by using (overwriting) the following environment variables in the deployment:
+
+`KAFKA_TOPIC_FILE_CONVERT_IN` - default value: `ai.flowx.in.qa.document.convert.v1` - the topic that listens for the request from the engine
+
+`KAFKA_TOPIC_FILE_CONVERT_OUT` - default value: `ai.flowx.updates.qa.document.convert.v1` - the topic on which the engine will expect the reply
+
+The above examples of topics are extracted from an internal testing environment, when setting topics for other environments, follow the next pattern, for example, `ai.flowx.updates.{{environment}}.document.convert.v1`.
+:::
 
 :::caution
 The Engine is listening for messages on topics with names of a certain pattern, make sure to use an outgoing topic name that matches the pattern configured in the Engine.
 :::
 
-## Request to convert document
+## Receiving the reply
 
-Values expected in the request body:
+:::info
+You can view the response by accessing the **Audit log** menu.
+:::
 
-* fileId = file ID that will be converted
-* to = file extension to convert to
 
-Sent body example: `{ "fileId": 1001, "to": "image/jpeg" }`
+The response will be sent on the out Kafka topic (defined on the Kafka receive event node), as available below:
 
-## Response for file conversion
+![](../../../../img/convert_updates.png)
 
 Values expected in the reply body:
 
@@ -37,4 +64,20 @@ Values expected in the reply body:
 * minioPath = minio path for the converted file
 * downloadPath = download path for the converted file
 
-Sent body example: `{ "customId": "FX04689", "fileId": 1001, "documentType": "TYPE1", "documentLabel": "TYPE1", "minioPath": "flowx-qa-194406/FX04689/18052_TYPE1.jpg", "downloadPath": "internal/files/18052/download" }`
+
+![](../../../../img/document_convert_pdf.png)
+
+Response:
+
+```json
+{
+  "customId": "1234_727705",
+  "fileId": 4152,
+  "documentType": "BULK",
+  "documentLabel": null,
+  "minioPath": "qualitance-dev-paperflow-qa-process-id-727705/1234_727705/4152_BULK.jpg",
+  "downloadPath": "internal/files/4152/download",
+  "noOfPages": null,
+  "error": null
+}
+```

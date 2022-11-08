@@ -1,11 +1,15 @@
-# 📦 Task Management
+---
+sidebar_position: 3
+---
 
-### **What is Task Management?**
+# 📦 Task management
+
+### **What is Task management plugin?**
 
 :::info
 **What is it?** Task Management is a plugin suitable for back-officers and supervisors as it can be used to easily track and assign activities/tasks inside a company.
 
-**Why is it useful?** The Task Management plugin has the scope to show a process that you defined in Designer, offering a more business-oriented view. It also offers interactions at the assignment level.&#x20;
+**Why is it useful?** The Task Management plugin has the scope to show a process that you defined using FLOWX.AI Designer, using a more business-oriented view. It also offers interactions at the assignment level.
 :::
 
 ![Task Manager](../../../img/task_management_overview.gif)
@@ -21,7 +25,7 @@ Inside the **Task details** tab you can find the following information about a p
 ![Task details](../../../img/task_mngmnt_task_details.png)
 
 :::caution
-Specific roles need to be defined in a process in order to use all the task management features. More details, [here](../../../platform-setup-guide/flowx-engine-setup-guide/configuring-access-roles-for-processes.md).
+Specific roles need to be defined in a process to use all the task management features. For more details, check the [Configuring access roles for processes](../../../platform-setup-guide/flowx-engine-setup-guide/configuring-access-roles-for-processes.md) section.
 :::
 
 ### Statuses & Definitions in Task Manager
@@ -33,7 +37,7 @@ There are multiple statuses that Task Manager could display, depending on the st
 | **Created**   | This status is visible only if it is a problem with process creation. If the process has no error in the configuration you will see the **Started** status instead.                                                                                                                                                                                                                                                                                                                                                       |
 | **Started**   | It shows that the process is in progress (it is running).                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | **Finished**  | The process reached an end node and finished the execution.                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| **Failed**    | This status is displayed when a [CronJob ](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/)is configured and enabled inside the [FLOWX engine](../../../core-components/flowx-engine/). For example, if the CronJob is triggered at a particular hour, and the instance is not finished by then, all the tasks will be moved to `FAILED` status.                                                                                                                                                     |
+| **Failed**    | This status is displayed when a [CronJob](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/) is configured and enabled inside the [FLOWX engine](../../../core-components/flowx-engine/). For example, if the CronJob is triggered at a particular hour, and the instance is not finished by then, all the tasks will be moved to `FAILED` status.                                                                                                                                                     |
 | **Expired**   | <p>This status is displayed when <code>expiryTime</code> field is defined inside the process definition. A user can set up an <code>expiryTime</code> function, by following these steps:</p><ol><li>Go to <strong>FLOWX Designer > Processes > Definitions</strong>.</li><li>Select a process and then click on the "<strong>⋮</strong>" <strong></strong> button then select <strong>Settings.</strong></li><li>Inside the <strong>General</strong> tab, you can edit the <strong>Expiry time</strong> field.</li></ol> |
 | **Aborted**   | This status is available for processes that also contain subprocesses. When a subprocess is running (and the [token is moved backward](https://docs.flowx.ai/flowx-designer/managing-a-process-flow/moving-a-token-backwards-in-a-process) to redo a series of previous actions) - the subprocess will be aborted.                                                                                                                                                                                                        |
 | **Dismissed** | This status is available for processes that also contain subprocesses. This status is displayed when a user stops a subprocess                                                                                                                                                                                                                                                                                                                                                                                            |
@@ -65,7 +69,6 @@ You can also set Task Manager to send more information about your process by swi
 Some actions might not be available as they can be performed based on user roles/access rights.
 :::
 
-To find more about how to configure the Task Manager plugin, check the [Task Manager plugin setup](../../plugins-setup-guide/task-management-plugin-setup/) section.
+To find out more about how to configure the Task Manager plugin, check the [Task Management plugin setup](../../plugins-setup-guide/task-management-plugin-setup/) section.
 
-
-[task-management-plugin-setup](../../plugins-setup-guide/task-management-plugin-setup/)
+[Task Management plugin setup](../../plugins-setup-guide/task-management-plugin-setup/)

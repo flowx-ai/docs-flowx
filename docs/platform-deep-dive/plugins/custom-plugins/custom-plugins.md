@@ -1,52 +1,59 @@
 # 📦 Custom plugins
 
-Let's get into a bit more details about the custom plugins 🎛️
+Let's get into a bit more detail about the custom plugins 🎛️
+
+## Document management plugin
+
+**Effortless document generation and safe-keeping** 
+
+The document management plugin securely stores documents, facilitates document generation based on predefined templates and also handles conversion between various document formats.
+
+It offers an easy-to-use interface for handling documents on event-based Kafka streams.
+
+![high level architecture](../../img/document_service_architecture.svg)
+
+[More about Documents plugin](../../plugins/custom-plugins/documents-plugin/documents-plugin.md)
 
 ## Notifications plugin
 
-**Multi-channel notifications made easy**. The notifications plugin handles various types of notifications:
+**Multi-channel notifications made easy**
 
-* SMS
-* push notifications to mobile devices,
-* email notifications and
+The plugin handles various types of notifications:
+
+* SMS (if a third party service is available for communication management)
+* email notifications
 * generating and validating OTP passwords for **user identity verification**
 
 It can also be used to forward custom notifications to external outgoing services. It offers an intuitive interface for defining templates for each kind of notification and handles sending and auditing notifications easily.
 
 ![high level architecture](../../img/custom_plugins_architecture.svg)
 
-[What is the notification plugin?](../../../platform-deep-dive/plugins/custom-plugins/notifications-plugin/notifications-plugin.md)
+[More about Notifications plugin](../../../platform-deep-dive/plugins/custom-plugins/notifications-plugin/notifications-plugin.md)
 
-## Document management plugin
+## Task management
 
-**Effortless document generation and safe-keeping.** The document management plugin stores documents in a secure way, facilitates document generation based on predefined templates and also handles conversion between various document formats.
+**Helper for back-officers and supervisors, easy track, assignment management**
 
-It offers an easy-to-use interface for handling documents on both REST and event based Kafka streams.
+The Task Management plugin has the scope to show a process that you defined using FLOWX.AI Designer, using a more business-oriented view. It also offers interactions at the assignment level.
 
-![high level architecture](../../img/document_service_architecture.svg)
+## Customer management
 
+**Convenient and secure access to user data** 
 
-[What is the document management plugin?](../../plugins/custom-plugins/documents-plugin/documents-plugin.md)
+Light CRM uses an elasticSearch engine to retrieve user details using partial matches on intricate databases.
+
+![](../../img/crm_plugin_archi.svg)
+
+[More about Customer management plugin](./customer-management/customer-management.md)
 
 
 ## OCR plugin
 
-**Automatic key information extraction.** Used to easily read barcodes or extract handwritten signatures from pdf documents.
+**Automatic key information extraction** 
+
+Used to easily read barcodes or extract handwritten signatures from PDF documents.
 
 ![](../../img/ocr_plugin_archi.svg)
 
+[More about OCR plugin](../custom-plugins/ocr-plugin.md)
 
-[OCR service](../custom-plugins/ocr-plugin.md)
-
-
-## CMS
-
-**The go-to place for all taxonomies.** The plugin offers a convenient way of managing various definitions, list and content translations.
-
-## Customer management
-
-**Convenient and secure access to user data.** Light CRM uses an Elastic Search engine to user retrieve details using partial match on big databases.
-
-![](../../img/crm_plugin_archi.svg)
-
-[Customer management](./customer-management/customer-management.md)

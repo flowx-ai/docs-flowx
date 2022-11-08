@@ -20,7 +20,7 @@ Node configuration is done by accessing the **Node Config** tab. You have the fo
 Inside the General Config you have the following properties:
 
 * **Node name** - the name of the node
-* **Can Go Back** -  switching this option to true will allow users to return to this step after completing it
+* **Can Go Back** - switching this option to true will allow users to return to this step after completing it
 
 :::info
 When encountering a step with `canGoBack` switched to false, all steps found behind it will become unavailable.
@@ -41,9 +41,9 @@ To configure a message send task node, we first need to add a new node and then 
 
 ![](./img/message_send_node.gif)
 
-Multiple options are available for this type of action and can be configured via the FLOWX Designer:
+Multiple options are available for this type of action and can be configured via the FLOWX.AI Designer:
 
-Multiple options are available for this type of action and can be configured via the FLOWX Designer. To configure and [add an action to a node](../../flowx-designer/managing-a-process-flow/adding-an-action-to-a-node.md), use the **Actions** tab at the node level, which has the following configuration options:
+Multiple options are available for this type of action and can be configured via the FLOWX.AI Designer. To configure and [add an action to a node](../../flowx-designer/managing-a-process-flow/adding-an-action-to-a-node.md), use the **Actions** tab at the node level, which has the following configuration options:
 
 * [Action Edit](#action-edit)
 * [Back in steps (for Manual actions)](#back-in-steps)
@@ -66,10 +66,6 @@ Multiple options are available for this type of action and can be configured via
 * **Allow BACK on this action** - back in process is a functionality that allows you to go back in a business process and redo a series of previous actions in the process. For more details, check [Moving a token backwards in a process](../../flowx-designer/managing-a-process-flow/moving-a-token-backwards-in-a-process.md) section
 
 ![Action Edit](./img/message_send_action_edit.png)
-
-:::info
-The values for these parameters could be set when defining the process or set at runtime, using some values from the process instance. If you want some values to be replaced at runtime, the Replace values checkbox should be checked.
-:::
 
 #### Data to send
 
@@ -103,8 +99,16 @@ Send a message to a CRM integration to request a search in the local database:
 
 #### **Parameters**
 
-* **Address** - `ai.flowx.in.crm.search.v1` the Kafka topic on which the CRM listens for requests
-* **Message** -`{ "clientType": "${application.client.clientType}", "personalNumer": "${personalNumer.client.personalNumer}" }` - the message payload will have two keys, clientType and personalNumber, both with values from the process instance
+:::info
+Parameters can be added either using **Custom** option (where you configure everything on the spot), or by using **From integration** and import parameters already defined in an integration.
+
+More details about **Integrations management** you can find [here](../../platform-deep-dive/core-components/core-extensions/integration-management).
+:::
+
+##### Custom
+
+* **Topics** - `ai.flowx.in.crm.search.v1` the Kafka topic on which the CRM listens for requests
+* **Message** -`{ "clientType": "${application.client.clientType}", "personalNumber": "${personalNumber.client.personalNumber}" }` - the message payload will have two keys, `clientType` and `personalNumber`, both with values from the process instance
 * **Headers** - `{ "processInstanceId": ${processInstanceId}}`
 
 ![](./img/message_send_param1.png)
@@ -140,3 +144,14 @@ A naming pattern must be defined on the process engine to use the defined topics
 For more information about Kafka configuration, click [here](../../platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide/flowx-engine-setup-guide.md#kafka-configuration).
 
 ![Example of a message receive task for a CRM integration](./img/message_receive_kafka.png)
+
+
+##### From integration
+
+After defining one integration (inside [Integration management](../../platform-deep-dive/core-components/core-extensions/integration-management)) you can open a compatible node and start using already defined integrations.
+
+* **Topics** - topics defined in your integration 
+* **Message** - the **Message data model** from your integration
+* **Headers** - all integrations have `processInstanceId` as a default header parameter, add any other relevant parameters
+
+![](./img/message_send_from_integr.gif)

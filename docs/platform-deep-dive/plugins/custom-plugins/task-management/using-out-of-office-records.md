@@ -21,7 +21,7 @@ To add out-of-office records, follow the next steps:
 
 To add out-of-office records, follow the next steps:
 
-1. Click **Add out-of-office** button**,** in the top-right corner.
+1. Click **Add out-of-office** button, in the top-right corner.
 2. Fill in the following mandatory details:
    * Assignee - user single select
    * Start Date (:exclamation:cannot be earlier than tomorrow)

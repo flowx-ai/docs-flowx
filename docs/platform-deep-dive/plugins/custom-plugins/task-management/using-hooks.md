@@ -1,6 +1,6 @@
 # Using hooks
 
-Hooks allow you to extract stateful logic from a component so it can be tested and reused independently.
+Hooks allow you to extract stateful logic from a component, so it can be tested and reused independently.
 
 Users with task management permissions can create hooks to trigger a specific process instance. For example, sending a notification when an event occurs in the process.
 

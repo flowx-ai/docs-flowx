@@ -46,3 +46,7 @@ The following environment variables could be set in order to control log levels:
 `LOGGING_LEVEL_ROOT` - root spring boot microservice logs
 
 `LOGGING_LEVEL_APP` - app level logs
+
+### Platform health
+
+`MANAGEMENT_HEALTH_KAFKA_ENABLED` - to display the status of the component in the **Platform status** tab

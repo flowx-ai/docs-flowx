@@ -24,9 +24,9 @@ Let's go through the configuration updates that need to be made in order for the
 
 ### Process renderer & web components
 
-{% hint style="info" %}
+:::info
 Please make sure to follow the [Angular update guide](https://update.angular.io/?v=11.0-13.0).
-{% endhint %}
+:::
 
 ### Process Engine
 

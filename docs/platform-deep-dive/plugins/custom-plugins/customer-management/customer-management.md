@@ -1,6 +1,6 @@
 # 📦 Customer management
 
-Light CRM uses an Elastic Search engine to user retrieve details using partial match on big databases.
+Customer management plugin uses a search engine (for example, [elasticSearch](https://www.elastic.co/) engine) to retrieve user details using partial match on big databases.
 
 ### Setup guide
 

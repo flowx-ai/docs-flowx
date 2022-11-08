@@ -32,7 +32,7 @@ If you are using Keycloak or Red Hat Single Sign-On (RH-SSO) you can import the 
 Python 3 script + Roles, download [here](../assets/importUsers.zip)
 :::
 
-You need to edit the script parameters - `baseAuthUrl`, `username`, `password`,  `realm`, and the name of the group for super admins.
+You need to edit the script parameters - `baseAuthUrl`, `username`, `password`, `realm`, and the name of the group for super admins.
 
 The requests package is needed in order to run the script. It can be installed with the following command:
 
@@ -56,7 +56,7 @@ A complete list of all the default roles:
 | manage-processes                    | read    | ROLE\_ADMIN\_MANAGE\_PROCESS\_READ    | Admin           |
 | manage-processes                    | edit    | ROLE\_ADMIN\_MANAGE\_PROCESS\_EDIT    | Admin           |
 | manage-processes                    | admin   | ROLE\_ADMIN\_MANAGE\_PROCESS\_ADMIN   | Admin           |
-| <p></p><p>manage-configurations</p> | import  | ROLE\_ADMIN\_MANAGE\_CONFIG\_IMPORT   | Admin           |
+| manage-configurations               | import  | ROLE\_ADMIN\_MANAGE\_CONFIG\_IMPORT   | Admin           |
 | manage-configurations               | read    | ROLE\_ADMIN\_MANAGE\_CONFIG\_READ     | Admin           |
 | manage-configurations               | edit    | ROLE\_ADMIN\_MANAGE\_CONFIG\_EDIT     | Admin           |
 | manage-configurations               | admin   | ROLE\_ADMIN\_MANAGE\_CONFIG\_ADMIN    | Admin           |

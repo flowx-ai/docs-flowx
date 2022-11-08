@@ -2,12 +2,51 @@
 
 ## Integrate a customer search in a business flow
 
-Follow the steps below in order to used the user personal number to perform a search query in the customer management plugin.
+Follow the next steps to use the user personal number to perform a search query in the customer management plugin.
 
-**Step 1**: Go to the Visual Flow Designer and add a Kafka send event
+1. First make sure the details about customers are indexed in the search engine (for example, elasticSearch).
+2. Open FLOWX.AI Designer web app and create a process.
+3. Add a [**Kafka send event**](../../../../building-blocks/node/message-send-received-task-node.md#message-send-task) node.
+4. Configure the [**Kafka send event**](../../../../building-blocks/node/message-send-received-task-node.md#message-send-task) node by adding the following elements:
+* Kafka topic - defined on the `KAFKA_TOPIC_CUSTOMER_SEARCH_IN` environment variable
+* Message body (example of identifiers for an indexed customers):
 
-**Step 2**: Configure the Kafka send event with the name of the template, `KAFKA_TOPIC_CUSTOMER_SEARCH_IN` value for the Kafka topic and the specific body
+![](../../../img/crm_params.png)
 
-**Step 3**: Go to the FLOWX.AI Designer and add a Kafka receive event
+:::info
+For more examples of keys, check [**Using the customer management plugin**](using-the-crm-plugin.md).
+:::
 
-**Step 4**: Configure on what key you want to receive the response from the crm, on the value of `KAFKA_TOPIC_CUSTOMER_SEARCH_OUT`
+5. Add a [**Kafka receive event**](../../../../building-blocks/node/message-send-received-task-node.md#message-receive-task).
+6. Configure the topic on which you want to receive the response from the CRM, on the value of `KAFKA_TOPIC_CUSTOMER_SEARCH_OUT` environment variable.
+
+![](../../../img/crm_response.png)
+
+Response example:
+
+```json
+
+"searchResults" : {
+    "customers" : [ {
+      "id" : "ID3456",
+      "firstName" : "Jane Doe",
+      "lastName" : "Doe",
+      "birthDate" : "27.02.1980",
+      "cui" : "1820227103840_84",
+      "companyName" : "",
+      "clientCategory" : "PF_INTL",
+      "clientType" : "PF",
+      "idSeries" : "RT",
+      "idNumber" : "879948",
+      "idDocType" : "CI",
+      "idExpiryDate" : "27.02.2023",
+      "legalForm" : "",
+      "listId" : "4691602",
+      "mobilePhone" : "0711111111",
+      "attributes" : null,
+      "type" : "PF"}],
+    "hasMore" : false,
+    "error" : null
+  }
+
+  ```
