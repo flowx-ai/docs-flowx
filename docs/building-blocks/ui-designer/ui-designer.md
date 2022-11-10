@@ -16,7 +16,7 @@ To access the UI Designer, follow the next steps:
 1. Open **FLOWX Designer** and from the **Processes** tab select **Definitions**.
 2. Select a **process** from the process definitions list.
 3. Click the **Edit** **process** button.
-4. Select a **node** from the Process Designer then click the **brush** icon to open the **UI Designer**.
+4. Select a **node** and then from the **Process Designer** navigation menu click the **brush** icon to open the **UI Designer**.
 
 ![](./img/access_ui_designer.gif)
 
@@ -34,7 +34,7 @@ Depending on the component type different properties are available for configura
 
 ![](./img/use_ui_designer.gif)
 
-For example, for a [form group](./ui-component-types/root-components/form-group.md) element (as in the example above), the following properties can be configured:
+For example, for a [container](./ui-component-types/root-components/form-group.md) element (as in the example above), the following properties can be configured:
 
 #### Settings
 

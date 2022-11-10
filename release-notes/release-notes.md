@@ -12,6 +12,10 @@ Follow the Release Notes space to find all the information on the features and i
 
 <summary>v.2.x.x</summary>
 
+Q5 - November 2022
+
+* [v2.14.0](./v2.14.0-november-2022/v2.14.0-november-2022.md)
+
 Q4 - October 2022
 
 * [v2.13.0](./v2.13.0-october-2022/v2.13.0-october-2022.md)

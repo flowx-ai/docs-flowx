@@ -6,10 +6,10 @@ sidebar_position: 1
 
 ## Angular project requirements
 
-Your app MUST be created using the **ng** app from the **@angular/cli\~13.2.0** package. It also MUST use **SCSS** for styling.
+Your app MUST be created using the **ng** app from the **@angular/cli~14.2.2** package. It also MUST use **SCSS** for styling.
 
 ```
-npm install -g @angular/cli~13.2.0
+npm install -g @angular/cli@14.2.2
 ng new my-flowx-app
 ```
 
@@ -19,8 +19,15 @@ ng new my-flowx-app
 To install the npm libraries provided by FLOWX you will need to obtain access to the private FLOWX Nexus registry. Please consult with your project DevOps.
 :::
 
-:::important
-The library uses Angular version **@angular\~13.2.0**, **npm v8.1.2** and **node v16.13.2**.
+:::caution
+The library uses Angular version **@angular\~14.2.2**, **npm v8.1.2** and **node v16.13.2**.
+:::
+
+:::info
+If you are using an older version of Angular (for example, v13.0), please consult the following link for update instructions: 
+
+[**Update Angular from v13.0 to v14.0**](https://update.angular.io/?l=2&v=13.0-14.0)
+
 :::
 
 Use the following command to install the **renderer** library and its required dependencies:
@@ -45,7 +52,7 @@ Add path to component styles to stylePreprocessesOptions object in **angular.jso
 ```
 "stylePreprocessorOptions": {
   "includePaths": [
-  "./node_modules/paperflow-web-components/src/assets/scss", 
+  "./node_modules/paperflow-web-components/src/assets/scss",
   "./node_modules/flowx-process-renderer/src/assets/scss/style.scss",
   "src/styles"]
 }

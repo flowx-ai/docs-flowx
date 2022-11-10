@@ -8,7 +8,7 @@ The engine is the core of the platform, it is the service that runs instances of
 
 ## A high-level overview
 
-![](../img/image%20(20).png)
+![](../../img/image%20(20).png
 
 ## Orchestration
 
@@ -138,7 +138,7 @@ If none of these keys have values, all the parameter values from the parent proc
 
 </details>
 
-[FLOWX.AI Engine setup guide](../platform-setup-guide/flowx-engine-setup-guide/flowx-engine-setup-guide.md)
+[FLOWX.AI Engine setup guide](../../../platform-setup-guide/flowx-engine-setup-guide/flowx-engine-setup-guide.md)
 
 ## Triggering or skipping nodes on a process based on Flow Names
 
