@@ -22,27 +22,27 @@ FLOWX.AI uses a number of third-party software components:
 
 ### Third-party open-source components supported/tested versions
 
-| FLOWX.AI Platform Version | Component name           | Supported/tested versions |
-| ------------------------- | ------------------------ | ------------------------- |
-| 2.5.0 -> 2.10             | Keycloak                 | 9.0.2                     |
-| 2.5.0 -> 2.10             | Kafka / Zookeeper        | 2.8.0 (3.5.9)             |
-| 2.5.0 -> 2.10             | Jaeger                   | 1.34.1                    |
-| 2.5.0 -> 2.10             | AKHQ                     | 0.17.0                    |
-| 2.5.0 -> 2.10             | PostgreSQL               | 11.10.0                   |
-| 2.5.0 -> 2.10             | MongoDB                  | 4.2.6                     |
-| 2.5.0 -> 2.10             | Redis                    | 6.0.1                     |
-| 2.5.0 -> 2.10             | NGINX Ingress Controller | 1.2.0                     |
-| 2.5.0 -> 2.10             | Elasticsearch            | 7.9.3                     |
-| 2.5.0 -> 2.10             | Fluentd                  | 3.3.0                     |
-| 2.5.0 -> 2.10             | Kibana                   | 7.9.3                     |
-| 2.5.0 -> 2.10             | S3 (Min.IO)              | RELEASE.2021-02-14        |
-| 2.5.0 -> 2.10             | RabbitMQ                 | 3.7.17                    |
+| FLOWX.AI Platform Version | Component name               | Supported/tested versions            |
+| ------------------------- | ---------------------------- | ------------------------------------ |
+| 2.3.0 -> 2.13             | Keycloak                     | 9.0.2                                |  
+| 2.3.0 -> 2.13             | Kafka / Zookeeper            | 2.8.0 (3.5.9)                        |  
+| 2.3.0 -> 2.13             | Jaeger                       | 1.34.1                               |
+| 2.3.0 -> 2.13             | AKHQ                         | 0.17.0                               |  
+| 2.3.0 -> 2.13             | PostgreSQL                   | 11.10.0                              |
+| 2.3.0 -> 2.13             | MongoDB                      | 4.2.6                                |
+| 2.3.0 -> 2.13             | Redis                        | 6.0.1                                |
+| 2.3.0 -> 2.13             | NGINX Ingress Controller     | 1.2.0                                |
+| 2.3.0 -> 2.13             | Elasticsearch                | 7.9.3                                |
+| 2.3.0 -> 2.13             | Fluentd                      | 3.3.0                                |
+| 2.3.0 -> 2.13             | Kibana                       | 7.9.3                                |
+| 2.3.0 -> 2.13             | S3 (Min.IO) / minio-operator | RELEASE.2022-05-26T05-48-41Z / 4.5.4 |
+| 2.3.0 -> 2.13             | RabbitMQ                     | 3.11.2                               |
 
 ### Third-party components supported/tested versions
 
 | FLOWX.AI Platform version | Component name | Supported/tested versions |
 | ------------------------- | -------------- | ------------------------- |
-| 2.5.0 -> 2.10             | OracleDB       | 12C / 18-XE               |
+| 2.3.0 -> 2.13             | OracleDB       | 12C / 18-XE               |
 
 ### Summary
 
@@ -143,6 +143,8 @@ Used by FLOWX.AI in the core component and optionally to allow searching for bus
 FLOWX.AI uses [Min.IO](http://min.io/) as a cloud storage solution.
 
 [MIN.IO documentation](https://min.io/)
+
+[Docker available here](https://quay.io/repository/minio/minio?tab=tags&tag=RELEASE.2022-05-26T05-48-41Z)
 
 #### RabbitMQ
 

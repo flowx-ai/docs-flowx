@@ -24,25 +24,25 @@ FLOWX.AI uses a number of third-party software components:
 
 | FLOWX.AI Platform Version | Component name           | Supported/tested versions |
 | ------------------------- | ------------------------ | ------------------------- |
-| 2.5.0 -> 2.10             | Keycloak                 | 9.0.2                     |
-| 2.5.0 -> 2.10             | Kafka / Zookeeper        | 2.8.0 (3.5.9)             |
-| 2.5.0 -> 2.10             | Jaeger                   | 1.34.1                    |
-| 2.5.0 -> 2.10             | AKHQ                     | 0.17.0                    |
-| 2.5.0 -> 2.10             | PostgreSQL               | 11.10.0                   |
-| 2.5.0 -> 2.10             | MongoDB                  | 4.2.6                     |
-| 2.5.0 -> 2.10             | Redis                    | 6.0.1                     |
-| 2.5.0 -> 2.10             | NGINX Ingress Controller | 1.2.0                     |
-| 2.5.0 -> 2.10             | Elasticsearch            | 7.9.3                     |
-| 2.5.0 -> 2.10             | Fluentd                  | 3.3.0                     |
-| 2.5.0 -> 2.10             | Kibana                   | 7.9.3                     |
-| 2.5.0 -> 2.10             | S3 (Min.IO)              | RELEASE.2021-02-14        |
-| 2.5.0 -> 2.10             | RabbitMQ                 | 3.7.17                    |
+| 2.3.0 -> 2.12             | Keycloak                 | 9.0.2                     |
+| 2.3.0 -> 2.12             | Kafka / Zookeeper        | 2.8.0 (3.5.9)             |
+| 2.3.0 -> 2.12             | Jaeger                   | 1.34.1                    |
+| 2.3.0 -> 2.12             | AKHQ                     | 0.17.0                    |
+| 2.3.0 -> 2.12             | PostgreSQL               | 11.10.0                   |
+| 2.3.0 -> 2.12             | MongoDB                  | 4.2.6                     |
+| 2.3.0 -> 2.12             | Redis                    | 6.0.1                     |
+| 2.3.0 -> 2.12             | NGINX Ingress Controller | 1.2.0                     |
+| 2.3.0 -> 2.12             | Elasticsearch            | 7.9.3                     |
+| 2.3.0 -> 2.12             | Fluentd                  | 3.3.0                     |
+| 2.3.0 -> 2.12             | Kibana                   | 7.9.3                     |
+| 2.3.0 -> 2.12             | S3 (Min.IO)              | RELEASE.2021-02-14        |
+| 2.3.0 -> 2.12             | RabbitMQ                 | 3.7.17                    |
 
 ### Third-party components supported/tested versions
 
 | FLOWX.AI Platform version | Component name | Supported/tested versions |
 | ------------------------- | -------------- | ------------------------- |
-| 2.5.0 -> 2.10             | OracleDB       | 12C / 18-XE               |
+| 2.3.0 -> 2.12             | OracleDB       | 12C / 18-XE               |
 
 ### Summary
 
