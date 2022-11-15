@@ -13,9 +13,8 @@ Different UI component types can be configured using UI Designer. The components
 <summary>Layout (Root components)</summary>
 
 * [Container](root-components/container.md)
-* [Form Group](root-components/form-group.md)
-* [Custom](root-components/custom.md)
 * [Card](root-components/card.md)
+* [Custom](root-components/custom.md)
 
 </details>
 

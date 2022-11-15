@@ -1,8 +1,20 @@
+---
+sidebar_position: 1
+--- 
+
 # Process definition
 
 At the core of the platform are the process definitions. These are the blueprint of the business process, made up of [nodes](../../node) that are linked by sequences.
 
 ![](../../../platform-deep-dive/img/process_definitions_new.png)
+
+### Process designer
+
+When a process definition is displayed, the name contains the following:
+
+* process definition name 
+* version number
+* state
 
 While designing the FLOWX.AI components, we've tried to keep them as close to their BPMN counterparts as possible.
 
@@ -18,11 +30,46 @@ Once a process is defined and set as published on the platform, it can be execut
 
 [Failed process start](../active-process/failed-process-start.md)
 
+### UI Designer
 
-### Process settings
+[UI Designer](../../../building-blocks/ui-designer/ui-designer.md)
+
+### History
+
+![](../img/process_audit.gif)
+
+#### Versions
+
+In the **Versions** tab you will find the following details:
+
+* Last edited on
+* Last edited by
+* Version
+* Status
+* View process 
+
+#### Audit log
+
+In the **Audit log** tab you will find the following details:
+
+* Timestamp 
+* User 
+* Subject 
+* Event 
+* Subject Identifier 
+* Version
+* Status 
+
+### Data model
+
+You are now able to add new keys pair values in the Data Model. This will enable you to use shortcuts when adding new keys using the UI Designer, without having to switch back and forth between menus.
+
+
+### Settings
 
 #### General
-
+* **Process definition name** - edit process definition name
+* **Use process in reporting** - if switched on, the process will be included in reporting
 * **General data** - data that you can set and receive on a response
 * **Expiry time** - a user can set up a `expiryTime` function on a process, for example, a delay of 30s will be set up like: `30 16 11 4 7 1`
 
@@ -34,7 +81,7 @@ For more information about **Cron Expressions** and **ISO 8601** formatting, che
 
 #### Sensitive data
 
-To protect your data and your customer's data, you can hide the data that could be visible in a process details (active processes or in the browser's console). You now have the possibility to secret data for a specific Key. 
+To protect your data and your customer's data (for example, PII data), you can hide the data that could be visible in a process details (active processes or in the browser's console). You now have the possibility to secret data for a specific Key. 
 
 ![](../img/process_sensitive_data.png)
 

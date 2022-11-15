@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Custom
 
-Custom components are developed in the web application and referenced here by component identifier. This will dictate where the component is displayed in the component hierarchy and what actions are available for the component.&#x20;
+Custom components are developed in the web application and referenced here by component identifier. This will dictate where the component is displayed in the component hierarchy and what actions are available for the component.
 
 To add a custom component in the template config tree, we need to know its unique identifier and the data it should receive from the process model.
 
@@ -13,10 +13,13 @@ To add a custom component in the template config tree, we need to know its uniqu
 The properties that can be configured are as follows:
 
 1. **Identifier** - this will enable the custom component to be displayed in the component hierarchy and what actions are available for the component
-2. **Input keys** - used to define the process model paths from which the components will receive their data&#x20;
+2. **Input keys** - used to define the process model paths from which the components will receive their data
 3. [**UI Actions**](../../ui-actions.md) - actions defined here will be made available to the custom component
 
-![](../../img/ui_designer_custom_settings.png)
+
+![](../../img/ui_designer_custom_settings.png#center)
+
+
 
 #### When will a user task display a user interface element?
 
@@ -74,7 +77,7 @@ Example:
 
 2. Web socket progress message
 
-```
+```json
 {
   "progressUpdateDTO": {
     "processInstanceUuid": "db573705-71dd-4216-9d94-5ba2fb36ff2a",
@@ -84,6 +87,6 @@ Example:
 }
 ```
 
-3\. **ProgressUpdateDto** will trigger the **SDK** to search for the UI element having the same **nodeId** as the one from the web socket progress event
+3. **ProgressUpdateDto** will trigger the **SDK** to search for the UI element having the same **nodeId** as the one from the web socket progress event
 
-4\. Additionally it will ask for data and actions that are required for this component via a GET request`{{processUrl}}/api/process/db573705-71dd-4216-9d94-5ba2fb36ff2a/data/42062`
+4. Additionally it will ask for data and actions that are required for this component via a GET request `{{processUrl}}/api/process/db573705-71dd-4216-9d94-5ba2fb36ff2a/data/42062`

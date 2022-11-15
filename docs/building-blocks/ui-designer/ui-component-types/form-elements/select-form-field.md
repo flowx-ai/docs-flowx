@@ -16,19 +16,19 @@ The available configuration options for this form element are:
 
 1. **General**
    * **Key** - creates the biding between form element and process data so it can be later used in [decisions](../../../node/exclusive-gateway-node.md), [business rules](../../../node/task-node/task-node.md) or [integrations](../../../node/message-send-received-task-node.md)
-2. **Flowx props**&#x20;
+2. **Flowx props**
    * **Field Placeholder** - placeholder when the field has no value
    * **Field Label** - the label of the input
    * **Select type** - default or custom where the second one will allow the user to search between the options
    * **Empty message** - text displayed for custom type when no results are found
 3. **Validators** - multiple validators can be added to a select (more details [here](../../validators.md))
 4. **Data source**
-   * **Default Value** - auto-fills the select with this value. Going back to the example with Woman label with F value and Man with M to have a default value of Woman we need to configure here F
+   * **Default Value** - autofill the select with this value. Going back to the example with Woman label with F value and Man with M to have a default value of Woman we need to configure here F
    * **Source Type** - it can be Static, Enumeration, or Process Data
    * **Select Options** - label - value pairs can be defined here (values from CMS and defined options together are not possible)
 5. **Expressions**
-   * **Hide** - javascript expressions used to hide components when they're truthy
-   * **Disabled expressions** - javascript expressions that should be evaluated as true or false. It's important to make sure that hidden fields also have the same expression configured under expressions -> hide
+   * **Hide** -JavaScript expressions used to hide components when they're truthy
+   * **Disabled expressions** - JavaScript expressions that should be evaluated as true or false. It's important to make sure that hidden fields also have the same expression configured under expressions -> hide
 
 ![](../../img/select_form_field_settings.png)
 
@@ -42,7 +42,7 @@ A FORM with a [layout](../../layout-configuration.md) direction of row warp and 
 
 ### Example - Dynamic dropdowns
 
-As mentioned previously, you can create dropdowns including static data, enumerations, or **process data**. Let's create an example using **process data** to create a process that contains **dynamic dropdowns**.&#x20;
+As mentioned previously, you can create dropdowns including static data, enumerations, or **process data**. Let's create an example using **process data** to create a process that contains **dynamic dropdowns**.
 
 To create this kind of process, we need the following elements:
 
