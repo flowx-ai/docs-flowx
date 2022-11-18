@@ -46,5 +46,5 @@ After updating to **2.14.0** FLOWX.AI release, importing old processes definitio
 | 2.14                      	| OracleDB       	                | 19.8.0.0.0                           	|
 | 2.14                          | Angular (Web SDK)                 | 14.2.2                                |
 
-## Additional configuration
+
 
