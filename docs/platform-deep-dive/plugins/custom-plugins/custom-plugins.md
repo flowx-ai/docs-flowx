@@ -57,3 +57,13 @@ Used to easily read barcodes or extract handwritten signatures from PDF document
 
 [More about OCR plugin](../custom-plugins/ocr-plugin.md)
 
+## Reporting plugin
+
+**Easy-to-read dynamic dashboards**
+
+Use reporting plugin to build and bootstrap custom reports built on generic information about usage and processes.
+
+![](../../img/reporting_diag.png)
+
+[More about Reporting plugin](../custom-plugins/reporting)
+

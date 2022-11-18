@@ -20,20 +20,6 @@ The Audit log service groups all audit events in a single place. The following d
 
 <details>
 
-<summary> Section </summary>
-
-Possible values:
-
-* Process Instance
-* Process designer
-* Process Versioning
-* BPMN Diagram
-* UI Designer
-
-</details>
-    
-<details>
-
 <summary> Subject </summary>
 
 Possible values:
@@ -94,6 +80,14 @@ Possible values:
 * Subject identifier - the unique identifier is related to the subject, there are different types of identifiers based on the selected subject.
 
 </details>
+
+
+<details>
+
+<summary> Version  </summary>
+
+</details>
+
 
 <details>
 

@@ -16,3 +16,5 @@ Once the desired processes are defined in the platform, they are ready to be use
 From this point on, the platform takes care of following the process flow, handling the necessary actions, storing and interpreting the resulting data.
 
 [Process instance](./active-process/process-instance/process-instance.md)
+
+[Exceptions](./active-process/failed-process-start.md)
