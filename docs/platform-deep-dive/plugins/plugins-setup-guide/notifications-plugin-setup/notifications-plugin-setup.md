@@ -1,6 +1,6 @@
 # Notification templates plugin setup
 
-The Notifications plugin is available as a docker image and it has the following dependencies:
+The Notifications plugin is available as a docker image, and it has the following dependencies:
 
 * a [MongoDB](https://www.mongodb.com/2) database
 * needs to be able to connect to the Kafka instance used by the engine

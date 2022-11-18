@@ -2,7 +2,7 @@
 
 ## Infrastructure Prerequisites:
 
-The OCR plugin is available as two docker images so we need previously to configure:
+The OCR plugin is available as two docker images, so we need previously to configure:
 
 ### RabbitMQ
 

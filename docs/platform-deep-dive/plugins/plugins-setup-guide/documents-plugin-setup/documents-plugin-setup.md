@@ -75,7 +75,7 @@ The following variables need to be set in order to connect to the identity manag
 
 In case you want to use html templates for documents, you need to override the following config by setting the `FLOWX_HTML_TEMPLATES_ENABLED` environment variable to true.
 
-### Datasource c**onfiguration**
+### Datasource configuration
 
 To store data related to document templates and documents the service uses a Postgres / Oracle database.
 

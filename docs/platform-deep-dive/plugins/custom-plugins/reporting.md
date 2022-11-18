@@ -1,10 +1,18 @@
 # 🗄️ Reporting
 
-Added the possibility to build and bootstrap custom reports built on generic information about usage and processes. Multiple reports to meet various needs can be generated.
+Added the possibility to build and bootstrap custom reports built on generic information about usage and processes using reporting plugin. Multiple reports to meet various needs can be generated.
+
+![](../../img/reporting.png)
+
 
 The plugin runs in a Docker container with the official Superset image.
 
-![](../../img/reporting.png)
+## Architecture
+
+<br></br>
+
+![](../../img/reporting_diag.png)
+
 
 ## What is Superset?
 
@@ -19,6 +27,8 @@ Contains all the information for extracting and processing data from the DB, inc
 ## Dashboards and charts
 
 Contains all the information for recreating BI elements using the datasets information. Can be exported / imported. 
+
+[Reporting setup guide](../plugins-setup-guide/reporting-setup)
 
 
 

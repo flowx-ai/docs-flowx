@@ -48,13 +48,3 @@ After updating to **2.14.0** FLOWX.AI release, importing old processes definitio
 
 ## Additional configuration
 
-
-### Advancing controller setup guide
-
-Added requirements for Advancing controller:
-
-`STATIC_ASSETS_PATH` - `{{mediaLibrary.s3.publicUrl }}/{{env}}`
-
-`KAFKA_TOPIC_AUDIT_OUT` - topic key for sending audit logs. Default value: `ai.flowx.audit.log`
-
-[Admin setup guide](../../docs/flowx-designer/designer-setup-guide)
