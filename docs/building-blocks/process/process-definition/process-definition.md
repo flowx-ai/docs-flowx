@@ -32,9 +32,18 @@ Once a process is defined and set as published on the platform, it can be execut
 
 ### UI Designer
 
+UI Designer editor makes it possible to create any kind of UI templates. You can use various elements from basic buttons, indicators, and forms, but also predefined collections or prototypes.
+
+![](../img/ui_desig.png)
+
 [UI Designer](../../../building-blocks/ui-designer/ui-designer.md)
 
 ### History
+
+In the **History** tab you will find the following items:
+
+* **Versions** - here you will find information about who edited a process/ when a process was modified, and also version number and the status
+* **Audit log** - a record of events and changes 
 
 ![](../img/process_audit.gif)
 
@@ -42,15 +51,20 @@ Once a process is defined and set as published on the platform, it can be execut
 
 In the **Versions** tab you will find the following details:
 
-* Last edited on
-* Last edited by
-* Version
-* Status
-* View process 
+* Last edited on - the last time when the process was modified
+* Last edited by - the last person who modified a process
+* Version - version number
+* Status - can be either **Published** or **Draft** 
+
+:::info HINT
+❗️Published processes cannot be modified (they must be deprecated to be set as **Draft** before editing them).
+:::
+
+* View process - clicking on the eye icon will redirect you to the process definition 
 
 #### Audit log
 
-In the **Audit log** tab you will find the following details:
+In the **Audit log** tab you will find the following items:
 
 * Timestamp 
 * User 
@@ -60,10 +74,21 @@ In the **Audit log** tab you will find the following details:
 * Version
 * Status 
 
+:::info
+Some items are filterable, so you can easily track the changes occurred in a process.
+:::
+
+[Audit](../../../platform-deep-dive/core-components/core-extensions/audit.md)
+
 ### Data model
 
 You are now able to add new keys pair values in the Data Model. This will enable you to use shortcuts when adding new keys using the UI Designer, without having to switch back and forth between menus.
 
+![](../../../../release-notes/img/data_model.png)
+
+:::info
+When you export/import a **Process definition** the data model will be also included.
+:::
 
 ### Settings
 

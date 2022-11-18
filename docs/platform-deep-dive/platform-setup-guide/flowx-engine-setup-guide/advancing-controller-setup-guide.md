@@ -48,7 +48,7 @@ postgresql:
 
 ### Datasource configuration
 
-To store process definition and the data about the process instances the advancing controller uses a Postgres database.
+Advancing controller uses a PostgreSQL database as a dependency.
 
 The following configuration details need to be added using environment variables:
 

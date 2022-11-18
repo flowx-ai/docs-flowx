@@ -13,3 +13,5 @@ If all pods of Advancing Controller are down, and a process-engine pod that adva
 :::info
 The advanced controller microservice should always be up, if process-engine is up and working (advancing instances).
 :::
+
+[Advancing controller setup guide](../../platform-setup-guide/flowx-engine-setup-guide/advancing-controller-setup-guide)

@@ -37,6 +37,7 @@ FLOWX.AI uses a number of third-party software components:
 | 2.3.0 -> 2.14             | Kibana                   | 7.9.3                     |
 | 2.3.0 -> 2.14             | S3 (Min.IO)              | RELEASE.2021-02-14        |
 | 2.3.0 -> 2.14             | RabbitMQ                 | 3.7.17                    |
+| 2.3.0 -> 2.14             | Superset                 |                           |
 
 ### Third-party components supported/tested versions
 
@@ -155,3 +156,9 @@ RabbitMQ is **a messaging broker - an intermediary for messaging**. It gives you
 Oracle Database is a relational database management system (RDBMS).
 
 [Oracle DB documentation](https://www.oracle.com/database/technologies/)
+
+#### Superset
+
+Apache Superset is a business intelligence web application. It helps users to explore and visualize their data, from simple pie charts to detailed dashboards.
+
+[Superset](https://superset.apache.org/docs/intro)
