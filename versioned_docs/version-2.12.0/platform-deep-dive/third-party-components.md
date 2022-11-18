@@ -42,7 +42,7 @@ FLOWX.AI uses a number of third-party software components:
 
 | FLOWX.AI Platform version | Component name | Supported/tested versions |
 | ------------------------- | -------------- | ------------------------- |
-| 2.5.0 -> 2.10             | OracleDB       | 12C / 18-XE               |
+| 2.3.0 -> 2.12             | OracleDB       | 12C / 18-XE               |
 
 ### Summary
 
