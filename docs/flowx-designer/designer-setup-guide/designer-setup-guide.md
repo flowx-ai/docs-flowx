@@ -1,4 +1,4 @@
-# Designer Setup guide
+# Designer setup guide
 
 The [FLOWX Designer](../flowx-designer.md) app is made up of a backend microservice and a frontend app. The backend microservice handles saving and editing process definitions. It provides the REST API used by the FLOWX Designer. The processes defined here will be handled by the [FLOWX Engine](../../platform-deep-dive/core-components/flowx-engine.md).
 
@@ -56,7 +56,7 @@ spec:
     secretName: {{tls secret}}
 ```
 
-#### For routing calls to the engine&#x20;
+#### For routing calls to the engine
 
 Three different configs are needed:
 
@@ -189,7 +189,7 @@ spec:
     secretName: {{tls secret}}
 ```
 
-## **Configuring the Backend Microservice**
+## **Admin configuration**
 
 ### Datasource configuration
 
@@ -220,9 +220,7 @@ Kafka is used only for saving audit logs. Only a producer needs to be configured
 `KAFKA_TOPIC_AUDIT_OUT` - topic key for sending audit logs. Default value: `ai.flowx.audit.log`
 
 
-
 [How to create a Kafka producer](../../platform-deep-dive/integrations/creating-a-kafka-producer)
-
 
 ### Redis configuration
 
@@ -263,9 +261,22 @@ Configuration needed to clear the offline sessions of a user session from the id
 
 [Configuring access rights for admin](configuring-access-rights-for-admin)
 
+### Elasticsearch
+
+`SPRING_ELASTICSEARCH_REST_URIS`
+
+`SPRING_ELASTICSEARCH_REST_DISABLESSL`
+
+`SPRING_ELASTICSEARCH_INDEX_SETTINGS_NAME` 
+
+`SPRING_ELASTICSEARCH_REST_USERNAME`
+
+`SPRING_ELASTICSEARCH_REST_PASSWORD`
+
+
 ## **Steps to deploy Frontend app**
 
-The FLOWX Designer is a SPA application that is packaged in a docker image with `nginx:1.19.10`. The web application allows an authenticated user to administrate the FLOWX platform.
+The FLOWX Designer is an SPA application that is packaged in a docker image with `nginx:1.19.10`. The web application allows an authenticated user to administrate the FLOWX platform.
 
 In order to configure the docker image you need to configure the next parameters:
 
