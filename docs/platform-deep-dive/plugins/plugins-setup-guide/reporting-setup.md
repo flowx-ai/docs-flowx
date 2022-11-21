@@ -85,13 +85,13 @@ sync:
 
 ## After installation
 
-* datasource URL -> FLOWX.AI Reporting db
+* datasource URL -> FLOWX.AI Reporting database
 * Datasets
 * Dashboards
 
 ### Datasource configuration
 
-To store data related to document templates and documents the service uses a Postgres / Oracle database.
+To store data related to document templates and documents the service uses a Postgres database.
 
 The following configuration details need to be added using environment variables:
 
@@ -109,6 +109,12 @@ The datasource is configured automatically via a liquibase script inside the ser
 Database schema is managed by a liquibase script that will create, manage and migrate future versions.
 :::
 
+### Redis configuration
 
+The following values should be set with the corresponding Redis-related values:
+
+`SPRING_REDIS_HOST`
+
+`SPRING_REDIS_PORT`
 
 
