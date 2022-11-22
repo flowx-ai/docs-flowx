@@ -36,3 +36,4 @@ The currently available plugins are:
 * [**Notifications**](./custom-plugins/notifications-plugin/notifications-plugin.md) - enhance your project with the option of sending custom emails or SMS notifications
 * [**OCR**](./custom-plugins/ocr-plugin.md) - helps you scan your documents and integrate them into a business process
 * [**Task management**](./custom-plugins/task-management/task-management.md) - a plugin suitable for back-officers and supervisors as it can be used to easily track and assign activities/tasks inside a company.
+* [**Reporting**](./custom-plugins/reporting.md) - a plugin that will help you create and bootstrap custom reports built on generic information about usage and processes metrics
