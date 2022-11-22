@@ -16,7 +16,7 @@ The available configuration options for this form element are:
 
 1. **General**
    
-   * **Key** - creates the biding between form element and process data so it can be later used in [decisions](../../../node/exclusive-gateway-node.md), [business rules](../../../node/task-node/task-node.md) or [integrations](../../../node/message-send-received-task-node.md)
+   * **Key** - creates the biding between form element and process data, so it can be later used in [decisions](../../../node/exclusive-gateway-node.md), [business rules](../../../node/task-node/task-node.md) or [integrations](../../../node/message-send-received-task-node.md)
 
 2. **Flowx props**
    
@@ -37,7 +37,7 @@ The available configuration options for this form element are:
 6. **Expressions**
    
    * **Hide** - JavaScript expressions used to hide components when they're truthy
-   * **Disabled expressions** - JavaScript expressions that should be evaluated as true or false. It's important to make sure that hidden fields also have the same expression configured under expressions -> hide
+   * **Disabled expressions** - JavaScript expressions that should be evaluated as true or false. It's important to make sure that hidden fields also have the same expression configured under expressions → hide
 
 ![](../../img/select_form_field_settings.png)
 
@@ -98,7 +98,7 @@ Follow the next steps to create the process from scratch:
 
 Below you can find the MVEL script used in the above example:
 
-```mvel
+```
 output.put("application",
 {
     "client": {
@@ -156,11 +156,11 @@ output.put("application",
 Follow the next steps to configure the UI needed:
 
 1. Select the **user task node** and click the **brush icon** to open [**UI Designer**](../../).
-2. Add a [**form group**](../root-components/form-group.md) element as a[ **root component**](../root-components/) (this will group the other elements inside it) with the following properties:
+2. Add a [**card**](../root-components/card.md) element as a [**root component**](../root-components/) (this will group the other elements inside it) with the following properties:
    * **Key** - `form`
    * **Message** - `{"application": ${application}}`
    * **Title** - _Customer Contract_
-3. Inside the **form group**, add a [**form element**](./).
+3. Inside the **card**, add a [**form element**](./).
 4. Inside the **form** add two **select elements,** first will represent, for example, the _Customer Name_ and the second the _Contract ID._
 5. For first select element (Customer Name) set the following properties:
    * **Key** - `application.client.selectedClient`

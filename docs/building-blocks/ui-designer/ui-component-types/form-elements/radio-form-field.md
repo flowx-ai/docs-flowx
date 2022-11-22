@@ -20,7 +20,7 @@ The available configuration options for this form element are:
    * **Source Type** - it can be Static, Enumeration, or Process Data
    * **Radio Options** - label - value pairs can be defined here
 4. Expressions
-   * **Disabled expressions** - JavaScript expressions that should be evaluated as true or false. It's important to make sure that hidden fields also have the same expression configured under expressions -> hide
+   * **Disabled expressions** - JavaScript expressions that should be evaluated as true or false. It's important to make sure that hidden fields also have the same expression configured under expressions → hide
    * **Hide Expression** - JavaScript expressions used to hide components when they're truthy
 
 #### Radio styling

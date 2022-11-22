@@ -29,7 +29,7 @@ After updating to **2.14.0** FLOWX.AI release, importing old processes definitio
 | **Task Management Plugin**     | 0.0.42     | 0.0.42      | 0.0.40  | 0.0.37  | 0.0.29  | 0.0.28  | 0.0.28  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.22  | 0.0.22  | 0.0.21  | 0.0.21  | 0.0.16    | 0.0.16    | 0.0.14  |         |         |         |        |         |
 | **Data search**                | 0.0.8      | 0.0.8       | 0.0.6   | n/a     | n/a     |         |         |         |         |         |         |         |         |         |           |           |         |         |         |         |        |         |
 | **Audit Core**                 | **0.0.8**  | 0.0.5       | n/a     | n/a     | n/a     |         |         |         |         |         |         |         |         |         |           |           |         |         |         |         |        |         |
-| **reporting**                  | **0.0.37** | n/a         | n/a     | n/a     | n/a     |         |         |         |         |         |         |         |         |         |           |           |         |         |         |         |        |         |
+| **reporting**                  | **0.0.39** | n/a         | n/a     | n/a     | n/a     |         |         |         |         |         |         |         |         |         |           |           |         |         |         |         |        |         |
 | **advancing-controller**       | **0.0.6**  | n/a         | n/a     | n/a     | n/a     |         |         |         |         |         |         |         |         |         |           |           |         |         |         |         |        |         |
 
 ### 2.14.0 recommended versions
@@ -48,3 +48,18 @@ After updating to **2.14.0** FLOWX.AI release, importing old processes definitio
 
 
 
+## Additional configuration
+
+### Advancing Controller
+
+The following env vars are needed for `process-engine` to connect to Advancing Postgres DB.
+
+`ADVANCING_DATASOURCE_JDBC_URL`
+
+`DVANCING_DATASOURCE_USERNAME`
+
+`ADVANCING_DATASOURCE_PASSWORD`
+
+[FLOWX.AI Engine setup guide](../../docs/platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide)
+
+[Advancing controller](../../docs/platform-deep-dive/core-components/flowx-engine/advancing-controller)

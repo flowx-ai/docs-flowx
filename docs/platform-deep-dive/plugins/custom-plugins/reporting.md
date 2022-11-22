@@ -3,7 +3,7 @@
 ## What is Reporting plugin?
 
 Reporting plugin will help you to build and bootstrap custom reports built on generic information about usage and processes using reporting plugin. Multiple reports to meet various needs can be generated.
-The plugin uses **Superset** as data exploration and visualization tool.
+The plugin uses **Superset** as a data exploration and visualization tool.
 
 The plugin runs in a Docker container with the official Superset image.
 
@@ -21,16 +21,16 @@ Below you can find the architecture of the reporting plugin.
 
 ## What is Superset?
 
-Apache Superset is an open-source software application for data exploration and data visualization able to handle data at large scale. It enables users to connect their company's databases and perform data analysis, and easily build charts and assemble dashboards.
+Apache Superset is an open-source software application for data exploration and data visualization able to handle data at a large scale. It enables users to connect their company's databases and perform data analysis, and easily build charts and assemble dashboards.
 
-Superset is also an SQL IDE, so users can write SQL, join data create datasets etc.
+Superset is also an SQL IDE, so users can write SQL, join data create datasets and so on.
 
 ## Superset elements
 
 
 ### Data sources
 
-Data tab represents the sources of all information:
+The **Data** tab represents the sources of all information:
 
 * Databases
 * CSV files
@@ -39,7 +39,7 @@ Data tab represents the sources of all information:
   
 #### Databases (PostgreSQL)
 
-Reporting plugin can be used with Superset by connecting it with a PostgreSQL db.
+Reporting plugin can be used with Superset by connecting it with a PostgreSQL DB.
 
 ### Charts
 
@@ -47,11 +47,11 @@ Charts represent the output of the information. There are multiple visualization
 
 ### Dashboards
 
-With the use of dashboards, you can share persuading flows, show how metrics change in various scenarios, and match your company efforts with logical, evidence‐based visual indicators.
+With the use of dashboards, you can share persuading flows, show how metrics change in various scenarios and match your company efforts with logical, evidence‐based visual indicators.
 
 ### Datasets
 
-Contains all the information for extracting and processing data from the DB, includes SQL queries, calculated metrics information, cache settings etc. Can be exported / imported. 
+Contains all the information for extracting and processing data from the DB, including SQL queries, calculated metrics information, cache settings, etc. Datasets can also be exported / imported. 
 
 ## Connecting to a database
 
@@ -62,7 +62,7 @@ It is mandatory that before using Superset, the reporting plugin need to have a 
 [Reporting DB configuration](../../../platform-deep-dive/plugins/plugins-setup-guide/reporting-setup#postgres-database)
 
 :::info
-Read only users should be used in production in the reporting-plugin cronjob.
+Read-only users should be used in production in the reporting-plugin cronjob.
 :::
 
 ### Connecting Superset to a DB
@@ -77,7 +77,7 @@ To connect Superset to a database, follow the next steps:
 
 ![](../../img/connect_db_superset.png)
 
-3. After you selected the db, click **Connect this database with a SQLAlchemy URI string instead?**.
+3. After you selected the DB, click **Connect this database with a SQLAlchemy URI string instead?**.
 4. Fill in the **SQLALCHEMY URI** and then click **Connect**.
 
 ![](../../img/superset_db_URI.png)
@@ -87,14 +87,13 @@ To connect Superset to a database, follow the next steps:
 :::
 
    
-
 ## Using reporting plugin
 
 Before using the plugin, make sure you marked all the **Data models** and **Processes** you want to include, so they can be further used in the reporting.
 
 ### Use in reporting flag
 
-This flag is available inside Data model (for the keys that must be used in the reporting) and inside Process settings tab, to include a process definition in reporting.
+This flag is available inside the [**Data model**](../../../building-blocks/process/process-definition/process-definition.md#data-model) (for the keys that must be used in the reporting) and inside the Process settings tab, to include a process definition in reporting.
 
 ![](../../img/reporting_flag.gif)
 

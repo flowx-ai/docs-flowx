@@ -46,7 +46,7 @@ Available scopes:
 * edit - users are able to create/update/delete any values for integrations/scenarios and also scenarios configuration (topics/input model/ output model/ headers)
 * admin - users are able to delete integrations/scenarios with all children
 
-The Admin service is preconfigured with the following default users roles for each of the access scopes mentioned above:
+The Admin service is configured with the following default users roles for each of the access scopes mentioned above:
 
 * manage-platform
   * read:

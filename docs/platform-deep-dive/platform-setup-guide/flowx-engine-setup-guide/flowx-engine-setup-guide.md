@@ -184,7 +184,7 @@ It is important to know that all the events that start with a configured pattern
 
 #### **Topics related to the Audit service**
 
-`KAFKA_TOPIC_AUDIT_OUT` - topic key for sending audit logs. Default value:`ai.flowx.audit.log`
+`KAFKA_TOPIC_AUDIT_OUT` - topic key for sending audit logs. Default value: `ai.flowx.audit.log`
 
 #### **Processes can also be started by sending messages to a Kafka topic.**
 
@@ -241,3 +241,15 @@ The following environment variables could be set in order to control log levels:
 `LOGGING_LEVEL_JAEGER` - Jaeger tracing related logs
 
 `LOGGING_LEVEL_OAUTH2_EXC` - specific auth exception logs, included in `LOGGING_LEVEL_APP`
+
+### Advancing Controller
+
+The following env vars are needed for `process-engine` to connect to Advancing Postgres DB.
+
+`ADVANCING_DATASOURCE_JDBC_URL`
+
+`ADVANCING_DATASOURCE_USERNAME`
+
+`ADVANCING_DATASOURCE_PASSWORD`
+
+[Advancing controller setup](../flowx-engine-setup-guide/advancing-controller-setup-guide)

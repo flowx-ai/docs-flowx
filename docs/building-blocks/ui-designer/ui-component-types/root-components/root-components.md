@@ -18,7 +18,7 @@ The root component can hold a hierarchical component structure as follows
 
 Available children for **Card** and **Container** are:
 
-1. [**Form**](../form-elements/) - used to group and align form field elements (**inputs**, **radios**, **checkboxes**, etc)
+1. [**Form**](../form-elements/) - used to group and align form field elements (**inputs**, **radios**, **checkboxes**, etc.)
 2. **Image** - allows you to configure an image in the document
 3. **Text** - a simple text can be configured via this component, a basic configuration is available ([check here for more details](../../))
 4. **Hint** - multiple types of hints can be configured via this component ([check here for more details](../../))

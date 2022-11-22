@@ -137,7 +137,7 @@ Other Permissions can be added manually, depending on the needs of the user.
 
 The Task Management plugin has the scope to show a process that you defined in Designer, offering a more business-oriented view. It also offers interactions at the assignment level.
 
-* **Application URL** - generic parameter pointing to the application URL where the flowx process is loaded 
+* **Application URL** - generic parameter pointing to the application URL where the Flowx process is loaded 
 * **Search indexing** - process keys will be used to search data stored in the process
 
 ![](../img/process_task_mngmnt.png)

@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Buttons
 
-There are   two types of buttons, similar to each other but with different purposes:
+There are two types of buttons, similar to each other but with different purposes:
 
 ### Button
 
@@ -15,7 +15,7 @@ Sections that can be configured regarding general settings:
 1. **Flowx props**
    * **Label**
    * **Type** - button type: fill/flat
-2. ** Add UI Action** - defines what action the button will trigger ([more details on how to configure UI actions](../ui-actions.md))
+2. **Add UI Action** - defines what action the button will trigger ([more details on how to configure UI actions](../ui-actions.md))
 
 ![Button configuration for a save action](../img/button_config.png)
 
