@@ -156,13 +156,19 @@ A node could also be a part of multiple flow names.
 
 ## Advancing controller
 
-The process engine needs the advancing controller, a support service, to arrange scaling up and scaling down more effectively with equal load distribution.
+The process engine needs the advancing controller, a support service, to orchestrate advancing more efficiently with equal distribution and redistribution of load during scale-up and scale-down. 
 
-To keep the load distribution amongst PODs safe when some of them are killed, the service is designed to make sure that process advancing is done correctly and without any issues.
+Advancing controller microservice uses Postgres triggers in the database configuration.
 
 :::info
-If the process engine is up and running, make sure the advancing microservice is up as well.
+A Postgres trigger is a function called automatically whenever an event such as an insert, update, or deletion occurs.
 :::
+
+:::info
+If the process engine is up and running, make sure the advancing microservice is up as well. 
+:::
+
+
 
 Check out the section below for further information on how to set up the microservice:
 
