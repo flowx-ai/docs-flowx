@@ -106,9 +106,9 @@ If none of these keys have values, all the parameter values from the parent proc
 
 `ACTION_NAME` (string) - the name of the action to run
 
-`TOKEN_INSTANCE_ID` (integer) - the token instance id
+`TOKEN_INSTANCE_ID` (integer) - the token instance ID
 
-`PROCESS_INSTANCE_ID` (integer) - the process instance id
+`PROCESS_INSTANCE_ID` (integer) - the process instance ID
 
 **Responses**
 
@@ -128,9 +128,9 @@ If none of these keys have values, all the parameter values from the parent proc
 
 `ACTION_NAME` (string) - the name of the action to run
 
-`TOKEN_INSTANCE_ID` (integer) - the token instance id
+`TOKEN_INSTANCE_ID` (integer) - the token instance ID
 
-`PROCESS_INSTANCE_ID` (integer) - the process instance id
+`PROCESS_INSTANCE_ID` (integer) - the process instance ID
 
 **Responses**
 
@@ -153,3 +153,17 @@ If no _flowName_ value is set on a node, this means the node will be included in
 :::
 
 A node could also be a part of multiple flow names.
+
+## Advancing controller
+
+The process engine needs the advancing controller, a support service, to arrange scaling up and scaling down more effectively with equal load distribution.
+
+To keep the load distribution amongst PODs safe when some of them are killed, the service is designed to make sure that process advancing is done correctly and without any issues.
+
+:::info
+If the process engine is up and running, make sure the advancing microservice is up as well.
+:::
+
+Check out the section below for further information on how to set up the microservice:
+
+[Advancing controller setup guide](../../platform-setup-guide/flowx-engine-setup-guide/advancing-controller-setup-guide)
