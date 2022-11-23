@@ -161,7 +161,7 @@ Follow the next steps to configure the UI needed:
    * **Message** - `{"application": ${application}}`
    * **Title** - _Customer Contract_
 3. Inside the **card**, add a [**form element**](./).
-4. Inside the **form** add two **select elements,** first will represent, for example, the _Customer Name_ and the second the _Contract ID._
+4. Inside the **form** add two **select elements**, first will represent, for example, the _Customer Name_ and the second the _Contract ID._
 5. For first select element (Customer Name) set the following properties:
    * **Key** - `application.client.selectedClient`
    * **Placeholder** - Customer Name
@@ -175,12 +175,12 @@ Follow the next steps to configure the UI needed:
    * **Label** - Contract ID
    * **Type** - default
    * **Source Type** - Process Data
-   * **Name -** `application.contracts`
-   * **Parent Name -** `application.client.selectedClient`
+   * **Name** - `application.contracts`
+   * **Parent Name** - `application.client.selectedClient`
 7. Add a button under the form that contains the select elements with the following properties:
    * **Label** - Submit
    * **Type** - fill
-   * **Add ui action** (add the submit action attached earlier to the user task node)
+   * **Add UI action** - add the submit action attached earlier to the user task node
 
 ![](../../img/dynamic_dropdowns_4.gif)
 
