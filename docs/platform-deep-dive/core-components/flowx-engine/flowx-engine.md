@@ -169,7 +169,6 @@ If the process engine is up and running, make sure the advancing microservice is
 :::
 
 
-
 Check out the section below for further information on how to set up the microservice:
 
 [Advancing controller setup guide](../../platform-setup-guide/flowx-engine-setup-guide/advancing-controller-setup-guide)
