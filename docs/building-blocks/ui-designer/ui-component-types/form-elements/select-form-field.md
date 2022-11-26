@@ -8,7 +8,7 @@ sidebar_position: 2
 
 This is a select element that allows a user to select from a predefined list.
 
-A select list has multiple values that are defined by two parameters, a Label that will be displayed in the dropdown and a code that will be saved. For example, you can have a _Woman_ label with **F** value and _Man_ with **M** which means that when you select _Woman_ on the process instance **F** will be available for the **Select** key.
+A select list has multiple values that are defined by two parameters, a Label that will be displayed in the dropdown and a code that will be saved. For example, you can have a _Female_ label with an **F** value and _Male_ with the **M** value. This means that when you will select _Female_ on the process instance, **F** value will be available for the **Select** key.
 
 The available configuration options for this form element are:
 
@@ -47,7 +47,7 @@ The available configuration options for this form element are:
 
 A FORM with a [layout](../../layout-configuration.md) direction of row warp and some inputs and a select element will look like this:
 
-![](../../img/select_form_field_styling.png)
+![](../../img/select_form_field.png)
 
 ### Example - Dynamic dropdowns
 

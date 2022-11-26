@@ -25,8 +25,9 @@ Apache Superset is an open-source software application for data exploration and 
 
 Superset is also an SQL IDE, so users can write SQL, join data create datasets and so on.
 
-## Superset elements
+[Superset documentation](https://superset.apache.org/docs/intro/)
 
+## Superset elements
 
 ### Data sources
 
@@ -93,7 +94,13 @@ Before using the plugin, make sure you marked all the **Data models** and **Proc
 
 ### Use in reporting flag
 
-This flag is available inside the [**Data model**](../../../building-blocks/process/process-definition/process-definition.md#data-model) (for the keys that must be used in the reporting) and inside the Process settings tab, to include a process definition in reporting.
+This flag can be used in the following places:
+
+* [**Data model**](../../../building-blocks/process/process-definition/process-definition.md#data-model) - for the keys that must be used in the reporting
+
+![](../../img/flag_data_model.gif)
+
+* [**Process settings**](../../../building-blocks/process/process-definition/process-definition.md#general) tab - to include a process definition in reporting.
 
 ![](../../img/reporting_flag.gif)
 
@@ -153,8 +160,22 @@ If you wish to explore all the chart types available, filter by **All charts**. 
 After creating a chart, there are some **Query** fields that muse be configured. This can be easily done by dragging and dropping the relevant columns to the matching fields.
 
 :::info
- Time and Query form attributes are different, depending on the chart type that you select.
+Time and Query form attributes are different, depending on the chart type that you select.
 :::
+
+### Exporting/importing a Chart
+
+You can export and import charts to help you analyze your data and manipulate dashboards. To export/import a chart, follow the next steps:
+
+1. Open **Superset** and from the top navigation bar, select **Charts**.
+2. From the newly opened list, select your **chart**.
+3. In the top-right corner, select the **breadcrumbs** menu.
+4. Now click **Download**, three options are available:
+  * Export to .CSV
+  * Export to .JSON
+  * Download as image
+
+![](../../img/reporting_export_imp.png)
 
 #### Table example
 
@@ -169,12 +190,17 @@ After creating a chart, there are some **Query** fields that muse be configured.
 
 ![](../../img/superset_query.png)
 
+### Creating a slice and a dashboard
 
+To create a dashboard, while creating a Chart you can choose to add it to a new dashboard. A dashboard will be created automatically.
 
+To create a dashboard follow the next steps:
+
+1. Let's create a new chart called **City of birth** (see the steps above).
+2. Now save the newly created **chart** to a new dashboard called **Cities**.
+3. To publish, click **Save and go to Dashboard**.
+
+![](../../img/save_dashboard.gif)
 
 [Reporting setup guide](../plugins-setup-guide/reporting-setup)
-
-
-
-
 
