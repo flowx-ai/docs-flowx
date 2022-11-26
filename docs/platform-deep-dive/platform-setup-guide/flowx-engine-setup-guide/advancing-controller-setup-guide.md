@@ -13,7 +13,7 @@ Check the FLOWX.AI Engine setup guide for more information:
 
 ### Database - Postgres
 
-A basic Postgres configuration:
+A basic Postgres configuration for Advancing:
 
 ```yaml
 postgresql:

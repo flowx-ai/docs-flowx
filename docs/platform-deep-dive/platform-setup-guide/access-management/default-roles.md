@@ -52,7 +52,7 @@ A complete list of all the default roles based on modules (access scope):
 You can import a super admin group and its default roles in Keycloak using the following script file.
 :::
 
-[Import Script](../assets/importUsers.zip)
+[Import Script](../../assets/importUsers.zip)
 
 You need to edit the following script parameters:
 

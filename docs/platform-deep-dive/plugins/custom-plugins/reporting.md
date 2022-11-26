@@ -3,7 +3,7 @@
 ## What is Reporting plugin?
 
 Reporting plugin will help you to build and bootstrap custom reports built on generic information about usage and processes using reporting plugin. Multiple reports to meet various needs can be generated.
-The plugin uses **Superset** as data exploration and visualization tool.
+The plugin uses **Superset** as a data exploration and visualization tool.
 
 The plugin runs in a Docker container with the official Superset image.
 
@@ -21,16 +21,17 @@ Below you can find the architecture of the reporting plugin.
 
 ## What is Superset?
 
-Apache Superset is an open-source software application for data exploration and data visualization able to handle data at large scale. It enables users to connect their company's databases and perform data analysis, and easily build charts and assemble dashboards.
+Apache Superset is an open-source software application for data exploration and data visualization able to handle data at a large scale. It enables users to connect their company's databases and perform data analysis, and easily build charts and assemble dashboards.
 
-Superset is also an SQL IDE, so users can write SQL, join data create datasets etc.
+Superset is also an SQL IDE, so users can write SQL, join data create datasets and so on.
+
+[Superset documentation](https://superset.apache.org/docs/intro/)
 
 ## Superset elements
 
-
 ### Data sources
 
-Data tab represents the sources of all information:
+The **Data** tab represents the sources of all information:
 
 * Databases
 * CSV files
@@ -39,7 +40,7 @@ Data tab represents the sources of all information:
   
 #### Databases (PostgreSQL)
 
-Reporting plugin can be used with Superset by connecting it with a PostgreSQL db.
+Reporting plugin can be used with Superset by connecting it with a PostgreSQL DB.
 
 ### Charts
 
@@ -47,11 +48,11 @@ Charts represent the output of the information. There are multiple visualization
 
 ### Dashboards
 
-With the use of dashboards, you can share persuading flows, show how metrics change in various scenarios, and match your company efforts with logical, evidence‐based visual indicators.
+With the use of dashboards, you can share persuading flows, show how metrics change in various scenarios and match your company efforts with logical, evidence‐based visual indicators.
 
 ### Datasets
 
-Contains all the information for extracting and processing data from the DB, includes SQL queries, calculated metrics information, cache settings etc. Can be exported / imported. 
+Contains all the information for extracting and processing data from the DB, including SQL queries, calculated metrics information, cache settings, etc. Datasets can also be exported / imported. 
 
 ## Connecting to a database
 
@@ -62,7 +63,7 @@ It is mandatory that before using Superset, the reporting plugin need to have a 
 [Reporting DB configuration](../../../platform-deep-dive/plugins/plugins-setup-guide/reporting-setup#postgres-database)
 
 :::info
-Read only users should be used in production in the reporting-plugin cronjob.
+Read-only users should be used in production in the reporting-plugin cronjob.
 :::
 
 ### Connecting Superset to a DB
@@ -77,7 +78,7 @@ To connect Superset to a database, follow the next steps:
 
 ![](../../img/connect_db_superset.png)
 
-3. After you selected the db, click **Connect this database with a SQLAlchemy URI string instead?**.
+3. After you selected the DB, click **Connect this database with a SQLAlchemy URI string instead?**.
 4. Fill in the **SQLALCHEMY URI** and then click **Connect**.
 
 ![](../../img/superset_db_URI.png)
@@ -87,14 +88,19 @@ To connect Superset to a database, follow the next steps:
 :::
 
    
-
 ## Using reporting plugin
 
 Before using the plugin, make sure you marked all the **Data models** and **Processes** you want to include, so they can be further used in the reporting.
 
 ### Use in reporting flag
 
-This flag is available inside Data model (for the keys that must be used in the reporting) and inside Process settings tab, to include a process definition in reporting.
+This flag can be used in the following places:
+
+* [**Data model**](../../../building-blocks/process/process-definition/process-definition.md#data-model) - for the keys that must be used in the reporting
+
+![](../../img/flag_data_model.gif)
+
+* [**Process settings**](../../../building-blocks/process/process-definition/process-definition.md#general) tab - to include a process definition in reporting.
 
 ![](../../img/reporting_flag.gif)
 
@@ -154,8 +160,22 @@ If you wish to explore all the chart types available, filter by **All charts**. 
 After creating a chart, there are some **Query** fields that muse be configured. This can be easily done by dragging and dropping the relevant columns to the matching fields.
 
 :::info
- Time and Query form attributes are different, depending on the chart type that you select.
+Time and Query form attributes are different, depending on the chart type that you select.
 :::
+
+### Exporting/importing a Chart
+
+You can export and import charts to help you analyze your data and manipulate dashboards. To export/import a chart, follow the next steps:
+
+1. Open **Superset** and from the top navigation bar, select **Charts**.
+2. From the newly opened list, select your **chart**.
+3. In the top-right corner, select the **breadcrumbs** menu.
+4. Now click **Download**, three options are available:
+  * Export to .CSV
+  * Export to .JSON
+  * Download as image
+
+![](../../img/reporting_export_imp.png)
 
 #### Table example
 
@@ -170,12 +190,17 @@ After creating a chart, there are some **Query** fields that muse be configured.
 
 ![](../../img/superset_query.png)
 
+### Creating a slice and a dashboard
 
+To create a dashboard, while creating a Chart you can choose to add it to a new dashboard. A dashboard will be created automatically.
 
+To create a dashboard follow the next steps:
+
+1. Let's create a new chart called **City of birth** (see the steps above).
+2. Now save the newly created **chart** to a new dashboard called **Cities**.
+3. To publish, click **Save and go to Dashboard**.
+
+![](../../img/save_dashboard.gif)
 
 [Reporting setup guide](../plugins-setup-guide/reporting-setup)
-
-
-
-
 

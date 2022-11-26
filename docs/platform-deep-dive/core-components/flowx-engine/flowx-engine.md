@@ -8,7 +8,7 @@ The engine is the core of the platform, it is the service that runs instances of
 
 ## A high-level overview
 
-![](../../img/image%20(20).png
+![](../../img/image%20(20).png)
 
 ## Orchestration
 
@@ -106,9 +106,9 @@ If none of these keys have values, all the parameter values from the parent proc
 
 `ACTION_NAME` (string) - the name of the action to run
 
-`TOKEN_INSTANCE_ID` (integer) - the token instance id
+`TOKEN_INSTANCE_ID` (integer) - the token instance ID
 
-`PROCESS_INSTANCE_ID` (integer) - the process instance id
+`PROCESS_INSTANCE_ID` (integer) - the process instance ID
 
 **Responses**
 
@@ -128,9 +128,9 @@ If none of these keys have values, all the parameter values from the parent proc
 
 `ACTION_NAME` (string) - the name of the action to run
 
-`TOKEN_INSTANCE_ID` (integer) - the token instance id
+`TOKEN_INSTANCE_ID` (integer) - the token instance ID
 
-`PROCESS_INSTANCE_ID` (integer) - the process instance id
+`PROCESS_INSTANCE_ID` (integer) - the process instance ID
 
 **Responses**
 
@@ -138,7 +138,7 @@ If none of these keys have values, all the parameter values from the parent proc
 
 </details>
 
-[FLOWX.AI Engine setup guide](../../../platform-setup-guide/flowx-engine-setup-guide/flowx-engine-setup-guide.md)
+[FLOWX.AI Engine setup guide](../../platform-setup-guide/flowx-engine-setup-guide)
 
 ## Triggering or skipping nodes on a process based on Flow Names
 
@@ -153,3 +153,22 @@ If no _flowName_ value is set on a node, this means the node will be included in
 :::
 
 A node could also be a part of multiple flow names.
+
+## Advancing controller
+
+The process engine needs the advancing controller, a support service, to orchestrate advancing more efficiently with equal distribution and redistribution of load during scale-up and scale-down. 
+
+Advancing controller microservice uses Postgres triggers in the database configuration.
+
+:::info
+A Postgres trigger is a function called automatically whenever an event such as an insert, update, or deletion occurs.
+:::
+
+:::info
+If the process engine is up and running, make sure the advancing microservice is up as well. 
+:::
+
+
+Check out the section below for further information on how to set up the microservice:
+
+[Advancing controller setup guide](../../platform-setup-guide/flowx-engine-setup-guide/advancing-controller-setup-guide)

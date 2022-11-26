@@ -150,7 +150,7 @@ RabbitMQ is **a messaging broker - an intermediary for messaging**. It gives you
 
 [RabbitMQ documentation](https://www.rabbitmq.com/documentation.html)
 
-#### OracleDB
+#### Oracle DB
 
 Oracle Database is a relational database management system (RDBMS).
 

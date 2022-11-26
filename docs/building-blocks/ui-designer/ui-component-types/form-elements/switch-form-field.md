@@ -16,7 +16,7 @@ The available configuration options for this form element are:
 4. **Data source**
    * **Default Value** - the default value of the switch form field (it can be switched on or switched off)
 5. Expressions
-   * **Disabled expressions** - JavaScript expressions that should be evaluated as true or false. It's important to make sure that hidden fields also have the same expression configured under expressions -> hide
+   * **Disabled expressions** - JavaScript expressions that should be evaluated as true or false. It's important to make sure that hidden fields also have the same expression configured under expressions → hide
    * **Hide Expression** - JavaScript expressions used to hide components when they're truthy
 
 #### Switch styling
