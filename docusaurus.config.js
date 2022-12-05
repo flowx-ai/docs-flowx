@@ -200,7 +200,8 @@ const config = {
         {
           indexPages: true,
           indexDocs: true,
-          docsRouteBasePath: "docs/",
+          docsRouteBasePath: "/",
+          docsDir: "versioned_docs",
           hashed: true,
           language: ["en"],
           highlightSearchTermsOnTargetPage: false,
