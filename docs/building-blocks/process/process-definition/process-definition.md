@@ -8,7 +8,7 @@ At the core of the platform are the process definitions. These are the blueprint
 
 ![](../../../platform-deep-dive/img/process_definitions_new.png)
 
-### Process designer
+## Process designer
 
 When a process definition is displayed, the name contains the following:
 
@@ -30,7 +30,7 @@ Once a process is defined and set as published on the platform, it can be execut
 
 [Failed process start](../active-process/failed-process-start.md)
 
-### UI Designer
+## UI Designer
 
 UI Designer editor makes it possible to create any kind of UI templates. You can use various elements from basic buttons, indicators, and forms, but also predefined collections or prototypes.
 
@@ -38,7 +38,7 @@ UI Designer editor makes it possible to create any kind of UI templates. You can
 
 [UI Designer](../../../building-blocks/ui-designer/ui-designer.md)
 
-### History
+## History
 
 In the **History** tab you will find the following items:
 
@@ -47,7 +47,7 @@ In the **History** tab you will find the following items:
 
 ![](../img/process_audit.gif)
 
-#### Versions
+### Versions
 
 In the **Versions** tab you will find the following details:
 
@@ -62,7 +62,7 @@ In the **Versions** tab you will find the following details:
 
 * View process - clicking on the eye icon will redirect you to the process definition 
 
-#### Audit log
+### Audit log
 
 In the **Audit log** tab you will find the following items:
 
@@ -80,17 +80,28 @@ Some items are filterable, so you can easily track the changes occurred in a pro
 
 [Audit](../../../platform-deep-dive/core-components/core-extensions/audit.md)
 
-### Data model
+## Data model
 
 You are now able to add new keys pair values in the Data Model. This will enable you to use shortcuts when adding new keys using the UI Designer, without having to switch back and forth between menus.
 
 ![](../../../../release-notes/img/data_model.png)
 
+### Attributes type
+
+Data model supports the following attributes type:
+
+* STRING
+* NUMBER
+* BOOLEAN
+* OBJECT
+* ARRAY
+* ENUM
+
 :::info
-When you export/import a **Process definition** the data model will be also included.
+When you export/import a [**Process definition**](process-definition.md) the data model will be also included.
 :::
 
-### Settings
+## Settings
 
 #### General
 * **Process definition name** - edit process definition name
