@@ -62,4 +62,6 @@ The following env vars are needed for `process-engine` to connect to Advancing P
 
 [FLOWX.AI Engine setup guide](../../docs/platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide)
 
-[Advancing controller](../../docs/platform-deep-dive/core-components/flowx-engine/advancing-controller)
+[Advancing controller](../../docs/platform-deep-dive/core-components/flowx-engine#advancing-controller)
+
+[Advancing controller setup guide](../../docs/platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide/advancing-controller-setup-guide)
