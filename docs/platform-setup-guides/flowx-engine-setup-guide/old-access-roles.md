@@ -33,7 +33,7 @@ where `START` and `VIEW` are the possible operations to be performed on the defi
 
 ### Access to actions from process definitions
 
-Operation permissions can also be set on specific nodes in order to restrict the access to the actions defined on that node. This can be done in a similar way to setting operation permissions on process definitions. The operation name to be used for nodes is `NODE_RUN`.
+Operation permissions can also be set on specific nodes in order to restrict the access to the actions defined on that node. This can be done similarly to setting operation permissions on process definitions. The operation name to be used for nodes is `NODE_RUN`.
 
 As nodes also hold the definitions for the user interface, deciding which user role can see a certain UI template can also be done by using node permissions. The templates linked to a node can only be viewed by a user that has the `NODE_RUN` permission on that node, if the access on that node is restricted.
 
@@ -63,6 +63,6 @@ where `START` and `VIEW` are the possible operations to be performed on the defi
 
 ### Access to actions from process definitions
 
-Operation permissions can also be set on specific nodes in order to restrict the access to the actions defined on that node. This can be done in a similar way to setting operation permissions on process definitions. The operation name to be used for nodes is `NODE_RUN`.
+Operation permissions can also be set on specific nodes in order to restrict the access to the actions defined on that node. This can be done similarly to setting operation permissions on process definitions. The operation name to be used for nodes is `NODE_RUN`.
 
 As nodes also hold the definitions for the user interface, deciding which user role can see a certain UI template can also be done by using node permissions. The templates linked to a node can only be viewed by a user that has the `NODE_RUN` permission on that node, if the access on that node is restricted.
