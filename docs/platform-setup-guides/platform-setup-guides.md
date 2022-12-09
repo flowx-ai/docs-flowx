@@ -53,7 +53,7 @@ Datasource configuration is the process of configuring a data source, such as a 
 In some cases, additional configuration settings may be required, such as specifying the type of data source (e.g. Oracle, MySQL, etc.) or setting up access control for data access.
 
 :::caution
-Some microservices ([**Admin**](../flowx-designer/designer-setup-guide) microservice, for example, connects to the same Postgres / Oracle database as the **Engine**).
+Some microservices ([**Admin**](../flowx-designer/designer-setup-guide) microservice, for example, connects to the same Postgres / Oracle database as the [**Engine**](./flowx-engine-setup-guide)).
 :::
 
 The following variables need to be set in order to set the datasource:
@@ -146,3 +146,21 @@ Third party components are components such as libraries, frameworks, APIs, etc.
 A license model is a set of rules and regulations governing how software can be used, distributed, and modified. It also outlines the rights and responsibilities of the software user and the software developer. Common license models include open source, freeware, shareware, and commercial software.
 
 Most of the [**third-party components used by FLOWX.AI**](../platform-deep-dive/third-party-components) are under [**Apache License 2.0**](https://www.apache.org/licenses/LICENSE-2.0) source code.
+
+## Kafka
+
+The following Kafka-related configurations can be set by using environment variables:
+
+* `SPRING_KAFKA_BOOTSTRAP_SERVERS` - environment variable used to configure the list of brokers to which the kafka client will connect, this is a comma-separated list of host and port pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster
+
+* `SPRING_KAFKA_CONSUMER_GROUP_ID `- environment variable is used to set the consumer group ID for the Kafka consumer, it is used to identify which consumer group the consumer belongs to and allows the Kafka broker to manage which messages are consumed by each consumer in the group
+
+* `KAFKA_CONSUMER_THREADS` - environment variable used to control the number of threads that a Kafka consumer instance can use to consume messages from a cluster, it defines the number of threads that the consumer instance should use to poll for messages from the Kafka cluster
+
+* `KAFKA_AUTH_EXCEPTION_RETRY_INTERVAL` - environment variable used to set the interval at which Kafka clients should retry authentication exceptions (the interval between retries after AuthorizationException is thrown by KafkaConsumer)
+
+Each action available in the service corresponds to a Kafka event. A separate Kafka topic must be configured for each use case.
+
+:::caution
+FLOWX.AI Engine is listening for messages on topics with names of a certain pattern, make sure to use correct outgoing topic names when configuring the services.
+:::
