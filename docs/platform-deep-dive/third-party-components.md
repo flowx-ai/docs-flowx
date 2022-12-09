@@ -22,31 +22,31 @@ FLOWX.AI uses a number of third-party software components:
 
 ### Third-party open-source components supported/tested versions
 
-| FLOWX.AI Platform Version | Component name               | Supported/tested versions            |
-| ------------------------- | ---------------------------- | ------------------------------------ |
-| 2.3.0 -> 2.13             | Keycloak                     | 9.0.2                                |  
-| 2.3.0 -> 2.13             | Kafka / Zookeeper            | 2.8.0 (3.5.9)                        |  
-| 2.3.0 -> 2.13             | Jaeger                       | 1.34.1                               |
-| 2.3.0 -> 2.13             | AKHQ                         | 0.17.0                               |  
-| 2.3.0 -> 2.13             | PostgreSQL                   | 11.10.0                              |
-| 2.3.0 -> 2.13             | MongoDB                      | 4.2.6                                |
-| 2.3.0 -> 2.13             | Redis                        | 6.0.1                                |
-| 2.3.0 -> 2.13             | NGINX Ingress Controller     | 1.2.0                                |
-| 2.3.0 -> 2.13             | Elasticsearch                | 7.9.3                                |
-| 2.3.0 -> 2.13             | Fluentd                      | 3.3.0                                |
-| 2.3.0 -> 2.13             | Kibana                       | 7.9.3                                |
-| 2.3.0 -> 2.13             | S3 (Min.IO) / minio-operator | RELEASE.2022-05-26T05-48-41Z / 4.5.4 |
-| 2.3.0 -> 2.13             | RabbitMQ                     | 3.11.2                               |
+| FLOWX.AI Platform Version | Component name               | Supported/tested versions             |
+| ------------------------- | ---------------------------  | ------------------------------------- |
+| 2.3.0 → 2.14              | Keycloak                     | 18.0.x                                |  
+| 2.3.0 → 2.14              | Kafka / Zookeeper            | 2.8.0 (3.5.9)                         |  
+| 2.3.0 → 2.14              | Jaeger                       | 1.34.1                                |
+| 2.3.0 → 2.14              | AKHQ                         | 0.17.0                                |  
+| 2.3.0 → 2.14              | PostgreSQL                   | 14.3.0                                |
+| 2.3.0 → 2.14              | MongoDB                      | 5.0.8                                 |
+| 2.3.0 → 2.14              | Redis                        | 6.2.6                                 |
+| 2.3.0 → 2.14              | NGINX Ingress Controller     | 1.2.0                                 |
+| 2.3.0 → 2.14              | Elasticsearch                | 7.17                                  |
+| 2.3.0 → 2.14              | Fluentd                      | 3.3.0                                 |
+| 2.3.0 → 2.14              | Kibana                       | 7.9.3                                 |
+| 2.3.0 → 2.14              | S3 (Min.IO) / minio-operator | 2022-05-26T05-48-41Z / 4.5.4          |
+| 2.3.0 → 2.14              | RabbitMQ                     | 3.11.2                                |
 
 ### Third-party components supported/tested versions
 
 | FLOWX.AI Platform version | Component name | Supported/tested versions |
 | ------------------------- | -------------- | ------------------------- |
-| 2.3.0 -> 2.13             | OracleDB       | 12C / 18-XE               |
+| 2.3.0 → 2.14              | OracleDB       | 12C / 18-XE               |
 
 ### Summary
 
-#### KeyCloak
+#### Keycloak
 
 Keycloak is an open-source software product to allow single sign-on with Identity and Access Management aimed at modern applications and services.
 
@@ -78,7 +78,7 @@ Jaeger is a popular open-source distributed tracing tool that is used to monitor
 
 #### AKHQ
 
-AKHQ is a tool used by FlowX to manage and display the data inside the Apache Kafka cluster.
+AKHQ is a tool used by FLOWX.AI to manage and display the data inside the Apache Kafka cluster.
 
 [AKHQ documentation](https://akhq.io/docs/#installation)
 
