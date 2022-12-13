@@ -49,6 +49,8 @@ A basic Postgres configuration:
             memory: 512Mi
     ```
 
+## Dependencies
+
 ### Redis server
 
 Redis cluster that will allow the engine to cache process definitions, compiled scripts and Kafka responses

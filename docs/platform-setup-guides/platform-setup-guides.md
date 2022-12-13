@@ -28,6 +28,8 @@ The following variables need to be set in order to connect to the identity manag
 
 * `SECURITY_OAUTH2_REALM` - security configuration env var in the Spring Security OAuth2 framework, it is used to specify the realm name used when authenticating with OAuth2 providers
 
+[Access Management](./access-management)
+
 ## Tracing via Jaeger
 
 Tracing via Jaeger involves collecting timing data from the components in a distributed application. This allows you to better identify bottlenecks and latency issues.
@@ -52,6 +54,20 @@ Datasource configuration is the process of configuring a data source, such as a 
 
 In some cases, additional configuration settings may be required, such as specifying the type of data source (e.g. Oracle, MySQL, etc.) or setting up access control for data access.
 
+:::info
+Can be found in **application-datasource-{db}** .yml files. It looks something like this:
+
+```yml 
+spring:
+  datasource:
+    url: jdbc:postgresql://jx-onboardingdb:5432/onboarding
+    jdbc-url: ${spring.datasource.url}
+    driver-class-name: org.postgresql.Driver
+    username: {{db username}}
+    password: {{password}}
+```
+:::
+
 :::caution
 Some microservices ([**Admin**](../flowx-designer/designer-setup-guide) microservice, for example, connects to the same Postgres / Oracle database as the [**Engine**](./flowx-engine-setup-guide)).
 :::
@@ -69,6 +85,26 @@ You will need to make sure that the user, password, connection link and db name 
 :::
 
 ## Redis configuration 
+
+:::info
+Can be found in the **application-cache** .yml files.
+
+```yml
+spring:
+  cache:
+    type: redis
+    redis:
+      key-prefix: "{{prefix}}"
+      time-to-live: ${REDIS_TTL:5000000} # milliseconds
+
+  redis:
+    host: localhost
+    port: 6379
+    password: {{password}}
+    ttl: ${REDIS_TTL:5000000} # milliseconds
+```
+
+:::
 
 Redis configuration involves setting up the connection parameters, such as the host, port, username, and password. In some cases, additional configuration settings may be required, such as specifying the type of data store or setting up access control for data access.
 
@@ -164,3 +200,4 @@ Each action available in the service corresponds to a Kafka event. A separate Ka
 :::caution
 FLOWX.AI Engine is listening for messages on topics with names of a certain pattern, make sure to use correct outgoing topic names when configuring the services.
 :::
+
