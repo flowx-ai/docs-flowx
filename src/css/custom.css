@@ -18,6 +18,7 @@
   --ifm-font-family-base: 'Rubik', sans-serif;
   --ifm-font-size-base: 110%;
   --doc-sidebar-width: 310px !important;
+  --docusaurus-announcement-bar-height: auto !important;
   
   
 }
@@ -82,3 +83,11 @@ img[src*='#center'] {
     display: none;
   }
 }
+
+div[class^="announcementBar"][role="banner"] {
+  border-bottom-color: var(--ifm-color-primary);
+  font-family: var(--ifm-font-family-base);
+  font-size: 110%;
+  font-weight: bold;
+}
+

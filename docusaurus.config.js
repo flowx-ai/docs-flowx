@@ -48,7 +48,6 @@ const config = {
           // Please change this to your repo.
           remarkPlugins: [urlEmbed],
           showLastUpdateTime: true,
-
           },
 
         theme: {
@@ -70,9 +69,6 @@ const config = {
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-
-    
-
     
     ({
 
@@ -81,6 +77,17 @@ const config = {
           autoCollapseCategories: true,
           hideable: true,
         },
+      },
+
+      announcementBar: {
+        id: 'banner_release',
+        content:
+         '🆕  Check our latest release <a target="_blank" rel="noopener noreferrer" href="https://docs.flowx.ai/release-notes/v2.14.0-november-2022/"> 2.14.0</a>  🔍',
+        backgroundColor: '#E7A811',
+        textColor: '#FFFF',
+        isCloseable: true,
+        
+        
       },
       
       navbar: {
