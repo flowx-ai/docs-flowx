@@ -8,7 +8,7 @@ const VotedYes = () => {
   };
   
   const VotedNo = () => {
-    return <span>Thanks for your feedback. If you have any inquiry/documentation request, please submit a request <a href='https://flowxai.canny.io/documentation-feedback'>here</a>. </span>;
+    return <span>Thanks for your feedback. If you have any additional request/suggestion, please submit it <a href='https://flowxai.canny.io/documentation-feedback'>here</a>. </span>;
   };
   
 
