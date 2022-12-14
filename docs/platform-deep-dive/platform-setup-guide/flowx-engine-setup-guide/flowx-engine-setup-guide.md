@@ -21,7 +21,7 @@ A basic Postgres configuration:
           enabled: true
           service:
             annotations:
-              prometheus.io/port: {{phrometeus port}}
+              prometheus.io/port: {{prometheus port}}
               prometheus.io/scrape: "true"
             type: ClusterIP
           serviceMonitor:
@@ -244,12 +244,12 @@ The following environment variables could be set in order to control log levels:
 
 ### Advancing Controller
 
-The following env vars are needed for `process-engine` to connect to Advancing Postgres DB.
+To use advancing controller, the following env vars are needed for `process-engine` to connect to Advancing Postgres DB.
 
-`ADVANCING_DATASOURCE_JDBC_URL`
+`ADVANCING_DATASOURCE_JDBC_URL` - environment variable used to configure a JDBC (Java database connectivity) data source, it specifies the connection URL for a particular database, including the server, port, database name, and any other connection parameters necessary
 
-`ADVANCING_DATASOURCE_USERNAME`
+`ADVANCING_DATASOURCE_USERNAME` - environment variable used to authenticate the user access to the data source
 
-`ADVANCING_DATASOURCE_PASSWORD`
+`ADVANCING_DATASOURCE_PASSWORD` - environment variable used to set the password for a data source connection
 
 [Advancing controller setup](../flowx-engine-setup-guide/advancing-controller-setup-guide)
