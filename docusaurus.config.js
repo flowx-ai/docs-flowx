@@ -47,6 +47,8 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           remarkPlugins: [urlEmbed],
+          showLastUpdateTime: true,
+
           },
 
         theme: {
@@ -59,8 +61,18 @@ const config = {
     ],
   ],
 
+  scripts: [
+    {
+      src: 'https://app.happyreact.com/widget/reactions.js',
+      defer: true,
+    },
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+
+    
+
     
     ({
 
@@ -101,6 +113,7 @@ const config = {
           {to: '/faqs', label: 'FAQs', position: 'left'},
           {to: 'https://support.flowx.ai/', label: 'Support', position: 'right'},
           {to: 'https://www.flowx.ai/contact-us', label: 'Contact', position: 'right'},
+          {to: 'https://flowxai.canny.io/documentation-feedback', label: 'Feedback', position: 'right'},
 
           {
             type: 'search',
