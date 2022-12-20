@@ -83,9 +83,11 @@ The following configuration details need to be added using environment variables
 
 `SPRING_DATASOURCE_URL`
 
-`SPRING_DATASOURCE_USERNAME`&#x20;
+`SPRING_DATASOURCE_USERNAME`
 
 `SPRING_DATASOURCE_PASSWORD`
+
+`SPRING_JPA_PROPERTIES_HIBERNATE_DEFAULT_SCHEMA` - used to overwrite the name of the database schema
 
 You will need to make sure that the user, password, connection link and db name are configured correctly, otherwise you will receive errors at start time.
 
@@ -97,13 +99,13 @@ Database schema is managed by a liquibase script that will create, manage and mi
 
 ### MongoDB configuration
 
-The only thing that needs to be configured is the DB access info, the rest will be handled by the plugin.&#x20;
+The only thing that needs to be configured is the DB access info, the rest will be handled by the plugin.
 
 `SPRING_DATA_MONGODB_URI` - the URI for the MongoDB database
 
 ### Redis configuration
 
-The following values should be set with the corresponding Redis related values.&#x20;
+The following values should be set with the corresponding Redis related values.
 
 `SPRING_REDIS_HOST`
 
