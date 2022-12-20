@@ -83,9 +83,11 @@ The following configuration details need to be added using environment variables
 
 `SPRING_DATASOURCE_URL`
 
-`SPRING_DATASOURCE_USERNAME`&#x20;
+`SPRING_DATASOURCE_USERNAME`
 
 `SPRING_DATASOURCE_PASSWORD`
+
+`SPRING_JPA_PROPERTIES_HIBERNATE_DEFAULT_SCHEMA` - used to overwrite the name of the database schema
 
 You will need to make sure that the user, password, connection link and db name are configured correctly, otherwise you will receive errors at start time.
 
