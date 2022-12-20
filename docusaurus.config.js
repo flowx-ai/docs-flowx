@@ -47,6 +47,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           remarkPlugins: [urlEmbed],
+          showLastUpdateTime: true,
           },
 
         theme: {
@@ -59,6 +60,13 @@ const config = {
     ],
   ],
 
+  scripts: [
+    {
+      src: 'https://app.happyreact.com/widget/reactions.js',
+      defer: true,
+    },
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     
@@ -69,6 +77,17 @@ const config = {
           autoCollapseCategories: true,
           hideable: true,
         },
+      },
+
+      announcementBar: {
+        id: 'banner_release',
+        content:
+         '🆕  Check our latest release <a target="_blank" rel="noopener noreferrer" href="https://docs.flowx.ai/release-notes/v2.14.0-november-2022/"> 2.14.0</a>  🔍',
+        backgroundColor: '#E7A811',
+        textColor: '#FFFF',
+        isCloseable: true,
+        
+        
       },
       
       navbar: {
@@ -101,6 +120,7 @@ const config = {
           {to: '/faqs', label: 'FAQs', position: 'left'},
           {to: 'https://support.flowx.ai/', label: 'Support', position: 'right'},
           {to: 'https://www.flowx.ai/contact-us', label: 'Contact', position: 'right'},
+          {to: 'https://flowxai.canny.io/documentation-feedback', label: 'Feedback', position: 'right'},
 
           {
             type: 'search',

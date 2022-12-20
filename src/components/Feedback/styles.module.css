@@ -1,0 +1,45 @@
+.title{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.widget{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.widget .grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-center-;
+    min-height: 50px;
+  }
+  
+  .widget .cell {
+    width: 70px;  
+
+  }
+
+  .widget .reaction {
+    width: 100%;
+    background-color: #FD8949;
+    border-radius: 15px;
+
+  }
+  .widget .reaction:hover {
+    background-color: #E66119;
+    opacity: 0.6;
+    transition: 0.3s;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 15px;
+  }
+
+  .widget .footer {
+    margin-top: 10px;
+    margin-left: 0;
+    display: none;
+  }
+
+
