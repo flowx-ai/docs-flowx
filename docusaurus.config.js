@@ -244,7 +244,16 @@ const config = {
         },
       ],
 
+      [
+        '@docusaurus/plugin-google-gtag',
+        {
+          trackingID: 'G-CGW0FVK9YM',
+          anonymizeIP: true,
+        },
+      ],
     ],
+
+  
 };
 
 module.exports = config;
