@@ -54,20 +54,6 @@ Datasource configuration is the process of configuring a data source, such as a 
 
 In some cases, additional configuration settings may be required, such as specifying the type of data source (e.g. Oracle, MySQL, etc.) or setting up access control for data access.
 
-:::info
-Can be found in **application-datasource-{db}** .yml files. It looks something like this:
-
-```yml 
-spring:
-  datasource:
-    url: jdbc:postgresql://jx-onboardingdb:5432/onboarding
-    jdbc-url: ${spring.datasource.url}
-    driver-class-name: org.postgresql.Driver
-    username: {{db username}}
-    password: {{password}}
-```
-:::
-
 :::caution
 Some microservices ([**Admin**](../flowx-designer/designer-setup-guide) microservice, for example, connects to the same Postgres / Oracle database as the [**Engine**](./flowx-engine-setup-guide)).
 :::
@@ -86,29 +72,9 @@ You will need to make sure that the user, password, connection link and db name 
 
 ## Redis configuration 
 
-:::info
-Can be found in the **application-cache** .yml files.
-
-```yml
-spring:
-  cache:
-    type: redis
-    redis:
-      key-prefix: "{{prefix}}"
-      time-to-live: ${REDIS_TTL:5000000} # milliseconds
-
-  redis:
-    host: localhost
-    port: 6379
-    password: {{password}}
-    ttl: ${REDIS_TTL:5000000} # milliseconds
-```
-
-:::
-
 Redis configuration involves setting up the connection parameters, such as the host, port, username, and password. In some cases, additional configuration settings may be required, such as specifying the type of data store or setting up access control for data access.
 
-* `SPRING_REDIS_HOST` - environment variable used to configure the hostname or IP address of a Redis server when using Spring Data Redis
+* `SPRING_REDIS_HOST` - environment variable used to configure the hostname or IP address of a Redis server when [](https://docs.camunda.io/docs/components/concepts/workflow-patterns/)using Spring Data Redis
 
 * `SPRING_REDIS_PASSWORD` - environment variable is used to store the password used to authenticate with a Redis server, it is used to secure access to the Redis server and should be kept confidential
 
