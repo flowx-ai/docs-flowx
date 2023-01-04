@@ -46,7 +46,7 @@ Make sure that the **Forward on Kafka** checkbox is ticked, so the notification 
 ![](../../../../img/notif_params_send.png)
 
 :::info
-**Forward on Kafka** option will forward the notification to an external adapter, make sure the needed Kafka topic for forwarding is defined/overwritten using the following environment variable: `KAFKA_TOPIC_EXTERNAL_OUT`.
+**Forward on Kafka** option will forward the notification to an external adapter, make sure the needed Kafka topic for forwarding is defined/overwritten using the following environment variable: `KAFKA_TOPIC_NOTIFICATION_EXTERNAL_OUT`.
 :::
 
 7. Run the process and look for the response (you can view it via the **Audit log**) or by checking the responses on the Kafka topic
