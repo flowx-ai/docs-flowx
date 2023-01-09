@@ -3,7 +3,7 @@
 ### Access to a process definition
 
 Setting up user role-based access on process definitions is done by configuring swimlanes on the process definition.
-
+§
 [Swimlanes](../../../platform-deep-dive/user-roles-management/swimlanes.md)
 
 By default, all process nodes belong to the same swimlane. If more swimlanes are needed, they can be edited in the process definition settings panel.
