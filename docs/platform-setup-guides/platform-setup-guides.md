@@ -22,41 +22,9 @@ An identity management platform is a software system that helps you manage autho
 
 The following variables need to be set in order to connect to the identity management platform:
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-`SECURITY_OAUTH2_BASE_SERVER_URL`
+
 =======
 * `SECURITY_OAUTH2_BASE_SERVER_URL` - the base URL for the OAuth 2.0 Authorization Server, which is responsible for authentication and authorization for clients and users, it is used to authorize clients, as well as to issue and validate access tokens
->>>>>>> 417a384 (conflict)
-
-`SECURITY_OAUTH2_CLIENT_CLIENT_ID`
-
-`SECURITY_OAUTH2_REALM`
-
-## Management Tools
-
-<<<<<<< HEAD
-Additional you can check details about (the platform will start without these components):
-
-### Logging via Elasticsearch
-
-Logging via elasticSearch is a way of collecting, storing, and analyzing log data from various sources in a distributed, searchable repository.
-
-`SPRING_ELASTICSEARCH_REST_URIS`
-
-`SPRING_ELASTICSEARCH_REST_DISABLESSL`
-
-`SPRING_ELASTICSEARCH_INDEX_SETTINGS_NAME`
-
-`SPRING_ELASTICSEARCH_REST_USERNAME`
-
-`SPRING_ELASTICSEARCH_REST_PASSWORD`
-
-### Monitoring
-
-### Tracing via Jaeger
-=======
-`SECURITY_OAUTH2_BASE_SERVER_URL`
 
 `SECURITY_OAUTH2_CLIENT_CLIENT_ID`
 
@@ -83,10 +51,8 @@ Logging via elasticSearch is a way of collecting, storing, and analyzing log dat
 ### Monitoring
 
 ### Tracing via Jaeger
->>>>>>> 135aea4 (new setup section + overview)
-=======
-## Tracing via Jaeger
->>>>>>> 417a384 (conflict)
+
+
 
 Tracing via Jaeger involves collecting timing data from the components in a distributed application. This allows you to better identify bottlenecks and latency issues.
 
