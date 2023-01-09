@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 # FLOWX.AI Engine Setup guide
@@ -9,6 +9,8 @@ sidebar_position: 1
 There are some components that are mandatory to start the engine:
 
 ### Database - Postgres / Oracle
+
+For Microservices architecture, some Microservices holds their data individually using separate Databases.
 
 A basic Postgres configuration:
 
@@ -144,7 +146,7 @@ The configuration related to consumers (group ids and thread numbers) can be con
 
 It is important to know that all the events that start with a configured pattern will be consumed by the engine. This makes it possible to create a new integration and connect it to the engine without changing the configuration of the engine.
 
-![](../../img/engine_kafka_pattern.svg) 
+![](../../platform-deep-dive/img/engine_kafka_pattern.svg) 
 
 `KAFKA_TOPIC_PROCESS_NOTIFY_ADVANCE` - Kafka topic used internally by the engine
 

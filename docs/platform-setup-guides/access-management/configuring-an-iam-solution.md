@@ -33,7 +33,7 @@ To create a new realm, complete the following steps:
 
 1. Log in to the **Keycloak Admin Console** (go to the **keylock admin URL** corresponding to the selected environment, for example, let's say you use a QA or a development environment or a production).
 
-![](../../img/iam1.png)
+![](../../platform-deep-dive/img/iam1.png)
 
 2. In the top left corner dropdown menu, click **Add Realm**.
 
@@ -43,14 +43,14 @@ If you are logged in to the master realm this dropdown menu lists all the realms
 
 3. You will be creating a brand-new realm from scratch, so type a **realm name** and click **Create**.
 
-![](../../img/iam2.png)
+![](../../platform-deep-dive/img/iam2.png)
 
 4. Go to **Realm Settings -> Tokens** and set the following properties:
 
 * **SSO Session idle** - suggested: 30 Minutes
 * **Access Token Lifespan** - suggested: 30 Minutes
 
-![](../../img/iam3.png)
+![](../../platform-deep-dive/img/iam3.png)
 
 :::info
 This is just an example, you can set any values you want for the token, and do not forget to check and apply properties suitable for your organization's needs.
@@ -75,7 +75,7 @@ To create a new user in the `Flowx` realm as well as a temporary password for th
 1. In the left menu bar click **Users**. The user list page opens.
 2. On the right side of the empty user list, click **Add User**. :exclamation:Make sure you validate the user email by setting the **Email Verified** to **ON**.
 
-![](../../img/iam4.png)
+![](../../platform-deep-dive/img/iam4.png)
 
 3. The only required field is `Username`. When you finish, click **Save**. The **management page** for your new user opens.
 
@@ -87,7 +87,7 @@ If the **Username** field is not visible (as you can see in the example above), 
 
 5. Search for **username** (use **Ctrl + F**).
 
-![](../../img/iam5.png)
+![](../../platform-deep-dive/img/iam5.png)
 
 6. Delete the highlighted **`ng-hide attribute`** (from **`form-group ng-hide`**) and press **Enter**.
 
@@ -99,7 +99,7 @@ If the **Username** field is not visible (as you can see in the example above), 
 
 10. Go to the **Groups** tab and then click **join**.
 
-![](../../img/iam6.png)
+![](../../platform-deep-dive/img/iam6.png)
 
 ## Adding clients
 
@@ -118,7 +118,7 @@ To add clients, complete the next steps:
    * Set **Valid redirect URIs** - define a valid URI pattern that a browser can redirect to after a successful login or logout
    * Check **Direct Access Grants** **Enabled** and **Implicit Flow Enabled** to **ON**
 
-![](../../img/iam7.png)
+![](../../platform-deep-dive/img/iam7.png)
 
 4. Add **groups mapper** to `{example}-authenticate` client - so the groups list will be added to the authorization token. For more information on how to add mappers to clients, check the following section.
 
@@ -145,13 +145,13 @@ To add a mapper, complete the next steps (example used: adding user groups in th
 3. From the **Mapper Type** dropdown, choose **Group Membership**.
 4. In the **Token Claim Name**, insert the name of the claim that will be included in the token.
 
-![](../../img/iam8.png)
+![](../../platform-deep-dive/img/iam8.png)
 
 ### **User Attribute mapper**
 
 Add customer **business filters** attribute to `{example}-authenticate` client - so the business filters list will be added to the token claim.
 
-![](../../img/iam9.png)
+![](../../platform-deep-dive/img/iam9.png)
 
 You can find more information about business filters in the following section:
 
@@ -162,7 +162,7 @@ You can find more information about business filters in the following section:
 
 Add **roles** **mapper** to `{example}-authenticate` client - so roles will be available on the OAuth user info response.
 
-![](../../img/iam10.png)
+![](../../platform-deep-dive/img/iam10.png)
 
 ### Examples
 
@@ -203,7 +203,7 @@ Add `{example}-authorize` client - it will be used to authorize rest requests to
 
 #### Minimal auth config for microservices
 
-```
+```yaml
 security:
   type: oauth2
   basic:
@@ -237,11 +237,11 @@ To add an **admin service account**, complete the next steps:
    * set **Access type** as **confidential**
    * check **Service Accounts Enabled**
 
-![](../../img/iam11.png)
+![](../../platform-deep-dive/img/iam11.png)
 
-2. Go to **Clients -> realm-management -> Roles** and add the following **service account client roles**: **manage-users.**
+2. Go to **Clients → realm-management → Roles** and add the following **service account client roles**: **manage-users.**
 
-![](../../img/iam12.png)
+![](../../platform-deep-dive/img/iam12.png)
 
 3. Add **realm roles mapper** to the newly created **admin-service-account** with the following properties:
 
@@ -250,11 +250,11 @@ To add an **admin service account**, complete the next steps:
 * **Token Claim Name**: _roles_
 * **Claim JSON Type**: _String_
 
-![](../../img/iam13.png)
+![](../../platform-deep-dive/img/iam13.png)
 
 4. Give it the necessary **service account roles**:
 
-![](../../img/iam14.png)
+![](../../platform-deep-dive/img/iam14.png)
 
 The **admin service account** defined in the example above can have the following assigned roles, based on the access scopes:
 
@@ -275,23 +275,23 @@ To add a task management service account:
 * set **Access type** as **confidential**
 * check **Service Accounts Enabled**
 
-![](../../img/iam15.png)
+![](../../platform-deep-dive/img/iam15.png)
 
-2. Go to **Clients -> realm-management -> Roles** and add the following **service account client roles** under **realm-management: view-users**.
+2. Go to **Clients → realm-management → Roles** and add the following **service account client roles** under **realm-management: view-users**.
 
-![](../../img/iam16.png)
+![](../../platform-deep-dive/img/iam16.png)
 
 3. Add role `ROLE_START_EXTERNAL` to it in **service account roles → realm roles.**
 
-![](../../img/iam17.png)
+![](../../platform-deep-dive/img/iam17.png)
 
 4. Add a **realm-roles mapper**:
 
-![](../../img/iam18.png)
+![](../../platform-deep-dive/img/iam18.png)
 
 5. Add the **necessary service accounts** to it:
 
-![](../../img/iam19.png)
+![](../../platform-deep-dive/img/iam19.png)
 
 The **task management service account** defined in the example above can have the following assigned roles, based on the access scopes:
 

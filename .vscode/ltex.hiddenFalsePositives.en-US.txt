@@ -4,3 +4,4 @@
 {"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QWhen the process instance token will reach a User Task, a web socket message will be sent informing the SDK to display the UI element associated with that user task\\E$"}
 {"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qexecute - the user will be able to start process instances and run actions on them\nself-assign - the user can assign a process instance to them and start working on it\\E$"}
 {"rule":"ENGLISH_WORD_REPEAT_RULE","sentence":"^\\QIt's important to make sure that hidden fields also have the same expression configured under expressions → hide\nHide Expression - JavaScript expressions used to hide components when they're truthy\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QEnvironment variables are used to store and access configuration information in a secure and efficient manner.\\E$"}
