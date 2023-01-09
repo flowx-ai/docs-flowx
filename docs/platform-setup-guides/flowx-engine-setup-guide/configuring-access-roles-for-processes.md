@@ -63,16 +63,26 @@ Below you can find an example of configuration of roles for a regular user:
 
 ![example configuration of roles for a regular user](../../platform-deep-dive/img/regular_user_roles.png)
 
+<<<<<<< HEAD
 <<<<<<< HEAD:docs/platform-setup-guides/flowx-engine-setup-guide/configuring-access-roles-for-processes.md
 ![example configuration of roles for an admin user](../../platform-deep-dive/img/admin_user_roles.png)
 =======
+=======
+<<<<<<< HEAD:docs/platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide/configuring-access-roles-for-processes.md
+>>>>>>> dae9f68 ( changes)
 #### Admin
 
 Below you can find an example of configuration of roles for an admin user:
 
 
 ![example configuration of roles for an admin user](../../img/admin_user_roles.png)
+<<<<<<< HEAD
 >>>>>>> dab6b1d (updated process roles + integrations diagrams):docs/platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide/configuring-access-roles-for-processes.md
+=======
+=======
+![example configuration of roles for an admin user](../../platform-deep-dive/img/admin_user_roles.png)
+>>>>>>> 135aea4 (new setup section + overview):docs/platform-setup-guides/flowx-engine-setup-guide/configuring-access-roles-for-processes.md
+>>>>>>> dae9f68 ( changes)
 
 :::caution
 :exclamation: Starting with [**2.11.0**](/release-notes/v2.11.0-august-2022/) release, specific roles are needed, otherwise, restrictions will be applied.

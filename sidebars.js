@@ -106,7 +106,11 @@ const sidebars = {
 
     {
       type: 'html',
+<<<<<<< HEAD
       value: '<b>PLATFORM SETUP GUIDES</b>', // This is the "Title" item.
+=======
+      value: 'PLATFORM SETUP GUIDES', // This is the "Title" item.
+>>>>>>> dae9f68 ( changes)
       className: 'sidebar-title',
     },
   

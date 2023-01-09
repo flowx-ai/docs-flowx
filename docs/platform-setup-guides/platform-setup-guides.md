@@ -22,6 +22,7 @@ An identity management platform is a software system that helps you manage autho
 
 The following variables need to be set in order to connect to the identity management platform:
 
+<<<<<<< HEAD
 * `SECURITY_OAUTH2_BASE_SERVER_URL` - the base URL for the OAuth 2.0 Authorization Server, which is responsible for authentication and authorization for clients and users, it is used to authorize clients, as well as to issue and validate access tokens
 
 * `SECURITY_OAUTH2_CLIENT_CLIENT_ID` - a unique identifier for a client application that is registered with the OAuth 2.0 Authorization Server, this is used to authenticate the client application when it attempts to access resources on behalf of a user
@@ -31,11 +32,41 @@ The following variables need to be set in order to connect to the identity manag
 [Access Management](./access-management)
 
 ## Tracing via Jaeger
+=======
+`SECURITY_OAUTH2_BASE_SERVER_URL`
+
+`SECURITY_OAUTH2_CLIENT_CLIENT_ID`
+
+`SECURITY_OAUTH2_REALM`
+
+## Management Tools
+
+Additional you can check details about (the platform will start without these components):
+
+### Logging via Elasticsearch
+
+Logging via elasticSearch is a way of collecting, storing, and analyzing log data from various sources in a distributed, searchable repository.
+
+`SPRING_ELASTICSEARCH_REST_URIS`
+
+`SPRING_ELASTICSEARCH_REST_DISABLESSL`
+
+`SPRING_ELASTICSEARCH_INDEX_SETTINGS_NAME`
+
+`SPRING_ELASTICSEARCH_REST_USERNAME`
+
+`SPRING_ELASTICSEARCH_REST_PASSWORD`
+
+### Monitoring
+
+### Tracing via Jaeger
+>>>>>>> dae9f68 ( changes)
 
 Tracing via Jaeger involves collecting timing data from the components in a distributed application. This allows you to better identify bottlenecks and latency issues.
 
 The following FLOWX.AI services use Jaeger tracing:
 
+<<<<<<< HEAD
 1. [**scheduler-core**](./scheduler-setup-guide.md)
 2. [**customer-management-plugin**](../platform-deep-dive/plugins/plugins-setup-guide/customer-management-plugin-configuration.md)
 3. [**document-plugin**](../platform-deep-dive/plugins/plugins-setup-guide/documents-plugin-setup)
@@ -47,6 +78,16 @@ Environment variables to be set for tracing:
 * `APPLICATION_JAEGER_ENABLED` - environment variable used to enable or disable Jaeger tracing
 
 * `APPLICATION_JAEGER_PREFIX` - environment variable used to change the name in the Jaeger dashboard 
+=======
+* scheduler-core
+* customer-management-plugin
+* document-plugin
+* notification-plugin
+* process-engine
+
+`APPLICATION_JAEGER_ENABLED` - to enable or disable jaeger tracing
+
+>>>>>>> dae9f68 ( changes)
 
 ## Datasource configuration
 
@@ -55,16 +96,28 @@ Datasource configuration is the process of configuring a data source, such as a 
 In some cases, additional configuration settings may be required, such as specifying the type of data source (e.g. Oracle, MySQL, etc.) or setting up access control for data access.
 
 :::caution
+<<<<<<< HEAD
 Some microservices ([**Admin**](../flowx-designer/designer-setup-guide) microservice, for example, connects to the same Postgres / Oracle database as the [**Engine**](./flowx-engine-setup-guide)).
+=======
+Some microservices ([**Admin**](../flowx-designer/designer-setup-guide) microservice, for example, connects to the same Postgres / Oracle database as the **Engine**).
+>>>>>>> dae9f68 ( changes)
 :::
 
 The following variables need to be set in order to set the datasource:
 
+<<<<<<< HEAD
 * `SPRING_DATASOURCE_URL` - environment variable used to configure a data source URL for a Spring application, it typically contains the JDBC driver name, the server name, port number, and database name
 
 * `SPRING_DATASOURCE_USERNAME` - environment variable used to set the username for the database connection, this can be used to connect to a database instance
 
 * `SPRING_DATASOURCE_PASSWORD` - environment variable used to store the password for the database connection, this can be used to secure access to the database and ensure that only authorized users have access to the data
+=======
+`SPRING_DATASOURCE_URL`
+
+`SPRING_DATASOURCE_USERNAME`
+
+`SPRING_DATASOURCE_PASSWORD`
+>>>>>>> dae9f68 ( changes)
 
 :::caution
 You will need to make sure that the user, password, connection link and db name are configured correctly, otherwise, you will receive errors at start time.
@@ -74,11 +127,19 @@ You will need to make sure that the user, password, connection link and db name 
 
 Redis configuration involves setting up the connection parameters, such as the host, port, username, and password. In some cases, additional configuration settings may be required, such as specifying the type of data store or setting up access control for data access.
 
+<<<<<<< HEAD
 * `SPRING_REDIS_HOST` - environment variable used to configure the hostname or IP address of a Redis server when [](https://docs.camunda.io/docs/components/concepts/workflow-patterns/)using Spring Data Redis
 
 * `SPRING_REDIS_PASSWORD` - environment variable is used to store the password used to authenticate with a Redis server, it is used to secure access to the Redis server and should be kept confidential
 
 * `REDIS_TTL` - environment variable is used to specify the maximum time-to-live (TTL) for a key in Redis, it is used to set a limit on how long a key can exist before it is automatically expired (Redis will delete the key after the specified TTL has expired)
+=======
+`SPRING_REDIS_HOST`
+
+`SPRING_REDIS_PASSWORD`
+
+`REDIS_TTL`
+>>>>>>> dae9f68 ( changes)
 
 ## Kubernetes related configs
 
@@ -94,6 +155,7 @@ Kubernetes-related configs might include the following configuration:
 * Logging configuration
 * Metrics configuration
 
+<<<<<<< HEAD
 ## Debugging
 
 Advanced debugging features can be enabled. When this happens, snapshots of the process status will be taken after each action and can be later used for debugging purposes. This feature comes with an exponential increase in database usage, so we suggest having the flag set to true on debugging media and false production ones.
@@ -133,6 +195,8 @@ Logging via elasticSearch is a way of collecting, storing, and analyzing log dat
 * `SPRING_ELASTICSEARCH_REST_PASSWORD` - environment variable used to specify the password for an Elasticsearch cluster when using the Spring Data Elasticsearch Rest Client, it is used to authenticate with the cluster and ensure that only authorized users can access the data stored in the cluster
 
 
+=======
+>>>>>>> dae9f68 ( changes)
 ## Third-party components
 
 Third-party components are software components or libraries that are not part of FLOWX.AI but are instead created by another company or individual and used in a development project. 
@@ -141,6 +205,7 @@ These components can range from databases and operating systems to user interfac
 
 Third party components are components such as libraries, frameworks, APIs, etc.
 
+<<<<<<< HEAD
 [Third-party components](../platform-deep-dive/third-party-components.md)
 
 ### License model
@@ -166,4 +231,9 @@ Each action available in the service corresponds to a Kafka event. A separate Ka
 :::caution
 FLOWX.AI Engine is listening for messages on topics with names of a certain pattern, make sure to use correct outgoing topic names when configuring the services.
 :::
+=======
+
+
+
+>>>>>>> dae9f68 ( changes)
 
