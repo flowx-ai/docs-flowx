@@ -1,4 +1,5 @@
 <!--
+
 # Configuring access rights for Audit
 
 Granular access rights can be configured for restricting access to the Audit component.
@@ -34,4 +35,5 @@ For example, if you need to configure role access for read, insert this:
 ```
 SECURITY_ACCESSAUTHORIZATIONS_MANAGELICENSES_SCOPES_READ_ROLESALLOWED: ROLE_NAME_TEST
 ```
+
 -->

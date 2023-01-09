@@ -57,10 +57,13 @@ Below you can find an example of configuration of roles for a regular user:
 ![example configuration of roles for a regular user](../../platform-deep-dive/img/regular_user_roles.png)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:docs/platform-setup-guides/flowx-engine-setup-guide/configuring-access-roles-for-processes.md
 ![example configuration of roles for an admin user](../../platform-deep-dive/img/admin_user_roles.png)
 =======
 =======
+=======
+>>>>>>> 417a384 (conflict)
 <<<<<<< HEAD:docs/platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide/configuring-access-roles-for-processes.md
 >>>>>>> dae9f68 ( changes)
 #### Admin
@@ -75,6 +78,7 @@ Below you can find an example of configuration of roles for an admin user:
 =======
 ![example configuration of roles for an admin user](../../platform-deep-dive/img/admin_user_roles.png)
 >>>>>>> 135aea4 (new setup section + overview):docs/platform-setup-guides/flowx-engine-setup-guide/configuring-access-roles-for-processes.md
+<<<<<<< HEAD
 >>>>>>> dae9f68 ( changes)
 
 :::caution
@@ -85,6 +89,20 @@ After setting up your preferred identity provider solution, you will need to add
 
 [Authorization & access roles](./flowx-engine-setup-guide.md#authorization--access-roles)
 
+=======
+=======
+<<<<<<< HEAD:docs/platform-setup-guides/flowx-engine-setup-guide/configuring-access-roles-for-processes.md
+![example configuration of roles for an admin user](../../platform-deep-dive/img/admin_user_roles.png)
+=======
+#### Admin
+
+Below you can find an example of configuration of roles for an admin user:
+
+
+![example configuration of roles for an admin user](../../img/admin_user_roles.png)
+>>>>>>> dab6b1d (updated process roles + integrations diagrams):docs/platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide/configuring-access-roles-for-processes.md
+>>>>>>> 61b3c7f (conflicts)
+>>>>>>> 417a384 (conflict)
 
 :::caution
 :exclamation: Starting with [**2.11.0**](/release-notes/v2.11.0-august-2022/) release, specific roles are needed, otherwise, restrictions will be applied.
@@ -93,6 +111,7 @@ After setting up your preferred identity provider solution, you will need to add
 After setting up your preferred identity provider solution, you will need to add the desired access roles in the application configuration for the FLOWX Engine (using environment variables):
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [Authorization & access roles](./flowx-engine-setup-guide.md#authorization--access-roles)
 
 =======
@@ -100,6 +119,10 @@ After setting up your preferred identity provider solution, you will need to add
 
 ![example configuration of roles for an admin user](../../platform-deep-dive/img/admin_user_roles.png)
 >>>>>>> 135aea4 (new setup section + overview)
+=======
+[Authorization & access roles](./flowx-engine-setup-guide.md#authorization--access-roles)
+
+>>>>>>> 61b3c7f (conflicts)
 
 ### Restricting process instance access based on business filters
 
