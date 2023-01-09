@@ -12,11 +12,19 @@ Swimlane role settings apply to the whole process, the process nodes or the acti
 
 First, the desired user roles need to be configured in the identity provider solution and users must be assigned the correct roles.
 
+:::info
+You can use the **Access management** tab under **General Settings** to administrate all the roles.
+
+![](../../img/access_management_roles.png)
+
+:::
+
 :::warning
 To be able to access the roles defined in the identity provider solution, a [**service account**](../access-management/configuring-an-iam-solution.md#adding-service-accounts) with appropriate permissions needs to be added in the identity provider. And the details of that service account [**need to be set up in the platform configuration**](../../../flowx-designer/designer-setup-guide/designer-setup-guide.md#authorization--access-roles).
 :::
 
-The defined roles will then be available to be used in the process definition settings panel for configuring swimlane access.
+
+The defined roles will then be available to be used in the process definition settings (**Permissions** tab) panel for configuring swimlane access.
 
 A **Default** swimlane comes with two default permissions assigned based on a specific role.
 
@@ -54,30 +62,10 @@ Valid for < 2.11.0 release version.
 Below you can find an example of configuration of roles for a regular user:
 
 ![example configuration of roles for a regular user](../../platform-deep-dive/img/regular_user_roles.png)
-#### Admin
-
-Below you can find an example of configuration of roles for an admin user:
-
-
-![example configuration of roles for an admin user](../../img/admin_user_roles.png)
-
-![example configuration of roles for an admin user](../../platform-deep-dive/img/admin_user_roles.png)
-
-:::caution
-:exclamation: Starting with [**2.11.0**](/release-notes/v2.11.0-august-2022/) release, specific roles are needed, otherwise, restrictions will be applied.
-:::
-
-After setting up your preferred identity provider solution, you will need to add the desired access roles in the application configuration for the FLOWX Engine (using environment variables):
-
-[Authorization & access roles](./flowx-engine-setup-guide.md#authorization--access-roles)
-
-
-![example configuration of roles for an admin user](../../platform-deep-dive/img/admin_user_roles.png)
 
 #### Admin
 
 Below you can find an example of configuration of roles for an admin user:
-
 
 ![example configuration of roles for an admin user](../../img/admin_user_roles.png)
 
@@ -88,13 +76,6 @@ Below you can find an example of configuration of roles for an admin user:
 After setting up your preferred identity provider solution, you will need to add the desired access roles in the application configuration for the FLOWX Engine (using environment variables):
 
 [Authorization & access roles](./flowx-engine-setup-guide.md#authorization--access-roles)
-
-![example configuration of roles for a regular user](../../platform-deep-dive/img/regular_user_roles.png)
-
-![example configuration of roles for an admin user](../../platform-deep-dive/img/admin_user_roles.png)
-
-[Authorization & access roles](./flowx-engine-setup-guide.md#authorization--access-roles)
-
 
 ### Restricting process instance access based on business filters
 

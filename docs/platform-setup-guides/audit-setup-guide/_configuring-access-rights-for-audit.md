@@ -1,4 +1,3 @@
-<!--
 
 # Configuring access rights for Audit
 
@@ -35,5 +34,3 @@ For example, if you need to configure role access for read, insert this:
 ```
 SECURITY_ACCESSAUTHORIZATIONS_MANAGELICENSES_SCOPES_READ_ROLESALLOWED: ROLE_NAME_TEST
 ```
-
--->

@@ -23,36 +23,15 @@ An identity management platform is a software system that helps you manage autho
 The following variables need to be set in order to connect to the identity management platform:
 
 
-=======
 * `SECURITY_OAUTH2_BASE_SERVER_URL` - the base URL for the OAuth 2.0 Authorization Server, which is responsible for authentication and authorization for clients and users, it is used to authorize clients, as well as to issue and validate access tokens
 
-`SECURITY_OAUTH2_CLIENT_CLIENT_ID`
+* `SECURITY_OAUTH2_CLIENT_CLIENT_ID` - a unique identifier for a client application that is registered with the OAuth 2.0 Authorization Server, this is used to authenticate the client application when it attempts to access resources on behalf of a user
 
-`SECURITY_OAUTH2_REALM`
+* `SECURITY_OAUTH2_REALM` - security configuration env var in the Spring Security OAuth2 framework, it is used to specify the realm name used when authenticating with OAuth2 providers
 
-## Management Tools
+[Access Management](./access-management)
 
-Additional you can check details about (the platform will start without these components):
-
-### Logging via Elasticsearch
-
-Logging via elasticSearch is a way of collecting, storing, and analyzing log data from various sources in a distributed, searchable repository.
-
-`SPRING_ELASTICSEARCH_REST_URIS`
-
-`SPRING_ELASTICSEARCH_REST_DISABLESSL`
-
-`SPRING_ELASTICSEARCH_INDEX_SETTINGS_NAME`
-
-`SPRING_ELASTICSEARCH_REST_USERNAME`
-
-`SPRING_ELASTICSEARCH_REST_PASSWORD`
-
-### Monitoring
-
-### Tracing via Jaeger
-
-
+## Tracing via Jaeger
 
 Tracing via Jaeger involves collecting timing data from the components in a distributed application. This allows you to better identify bottlenecks and latency issues.
 
@@ -66,7 +45,7 @@ The following FLOWX.AI services use Jaeger tracing:
 
 Environment variables to be set for tracing:
 
-`APPLICATION_JAEGER_ENABLED` - to enable or disable jaeger tracing
+* `APPLICATION_JAEGER_ENABLED` - environment variable used to enable or disable Jaeger tracing
 
 * `APPLICATION_JAEGER_PREFIX` - environment variable used to change the name in the Jaeger dashboard 
 
@@ -84,7 +63,8 @@ The following variables need to be set in order to set the datasource:
 
 * `SPRING_DATASOURCE_URL` - environment variable used to configure a data source URL for a Spring application, it typically contains the JDBC driver name, the server name, port number, and database name
 
-`SPRING_DATASOURCE_USERNAME`
+* `SPRING_DATASOURCE_USERNAME` - environment variable used to set the username for the database connection, this can be used to connect to a database instance
+
 
 * `SPRING_DATASOURCE_PASSWORD` - environment variable used to store the password for the database connection, this can be used to secure access to the database and ensure that only authorized users have access to the data
 
@@ -97,9 +77,7 @@ You will need to make sure that the user, password, connection link and db name 
 Redis configuration involves setting up the connection parameters, such as the host, port, username, and password. In some cases, additional configuration settings may be required, such as specifying the type of data store or setting up access control for data access.
 
 * `SPRING_REDIS_HOST` - environment variable used to configure the hostname or IP address of a Redis server when [](https://docs.camunda.io/docs/components/concepts/workflow-patterns/)using Spring Data Redis
-
-`SPRING_REDIS_PASSWORD`
-
+* `SPRING_REDIS_PASSWORD` - environment variable is used to store the password used to authenticate with a Redis server, it is used to secure access to the Redis server and should be kept confidential
 * `REDIS_TTL` - environment variable is used to specify the maximum time-to-live (TTL) for a key in Redis, it is used to set a limit on how long a key can exist before it is automatically expired (Redis will delete the key after the specified TTL has expired)
 
 ## Kubernetes related configs
@@ -181,6 +159,9 @@ The following Kafka-related configurations can be set by using environment varia
 
 * `KAFKA_CONSUMER_THREADS` - environment variable used to control the number of threads that a Kafka consumer instance can use to consume messages from a cluster, it defines the number of threads that the consumer instance should use to poll for messages from the Kafka cluster
 
+* `KAFKA_AUTH_EXCEPTION_RETRY_INTERVAL` - environment variable used to set the interval at which Kafka clients should retry authentication exceptions (the interval between retries after AuthorizationException is thrown by KafkaConsumer)
+
+Each action available in the service corresponds to a Kafka event. A separate Kafka topic must be configured for each use case.
 
 
 :::caution
