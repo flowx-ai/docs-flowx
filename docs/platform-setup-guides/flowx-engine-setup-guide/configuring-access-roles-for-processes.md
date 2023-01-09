@@ -92,8 +92,14 @@ After setting up your preferred identity provider solution, you will need to add
 
 After setting up your preferred identity provider solution, you will need to add the desired access roles in the application configuration for the FLOWX Engine (using environment variables):
 
+<<<<<<< HEAD
 [Authorization & access roles](./flowx-engine-setup-guide.md#authorization--access-roles)
 
+=======
+![example configuration of roles for a regular user](../../platform-deep-dive/img/regular_user_roles.png)
+
+![example configuration of roles for an admin user](../../platform-deep-dive/img/admin_user_roles.png)
+>>>>>>> 135aea4 (new setup section + overview)
 
 ### Restricting process instance access based on business filters
 
