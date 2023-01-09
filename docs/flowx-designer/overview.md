@@ -177,6 +177,10 @@ Through the FLOWX Designer, you can edit generic parameters, and import or expor
 
 ![Generic Parameters](./img/designer_generic_params.png)
 
+:::caution
+The maximum length of an input value is 255 characters.
+:::
+
 ## Managing users access
 
 Access Management is used to administrate users, roles and groups, directly in FLOWX Designer. Access Management helps you to access the identity management solution (keycloak/[RH-SSO](https://access.redhat.com/products/red-hat-single-sign-on)) through its API, extracting all the necessary details. Access Management is based on user roles that need to be configured in the identity management solution.
