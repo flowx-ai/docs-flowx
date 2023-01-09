@@ -3,7 +3,7 @@
 ### Access to a process definition
 
 Setting up user role-based access on process definitions is done by configuring swimlanes on the process definition.
-
+§
 [Swimlanes](../../../platform-deep-dive/user-roles-management/swimlanes.md)
 
 By default, all process nodes belong to the same swimlane. If more swimlanes are needed, they can be edited in the process definition settings panel.
@@ -27,7 +27,7 @@ The defined roles will then be available to be used in the process definition se
 
 A **Default** swimlane comes with two default permissions assigned based on a specific role.
 
-![](../../platform-deep-dive/img/swimlane_default_roles.png)
+![](../../img/swimlane_default_roles.png)
 
 * **execute** - the user will be able to start process instances and run actions on them
 * **self-assign** - the user can assign a process instance to them and start working on it
@@ -44,7 +44,7 @@ Other **Permissions** can be added manually, depending on the needs of the user.
 * **hold** - user can mark the process instance as on hold (this operation is only accessible through the **Task management** plugin)
 * **unhold** - user can mark the process instance as not on hold (this operation is only accessible through the **Task management** plugin)
 
-![](../../platform-deep-dive/img/process_permissions.png)
+![](../../img/process_permissions.png)
 
 :::warning
 **< 2.11.0 platform release** - if no role is configured on an operation, no restrictions will be applied.
@@ -61,18 +61,14 @@ Valid for < 2.11.0 release version.
 
 Below you can find an example of configuration of roles for a regular user:
 
-![example configuration of roles for a regular user](../../platform-deep-dive/img/regular_user_roles.png)
+![example configuration of roles for a regular user](../../img/regular_user_roles.png)
 
-<<<<<<< HEAD:docs/platform-setup-guides/flowx-engine-setup-guide/configuring-access-roles-for-processes.md
-![example configuration of roles for an admin user](../../platform-deep-dive/img/admin_user_roles.png)
-=======
 #### Admin
 
 Below you can find an example of configuration of roles for an admin user:
 
 
 ![example configuration of roles for an admin user](../../img/admin_user_roles.png)
->>>>>>> dab6b1d (updated process roles + integrations diagrams):docs/platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide/configuring-access-roles-for-processes.md
 
 :::caution
 :exclamation: Starting with [**2.11.0**](/release-notes/v2.11.0-august-2022/) release, specific roles are needed, otherwise, restrictions will be applied.
