@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 ---
-# Start / End Node
+# Start/End nodes
 
 Let's go through all the options for configuring start and end nodes for a process definition.
 

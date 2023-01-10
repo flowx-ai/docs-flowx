@@ -43,7 +43,7 @@ Some actions can be set to run immediately after another action is performed. In
 
 [Business Rule Action](./node/task-node/business-rule-action/business-rule-action.md)
 
-### Action params
+### Action parameters
 
 **Action params** are used to set extra values for actions. They are stored as key/value pairs. For example, we can set a topic to use for sending outgoing messages or the message format to be sent to the front-end.
 

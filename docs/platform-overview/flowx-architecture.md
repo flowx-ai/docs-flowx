@@ -6,8 +6,8 @@ Let's go through the main components of the FLOWX.AI platform:
 * **FLOWX.AI Designer** - is a collaborative, no-code, web-based application development environment that enables users to create web and mobile applications without having to know how to code:
   * Develop processes based on [BPMN 2.0](./frameworks-and-standards/business-process-industry-standards/intro-to-bpmn)
   * Configure user interfaces for the processes for both generated and custom screens
-  * Define business rules and validations via [DMN](./frameworks-and-standards/business-process-industry-standards/intro-to-dmn) files or via the [MVEL](./frameworks-and-standards/business-process-industry-standards/intro-to-mvel), or other supported [scripting languages]
-  * Create [integration connectors] in a visual manner
+  * Define business rules and validations via [DMN](./frameworks-and-standards/business-process-industry-standards/intro-to-dmn) files or via the [MVEL](./frameworks-and-standards/business-process-industry-standards/intro-to-mvel), or other supported [scripting languages](../building-blocks/supported-scripts)
+  * Create [integration connectors](../platform-deep-dive/integrations) in a visual manner
   * Create data models for your applications
   * Adding new capabilities by using [plugins](../platform-deep-dive/plugins/plugins.md)
   * Manage [users access](../platform-deep-dive/user-roles-management/swimlanes.md)
@@ -15,7 +15,7 @@ Let's go through the main components of the FLOWX.AI platform:
 **Microservices:**
 
 * **FLOWX.AI Engine** - is the core of the platform. It runs the business processes, coordinating integrations and the UI
-* **FLOWX.AI Admin**  - used to store/edit process definitions (FLOWX.AI Admin Microservice connects to the same Postgres / Oracle database as the FLOWX.AI Engine)
+* **FLOWX.AI Admin** - used to store/edit process definitions (FLOWX.AI Admin Microservice connects to the same Postgres / Oracle database as the FLOWX.AI Engine)
 * **FLOWX.AI Scheduler** (part of the core components) - used to store/edit process definitions&#x20;
 * **FLOWX.AI Content Management** (part of the core components) - can be quickly deployed on the chosen infrastructure, preloaded with the needed taxonomies or contents, and then connected to the FLOWX Engine through Kafka events
 * **FLOWX.AI License Manager** (part of the core components) - is used for displaying reports regarding the usage of the platform in the FLOWX.AI Designer
@@ -34,7 +34,7 @@ You can use FLOWX.AI Engine to do the following:
 * create any type of external or internal facing application&#x20;
 * redesign business processes from analog, paper-based ones to fully digital and automated processes
 * manage integrations, so you can hook it up to existing CRMs, ERPs, KYC, transaction data and many more
-* to read process definitions (if it is connected to the same DB as FLOWX.AI Admin
+* to read process definitions (if it is connected to the same DB as FLOWX.AI Admin)
 
 [FLOWX.AI Engine](../platform-deep-dive/core-components/flowx-engine.md) runs the business processes, coordinating integrations and the omnichannel UI. It is a [Kafka-based](./frameworks-and-standards/event-driven-architecture-frameworks/intro-to-kafka-concepts) event-driven platform, that is able to orchestrate, generate and integrate with any type of legacy system, without expensive or risky upgrades.&#x20;
 
@@ -58,7 +58,7 @@ However, we do support custom CSS or custom screens. Because we’re aware each 
 [FLOWX.AI Designer](../flowx-designer/flowx-designer.md)
  
 
-### FLOWX.AI  SDKs
+### FLOWX.AI SDKs
 
 Also, we provide web and native mobile SDKs, so that every app you create is automatically an omnichannel one: it can be displayed in a browser, embedded in an internet banking interface, or in a mobile banking app. Or even deployed as a standalone app in Google Play or AppStore.
 
@@ -68,7 +68,7 @@ Unlike other no-code/full-code platforms which provide templates or building blo
 [Renderer SDKs](../platform-deep-dive/core-components/renderer-sdks/angular-renderer.md)
 
 
-### FLOWX.AI Content Management
+### FLOWX.AI content management
 
 This is another Java microservice that enables you to store and manage content. **The go-to place for all taxonomies.** The extension offers a convenient way of managing various content pieces such as lists or content translations. Anything that is under content management is managed by the [CMS backend service](../platform-deep-dive/platform-setup-guide/cms-setup-guide/cms-setup-guide.md). To store content, the service will use a MongoDB database (unstructured database). For example, each time you edit an [enumeration](../platform-deep-dive/core-components/core-extensions/content-management/enumerations.md), the FLOWX.AI Designer will send an HTTP request to the microservice.
 
@@ -84,15 +84,15 @@ If you need to **set a timer on** a process that needs to end after X days, you 
 When you start a process, the process must have an expiry date.
 :::
 
-Scheduler microservice communicates with the FLOWX.AI Engine through Kafka Event Queue => it creates a new message (write some data) then will send that message to Kafka (with the scheduler address) -> when the reminder time comes up, the scheduler will put back a new message in the Kafka layer with engine's destination (time + ID of the process).
+Scheduler microservice communicates with the FLOWX.AI Engine through Kafka Event Queue => it creates a new message (write some data) then will send that message to Kafka (with the scheduler address) → when the reminder time comes up, the scheduler will put back a new message in the Kafka layer with engine's destination (time + ID of the process).
 
 
 [Scheduler](../platform-deep-dive/core-components/core-extensions/scheduler.md)
 
 
-### Authorization & Session manager
+### Authorization & session manager
 
-We recommend Keycloak, a component that allows you to create users and store credentials. It can be also used for authorization - defining groups,  and assigning roles to users.
+We recommend Keycloak, a component that allows you to create users and store credentials. It can be also used for authorization - defining groups, and assigning roles to users.
 
 Every communication that comes from a consumer application, goes through a public entry point (API Gateway). To communicate with this component, the consumer application tries to start a process and the public entry point will check for authentication (Keycloak will send you a token) and the entry point validates it.
 

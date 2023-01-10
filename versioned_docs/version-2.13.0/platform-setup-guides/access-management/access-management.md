@@ -1,4 +1,4 @@
-# Access Management
+# Access management
 
 ### **What is Identity and Access Management?**
 
