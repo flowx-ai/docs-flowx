@@ -72,6 +72,10 @@ The following variables need to be set in order to set the datasource:
 You will need to make sure that the user, password, connection link and db name are configured correctly, otherwise, you will receive errors at start time.
 :::
 
+:::info
+The datasource is configured automatically via a liquibase script inside the engine. All updates will include migration scripts.
+:::
+
 ## Redis configuration 
 
 Redis configuration involves setting up the connection parameters, such as the host, port, username, and password. In some cases, additional configuration settings may be required, such as specifying the type of data store or setting up access control for data access.
@@ -79,6 +83,7 @@ Redis configuration involves setting up the connection parameters, such as the h
 * `SPRING_REDIS_HOST` - environment variable used to configure the hostname or IP address of a Redis server when [](https://docs.camunda.io/docs/components/concepts/workflow-patterns/)using Spring Data Redis
 * `SPRING_REDIS_PASSWORD` - environment variable is used to store the password used to authenticate with a Redis server, it is used to secure access to the Redis server and should be kept confidential
 * `REDIS_TTL` - environment variable is used to specify the maximum time-to-live (TTL) for a key in Redis, it is used to set a limit on how long a key can exist before it is automatically expired (Redis will delete the key after the specified TTL has expired)
+* `SPRING_CACHE_REDIS_KEY_PREFIX` - all the data produced by the service will be stored in Redis under this specific key
 
 ## Kubernetes related configs
 
@@ -155,14 +160,15 @@ The following Kafka-related configurations can be set by using environment varia
 
 * `SPRING_KAFKA_BOOTSTRAP_SERVERS` - environment variable used to configure the list of brokers to which the kafka client will connect, this is a comma-separated list of host and port pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster
 
-* `SPRING_KAFKA_CONSUMER_GROUP_ID `- environment variable is used to set the consumer group ID for the Kafka consumer, it is used to identify which consumer group the consumer belongs to and allows the Kafka broker to manage which messages are consumed by each consumer in the group
+* `SPRING_KAFKA_CONSUMER_GROUP_ID` - environment variable is used to set the consumer group ID for the Kafka consumer, it is used to identify which consumer group the consumer belongs to and allows the Kafka broker to manage which messages are consumed by each consumer in the group
 
 * `KAFKA_CONSUMER_THREADS` - environment variable used to control the number of threads that a Kafka consumer instance can use to consume messages from a cluster, it defines the number of threads that the consumer instance should use to poll for messages from the Kafka cluster
 
 * `KAFKA_AUTH_EXCEPTION_RETRY_INTERVAL` - environment variable used to set the interval at which Kafka clients should retry authentication exceptions (the interval between retries after AuthorizationException is thrown by KafkaConsumer)
 
-Each action available in the service corresponds to a Kafka event. A separate Kafka topic must be configured for each use case.
+* `KAFKA_MESSAGE_MAX_BYTES` - this is the largest size of the message that can be received by the broker from a producer.
 
+Each action available in the service corresponds to a Kafka event. A separate Kafka topic must be configured for each use case.
 
 :::caution
 FLOWX.AI Engine is listening for messages on topics with names of a certain pattern, make sure to use correct outgoing topic names when configuring the services.

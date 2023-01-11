@@ -51,59 +51,30 @@ A basic Postgres configuration:
 
 ## Dependencies
 
-### Redis server
-
-Redis cluster that will allow the engine to cache process definitions, compiled scripts and Kafka responses
-
-### Kafka cluster
-
-Kafka is the backbone of the Engine, all plugins and integrations are accessed using the Kafka broker.
-
-### Management Tools
+* **Redis server** - Redis cluster that will allow the engine to cache process definitions, compiled scripts and Kafka responses
+* **Kafka cluster** - kafka is the backbone of the Engine, all plugins and integrations are accessed using the Kafka broker
 
 Additional you can check details about (the platform will start without these components):
 
-* Logging via Elasticsearch
-* Monitoring
-* Tracing via Jaeger
+* [**Logging via Elasticsearch**](../platform-setup-guides.md#logging-via-elasticsearch)
+* **Monitoring**
+* [**Tracing via Jaeger**](../platform-setup-guides.md#tracing-via-jaeger)
 
 ## Configuration
 
-### Datasource configuration
+* [**Datasource configuration**](../platform-setup-guides.md#datasource-configuration)
+* [**Redis configuration**](../platform-setup-guides.md#redis-configuration)
+* [**Logging**](../platform-setup-guides.md#logging)
+* [**Authorization & access roles**](../platform-setup-guides.md#authorization--access-roles)
 
-To store process definition and the data about the process instances the engine uses a Postgres / Oracle database.
+[Configuring access roles for processes](configuring-access-roles-for-processes)
 
-The following configuration details need to be added using environment variables:
-
-`SPRING_DATASOURCE_URL`
-
-`SPRING_DATASOURCE_USERNAME`
-
-`SPRING_DATASOURCE_PASSWORD`
-
-You will need to make sure that the user, password, connection link and db name are configured correctly, otherwise, you will receive errors at start time.
-
-The datasource is configured automatically via a liquibase script inside the engine. All updates will include migration scripts.
-
-### Redis configuration
-
-The following values should be set with the corresponding Redis-related values.
-
-`SPRING_REDIS_HOST`
-
-`SPRING_REDIS_PASSWORD`
-
-`REDIS_TTL`
-
-All the data produced by the engine will be stored in Redis under a specific key. The name of the key can be configured using the environment variable:
-
-`SPRING_CACHE_REDIS_KEY_PREFIX`
 
 ### File upload size
 
 The maximum file size allowed for uploads can be set by using the `SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE` & `SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE` variables.
 
-### Kafka configuration
+### Kafka configurations
 
 Kafka handles all communication between the FLOWX Engine and external plugins and integrations. It is also used for notifying running process instances when certain events occur. 
 
@@ -125,6 +96,8 @@ The configuration related to consumers (group ids and thread numbers) can be con
 
 `KAFKA_CONSUMER_GROUP_ID_SCHEDULER_RUN_ACTION`
 
+`KAFKA_CONSUMER_GROUP_ID_SCHEDULER_ADVANCING`
+
 `KAFKA_CONSUMER_GROUP_ID_PROCESS_START`
 
 `KAFKA_CONSUMER_GROUP_ID_PROCESS_EXPIRE`
@@ -138,6 +111,8 @@ The configuration related to consumers (group ids and thread numbers) can be con
 `KAFKA_CONSUMER_THREADS_ADAPTERS`
 
 `KAFKA_CONSUMER_THREADS_SCHEDULER_RUN_ACTION`
+
+`KAFKA_CONSUMER_THREADS_SCHEDULER_ADVANCING`
 
 `KAFKA_CONSUMER_THREADS_PROCESS_START`
 
@@ -178,6 +153,8 @@ It is important to know that all the events that start with a configured pattern
 
 `KAFKA_TOPIC_PROCESS_SCHEDULE_IN_RUN_ACTION` - the topic name that the Engine listens on for requests to run scheduled actions
 
+`KAFKA_TOPIC_PROCESS_SCHEDULE_IN_ADVANCE` - 
+
 [Using the scheduler](../../core-components/core-extensions/scheduler.md#using-the-scheduler)
 
 #### **Topics related to the Search Data service**
@@ -190,7 +167,7 @@ It is important to know that all the events that start with a configured pattern
 
 `KAFKA_TOPIC_AUDIT_OUT` - topic key for sending audit logs. Default value: `ai.flowx.audit.log`
 
-#### **Processes can also be started by sending messages to a Kafka topic.**
+#### **Processes that can be started by sending messages to a Kafka topic**
 
 `KAFKA_TOPIC_PROCESS_START_IN` - the Engine listens on this topic for requests to start a new process instance
 
@@ -205,46 +182,6 @@ The engine also communicates with the frontend application via WebSockets. The s
 `WEB_SOCKET_SERVER_PORT`
 
 `WEB_SOCKET_SERVER_PATH`
-
-### Authorization & access roles
-
-The following variables need to be set in order to connect to the identity management platform:
-
-`SECURITY_OAUTH2_BASE_SERVER_URL`
-
-`SECURITY_OAUTH2_CLIENT_CLIENT_ID`
-
-`SECURITY_OAUTH2_REALM`
-
-
-[Configuring access roles for processes](configuring-access-roles-for-processes)
-
-
-### Debugging
-
-Advanced debugging features can be enabled. When this happens, snapshots of the process status will be taken after each action and can be later used for debugging purposes. This feature comes with an exponential increase in database usage so we suggest having the flag set to true on debugging media and false production ones.
-
-This feature can be enabled by setting the `FLOWX_DEBUG` environment variable to true.
-
-### Logging
-
-The following environment variables could be set in order to control log levels:
-
-`LOGGING_LEVEL_ROOT` - root spring boot microservice logs
-
-`LOGGING_LEVEL_APP` - app-level logs
-
-`LOGGING_LEVEL_PROCESS` - process instance orchestration-related logs, included in `LOGGING_LEVEL_APP`
-
-`LOGGING_LEVEL_MESSAGING`- Kafka events-related logs, included in `LOGGING_LEVEL_APP`
-
-`LOGGING_LEVEL_SOCKET` - WebSocket-related logs, included in `LOGGING_LEVEL_APP`
-
-`LOGGING_LEVEL_REDIS` - Redis-related logs
-
-`LOGGING_LEVEL_JAEGER` - Jaeger tracing related logs
-
-`LOGGING_LEVEL_OAUTH2_EXC` - specific auth exception logs, included in `LOGGING_LEVEL_APP`
 
 ### Advancing Controller
 
