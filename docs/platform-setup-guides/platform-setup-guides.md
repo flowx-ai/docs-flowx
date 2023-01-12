@@ -27,6 +27,8 @@ The following variables need to be set in order to connect to the identity manag
 
 * `SECURITY_OAUTH2_CLIENT_CLIENT_ID` - a unique identifier for a client application that is registered with the OAuth 2.0 Authorization Server, this is used to authenticate the client application when it attempts to access resources on behalf of a user
 
+* `SECURITY_OAUTH2_CLIENT_CLIENT_SECRET` - secret key that is used to authenticate requests made by an authorization client
+
 * `SECURITY_OAUTH2_REALM` - security configuration env var in the Spring Security OAuth2 framework, it is used to specify the realm name used when authenticating with OAuth2 providers
 
 [Access Management](./access-management)
@@ -123,31 +125,6 @@ The following environment variables could be set in order to control log levels:
 
 * `LOGGING_LEVEL_OAUTH2_EXC` - specific auth exception logs, included in `LOGGING_LEVEL_APP`
 
-### Logging via Elasticsearch
-
-Logging via elasticSearch is a way of collecting, storing, and analyzing log data from various sources in a distributed, searchable repository.
-
-* `SPRING_ELASTICSEARCH_REST_URIS` - environment variable that specifies the URLs of the Elasticsearch nodes to connect to, it is used by the Spring Data Elasticsearch library to connect to an Elasticsearch cluster
-
-* `SPRING_ELASTICSEARCH_REST_DISABLESSL` - environment variable used to enable or disable SSL verification for the Elasticsearch Rest client, when set to true, SSL verification will be disabled and the client will trust all certificates
-
-* `SPRING_ELASTICSEARCH_INDEX_SETTINGS_NAME` - environment variable used to configure the index settings name for the Elasticsearch index being used by the Spring Data Elasticsearch project, it can be used to specify the name of the settings file to use when creating the index
-
-* `SPRING_ELASTICSEARCH_REST_USERNAME` - environment variable (that represents the user name) used to authenticate with an Elasticsearch server when using the Spring Data Elasticsearch Rest client
-
-* `SPRING_ELASTICSEARCH_REST_PASSWORD` - environment variable used to specify the password for an Elasticsearch cluster when using the Spring Data Elasticsearch Rest Client, it is used to authenticate with the cluster and ensure that only authorized users can access the data stored in the cluster
-
-
-## Third-party components
-
-Third-party components are software components or libraries that are not part of FLOWX.AI but are instead created by another company or individual and used in a development project. 
-
-These components can range from databases and operating systems to user interface components and libraries that provide support for a specific feature or task.
-
-Third party components are components such as libraries, frameworks, APIs, etc.
-
-[Third-party components](../platform-deep-dive/third-party-components.md)
-
 ### License model
 
 A license model is a set of rules and regulations governing how software can be used, distributed, and modified. It also outlines the rights and responsibilities of the software user and the software developer. Common license models include open source, freeware, shareware, and commercial software.
@@ -174,3 +151,12 @@ Each action available in the service corresponds to a Kafka event. A separate Ka
 FLOWX.AI Engine is listening for messages on topics with names of a certain pattern, make sure to use correct outgoing topic names when configuring the services.
 :::
 
+## Third-party components
+
+Third-party components are software components or libraries that are not part of FLOWX.AI but are instead created by another company or individual and used in a development project. 
+
+These components can range from databases and operating systems to user interface components and libraries that provide support for a specific feature or task.
+
+Third party components are components such as libraries, frameworks, APIs, etc.
+
+[Third-party components](../platform-deep-dive/third-party-components.md)
