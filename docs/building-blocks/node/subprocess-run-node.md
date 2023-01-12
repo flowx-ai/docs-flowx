@@ -2,7 +2,7 @@
 sidebar_position: 8
 ---
 
-# Subprocess run node type
+# Subprocess run node
 
 :::info
 There might be cases when extra functionality is needed on certain nodes.

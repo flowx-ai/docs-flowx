@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# UI Component types
+# UI component types
 
 Different UI component types can be configured using UI Designer. The components can be configured only using [user task](../../node/user-task-node/user-task-node.md) nodes or [milestone](../../node/milestone-node.md) nodes.
 

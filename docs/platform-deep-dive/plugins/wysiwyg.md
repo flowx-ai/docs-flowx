@@ -1,4 +1,4 @@
-# WYSIWYG Editor
+# WYSIWYG editor
 
 FLOWX Designer's WYSIWYG ( **"What You See Is What You Get**") editor enables you to create and modify [notification](./custom-plugins/notifications-plugin/notifications-plugin.md) and [document](./custom-plugins/documents-plugin/documents-plugin.md) templates without the need for complicated coding from the developers. WYSIWYG editors make the creation/editing of any type of document or notification easier for the end-user. 
 

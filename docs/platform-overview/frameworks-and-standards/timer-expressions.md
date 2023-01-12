@@ -1,4 +1,4 @@
-# Timer Expressions
+# Timer expressions
 
 When working with FLOWX.AI components, there are multiple scenarios in which timer expressions are needed.
 

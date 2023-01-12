@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# Exclusive Gateway node
+# Exclusive Gateway
 
 Flow decisions can be configured using an Exclusive Gateway. Using this node will make `if condition then go to this node` constructions are available.
 

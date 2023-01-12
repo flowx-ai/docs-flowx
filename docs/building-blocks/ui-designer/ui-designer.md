@@ -68,7 +68,7 @@ For example, for a [card](./ui-component-types/root-components/card.md) element 
 
 </div>
 
-#### Tree View
+#### Tree view
 
 This panel is used for displaying component hierarchy. Clicking on a specific component in the component tree will highlight the selection in the editor.
 

@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# UI Actions
+# UI actions
 
 Multiple UI elements can be linked to an [action](../actions.md) via a UI Action. If the action is just a method to interact with the process, the UI Action adds information about how that UI should react. For example, should a loader appear after executing the action, should a modal be dismissed, or if some default data should be sent back to the process.
 
@@ -16,7 +16,7 @@ There are two main types of UI Actions:
    - [Process UI Actions](#process-ui-actions)
    - [External UI Actions](#external-ui-actions)
 
-## Process UI Actions
+## Process UI actions
 
 This is a UI Action that describes how a [**Button**](../ui-designer/ui-component-types/buttons.md) (generated or custom) should interact with a process Manual action.
 
@@ -41,7 +41,7 @@ When this prerequisite is ready we can define the UI Action.
 UI Actions and Actions should be configured on the same node.
 :::
 
-### UI Action configuration example
+### UI action configuration example
 
 Multiple configurations are available - **ACTION** type example:
 
@@ -61,7 +61,7 @@ Multiple configurations are available - **ACTION** type example:
 
 </div>
 
-## UI Actions elements
+## UI actions elements
 
 ### Events
 
@@ -83,7 +83,7 @@ The **action type** dropdown will be pre-filled with the following UI action typ
 * UPLOAD - used to create an un upload action
 * [EXTERNAL](ui-actions.md#external-ui-actions) - used to create an action that will open a link in a new tab
 
-## External UI Actions
+## External UI actions
 
 Used to create an action that will open a link in a new tab.
 
