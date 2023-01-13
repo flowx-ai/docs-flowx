@@ -33,32 +33,20 @@ The following variables need to be set in order to connect to the identity manag
 
 [Access Management](./access-management)
 
-## Tracing via Jaeger
-
-Tracing via Jaeger involves collecting timing data from the components in a distributed application. This allows you to better identify bottlenecks and latency issues.
-
-The following FLOWX.AI services use Jaeger tracing:
-
-1. [**scheduler-core**](./scheduler-setup-guide.md)
-2. [**customer-management-plugin**](../platform-deep-dive/plugins/plugins-setup-guide/customer-management-plugin-configuration.md)
-3. [**document-plugin**](../platform-deep-dive/plugins/plugins-setup-guide/documents-plugin-setup)
-4. [**notification-plugin**](../platform-deep-dive/plugins/plugins-setup-guide/notifications-plugin-setup)
-5. [**process-engine**](./flowx-engine-setup-guide)
-
-Environment variables to be set for tracing:
-
-* `APPLICATION_JAEGER_ENABLED` - environment variable used to enable or disable Jaeger tracing
-
-* `APPLICATION_JAEGER_PREFIX` - environment variable used to change the name in the Jaeger dashboard 
-
 ## Datasource configuration
 
 Datasource configuration is the process of configuring a data source, such as a database, file, or web service, so that an application can connect to it and use the data. This typically involves setting up the connection parameters, such as the host, port, username, and password. 
 
 In some cases, additional configuration settings may be required, such as specifying the type of data source (e.g. Oracle, MySQL, etc.) or setting up access control for data access.
 
+Environment variables are more secure than hard-coding credentials in the application code and make it easier to update data source parameters without having to modify the application code.
+
 :::caution
 Some microservices ([**Admin**](../flowx-designer/designer-setup-guide) microservice, for example, connects to the same Postgres / Oracle database as the [**Engine**](./flowx-engine-setup-guide)).
+:::
+
+:::info
+Depending on the data source type, various parameters may need to be configured. For example, if connecting to an Oracle database, the driver class name, and the database schema must be provided. For MongoDB, the URI is needed.
 :::
 
 The following variables need to be set in order to set the datasource:
@@ -67,8 +55,14 @@ The following variables need to be set in order to set the datasource:
 
 * `SPRING_DATASOURCE_USERNAME` - environment variable used to set the username for the database connection, this can be used to connect to a database instance
 
-
 * `SPRING_DATASOURCE_PASSWORD` - environment variable used to store the password for the database connection, this can be used to secure access to the database and ensure that only authorized users have access to the data
+
+* `SPRING_DATASOURCE_DRIVERCLASSNAME` (❗️only for Oracle DBs) - environment variable used to set the class name of the JDBC driver that the Spring DataSource will use to connect to the database
+
+
+* `SPRING_JPA_PROPERTIES_HIBERNATE_DEFAULTSCHEMA` (❗️only for Oracle DBs) - environment variable used to overwrite the name of the database schema
+
+* `SPRING_DATA_MONGODB_URI` (❗️only for MongoDB) - environment variable used to provide the connection string for a MongoDB database that is used with, this connection string provides the host, port, database name, user credentials, and other configuration details for the MongoDB server
 
 :::caution
 You will need to make sure that the user, password, connection link and db name are configured correctly, otherwise, you will receive errors at start time.
@@ -76,6 +70,31 @@ You will need to make sure that the user, password, connection link and db name 
 
 :::info
 The datasource is configured automatically via a liquibase script inside the engine. All updates will include migration scripts.
+:::
+
+
+## Kafka
+
+The following Kafka-related configurations can be set by using environment variables:
+
+* `SPRING_KAFKA_BOOTSTRAP_SERVERS` - environment variable used to configure the list of brokers to which the kafka client will connect, this is a comma-separated list of host and port pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster
+
+* `SPRING_KAFKA_CONSUMER_GROUP_ID` - environment variable is used to set the consumer group ID for the Kafka consumer, it is used to identify which consumer group the consumer belongs to and allows the Kafka broker to manage which messages are consumed by each consumer in the group
+
+:::info
+`SPRING_KAFKA_CONSUMER_GROUP_ID` - might be different for the services that have the group id separated in topics, also thread numbers.
+:::
+
+* `KAFKA_CONSUMER_THREADS` - environment variable used to control the number of threads that a Kafka consumer instance can use to consume messages from a cluster, it defines the number of threads that the consumer instance should use to poll for messages from the Kafka cluster
+
+* `KAFKA_AUTH_EXCEPTION_RETRY_INTERVAL` - environment variable used to set the interval at which Kafka clients should retry authentication exceptions (the interval between retries after AuthorizationException is thrown by KafkaConsumer)
+
+* `KAFKA_MESSAGE_MAX_BYTES` - this is the largest size of the message that can be received by the broker from a producer.
+
+Each action available in the service corresponds to a Kafka event. A separate Kafka topic must be configured for each use case.
+
+:::caution
+FLOWX.AI Engine is listening for messages on topics with names of a certain pattern, make sure to use correct outgoing topic names when configuring the services.
 :::
 
 ## Redis configuration 
@@ -113,43 +132,30 @@ The following environment variables could be set in order to control log levels:
 
 * `LOGGING_LEVEL_APP` - controls the verbosity of the application's logs and how much information is recorded (app level logs)
 
-* `LOGGING_LEVEL_PROCESS` - process instance orchestration-related logs, included in `LOGGING_LEVEL_APP`
+## Tracing via Jaeger
 
-* `LOGGING_LEVEL_MESSAGING` - Kafka events-related logs, included in `LOGGING_LEVEL_APP`
+Tracing via Jaeger involves collecting timing data from the components in a distributed application. This allows you to better identify bottlenecks and latency issues.
 
-* `LOGGING_LEVEL_SOCKET` - WebSocket-related logs, included in `LOGGING_LEVEL_APP`
+The following FLOWX.AI services use Jaeger tracing:
 
-* `LOGGING_LEVEL_REDIS` - Redis-related logs
+1. [**scheduler-core**](./scheduler-setup-guide.md)
+2. [**customer-management-plugin**](../platform-deep-dive/plugins/plugins-setup-guide/customer-management-plugin-configuration.md)
+3. [**document-plugin**](../platform-deep-dive/plugins/plugins-setup-guide/documents-plugin-setup)
+4. [**notification-plugin**](../platform-deep-dive/plugins/plugins-setup-guide/notifications-plugin-setup)
+5. [**process-engine**](./flowx-engine-setup-guide)
 
-* `LOGGING_LEVEL_JAEGER` - Jaeger tracing related logs
+Environment variables to be set for tracing:
 
-* `LOGGING_LEVEL_OAUTH2_EXC` - specific auth exception logs, included in `LOGGING_LEVEL_APP`
+* `APPLICATION_JAEGER_ENABLED` - environment variable used to enable or disable Jaeger tracing
 
-### License model
+* `APPLICATION_JAEGER_PREFIX` - environment variable used to change the name in the Jaeger dashboard 
+
+## License model
 
 A license model is a set of rules and regulations governing how software can be used, distributed, and modified. It also outlines the rights and responsibilities of the software user and the software developer. Common license models include open source, freeware, shareware, and commercial software.
 
 Most of the [**third-party components used by FLOWX.AI**](../platform-deep-dive/third-party-components) are under [**Apache License 2.0**](https://www.apache.org/licenses/LICENSE-2.0) source code.
 
-## Kafka
-
-The following Kafka-related configurations can be set by using environment variables:
-
-* `SPRING_KAFKA_BOOTSTRAP_SERVERS` - environment variable used to configure the list of brokers to which the kafka client will connect, this is a comma-separated list of host and port pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster
-
-* `SPRING_KAFKA_CONSUMER_GROUP_ID` - environment variable is used to set the consumer group ID for the Kafka consumer, it is used to identify which consumer group the consumer belongs to and allows the Kafka broker to manage which messages are consumed by each consumer in the group
-
-* `KAFKA_CONSUMER_THREADS` - environment variable used to control the number of threads that a Kafka consumer instance can use to consume messages from a cluster, it defines the number of threads that the consumer instance should use to poll for messages from the Kafka cluster
-
-* `KAFKA_AUTH_EXCEPTION_RETRY_INTERVAL` - environment variable used to set the interval at which Kafka clients should retry authentication exceptions (the interval between retries after AuthorizationException is thrown by KafkaConsumer)
-
-* `KAFKA_MESSAGE_MAX_BYTES` - this is the largest size of the message that can be received by the broker from a producer.
-
-Each action available in the service corresponds to a Kafka event. A separate Kafka topic must be configured for each use case.
-
-:::caution
-FLOWX.AI Engine is listening for messages on topics with names of a certain pattern, make sure to use correct outgoing topic names when configuring the services.
-:::
 
 ## Third-party components
 
