@@ -1,22 +1,32 @@
 # License engine setup guide
 
-The service is available as a docker image.
+## Introduction
+
+The License Engine is a service that can be set up using a Docker image. This guide will walk you through the process of setting up the License service and configuring it to meet your needs.
+
+## Infrastructure prerequisites
+
+* **DB instance** 
+* **Kafka** - version 2.8 or higher
+* [**FLOWX.AI Designer**](../../flowx-designer/designer-setup-guide/designer-setup-guide.md)
+
+## Dependencies
 
 It has the following dependencies:
 
-* a [postgres ](https://www.mongodb.com/2)database
-* it needs to be able to connect to the same Kafka instance as the one used by the engine
-* requests made to the License engine should be routed from the FLOWX Designer using NGINX
+* **Postgres database** - the License Engine uses a Postgres database to store license-related data. The database should be set up with basic configuration properties specified in the helm values.yaml file, these properties include the name of the database, username and password, and resources such as CPU and memory limits
 
+* **Connection to the same Kafka instance as the engine** - the License Engine needs to be able to communicate with the FLOWX.AI Engine using Kafka; the Kafka instance used by the engine should be the same one used by the License Engine
 
+* **Routing of requests through NGINX** - requests made to the License Engine should be routed through the FLOWX Designer using NGINX, the configuration for the Designer should be updated to also expose the REST API of the License Engine by adding a path in `flowx-admin-plugins-subpaths`
+
+## Configuration
 
 The service comes with most of the needed configuration properties filled in, but there are a few that need to be set up using some custom environment variables.
 
-## Dependencies <a href="#2939ce6e-c291-40c2-b3d6-1e789b1617d7" id="2939ce6e-c291-40c2-b3d6-1e789b1617d7"></a>
+### Configuring Postgres database
 
-### Postgres database
-
-Basic Postgres configuration - helm values.yaml
+The basic Postgres configuration is specified in the helm values.yaml file. This file includes properties such as the name of the database, username and password, and resources such as CPU and memory limits.
 
 ```yaml
   licencedb:
@@ -25,7 +35,7 @@ Basic Postgres configuration - helm values.yaml
       enabled: true
       service:
         annotations:
-          prometheus.io/port: {{phrometeus port}}
+          prometheus.io/port: {{prometheus port}}
           prometheus.io/scrape: "true"
         type: ClusterIP
       serviceMonitor:
@@ -51,67 +61,60 @@ Basic Postgres configuration - helm values.yaml
         memory: 512Mi
 ```
 
-****
-
-## Configuration <a href="#bad24571-ff23-4ec3-83d9-8a2ace74a6b4" id="bad24571-ff23-4ec3-83d9-8a2ace74a6b4"></a>
-
-### Authorization configuration & access roles
+### Configuring authorization & access roles
 
 The following variables need to be set in order to connect to the identity management platform:
 
-`SECURITY_OAUTH2_BASE_SERVER_URL`
+* `SECURITY_OAUTH2_BASE_SERVER_URL`
 
-`SECURITY_OAUTH2_CLIENT_CLIENT_ID`
+* `SECURITY_OAUTH2_CLIENT_CLIENT_ID`
 
-`SECURITY_OAUTH2_REALM`
+* `SECURITY_OAUTH2_REALM`
 
 
 [Configuring access roles (old)](configuring-access-roles-old.md)
 
 
-### License datasource configuration
+### Configuring License datasource
 
-To store license related data, the license engine uses a Postgres / Oracle database.
+The License Engine uses a Postgres/Oracle database to store license-related data. The following environment variables need to be set in order to connect to the database:
 
-The following configuration details need to be added in configuration files or overwritten using environment variables:
+* `SPRING_DATASOURCE_JDBCURL`
 
-`SPRING_DATASOURCE_JDBCURL`
+* `SPRING_DATASOURCE_USERNAME`
 
-`SPRING_DATASOURCE_USERNAME`
+* `SPRING_DATASOURCE_PASSWORD`
 
-`SPRING_DATASOURCE_PASSWORD`
-
-### Engine datasource configuration
+### Configuring Engine datasource
 
 The License service needs to retrieve the data for a process instance from the engine database. So it needs to have all the correct information to connect to the engine database.
 
 The following configuration details need to be added in configuration files or overwritten using environment variables:
 
-`ENGINE_DATASOURCE_JDBCURL`
+* `ENGINE_DATASOURCE_JDBCURL`
 
-`ENGINE_DATASOURCE_USERNAME`
+* `ENGINE_DATASOURCE_USERNAME`
 
-`ENGINE_DATASOURCE_PASSWORD`
+* `ENGINE_DATASOURCE_PASSWORD`
 
-### Kafka configuration
+### Configuring Kafka
 
-Kafka handles all communication between the License Engine and the FLOWX Engine.&#x20;
+Kafka handles all communication between the License Engine and the FLOWX Engine. Both a producer and a consumer must be configured. The following environment variables need to be set:
 
-Both a producer and a consumer must be configured. The following Kafka related configurations can be added in configuration files or overwritten using environment variables:
 
-`SPRING_KAFKA_BOOTSTRAP_SERVERS` - address of the Kafka server
+* `SPRING_KAFKA_BOOTSTRAP_SERVERS` - address of the Kafka server
 
-`SPRING_KAFKA_CONSUMER_GROUP_ID` - group of consumers
+* `SPRING_KAFKA_CONSUMER_GROUP_ID` - group of consumers
 
-`KAFKA_CONSUMER_THREADS` - the number of Kafka consumer threads
+* `KAFKA_CONSUMER_THREADS` - the number of Kafka consumer threads
 
-`KAFKA_AUTH_EXCEPTION_RETRY_INTERVAL` - the interval between retries after `AuthorizationException` is thrown by `KafkaConsumer`
+* `KAFKA_AUTH_EXCEPTION_RETRY_INTERVAL` - the interval between retries after `AuthorizationException` is thrown by `KafkaConsumer`
 
 :::caution
-The configured license topic `KAFKA_TOPIC`\_`LICENSE_IN` should be the same as the `KAFKA_TOPIC_LICENSE_OUT` from the engine&#x20;
+The configured license topic `KAFKA_TOPIC`\_`LICENSE_IN` should be the same as the `KAFKA_TOPIC_LICENSE_OUT` from the engine
 :::
 
-### Logging
+### Configuring logging
 
 The following environment variables could be set in order to control log levels:
 
@@ -119,11 +122,11 @@ The following environment variables could be set in order to control log levels:
 
 `LOGGING_LEVEL_APP` - app level logs
 
-### NGINX
+### Configuring NGINX
 
-The [configuration for the Flowx Designer](../../../flowx-designer/designer-setup-guide/#nginx) should be updated to also expose the REST API of the license engine by adding a path in `flowx-admin-plugins-subpaths`
+The [configuration for the Flowx Designer](../../flowx-designer/designer-setup-guide/designer-setup-guide.md#nginx) should be updated to also expose the REST API of the license engine by adding a path in `flowx-admin-plugins-subpaths`
 
-```
+```yaml
       - path: /license(/|$)(.*)
         backend:
           serviceName: license-core

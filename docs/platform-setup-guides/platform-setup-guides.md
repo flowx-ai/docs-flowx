@@ -106,19 +106,6 @@ Redis configuration involves setting up the connection parameters, such as the h
 * `REDIS_TTL` - environment variable is used to specify the maximum time-to-live (TTL) for a key in Redis, it is used to set a limit on how long a key can exist before it is automatically expired (Redis will delete the key after the specified TTL has expired)
 * `SPRING_CACHE_REDIS_KEY_PREFIX` - all the data produced by the service will be stored in Redis under this specific key
 
-## Kubernetes related configs
-
-Kubernetes-related configs might include the following configuration:
-
-* Pod configuration
-* Service configuration
-* Deployment configuration
-* Networking configuration
-* Storage configuration
-* Security configuration
-* Ingress configuration
-* Logging configuration
-* Metrics configuration
 
 ## Debugging
 

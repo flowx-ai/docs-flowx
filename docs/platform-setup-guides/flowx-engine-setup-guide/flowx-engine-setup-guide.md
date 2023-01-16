@@ -6,18 +6,23 @@ sidebar_position: 2
 
 ## Introduction
 
-This guide will walk you through the process of setting up the engine and configuring it to meet your needs.
+This guide will provide instructions on how to set up and configure the FLOWX.AI Engine to meet your specific requirements.
 
 ## Infrastructure prerequisites
 
 The FLOWX.AI Engine requires the following components to be set up before it can be started:
 
+* **Docker engine** - version 17.06 or higher
+* **Kafka** - version 2.8 or higher
+* **Elasticsearch** - version 7.11.0 or higher
+* **DB instance** 
+
+# Dependencies
+
 * [**Database**](#database---postgres--oracle)
 * [**Redis server**](../platform-setup-guides.md#redis-configuration)
 * [**Kafka**](#kafka-configuration)
 * [**Logging**](../platform-setup-guides.md#logging)
-
-### Database - Postgres / Oracle
 
 For Microservices architecture, some Microservices holds their data individually using separate Databases.
 
@@ -62,12 +67,7 @@ A basic Postgres configuration can be set up using a helm values.yaml file as it
 
 * **Redis server** - a Redis cluster is required for the engine to cache process definitions, compiled scripts, and Kafka responses
 * **Kafka cluster** - Kafka is the backbone of the engine and all plugins and integrations are accessed via the Kafka broker
-
-Additional you can check details about (the platform will start without these components):
-
-* [**Logging via Elasticsearch**](../platform-setup-guides.md#logging-via-elasticsearch)
-* **Monitoring**
-* [**Tracing via Jaeger**](../platform-setup-guides.md#tracing-via-jaeger)
+* **Additional dependencies** - details about how to set up logging via Elasticsearch, monitoring, and tracing via Jaeger, can be found [**here**](../platform-setup-guides.md)
 
 ## Configuration
 
@@ -75,11 +75,10 @@ Additional you can check details about (the platform will start without these co
 * [**Redis configuration**](../platform-setup-guides.md#redis-configuration)
 * [**Logging**](../platform-setup-guides.md#logging)
 * [**Authorization & access roles**](../platform-setup-guides.md#authorization--access-roles)
-* [**File upload size**](#file-upload-size)
+* [**Configuring access roles for processes**](configuring-access-roles-for-processes)
+* [**Kafka configuration**](#kafka-configuration)
 
-[Configuring access roles for processes](configuring-access-roles-for-processes)
-
-### Kafka configuration
+### Configuring Kafka
 
 Kafka handles all communication between the FLOWX Engine and external plugins and integrations. It is also used for notifying running process instances when certain events occur. 
 
@@ -147,7 +146,7 @@ It is important to know that all the events that start with a configured pattern
 #### **Topics related to the scheduler extension**
 
 
-[Scheduler](../../core-components/core-extensions/scheduler.md)
+[Scheduler](../../platform-deep-dive/core-components/core-extensions/scheduler.md)
 
 * `KAFKA_TOPIC_PROCESS_EXPIRE_IN` - the topic name that the Engine listens on for requests to expire processes
 
@@ -159,8 +158,7 @@ It is important to know that all the events that start with a configured pattern
 
 * `KAFKA_TOPIC_PROCESS_SCHEDULE_IN_ADVANCE` - 
 
-[Using the scheduler](../../core-components/core-extensions/scheduler.md#using-the-scheduler)
-
+[Using the scheduler](../../platform-deep-dive/core-components/core-extensions/scheduler.md#using-the-scheduler)
 #### **Topics related to the Search Data service**
 
 * `KAFKA_TOPIC_DATA_SEARCH_IN` - the topic name that the Engine listens on for requests to search for processes
@@ -177,24 +175,28 @@ It is important to know that all the events that start with a configured pattern
 
 * `KAFKA_TOPIC_PROCESS_START_OUT` - used for sending out the reply after starting a new process instance
 
-### Web socket configuration
+### Configuring WebSockets
 
-The engine also communicates with the frontend application via WebSockets. The socket server connection details also need to be configured:
+The engine communicates with the frontend application via WebSockets. The following environment variables need to be configured for the socket server connection details:
 
-* `WEB_SOCKET_SERVER_URL_EXTERNAL`
+* `WEB_SOCKET_SERVER_URL_EXTERNAL` - the external URL of the WebSocket server
 
-* `WEB_SOCKET_SERVER_PORT`
+* `WEB_SOCKET_SERVER_PORT` - the port on which the WebSocket server is running
 
-* `WEB_SOCKET_SERVER_PATH`
+* `WEB_SOCKET_SERVER_PATH` - the WebSocket server path
 
-### File upload size
+### Configuring file upload size
 
-The maximum file size allowed for uploads can be set by using the `SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE` & `SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE` variables.
+The maximum file size allowed for uploads can be set by using the following environment variables:
+
+* `SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE` - maximum file size allowed for uploads
+
+* `SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE` - maximum request size allowed for uploads
 
 
-### Advancing Controller
+### Configuring Advancing controller
 
-To use advancing controller, the following env vars are needed for `process-engine` to connect to Advancing Postgres DB.
+To use advancing controller, the following env vars are needed for `process-engine` to connect to Advancing Postgres DB:
 
 * `ADVANCING_DATASOURCE_JDBC_URL` - environment variable used to configure a JDBC (Java database connectivity) data source, it specifies the connection URL for a particular database, including the server, port, database name, and any other connection parameters necessary
 

@@ -1,52 +1,66 @@
-# Search data service setup guide
+# Data search service setup guide
 
-The service is available as a docker image.
+
+## Introduction
+
+This guide will walk you through the process of setting up the Search Data service using a Docker image.
+
+## Infrastructure prerequisites
+
+Before proceeding with the setup, ensure that the following components have been set up:
+
+* **Redis** - version 6.0 or higher 
+* **Kafka** - version 2.8 or higher
+* **Elasticsearch** - version 7.11.0 or higher
 
 ## Dependencies
 
-### Kafka configuration
+* **Kafka** - used for communication with the engine
+* **Elasticsearch** - used for indexing and searching data
+* **Redis** - used for caching
 
-The following Kafka related configurations can be set by using environment variables:
+## Configuration
 
-`SPRING_KAFKA_BOOTSTRAP_SERVERS` - address of the Kafka server
+### Configuring Kafka
 
-`KAFKA_TOPIC_DATA_SEARCH_IN` 
+Set the following Kafka-related configurations using environment variables:
 
-`KAFKA_TOPIC_DATA_SEARCH_OUT` 
+* `SPRING_KAFKA_BOOTSTRAP_SERVERS` - address of the Kafka server
 
-`KAFKA_CONSUMER_THREADS` - the number of Kafka consumer threads
+* `KAFKA_TOPIC_DATA_SEARCH_IN` 
 
-### Elastic search
+* `KAFKA_TOPIC_DATA_SEARCH_OUT` 
 
-`SPRING_ELASTICSEARCH_REST_URIS` 
+* `KAFKA_CONSUMER_THREADS` - the number of Kafka consumer threads
 
-`SPRING_ELASTICSEARCH_REST_DISABLESSL` 
+### Configuring Elasticsearch
 
-`SPRING_ELASTICSEARCH_REST_USERNAME`
+Set the following Elasticsearch-related configurations using environment variables:
 
-`SPRING_ELASTICSEARCH_REST_PASSWORD` 
+* `SPRING_ELASTICSEARCH_REST_URIS` 
+
+* `SPRING_ELASTICSEARCH_REST_DISABLESSL` 
+
+* `SPRING_ELASTICSEARCH_REST_USERNAME`
+
+* `SPRING_ELASTICSEARCH_REST_PASSWORD` 
 
 
-### Authorization configuration & access roles
+### Configuring authorization & access roles
 
-The following variables need to be set in order to connect to the identity management platform:
+Set the following environment variables to connect to the identity management platform:
 
-`SECURITY_OAUTH2_BASE_SERVER_URL`
+* `SECURITY_OAUTH2_BASE_SERVER_URL`
 
-`SECURITY_OAUTH2_CLIENT_CLIENT_ID`
+* `SECURITY_OAUTH2_CLIENT_CLIENT_ID`
 
-`SECURITY_OAUTH2_REALM`
+* `SECURITY_OAUTH2_REALM`
 
-### Logging
+### Configuring logging
 
 The following environment variables could be set in order to control log levels:
 
-`LOGGING_CONFIG_FILE`
+* `LOGGING_LEVEL_ROOT` - for root spring boot microservice logs
 
-`LOGGING_LEVEL_ROOT` - root spring boot microservice logs
+* `LOGGING_LEVEL_APP` - for app level logs
 
-`LOGGING_LEVEL_APP` - app level logs
-
-### Platform health
-
-`MANAGEMENT_HEALTH_KAFKA_ENABLED` - to display the status of the component in the **Platform status** tab

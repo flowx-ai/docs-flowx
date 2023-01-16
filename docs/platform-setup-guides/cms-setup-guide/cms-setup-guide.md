@@ -1,20 +1,35 @@
 # CMS setup guide
 
-The service is available as a docker image.
+## Introduction
 
-It has the following dependencies:
+The CMS service is a microservice that allows managing taxonomies and contents. It is available as a Docker image and is designed to make it easy to edit and analyze content. This guide will walk you through the process of setting up the service and configuring it to meet your needs.
 
-* a [mongodb](https://www.mongodb.com/2) database
-* it needs to be able to connect to the same Kafka instance as the one used by the engine
-* a [redis](https://redis.io/) instance for caching
+## Infrastructure prerequisites
 
+The CMS service requires the following components to be set up before it can be started:
+
+* **Docker engine** - version 17.06 or higher
+* **MongoDB** - version 4.4 or higher for storing taxonomies and contents
+* **Redis** - version 6.0 or higher
+* **Kafka** - version 2.8 or higher
+* **Elastisearch** - version 7.11.0 or higher
+
+:::info
 The service comes with most of the needed configuration properties filled in, but there are a few that need to be set up using some custom environment variables.
+:::
 
-## Dependencies <a href="#2939ce6e-c291-40c2-b3d6-1e789b1617d7" id="2939ce6e-c291-40c2-b3d6-1e789b1617d7"></a>
+## Dependencies
 
-### **Mongo database**
+* [**DB instance**](#mongodb-database)
+* [**Authorization & access roles**](#configuring-authorization--access-roles)
+* [**Redis**](#configuring-redis)
+* [**Kafka**](#configuring-kafka)
 
-Basic Mongo configuration - helm values.yaml
+## Configuration
+
+### MongoDB database
+
+A basic MongoDB configuration for the CMS service can be set up using a helm values.yaml file as follows:
 
 ```yaml
 cms-mdb:
@@ -42,76 +57,80 @@ cms-mdb:
     usePassword: true
 ```
 
-### **Redis server** <a href="#faa668e8-966f-468a-8009-f4e903e01d14" id="faa668e8-966f-468a-8009-f4e903e01d14"></a>
 
-The service can use the [Redis component](../../../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-redis.md) already deployed for the engine.
 
 ## Configuration <a href="#bad24571-ff23-4ec3-83d9-8a2ace74a6b4" id="bad24571-ff23-4ec3-83d9-8a2ace74a6b4"></a>
 
-### Authorization configuration
+### Configuring authorization & access roles
 
-The following variables need to be set in order to connect to the identity management platform:
+To connect to the identity management platform, the following variables need to be set:
 
-`SECURITY_OAUTH2_BASE_SERVER_URL`
+* `SECURITY_OAUTH2_BASE_SERVER_URL` - the base URL for the OAuth 2.0 Authorization Server, which is responsible for authentication and authorization for clients and users, it is used to authorize clients, as well as to issue and validate access tokens
 
-`SECURITY_OAUTH2_CLIENT_CLIENT_ID`
+* `SECURITY_OAUTH2_CLIENT_CLIENT_ID` - a unique identifier for a client application that is registered with the OAuth 2.0 Authorization Server, this is used to authenticate the client application when it attempts to access resources on behalf of a user
 
-`SECURITY_OAUTH2_REALM`
+* `SECURITY_OAUTH2_CLIENT_CLIENT_SECRET` - secret key that is used to authenticate requests made by an authorization client
 
-### MongoDB configuration
+* `SECURITY_OAUTH2_REALM` - security configuration env var in the Spring Security OAuth2 framework, it is used to specify the realm name used when authenticating with OAuth2 provider
+
+### Configuring MongoDB
 
 The MongoDB database is used for storing taxonomies and contents. The following configurations need to be set using environment variables:
 
-`SPRING_DATA_MONGODB_URI` - the uri for the mongodb database
+* `SPRING_DATA_MONGODB_URI` - environment variable used to provide the connection string for a MongoDB database that is used with, this connection string provides the host, port, database name, user credentials, and other configuration details for the MongoDB server
 
-### Redis configuration
+### Configuring Redis
 
-The following values should be set with the corresponding Redis-related values.&#x20;
+:::info
+The service can use the [**Redis component**](../../../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-redis.md) already deployed for the engine.
+:::
 
-`SPRING_REDIS_HOST`
+The following values should be set with the corresponding Redis-related values:
 
-`SPRING_REDIS_PASSWORD`
+* `SPRING_REDIS_HOST` - environment variable used to configure the hostname or IP address of a Redis server when using Spring Data Redis
 
-`REDIS_TTL`
+* `SPRING_REDIS_PASSWORD` - environment variable is used to store the password used to authenticate with a Redis server, it is used to secure access to the Redis server and should be kept confidential
+
+* `REDIS_TTL` - environment variable is used to specify the maximum time-to-live (TTL) for a key in Redis, it is used to set a limit on how long a key can exist before it is automatically expired (Redis will delete the key after the specified TTL has expired)
 
 All the data produced by the service will be stored in Redis under a specific key. The name of the key can be configured using the environment variable:
 
-`SPRING_CACHE_REDIS_KEY_PREFIX`
+* `SPRING_CACHE_REDIS_KEY_PREFIX` - all the data produced by the service will be stored in Redis under this specific key
 
-### **Kafka configuration** <a href="#63673403-7b21-440b-a173-211fd5c9a86e" id="63673403-7b21-440b-a173-211fd5c9a86e"></a>
+### Configuring Kafka <a href="#63673403-7b21-440b-a173-211fd5c9a86e" id="63673403-7b21-440b-a173-211fd5c9a86e"></a>
 
-The following Kafka-related configurations can be set by using environment variables:
+To configure the Kafka server, you need to set the following environment variables:
 
-`SPRING_KAFKA_BOOTSTRAP_SERVERS` - address of the Kafka server
+* `SPRING_KAFKA_BOOTSTRAP_SERVERS` - address of the Kafka server, it should be in the format "host:port"
 
-`SPRING_KAFKA_CONSUMER_GROUP_ID` - a group of consumers
+* `SPRING_KAFKA_CONSUMER_GROUP_ID` - a group of consumers
 
-`KAFKA_CONSUMER_THREADS` - the number of Kafka consumer threads
+* `KAFKA_CONSUMER_THREADS` - the number of Kafka consumer threads
 
-`KAFKA_AUTH_EXCEPTION_RETRY_INTERVAL` - the interval between retries after `AuthorizationException` is thrown by `KafkaConsumer`
+* `KAFKA_AUTH_EXCEPTION_RETRY_INTERVAL` - the interval between retries after `AuthorizationException` is thrown by `KafkaConsumer`
 
 Each action available in the service corresponds to a Kafka event. A separate Kafka topic must be configured for each use case.
 
 :::caution
-The Engine is listening for messages on topics with names of a certain pattern, make sure to use correct outgoing topic names when configuring the CMS service.
+It is important to note that all the actions that start with a configured pattern will be consumed by the engine.
 :::
 
-### Logging
+### Configuring logging
 
-The following environment variables could be set in order to control log levels:
+To control the log levels, the following environment variables can be set:
 
-`LOGGING_LEVEL_ROOT` - root spring boot microservice logs
+* `LOGGING_LEVEL_ROOT` - the log level for the root spring boot microservice logs
 
-`LOGGING_LEVEL_APP` - app level logs
+* `LOGGING_LEVEL_APP` - the log level for app-level logs
 
-`LOGGING_LEVEL_MONGO_DRIVER` - logs related to mongo driver
+* `LOGGING_LEVEL_MONGO_DRIVER` - the log level for mongo driver
 
-### File storage
+### Configuring file storage
 
-`APPLICATION_FILE_STORAGE_S3_SERVER_URL`
+* `APPLICATION_FILE_STORAGE_S3_SERVER_URL` - environment variable used to store the URL of the S3 server that is used to store files for the application.
 
-`APPLICATION_FILE_STORAGE_S3_BUCKET_NAME` 
+* `APPLICATION_FILE_STORAGE_S3_BUCKET_NAME` - environment variable used to store the name of the S3 bucket that is used to store files for the application
 
-`APPLICATION_FILE_STORAGE_S3_ROOT_DIRECTORY`
+* `APPLICATION_FILE_STORAGE_S3_ROOT_DIRECTORY` - environment variable used to store the root directory within the S3 bucket where the files for the application are stored
 
-`APPLICATION_FILE_STORAGE_S3_CREATE_BUCKET` 
+* `APPLICATION_FILE_STORAGE_S3_CREATE_BUCKET` - environment variable used to indicate whether the S3 bucket should be created if it does not already exist, it can be set to true or false

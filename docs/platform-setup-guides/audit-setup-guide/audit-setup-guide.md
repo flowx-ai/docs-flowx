@@ -1,30 +1,31 @@
 # Audit setup guide
 
-The service is available as a docker image.
+## Introduction
 
-The audit core service comes with most of the needed configuration properties filled in, but there are a few that need to be set up using some custom environment variables.
+This guide will walk you through the process of setting up the Audit service and configuring it to meet your needs.
 
-The audit core service is available as a Docker image and is designed to make it easy to collect and analyze audit logs.
+## Infrastructure prerequisites
 
-This guide will walk you through the process of setting up the service and configuring it to meet your needs.
+The Audit service requires the following components to be set up before it can be started:
 
-## Dependencies 
+* **Docker engine** - version 17.06 or higher
+* **Kafka** - version 2.8 or higher
+* **Elasticsearch** - version 7.11.0 or higher
 
-* Docker engine: version 17.06 or higher
-* Kafka: version 2.5 or higher
-* Elasticsearch: version 7.11.0 or higher
+## Dependencies
 
-
-## Configuration
+The Audit service is built as a Docker image and runs on top of Kafka and Elasticsearch. Therefore, these services must be set up and running before starting the Audit service.
 
 * [**Kafka configuration**](../platform-setup-guides.md#kafka) 
 * [**Authorization & access roles**](../platform-setup-guides.md#authorization--access-roles)
 * [**Elastic search**](#elastic-search)
 * [**Logging**](../platform-setup-guides.md#logging)
 
-### Kafka configuration 
+## Configuration
 
-To configure the Kafka server, you need to set the following environment variables:
+### Configuring Kafka
+
+To configure the Kafka server for the Audit service, set the following environment variables:
 
 * `SPRING_KAFKA_BOOTSTRAP_SERVERS` - address of the Kafka server, it should be in the format "host:port"
 
@@ -34,9 +35,9 @@ To configure the Kafka server, you need to set the following environment variabl
 
 * `KAFKA_TOPIC_AUDIT_IN` - the topic key for receiving audit logs
 
-### Elastic search configuration 
+### Configuring Elasticsearch
 
-To configure Elasticsearch, you need to set the following environment variables:
+To configure Elasticsearch, set the following environment variables:
 
 * `SPRING_ELASTICSEARCH_REST_URIS` - the URL(s) of one or more Elasticsearch nodes to connect to
 
@@ -44,15 +45,15 @@ To configure Elasticsearch, you need to set the following environment variables:
    
 * `SPRING_ELASTICSEARCH_REST_USERNAME` - the username to use for basic authentication when connecting to Elasticsearch
 
-* `SPRING_ELASTICSEARCH_REST_PASSWORD` - he password to use for basic authentication when connecting to Elasticsearch
+* `SPRING_ELASTICSEARCH_REST_PASSWORD` - the password to use for basic authentication when connecting to Elasticsearch
 
 * `SPRING_ELASTICSEARCH_INDEX_SETTINGS_DATASTREAM` (used if ES is used across all dev environments) - the index settings for the datastreams that will be created in Elasticsearch 
 
 
 
-### Logging
+### Configuring logging
 
-The following environment variables could be set in order to control log levels:
+To control the log levels, set the following environment variables:
 
 * `LOGGING_LEVEL_ROOT` - the log level for the root spring boot microservice logs
 
