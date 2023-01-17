@@ -2,7 +2,7 @@
 sidebar_position: 9
 ---
 
-# Media Library
+# Media library
 
 All the media files (such as images, gifs etc.) used on the processes that were uploaded to processes are listed in the media library. This is where you can manage all existing media files or upload new files.
 

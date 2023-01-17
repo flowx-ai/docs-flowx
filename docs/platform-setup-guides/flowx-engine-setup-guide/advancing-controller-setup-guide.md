@@ -1,19 +1,26 @@
 # Advancing Controller setup guide
 
+## Introduction
+
+This guide will walk you through the process of setting up the Advancing Controller and configuring it to meet your needs.
+
 ## Infrastructure Prerequisites
 
-There are some components that are mandatory to start the advancing controller:
+Advancing controller requires the following components to be set up before it can be started:
 
-### FLOWX.AI Engine deployment
+* **FLOWX.AI Engine deployment** - the Advancing Controller is dependent on the FLOWX.AI Engine and must be deployed in the same environment, refer to the [FLOWX.AI Engine setup guide](../flowx-engine-setup-guide/flowx-engine-setup-guide.md) for more information on how to set up the Engine
+* **DB instance** - the Advancing Controller uses a PostgreSQL database instance
 
-Check the FLOWX.AI Engine setup guide for more information:
 
-[FLOWX.AI Engine setup guide](./flowx-engine-setup-guide.md)
+## Dependencies
 
+* [**Database**](#database---postgres)
+* [**Datasource**](#configuring-datasource)
+* [**FLOWX.AI Engine**](../flowx-engine-setup-guide/flowx-engine-setup-guide.md)
 
 ### Database - Postgres
 
-A basic Postgres configuration for Advancing:
+A basic Postgres configuration for the Advancing Controller can be set up using a Helm values.yaml file as follows:
 
 ```yaml
 postgresql:
@@ -46,20 +53,25 @@ postgresql:
 
 ```
 
-### Datasource configuration
-
-Advancing controller uses a PostgreSQL database as a dependency.
+## Configuration
 
 The following configuration details need to be added using environment variables:
 
-`SPRING_DATASOURCE_URL`
+### Configuring datasource
 
-`SPRING_DATASOURCE_USERNAME`
+* the user, password, connection link, and database name need to be configured correctly, if these details are not configured correctly, errors will occur at startup
+* the datasource is configured automatically via a Liquibase script inside the engine. All updates will include migration scripts.
 
-`SPRING_DATASOURCE_PASSWORD`
+:::info
+For more details on what environment variables must to be configured, click [**here**](../platform-setup-guides.md#datasource-configuration).
+:::
 
-You will need to make sure that the user, password, connection link and db name are configured correctly, otherwise, you will receive errors at start time.
+:::caution
+It's important to keep in mind that the Advancing Controller is tightly integrated with the FLOWX.AI Engine. Therefore, it is important to ensure that both the Engine and the Advancing Controller are configured correctly and are in sync.
+:::
 
-The datasource is configured automatically via a liquibase script inside the engine. All updates will include migration scripts.
+
+
+
 
 

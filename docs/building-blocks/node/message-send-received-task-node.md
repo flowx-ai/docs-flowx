@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 ---
-# Message send / message received task node
+# Message send/Message received task nodes
 
 **Message send task** and **message received** nodes are used to handle the interaction between a running process and any external systems.
 

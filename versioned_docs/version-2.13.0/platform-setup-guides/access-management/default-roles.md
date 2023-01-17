@@ -56,6 +56,7 @@ You can import a super admin group and its default roles in Keycloak using the f
 [**Import Script**](../../platform-deep-dive/assets/importUsers.zip)
 :::
 
+
 You need to edit the following script parameters:
 
 * `baseAuthUrl`
@@ -75,4 +76,3 @@ The script can be run with the following command:
 ```
 python3 importUsers.py
 ```
-

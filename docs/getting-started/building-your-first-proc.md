@@ -9,7 +9,7 @@ title: Building your first process
 
 Let's dive into an example. :rocket:
 
-- [x] **Step 1**: [Design a BPMN process]
+- [x] **Step 1**: [Design a BPMN process](../flowx-designer/managing-a-process-flow)
 
 - [x] **Step 2**: Define and manage a process flow using FLOWX.AI Process Designer
 
