@@ -121,6 +121,7 @@ const config = {
           {to: 'https://support.flowx.ai/', label: 'Support', position: 'right'},
           {to: 'https://www.flowx.ai/contact-us', label: 'Contact', position: 'right'},
           {to: 'https://flowxai.canny.io/documentation-feedback', label: 'Feedback', position: 'right'},
+          {to: 'https://discord.gg/Hr6FZpj7', label: 'Discord', position: 'right', className: 'discord-link' },
 
           {
             type: 'search',
