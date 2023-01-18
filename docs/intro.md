@@ -51,9 +51,15 @@ Read about the frameworks and standards used to build the platform:
 
 Find about the core platform components:
 
-[FLOWX Architecture](./platform-overview/flowx-architecture)
+[FLOWX.AI Architecture](./platform-overview/flowx-architecture)
 
 See the Release Notes:
 
 [Realease notes](/release-notes)
+
+
+Build and launch mission critical software products with FLOWX.AI - Learn and share tips and tricks with our community on Discord: 
+
+<iframe src="https://discord.com/widget?id=1064837506459246602&theme=dark" width="300" height="300" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+
 

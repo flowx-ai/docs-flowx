@@ -15,6 +15,7 @@
 const sidebars = {
   "tutorialSidebar": [
     'intro',
+    'industry-solutions',
     {
       type: 'html',
       value: '&nbsp;', // This is a spacer.

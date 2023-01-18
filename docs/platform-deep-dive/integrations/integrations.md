@@ -35,8 +35,8 @@ Here's the startup code for a Java Connector Microservice:
 Don't forget, the engine is configured to consume all the events on topics that start with a predefined topic path (ex. flowx.in.\*)
 
 * you will need to configure this topic pattern when setting up the Engine
-* and make sure to use it when sending messages from the Connectors back to the Engine.
-* all Kafka headers received by the Connector should be sent back to the Engine with the result.
+* and make sure to use it when sending messages from the Connectors back to the Engine
+* all Kafka headers received by the Connector should be sent back to the Engine with the result
 
 ## Building a Connector
 
@@ -45,14 +45,14 @@ Connectors should act as a light business logic layer that:
 * Converts data from one domain to another (date formats, list of values, units, etc.)
 * Adds information that is required by the integration but is not important for the process (a flag, generates a GUID for tracing, etc.)
 
-[Creating a Kafka consumer](creating-a-kafka-consumer)
+[Creating a Kafka consumer](./creating-a-kafka-consumer.md)
 
-[Creating a Kafka producer](creating-a-kafka-producer)
+[Creating a Kafka producer](./creating-a-kafka-producer.md)
 
 Keep in mind that you are in an event-driven architecture and the communication between the engine and the connector is asynchronous. The connectors will need to be designed in such a way that they do not bloat the platform. Depending on the communication type between the connector and the legacy system you might need to also add custom implementation for load balancing requests, scaling the connector, and such.
 
 :::caution
-In order for the connector to communicate correctly with the Engine, you have to make sure to include all the received Kafka headers in the response that is sent back to the FLOWX Engine.
+In order for the connector to communicate correctly with the Engine, you have to make sure to include all the received Kafka headers in the response that is sent back to the FLOWX.AI Engine.
 :::
 
 To be able to easily trace the process flow, a minimal setup for Jaeger tracing should be added to custom Connectors.

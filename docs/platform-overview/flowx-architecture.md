@@ -12,7 +12,7 @@ Let's go through the main components of the FLOWX.AI platform:
   * Adding new capabilities by using [plugins](../platform-deep-dive/plugins/plugins.md)
   * Manage [users access](../platform-deep-dive/user-roles-management/swimlanes.md)
 
-**Microservices:**
+**Microservices**
 
 * **FLOWX.AI Engine** - is the core of the platform. It runs the business processes, coordinating integrations and the UI
 * **FLOWX.AI Admin** - used to store/edit process definitions (FLOWX.AI Admin Microservice connects to the same Postgres / Oracle database as the FLOWX.AI Engine)
@@ -36,17 +36,17 @@ You can use FLOWX.AI Engine to do the following:
 * manage integrations, so you can hook it up to existing CRMs, ERPs, KYC, transaction data and many more
 * to read process definitions (if it is connected to the same DB as FLOWX.AI Admin)
 
-[FLOWX.AI Engine](../platform-deep-dive/core-components/flowx-engine.md) runs the business processes, coordinating integrations and the omnichannel UI. It is a [Kafka-based](./frameworks-and-standards/event-driven-architecture-frameworks/intro-to-kafka-concepts) event-driven platform, that is able to orchestrate, generate and integrate with any type of legacy system, without expensive or risky upgrades.&#x20;
+[FLOWX.AI Engine](../platform-deep-dive/core-components/flowx-engine/flowx-engine.md) runs the business processes, coordinating integrations and the omnichannel UI. It is a [Kafka-based](./frameworks-and-standards/event-driven-architecture-frameworks/intro-to-kafka-concepts) event-driven platform, that is able to orchestrate, generate and integrate with any type of legacy system, without expensive or risky upgrades.&#x20;
 
 This is extremely important because often, digital apps used by a bank’s clients, for example, are limited by the load imposed by the core banking system. And the customers see blocked screens and endlessly spinning flywheels. FLOWX.AI buffers this load, offering a 0.2s response time, thus the customer never has to wait for data to load.
 
 
-[FLOWX.AI Engine](../platform-deep-dive/core-components/flowx-engine.md)
+[FLOWX.AI Engine](../platform-deep-dive/core-components/flowx-engine/flowx-engine.md)
 
 
 ### FLOWX.AI Designer
 
-[FLOWX.AI Designer](../flowx-designer/flowx-designer.md) is built to administrate everything in FLOWX. It is a web application that runs in the browser, meaning that it resides out of a FLOWX deployment.
+[FLOWX.AI Designer](../flowx-designer/flowx-designer.md) is built to administrate everything in FLOWX.AI. It is a web application that runs in the browser, meaning that it resides out of a FLOWX deployment.
 
 The platform has **no-code/full-code capabilities**, meaning applications can be developed in a visual way, available for anyone with a powerful business idea. So we’re talking about business analysts, product managers - people without advanced programming skills, and also experienced developers.
 
@@ -68,9 +68,9 @@ Unlike other no-code/full-code platforms which provide templates or building blo
 [Renderer SDKs](../platform-deep-dive/core-components/renderer-sdks/angular-renderer.md)
 
 
-### FLOWX.AI content management
+### FLOWX.AI Content management
 
-This is another Java microservice that enables you to store and manage content. **The go-to place for all taxonomies.** The extension offers a convenient way of managing various content pieces such as lists or content translations. Anything that is under content management is managed by the [CMS backend service](../platform-deep-dive/platform-setup-guide/cms-setup-guide/cms-setup-guide.md). To store content, the service will use a MongoDB database (unstructured database). For example, each time you edit an [enumeration](../platform-deep-dive/core-components/core-extensions/content-management/enumerations.md), the FLOWX.AI Designer will send an HTTP request to the microservice.
+This is another Java microservice that enables you to store and manage content. **The go-to place for all taxonomies.** The extension offers a convenient way of managing various content pieces such as lists or content translations. Anything that is under content management is managed by the [CMS backend service](../platform-setup-guides/cms-setup-guide/cms-setup-guide.md). To store content, the service will use a MongoDB database (unstructured database). For example, each time you edit an [enumeration](../platform-deep-dive/core-components/core-extensions/content-management/enumerations.md), the FLOWX.AI Designer will send an HTTP request to the microservice.
 
 
 [Content Management](../platform-deep-dive/core-components/core-extensions/content-management/content-management.md)
@@ -84,7 +84,7 @@ If you need to **set a timer on** a process that needs to end after X days, you 
 When you start a process, the process must have an expiry date.
 :::
 
-Scheduler microservice communicates with the FLOWX.AI Engine through Kafka Event Queue => it creates a new message (write some data) then will send that message to Kafka (with the scheduler address) → when the reminder time comes up, the scheduler will put back a new message in the Kafka layer with engine's destination (time + ID of the process).
+Scheduler microservice communicates with the FLOWX.AI Engine through Kafka Event Queue ⇾ it creates a new message (write some data) then will send that message to Kafka (with the scheduler address) → when the reminder time comes up, the scheduler will put back a new message in the Kafka layer with engine's destination (time + ID of the process).
 
 
 [Scheduler](../platform-deep-dive/core-components/core-extensions/scheduler.md)
@@ -98,15 +98,6 @@ Every communication that comes from a consumer application, goes through a publi
 
 [Keycloak Documentation](https://www.keycloak.org/documentation)
 
-### Industry solutions
-
-In order to help you develop faster solutions, we’ve built our platform with extensibility in mind. This is why we've developed both industry-specific solutions and general plugins that extend the functionality of the platform in a more general way.
-
-Our Finance solutions suite includes customer or employee journeys - such as loan origination, onboarding, mortgage or MiFID. These are like a template based on best industry practices, that you can take, customize and integrate with your process and data, and launch in a matter of days.
-
-Below you can find an example of a mortgage process flow:
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/R03kuDXk72Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Plugins
 
