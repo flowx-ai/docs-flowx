@@ -1,29 +1,15 @@
 # Audit log
 
-The Audit log service groups all audit events in a single place. The following details are available:
+The Audit Log service provides a centralized location for all audit events. The following details are available for each event:
+
+
+* **Timestamp** - the date and time the event occurred, the timpestamp is displayed in a reversed chronologically order
+* **User** - the entity who initiated the event, could be a username or a system
+* **Subject** - the area or component of the system affected by the event
 
 <details>
+<summary> Possible values </summary>
 
-<summary> Timestamp </summary>
-
-* The timpestamp is displayed in a reversed chronologically order.
-
-</details>
-
-<details>
-
-<summary> User </summary>
-
-* The entity assigned: could be username or system.
-
-</details>
-
-<details>
-
-<summary> Subject </summary>
-
-Possible values:
-    
 * Process Instance
 * Token
 * Task
@@ -38,11 +24,10 @@ Possible values:
 
 </details>
 
+* **Event** - the specific action that occurred
+
 <details>
-
-<summary>Event</summary>
-
-Possible values:
+<summary> Possible values </summary>
 
 * Create
 * Update
@@ -71,35 +56,21 @@ Possible values:
 * Hold
 * Unhold
 
-</details>
-
-<details>
-
-<summary> Subject identifier </summary>
-
-* Subject identifier - the unique identifier is related to the subject, there are different types of identifiers based on the selected subject.
 
 </details>
 
+* **Subject identifier** - the name related to the subject, there are different types of identifiers based on the selected subject
 
-<details>
+* **Version** - the version of the process definition at the time of the event
 
-<summary> Version  </summary>
-
-</details>
+* **Status** - the outcome of the event (e.g. success or failure)
 
 
-<details>
+![](../../img/audit_log_new.png)
 
-<summary> Status </summary>
+## Filtering
 
-* Status - **success** or **error**
-
-</details>
-
-![](../../../../release-notes/img/audit_log_new.png)
-
-Audit records can be filtered by using the following options:
+Users can filter audit records by event date and by selecting specific options for User, Subject, and Subject Identifier.
 
 * Filter by event date 
 
@@ -109,15 +80,14 @@ Audit records can be filtered by using the following options:
 * Subject - single selection
 * Subject identifier - exact match
 
-### Audit log details
+## Audit log details
 
-You can access audit log details window by clicking the eye icon on the right of each entry in the list.
-
+To view additional details for a specific event, users can click the eye icon on the right of the event in the list. Additional information available in the audit log details window includes
 Here you have the following information:
 
-* Event
-* URL
-* Body 
+* Event - the specific action that occured
+* URL - the URL associated with the event
+* Body - any additional data or information related to the event
 
 ![](../../img/audit_log_details.png)
 

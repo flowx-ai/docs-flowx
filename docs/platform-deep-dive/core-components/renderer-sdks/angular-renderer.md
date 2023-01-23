@@ -34,8 +34,8 @@ Use the following command to install the **renderer** library and its required d
 
 ```bash
 npm install flowx-process-renderer paperflow-web-components moment@2.29.1 \
-@angular/flex-layout@13.0.0-beta.37 @angular/material@13.2.0 \
-@angular/material-moment-adapter@13.2.0 @angular/cdk@13.2.0 \
+@angular/flex-layout@13.0.0-beta.37 @angular/material@14.2.0 \
+@angular/material-moment-adapter@14.2.0 @angular/cdk@14.2.0 \
 socket.io-client
 ```
 
