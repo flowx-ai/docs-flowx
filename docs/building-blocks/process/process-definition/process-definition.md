@@ -100,7 +100,7 @@ When you export or import a [**process definition**](process-definition.md), the
 
 To protect your data and your customer's data, you can hide data that could be visible in the process details or in the browser's console. You can now also secret data for a specific key.
 
-![](../img/process_sensitive_data.png)
+![](../../../../release-notes/img/sensitive_data_new.png)
 
 ### Reporting
 

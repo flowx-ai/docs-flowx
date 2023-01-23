@@ -29,10 +29,11 @@ Different UI component types can be configured using UI Designer. The components
 
 <details>
 
-<summary>Buttons</summary>
+<summary>Basic</summary>
 
 * [Button](buttons.md)
 * [File Upload](../ui-component-types/buttons.md#file-upload-button)
+* [Image](image.md)
 
 </details>
 

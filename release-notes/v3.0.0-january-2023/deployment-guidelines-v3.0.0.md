@@ -5,7 +5,7 @@ Do not forget, when upgrading to a new platform version, always check and make s
 :::
 
 :::caution Process compatibility
-After updating to **2.14.0** FLOWX.AI release, importing old processes definitions in the new platform release is not possible (available for exports from **<= 2.13.0** releases).
+After updating to **3.0.0** FLOWX.AI release, importing old processes definitions in the new platform release is not possible (available for exports from **<= 3.0.0** releases).
 :::
 
 ![](../img/release_platform_version_check.png)
@@ -50,5 +50,260 @@ After updating to **2.14.0** FLOWX.AI release, importing old processes definitio
 
 ## Additional configuration
 
-* backend: update java container base image from 11.0.15 to 11.0.17_8
-* designer: update nginx container base image from 1.19 to 1.23.2
+### Updates
+
+New updates have been made to the backend and designer configurations. The following changes have been made:
+
+* Backend: The Java container base image has been updated from 11.0.15 to 11.0.17_8
+* Designer: The Nginx container base image has been updated from 1.19 to 1.23.2
+
+### Redis configuration
+
+```
+  disableCommands:
+    - CONFIG
+# enable keyspace notif as CONFIG is disabled
+  notify-keyspace-events KEA
+```
+
+The above command is enabling key space notifications in Redis by setting the `notify-keyspace-events` configuration parameter to "KEA". The `notify-keyspace-events` configuration parameter is used to enable notifications for certain events that occur in the Redis key space. 
+
+The reason for enabling this as CONFIG is disabled is that, in this configuration, the CONFIG command is disabled, which means that the Redis server will not accept the command to change its configuration. Therefore, this line is allowing Redis to notify events in key space.
+
+### Theming
+
+There are two important items that need to be taken in consideration with it comes to theming:
+
+* [`theme_components.json`](#theme_componentsjson)
+* [`theme_tokens.json`](#theme_tokensjson)
+ 
+#### `theme_components.json`
+
+This JSON object is a collection of all components and their properties. Each element represents a different design element (e.g. "accordion","card", etc.). 
+ 
+Each element object has two main properties: 
+* `genericProperties` - is an array of objects that define properties such as background color, padding, and font styles for the element
+*  `modifiers` - is also an array of objects, each representing a different modification of the element's properties, each modifier object has a `name` property and a `properties` array, which contains more objects that define the modified properties of the element. 
+
+#### Structure
+
+```js
+interface ElementType {
+    genericProperties: Property[];
+    elementName: string;
+    modifiers: Modifier[];
+}
+
+interface Property {
+    name: string;
+    reference?: string;
+    value?: string;
+    unit?: string;
+}
+
+interface Modifier {
+    name: string;
+    properties: Property[];
+    modifiers: Modifier[];
+}
+```
+ 
+#### Example 
+
+```json
+{
+    "elementName": "card",
+    "genericProperties": [
+      {
+        "name": "backgroundColor",
+        "reference": "color@shades-0",
+        "value": null,
+        "unit": null
+      },
+      {
+        "name": "color",
+        "reference": "color@neutrals-900",
+        "value": null,
+        "unit": null
+      },
+      {
+        "name": "borderRadius",
+        "reference": null,
+        "value": "12",
+        "unit": "px"
+      },
+      {
+        "name": "borderWidth",
+        "reference": null,
+        "value": "1",
+        "unit": "px"
+      },
+      {
+        "name": "paddingTop",
+        "reference": null,
+        "value": "16",
+        "unit": "px"
+      },
+      {
+        "name": "paddingRight",
+        "reference": null,
+        "value": "16",
+        "unit": "px"
+      },
+      {
+        "name": "paddingBottom",
+        "reference": null,
+        "value": "16",
+        "unit": "px"
+      },
+      {
+        "name": "paddingLeft",
+        "reference": null,
+        "value": "16",
+        "unit": "px"
+      },
+      {
+        "name": "titleFont",
+        "reference": "typography@Heading/H6/Semi Bold",
+        "value": null,
+        "unit": null
+      },
+      {
+        "name": "subtitleFont",
+        "reference": "typography@Paragraph/P2/Regular",
+        "value": null,
+        "unit": null
+      },
+      {
+        "name": "contentFont",
+        "reference": "typography@Paragraph/P1/Regular",
+        "value": null,
+        "unit": null
+      },
+      {
+        "name": "gap",
+        "reference": null,
+        "value": "24",
+        "unit": "px"
+      }
+    ],
+    "modifiers": [
+      {
+        "name": "border",
+        "properties": [
+          {
+            "name": "borderColor",
+            "reference": "color@neutrals-300",
+            "value": null,
+            "unit": null
+          }
+        ]
+      },
+      {
+        "name": "raised",
+        "properties": [
+          {
+            "name": "boxShadow",
+            "reference": "dropShadow@m",
+            "value": null,
+            "unit": null
+          }
+        ]
+      },
+      {
+        "name": "ios",
+        "properties": [
+          {
+            "name": "titleFont",
+            "reference": "typography@Heading/H6/Semi Bold",
+            "value": null,
+            "unit": null
+          },
+          {
+            "name": "subtitleFont",
+            "reference": "typography@Paragraph/P2/Regular",
+            "value": null,
+            "unit": null
+          },
+          {
+            "name": "gap",
+            "reference": null,
+            "value": "16",
+            "unit": "px"
+          }
+        ]
+      },
+      {
+        "name": "android",
+        "properties": [
+          {
+            "name": "titleFont",
+            "reference": "typography@Heading/H6/Semi Bold",
+            "value": null,
+            "unit": null
+          },
+          {
+            "name": "subtitleFont",
+            "reference": "typography@Paragraph/P2/Regular",
+            "value": null,
+            "unit": null
+          },
+          {
+            "name": "gap",
+            "reference": null,
+            "value": "16",
+            "unit": "px"
+          }
+        ]
+      }
+    ]
+  }
+
+```
+
+#### `theme_tokens.json`
+
+This JSON object is a collection of color tokens for a design system. The object is structured with a "colors" object that contains multiple color objects, each representing a different color category (e.g. "primary", "secondary", "success", "warning", "error" and "neutrals").
+
+Each color object has properties such as "name", "main" and "shades". The "name" property contains the name of the color category, the "main" property contains the main shade of the color, the "shades" is an object with key-value pairs that represent different shades of the color.
+
+:::info
+Each key is a number representing the shade level, and each value is a hex code representing the color at that level.
+:::
+
+#### Example
+
+```typescript
+// COLORS
+
+[
+    {
+        "name": "primary",
+        "shades": [
+            {"tint": 50, "hex": "#aabbcc"},
+            {"tint": 100, "hex": "#aabbcc"},
+            ...
+        ],
+        "main": 500
+    },
+    {
+        "name": "secondary",
+        "shades": [
+            {"tint": 50, "hex": "#aabbcc"},
+            {"tint": 100, "hex": "#aabbcc"},
+            ...
+        ],
+        "main": 500
+    }
+]
+
+interface ColorShade {
+    tint: number,
+    hex: string
+}
+
+interface Color {
+    name: string,
+    shades: ColorShade[]
+}
+```
