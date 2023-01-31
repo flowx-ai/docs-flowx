@@ -35,16 +35,16 @@ After updating to **3.0.0** FLOWX.AI release, importing old processes definition
 ### 3.0.0 recommended versions
 
 | FLOWX.AI Platform Version 	| Component name 	                | Recommended version (tested version) 	|
-|---------------------------	|---------------------------------- |--------------------------------------	|
+|---------------------------	|---------------------------------| --------------------------------------|
 | 3.0                        	| Keycloak       	                | 18.0.x                               	|
-| 3.0                       	| Kafka          	                | 2.8.x                                	|
+| 3.0                       	| Kafka          	                | 3.0.x                               	|
 | 3.0                       	| PostgreSQL     	                | 14.3.0                               	|
 | 3.0                        	| MongoDB        	                | 5.0.8                                	|
 | 3.0                        	| Redis          	                | 6.2.6                                	|
-| 3.0                       	| Elasticsearch   	                | 7.17                                 	|
-| 3.0                       	| S3 (Min.IO) / minio-operator      | 2022-05-26T05-48-41Z / 4.5.4          |
+| 3.0                       	| Elasticsearch   	              | 7.17                                 	|
+| 3.0                       	| S3 (Min.IO) / minio-operator    | 2022-05-26T05-48-41Z / 4.5.4          |
 | 3.0                       	| OracleDB       	                | 19.8.0.0.0                           	|
-| 3.0                           | Angular (Web SDK)                 | 14.2.2                                |
+| 3.0                         | Angular (Web SDK)               | 14.2.2                                |
 
 
 
