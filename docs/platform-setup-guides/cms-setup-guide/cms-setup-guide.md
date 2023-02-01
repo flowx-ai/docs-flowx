@@ -95,8 +95,6 @@ The following values should be set with the corresponding Redis-related values:
 
 All the data produced by the service will be stored in Redis under a specific key. The name of the key can be configured using the environment variable:
 
-* `SPRING_CACHE_REDIS_KEY_PREFIX` - all the data produced by the service will be stored in Redis under this specific key
-
 ### Configuring Kafka <a href="#63673403-7b21-440b-a173-211fd5c9a86e" id="63673403-7b21-440b-a173-211fd5c9a86e"></a>
 
 To configure the Kafka server, you need to set the following environment variables:

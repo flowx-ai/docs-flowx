@@ -7,6 +7,8 @@ sidebar_position: 3
 
 The FLOWX.AI platform offers a variety of ready-to-use [UI components](./ui-component-types/ui-component-types.md) that can be used to create rich web interfaces. These include common form elements like [input fields](./ui-component-types/form-elements/input-form-field.md), [dynamic dropdown menus](./ui-component-types/form-elements/select-form-field.md#example---dynamic-dropdowns), [checkboxes](./ui-component-types/form-elements/checkbox-form-field.md), [radio](./ui-component-types/form-elements/radio-form-field.md), and [switch buttons](./ui-component-types/form-elements/switch-form-field.md), as well as other UI elements like image, text, anchor links, etc. The properties of each component can be customized further using the details tab, and [design flexibility](./#styling) is achieved by adding styles or CSS classes to the pre-defined components. The UI templates are built in a hierarchical structure, with a root component at the top.
 
+## Using UI designer
+
 The FLOWX.AI platform includes an intuitive **UI Designer** for creating diverse UI templates. You can use various elements such as basic buttons, indicators, and forms, as well as predefined [collections](./ui-component-types/collection/collection.md) and [prototypes](./ui-component-types/collection/collection_prototype.md). To access the UI Designer, follow these steps:
 
 
@@ -22,7 +24,6 @@ The FLOWX.AI platform includes an intuitive **UI Designer** for creating diverse
 The UI designer is available for [**User task**](../node/user-task-node/user-task-node.md) nodes and [**Milestone**](../node/milestone-node.md) nodes (nodes that require human interaction).
 :::
 
-## Using the UI Designer
 
 After adding a specific component to the node, the right-side menu will display more configuration options.
 
@@ -31,6 +32,8 @@ Depending on the component type different properties are available for configura
 :::
 
 ![](./img/use_ui_designer.gif)
+
+### UI components
 
 For example, for a [card](./ui-component-types/root-components/card.md) element (as in the example above), the following properties can be configured:
 
@@ -48,16 +51,16 @@ For example, for a [card](./ui-component-types/root-components/card.md) element 
 
 #### Styling
 
-2. **Layout** - available for components that group children, more details about layouts can be found [here](https://tburleson-layouts-demos.firebaseapp.com/#/docs). The following properties can be edited:
+1. **Layout** - available for components that group children, more details about layouts can be found [here](https://tburleson-layouts-demos.firebaseapp.com/#/docs). The following properties can be edited:
    * Direction
    * Alignment
    * Gap
-4. **Sizing** - use sizing to edit width, height, min W/H, max W/H or overflow
+2. **Sizing** - use sizing to edit width, height, min W/H, max W/H or overflow
 3. **Spacing** - margin, and padding can be adjusted using spacing
-5. **Typography** - use to manipulate fonts, font color, text indentation etc.
-6. **Background** - set the color of a background
-7. **Border** - set the radius, borders style, width or color
-8. **Advanced** - add CSS classes to each of the pre-defined components
+4. **Typography** - use to manipulate fonts, font color, text indentation etc.
+5. **Background** - set the color of a background
+6. **Border** - set the radius, borders style, width or color
+7. **Advanced** - add CSS classes to each of the pre-defined components
 
 <div className= "image-scaled">
 

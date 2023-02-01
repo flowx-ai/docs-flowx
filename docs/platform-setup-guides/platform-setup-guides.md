@@ -104,7 +104,6 @@ Redis configuration involves setting up the connection parameters, such as the h
 * `SPRING_REDIS_HOST` - environment variable used to configure the hostname or IP address of a Redis server when [](https://docs.camunda.io/docs/components/concepts/workflow-patterns/)using Spring Data Redis
 * `SPRING_REDIS_PASSWORD` - environment variable is used to store the password used to authenticate with a Redis server, it is used to secure access to the Redis server and should be kept confidential
 * `REDIS_TTL` - environment variable is used to specify the maximum time-to-live (TTL) for a key in Redis, it is used to set a limit on how long a key can exist before it is automatically expired (Redis will delete the key after the specified TTL has expired)
-* `SPRING_CACHE_REDIS_KEY_PREFIX` - all the data produced by the service will be stored in Redis under this specific key
 
 
 ## Debugging

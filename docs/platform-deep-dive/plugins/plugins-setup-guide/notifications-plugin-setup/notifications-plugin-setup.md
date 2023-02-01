@@ -79,10 +79,6 @@ The following values should be set with the corresponding Redis related values.&
 
 `REDIS_TTL`
 
-All the data produced by the service will be stored in Redis under a specific key. The name of the key can be configured using the environment variable:
-
-`SPRING_CACHE_REDIS_KEY_PREFIX`
-
 ### Kafka configuration 
 
 The following Kafka related configurations can be set by using environment variables:

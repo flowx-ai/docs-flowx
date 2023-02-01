@@ -307,3 +307,11 @@ interface Color {
     shades: ColorShade[]
 }
 ```
+
+### Task management plugin
+
+* new environment variable added to filter users by partial username: `FLOWX_ALLOW_USERNAME_SEARCH_PARTIAL` (default value: true)
+
+### Data search
+
+* `SPRING_ELASTICSEARCH_INDEX_SETTINGS_NAME` - must correspond to the index configured on `process-engine`

@@ -93,9 +93,6 @@ The following values should be set with the corresponding Redis related values.&
 
 `REDIS_TTL`
 
-All the data produced by the service will be stored in Redis under a specific key. The name of the key can be configured using the environment variable:
-
-`SPRING_CACHE_REDIS_KEY_PREFIX`
 
 ### **Kafka configuration** <a href="#63673403-7b21-440b-a173-211fd5c9a86e" id="63673403-7b21-440b-a173-211fd5c9a86e"></a>
 
@@ -148,3 +145,7 @@ The following environment variables could be set in order to control log levels:
 `LOGGING_LEVEL_APP` - app level logs
 
 `LOGGING_LEVEL_MONGO_DRIVER` - mongo db driver logs
+
+### Filtering
+
+`USERNAME_SEARCH_PARTIAL` - filter possible assignees by partial names (default: true)
