@@ -4,9 +4,11 @@ sidebar_position: 1
 
 # Using the Angular Renderer
 
+FlowxProcessRenderer is a low code library designed to render UI configured via the Flowx Process Editor.
+
 ## Angular project requirements
 
-Your app MUST be created using the **ng** app from the **@angular/cli~14.2.2** package. It also MUST use **SCSS** for styling.
+Your app MUST be created using the NG app from the @angular/cli~14 package. It also MUST use SCSS for styling.
 
 ```
 npm install -g @angular/cli@14.2.2
@@ -24,6 +26,7 @@ The library uses Angular version **@angular\~14.2.2**, **npm v8.1.2** and **node
 :::
 
 :::info
+
 If you are using an older version of Angular (for example, v13.0), please consult the following link for update instructions: 
 
 [**Update Angular from v13.0 to v14.0**](https://update.angular.io/?l=2&v=13.0-14.0)
@@ -33,17 +36,38 @@ If you are using an older version of Angular (for example, v13.0), please consul
 Use the following command to install the **renderer** library and its required dependencies:
 
 ```bash
-npm install flowx-process-renderer paperflow-web-components moment@2.29.1 \
-@angular/flex-layout@13.0.0-beta.37 @angular/material@14.2.0 \
-@angular/material-moment-adapter@14.2.0 @angular/cdk@14.2.0 \
-socket.io-client
+npm install 
+  flowx/ui-sdk@3.0 
+  @flowxai/ui-toolkit@3.0 
+  @flowx/ui-theme@3.0 
+  paperflow-web-components 
+  vanillajs-datepicker@^1.2.0 
+  moment@^2.27.0 
+  @angular/flex-layout@14.0.0-beta.40 
+  @angular/material@^14.2.2 
+  @angular/material-moment-adapter@^14.2.2 
+  @angular/cdk@^14.2.2
 ```
+
+The above command installs several packages to use in your web development project:
+
+* flowx/ui-sdk: version 3.0 of the UI SDK from FlowX
+* @flowxai/ui-toolkit: version 3.0 of the UI toolkit from FlowX
+* @flowx/ui-theme: version 3.0 of the UI theme from FlowX
+* paperflow-web-components: web components from Paperflow
+* vanillajs-datepicker: version 1.2.0 or a compatible version of the VanillaJS Datepicker library
+* moment: version 2.27.0 or a compatible version of the Moment.js library
+* @angular/flex-layout: version 14.0.0-beta.40 of Angular Flex Layout library
+* @angular/material: version 14.2.2 or a compatible version of the Angular Material library
+* @angular/material-moment-adapter: version 14.2.2 or a compatible version of the Angular Material Moment adapter library
+* @angular/cdk: version 14.2.2 or a compatible version of the Angular CDK library
+
 
 ## Using the library
 
-Once installed, **FlxProcessModule** will be imported in the **AppModule** `FlxProcessModule.forRoot({})`.
+Once installed, FlxProcessModule will be imported in the `AppModule FlxProcessModule.forRoot({})`. 
 
-You MUST also import the dependencies of **FlxProcessModule**: **HttpClientModule** from **@angular/common/http** and **IconModule** from **paperflow-web-components**.
+You MUST also import the dependencies of `FlxProcessModule: HttpClientModule` from `@angular/common/http` and **IconModule** from `@flowxai/ui-toolkit`.
 
 **Using Paperflow web components**
 
@@ -67,7 +91,20 @@ Because the datepicker module is build on top of angular material datepicker mod
 
 #### Theming
 
-Theming is done through the ppf-theme mixin that accepts as an argument a list of colors grouped under **primary**, **status** and **background**
+Component theming is done through two json files (`theme_tokens.json`, `theme_components.json`) that need to be added in the assets folder of your project The file paths need to be passed to the `FlxProcessModule.forRoot()` method through the `themePaths` object.
+
+```typescript
+themePaths: {
+    components: 'assets/theme/theme_components.json',
+    tokens: 'assets/theme/theme_tokens.json',
+  },
+```
+The **assets/theme/theme_tokens.json** - should hold the design tokens (e.g. colors, fonts) used in the theme. An example can be found here.
+
+The **assets/theme/theme_components.json** - holds metadata used to describe component styles. An example can be found here.
+
+
+For **Task Management** theming is done through the ppf-theme mixin that accepts as an argument a list of colors grouped under **primary**, **status** and **background**
 
 ```typescript
 @use 'ppf-theme';
@@ -91,6 +128,8 @@ Theming is done through the ppf-theme mixin that accepts as an argument a list o
 ));
 ```
 
+### Authorization
+
 :::info
 Every request from the **FLOWX** renderer SDK will be made using the **HttpClientModule** of the client app, which means those requests will go through every interceptor you define here. This is most important to know when building the auth method as it will be the job of the client app to intercept and decorate the requests with the necessary auth info (eg. `Authorziation: Bearer ...`).
 :::
@@ -100,7 +139,6 @@ It's the responsibility of the client app to implement the authorization flow (u
 :::
 
 ```typescript
-# example
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -109,7 +147,6 @@ import { IconModule } from 'paperflow-web-components';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-
 
 @NgModule({
   declarations: [
@@ -122,7 +159,14 @@ import {AppComponent} from './app.component';
     HttpClientModule,
     // needed by the renderer SDK
     IconModule.forRoot(),
-    FlxProcessModule.forRoot({})
+    FlxProcessModule.forRoot({
+      components: {},
+      services: {},
+      themePaths: {
+        components: 'assets/theme/theme_components.json',
+        tokens: 'assets/theme/theme_tokens.json',
+      },
+    }),
   ],
   // this interceptor with decorate the requests with the Authorization header
   providers: [
@@ -130,11 +174,11 @@ import {AppComponent} from './app.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule {}
+
 ```
 
-The `forRoot()` call is required in the application module where the process will be rendered. The `forRoot()` method accepts a config argument where you can pass extra config info, register a **custom component**, **service**, or **custom validators**.&#x20;
+The `forRoot()` call is required in the application module where the process will be rendered. The `forRoot()` method accepts a config argument where you can pass extra config info, register a **custom component**, **service**, or **custom validators**.
 
 **Custom components** will be referenced by name when creating the template config for a user task.
 
@@ -155,6 +199,18 @@ FlxProcessModule.forRoot({
 ```
 
 ```typescript
+# example with custom component and custom validator
+FlxProcessModule.forRoot({
+  components: {
+    YourCustomComponentIdenfier: CustomComponentInstance,
+  },
+  services: {
+    NomenclatorService,
+    LocalDataStoreService,
+  },
+  validators: {currentOrLastYear },
+})
+
   // example of a custom validator that restricts data selection to 
   // the current or the previous year 
    
@@ -181,18 +237,16 @@ The error that the validator returns **MUST** match the validator name.
 
 The component is the main container of the UI, which will build and render the components configured via the **FlowX Designer**. It accepts the following inputs:
 
-```markup
-  # example
-  <flx-process-renderer
-    [apiUrl]="baseApiUrl"
-    [staticAssetsPath]="staticUrl"
-    [processApiPath]="processApiPath"
-    [processName]="processName"
-    [processStartData]="processStartData"
-    [debugLogs]="debugLogs"
-    [keepState]="keepState"
-    [language]="language"
-  ></flx-process-renderer>
+```
+<flx-process-renderer
+  [apiUrl]="baseApiUrl"
+  [processApiPath]="processApiPath"
+  [processName]="processName"
+  [processStartData]="processStartData"
+  [debugLogs]="debugLogs"
+  [keepState]="keepState"
+  [language]="language"
+></flx-process-renderer>
 ```
 
 #### Parameters:
@@ -201,7 +255,6 @@ The component is the main container of the UI, which will build and render the c
 | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | --------- | ------------- | ------------------------------------------------ |
 | baseApiUrl       | Your base url                                                                                                                                                                           | string  | true      | -             | [https://yourDomain.dev](https://yourdomain.dev) |
 | processApiPath   | Engine API prefix                                                                                                                                                                       | string  | true      | -             | /onboarding                                      |
-| staticUrl        | Static asset url                                                                                                                                                                        | string  | false     | -             |                                                  |
 | processName      | Identifies a process                                                                                                                                                                    | string  | true      | -             | client\_identification                           |
 | processStartData | Data required to start the process                                                                                                                                                      | json    | true      | -             | { "firstName": "John", "lastName": "Smith"}      |
 | debugLogs        | When set to true this will print WS messages in the console                                                                                                                             | boolean | false     | false         | -                                                |
@@ -211,9 +264,10 @@ The component is the main container of the UI, which will build and render the c
 
 #### Data and actions
 
-Custom components will be hydrated with data through the `$data` input observable which must be defined in the custom component class
+Custom components will be hydrated with data through the $data input observable which must be defined in the custom component class.
 
 ```typescript
+
 @Component({
   selector: 'my-custom-component',
   templateUrl: './custom-component.component.html',
@@ -253,7 +307,7 @@ Data from the process is communicated via **websocket** protocol under the follo
 
 The flx-task-management component is found in the FlxTaskManagementModule. In order to have access to it, import the module where needed:&#x20;
 
-```
+```typescript
 import {FlxTaskManagementModule} from 'flowx-process-renderer';
 @NgModule({
   declarations: [
@@ -269,7 +323,7 @@ export class MyModule {
 }
 ```
 
-Then in the template:&#x20;
+Then in the template:
 
 ```
 <flx-task-management [baseUrl]="baseUrl" [title]="'Tasks'">
@@ -283,3 +337,56 @@ Then in the template:&#x20;
 | apiUrl          | Endpoint where the tasks are available | string | -          | true       | https://yourDomain.dev/tasks |
 | title           | Table header value                     | string | Activities | false      | Tasks                        |
 | pollingInterval | Interval for polling task updates      | number | 5000 ms    | false      | 10000                        |
+
+
+### Development
+
+When modifying the library source code and testing it inside the designer app use the following command which rebuilds the flx-process-renderer library, recreates the link between the library and the designer app and recompiles the designer app:
+
+```
+npm run build && cd dist/flowx-process-renderer/ && npm link && cd ../../ && npm link flowx-process-renderer && npm run start:designer
+```
+
+or alternatively run
+
+`./start_with_build_lib.sh`
+
+If you want to start the designer app and the flx-process-renderer library in development mode (no need to recompile the lib for every change) run the following command:
+
+`npm run start:designer-dev`
+
+:::caution
+Remember to test the final version of the code by building and bundling the renderer library to check that everything works e2e
+:::
+
+Trying to use this lib with npm link from another app will most probably fail. If (when) that happens, there are two alternatives that you can use:
+
+1. Use the build-and-sync.sh script, that builds the lib, removes the current build from the client app ** node_modules** and copies the newly build lib to the node_modules dir of the client app:
+
+```
+./build-and-sync.sh ${path to the client app root}
+
+# example (the client app is demo-web):
+./build-and-sync.sh ../../demo-web
+```
+
+
+NOTE: This method uses under the hood the build-and-sync.sh script from the first version and the chokidar-cli library to detect file changes.
+
+2. Use the build-and-sync:watch npm script, that builds the library and copies it to the client app's ** node_module** directory every time a file changes:
+```
+npm run build-and-sync:watch --target-path=${path to the client app root}
+
+# example (the client app is demo-web):
+npm run build-and-sync:watch --target-path=../../demo-web
+```
+
+
+### Running the tests
+
+`ng test`
+
+#### Coding style tests
+
+Always follow the Angular official [coding styles](https://angular.io/guide/styleguide).
+
