@@ -35,13 +35,13 @@ Depending on the component type different properties are available for configura
 
 ### UI components
 
-For example, for a [card](./ui-component-types/root-components/card.md) element (as in the example above), the following properties can be configured:
+For example, when configuring a [card](./ui-component-types/root-components/card.md) element (as seen in the earlier example), the following properties can be customized:
 
 #### Settings
 
-1.  **Message** - :exclamation:available for [Root components](./ui-component-types/root-components/root-components.md); describes the data pushed to the frontend application when the process reaches this [user task](../node/user-task-node/user-task-node.md); should be a valid JSON
-2. **Properties** - depending on the component type, custom properties will be available here
-3. **Has Accordion** (available only for **Card** component) - the Bootstrap accordion is a component that organizes content within collapsible items. Accordion allows the display of only one collapsed item at a time. 
+* **Message** - a valid JSON string that is pushed to the frontend application when the process reaches [user task](../node/user-task-node/user-task-node.md); this property is only available for [Root components](./ui-component-types/root-components/root-components.md)
+* **Properties** - custom properties that vary depending on the component type
+* **Has Accordion** (available only for **Card** component) - a Bootstrap accordion is a component that organizes content within collapsible items, allowing only one collapsed item to be displayed at a time
 
 <div className= "image-scaled">
 
@@ -51,16 +51,16 @@ For example, for a [card](./ui-component-types/root-components/card.md) element 
 
 #### Styling
 
-1. **Layout** - available for components that group children, more details about layouts can be found [here](https://tburleson-layouts-demos.firebaseapp.com/#/docs). The following properties can be edited:
+* **Layout** - available for components that group children (more details about layouts can be found [here](https://tburleson-layouts-demos.firebaseapp.com/#/docs)):
    * Direction
    * Alignment
    * Gap
-2. **Sizing** - use sizing to edit width, height, min W/H, max W/H or overflow
-3. **Spacing** - margin, and padding can be adjusted using spacing
-4. **Typography** - use to manipulate fonts, font color, text indentation etc.
-5. **Background** - set the color of a background
-6. **Border** - set the radius, borders style, width or color
-7. **Advanced** - add CSS classes to each of the pre-defined components
+* **Sizing** - fill, fixed or auto
+* **Spacing** - margin and padding
+* **Typography** - fonts, font color, text indentation etc.
+* **Background** - background color
+* **Border** - set the radius, width or color
+* **Advanced** - add CSS classes to pre-defined components
 
 <div className= "image-scaled">
 
@@ -70,10 +70,10 @@ For example, for a [card](./ui-component-types/root-components/card.md) element 
 
 #### Tree view
 
-This panel is used for displaying component hierarchy. Clicking on a specific component in the component tree will highlight the selection in the editor.
+This panel displays the component hierarchy, and clicking on a specific component in the tree will highlight the selection in the editor.
 
 ![](./img/ui_designer_tree.gif)
 
-For more information about Component types, check the next section:
+For further information on Component Types, refer to the next section:
 
 [Component types](./ui-component-types/ui-component-types.md)

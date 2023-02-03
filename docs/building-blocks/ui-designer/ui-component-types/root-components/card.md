@@ -4,42 +4,53 @@ sidebar_position: 2
 
 # Card
 
-A card is a simple element that allows component grouping and alignment. It has the option to enable/disable an accordion element.
+A card is a graphical component that allows grouping and alignment of other components. It can also include an accordion element for expanding and collapsing content.
 
 ![](../../img/card_element1.gif)
 
 The following properties that can be configured:
 
-#### **Settings**
+### **Settings**
 
-1. **General** - where you define the **Message**
- * **Message** - describes the data pushed to the frontend application when the process reaches this user task; should be a valid JSON
-2. **FLOWX props** - title and subtitle
-3. **Has accordion?** - The Bootstrap accordion is a component that organizes content within collapsible items. Accordion allows the display of only one collapsed item at a time.
+* **Message** - a valid JSON that describes the data pushed to the frontend application when the process reaches a specific user task
+* **Title** - the title of the card
+* **Subtitle** - the subtitle of the card
+* **Card style** - you can choose between a border or raised style
+* **Has accordion?** - this feature allows you to add a Bootstrap accordion, which organizes content within collapsible items and displays only one collapsed item at a time
 
 :::caution
 Accordion element is not available for mobile.
 :::
 
-![](../../img/ui_designer_settings.png#center)
+<div className= "image-scaled">
 
+![](../../img/ui_designer_settings.png)
 
-#### Styling
+</div>
 
-**Layout** - available for components that group children, more details about layouts can be found [here](https://tburleson-layouts-demos.firebaseapp.com/#/docs). 
+### **Styling**
 
-The following styling properties can be edited (example):
+* **Layout** - This property is available for components that group children and includes the following options:
 
-* Direction - Vertical (column)
-* Alignment - Align(H): start; Align(V): center
-* other CSS properties
+    * Direction - Horizontal / Vertical (for example, select *Vertical*)
+    * Justify (H) - (for example, select *center*)
+    * Align (V) - this option allows you to align components vertically
+    * Gap - you can set the gap between components
+
+More layout demos available below:
+
+[Layout Demos](https://tburleson-layouts-demos.firebaseapp.com/#/docs)
 
 This example will generate a card with the following layout configuration:
 
 ![](../../img/card_layout.png)
 
-:::warning
+For more information about styling and layout configuration, check the following section:
+
+[UI Designer](../../ui-designer.md#styling)
+
+### **Validating elements**
+
 To validate all form elements under a card, you need to set the key of the form/element on the property of the button: _Forms To Validate._
-:::
 
 ![](../../img/card_validate.png)

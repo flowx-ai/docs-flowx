@@ -65,13 +65,9 @@ Different UI component types can be configured using UI Designer. The components
 
 <summary>Indicators</summary>
 
-* Hint
-* Info Tooltip
 * Message
 
 </details>
-
-
 
 ### Milestone node UI components
 

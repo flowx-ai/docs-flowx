@@ -4,27 +4,32 @@ sidebar_position: 1
 
 # Container
 
-A container is a simple element that allows component grouping and alignment.
+A container is a versatile element that allows you to group components and align them as desired.
 
 ![](../../img/ui_designer_container.gif)
 
-The following properties that can be configured:
+The following properties can be configured in the container:
 
-#### Settings
+### Settings
 
-**Expressions (Hide)** - JavaScript expressions used to hide components when they're true
+* **Expressions (Hide)** - JavaScript expressions used to hide components when they evaluate to true
 
-![](../../img/ui_designer_container_settings.png#center)
+![](../../img/ui_designer_container_settings.png)
 
-#### Styling
+### Styling
 
-**Layout** - available for components that group children, more details about layouts can be found [here](https://tburleson-layouts-demos.firebaseapp.com/#/docs). The following properties can be edited:
+* **Layout** - this property is available for components that group children and includes the following options:
 
-* Direction - _Vertical (column)_
-* Alignment - _Align(H): start; Align(V): end_
-* other CSS properties
+    * Direction - Horizontal / Vertical (for example, select *Horizontal*)
+    * Justify (H) - (for example, select *end*)
+    * Align (V) - this option allows you to align components vertically
+    * Gap - you can set the gap between components
 
-The above example of properties will generate the following output (the button being displayed on the right side of the container, under the form with three form elements):
+More layout demos available below:
+
+[Layout Demos](https://tburleson-layouts-demos.firebaseapp.com/#/docs)
+
+When you apply the above properties, you can generate the following output, with the button appearing on the right side of the container, underneath the form with three form elements:
 
 ![](../../img/container_styling.png)
 
