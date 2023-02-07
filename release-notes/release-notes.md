@@ -14,7 +14,7 @@ Follow the Release Notes space to find all the information on the features and i
 
 Q1 - January 2022
 
-* [v3.0.0](./v3.0.0-jan-2023/v3.0.0-january-2023.md)
+* [v3.0.0](./v3.0.0-february-2023/v3.0.0-february-2023.md)
 
 </details>
 
