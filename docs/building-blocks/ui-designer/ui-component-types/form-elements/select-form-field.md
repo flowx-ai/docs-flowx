@@ -47,7 +47,7 @@ The available configuration options for this form element are:
 
 A FORM with a [layout](../../layout-configuration.md) direction of row warp and some inputs and a select element will look like this:
 
-![](../../img/select_form_field.png)
+![](../../img/select_form_field1.png)
 
 ### Example - Dynamic dropdowns
 

@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Process definition
 
-At the core of the platform are the process definitions. These are the blueprint of the business process, made up of [nodes](../../node) that are linked by sequences.
+The core of the platform is the process definition, which is the blueprint of the business process made up of [nodes](../../node) that are linked by sequences.
 
 ![](../../../platform-deep-dive/img/process_definitions_new.png)
 
@@ -12,11 +12,11 @@ At the core of the platform are the process definitions. These are the blueprint
 
 When a process definition is displayed, the name contains the following:
 
-* process definition name 
-* version number
-* state
+* Process definition name 
+* Version number
+* State
 
-While designing the FLOWX.AI components, we've tried to keep them as close to their BPMN counterparts as possible.
+We have designed FLOWX.AI components to closely resemble their BPMN counterparts for ease of use. In the following sections, we will provide more details on how to use the process designer.
 
 ![](../img/process_def.png)
 
@@ -30,20 +30,12 @@ Once a process is defined and set as published on the platform, it can be execut
 
 [Failed process start](../active-process/failed-process-start.md)
 
-## UI Designer
-
-UI Designer editor makes it possible to create any kind of UI templates. You can use various elements from basic buttons, indicators, and forms, but also predefined collections or prototypes.
-
-![](../img/ui_desig.png)
-
-[UI Designer](../../../building-blocks/ui-designer/ui-designer.md)
-
 ## History
 
-In the **History** tab you will find the following items:
+In the **History** tab, you will find a record of all the modifications and events that have occurred in the process.
 
-* **Versions** - here you will find information about who edited a process/ when a process was modified, and also version number and the status
-* **Audit log** - a record of events and changes 
+* **Versions** - provides information on who edited the process, when it was modified, and the version number and status
+* **Audit log** - provides a detailed record of events and changes
 
 ![](../img/process_audit.gif)
 
@@ -75,20 +67,22 @@ In the **Audit log** tab you will find the following items:
 * Status 
 
 :::info
-Some items are filterable, so you can easily track the changes occurred in a process.
+Some items in the Audit log are filterable, making it easy to track changes in the process.
 :::
 
 [Audit](../../../platform-deep-dive/core-components/core-extensions/audit.md)
 
 ## Data model
 
-You are now able to add new keys pair values in the Data Model. This will enable you to use shortcuts when adding new keys using the UI Designer, without having to switch back and forth between menus.
+In the Data Model, you can add new key-pair values, which enables you to use shortcuts when adding new keys using the UI Designer, without having to switch back and forth between menus.
 
-![](../../../../release-notes/img/data_model.png)
+![](../../img/data_model.png)
 
 ### Attributes type
 
-Data model supports the following attributes type:
+![](../../../platform-deep-dive/img/add_new_data_model.png)
+
+The Data Model supports the following attribute types:
 
 * STRING
 * NUMBER
@@ -98,12 +92,26 @@ Data model supports the following attributes type:
 * ENUM
 
 :::info
-When you export/import a [**Process definition**](process-definition.md) the data model will be also included.
+
+When you export or import a [**process definition**](process-definition.md), the data model will be included.
 :::
+
+### Sensitive data
+
+To protect your data and your customer's data, you can hide data that could be visible in the process details or in the browser's console. You can now also secret data for a specific key.
+
+![](../../../../release-notes/img/sensitive_data_new.png)
+
+### Reporting
+
+The **Use in Reporting** tag is used for keys that will be used further in the reporting plugin.
 
 ## Settings
 
-#### General
+### General
+
+In the General settings, you can edit the process definition name, include the process in reporting, set general data, and configure expiry time using Cron Expressions and ISO 8601 formatting.
+
 * **Process definition name** - edit process definition name
 * **Use process in reporting** - if switched on, the process will be included in reporting
 * **General data** - data that you can set and receive on a response
@@ -113,42 +121,28 @@ For more information about **Cron Expressions** and **ISO 8601** formatting, che
 
 [Timer Expressions](../../../platform-overview/frameworks-and-standards/timer-expressions.md)
 
-![](../../img/process_settings.png)
+![](../../../platform-deep-dive/img/process_settings.png)
 
-#### Sensitive data
+### Swimlanes
 
-To protect your data and your customer's data (for example, PII data), you can hide the data that could be visible in a process details (active processes or in the browser's console). You now have the possibility to secret data for a specific Key. 
+Swimlanes provide a way of grouping process nodes by process participants. Using swimlanes, you can ensure that only certain user roles have access to certain process nodes. 
 
-![](../img/process_sensitive_data.png)
+![](../../img/process_swimlanes.png)
 
-#### Swimlanes
+### Permissions
 
-Swimlanes provide a way of grouping process nodes by process participants. Using swimlanes you can make sure only certain user roles have access to certain process nodes.
+After defining roles in the identity provider solution, they will be available to be used in the process definition settings panel for configuring swimlane access. 
 
-![](../img/process_swimlanes.png)
+When you create a new swimlane, it comes with two default permissions assigned based on a specific role: execute and self-assign. Other permissions can be added manually, depending on the needs of the user.
 
-#### Permissions
+![](../../img/process_permissions.png)
 
-After you define roles in the identity provider solution, they will be available to be used in the process definition settings panel for configuring swimlane access.
-
-When you create a new swimlane, it comes with two default permissions assigned based on a specific role.
-
-* execute - the user will be able to start process instances and run actions on them
-* self-assign - the user can assign a process instance to them and start working on it
-
-![](../img/process_permissions.png)
-
-:::info
-Other Permissions can be added manually, depending on the needs of the user.
-:::
 
 [Configuring access rights for processes](../../../platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide/configuring-access-roles-for-processes.md)
 
-#### Task management
+### Task management
 
-The Task Management plugin has the scope to show a process that you defined in Designer, offering a more business-oriented view. It also offers interactions at the assignment level.
-
-* **Application URL** - generic parameter pointing to the application URL where the Flowx process is loaded 
-* **Search indexing** - process keys will be used to search data stored in the process
+The Task Management plugin offers a business-oriented view of the process you defined in the Designer and allows for interactions at the assignment level. It also includes a generic parameter pointing to the application URL where the Flowx process is loaded and uses process keys to search data stored in the process.
 
 ![](../img/process_task_mngmnt.png)
+

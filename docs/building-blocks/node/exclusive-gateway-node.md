@@ -50,8 +50,6 @@ You can use [DMN](/docs/platform-overview/frameworks-and-standards/business-proc
 
 ![Gateway Decisions](./img/exclusive_gateway_DMN.gif)
 
-****
-
 **Gateway Decision - DMN example** [(applicable only for exclusive gateway - XOR)](exclusive-gateway-node.md)
 
 ![Gateway Decision](./img/exclusive_gateway_decision.png)

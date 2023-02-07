@@ -43,7 +43,9 @@ Set the following Elasticsearch-related configurations using environment variabl
 
 * `SPRING_ELASTICSEARCH_REST_USERNAME`
 
-* `SPRING_ELASTICSEARCH_REST_PASSWORD` 
+* `SPRING_ELASTICSEARCH_REST_PASSWORD`
+
+* `SPRING_ELASTICSEARCH_INDEX_SETTINGS_NAME` - the index can be customized for data-search and it should be similar to what is configured on the process-engine
 
 
 ### Configuring authorization & access roles

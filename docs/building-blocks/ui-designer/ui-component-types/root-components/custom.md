@@ -12,24 +12,28 @@ To add a custom component in the template config tree, we need to know its uniqu
 
 The properties that can be configured are as follows:
 
-1. **Identifier** - this will enable the custom component to be displayed in the component hierarchy and what actions are available for the component
-2. **Input keys** - used to define the process model paths from which the components will receive their data
-3. [**UI Actions**](../../ui-actions.md) - actions defined here will be made available to the custom component
+* **Identifier** - this will enable the custom component to be displayed in the component hierarchy and what actions are available for the component
+* **Input keys** - used to define the process model paths from which the components will receive their data
+* [**UI Actions**](../../ui-actions.md) - actions defined here will be made available to the custom component
 
+
+<div className= "image-scaled">
 
 ![](../../img/ui_designer_custom_settings.png#center)
 
+</div>
 
 
-#### When will a user task display a user interface element?
+#### Display of User Interface Elements
 
-When a process instance is started the web application will receive all the UI elements that can be displayed in that process under the `templateConfig` key.
+When a process instance is initiated, the web application receives all the UI elements that can be displayed in the process under the `templateConfig` key.
 
-When the process instance token will reach a User Task, a web socket message will be sent informing the SDK to display the UI element associated with that user task
+When a user task is reached in the process instance, a web socket message is sent to the SDK, triggering it to display the associated UI element.
 
 Example:
 
-1. Starting a process: **POST** `{{processUrl}}/api/internal/process/DemoProcess/start`
+1. Starting a process:
+* The following is an example of starting a process instance via a **POST** request to `{{processUrl}}/api/internal/process/DemoProcess/start`:
 
 ```json
 {
@@ -75,7 +79,7 @@ Example:
 }
 ```
 
-2. Web socket progress message
+2. The following is an example of a web socket progress message:
 
 ```json
 {

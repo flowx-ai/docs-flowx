@@ -53,7 +53,7 @@ DELETE /process_instance
 3. Perform the next calls:
 
 ```
-OST /_reindex?pretty
+POST /_reindex?pretty
     {
       "source": {
         "index": "cloned-process_instance-1"

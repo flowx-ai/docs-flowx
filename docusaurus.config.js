@@ -7,6 +7,7 @@ const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const urlEmbed = require('./src/remark/url-embed');
 
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'FLOWX.AI Docs',
@@ -39,7 +40,7 @@ const config = {
           lastVersion: 'current',
           versions:{
             current:{
-              label: '2.14.0',
+              label: '3.0.0',
               path: '',
               badge: true,
             },
@@ -82,7 +83,7 @@ const config = {
       announcementBar: {
         id: 'banner_release',
         content:
-         '🆕  Check our latest release <a target="_blank" rel="noopener noreferrer" href="https://docs.flowx.ai/release-notes/v2.14.0-november-2022/"> 2.14.0</a>  🔍',
+         '🆕  Check our latest release <a target="_blank" rel="noopener noreferrer" href="https://docs.flowx.ai/release-notes/v2.14.0-november-2022/"> 3.0.0 </a>  🔍',
         backgroundColor: '#E7A811',
         textColor: '#FFFF',
         isCloseable: true,
