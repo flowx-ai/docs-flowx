@@ -70,7 +70,7 @@ It's important to make sure that disabled fields have the same expression config
 
 UI actions can be added to the Input Field to define its behavior and interactions.
 
-![](../../img/input_ui_actions.png)
+![](../../img/input_ui_actions.gif)
 
 You can find more information on how to configure a UI Action by checking the following section:
 
@@ -80,4 +80,4 @@ You can find more information on how to configure a UI Action by checking the fo
 
 * The Input Field can be styled using valid CSS properties (more details [here](../../#styling))
 
-![](../../img/input_form_field_styling.png)
+![](../../img/input_form_field_styling.gif)

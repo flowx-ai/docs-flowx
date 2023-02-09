@@ -12,40 +12,53 @@ A select list has multiple values that are defined by two parameters, a Label th
 
 The available configuration options for this form element are:
 
-#### Select Settings
+### Select Settings
 
-1. **General**
-   
-   * **Key** - creates the biding between form element and process data, so it can be later used in [decisions](../../../node/exclusive-gateway-node.md), [business rules](../../../node/task-node/task-node.md) or [integrations](../../../node/message-send-received-task-node.md)
+The Select Field offers the following configuration options:
 
-2. **Flowx props**
+* [General](#general)
+* [Properties](#properties)
+* [Datasource](#datasource)
+* [Validators](#validators)
+* [Expressions](#expressions)
+* [Select styling](#select-styling)
+
+
+#### General
    
+   * **Process data key** - creates the biding between form element and process data, so it can be later used in [decisions](../../../node/exclusive-gateway-node.md), [business rules](../../../node/task-node/task-node.md) or [integrations](../../../node/message-send-received-task-node.md)
+
+#### Properties
+   
+   * **Label** - the label of the select
    * **Placeholder** - placeholder when the field has no value
-   * **Label** - the label of the input
-   * **Type** - default or custom where the second one will allow the user to search between the options
    * **Empty message** - text displayed for custom type when no results are found
+   * **Search for options** - displays a search to filter options
+   * **Helpertext** - additional information about the select field (can be hidden inside an infopoint)
 
-3. **Validators** - multiple validators can be added to a select (more details [here](../../validators.md))
-
-4. **Datasource**
+#### Datasource
    
-   * **Default Value** - autofill the select with this value. Going back to the example with Woman label with F value and Man with M to have a default value of Woman we need to configure here F
-   * **Source Type** - it can be Static, Enumeration, or Process Data
-  
-5. **Options** - label - value pairs can be defined here (values from CMS and defined options together are not possible)
+* **Default value** - autofill the select with this value. Going back to the example with Woman label with F value and Man with M to have a default value of Woman we need to configure here F
+* **Source Type** - it can be Static, Enumeration, or Process Data
 
-6. **Expressions**
+#### Validators
+
+There are multiple validators can be added to a select (more details [here](../../validators.md)).
+
+#### Expressions
    
-   * **Hide** - JavaScript expressions used to hide components when they're truthy
-   * **Disabled expressions** - JavaScript expressions that should be evaluated as true or false. It's important to make sure that hidden fields also have the same expression configured under expressions → hide
+The select field's behavior can be defined using JavaScript expressions for hiding or disabling the element. The following properties can be configured for expressions:
+   
+* **Hide** - JavaScript expression used to hide the Select Field when it returns a truthy value
+* **Disabled** - JavaScript expression used to disable the Select Field when it returns a truthy value
 
-![](../../img/select_form_field_settings.png)
+![](../../img/select_form_field_settings.gif)
 
 #### Select styling
 
-* valid CSS properties (more details [here](../../#styling))
+* The Select Field can be styled using valid CSS properties (more details [here](../../#styling))
 
-A FORM with a [layout](../../layout-configuration.md) direction of row warp and some inputs and a select element will look like this:
+A FORM with a [layout](../../layout-configuration.md) direction of Horizontal and some inputs and a select element will look like this:
 
 ![](../../img/select_form_field1.png)
 
