@@ -1,4 +1,4 @@
-# Switch Form field
+# Switch
 
 ![](../../img/switch_form_field.gif)
 

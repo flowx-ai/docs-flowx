@@ -5,14 +5,14 @@ Form elements are used to capture user input. There are many types of form eleme
 ![Form elements](../../img/form_elements.png#center)
 
 
-[Input form field](input-form-field.md)
+[Input](input-form-field.md)
 
-[Select form field](select-form-field.md)
+[Select](select-form-field.md)
 
-[Checkbox form field](checkbox-form-field.md)
+[Checkbox](checkbox-form-field.md)
 
-[Radio form field](radio-form-field.md)
+[Radio](radio-form-field.md)
 
-[Datepicker form field](datepicker-form-field.md)
+[Datepicker](datepicker-form-field.md)
 
-[Switch form field](switch-form-field.md)
+[Switch](switch-form-field.md)
