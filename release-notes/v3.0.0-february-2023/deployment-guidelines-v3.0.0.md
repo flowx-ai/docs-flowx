@@ -38,7 +38,7 @@ After updating to **3.0.0** FLOWX.AI release, importing old processes definition
 
 ### 3.0.0 recommended versions
 
-| FLOWX.AI Platform Version 	| Component name 	                | Recommended version (tested version) 	|
+| FLOWX.AI Platform Version 	| Component name 	                | Recommended version (tested versions) |
 |---------------------------	|---------------------------------| --------------------------------------|
 | 3.0                        	| Keycloak       	                | 18.0.x                               	|
 | 3.0                       	| Kafka          	                | 3.2.0                               	|
