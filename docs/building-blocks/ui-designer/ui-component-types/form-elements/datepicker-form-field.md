@@ -1,11 +1,11 @@
-# DatePicker 
+# Datepicker 
 
 ![](../../img/datepicker_form_field.png)
 
 The datepicker (Calendar Picker) is a lightweight component that allows end users to enter or select a date value.
 
 :::info
-The default Date Picker value is `DD.MM.YYYY`.
+The default datepicker value is `DD.MM.YYYY`.
 :::
 
 ## Configuring the datepicker element
