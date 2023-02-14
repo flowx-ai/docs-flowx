@@ -2,31 +2,29 @@
 sidebar_position: 1
 ---
 
-# Input field
+# Input
 
 ![Input](../../img/input_form_field.png)
 
-## What is an input field?
-
 An input field is a form element that enables users to input data with validations and can be hidden or disabled.
 
-## Configuring the Input element
+## Configuring the input element
 
 ### Input settings
 
 The Input Field offers the following configuration options:
 
-   - [**General**](#general)
-   - [**Properties**](#flowx-props)
-   - [**Datasource**](#datasource)
-   - [**Validators**](#validators)
-   - [**Expressions**](#expressions)
-   - [**UI Actions**](#ui-actions)
-   - [**Input styling**](#input-styling)
+- [**General**](#general)
+- [**Properties**](#properties)
+- [**Datasource**](#datasource)
+- [**Validators**](#validators)
+- [**Expressions**](#expressions)
+- [**UI actions**](#ui-actions)
+- [**Input styling**](#input-styling)
 
 #### General
    
-* ** Process data key** - creates the binding between form element and process data, so it can be later used in [decisions](../../../node/exclusive-gateway-node.md), [business rules](../../../node/task-node/task-node.md) or [integrations](../../../node/message-send-received-task-node.md)
+* **Process data key** - creates the binding between form element and process data, so it can be later used in [decisions](../../../node/exclusive-gateway-node.md), [business rules](../../../node/task-node/task-node.md) or [integrations](../../../node/message-send-received-task-node.md)
 
 #### Properties
 
@@ -39,7 +37,7 @@ The Input Field offers the following configuration options:
 
 ![](../../img/input_props.png)
 
-#### **Datasource** 
+#### Datasource
 
 The default value for the element can be configured here, this will autofill the input field when you will run the process.
 
@@ -47,13 +45,13 @@ The default value for the element can be configured here, this will autofill the
 
 ![](../../img/input_datasource.png)
 
-#### **Validators** 
+#### Validators
 
 There are multiple validators can be added to an input (more details [here](../../validators.md)).
 
 ![](../../img/input_validators.png)
 
-#### **Expressions**  
+#### Expressions  
 
 The input field's behavior can be defined using JavaScript expressions for hiding or disabling the element. The following properties can be configured for expressions:
    
@@ -66,18 +64,22 @@ It's important to make sure that disabled fields have the same expression config
 
 ![](../../img/input_expressions.png)
 
-#### UI Actions
+#### UI actions
 
 UI actions can be added to the Input Field to define its behavior and interactions.
 
-![](../../img/input_ui_actions.png)
+* **Event** - possible value:`CHANGE`
+* **Action Type** - select the action type
 
-You can find more information on how to configure a UI Action by checking the following section:
+![](../../img/input_ui_actions.gif)
 
-[UI Actions](../../ui-actions.md)
+:::info
+For more details on how to configure a UI action, click [**here**](../../ui-actions).
+:::
+
 
 ### Input styling
 
 * The Input Field can be styled using valid CSS properties (more details [here](../../#styling))
 
-![](../../img/input_form_field_styling.png)
+![](../../img/input_form_field_styling.gif)

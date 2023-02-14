@@ -8,7 +8,7 @@ For example, suppose you are creating a piece of UI in which the user is present
 
 ## Configurable properties:
 
-1. Prototype Identifier Key - the key where to look in the iterated object to determine the prototype to be shown - in the below example the key is "type"
+1. **Prototype Identifier Key** - the key where to look in the iterated object to determine the prototype to be shown - in the below example the key is "type"
 2. Prototype Identifier Value - the value that should be present at the **Prototype Identifier Key** when this `COLLECTION_PROTOTYPE` should be displayed - in the below example the value is "normal" or "recommended"
 
 ## Example

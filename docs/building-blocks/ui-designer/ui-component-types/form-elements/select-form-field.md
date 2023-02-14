@@ -1,55 +1,86 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
-# Select Form field
+# Select 
 
 ![](../../img/select_form_field.png)
 
-This is a select element that allows a user to select from a predefined list.
+The Select form field is an element that enables users to make a choice from a list of predefined options. It consists of multiple values, each of which is defined by a label that is displayed in the dropdown menu, and a code that is saved.
 
-A select list has multiple values that are defined by two parameters, a Label that will be displayed in the dropdown and a code that will be saved. For example, you can have a _Female_ label with an **F** value and _Male_ with the **M** value. This means that when you will select _Female_ on the process instance, **F** value will be available for the **Select** key.
+:::info
+For instance, you could have a label of "Female" with the value "F" and "Male" with the value "M". This means that when a user selects "Female" in the process instance, the value "F" will be stored for the "Select" key.
+:::
 
-The available configuration options for this form element are:
+## Configuring the Select element
 
-#### Select Settings
+### Select Settings
 
-1. **General**
+These allow you to customize the settings for the Select Field:
+
+* [**General**](#general)
+* [**Properties**](#properties)
+* [**Datasource**](#datasource)
+* [**Validators**](#validators)
+* [**Expressions**](#expressions)
+* [**Select styling**](#select-styling)
+
+
+#### General
    
-   * **Key** - creates the biding between form element and process data, so it can be later used in [decisions](../../../node/exclusive-gateway-node.md), [business rules](../../../node/task-node/task-node.md) or [integrations](../../../node/message-send-received-task-node.md)
+* **Process data key** - creates the binding between form element and process data so it can be later used in [decisions](../../../node/exclusive-gateway-node.md), [business rules](../../../node/task-node/task-node.md) or [integrations](../../../node/message-send-received-task-node.md)
 
-2. **Flowx props**
+#### Properties
    
-   * **Placeholder** - placeholder when the field has no value
-   * **Label** - the label of the input
-   * **Type** - default or custom where the second one will allow the user to search between the options
-   * **Empty message** - text displayed for custom type when no results are found
+* **Label** - the label of the select
+* **Placeholder** - placeholder when the field has no value
+* **Empty message** - text displayed for custom type when no results are found
+* **Search for options** - displays a search to filter options
+* **Helpertext** - additional information about the select field (can be hidden inside an infopoint)
 
-3. **Validators** - multiple validators can be added to a select (more details [here](../../validators.md))
+#### Datasource
 
-4. **Datasource**
+* **Default value** - autofill the select with this value. Going back to the example with Woman label with F value and Man with M to have a default value of Woman we need to configure here F
+* **Source Type** - it can be Static, Enumeration, or Process Data
+* **Add option** - label - value pairs can be defined here
+
+#### Validators
+
+There are multiple validators can be added to a select (more details [here](../../validators.md)).
+
+#### Expressions
    
-   * **Default Value** - autofill the select with this value. Going back to the example with Woman label with F value and Man with M to have a default value of Woman we need to configure here F
-   * **Source Type** - it can be Static, Enumeration, or Process Data
-  
-5. **Options** - label - value pairs can be defined here (values from CMS and defined options together are not possible)
-
-6. **Expressions**
+The select field's behavior can be defined using JavaScript expressions for hiding or disabling the element. The following properties can be configured for expressions:
    
-   * **Hide** - JavaScript expressions used to hide components when they're truthy
-   * **Disabled expressions** - JavaScript expressions that should be evaluated as true or false. It's important to make sure that hidden fields also have the same expression configured under expressions → hide
+* **Hide** - JavaScript expression used to hide the Select Field when it returns a truthy value
+* **Disabled** - JavaScript expression used to disable the Select Field when it returns a truthy value
 
-![](../../img/select_form_field_settings.png)
+:::info
+It's important to make sure that disabled fields have the same expression configured under the path expressions → hide.
+:::
 
-#### Select styling
+![](../../img/select_form_field_settings.gif)
 
-* valid CSS properties (more details [here](../../#styling))
+#### UI actions
 
-A FORM with a [layout](../../layout-configuration.md) direction of row warp and some inputs and a select element will look like this:
+UI actions can be added to the select element to define its behavior and interactions. 
+
+* **Event** - possible value:`CHANGE`
+* **Action Type** - select the action type
+
+:::info
+For more details on how to configure a UI action, click [**here**](../../ui-actions).
+:::
+
+### Select styling
+
+* The Select Field can be styled using valid CSS properties (more details [here](../../#styling))
+
+A FORM with a [layout](../../layout-configuration.md) direction of Horizontal and some inputs and a select element will look like this:
 
 ![](../../img/select_form_field1.png)
 
-### Example - Dynamic dropdowns
+## Example - Dynamic dropdowns
 
 As mentioned previously, you can create dropdowns including static data, enumerations, or **process data**. Let's create an example using **process data** to create a process that contains **dynamic dropdowns**.
 
@@ -62,13 +93,13 @@ To create this kind of process, we need the following elements:
 
 * a [**task node**](../../../node/task-node/task-node.md) (this will be used to set which data will be displayed on the dropdowns)
 
-![](../../img/dynamic_dropdown2.png)
+![](../../img/dynamic_dropdown2.gif)
 
 * a [**user task node**](../../../node/user-task-node/user-task-node.md) (here we have the client forms and here we add the SELECT elements)
 
 ![](../../img/dynamic_dropdown3.gif)
 
-#### Creating the process
+### Creating the process
 
 Follow the next steps to create the process from scratch:
 
@@ -76,7 +107,7 @@ Follow the next steps to create the process from scratch:
 2. Click on the breadcrumbs (top-right corner) then click **New process** (the Process Designer will now open).
 3. Now add all the **necessary nodes** (as mentioned above).
 
-#### Configuring the nodes
+### Configuring the nodes
 
 1. On the **start milestone** node, add a **page** UI element.
 2. On the **task node**, add a new **Action** (this will set the data for the dropdowns) with the following properties:
@@ -85,9 +116,7 @@ Follow the next steps to create the process from scratch:
    * **Mandatory**
    * **Language** (we used an [**MVEL**](../../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md) script to create a list of objects)
 
-![](../../img/configure_nodes_dropdown.gif)
-
-3.  On the **user task node,** add a new **Action** (submit action, this will validate the forms and save the date) with the following properties:
+3.  On the **user task node**, add a new **Action** (submit action, this will validate the forms and save the date) with the following properties:
 
 * Action type - **Save Data**
 * **Manual**
@@ -98,7 +127,7 @@ Follow the next steps to create the process from scratch:
 
 Below you can find the MVEL script used in the above example:
 
-```
+```json
 output.put("application",
 {
     "client": {
@@ -151,38 +180,40 @@ output.put("application",
 });
 ```
 
-#### Configuring the UI
+### Configuring the UI
 
 Follow the next steps to configure the UI needed:
 
-1. Select the **user task node** and click the **brush icon** to open [**UI Designer**](../../).
+1. Select the **user task node** and click the **brush icon** to open [**UI Designer**](../../ui-designer).
 2. Add a [**card**](../root-components/card.md) element as a [**root component**](../root-components/) (this will group the other elements inside it) with the following properties:
-   * **Key** - `form`
    * **Message** - `{"application": ${application}}`
    * **Title** - _Customer Contract_
 3. Inside the **card**, add a [**form element**](./).
 4. Inside the **form** add two **select elements**, first will represent, for example, the _Customer Name_ and the second the _Contract ID._
 5. For first select element (Customer Name) set the following properties:
-   * **Key** - `application.client.selectedClient`
-   * **Placeholder** - Customer Name
+   * **Process data key** - `application.client.selectedClient`
    * **Label** - Customer Name
-   * **Type** - default
+   * **Placeholder** - Customer Name
    * **Source type** - Process Data (to extract the data added in the **task node**)
    * **Name** - `application.client.identity`
+
+![](../../img/select_customer_name.png)
+
 6. For the second select element (Contract ID) set the following properties:
-   * **Key** - `application.client.selectedContract`
-   * **Placeholder** - Contract ID
+   * **Process data key** - `application.client.selectedContract`
    * **Label** - Contract ID
-   * **Type** - default
+   * **Placeholder** - Contract ID
    * **Source Type** - Process Data
    * **Name** - `application.contracts`
-   * **Parent Name** - `application.client.selectedClient`
+   * **Parent** - `SELECT` (choose from the dropdown list)
+
+![](../../img/select_contract_id.png)
+
 7. Add a button under the form that contains the select elements with the following properties:
    * **Label** - Submit
-   * **Type** - fill
    * **Add UI action** - add the submit action attached earlier to the user task node
 
-![](../../img/dynamic_dropdowns_4.gif)
+![](../../img/button_submit.png)
 
 8. Test and run the process by clicking **Start process**.
 

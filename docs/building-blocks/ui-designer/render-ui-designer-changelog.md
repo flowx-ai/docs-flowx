@@ -1,4 +1,4 @@
-# Rendering and UI Designer Changelog
+# Rendering and UI Designer changelog
 
 :::caution
 This changelog is relevant to the 3.0 release, which introduces significant changes to the UI configuration.

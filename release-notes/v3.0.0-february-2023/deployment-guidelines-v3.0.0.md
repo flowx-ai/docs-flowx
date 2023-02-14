@@ -80,6 +80,8 @@ There are two important items that need to be taken in consideration with it com
 
 * [`theme_components.json`](#theme_componentsjson)
 * [`theme_tokens.json`](#theme_tokensjson)
+
+
  
 #### `theme_components.json`
 
@@ -311,6 +313,8 @@ interface Color {
     shades: ColorShade[]
 }
 ```
+
+### C
 
 ### Task management plugin
 
