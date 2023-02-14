@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 # Radio 
@@ -14,14 +14,23 @@ Radio buttons are normally presented in radio groups (a collection of radio butt
 
 The available configuration options for this form element are:
 
+- [**General**](#general)
+- [**Properties**](#properties)
+- [**Datasource**](#datasource)
+- [**Validators**](#validators)
+- [**Expressions**](#expressions)
+- [**UI actions**](#ui-actions)
+- [**Radio styling**](#radio-styling)
+
 #### General
 
-* **Process data key** - creates the binding between form element and process data` so it can be later used in [decisions](../../../node/exclusive-gateway-node.md), [business rules](../../../node/task-node/task-node.md) or [integrations](../../../node/message-send-received-task-node.md)
+* **Process data key** - creates the binding between form element and process data so it can be later used in [decisions](../../../node/exclusive-gateway-node.md), [business rules](../../../node/task-node/task-node.md) or [integrations](../../../node/message-send-received-task-node.md)
 
 #### Properties
 
 * **Label** - the label that appears on the radio
 * **Helpertext** - additional information about the radio (can be hidden inside an infopoint)
+
 
 #### Datasource
 
@@ -39,8 +48,8 @@ The following validators can be added to a radio: `required` and `custom` (more 
   
 The radio's element behavior can be defined using JavaScript expressions for hiding or disabling the element. The following properties can be configured for expressions:
    
-* **Hide** - JavaScript expression used to hide the Select Field when it returns a truthy value
-* **Disabled** - JavaScript expression used to disable the Select Field when it returns a truthy value
+* **Hide** - JavaScript expression used to hide the Radio element when it returns a truthy value
+* **Disabled** - JavaScript expression used to disable the Radio element when it returns a truthy value
 
 :::info
 It's important to make sure that disabled fields have the same expression configured under the path expressions → hide.
@@ -52,7 +61,7 @@ It's important to make sure that disabled fields have the same expression config
 
 UI actions can be added to the radio element to define its behavior and interactions.
 
-* **Event** - possible value:`CHANGE`
+* **Event** - possible value: `CHANGE`
 * **Action Type** - select the action type
 
 :::info

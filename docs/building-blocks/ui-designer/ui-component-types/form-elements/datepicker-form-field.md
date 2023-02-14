@@ -35,6 +35,8 @@ The available configuration options for this form element are:
 * **Min Date, Max Date error** - when a date is introduced by typing, define the error message to be displayed
 * **Helpertext** - additional information about the input field (can be hidden inside an infopoint)
 
+![](../../img/datepicker1.png)
+
 #### Datasource
    
 * **Default Value** - the default values of the datepicker element, this will autofill the datepicker when you will run the process
@@ -42,12 +44,15 @@ The available configuration options for this form element are:
 #### Validators
 
 The following validators can be added to a datepicker: `required`, `custom`, `isSameOrBeforeToday` or `isSameOrAfterToday` (more details [here](../../validators.md)).
+
+![](../../img/datepicker2.png)
+
 #### Expressions
 
 The datepicker behavior can be defined using JavaScript expressions for hiding or disabling the element. The following properties can be configured for expressions:
    
-* **Hide** - JavaScript expression used to hide the Select Field when it returns a truthy value
-* **Disabled** - JavaScript expression used to disable the Select Field when it returns a truthy value
+* **Hide** - JavaScript expression used to hide the datepicker when it returns a truthy value
+* **Disabled** - JavaScript expression used to disable the datepicker when it returns a truthy value
 
 :::info
 It's important to make sure that disabled fields have the same expression configured under the path expressions → hide.
@@ -57,17 +62,17 @@ It's important to make sure that disabled fields have the same expression config
 
 UI actions can be added to the datepicker element to define its behavior and interactions.
 
-* **Event** - possible value:`CHANGE`
+* **Event** - possible value: `CHANGE`
 * **Action Type** - select the action type
 
 :::info
 For more details on how to configure a UI action, click [**here**](../../ui-actions).
 :::
 
+
+![](../../img/datepicker3.png)
+
 ### Datepicker styling
 
 * valid CSS properties (more details [here](../../#styling))
 
-An example of a datepicker in form, with the datepicker open:
-
-![DatePicker Form element example](../../img/datepicker_styling.png)

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # Checkbox
@@ -53,8 +53,8 @@ The following validators can be added to a checkbox: `required` and `custom` (mo
 
 The checkbox behavior can be defined using JavaScript expressions for hiding or disabling the element. The following properties can be configured for expressions:
    
-* **Hide** - JavaScript expression used to hide the Select Field when it returns a truthy value
-* **Disabled** - JavaScript expression used to disable the Select Field when it returns a truthy value
+* **Hide** - JavaScript expression used to hide the checkbox when it returns a truthy value
+* **Disabled** - JavaScript expression used to disable the checkbox when it returns a truthy value
 
 :::info
 It's important to make sure that disabled fields have the same expression configured under the path expressions → hide.
