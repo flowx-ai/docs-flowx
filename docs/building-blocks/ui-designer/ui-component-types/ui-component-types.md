@@ -50,9 +50,9 @@ Different UI component types can be configured using UI Designer. The components
 
 <summary>Forms</summary>
 
-* [Form](form-elements)
+* [Form](./form-elements)
 * [Input](form-elements/input-form-field.md)
-* Textarea
+* [Textarea](./form-elements/text-area.md)
 * [Select](form-elements/select-form-field.md)
 * [Checkbox](form-elements/checkbox-form-field.md)
 * [Radio](form-elements/radio-form-field.md)

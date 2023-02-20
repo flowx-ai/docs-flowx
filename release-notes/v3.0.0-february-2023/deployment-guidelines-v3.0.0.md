@@ -88,31 +88,10 @@ There are two important items that need to be taken in consideration with it com
 This JSON object is a collection of all components and their properties. Each element represents a different design element (e.g. "accordion","card", etc.). 
  
 Each element object has two main properties: 
+
 * `genericProperties` - is an array of objects that define properties such as background color, padding, and font styles for the element
 *  `modifiers` - is also an array of objects, each representing a different modification of the element's properties, each modifier object has a `name` property and a `properties` array, which contains more objects that define the modified properties of the element. 
 
-#### Structure
-
-```js
-interface ElementType {
-    genericProperties: Property[];
-    elementName: string;
-    modifiers: Modifier[];
-}
-
-interface Property {
-    name: string;
-    reference?: string;
-    value?: string;
-    unit?: string;
-}
-
-interface Modifier {
-    name: string;
-    properties: Property[];
-    modifiers: Modifier[];
-}
-```
  
 #### Example 
 
@@ -314,7 +293,9 @@ interface Color {
 }
 ```
 
-### C
+For more information on how to use the web renderer, check the following section:
+
+[Using the Angular Renderer - Theming](/docs/platform-deep-dive/core-components/renderer-sdks/angular-renderer#theming)
 
 ### Task management plugin
 
