@@ -390,3 +390,7 @@ npm run build-and-sync:watch --target-path=../../demo-web
 
 Always follow the Angular official [coding styles](https://angular.io/guide/styleguide).
 
+Below you will find a Storybook which will demonstrate how components behave under different states, props, and conditions, it allows you to preview and interact with individual UI components in isolation, without the need for a full-fledged application:
+
+[Storybook](https://storybook.demo.flowxai.dev/)
+

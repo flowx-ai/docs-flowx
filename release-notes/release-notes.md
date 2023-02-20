@@ -14,7 +14,7 @@ Follow the Release Notes space to find all the information on the features and i
 
 Q1 - February 2022
 
-* [v3.0.0](./v3.0.0-february-2023/deployment-guidelines-v3.0.0.md)
+* [v3.0.0](./v3.0.0-february-2023/v3.0.0-february-2023.md)
 
 </details>
 
