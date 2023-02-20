@@ -77,7 +77,6 @@ UI actions can be added to the Input Field to define its behavior and interactio
 For more details on how to configure a UI action, click [**here**](../../ui-actions).
 :::
 
-
 ### Input styling
 
 * The Input Field can be styled using valid CSS properties (more details [here](../../#styling))

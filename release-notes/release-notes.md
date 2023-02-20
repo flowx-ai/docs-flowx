@@ -12,7 +12,7 @@ Follow the Release Notes space to find all the information on the features and i
 
 <summary>v.3.x.x</summary>
 
-Q1 - January 2022
+Q1 - February 2022
 
 * [v3.0.0](./v3.0.0-february-2023/v3.0.0-february-2023.md)
 
