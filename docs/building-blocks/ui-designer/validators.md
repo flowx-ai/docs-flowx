@@ -4,14 +4,9 @@ sidebar_position: 3
 
 # Validators
 
-
-<div className= "image-scaled">
-
-![](./img/validators.png)
-
-</div>
-
 Data validation can be enforced using Validators.
+
+![](./img/validators_gen.png)
 
 Some Angular default validators are available:
 
@@ -37,65 +32,45 @@ It's also possible to build custom validators inside the container application a
 
 A required validator checks if the value exists.
 
+![](./img/validatorss.png)
+
 Important to be used with other validators like a [minlength](#2-minlength) one to check if there is no value at all.
 
-<div className= "image-scaled">
 
 ![required validator](./img/validators.png)
-
-</div>
 
 #### 2. minlength
 
 Checks if the value has a minimum number of characters (no character at all will not trigger this validator so better use it together with a required validator).
 
-<div className= "image-scaled">
+![minlength validator](./img/validator_minlength.png#center)
 
-![minlength validator](./img/validator_minlength.png)
-
-</div>
 
 #### 3. maxlength
 
 Checks if the value has a maximum number of characters (no character at all will not trigger this validator so better used with a required one).
 
-
-<div className= "image-scaled">
-
-![maxlength validator](./img/validator_maxlength.png)
-
-</div>
+![maxlength validator](./img/validator_maxlength.png#center)
 
 #### 4. min
 
 Checks if a numeric value is smaller (no character will trigger this validator so better use it with a required one).
 
-
-<div className= "image-scaled">
-
-![min validator](./img/validator_min.png)
-
-</div>
+![min validator](./img/validator_min.png#center)
 
 #### 5. max
 
 Checks if a numeric value is smaller (no character will trigger this validator so better use it with a required one).
 
-<div className= "image-scaled">
+![max validator](./img/validator_max.png#center)
 
-![max validator](./img/validator_max.png)
-
-</div>
 
 #### 6. email
 
 Checks if you entered an email (no character will not trigger this validator so better used with a required one).
 
-<div className= "image-scaled">
+![email validator](./img/validator_email.png#center)
 
-![email validator](./img/validator_email.png)
-
-</div>
 
 #### 7. pattern
 
