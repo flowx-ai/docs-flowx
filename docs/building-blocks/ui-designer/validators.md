@@ -4,7 +4,9 @@ sidebar_position: 3
 
 # Validators
 
-Data validation can be enforced using Validators.
+Data validation is an essential aspect of building robust and reliable applications. It ensures that the data entered by the user is accurate, complete, and consistent. 
+
+Validators are an essential tool for enforcing data validation rules in Angular applications. They provide a set of pre-defined validation rules that can be used to validate various form inputs such as text fields, number fields, email fields, date fields, and more.
 
 ![](./img/validators_gen.png)
 
@@ -19,108 +21,130 @@ Some Angular default validators are available:
 
 Other predefined validators are also available:
 
-1. `isSameOrBeforeToday`: validates that a datepicker value is in the pas
+1. `isSameOrBeforeToday`: validates that a [datepicker](./ui-component-types/form-elements/datepicker-form-field) value is in the past
 2. `isSameOrAfterToday`: validates that a datepicker value is in the future
 
-Form validation is triggered by default when the button set to validate the Form Group is pressed.
+:::info
+Form validation is triggered by default when the button set to validate a [**form**](./ui-component-types/form-elements/form-elements.md#) is pressed.
+:::
 
-It's also possible to build custom validators inside the container application and reference them here by name.
+It's also possible to build [custom validators](#custom-validators) inside the container application and reference them here by name.
 
-### Predefined validators
+## Predefined validators
 
-#### 1. required
+### required validator
 
-A required validator checks if the value exists.
+This validator checks whether a value exists in the input field. 
 
 ![](./img/validatorss.png)
 
-Important to be used with other validators like a [minlength](#2-minlength) one to check if there is no value at all.
-
+It is recommended to use this validator with other validators like [minlength](#minlength-validator) to check if there is no value at all.
 
 ![required validator](./img/validators.png)
 
-#### 2. minlength
+### minlength validator
 
-Checks if the value has a minimum number of characters (no character at all will not trigger this validator so better use it together with a required validator).
+This validator checks whether the input value has a minimum number of characters. If there are no characters at all, this validator will not trigger. It is advisable to use this validator with a [required](#required-validator) validator.
 
 ![minlength validator](./img/validator_minlength.png#center)
 
 
-#### 3. maxlength
+### maxlength validator
 
-Checks if the value has a maximum number of characters (no character at all will not trigger this validator so better used with a required one).
+This validator checks whether the input value has a maximum number of characters. If there are no characters at all, this validator will not trigger. It is advisable to use this validator with a [required](#required-validator) validator.
 
 ![maxlength validator](./img/validator_maxlength.png#center)
 
-#### 4. min
+### min validator
 
-Checks if a numeric value is smaller (no character will trigger this validator so better use it with a required one).
+This validator checks whether a numeric value is smaller than the specified value. If there are no characters at all, this validator will not trigger. It is advisable to use this validator with a [required](#required-validator) validator.
 
 ![min validator](./img/validator_min.png#center)
 
-#### 5. max
+### max validator
 
-Checks if a numeric value is smaller (no character will trigger this validator so better use it with a required one).
+This validator checks whether a numeric value is larger than the specified value. If there are no characters at all, this validator will not trigger. It is advisable to use this validator with a [required](#required-validator) validator.
 
 ![max validator](./img/validator_max.png#center)
 
 
-#### 6. email
+### email validator
 
-Checks if you entered an email (no character will not trigger this validator so better used with a required one).
+This validator checks whether the input value is a valid email. If there are no characters at all, this validator will not trigger. It is advisable to use this validator with a [required](#required-validator) validator.
 
 ![email validator](./img/validator_email.png#center)
 
 
-#### 7. pattern
+### pattern validator
 
-Checks if you entered a string that respects a pattern (in this case, a regex).
+This validator checks whether the input value matches the specified pattern (for example, a [regex expression](https://www.regexbuddy.com/regex.html)).
 
-<div className= "image-scaled">
+![](./img/validator_pattern.png#center)
 
-![](./img/validator_pattern.png)
 
-</div>
+### datepicker - isSameOrBeforeToday 
 
-#### 8. isSameOrBeforeToday
 
-It can be added to [datepicker](./ui-component-types/form-elements/datepicker-form-field.md) fields.
-
-Checks a date is today or in the past (no character will trigger this validator so better use it with a required one).
-
-<div className= "image-scaled">
+This validator can be used to validate [datepicker](./ui-component-types/form-elements/datepicker-form-field.md) inputs. It checks whether the selected date is today or in the past. If there are no characters at all, this validator will not trigger. It is advisable to use this validator with a [required](#required-validator) validator.
 
 ![isSameOrBeforeToday](./img/validator_issameday.png)
 
-</div>
+### datepicker - isSameOrAfterToday
 
-#### 9. isSameOrAfterToday
-
-Checks a date is today or in the past (no character will trigger this validator so better use it with a required one).
-
-<div className= "image-scaled">
+This validator can be used to validate datepicker inputs. It checks whether the selected date is today or in the future. If there are no characters at all, this validator will not trigger. It is advisable to use this validator with a [required](#required-validator) validator.
 
 ![](./img/validator_issamedayafter.png)
 
-</div>
 
-### Custom validators
+## Custom validators
 
-Custom validators can be created by a developer in the web application before you can use them.
+Developers can create custom validators in the web application and reference them by name.
 
 Available configurations are:
 
-1. **Validator name -** name provided by the developer to uniquely identify the validator
-2. **Type** - sync/ async validator (for more details check [this](https://angular.io/api/forms/AsyncValidator))
-3. **Error Message** - The message that will be displayed if the field is not valid
-4. **Validator parameters** - if the validator needs inputs to decide if the field is valid or not, you can pass them using this list
+1. **Execution type** - sync/async validator (for more details check [this](https://angular.io/api/forms/AsyncValidator))
+2. **Name** - name provided by the developer to uniquely identify the validator
+3. **Params** - if the validator needs inputs to decide if the field is valid or not, you can pass them using this list
+4. **Error Message** - the message that will be displayed if the field is not valid
 
-**NOTE:** the error that the validator returns **MUST** match the validator name.
 
-<div className= "image-scaled">
+:::info
+The error that the validator returns **MUST** match the validator name.
+:::
 
-![custom validator](./img/validator_custom.png)
+![custom validator](./img/validator_custom.png#center)
 
-</div>
+#### Custom validator example
 
+Below you can find an example of a custom validator (`currentOrLastYear`) that restricts data selection to the current or the previous year:
+   
+
+```typescript
+currentOrLastYear: function currentOrLastYear(AC: AbstractControl): { [key: string]: any } {
+    if (!AC) {
+      return null;
+    }
+
+    const yearDate = moment(AC.value, YEAR_FORMAT, true);
+    const currentDateYear = moment(new Date()).startOf('year');
+    const lastYear = moment(new Date()).subtract(1, 'year').startOf('year');
+
+    if (!yearDate.isSame(currentDateYear) && !yearDate.isSame(lastYear)) {
+      return { currentOrLastYear: true };
+    }
+
+    return null;
+```
+
+:::info
 For more details about custom validators please check this [link](../../platform-deep-dive/core-components/renderer-sdks/angular-renderer.md).
+:::
+
+Using validators in your application can help ensure that the data entered by users is valid, accurate, and consistent, improving the overall quality of your application. 
+
+It can also help prevent errors and bugs that may arise due to invalid data, saving time and effort in debugging and fixing issues. 
+
+Overall, enforcing data validation using validators is a crucial step in building high-quality, reliable, and user-friendly applications.
+
+
+

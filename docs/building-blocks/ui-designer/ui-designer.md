@@ -11,12 +11,10 @@ The FLOWX.AI platform offers a variety of ready-to-use [UI components](./ui-comp
 
 The FLOWX.AI platform includes an intuitive **UI Designer** for creating diverse UI templates. You can use various elements such as basic buttons, indicators, and forms, as well as predefined [collections](./ui-component-types/collection/collection.md) and [prototypes](./ui-component-types/collection/collection_prototype.md). To access the UI Designer, follow these steps:
 
-
-1. Open **FLOWX Designer** and select **Definitions** from the **Processes** tab.
+1. Open **FLOWX.AI Designer** and select **Definitions** from the **Processes** tab.
 2. Select a **process** from the process definitions list.
 3. Click the **Edit** **process** button.
 4. Select a **node** then click the **brush icon** in the Process Designer navigation menu to open the **UI Designer**.
-
 
 ![](./img/access_ui_designer.gif)
 
@@ -24,18 +22,18 @@ The FLOWX.AI platform includes an intuitive **UI Designer** for creating diverse
 The UI designer is available for [**User task**](../node/user-task-node/user-task-node.md) nodes and [**Milestone**](../node/milestone-node.md) nodes (nodes that require human interaction).
 :::
 
-
 After adding a specific component to the node, the right-side menu will display more configuration options.
 
 :::caution
-Depending on the component type different properties are available for configuration.
+Depending on the [component type](./ui-component-types) different properties are available for configuration.
 :::
 
-![](./img/use_ui_designer.gif)
+![](./img/use_ui_designer3.gif)
 
-### UI components
+## UI components
 
-For example, when configuring a [card](./ui-component-types/root-components/card.md) element (as seen in the earlier example), the following properties can be customized:
+FLOWX.AI offers a wide range of [UI components](./ui-component-types) that can be customized using the UI Designer. For example, when configuring a [card](./ui-component-types/root-components/card) element (which is a root component), the following properties can be customized:
+
 
 #### Settings
 
@@ -49,31 +47,48 @@ For example, when configuring a [card](./ui-component-types/root-components/card
 
 </div>
 
-#### Styling
+[Root components](./ui-component-types/root-components)
+
+By utilizing the UI Designer, users can easily create rich web interfaces with customizable UI components.
+
+## Styling
+
+In FLOWX.AI, styling options are available for components that group children, which can be found under the styling section. 
+
+Users can customize the direction, alignment, gap, sizing, and spacing of their layout. These properties help to create well-organized and visually pleasing user interfaces.
+
+For example, for a [card](./ui-component-types/root-components/card) component, the following properties are available for configuration:
 
 * **Layout** - available for components that group children (more details about layouts can be found [here](https://tburleson-layouts-demos.firebaseapp.com/#/docs)):
    * Direction
    * Alignment
+   * Wrap
    * Gap
 * **Sizing** - fill, fixed or auto
 * **Spacing** - margin and padding
-* **Typography** - fonts, font color, text indentation etc.
-* **Background** - background color
-* **Border** - set the radius, width or color
-* **Advanced** - add CSS classes to pre-defined components
+* **Typography** - typography options allow users to set font styles, colors, text indentation, and other formatting options; these properties can be found under the **Typography** section
+* **Background** - the Background section allows users to set the background color for their components
+* **Border** - border properties can be customized under the **Border** section, users can set the radius, width, or color of their component's borders
+* **Advanced** - for advanced customization, users can add CSS classes to pre-defined components, this option is available under the **Advanced** section
 
 <div className= "image-scaled">
 
-![](./img/ui_designer_styling.gif)
+![](./img/ui_designer_styling.gif#center)
 
 </div>
 
-#### Tree view
+By utilizing these styling options in FLOWX.AI, users can create unique and visually appealing interfaces that meet their design requirements.
 
-This panel displays the component hierarchy, and clicking on a specific component in the tree will highlight the selection in the editor.
+## Tree view
 
-![](./img/ui_designer_tree.gif)
+The Tree View panel displays the component hierarchy, allowing users to easily navigate through the different levels of their interface. 
 
-For further information on Component Types, refer to the next section:
+Clicking on a specific component in the tree will highlight the selection in the editor, making it easy to locate and modify.
+
+![](./img/ui_designer_tree1.gif)
+
+For more information on the different types of components available in FLOWX.AI, please refer to the next section:
 
 [Component types](./ui-component-types/ui-component-types.md)
+
+

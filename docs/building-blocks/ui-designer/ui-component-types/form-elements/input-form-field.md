@@ -68,7 +68,7 @@ It's important to make sure that disabled fields have the same expression config
 
 UI actions can be added to the Input Field to define its behavior and interactions.
 
-* **Event** - possible value:`CHANGE`
+* **Event** - possible value: `CHANGE`
 * **Action Type** - select the action type
 
 ![](../../img/input_ui_actions.gif)
