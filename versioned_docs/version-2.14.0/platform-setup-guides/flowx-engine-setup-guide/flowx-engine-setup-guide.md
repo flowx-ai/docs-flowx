@@ -132,6 +132,22 @@ The configuration related to consumers (group ids and thread numbers) can be con
 
 * `KAFKA_CONSUMER_THREADS_PROCESS_OPERATIONS` - the number of threads used by a Kafka consumer application, related to processing operations from task management
 
+| Default parameter (env var)                  | Default FLOWX.AI value (can be overwritten) |
+| -------------------------------------------- | ------------------------------------------- |
+| KAFKA_CONSUMER_GROUP_ID_NOTIFY_ADVANCE       | notif123-preview                            |
+| KAFKA_CONSUMER_GROUP_ID_NOTIFY_PARENT        | notif123-preview                            |
+| KAFKA_CONSUMER_GROUP_ID_ADAPTERS             | notif123-preview                            |
+| KAFKA_CONSUMER_GROUP_ID_SCHEDULER_RUN_ACTION | notif123-preview                            |
+| KAFKA_CONSUMER_GROUP_ID_PROCESS_START        | notif123-preview                            |
+| KAFKA_CONSUMER_GROUP_ID_PROCESS_EXPIRE       | notif123-preview                            |
+| KAFKA_CONSUMER_GROUP_ID_PROCESS_OPERATIONS   | notif123-preview                            |
+| KAFKA_CONSUMER_THREADS_NOTIFY_ADVANCE        | 6                                           |
+| KAFKA_CONSUMER_THREADS_NOTIFY_PARENT         | 6                                           |
+| KAFKA_CONSUMER_THREADS_ADAPTERS              | 6                                           |
+| KAFKA_CONSUMER_THREADS_SCHEDULER_RUN_ACTION  | 6                                           |
+| KAFKA_CONSUMER_THREADS_PROCESS_START         | 6                                           |
+| KAFKA_CONSUMER_THREADS_PROCESS_EXPIRE        | 6                                           |
+| KAFKA_CONSUMER_THREADS_PROCESS_OPERATIONS    | 6                                           |
 
 It is important to know that all the events that start with a configured pattern will be consumed by the engine. This makes it possible to create a new integration and connect it to the engine without changing the configuration of the engine.
 
@@ -145,11 +161,24 @@ It is important to know that all the events that start with a configured pattern
 
 * `KAFKA_TOPIC_LICENSE_OUT` - the topic name used by the Engine to generate licensing-related details
 
+| Default parameter (env var)        | Default FLOWX.AI value (can be overwritten) |
+| ---------------------------------- | ------------------------------------------- |
+| KAFKA_TOPIC_PROCESS_NOTIFY_ADVANCE | paperflow-process-notify                    |
+| KAFKA_TOPIC_PROCESS_NOTIFY_PARENT  | flowx-process-parent-notify                 |
+| KAFKA_TOPIC_PATTERN                | ro.flowx.updates.qa-.*"                     |
+| KAFKA_TOPIC_LICENSE_OUT            | ai.flowx.license                            |
+
+
 #### **Topics related to the Task Management plugin**
 
 * `KAFKA_TOPIC_TASK_OUT` - used for sending notifications to the plugin
 
 * `KAFKA_TOPIC_PROCESS_OPERATIONS_IN` - used for receiving calls from the task management plugin
+
+| Default parameter (env var)       | Default FLOWX.AI value (can be overwritten) |
+| --------------------------------- | ------------------------------------------- |
+| KAFKA_TOPIC_TASK_OUT              | ai.flowx.task.in                            |
+| KAFKA_TOPIC_PROCESS_OPERATIONS_IN | ai.flowx.process.operations                 |
 
 #### **Topics related to the scheduler extension**
 
@@ -165,6 +194,15 @@ It is important to know that all the events that start with a configured pattern
 
 * `KAFKA_TOPIC_PROCESS_SCHEDULE_IN_ADVANCE` - the topic name where Engine listens for events, where scheduler sends messages related to advancing through a database
 
+| Default parameter (env var)                | Default FLOWX.AI value (can be overwritten) |
+| ------------------------------------------ | ------------------------------------------- |
+| KAFKA_TOPIC_PROCESS_EXPIRE_IN              | ai.flowx.process.expire                     |
+| KAFKA_TOPIC_PROCESS_SCHEDULE_OUT_SET       | ai.flowx.in.schedule.message.v1             |
+| KAFKA_TOPIC_PROCESS_SCHEDULE_OUT_STOP      | ai.flowx.in.stop.scheduled.message.v1       |
+| KAFKA_TOPIC_PROCESS_SCHEDULE_IN_RUN_ACTION | ai.flowx.action.run                         |
+| KAFKA_TOPIC_PROCESS_SCHEDULE_IN_ADVANCE    | ai.flowx.schedule.advancing                 |
+
+
 [Using the scheduler](../../platform-deep-dive/core-components/core-extensions/scheduler.md#using-the-scheduler)
 #### **Topics related to the Search Data service**
 
@@ -172,15 +210,30 @@ It is important to know that all the events that start with a configured pattern
 
 * `KAFKA_TOPIC_DATA_SEARCH_OUT` - the topic name used by the Engine to reply after finding a process
 
+| Default parameter (env var) | Default FLOWX.AI value (can be overwritten)             |
+| --------------------------- | ------------------------------------------------------- |
+| KAFKA_TOPIC_DATA_SEARCH_IN  | ai.flowx.dev.core.trigger.search.data.v1                |
+| KAFKA_TOPIC_DATA_SEARCH_OUT | ai.flowx.dev.engine.receive.core.search.data.results.v1 |
+
 #### **Topics related to the Audit service**
 
 * `KAFKA_TOPIC_AUDIT_OUT` - topic key for sending audit logs. Default value: `ai.flowx.audit.log`
+
+| Default parameter (env var) | Default FLOWX.AI value (can be overwritten) |
+| --------------------------- | ------------------------------------------- |
+| `KAFKA_TOPIC_AUDIT_OUT`     | ai.flowx.audit.log                          |
 
 #### **Processes that can be started by sending messages to a Kafka topic**
 
 * `KAFKA_TOPIC_PROCESS_START_IN` - the Engine listens on this topic for requests to start a new process instance
 
 * `KAFKA_TOPIC_PROCESS_START_OUT` - used for sending out the reply after starting a new process instance
+
+| Default parameter (env var)     | Default FLOWX.AI value (can be overwritten) |
+| ------------------------------- | ------------------------------------------- |
+| `KAFKA_TOPIC_PROCESS_START_IN`  | ai.flowx.in.start.process                   |
+| `KAFKA_TOPIC_PROCESS_START_OUT` | ai.flowx.out.start.process                  |
+
 
 ### Configuring WebSockets
 

@@ -180,7 +180,7 @@ The suggested topic pattern naming convention is the following:
 
 * `KAFKA_TOPIC_LICENSE_OUT` - the topic name used by the Engine to generate licensing-related details
 
-| Default parameter (env var)        | Default FLOWX.AI value (can be overwritten  |
+| Default parameter (env var)        | Default FLOWX.AI value (can be overwritten) |
 | ---------------------------------- | ------------------------------------------- |
 | KAFKA_TOPIC_PROCESS_NOTIFY_ADVANCE | ai.flowx.dev.core.notify.advance.process.v1 |
 | KAFKA_TOPIC_PROCESS_NOTIFY_PARENT  | ai.flowx.dev.core.notify.parent.process.v1  |
@@ -263,14 +263,6 @@ The engine communicates with the frontend application via WebSockets. The follow
 
 * `WEB_SOCKET_SERVER_PATH` - the WebSocket server path
 
-| Default parameter (env var)    | Default FLOWX.AI value (can be overwritten) |
-| ------------------------------ | ------------------------------------------- |
-| WEB_SOCKET_SERVER_URL_EXTERNAL | ws://localhost:8080                         |
-| WEB_SOCKET_SERVER_PORT         | 9092                                        |
-| WEB_SOCKET_SERVER_PATH         | /ws/updates/process                         |
-                                              
-
-
 ### Configuring file upload size
 
 The maximum file size allowed for uploads can be set by using the following environment variables:
@@ -278,7 +270,6 @@ The maximum file size allowed for uploads can be set by using the following envi
 * `SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE` - maximum file size allowed for uploads
 
 * `SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE` - maximum request size allowed for uploads
-
 
 ### Configuring Advancing controller
 
