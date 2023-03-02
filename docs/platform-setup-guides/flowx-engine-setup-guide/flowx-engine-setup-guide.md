@@ -28,7 +28,7 @@ For Microservices architecture, some Microservices holds their data individually
 
 A basic Postgres configuration can be set up using a helm values.yaml file as it follows:
 
-*   helm values.yaml:
+*  helm values.yaml:
 
     ```yaml
       onboardingdb:
@@ -90,42 +90,85 @@ Both a producer and a consumer must be configured. The following Kafka-related c
 
 * `KAFKA_MESSAGE_MAX_BYTES` - this is the largest size of the message that can be received by the broker from a producer.
 
-The configuration related to consumers (group ids and thread numbers) can be configured separately for each message type:
+#### Consumer groups & consumer threads
 
-* `KAFKA_CONSUMER_GROUP_ID_NOTIFY_ADVANCE`
+In Kafka a consumer group is a group of consumers that jointly consume and process messages from one or more Kafka topics. Each consumer group has a unique identifier called a group ID, which is used by Kafka to manage message consumption and distribution among the members of the group.
 
-* `KAFKA_CONSUMER_GROUP_ID_NOTIFY_PARENT`
+Thread numbers, on the other hand, refer to the number of threads that a consumer application uses to process messages from Kafka. By default, each consumer instance runs in a single thread, which can limit the throughput of message processing. Increasing the number of consumer threads can help to improve the parallelism and efficiency of message consumption, especially when dealing with high message volumes.
 
-* `KAFKA_CONSUMER_GROUP_ID_ADAPTERS`
+Both group IDs and thread numbers can be configured in Kafka to optimize the processing of messages according to specific requirements, such as message volume, message type, and processing latency.
 
-* `KAFKA_CONSUMER_GROUP_ID_SCHEDULER_RUN_ACTION`
+The configuration related to consumers (group ids and thread numbers) can be configured separately for each message type as it follows:
 
-* `KAFKA_CONSUMER_GROUP_ID_SCHEDULER_ADVANCING`
+* `KAFKA_CONSUMER_GROUP_ID_NOTIFY_ADVANCE` - related to a Kafka consumer group that receives messages related to notifying advance actions, it is used to configure the group ID for this consumer group
 
-* `KAFKA_CONSUMER_GROUP_ID_PROCESS_START`
+* `KAFKA_CONSUMER_GROUP_ID_NOTIFY_PARENT` - related to a Kafka consumer group that receives messages related to notifying when a subprocess is blocked and it sends a notification to the parent process, it is used to configure the group ID for this consumer group
 
-* `KAFKA_CONSUMER_GROUP_ID_PROCESS_EXPIRE`
+* `KAFKA_CONSUMER_GROUP_ID_ADAPTERS` - related to a Kafka consumer group that receives messages related to adapters, it is used to configure the group ID for this consumer group
 
-* `KAFKA_CONSUMER_GROUP_ID_PROCESS_OPERATIONS`
+* `KAFKA_CONSUMER_GROUP_ID_SCHEDULER_RUN_ACTION` - related to a Kafka consumer group that receives messages related to requests to run scheduled actions, it is used to configure the group ID for this consumer group
 
-* `KAFKA_CONSUMER_THREADS_NOTIFY_ADVANCE`
+* `KAFKA_CONSUMER_GROUP_ID_SCHEDULER_ADVANCING`- related to a Kafka consumer group that receives messages related to messages sent by the scheduler when a timeout expires, indicating that the advancing should continue (parallel advancing), it is used to configure the group ID for this consumer group
 
-* `KAFKA_CONSUMER_THREADS_NOTIFY_PARENT`
+* `KAFKA_CONSUMER_GROUP_ID_PROCESS_START` - related to a Kafka consumer group that receives messages related to starting processes, it is used to configure the group ID for this consumer group
 
-* `KAFKA_CONSUMER_THREADS_ADAPTERS`
+* `KAFKA_CONSUMER_GROUP_ID_PROCESS_EXPIRE` - related to expiring processes, it is used to configure the group ID for this consumer group
 
-* `KAFKA_CONSUMER_THREADS_SCHEDULER_RUN_ACTION`
+* `KAFKA_CONSUMER_GROUP_ID_PROCESS_OPERATIONS` - related to a Kafka consumer group that receives messages related to processing operations from task management, it is used to configure the group ID for this consumer group
 
-* `KAFKA_CONSUMER_THREADS_SCHEDULER_ADVANCING`
+* `KAFKA_CONSUMER_THREADS_NOTIFY_ADVANCE` - the number of threads used by a Kafka consumer application to notify the Kafka broker about the progress of
 
-* `KAFKA_CONSUMER_THREADS_PROCESS_START`
+* `KAFKA_CONSUMER_THREADS_NOTIFY_PARENT` - the number of threads used by a Kafka consumer application, related to a process when it is blocked 
 
-* `KAFKA_CONSUMER_THREADS_PROCESS_EXPIRE`
+* `KAFKA_CONSUMER_THREADS_ADAPTERS`- the number of threads used by a Kafka consumer application, related to adapters
 
-* `KAFKA_CONSUMER_THREADS_PROCESS_OPERATIONS`
+* `KAFKA_CONSUMER_THREADS_SCHEDULER_RUN_ACTION` - the number of threads used by a Kafka consumer application, related to requests to run scheduled actions
+
+* `KAFKA_CONSUMER_THREADS_SCHEDULER_ADVANCING` - the number of threads used by a Kafka consumer application, related to messages sent by the scheduler when a timeout expires, indicating that the advancing should continue (parallel advancing), it is used to configure the group ID for this consumer group
+
+* `KAFKA_CONSUMER_THREADS_PROCESS_START` - the number of threads used by a Kafka consumer application, related to starting processes
+
+* `KAFKA_CONSUMER_THREADS_PROCESS_EXPIRE` - the number of threads used by a Kafka consumer application, related to expiring processes
+
+* `KAFKA_CONSUMER_THREADS_PROCESS_OPERATIONS` - the number of threads used by a Kafka consumer application, related to processing operations from task management
+
+
+| Default parameter (env var)                  | Default FLOWX.AI value (can be overwritten) |
+| -------------------------------------------- | ------------------------------------------- |
+| KAFKA_CONSUMER_GROUP_ID_NOTIFY_ADVANCE       | notif123-preview                            |
+| KAFKA_CONSUMER_GROUP_ID_NOTIFY_PARENT        | notif123-preview                            |
+| KAFKA_CONSUMER_GROUP_ID_ADAPTERS             | notif123-preview                            |
+| KAFKA_CONSUMER_GROUP_ID_SCHEDULER_RUN_ACTION | notif123-preview                            |
+| KAFKA_CONSUMER_GROUP_ID_PROCESS_START        | notif123-preview                            |
+| KAFKA_CONSUMER_GROUP_ID_PROCESS_EXPIRE       | notif123-preview                            |
+| KAFKA_CONSUMER_GROUP_ID_PROCESS_OPERATIONS   | notif123-preview                            |
+| KAFKA_CONSUMER_THREADS_NOTIFY_ADVANCE        | 6                                           |
+| KAFKA_CONSUMER_THREADS_NOTIFY_PARENT         | 6                                           |
+| KAFKA_CONSUMER_THREADS_ADAPTERS              | 6                                           |
+| KAFKA_CONSUMER_THREADS_SCHEDULER_RUN_ACTION  | 6                                           |
+| KAFKA_CONSUMER_THREADS_PROCESS_START         | 6                                           |
+| KAFKA_CONSUMER_THREADS_PROCESS_EXPIRE        | 6                                           |
+| KAFKA_CONSUMER_THREADS_PROCESS_OPERATIONS    | 6                                           |
 
 
 It is important to know that all the events that start with a configured pattern will be consumed by the engine. This makes it possible to create a new integration and connect it to the engine without changing the configuration of the engine.
+
+:::info
+The suggested topic pattern naming convention is the following:
+
+```yaml
+ topic:
+    naming:
+      package: "ai.flowx."
+      environment: "dev."
+      version: ".v1"
+      prefix: ${kafka.topic.naming.package}${kafka.topic.naming.environment}
+      suffix: ${kafka.topic.naming.version}
+      engineReceivePattern: engine.receive.
+
+    pattern: ${kafka.topic.naming.prefix}${kafka.topic.naming.engineReceivePattern}*
+```
+:::
 
 ![](../../platform-deep-dive/img/engine_kafka_pattern.svg) 
 
@@ -137,14 +180,26 @@ It is important to know that all the events that start with a configured pattern
 
 * `KAFKA_TOPIC_LICENSE_OUT` - the topic name used by the Engine to generate licensing-related details
 
+| Default parameter (env var)        | Default FLOWX.AI value (can be overwritten  |
+| ---------------------------------- | ------------------------------------------- |
+| KAFKA_TOPIC_PROCESS_NOTIFY_ADVANCE | ai.flowx.dev.core.notify.advance.process.v1 |
+| KAFKA_TOPIC_PROCESS_NOTIFY_PARENT  | ai.flowx.dev.core.notify.parent.process.v1  |
+| KAFKA_TOPIC_PATTERN                | ai.flowx.dev.engine.receive.*               |
+| KAFKA_TOPIC_LICENSE_OUT            | ai.flowx.dev.core.trigger.save.license.v1   |
+
 #### **Topics related to the Task Management plugin**
 
 * `KAFKA_TOPIC_TASK_OUT` - used for sending notifications to the plugin
 
-* `KAFKA_TOPIC_PROCESS_OPERATIONS_IN` - user for receiving calls from the task management plugin
+* `KAFKA_TOPIC_PROCESS_OPERATIONS_IN` - used for receiving calls from the task management plugin
+
+| Default parameter (env var)       | Default FLOWX.AI value (can be overwritten)    |
+| --------------------------------- | ---------------------------------------------- |
+| KAFKA_TOPIC_TASK_OUT              | ai.flowx.dev.plugin.tasks.trigger.save.task.v1 |
+| KAFKA_TOPIC_PROCESS_OPERATIONS_IN | ai.flowx.dev.core.trigger.operations.v1        |
+
 
 #### **Topics related to the scheduler extension**
-
 
 [Scheduler](../../platform-deep-dive/core-components/core-extensions/scheduler.md)
 
@@ -156,24 +211,47 @@ It is important to know that all the events that start with a configured pattern
 
 * `KAFKA_TOPIC_PROCESS_SCHEDULE_IN_RUN_ACTION` - the topic name that the Engine listens on for requests to run scheduled actions
 
-* `KAFKA_TOPIC_PROCESS_SCHEDULE_IN_ADVANCE` - 
+* `KAFKA_TOPIC_PROCESS_SCHEDULE_IN_ADVANCE` - the topic name where Engine listens for events, where scheduler sends messages related to advancing through a database
+
+| Default parameter (env var)                | Default FLOWX.AI value (can be overwritten)  |
+| ------------------------------------------ | -------------------------------------------- |
+| KAFKA_TOPIC_PROCESS_EXPIRE_IN              | ai.flowx.dev.core.trigger.expire.process.v1  |
+| KAFKA_TOPIC_PROCESS_SCHEDULE_OUT_SET       | ai.flowx.dev.core.trigger.set.schedule.v1    |
+| KAFKA_TOPIC_PROCESS_SCHEDULE_OUT_STOP      | ai.flowx.dev.core.trigger.stop.schedule.v1   |
+| KAFKA_TOPIC_PROCESS_SCHEDULE_IN_RUN_ACTION | ai.flowx.dev.core.trigger.run.action.v1      |
+| KAFKA_TOPIC_PROCESS_SCHEDULE_IN_ADVANCE    | ai.flowx.dev.core.trigger.advance.process.v1 |
 
 [Using the scheduler](../../platform-deep-dive/core-components/core-extensions/scheduler.md#using-the-scheduler)
+
 #### **Topics related to the Search Data service**
 
 * `KAFKA_TOPIC_DATA_SEARCH_IN` - the topic name that the Engine listens on for requests to search for processes
 
 * `KAFKA_TOPIC_DATA_SEARCH_OUT` - the topic name used by the Engine to reply after finding a process
 
+| Default parameter (env var) | Default FLOWX.AI value (can be overwritten)             |
+| --------------------------- | ------------------------------------------------------- |
+| KAFKA_TOPIC_DATA_SEARCH_IN  | ai.flowx.dev.core.trigger.search.data.v1                |
+| KAFKA_TOPIC_DATA_SEARCH_OUT | ai.flowx.dev.engine.receive.core.search.data.results.v1 |
+
 #### **Topics related to the Audit service**
 
 * `KAFKA_TOPIC_AUDIT_OUT` - topic key for sending audit logs. Default value: `ai.flowx.audit.log`
+
+| Default parameter (env var) | Default FLOWX.AI value (can be overwritten) |
+| --------------------------- | ------------------------------------------- |
+| `KAFKA_TOPIC_AUDIT_OUT`     | ai.flowx.dev.core.save.audit.v1             |
 
 #### **Processes that can be started by sending messages to a Kafka topic**
 
 * `KAFKA_TOPIC_PROCESS_START_IN` - the Engine listens on this topic for requests to start a new process instance
 
 * `KAFKA_TOPIC_PROCESS_START_OUT` - used for sending out the reply after starting a new process instance
+
+| Default parameter (env var)     | Default FLOWX.AI value (can be overwritten) |
+| ------------------------------- | ------------------------------------------- |
+| `KAFKA_TOPIC_PROCESS_START_IN`  | ai.flowx.dev.core.trigger.start.rpocess.v1  |
+| `KAFKA_TOPIC_PROCESS_START_OUT` | ai.flowx.dev.core.confirm.start.process.v1  |
 
 ### Configuring WebSockets
 
@@ -184,6 +262,14 @@ The engine communicates with the frontend application via WebSockets. The follow
 * `WEB_SOCKET_SERVER_PORT` - the port on which the WebSocket server is running
 
 * `WEB_SOCKET_SERVER_PATH` - the WebSocket server path
+
+| Default parameter (env var)    | Default FLOWX.AI value (can be overwritten) |
+| ------------------------------ | ------------------------------------------- |
+| WEB_SOCKET_SERVER_URL_EXTERNAL | ws://localhost:8080                         |
+| WEB_SOCKET_SERVER_PORT         | 9092                                        |
+| WEB_SOCKET_SERVER_PATH         | /ws/updates/process                         |
+                                              
+
 
 ### Configuring file upload size
 
