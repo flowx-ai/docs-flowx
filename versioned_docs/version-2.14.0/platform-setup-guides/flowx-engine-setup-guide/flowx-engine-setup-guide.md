@@ -165,7 +165,7 @@ It is important to know that all the events that start with a configured pattern
 | ---------------------------------- | ------------------------------------------- |
 | KAFKA_TOPIC_PROCESS_NOTIFY_ADVANCE | paperflow-process-notify                    |
 | KAFKA_TOPIC_PROCESS_NOTIFY_PARENT  | flowx-process-parent-notify                 |
-| KAFKA_TOPIC_PATTERN                | ro.flowx.updates.qa-.*"                     |
+| KAFKA_TOPIC_PATTERN                | ro.flowx.updates.qa-.*                      |
 | KAFKA_TOPIC_LICENSE_OUT            | ai.flowx.license                            |
 
 
