@@ -23,6 +23,7 @@ These allow you to customize the settings for the Select Field:
 * [**Datasource**](#datasource)
 * [**Validators**](#validators)
 * [**Expressions**](#expressions)
+* [**UI actions**](#ui-actions)
 * [**Select styling**](#select-styling)
 
 
@@ -65,7 +66,7 @@ It's important to make sure that disabled fields have the same expression config
 
 UI actions can be added to the select element to define its behavior and interactions. 
 
-* **Event** - possible value:`CHANGE`
+* **Event** - possible value: `CHANGE`
 * **Action Type** - select the action type
 
 :::info

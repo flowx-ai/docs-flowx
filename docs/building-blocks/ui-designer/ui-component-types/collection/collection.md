@@ -8,9 +8,9 @@ Similar to a container element, this type of component allows iterating through 
 
 Configurable properties:
 
-1. `collectionSource` - process key where a list can be found (this must be a valid array of objects)
+* `collectionSource` - process key where a list can be found (this must be a valid array of objects)
 
-Example
+#### Example
 
 ![Collection configuration for displaying employees ](../../img/collection_example.png)
 
