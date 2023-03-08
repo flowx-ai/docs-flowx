@@ -9,7 +9,7 @@ Using elastic search, the new search microservice will be able to search for key
 ::: 
 
 :::caution
-Elastic search indexing must be switched on the FLOWX.AI Engine configuration. You can find more details in the [**Search data service setup guide**](../../platform-setup-guide/search-data-service-setup-guide.md).
+Elastic search indexing must be switched on the FLOWX.AI Engine configuration. You can find more details in the [**Search data service setup guide**](.././../../platform-setup-guides/search-data-service-setup-guide.md).
 :::
 
 ## Using search data
@@ -23,7 +23,7 @@ Use case:
 3. Configure a send event via a [Kafka send action](../../../building-blocks/node/message-send-received-task-node.md#example-of-a-message-send-event).
 ![](../../img/kafka_send_action_search.png)
 4. Configure the following items:
-    + **Topic name** - the Kafka topic on which the search service listens for requests; ❗️respect the [naming pattern](../../platform-setup-guide/flowx-engine-setup-guide/flowx-engine-setup-guide.md#kafka-configuration)
+    + **Topic name** - the Kafka topic on which the search service listens for requests; ❗️respect the [naming pattern](../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#configuring-kafka)
 	+ **Data to send** - (key) - used when data is sent from the frontend via an action to validate the data (you can find more information in the User Task configuration section)
     + **Headers** - required
     + **Body message**:
@@ -101,4 +101,4 @@ To access the view of your process variables, tokens and subprocesses go to **FL
 
 Let's go now through the steps needed to deploy and set up the service:
 
-[Search data service setup guide](../..//platform-setup-guide/search-data-service-setup-guide.md)
+[Search data service setup guide](../../../platform-setup-guides/search-data-service-setup-guide.md)

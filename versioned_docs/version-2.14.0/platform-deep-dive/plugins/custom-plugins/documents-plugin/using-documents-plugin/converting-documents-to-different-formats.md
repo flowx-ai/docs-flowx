@@ -10,7 +10,6 @@ Currently, the supported conversion method is from **PDF** to **JPEG**.
 
 ## Sending the request
 
-
 To create a process that converts from PDF to JPEG format:
 
 1. Create a process in which you add a [**Kafka send event**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) node and a [**Kafka receive event**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) node (one to send the request, one to receive the reply). 

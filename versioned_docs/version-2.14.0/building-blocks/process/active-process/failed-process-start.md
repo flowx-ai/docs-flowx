@@ -2,8 +2,7 @@
 
 ## Exceptions
 
-Exceptions are types of errors meant to help you debug a failure in the execution of a process.&#x20;
-
+Exceptions are types of errors meant to help you debug a failure in the execution of a process.
 ![](../img/exceptions1.png)
 
 Exceptions can be accessed from multiple places:

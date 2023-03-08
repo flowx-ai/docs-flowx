@@ -1,4 +1,4 @@
-# Task Manager plugin setup
+# Task Management plugin setup
 
 The plugin is available as a docker image.
 

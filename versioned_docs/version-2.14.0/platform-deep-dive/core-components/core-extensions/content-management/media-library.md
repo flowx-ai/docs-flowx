@@ -31,7 +31,6 @@ To upload an asset to the Media Library, follow the next steps:
 Supported formats: PNG, JPEG, JPG, GIF, SVG or WebP format, 1 MB maximum size.
 :::
 
-
 ### Displaying assets
 
 Users can preview all the uploaded assets just be accessing the **Media Library**.

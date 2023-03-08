@@ -26,19 +26,19 @@ To configure the roles for the users, they need to be added first to an identity
 
 For more details you can check the next links:
 
-[Configuring access rights for Admin](../../../flowx-designer/designer-setup-guide/)
+[Configuring access rights for Admin](../../flowx-designer/designer-setup-guide/configuring-access-rights-for-admin.md)
 
-[Configuring access rights for Engine](../flowx-engine-setup-guide/configuring-access-rights-for-engine.md)
+[Configuring access rights for Engine](../flowx-engine-setup-guide/flowx-engine-setup-guide.md)
 
 [Configuring access rights for License](../license-engine-setup-guide/configuring-access-rights-for-license.md)
 
 [Configuring access rights for CMS](../cms-setup-guide/configuring-access-rights-for-cms.md)
 
-[Configuring access rights for Task Management](../../plugins/plugins-setup-guide/task-management-plugin-setup/configuring-access-rights-for-task-management.md)
+[Configuring access rights for Task Management](../../platform-deep-dive/plugins/plugins-setup-guide/task-management-plugin-setup/)
 
-[Configuring access rights for Notifications plugin](../../plugins/plugins-setup-guide/notifications-plugin-setup/configuring-access-rights-for-notifications.md)
+[Configuring access rights for Notifications plugin](../../platform-deep-dive/plugins/plugins-setup-guide/notifications-plugin-setup/configuring-access-rights-for-notifications.md)
 
-[Configuring access rights for Documents plugin](../../plugins/plugins-setup-guide/documents-plugin-setup/configuring-access-rights-for-documents.md)
+[Configuring access rights for Documents plugin](../../platform-deep-dive/plugins/plugins-setup-guide/documents-plugin-setup/configuring-access-rights-for-documents.md)
 
 :::info
 For more information on how to add roles and how to configure an IdP solution, check the next section:

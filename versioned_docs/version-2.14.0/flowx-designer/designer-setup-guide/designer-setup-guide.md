@@ -1,12 +1,12 @@
 # Designer setup guide
 
-The [FLOWX Designer](../flowx-designer.md) app is made up of a backend microservice and a frontend app. The backend microservice handles saving and editing process definitions. It provides the REST API used by the FLOWX Designer. The processes defined here will be handled by the [FLOWX Engine](../../platform-deep-dive/core-components/flowx-engine.md).
+The [FLOWX.AI Designer](../flowx-designer.md) app is made up of a backend microservice and a frontend app. The backend microservice handles saving and editing process definitions. It provides the REST API used by the FLOWX.AI Designer. The processes defined here will be handled by the [FLOWX.AI Engine](../../platform-deep-dive/core-components/flowx-engine/flowx-engine.md)
 
 Follow to next steps in order to set them up in your environment.
 
 ## **Managing Prerequisites**
 
-The backend microservice uses most of the same resources as the FLOWX Engine.
+The backend microservice uses most of the same resources as the FLOWX.AI Engine.
 
 ### Database - Postgres / Oracle
 
@@ -18,7 +18,7 @@ The backend microservice needs to be able to connect to the Kafka cluster in cas
 
 ### NGINX
 
-It would be best if the FLOWX Designer used a separate [NGINX ](../../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-nginx.md)load balancer from the Engine. This is used in order to route API calls from the [SPA](designer-setup-guide.md#for-configuring-the-spa) (single page application) to the backend service, to the engine and to various plugins.
+It would be best if the FLOWX.AI Designer used a separate [NGINX](../../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-nginx.md) load balancer from the Engine. This is used in order to route API calls from the [SPA](designer-setup-guide.md#for-configuring-the-spa) (single page application) to the backend service, to the engine and to various plugins.
 
 This is used in order to route API calls from the SPA (single page application) to the backend service, to the engine, and to various plugins.&#x20;
 

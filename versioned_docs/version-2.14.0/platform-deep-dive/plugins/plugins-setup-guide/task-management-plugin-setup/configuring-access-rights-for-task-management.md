@@ -2,8 +2,6 @@
 
 Granular access rights can be configured for restricting access to the Task management plugin component.
 
-
-
 Two different access authorizations are provided, each with specified access scopes:
 
 1. **manage-tasks** - for configuring access for viewing the tasks lists
