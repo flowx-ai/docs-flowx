@@ -2,7 +2,7 @@
 
 ## What is an integration?
 
-**Connecting legacy systems or third-party apps** to the engine is easily done through custom integrations. These can be developed using any tech stack, the only requirement is that they connect to Kafka in order to communicate with the FLOWX process engine.
+**Connecting legacy systems or third-party apps** to the engine is easily done through custom integrations. These can be developed using any tech stack, the only requirement is that they connect to Kafka in order to communicate with the FLOWX.AI process engine.
 
 Integrations can be used for anything from legacy APIs, custom file exchange solutions, or RPAs.
 
@@ -10,11 +10,11 @@ Integrations can be used for anything from legacy APIs, custom file exchange sol
 
 ![](../img/integrations_archi.svg)
 
-Since they involve interaction with legacy systems and custom logic, they need to be developed the first time you need to integrate one into your FLOWX setup.
+Since they involve interaction with legacy systems and custom logic, they need to be developed the first time you need to integrate one into your FLOWX.AI setup.
 
 ## Creating a custom integration
 
-Creating integrations for the FLOWX platform is pretty straightforward, you can use your preferred technology in order to write the custom code for them. The only constraint is that they need to be able to send and receive messages to/from the Kafka cluster.
+Creating integrations for the FLOWX.AI platform is pretty straightforward, you can use your preferred technology in order to write the custom code for them. The only constraint is that they need to be able to send and receive messages to/from the Kafka cluster.
 
 #### Steps for creating an integration
 
@@ -32,7 +32,25 @@ Here's the startup code for a Java Connector Microservice:
 
 #### How to manage Kafka Topics
 
-Don't forget, the engine is configured to consume all the events on topics that start with a predefined topic path (ex. flowx.in.\*)
+Don't forget, the engine is configured to consume all the events on topics that start with a predefined topic pat, defined using a naming pattern (ex. ai.flowx.dev.engine.receive*)
+
+:::info
+The suggested naming convention is the following:
+
+```yaml
+ topic:
+    naming:
+      package: "ai.flowx."
+      environment: "dev."
+      version: ".v1"
+      prefix: ${kafka.topic.naming.package}${kafka.topic.naming.environment}
+      suffix: ${kafka.topic.naming.version}
+      engineReceivePattern: engine.receive
+
+    pattern: ${kafka.topic.naming.prefix}${kafka.topic.naming.engineReceivePattern}*
+```
+:::
+
 
 * you will need to configure this topic pattern when setting up the Engine
 * and make sure to use it when sending messages from the Connectors back to the Engine

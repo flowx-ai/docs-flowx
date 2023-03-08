@@ -12,7 +12,7 @@ Configurable properties:
 
 #### Example
 
-![Collection configuration for displaying employees ](../../img/collection_example.png)
+![Collection configuration for displaying employees](../../img/collection_example.png)
 
 Source collection data example:
 

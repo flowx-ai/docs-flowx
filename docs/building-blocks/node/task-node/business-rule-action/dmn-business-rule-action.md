@@ -1,11 +1,11 @@
-# DMN Business Rule Action
+# DMN Business Rule action
 
 For a brief introduction to Decision Model and Notation, check the following section:
 
 
 [Intro to DMN](../../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-dmn.md)
 
-### **Creating a DMN Business Rule Action**
+### **Creating a DMN Business Rule action**
 
 To create and attach a DMN business rule action to a task node, you must do the following:
 
@@ -18,7 +18,7 @@ To create and attach a DMN business rule action to a task node, you must do the 
 
 ![](./img/create_dmn_business_rule_action.gif)
 
-### **Using a DMN Business Rule Action**
+### **Using a DMN Business Rule action**
 
 We have the following scenario, a bank needs to perform client identification tasks/actions. This action can be defined as a business rule inside a BPMN process using FLOWX Designer.
 
@@ -42,9 +42,9 @@ The previous example could be easily transformed into a DMN Business Rule action
 
 In the example above we used FEEL expression language in order to write the rules that should be met in order for the output to happen. FEEL defines a syntax for expressing conditions that input data should be evaluated against.
 
-**Input** - In the example above we used as inputs the type of clients (inside a bank) using the `application.client` key.
+**Input** - In the example above we used as inputs the type of clients (inside a bank) using the `application.client` key
 
-**Output** - In the example above we used as inputs the type of clients (inside a bank) using the `application.client` key.
+**Output** - In the example above we used as inputs the type of clients (inside a bank) using the `application.client` key
 
 DMN also defines an XML schema that allows DMN models to be used across multiple DMN authoring platforms. The following output is the XML source of the decision table example from the previous section:
 

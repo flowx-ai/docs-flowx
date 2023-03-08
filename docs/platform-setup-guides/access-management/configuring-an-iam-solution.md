@@ -11,7 +11,7 @@ To build a minimal required Keycloak you have to configure the following items:
 * [import user roles](#creatingimporting-user-groups-and-roles)
 * [clients](#adding-clients)
 * [role mappers](#adding-protocol-mappers)
-* [service accounts](#adding-service-accountss)
+* [service accounts](#adding-service-accounts)
 
 :::info
 Recommended keycloak version: **15.0**
@@ -133,10 +133,10 @@ Protocol mappers perform transformation on tokens and documents. They can do thi
 There are multiple types of mappers that we will use in the following examples:
 
 * [Group Membership mapper ](#group-membership-mapper)- it can be used to map user groups to the authorization token
-* [User Attribute mapper](#user-attribute-mapper) - it can be used to map custom attributes, for example, mapping the [businessFilters ](../../user-roles-management/business-filters.md) list to the token claim
-* [User Realm Role](#user-realm-role) - it can be used to map a user realm role to a token claim
+* [User Attribute mapper](#user-attribute-mapper) - it can be used to map custom attributes, for example, mapping the [businessFilters ](../../platform-deep-dive/user-roles-management/business-filters.md) list to the token claim
+* [User Realm role](#user-realm-role) - it can be used to map a user realm role to a token claim
 
-### **Group Membership mapper**
+### Group Membership mapper
 
 To add a mapper, complete the next steps (example used: adding user groups in the authorization token):
 
@@ -147,7 +147,7 @@ To add a mapper, complete the next steps (example used: adding user groups in th
 
 ![](../../platform-deep-dive/img/iam8.png)
 
-### **User Attribute mapper**
+### User Attribute mapper
 
 Add customer **business filters** attribute to `{example}-authenticate` client - so the business filters list will be added to the token claim.
 
@@ -155,7 +155,7 @@ Add customer **business filters** attribute to `{example}-authenticate` client -
 
 You can find more information about business filters in the following section:
 
-[Business filters](../../user-roles-management/business-filters.md)
+[Business filters](../../platform-deep-dive/user-roles-management/business-filters.md)
 
 
 ### User realm role
@@ -227,7 +227,7 @@ security:
 A service account is an account that allows a component to directly access the Keycloak API.
 :::
 
-### **Admin service account**
+### Admin service account
 
 This will be used by the admin microservice for making calls directly to the Keycloak API.
 
@@ -262,9 +262,9 @@ The **admin service account** defined in the example above can have the followin
 
 For more information, check the following section:
 
-[Configuring access rights for admin](../../../flowx-designer/designer-setup-guide/configuring-access-rights-for-admin.md)
+[Configuring access rights for admin](../../flowx-designer/designer-setup-guide/configuring-access-rights-for-admin.md)
 
-### **Task management service account**
+### Task management service account
 
 This will be used by the **task management microservice** for making calls directly to keycloak API.
 
@@ -300,4 +300,4 @@ The **task management service account** defined in the example above can have th
 
 For more information, check the following section:
 
-[Configuring access rights for Task Management](../../plugins/plugins-setup-guide/task-management-plugin-setup/configuring-access-rights-for-task-management.md)
+[Configuring access rights for Task Management](../../platform-deep-dive/plugins/plugins-setup-guide/task-management-plugin-setup/configuring-access-rights-for-task-management.md)

@@ -18,7 +18,7 @@ It has the following dependencies:
 
 * **Connection to the same Kafka instance as the engine** - the License Engine needs to be able to communicate with the FLOWX.AI Engine using Kafka; the Kafka instance used by the engine should be the same one used by the License Engine
 
-* **Routing of requests through NGINX** - requests made to the License Engine should be routed through the FLOWX Designer using NGINX, the configuration for the Designer should be updated to also expose the REST API of the License Engine by adding a path in `flowx-admin-plugins-subpaths`
+* **Routing of requests through NGINX** - requests made to the License Engine should be routed through the FLOWX.AI Designer using NGINX, the configuration for the Designer should be updated to also expose the REST API of the License Engine by adding a path in `flowx-admin-plugins-subpaths`
 
 ## Configuration
 

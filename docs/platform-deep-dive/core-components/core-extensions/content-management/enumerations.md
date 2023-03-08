@@ -52,9 +52,9 @@ To configure an enumeration value, follow the next steps:
 
 ![](../../../img/enum_configuration.gif)
 
-### **Creating a child collection**
+### **Creating a child collection
 
-Enumerations can also be defined as a hierarchy - for each entry, we can define a list of children values (eg. name of the countries defined under the continents enumeration values); hierarchies further enable cascading values in the end-user interface (eg. after selecting a continent in the first select [UI component](../../../../building-blocks/ui-designer/ui-component-types), the second select component will contain only the children of this continent).
+Enumerations can also be defined as a hierarchy - for each entry, we can define a list of children values (for example, name of the countries defined under the continents' enumeration values); hierarchies further enable cascading values in the end-user interface (for example, after selecting a continent in the first select [UI component](../../../../building-blocks/ui-designer/ui-component-types), the second select component will contain only the children of this continent).
 
 ![](../../../img/enum_child_collection.png)
 

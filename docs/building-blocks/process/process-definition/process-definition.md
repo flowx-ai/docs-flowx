@@ -138,7 +138,7 @@ When you create a new swimlane, it comes with two default permissions assigned b
 ![](../../img/process_permissions.png)
 
 
-[Configuring access rights for processes](../../../platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide/configuring-access-roles-for-processes.md)
+[Configuring access rights for processes](../../../platform-setup-guides/flowx-engine-setup-guide/configuring-access-roles-for-processes.md)
 
 ### Task management
 

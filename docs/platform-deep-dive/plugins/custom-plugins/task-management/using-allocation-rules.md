@@ -13,7 +13,7 @@ Tasks will always be allocated depending on the users load (number of tasks) fro
 To access the allocation rules, follow the next steps:
 
 1. Open **FLOWX.AI Designer**.
-2. From the side menu, under **Task Management,** select the **Allocation rules** entry.
+2. From the side menu, under **Task Management**, select the **Allocation rules** entry.
 
 ![](../../../img/access_allocation_rules.png)
 

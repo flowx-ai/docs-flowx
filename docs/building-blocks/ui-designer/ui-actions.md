@@ -78,7 +78,7 @@ You can add an event depending on the element that you select. There are two eve
 The **action type** dropdown will be pre-filled with the following UI action types:
 
 * DISMISS - used to dismiss a modal after action execution
-* ACTION - used to link an action to an ui action
+* ACTION - used to link an action to a UI action
 * START_PROCESS_INHERIT - used to inherit data from another process
 * UPLOAD - used to create an un upload action
 * [EXTERNAL](ui-actions.md#external-ui-actions) - used to create an action that will open a link in a new tab

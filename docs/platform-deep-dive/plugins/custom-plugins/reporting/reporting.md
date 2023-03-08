@@ -58,9 +58,9 @@ Contains all the information for extracting and processing data from the DB, inc
 
 It is mandatory that before using Superset, the reporting plugin need to have a PostgreSQL database installed and configured.
 
-[FLOWX.AI Engine DB configuration](../../platform-setup-guide/flowx-engine-setup-guide/flowx-engine-setup-guide.md#database---postgres--oracle)
+[FLOWX.AI Engine DB configuration](../../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md)
 
-[Reporting DB configuration](../../../platform-deep-dive/plugins/plugins-setup-guide/reporting-setup#postgres-database)
+[Reporting DB configuration](../../plugins-setup-guide/reporting-setup.md#postgres-database)
 
 :::info
 Read-only users should be used in production in the reporting-plugin cronjob.
@@ -96,11 +96,11 @@ Before using the plugin, make sure you marked all the **Data models** and **Proc
 
 This flag can be used in the following places:
 
-* [**Data model**](../../../building-blocks/process/process-definition/process-definition.md#data-model) - for the keys that must be used in the reporting
+* [**Data model**](../../../../building-blocks/process/process-definition/process-definition.md#data-model) - for the keys that must be used in the reporting
 
 ![](../../../img/flag_data_model.gif)
 
-* [**Process settings**](../../../building-blocks/process/process-definition/process-definition.md#general) tab - to include a process definition in reporting.
+* [**Process settings**](../../../../building-blocks/process/process-definition/process-definition.md#settings) tab - to include a process definition in reporting.
 
 ![](../../../img/reporting_flag.gif)
 
@@ -202,5 +202,5 @@ To create a dashboard follow the next steps:
 
 ![](../../../img/save_dashboard.gif)
 
-[Reporting setup guide](../plugins-setup-guide/reporting-setup)
+[Reporting setup guide](../../plugins-setup-guide/reporting-setup.md)
 

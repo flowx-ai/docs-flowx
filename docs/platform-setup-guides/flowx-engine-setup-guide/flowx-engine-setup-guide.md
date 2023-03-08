@@ -86,7 +86,7 @@ Both a producer and a consumer must be configured. The following Kafka-related c
 
 * `SPRING_KAFKA_BOOTSTRAP_SERVERS` - the address of the Kafka server, it should be in the format "host:port"
 
-* `KAFKA_AUTH_EXCEPTION_RETRY_INTERVAL` - the interval between retries after AuthorizationException is thrown by KafkaConsumer
+* `KAFKA_AUTH_EXCEPTION_RETRY_INTERVAL` - the interval between retries after AuthorizationException is thrown by Kafka consumer
 
 * `KAFKA_MESSAGE_MAX_BYTES` - this is the largest size of the message that can be received by the broker from a producer.
 
@@ -174,7 +174,7 @@ The suggested topic pattern naming convention is the following:
 
 * `KAFKA_TOPIC_PROCESS_NOTIFY_ADVANCE` - Kafka topic used internally by the engine
 
-* `KAFKA_TOPIC_PROCESS_NOTIFY_PARENT` - Topic used for sub-processes to notify parent process when finished
+* `KAFKA_TOPIC_PROCESS_NOTIFY_PARENT` - topic used for sub-processes to notify parent process when finished
 
 * `KAFKA_TOPIC_PATTERN` - the topic name pattern that the Engine listens on for incoming Kafka events
 

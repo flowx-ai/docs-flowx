@@ -2,15 +2,15 @@
 sidebar_position: 2
 ---
 
-# Websocket Send Action
+# Websocket Send action
 
 :::info
-**What is it?** A **Websocket Send Action** is an action type that allows the process to push data to the frontend application.
+**What is it?** A **Websocket Send action** is an action type that allows the process to push data to the frontend application.
 
 **Why is it useful?** It provides real-time updates and communication between the process and the frontend application.
 :::
 
-### Configuring a Websocket Send Action
+### Configuring a Websocket Send action
 
 Multiple options are available for this type of action and can be configured via the FLOWX Designer. To configure a Websocket Send Action, use the **Actions** tab at the [task node level](../../../flowx-designer/managing-a-process-flow/adding-a-new-node.md), which has the following configuration options:
 
@@ -23,11 +23,11 @@ Multiple options are available for this type of action and can be configured via
 
 * **Name** - used internally to make a distinction between different actions on nodes in the process. We recommend defining an action naming standard to be able to quickly find the process actions
 * **Order** - if multiple actions are defined on the same node, the running order should be set using this option
-* **Timer expression** - it can be used if a delay is required on that action. The format used for this is [ISO 8601 duration format ](https://www.digi.com/resources/documentation/digidocs/90001437-13/reference/r\_iso\_8601\_duration\_format.htm)(for example, a delay of 30 seconds will be set up as `PT30S`)
-* **Action type** - should be set to Websocket Send Action
+* **Timer expression** - it can be used if a delay is required on that action. The format used for this is [ISO 8601 duration format ](hthttps://www.w3.org/TR/NOTE-datetime)(for example, a delay of 30 seconds will be set up as `PT30S`)
+* **Action type** - should be set to Websocket Send action
 * **Trigger type** (options are Automatic/Manual) - choose if this action should be triggered automatically (when the process flow reaches this step) or manually (triggered by the user); in most use cases, this will be set to automatic
-* **Required type** (options are Mandatory/Optional) - automatic actions can only be defined as mandatory. Manual actions can be defined as mandatory or optional.&#x20;
-* **Repeatable** - should be checked if the action can be triggered multiple times&#x20;
+* **Required type** (options are Mandatory/Optional) - automatic actions can only be defined as mandatory. Manual actions can be defined as mandatory or optional.
+* **Repeatable** - should be checked if the action can be triggered multiple times
 * **Autorun Children** - when this is switched on, the child actions (the ones defined as mandatory and automatic) will run immediately after the execution of the parent action is finalized
 
 #### **Back in steps**
@@ -43,7 +43,7 @@ The following fields are required for a minimum configuration of this type of ac
 * **Message Type** - if you only want to send data, you can set this to **Default** (it defaults to the **data** message type)
 
 :::warning
-If you need to start a new process using a **Websocket Send Action**, you can do that by setting the **Message Type** to **Action** and you will need to define a **Message** with the following format:
+If you need to start a new process using a **Websocket Send action**, you can do that by setting the **Message Type** to **Action** and you will need to define a **Message** with the following format:
 :::
 
 

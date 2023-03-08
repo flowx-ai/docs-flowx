@@ -29,23 +29,23 @@ When encountering a step with `canGoBack` switched to false, all steps found beh
 
 #### Response Timeout 
 
-* **Response timeout** - can be triggered if, for example, a topic that you define and add in the [Data stream topics](./#data-stream-topics) tab does not respect the pattern, the format used for this is [ISO 8601 duration format ](https://www.digi.com/resources/documentation/digidocs/90001437-13/reference/r\_iso\_8601\_duration\_format.htm)(for example, a delay of 30s will be set up like `PT30S`)
+* **Response timeout** - can be triggered if, for example, a topic that you define and add in the [Data stream topics](./#data-stream-topics) tab does not respect the pattern, the format used for this is [ISO 8601 duration format ](https://www.w3.org/TR/NOTE-datetime)(for example, a delay of 30s will be set up like `PT30S`)
 
 ![](../img/user_task_node_response_timeout.png)
 
 #### Data stream topics
 
-* **Topic Name** - the topic name where the [process engine](../../../platform-deep-dive/core-components/flowx-engine.md) listens for the response (this should be added to the platform and match the topic naming rule for the engine to listen to it) - available for UPDATES topics (Kafka receive events)
+* **Topic Name** - the topic name where the [process engine](../../../platform-deep-dive/core-components/flowx-engine/flowx-engine.md) listens for the response (this should be added to the platform and match the topic naming rule for the engine to listen to it) - available for UPDATES topics (Kafka receive events)
 
 :::warning
-A naming pattern must be defined on the [process engine configuration](../../../platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide/flowx-engine-setup-guide.md) to use the defined topics. It is important to know that all the events that start with a configured pattern will be consumed by the Engine. For example, `KAFKA_TOPIC_PATTERN` is the topic name pattern where the Engine listens for incoming Kafka events.
+A naming pattern must be defined on the [process engine configuration](../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md) to use the defined topics. It is important to know that all the events that start with a configured pattern will be consumed by the Engine. For example, `KAFKA_TOPIC_PATTERN` is the topic name pattern where the Engine listens for incoming Kafka events.
 :::
 
 * **Key Name** - will hold the result received from the external system, if the key already exists in the process values, it will be overwritten
 
 #### Task Management
 
-* **Update task management** - force [Task Manager Plugin](../../../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md) to update information about this process after this node
+* **Update task management** - force [Task Management](../../../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md) plugin to update information about this process after this node
 
 ![](../img/user_task_node_task_mngmnt.png)
 
@@ -76,7 +76,7 @@ Predefined components can be split in 3 categories:
 
 These elements are used to group different types of components, each having a different purpose:
 
-* [**Form Group**](../../ui-designer/ui-component-types/root-components/form-group.md) -  used to group and configure the layout for multiple **form elements.**
+* [**Card**](../../ui-designer/ui-component-types/root-components/card.md) - used to group and configure the layout for multiple **form elements.**
 * [**Container**](../../ui-designer/ui-component-types/root-components/container.md) - used to group and configure the layout for multiple **components** of any type.
 * [**Custom**](../../ui-designer/ui-component-types/root-components/custom.md) - these are Angular components developed in the container application and passed to the SDK at runtime, identified here by the component name
 
@@ -128,7 +128,7 @@ To add a custom component in the template config tree, we need to know its uniqu
 
 More details in the following section:
 
-[Custom](../../ui-designer/ui-component-types/root-components/custom.md
+[Custom](../../ui-designer/ui-component-types/root-components/custom.md)
 
 The sections that can be configured are as follows:
 
