@@ -19,11 +19,11 @@ The service includes the following features:
 
 [Media Library](media-library)
 
-It can be quickly deployed on the chosen infrastructure, preloaded with the needed taxonomies or contents using a REST interface, and then connected to the FLOWX Engine through Kafka events.
+It can be quickly deployed on the chosen infrastructure, preloaded with the needed taxonomies or contents using a REST interface, and then connected to the FLOW.AI Engine through Kafka events.
 
 Let's go through the steps needed to deploy and set up the service:
 
-[CMS setup guide](../../../platform-setup-guide/cms-setup-guide/cms-setup-guide.md)
+[CMS setup guide](../../../../platform-setup-guides/audit-setup-guide/)
 
 We've prepared some examples of various use cases where this service is helpful:
 

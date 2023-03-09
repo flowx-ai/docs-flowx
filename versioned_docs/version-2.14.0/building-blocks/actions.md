@@ -14,7 +14,7 @@ The FLOWX.AI platform handles the following **types of actions**:
 
 * [Business Rule](./node/task-node/business-rule-action/business-rule-action.md)
 * Save Data
-* [Kafka Send Action](./node/message-send-received-task-node.md)
+* [Kafka Send action](./node/message-send-received-task-node.md)
 * [Websocket Send action](./node/task-node/websocket-send-action.md)
 * Validate Field
 * [Upload File](./node/task-node/upload-file-action.md)

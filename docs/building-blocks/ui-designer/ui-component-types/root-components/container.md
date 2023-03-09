@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Container
+#   Container
 
 A container is a versatile element that allows you to group components and align them as desired.
 

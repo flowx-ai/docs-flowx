@@ -6,9 +6,8 @@ Integration management enables you to keep track of each integration and its cor
 
 [Integrations](../../../integrations/integrations.md)
 
-
 :::warning
-Integrations must be compatible with Kafka, so they can communicate with external adapters and FLOWX.AI Engine. Communication is done through Kafka topics (handled by consumers and producers, see [Kafka configuration](../../../platform-setup-guide/flowx-engine-setup-guide/flowx-engine-setup-guide.md#kafka-configuration) section for more details).
+Integrations must be compatible with Kafka, so they can communicate with external adapters and FLOWX.AI Engine. Communication is done through Kafka topics (handled by consumers and producers, see [Kafka configuration](../../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#configuring-kafka) section for more details).
 :::
 
 After defining one integration (inside **Integration management**) you can open a compatible node and start using them.

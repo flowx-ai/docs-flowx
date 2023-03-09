@@ -27,7 +27,7 @@ When encountering a step with `canGoBack` switched to false, all steps found beh
 :::
 
 * [**Swimlane**](../../platform-deep-dive/user-roles-management/swimlanes.md) - choose a swimlane (if there are multiple swimlanes on the process) to make sure only certain user roles have access only for certain process nodes - if there are no multiple swimlanes, the value is **Default**
-* [**Stage** ](../../platform-deep-dive/plugins/custom-plugins/task-management/using-stages.md) assign a stage to the node
+* [**Stage**](../../platform-deep-dive/plugins/custom-plugins/task-management/using-stages.md) - assign a stage to the node
 
 ![General Config](./img/message_send_task_action.png)
 
@@ -63,7 +63,7 @@ Multiple options are available for this type of action and can be configured via
 
 #### **Back in steps**
 
-* **Allow BACK on this action** - back in process is a functionality that allows you to go back in a business process and redo a series of previous actions in the process. For more details, check [Moving a token backwards in a process](../../flowx-designer/managing-a-process-flow/moving-a-token-backwards-in-a-process.md) section
+* **Allow BACK on this action** - back in process is a functionality that allows you to go back in a business process and redo a series of previous actions in the process, or more details, check [**Moving a token backwards in a process**](../../flowx-designer/managing-a-process-flow/moving-a-token-backwards-in-a-process.md) section
 
 ![Action Edit](./img/message_send_action_edit.png)
 
@@ -109,7 +109,7 @@ More details about **Integrations management** you can find [here](../../platfor
 
 * **Topics** - `ai.flowx.in.crm.search.v1` the Kafka topic on which the CRM listens for requests
 * **Message** -`{ "clientType": "${application.client.clientType}", "personalNumber": "${personalNumber.client.personalNumber}" }` - the message payload will have two keys, `clientType` and `personalNumber`, both with values from the process instance
-* **Headers** - `{ "processInstanceId": ${processInstanceId}}`
+* **Headers** - `{"processInstanceId": ${processInstanceId}}`
 
 ![](./img/message_send_param1.png)
 
@@ -133,7 +133,7 @@ For example, let's think about a CRM microservice that waits to receive requests
 
 The values you need to configure for this node are the following:
 
-* **Topic name** - the topic name where the [process engine](../../platform-deep-dive/core-components/flowx-engine.md) listens for the response (this should be added to the platform and match the topic naming rule for the engine to listen to it) - `ai.flowx.out.crm.search.v1`
+* **Topic name** - the topic name where the [process engine](../../platform-deep-dive/core-components/flowx-engine/flowx-engine.md) listens for the response (this should be added to the platform and match the topic naming rule for the engine to listen to it) - `ai.flowx.out.crm.search.v1`
 
 :::warning
 A naming pattern must be defined on the process engine to use the defined topics. It is important to know that all the events that start with a configured pattern will be consumed by the Engine. For example, `KAFKA_TOPIC_PATTERN` is the topic name pattern that the Engine listens to for incoming Kafka events.
@@ -141,7 +141,7 @@ A naming pattern must be defined on the process engine to use the defined topics
 
 * **Key Name** - will hold the result received from the external system, if the key already exists in the process values, it will be overwritten - `crmResponse`
 
-For more information about Kafka configuration, click [here](../../platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide/flowx-engine-setup-guide.md#kafka-configuration).
+For more information about Kafka configuration, click [here](../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#configuring-kafka).
 
 ![Example of a message receive task for a CRM integration](./img/message_receive_kafka.png)
 

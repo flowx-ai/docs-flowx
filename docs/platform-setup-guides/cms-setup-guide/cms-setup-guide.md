@@ -82,7 +82,7 @@ The MongoDB database is used for storing taxonomies and contents. The following 
 ### Configuring Redis
 
 :::info
-The service can use the [**Redis component**](../../../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-redis.md) already deployed for the engine.
+The service can use the [**Redis component**](../../platform-setup-guides/platform-setup-guides.md#redis-configuration) already deployed for the engine.
 :::
 
 The following values should be set with the corresponding Redis-related values:

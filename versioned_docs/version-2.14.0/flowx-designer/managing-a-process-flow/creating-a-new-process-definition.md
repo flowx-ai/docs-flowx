@@ -12,10 +12,10 @@ This should include at least one [START](../../building-blocks/node/start-end-no
 
 To create a new process definition:
 
-1. Open **FLOWX Designer** and go to the **Definitions** tab.
+1. Open **FLOWX.AI Designer** and go to the **Definitions** tab.
 2. Click the **New process** button, using the **breadcrumbs** from the top-right corner.&#x20;
 3. Enter a unique name for your process and click **Create**.
-4. You're automatically taken to the **FLOWX Designer** editor where you can start building your process.
+4. You're automatically taken to the **FLOWX.AI Designer** editor where you can start building your process.
 
 ![Creating a process definition](../img/process_flow_process_definition.gif)
 

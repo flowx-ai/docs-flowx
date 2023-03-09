@@ -11,7 +11,7 @@ It can be quickly deployed on the chosen infrastructure and then connected to th
 Let's go through the steps needed in order to deploy and set up the service:
 
 
-[Scheduler setup guide](../../platform-setup-guide/scheduler-setup-guide.md)
+[Scheduler setup guide](../../../platform-setup-guides/scheduler-setup-guide.md)
 
 
 We've prepared some examples of various use cases where this service is useful:
@@ -26,7 +26,7 @@ One such example would be to use the scheduler service to expire processes that 
 First you need to check the configured topics match the ones configured in the engine.
 :::
 
-For example the engine topics KAFKA_TOPIC_PROCESS_SCHEDULE_OUT_SET and KAFKA_TOPIC_PROCESS_SCHEDULE_OUT_STOP **should be the same with the ones configured in the scheduler** ( `KAFKA_TOPIC_SCHEDULE_IN_SET` and `KAFKA_TOPIC_SCHEDULE_IN_STOP`  )
+For example the engine topics KAFKA_TOPIC_PROCESS_SCHEDULE_OUT_SET and KAFKA_TOPIC_PROCESS_SCHEDULE_OUT_STOP **should be the same with the ones configured in the scheduler** (`KAFKA_TOPIC_SCHEDULE_IN_SET` and `KAFKA_TOPIC_SCHEDULE_IN_STOP`)
 
 When a process is scheduled to expire, the engine sends the following message to the scheduler service (on the topic `KAFKA_TOPIC_SCHEDULE_IN_SET`):
 

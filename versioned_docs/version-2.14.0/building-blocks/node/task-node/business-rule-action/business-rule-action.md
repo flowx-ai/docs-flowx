@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Business Rule Action
+# Business Rule action
 
 :::info
 **What is it?**  A business rule is an action type that allows you to configure a script on a BPMN task node. When the process instance token reaches this task, the defined script will be executed.
@@ -10,7 +10,7 @@ sidebar_position: 1
 **Why is it useful?** The script can read and write the data available on the process at the moment the script is executed. For this reason, it is very important to understand what data is available on the process when the script is executed.
 :::
 
-Business rules can be attached to a node by using actions with [**action rules**](../../../actions.md#action-rules) on them. These can be specified using [DMN rules](dmn-business-rule-action.md), [MVEL](../../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md) expressions, or scripts written in Javascript, Python, or Groovy.
+Business rules can be attached to a node by using actions with [**action rules**](../../../actions.md#action-rules) on them. These can be specified using [DMN rules](dmn-business-rule-action.md), [MVEL](../../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md) expressions, or scripts written in JavaScript, Python, or Groovy.
 
 [Supported scripts](../../../supported-scripts)
 

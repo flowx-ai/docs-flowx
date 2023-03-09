@@ -19,8 +19,10 @@ If this configuration is not set, the service will use `flowx` as the default va
 
 Kafka topic names can be set by using environment variables:
 
-* `KAFKA_TOPIC_REQUEST_CONTENT_IN`
-* `KAFKA_TOPIC_REQUEST_CONTENT_OUT`
+| Default parameter (env var)     | Default FLOWX.AI value (can be overwritten)                        |
+| ------------------------------- | ------------------------------------------------------------------ |
+| KAFKA_TOPIC_REQUEST_CONTENT_IN  | ai.flowx.dev.plugin.cms.trigger.retrieve.content.v1                |
+| KAFKA_TOPIC_REQUEST_CONTENT_OUT | ai.flowx.dev.engine.receive.plugin.cms.retrieve.content.results.v1 |
 
 :::caution
 The Engine is listening for messages on topics with names of a certain pattern, make sure to use an outgoing topic name that matches the pattern configured in the Engine.

@@ -35,23 +35,23 @@ When encountering a step with `canGoBack` switched to false, all steps found beh
 
 #### Data stream topics
 
-* **Topic Name** - the topic name where the [process engine](../../../platform-deep-dive/core-components/flowx-engine.md) listens for the response (this should be added to the platform and match the topic naming rule for the engine to listen to it) - available for UPDATES topics (Kafka receive events)
+* **Topic Name** - the topic name where the [process engine](../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#configuring-kafka) listens for the response (this should be added to the platform and match the topic naming rule for the engine to listen to it) - available for UPDATES topics (Kafka receive events)
 
 :::warning
-A naming pattern must be defined on the [process engine configuration](../../../platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide/flowx-engine-setup-guide.md) to use the defined topics. It is important to know that all the events that start with a configured pattern will be consumed by the Engine. For example, `KAFKA_TOPIC_PATTERN` is the topic name pattern where the Engine listens for incoming Kafka events.
+A naming pattern must be defined on the [process engine configuration](../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md) to use the defined topics. It is important to know that all the events that start with a configured pattern will be consumed by the Engine. For example, `KAFKA_TOPIC_PATTERN` is the topic name pattern where the Engine listens for incoming Kafka events.
 :::
 
 * **Key Name** - will hold the result received from the external system, if the key already exists in the process values, it will be overwritten
 
 #### Task Management
 
-* **Update task management** - force [Task Manager Plugin](../../../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md) to update information about this process after this node
+* **Update task management** - force [Task Management plugin](../../../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md) to update information about this process after this node
 
 ![](../img/user_task_node_task_mngmnt.png)
 
 ### Configuring the UI
 
-The FLOWX Designer includes an intuitive [UI Designer](../../ui-designer/ui-designer.md) (drag-and-drop editor) for creating diverse UI templates. You can use various elements from basic [buttons](../../ui-designer/ui-component-types/buttons.md), indicators, and [forms](../../ui-designer/ui-component-types/form-elements/), but also predefined [collections](../../ui-designer/ui-component-types/collection/collection.md) or [prototypes](../../ui-designer/ui-component-types/collection/collection_prototype.md).
+The FLOWX.AI Designer includes an intuitive [UI Designer](../../ui-designer/ui-designer.md) (drag-and-drop editor) for creating diverse UI templates. You can use various elements from basic [buttons](../../ui-designer/ui-component-types/buttons.md), indicators, and [forms](../../ui-designer/ui-component-types/form-elements/), but also predefined [collections](../../ui-designer/ui-component-types/collection/collection.md) or [prototypes](../../ui-designer/ui-component-types/collection/collection_prototype.md).
 
 #### **Accessing the UI Designer**
 
@@ -68,7 +68,7 @@ To access the UI Designer, follow the next steps:
 
 #### Predefined components
 
-UI can be defined using the available components provided by FLOWX, using the UI Designer available at node level.
+UI can be defined using the available components provided by FLOWX.AI using the UI Designer available at node level.
 
 Predefined components can be split in 3 categories:
 
@@ -76,8 +76,8 @@ Predefined components can be split in 3 categories:
 
 These elements are used to group different types of components, each having a different purpose:
 
-* [**Form Group**](../../ui-designer/ui-component-types/root-components/form-group.md) -  used to group and configure the layout for multiple **form elements.**
-* [**Container**](../../ui-designer/ui-component-types/root-components/container.md) - used to group and configure the layout for multiple **components** of any type.
+* [**Card**](../../ui-designer/ui-component-types/root-components/card.md) - used to group and configure the layout for multiple **form elements**
+* [**Container**](../../ui-designer/ui-component-types/root-components/container.md) - used to group and configure the layout for multiple **components** of any type
 * [**Custom**](../../ui-designer/ui-component-types/root-components/custom.md) - these are Angular components developed in the container application and passed to the SDK at runtime, identified here by the component name
 
 More details in the following section:
@@ -128,7 +128,7 @@ To add a custom component in the template config tree, we need to know its uniqu
 
 More details in the following section:
 
-[Custom](../../ui-designer/ui-component-types/root-components/custom.md
+[Custom](../../ui-designer/ui-component-types/root-components/custom.md)
 
 The sections that can be configured are as follows:
 

@@ -12,14 +12,14 @@ Root components (layout elements) are used to group different types of component
 
 ![](../../img/root_components.gif)
 
-The root component can hold a hierarchical component structure as follows
+The root component can hold a hierarchical component structure as follows:
 
 ![](../../img/root_components_structure.png)
 
 Available children for **Card** and **Container** are:
 
 1. [**Form**](../form-elements/) - used to group and align form field elements (**inputs**, **radios**, **checkboxes**, etc.)
-2. **Image** - allows you to configure an image in the document
+2. [**Image**](../image.md) - allows you to configure an image in the document
 3. **Text** - a simple text can be configured via this component, a basic configuration is available ([check here for more details](../../))
 4. **Hint** - multiple types of hints can be configured via this component ([check here for more details](../../))
 5. **Link** - used to configure a hyperlink that opens in a new tab

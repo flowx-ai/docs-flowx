@@ -12,7 +12,7 @@ To split the process flow into more steps, you just need to use a [parallel gate
 
 To create a flow with two branches:
 
-1. Open **FLOWX Designer** and go to the **Definitions** tab.
+1. Open **FLOWX.AI Designer** and go to the **Definitions** tab.
 2. Click on the **New process** button, using the **breadcrumbs** from the top-right corner.
 3. Add a **start node** and a **parallel gateway node**.
 4. Add two different **task nodes** and link them after the **parallel gateway node**.

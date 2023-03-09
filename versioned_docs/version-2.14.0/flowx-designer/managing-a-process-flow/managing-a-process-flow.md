@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Managing a process flow
 
-Now that we've covered the main components and building blocks of the FLOWX Platform, let's go through the steps needed to design a new process flow using the FLOWX Designer. 🧗‍♀️
+Now that we've covered the main components and building blocks of the FLOWX.AI Platform, let's go through the steps needed to design a new process flow using the FLOWX.AI Designer. 🧗‍♀️
 
 [Creating a new process definition](creating-a-new-process-definition)
 
@@ -18,4 +18,4 @@ Now that we've covered the main components and building blocks of the FLOWX Plat
 
 [Create a user interface](creating-a-user-interface)
 
-After following all the above steps you should be able to replicate an end-to-end process flow and know how FLOWX Designer works. :pencil2:
+After following all the above steps you should be able to replicate an end-to-end process flow and know how FLOWX.AI Designer works. :pencil2:

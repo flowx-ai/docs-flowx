@@ -11,7 +11,7 @@ It can be quickly deployed on the chosen infrastructure and then connected to th
 Let's go through the steps needed in order to deploy and set up the service:
 
 
-[Scheduler setup guide](../../platform-setup-guide/scheduler-setup-guide.md)
+[Scheduler setup guide](../../../platform-setup-guides/scheduler-setup-guide.md)
 
 
 We've prepared some examples of various use cases where this service is useful:

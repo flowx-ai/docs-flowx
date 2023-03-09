@@ -10,9 +10,9 @@ A node is a visual representation of a point in your process. To mark the entran
 
 ![](./img/node_diagram.png)
 
-FLOWX platforms support different [types of nodes], each needing a different configuration to fulfill its purpose in the business flow.
+FLOWX.AI platforms support different [types of nodes], each needing a different configuration to fulfill its purpose in the business flow.
 
-## Nodes types
+## Node types
 
 Let's go through the most important types of nodes. These can be selected when adding a new node to a [process definition](../process/process-definition/process-definition.md) using the FLOWX Designer:
 

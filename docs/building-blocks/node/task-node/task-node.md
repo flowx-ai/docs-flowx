@@ -36,22 +36,23 @@ When encountering a step with `canGoBack` switched to false, all steps found beh
 
 #### Response Timeout
 
-* **Response timeout** - can be triggered if, for example, a topic that you define and add in the [Data stream topics](./#data-stream-topics) tab does not respect the pattern, the format used for this is [ISO 8601 duration format ](https://www.digi.com/resources/documentation/digidocs/90001437-13/reference/r\_iso\_8601\_duration\_format.htm)(for example, a delay of 30s will be set up like `PT30S`)
+* **Response timeout** - can be triggered if, for example, a topic that you define and add in the [Data stream topics](./#data-stream-topics) tab does not respect the pattern, the format used for this is [ISO 8601 duration format](https://www.w3.org/TR/NOTE-datetime)(for example, a delay of 30s will be set up like `PT30S`)
 
 ![](../img/task_node_response_timeout.png)
 
 #### Data stream topics
 
-*   **Topic Name** - the topic name where the [process engine](../../../platform-deep-dive/core-components/flowx-engine.md) listens for the response (this should be added to the platform and match the topic naming rule for the engine to listen to it) - available for UPDATES topics (Kafka receive events)
+*  **Topic Name** - the topic name where the [process engine](../../../platform-deep-dive/core-components/flowx-engine/flowx-engine.md) listens for the response (this should be added to the platform and match the topic naming rule for the engine to listen to it) - available for UPDATES topics (Kafka receive events)
 
-    :::warning
-    A naming pattern must be defined on the [process engine configuration](../../../platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide/flowx-engine-setup-guide.md#kafka-configuration) to use the defined topics. It is important to know that all the events that start with a configured pattern will be consumed by the Engine. For example, `KAFKA_TOPIC_PATTERN` is the topic name pattern where the Engine listens for incoming Kafka events.
-    :::
+:::warning
+A naming pattern must be defined on the [process engine configuration](../../../) to use the defined topics. It is important to know that all the events that start with a configured pattern will be consumed by the Engine. For example, `KAFKA_TOPIC_PATTERN` is the topic name pattern where the Engine listens for incoming Kafka events.
+:::
+
 * **Key Name** -  will hold the result received from the external system, if the key already exists in the process values, it will be overwritten&#x20;
 
 #### Task Management
 
-* **Update task management** - force [Task Manager Plugin ](../../../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md)to update information about this process after this node
+* **Update task management** - force [Task Manager Plugin](../../../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md) to update information about this process after this node
 
 ![](../img/task_node_task_management.png)
 
@@ -64,6 +65,10 @@ Multiple options are available when configuring an action on a task node. To con
 
 #### Action Edit
 
+:::info
+Depending on the type of the [**action**](../../actions.md), different properties are available, let's take a [**Business rule**](./business-rule-action/) as an example.
+:::
+
 1. **Name** - used internally to differentiate between different actions on nodes in the process. We recommend defining an action naming standard to be able to quickly find the process actions.
 2. **Order** - if multiple actions are defined on the same node, their running order should be set using this option
 3. **Timer Expression** - can be used if a delay is required on that action. The format used for this is [ISO 8601 duration format ](https://www.digi.com/resources/documentation/digidocs/90001437-13/reference/r\_iso\_8601\_duration\_format.htm)(for example, a delay of 30s will be set up like `PT30S`)
@@ -73,6 +78,16 @@ Multiple options are available when configuring an action on a task node. To con
 7. **Repeatable** - should be checked if the action can be triggered multiple times
 
 ![](../img/task_node_action_edit.png)
+
+#### Parameters
+
+:::info
+Depending on the type of the [**action**](../../actions.md), different properties are available. We refer to a **Business rule** as an example
+:::
+
+1. **Business Rules** - business rules can be attached to a node by using actions with action rules on them, these can be specified using [DMN rules](./business-rule-action/dmn-business-rule-action.md), [MVEL](../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md) expressions, or scripts written in Javascript, Python, or Groovy.
+
+[Supported scripting languages](../../../building-blocks/supported-scripts.md)
 
 ### Business Rule Action
 

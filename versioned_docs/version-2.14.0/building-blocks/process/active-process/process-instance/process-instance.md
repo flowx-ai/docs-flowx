@@ -97,9 +97,10 @@ The new instances will be started by making a request to the [FLOWX.AI Engine](.
 
 To be able to start a new process instance, the current user needs to have the appropriate role/permissions:
 
-[Configuring access roles for processes](../../../../platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide/configuring-access-roles-for-processes.md)
+[Configuring access roles for processes](../../../../platform-setup-guides/flowx-engine-setup-guide/configuring-access-rights-for-engine.md)
 
-When starting a new process instance, we can also set it to [inherit some values from a previous process instance](../../../../platform-deep-dive/core-components/flowx-engine.md#orchestration)
+When starting a new process instance, we can also set it to [inherit some values from a previous process instance](../../../../platform-deep-dive/core-components/flowx-engine/flowx-engine.md#orchestration)
+
 ## Troubleshooting possible errors
 
 If everything was configured correctly, the new process instance is added in the database and visible in the UI.

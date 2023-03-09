@@ -3,12 +3,12 @@
 :::info
 **What is it?**  It is a type of action that allows you to send data from a [subprocess](../../process/subprocess.md) to a parent [process](../../process/process.md).
 
-**Why is it important?**   If you are using subprocesses that produce data that needs to be sent back to the main process, you can do that by using an **Append Params to Parent Process** action.
+**Why is it important?**  If you are using subprocesses that produce data that needs to be sent back to the main process, you can do that by using an **Append Params to Parent Process** action.
 :::
 
 ### Configuring an Append Params to Parent Process
 
-After you create a process designed to be used as a [subprocess](../../process/subprocess.md), you can configure the action. To do this, you need to add an **Append Params to Parent Process** on a [**Task Node** ](./)in the subprocess.
+After you create a process designed to be used as a [subprocess](../../process/subprocess.md), you can configure the action. To do this, you need to add an **Append Params to Parent Process** on a [**Task Node**](./) in the subprocess.
 
 The following properties must be configured:
 

@@ -9,7 +9,7 @@ There are two timer expressions formats supported:
 
 ### **Cron Expressions**
 
-A cron expression is a string made up of **six mandatory subexpressions (fields) that each specifies an aspect of the schedule** (for example,  `* * * * * *`). These fields, separated by white space, can contain any of the allowed values with various combinations of the allowed characters for that field.
+A cron expression is a string made up of **six mandatory subexpressions (fields) that each specifies an aspect of the schedule** (for example, `* * * * * *`). These fields, separated by white space, can contain any of the allowed values with various combinations of the allowed characters for that field.
 
 :::info
 A field may be an asterisk (`*`), which always stands for “first-last”. For the day-of-the-month or day-of-the-week fields, a question mark (`?`) may be used instead of an asterisk.

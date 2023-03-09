@@ -6,7 +6,7 @@ The Audit log service groups all audit events in a single place. The following d
 
 <summary> Timestamp </summary>
 
-* The timpestamp is displayed in a reversed chronologically order.
+* The timestamp is displayed in a reversed chronologically order.
 
 </details>
 

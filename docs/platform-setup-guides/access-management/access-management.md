@@ -1,6 +1,6 @@
 # Access management
 
-### **What is Identity and Access Management?**
+### What is Identity and Access Management?
 
 Identity and access management (IAM) is **a framework of business processes, policies and technologies that facilitates the management of electronic or digital identities**. With an IAM framework in place, you can control user access to critical information/components within an organization.
 
@@ -26,7 +26,7 @@ To configure the roles for the users, they need to be added first to an identity
 
 For more details you can check the next links:
 
-[Configuring access rights for Admin](../../../flowx-designer/designer-setup-guide/)
+[Configuring access rights for Admin](../../flowx-designer/designer-setup-guide/designer-setup-guide.md)
 
 [Configuring access rights for Engine](../flowx-engine-setup-guide/configuring-access-rights-for-engine.md)
 
@@ -34,11 +34,11 @@ For more details you can check the next links:
 
 [Configuring access rights for CMS](../cms-setup-guide/configuring-access-rights-for-cms.md)
 
-[Configuring access rights for Task Management](../../plugins/plugins-setup-guide/task-management-plugin-setup/configuring-access-rights-for-task-management.md)
+[Configuring access rights for Task Management plugin](../../platform-deep-dive/plugins/plugins-setup-guide/task-management-plugin-setup/configuring-access-rights-for-task-management.md)
 
-[Configuring access rights for Notifications plugin](../../plugins/plugins-setup-guide/notifications-plugin-setup/configuring-access-rights-for-notifications.md)
+[Configuring access rights for Notifications plugin](../../platform-deep-dive/plugins/plugins-setup-guide/notifications-plugin-setup/configuring-access-rights-for-notifications.md)
 
-[Configuring access rights for Documents plugin](../../plugins/plugins-setup-guide/documents-plugin-setup/configuring-access-rights-for-documents.md)
+[Configuring access rights for Documents plugin](../../platform-deep-dive/plugins/plugins-setup-guide/documents-plugin-setup/configuring-access-rights-for-documents.md)
 
 :::info
 For more information on how to add roles and how to configure an IdP solution, check the next section:

@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Substitution tags
 
-Substitution tags are used to generate dynamic content across the platform. As enumerations, substitution tags can be defined for each language set for the solution.&#x20;
+Substitution tags are used to generate dynamic content across the platform. As enumerations, substitution tags can be defined for each language set for the solution.
 
 ![](../../../img/substitution_tags.png)
 
@@ -13,7 +13,7 @@ On the main screen inside **Substitution tags**, you have the following elements
 * **Key**
 * **Values** - strings that are used in the end-user interface, according to the [language](languages) set for the generated solution
 * **Edit** - button used to edit substitution tags
-* **Delete** -  button used to delete substitution tags
+* **Delete** - button used to delete substitution tags
 * **New value** - button used to add a new substitution tag
 * **Breadcrumbs menu:**
   * **Import**
@@ -28,7 +28,7 @@ On the main screen inside **Substitution tags**, you have the following elements
 
 To add a new substitution tag, follow the next steps.
 
-1. Go to **FLOWX Designer** and select the **Content Management** tab.
+1. Go to **FLOWX.AI Designer** and select the **Content Management** tab.
 2. Select **Substitution tags** from the list.
 3. Click **New value**.
 4. Fill in the necessary details:
@@ -55,7 +55,7 @@ For example, substitution tags can be used to localize the content inside an app
 #### Localizing the app
 
 :::info
-You must first check and configure the FLOWX Angular Renderer to be able to replicate this example. Click [here](../../renderer-sdks/angular-renderer.md#using-the-angular-renderer) for more information.
+You must first check and configure the FLOWX.AI Angular renderer to be able to replicate this example. Click [here](../../renderer-sdks/angular-renderer.md#using-the-angular-renderer) for more information.
 :::
 
 The `flxLocalize` pipe is found in the `FlxLocalizationModule`.

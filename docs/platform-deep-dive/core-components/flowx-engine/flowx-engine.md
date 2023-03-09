@@ -138,7 +138,7 @@ If none of these keys have values, all the parameter values from the parent proc
 
 </details>
 
-[FLOWX.AI Engine setup guide](../../platform-setup-guide/flowx-engine-setup-guide)
+[FLOWX.AI Engine setup guide](../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md)
 
 ## Triggering or skipping nodes on a process based on Flow Names
 
@@ -171,4 +171,4 @@ If the process engine is up and running, make sure the advancing microservice is
 
 Check out the section below for further information on how to set up the microservice:
 
-[Advancing controller setup guide](../../platform-setup-guide/flowx-engine-setup-guide/advancing-controller-setup-guide.md)
+[Advancing controller setup guide](../../../platform-setup-guides/flowx-engine-setup-guide/advancing-controller-setup-guide.md)

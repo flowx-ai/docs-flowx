@@ -6,7 +6,7 @@ sidebar_position: 8
 
 :::info
 There might be cases when extra functionality is needed on certain nodes.
-::::
+:::
 
 A node that provides advanced options for starting subprocesses.
 

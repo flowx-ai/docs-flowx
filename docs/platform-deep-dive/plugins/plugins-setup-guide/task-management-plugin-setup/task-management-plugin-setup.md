@@ -45,7 +45,7 @@ notification-mdb:
 
 ### Redis server
 
-The plugin can use the [Redis component](https://app.gitbook.com/@flowx-ai/s/flowx-docs/flowx-engine/setup-guide#2-redis-server) already deployed for the engine.
+The plugin can use the [Redis component](../../../../platform-setup-guides/platform-setup-guides.md#redis-configuration) already deployed for the engine.
 
 ## Configuration <a href="#bad24571-ff23-4ec3-83d9-8a2ace74a6b4" id="bad24571-ff23-4ec3-83d9-8a2ace74a6b4"></a>
 

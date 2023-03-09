@@ -7,7 +7,7 @@ It has the following dependencies:
 * a [postgres](https://www.postgresql.org/) database
 * a [mongodb](https://www.mongodb.com/2) database in case the html templates feature is needed
 * needs to be able to connect to the Kafka instance used by the engine
-* a [redis](https://redis.io/) instance for caching&#x20;
+* a [Redis](https://redis.io/) instance for caching&#x20;
 * an S3 compatible file storage solution (we have successfully used [Min.io](https://min.io/))
 
 The plugin comes with most of the needed configuration properties filled in, but there are a few that need to be set up using some custom environment variables.

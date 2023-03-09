@@ -9,6 +9,6 @@ To easily design and model process flows, we use the standard BPMN 2.0 graphical
 
 [Intro to BPMN](../business-process-industry-standards/intro-to-bpmn/intro-to-bpmn.md)
 
-Some of the process steps might require making business checks or validations. Business rules and decisions can be defined on nodes using either the DMN standard or the MVEL expression language. You can use the one you are most comfortable with.
+Some process steps might require making business checks or validations. Business rules and decisions can be defined on nodes using either the DMN standard or the MVEL expression language. You can use the one you are most comfortable with.
 
-[Intro to mvel](./intro-to-mvel.md)
+[Intro to MVEL](./intro-to-mvel.md)

@@ -133,7 +133,7 @@ For example, let's think about a CRM microservice that waits to receive requests
 
 The values you need to configure for this node are the following:
 
-* **Topic name** - the topic name where the [process engine](../../platform-deep-dive/core-components/flowx-engine.md) listens for the response (this should be added to the platform and match the topic naming rule for the engine to listen to it) - `ai.flowx.out.crm.search.v1`
+* **Topic name** - the topic name where the [process engine](../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#configuring-kafka) listens for the response (this should be added to the platform and match the topic naming rule for the engine to listen to it) - `ai.flowx.out.crm.search.v1`
 
 :::warning
 A naming pattern must be defined on the process engine to use the defined topics. It is important to know that all the events that start with a configured pattern will be consumed by the Engine. For example, `KAFKA_TOPIC_PATTERN` is the topic name pattern that the Engine listens to for incoming Kafka events.
@@ -141,7 +141,9 @@ A naming pattern must be defined on the process engine to use the defined topics
 
 * **Key Name** - will hold the result received from the external system, if the key already exists in the process values, it will be overwritten - `crmResponse`
 
-For more information about Kafka configuration, click [here](../../platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide/flowx-engine-setup-guide.md#kafka-configuration).
+:::info
+For more information about Kafka configuration, click [here](../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#configuring-kafka).
+:::
 
 ![Example of a message receive task for a CRM integration](./img/message_receive_kafka.png)
 

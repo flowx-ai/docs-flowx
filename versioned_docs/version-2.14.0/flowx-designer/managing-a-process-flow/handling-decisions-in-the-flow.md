@@ -12,16 +12,16 @@ To add business decisions in the flow and use them to pick between a flow branch
 
 To create flow with exclusive branches:
 
-1. Open **FLOWX Designer** and go to the **Definitions** tab.
-2. Click on the **New process** button, using the **breadcrumbs** from the top-right corner.&#x20;
+1. Open **FLOWX.AI Designer** and go to the **Definitions** tab.
+2. Click on the **New process** button, using the **breadcrumbs** from the top-right corner.
 3. Add a **start node** and an **exclusive gateway node**.
 4. Add two different **task nodes** and link them after the **exclusive** **gateway node**.
 5. Add a new **exclusive gateway** to merge the two flow branches back into one branch.
 6. Add a **new rule** to a node to add a **business decision**, for example:
 
-* select  a **scripting language** from the dropdown
-* `input.get("application.client.creditScore") >= 700` <- proceed to node for premium credit card
-* `input.get("application.client.creditScore") < 700` <- proceed to node for standard credit card
+* select a **scripting language** from the dropdown
+* `input.get("application.client.creditScore") >= 700` ← proceed to node for premium credit card
+* `input.get("application.client.creditScore") < 700` ← proceed to node for standard credit card
 
 7. Add a **closing exclusive gateway** to continue the flow.
 8. Add and **end node**.

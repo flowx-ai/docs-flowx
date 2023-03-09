@@ -10,7 +10,7 @@ Available scopes:
 
 * read - users are able to view platform status
 * admin - users are able to force health check scan
-
+   
 2. **Manage-processes** - for configuring access for managing process definitions
 
 Available scopes:

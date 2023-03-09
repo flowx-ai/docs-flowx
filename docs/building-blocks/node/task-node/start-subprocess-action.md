@@ -2,17 +2,17 @@
 sidebar_position: 4
 ---
 
-# Start Subprocess Action
+# Start Subprocess action
 
 :::info
-**What is it?** A **Start Subprocess Action** is an action that allows you to start a subprocess from another (parent) process.
+**What is it?** A **Start Subprocess action** is an action that allows you to start a subprocess from another (parent) process.
 
 **Why is it important?**  Using [**subprocesses**](../../process/subprocess.md) is a good way to split the complexity of your business flow into multiple, simple and reusable processes.
 :::
 
 ### Configuring a Start Subprocess Action
 
-After you create a process designed to be used as a [subprocess](../../process/subprocess.md), you will need to start it from another (parent) [process](../../process/process.md). To do this, you need to add a **Start Subprocess Action** on a [**Task Node** ](./)from the parent process.
+After you create a process designed to be used as a [subprocess](../../process/subprocess.md), you will need to start it from another (parent) [process](../../process/process.md). To do this, you need to add a **Start Subprocess action** on a [**Task Node** ](./) from the parent process.
 
 The following properties must be configured:
 
@@ -25,7 +25,7 @@ The following properties must be configured:
 
 * **Name** - used internally to make a distinction between different actions on nodes in the process. We recommend defining an action naming standard to be able to quickly find the process actions
 * **Order** - if multiple actions are defined on the same node, the running order should be set using this option
-* **Timer expression** - it can be used if a delay is required on that action. The format used for this is [ISO 8601 duration format ](https://www.digi.com/resources/documentation/digidocs/90001437-13/reference/r\_iso\_8601\_duration\_format.htm)(for example, a delay of 30 seconds will be set up as `PT30S`)
+* **Timer expression** - it can be used if a delay is required on that action. The format used for this is [ISO 8601 duration format ](https://www.w3.org/TR/NOTE-datetime)(for example, a delay of 30 seconds will be set up as `PT30S`)
 * **Action type** - should be set to **Start Subprocess**
 * **Trigger type** (options are Automatic/Manual) - choose if this action should be triggered automatically (when the process flow reaches this step) or manually (triggered by the user); in most use cases, this will be set to automatic&#x20;
 * **Required type** (options are Mandatory/Optional) - automatic actions can only be defined as mandatory. Manual actions can be defined as mandatory or optional.&#x20;

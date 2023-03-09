@@ -3,7 +3,7 @@
 The Audit Log service provides a centralized location for all audit events. The following details are available for each event:
 
 
-* **Timestamp** - the date and time the event occurred, the timpestamp is displayed in a reversed chronologically order
+* **Timestamp** - the date and time the event occurred, the timestamp is displayed in a reversed chronologically order
 * **User** - the entity who initiated the event, could be a username or a system
 * **Subject** - the area or component of the system affected by the event
 

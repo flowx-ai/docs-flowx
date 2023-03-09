@@ -1,4 +1,4 @@
-# Default Roles
+# Default roles
 
 Below you can find the list of all the default roles that you can add or import into the Identity and Access Management solution to properly manage the access to all the FLOWX.AI microservices.
 

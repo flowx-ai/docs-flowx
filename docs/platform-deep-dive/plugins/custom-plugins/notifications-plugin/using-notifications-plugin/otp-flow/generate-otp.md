@@ -24,7 +24,7 @@ Values expected in the request body:
 * templateName: the name of the notification template that is used (created using the [WYSIWYG](../../../../wysiwyg.md) editor)
 * channel: notification channel: SMS / MAIL
 * recipient: notification receiver: email / phone number
-* notification template content parameters (ex. clientId): parameters that should be replaced in the [notification template](../managing-notification-templates.md)
+* notification template content parameters (for example, clientId): parameters that should be replaced in the [notification template](../managing-notification-templates.md)
 
 ![](../../../../../img/notifications_params.png)
 

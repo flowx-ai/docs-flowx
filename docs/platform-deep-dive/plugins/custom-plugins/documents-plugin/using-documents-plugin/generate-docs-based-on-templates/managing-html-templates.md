@@ -34,9 +34,9 @@ Use case: display in a table as many rows as the elements of a generated list of
 
 ![](../../../../../img/dynamic_tables_plugin_doc.png)
 
-Html template specifications:
+HTML template specifications:
 
-```
+```html
 <table>
     <thead>
         <tr class="headings">
@@ -79,7 +79,7 @@ Use case: display a table as many times as the elements of a generated list of o
 
 HTML template specifications:
 
-```
+```html
 <p>Offer:</p>
 <div th:each="type: ${consumptionPoints}">
 <table> 
@@ -155,7 +155,7 @@ Use case: display a paragraph only when a certain condition is met; in the examp
 
 HTML template specifications:
 
-```
+```html
 <span th:if="${pjCLient==true}">
     <p><b>PJ section, visible only if pjCLient = true</b></p>
     <p><span th:text="${termTechnicalServices}"></span></p>
@@ -181,9 +181,9 @@ Use case: include in the final document images that are generated throughout the
 
 ![](../../../../../img/docplugin_images.png)
 
-Html template specifications:
+HTML template specifications:
 
-```
+```html
 <td class='align'><img th:src="*{'data:image/png;base64,'+signature}" alt=\"\" height='100px'/></td>
 ```
 
@@ -207,7 +207,7 @@ Use case: display a bulleted list with values from selected items in a checkbox;
 
 HTML template specifications:
 
-```
+```html
   <div th:if="${incomeSource != null}">
     <h3>Income source:</h3>
     <ul>

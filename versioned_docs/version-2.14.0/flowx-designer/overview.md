@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Overview
 
-:writing_hand: Let's go through the main options available in the FLOWX Designer:
+:writing_hand: Let's go through the main options available in the FLOWX.AI Designer:
 
 <details>
 
@@ -145,7 +145,7 @@ Using the content management feature you can perform multiple actions that enabl
 
 [Headless CMS](../platform-deep-dive/core-components/core-extensions/content-management/content-management.md)
 
-[CMS Setup Guide](../platform-deep-dive/platform-setup-guide/cms-setup-guide/cms-setup-guide.md)
+[CMS Setup Guide](../platform-setup-guides/cms-setup-guide/cms-setup-guide.md)
 
 ## Managing tasks
 

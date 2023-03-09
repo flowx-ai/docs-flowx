@@ -13,9 +13,9 @@ On the main screen inside **Substitution tags**, you have the following elements
 * **Key**
 * **Values** - strings that are used in the end-user interface, according to the [language](languages) set for the generated solution
 * **Edit** - button used to edit substitution tags
-* **Delete** -  button used to delete substitution tags
+* **Delete** - button used to delete substitution tags
 * **New value** - button used to add a new substitution tag
-* **Breadcrumbs menu:**
+* **Breadcrumbs menu**:
   * **Import**
     * from JSON
     * from CSV

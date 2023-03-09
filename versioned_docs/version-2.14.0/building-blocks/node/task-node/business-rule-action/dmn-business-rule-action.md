@@ -1,15 +1,15 @@
-# DMN Business Rule Action
+# DMN Business Rule action
 
 For a brief introduction to Decision Model and Notation, check the following section:
 
 
 [Intro to DMN](../../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-dmn.md)
 
-### **Creating a DMN Business Rule Action**
+### **Creating a DMN Business Rule action**
 
 To create and attach a DMN business rule action to a task node, you must do the following:
 
-1. Open **FLOWX Designer** and go to **Process Definitions**.
+1. Open **FLOWX.AI Designer** and go to **Process Definitions**.
 2. Select your process from the list and click **Edit process**.
 3. Select a **task node** then click the **edit button** (the key icon) - this will open the node configuration menu.
 4. In the opened menu, go to the **Actions** tab then click the "**+**" button.
@@ -18,9 +18,9 @@ To create and attach a DMN business rule action to a task node, you must do the 
 
 ![](./img/create_dmn_business_rule_action.gif)
 
-### **Using a DMN Business Rule Action**
+### **Using a DMN Business Rule action**
 
-We have the following scenario, a bank needs to perform client identification tasks/actions. This action can be defined as a business rule inside a BPMN process using FLOWX Designer.
+We have the following scenario, a bank needs to perform client identification tasks/actions. This action can be defined as a business rule inside a BPMN process using FLOWX.AI Designer.
 
 A business person or specialist can use DMN to design this business rule, without having to go deep into technical definitions.
 
@@ -88,4 +88,4 @@ DMN also defines an XML schema that allows DMN models to be used across multiple
 </definitions>
 ```
 
-You can use this XML example with FLOWX Designer, adding it to a Business Rule Action - using an MVEL script. Then you can switch to DMN if you need to generate a graphical representation of the model.
+You can use this XML example with FLOWX.AI Designer, adding it to a Business Rule Action - using an MVEL script. Then you can switch to DMN if you need to generate a graphical representation of the model.
