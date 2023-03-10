@@ -20,7 +20,7 @@ The available configuration options for this form element are:
 - [**Validators**](#validators)
 - [**Expressions**](#expressions)
 - [**UI actions**](#ui-actions)
-- [**Text area styling**](#switch-styling)
+- [**Switch styling**](#switch-styling)
 
 
 #### General
@@ -46,6 +46,17 @@ The following validators can be added to a radio: `requiredTrue` and `custom` (m
 
 * **Hide** - JavaScript expression used to hide the Switch element when it returns a truthy value
 * **Disabled** - JavaScript expression used to disable the Switch element when it returns a truthy value
+
+#### UI actions
+
+UI actions can be added to the switch element to define its behavior and interactions.
+
+* Event - possible value: CHANGE
+* Action Type - select the action type
+
+:::info
+For more details on how to configure a UI action, click [here](../../ui-actions.md).
+:::
 
 #### Switch styling
 

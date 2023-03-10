@@ -79,7 +79,7 @@ The type of the radio can be selected by using the **styling** tab in **UI Desig
 For more valid CSS properties, click [here](../../#styling).
 :::
 
-A Radio with two options and a no layout will look like this (default the layout will be horizontal).
+A Radio element with two options added, and with a layout configuration set to horizontal will look like as it follows:
 
 ![Radio Form element example](../../img/radio_form_styling.png)
 

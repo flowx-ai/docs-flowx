@@ -72,5 +72,8 @@ For more details on how to configure a UI action, click [**here**](../../ui-acti
 
 ### Text area styling
 
-* The text area element can be styled using valid CSS properties (more details [here](../../#styling))
+The ability to style the text area element using CSS properties is relevant because it allows you to customize the appearance of the text area to match the overall design of the website or application.
+
+[UI Designer styling](../../#styling)
+
 

@@ -75,9 +75,13 @@ For more details on how to configure a UI action, click [**here**](../../ui-acti
 
 ### Select styling
 
-* The Select Field can be styled using valid CSS properties (more details [here](../../#styling))
+Styling the Select field using CSS properties allows you to customize the appearance of the dropdown list and make it more visually appealing and consistent with the overall design of the website or application. 
 
-A FORM with a [layout](../../layout-configuration.md) direction of Horizontal and some inputs and a select element will look like this:
+This can improve the user experience and make it easier for users to navigate and interact with the application.
+
+[UI Designer styling](../../ui-designer.md#styling)
+
+For example, a FORM element with a [layout](../../ui-designer.md#layout) configuration including direction of Horizontal and some inputs, and a select element will look like this:
 
 ![](../../img/select_form_field1.png)
 

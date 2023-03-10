@@ -74,5 +74,9 @@ For more details on how to configure a UI action, click [**here**](../../ui-acti
 
 ### Datepicker styling
 
-* valid CSS properties (more details [here](../../#styling))
+The styling of a datepicker element can be customized in various ways using CSS properties like typography color, border-radius/width, or advanced CSS params. This allows you to create a datepicker that fits seamlessly with the overall design of the application you are developing.
+
+:::info
+For more valid CSS properties, click [here](../../#styling).
+:::
 
