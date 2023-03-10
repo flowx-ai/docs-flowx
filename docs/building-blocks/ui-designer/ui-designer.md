@@ -57,25 +57,64 @@ In FLOWX.AI, styling options are available for components that group children, w
 
 Users can customize the direction, alignment, gap, sizing, and spacing of their layout. These properties help to create well-organized and visually pleasing user interfaces.
 
-For example, for a [card](./ui-component-types/root-components/card) component, the following properties are available for configuration:
+### Layout 
 
-* **Layout** - available for components that group children (more details about layouts can be found [here](https://tburleson-layouts-demos.firebaseapp.com/#/docs)):
-   * Direction
-   * Alignment
-   * Wrap
-   * Gap
-* **Sizing** - fill, fixed or auto
-* **Spacing** - margin and padding
+Layout configuration is available for components that group children: [root components](./ui-component-types/root-components/) and [forms](./ui-component-types/form-elements/form-elements.md) (more details about layouts can be found [here](https://tburleson-layouts-demos.firebaseapp.com/#/docs)):
+
+   * Direction - horizontal or vertical
+   * Alignment - start, center, end, stretch
+   * Wrap - content will wrap to the next line when it reaches the end of a line within the element
+   * Gap - the gap property defines the size of the gap between the rows and between the columns
+
+![](./img/layout_styling.gif)
+
+[Layout](https://tburleson-layouts-demos.firebaseapp.com/#/docs)
+
+### Sizing
+
+By setting desired values for these props, you can ensure that all UI elements on the interface are the desired size and perfectly fit with each other. 
+
+When adjusting the Fit W and Fit H settings, users can control the size and shape of the elements as it appears on their screen:
+
+* Fit W: fill, fixed or auto
+* Fit H: fill, fixed or auto
+
+![](./img/ui_sizing.gif)
+
+### Spacing
+
+Margin and padding are CSS properties used to create space between elements in a web page:
+
+* margin - the space outside of an element
+* padding - the space inside of an element
+
+![](./img/ui_spacing.gif)
+
+[Margin](https://www.w3schools.com/css/css_margin.asp)
+
+[Padding](https://www.w3schools.com/css/css_padding.asp)
+
 * **Typography** - typography options allow users to set font styles, colors, text indentation, and other formatting options; these properties can be found under the **Typography** section
-* **Background** - the Background section allows users to set the background color for their components
+* **Background** - the Background section allows users to set the background color for their components, accepted values:
+
+   - a valid color name - like `red`
+   - a HEX value - like `#ff0000`
+   - an RGB value - like `rgb(255,0,0)`
+
 * **Border** - border properties can be customized under the **Border** section, users can set the radius, width, or color of their component's borders
-* **Advanced** - for advanced customization, users can add CSS classes to pre-defined components, this option is available under the **Advanced** section
+
+[Border width](https://www.w3schools.com/css/css_border_width.asp)
+
+[Border radius](https://www.w3schools.com/css/css_border_rounded.asp)
 
 <div className= "image-scaled">
 
 ![](./img/ui_designer_styling.gif#center)
 
 </div>
+
+* **Advanced** - for advanced customization, users can add CSS classes to pre-defined components, this option is available under the **Advanced** section
+
 
 By utilizing these styling options in FLOWX.AI, users can create unique and visually appealing interfaces that meet their design requirements.
 

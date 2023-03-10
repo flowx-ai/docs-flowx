@@ -20,7 +20,7 @@ Basic buttons are used to perform an action such as unblocking a token to move f
 When configuring a basic button, you can customize the button's settings by using the following options:
 
 - [**Properties**](#properties)
-- [**UI action**](#ui-actions)
+- [**UI action**](#ui-action)
 - [**Button styling**](#button-styling)
 
 
@@ -42,7 +42,6 @@ Here, you can define the UI action that the button will trigger.
 
 More details on how to configure UI actions can be found [here](../ui-actions.md).
 
-
 ### Button styling
 
 #### Properties
@@ -56,8 +55,9 @@ This section enables you to select the type of button using the styling tab in t
 
 ![](../img/button_type.gif)
 
+
 :::info
-For more information on valid CSS properties, click [here](../../#styling).
+For more information on valid CSS properties, click [here](../ui-designer.md#styling)
 :::
 
 
@@ -113,5 +113,5 @@ More details on how to configure UI actions can be found [here](../ui-actions.md
 
 ### Button styling
 
-The file upload button can be styled using valid CSS properties (more details [here](../../#styling))
+The file upload button can be styled using valid CSS properties (more details [here](../ui-designer.md#styling)
 

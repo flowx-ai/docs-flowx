@@ -18,7 +18,7 @@ There are two main types of UI Actions:
 
 ## Process UI actions
 
-This is a UI Action that describes how a [**Button**](../ui-designer/ui-component-types/buttons.md) (generated or custom) should interact with a process Manual action.
+This is a UI action that describes how a [**Button**](../ui-designer/ui-component-types/buttons.md) (generated or custom) should interact with a process Manual action.
 
 First, we need to configure the [manual action](../actions.md) that will be referred from the UI Action. For more information on how to add an action to a node, and how to configure it, check the following section:
 
@@ -50,7 +50,7 @@ Multiple configurations are available - **ACTION** type example:
 * **Node Action Name** - dropdown with available actions for this node. If the dropdown is empty please add a manual action that is required before we create the UI Action
 * **Use a different name for UI action**
 * **UI action name** - **this becomes** important when the action is used in a [**Custom component**](./ui-component-types/root-components/custom.md) as it will be used to trigger the action. For UI actions added on a generated button component this name is just descriptive
-* **Custom body** - this is the default response in JSON format that will be merged with any extra parameters added explicitly when executing the action, by a web application (from a custom component)
+* **Custom body** - this is the default response in JSON format that will be merged with any extra parameters added explicitly when executing the action, by a web application (from a [custom component](./ui-component-types/root-components/custom.md))
 * **Forms to validate** - select from the dropdown what element will be validated (you can also select the children)
 * **Dismiss process** - if the UI Actions is added on a subprocess and this parameter is true, triggering this UI action will dismiss the subprocess view (useful for modals subprocess)
 * **Show loader?** - a loader will be displayed if this option is true until a web-socket event will be received (new screen or data)

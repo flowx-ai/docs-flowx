@@ -83,6 +83,6 @@ The type of the checkbox can be selected by using the **styling** tab in **UI De
 For more valid CSS properties, click [here](../../#styling).
 :::
 
-A clear checkbox with three options and a column layout will look like this.
+A clear checkbox element with three options added, and a column layout will look like as it follows:
 
 ![](../../img/checkbox_styling.png)
