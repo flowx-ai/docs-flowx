@@ -15,7 +15,7 @@ After migrating to the 3.0 release, please take in consideration the following c
 3. Verify border radius values where values other than px were set.
 4. Review and set padding and margin values where needed. Deleted keys include "margin" : "8px 0" and "padding" : "16px 0 0 16px".
 5. Check [radio](../../building-blocks/ui-designer/ui-component-types/form-elements/radio-form-field) and [checkbox](../../building-blocks/ui-designer/ui-component-types/form-elements/checkbox-form-field) elements and update the new `label` prop that has been added.
-6. Configure the new `column` prop for Layout (available for checkbox and radio), which allows for grouping a large number of enumerations.
+6. Configure the new `column` prop for Layout (available for checkbox and radio), which allows for grouping many enumerations.
 7. The height prop (from [Container](../../building-blocks/ui-designer/ui-component-types/root-components/container), [Form](../../building-blocks/ui-designer/ui-component-types/form-elements) and [Card](../../building-blocks/ui-designer/ui-component-types/root-components/card)) has been removed.
 8. Update the width prop by configuring the new `Fit W` prop with values such as fill, fixed, or auto.
 `Min H` and `Max H` props have been removed.
