@@ -31,7 +31,7 @@ For each entry (when you hit the **Open** button) inside an enumeration we have 
 
 To add a new enumeration, follow the next steps:
 
-1. Go to **FLOWX Designer** and select the **Content Management** tab.
+1. Go to **FLOWX.AI Designer** and select the **Content Management** tab.
 2. Select **Enumerations** from the list.
 3. Add a suggestive name for your enumeration and then click **Add**.
 
@@ -43,7 +43,7 @@ After creating an enumeration, you can add values to it.
 
 To configure an enumeration value, follow the next steps:
 
-1. Go to FLOWX Designer and select the **Content Management** tab.
+1. Go to FLOWX.AI Designer and select the **Content Management** tab.
 2. Select **Enumerations** from the list and open an enumeration.
 3. Click **New value** and fill in the necessary details:
    * **Code** - as mentioned above, this is not displayed in the end-user interface but is used to assure value uniqueness
@@ -52,7 +52,7 @@ To configure an enumeration value, follow the next steps:
 
 ![](../../../img/enum_configuration.gif)
 
-### **Creating a child collection
+### Creating a child collection
 
 Enumerations can also be defined as a hierarchy - for each entry, we can define a list of children values (for example, name of the countries defined under the continents' enumeration values); hierarchies further enable cascading values in the end-user interface (for example, after selecting a continent in the first select [UI component](../../../../building-blocks/ui-designer/ui-component-types), the second select component will contain only the children of this continent).
 

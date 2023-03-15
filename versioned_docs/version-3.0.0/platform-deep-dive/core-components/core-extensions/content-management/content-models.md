@@ -4,11 +4,11 @@ sidebar_position: 4
 
 # Content models
 
-Content models are used to create complex content collections using customizable pieces of content. For example, you can define content models for an article that will be displayed on a page,  creating customizable content.
+Content models are used to create complex content collections using customizable pieces of content. For example, you can define content models for an article that will be displayed on a page, creating customizable content.
 
 ![](../../../img/content_models.png)
 
-On the main screen inside **Enumerations**, you have the following elements:
+On the main screen inside **Content models**, you have the following elements:
 
 * **Model name** - the name of the content model
 * **Edited at**
@@ -38,7 +38,7 @@ Also, attributes can be either **Mandatory** or **Optional**
 
 To add a new content model, follow the next steps:
 
-1. Go to **FLOWX Designer** and select the **Content Management** tab.
+1. Go to **FLOWX.AI Designer** and select the **Content Management** tab.
 2. Select **Content models** from the list.
 3. Click **New content model**.
 4. Add a suggestive name for your content model.

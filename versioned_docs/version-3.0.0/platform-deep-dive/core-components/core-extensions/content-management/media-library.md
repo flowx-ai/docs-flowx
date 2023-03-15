@@ -65,7 +65,7 @@ You have the following options when configuring image components using [UI Desig
 
 * Source Location - here you must select **Media Library** as source location 
 * Image Key  
-    Option 1: trigger a dropdown with images keys - you can type and filter options or can select from the initial list in dropdown 
+    * Option 1: trigger a dropdown with images keys - you can type and filter options or can select from the initial list in dropdown 
     * Option 2: open a popup with images thumbnails and keys then you can type and filter options or can select from the initial list
 
 ![](../../../img/media_library_options.png)
