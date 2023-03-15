@@ -1,17 +1,23 @@
 # Advancing Controller setup guide
 
-## Infrastructure Prerequisites
+This guide will walk you through the process of setting up the Advancing Controller and configuring it to meet your needs.
 
-There are some components that are mandatory to start the advancing controller:
+## Infrastructure prerequisites
 
-### FLOWX.AI Engine deployment
+Advancing controller requires the following components to be set up before it can be started:
 
-Check the FLOWX.AI Engine setup guide for more information:
+* FLOWX.AI Engine deployment - the Advancing Controller is dependent on the FLOWX.AI Engine and must be deployed in the same environment, refer to the FLOWX.AI Engine setup guide for more information on how to set up the Engine
+* DB instance - the Advancing Controller uses a PostgreSQL db instance
 
-[FLOWX.AI Engine setup guide](./flowx-engine-setup-guide.md)
 
+## Dependencies
 
-### Database - Postgres
+* Database
+* Datasource
+* FLOWX.AI Engine
+
+### Database configuration
+
 
 A basic Postgres configuration for Advancing:
 
