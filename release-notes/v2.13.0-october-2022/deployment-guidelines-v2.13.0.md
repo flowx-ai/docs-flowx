@@ -74,7 +74,7 @@ Added requirements for Media Library with S3 storage:
 
 `KAFKA_TOPIC_AUDIT_OUT` - topic key for sending audit logs. Default value: `ai.flowx.audit.log`
 
-[Engine setup guide](../../docs/platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide)
+[Engine setup guide](../../docs/platform-setup-guides/flowx-engine-setup-guide)
 
 ### CMS setup guide
 
@@ -90,4 +90,4 @@ Added requirements for Media Library with s3 storage:
 
 `APPLICATION_FILE_STORAGE_S3_PUBLIC_URL`
 
-[CMS setup guide](../../docs/platform-deep-dive/platform-setup-guide/cms-setup-guide)
+[CMS setup guide](../../docs/platform-setup-guides/cms-setup-guide)
