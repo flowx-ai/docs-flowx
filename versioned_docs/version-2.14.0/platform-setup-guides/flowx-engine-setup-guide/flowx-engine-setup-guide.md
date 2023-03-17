@@ -265,3 +265,33 @@ To use advancing controller, the following env vars are needed for `process-engi
 * `ADVANCING_DATASOURCE_PASSWORD` - environment variable used to set the password for a data source connection
 
 [Advancing controller setup](../flowx-engine-setup-guide/advancing-controller-setup-guide)
+
+
+### Configuring Scheduler  
+
+Below you can find a configuration .yaml to use [scheduler](../../platform-deep-dive/core-components/core-extensions/scheduler.md) service together with FLOWX.AI Engine:
+
+
+```yaml
+scheduler:
+  processCleanup:
+    enabled: false
+    cronExpression: 0 */5 0-5 * * ? #every day during the night, every 5 minutes, at the start of the minute.
+    batchSize: 1000
+  masterElection:
+    cronExpression: 30 */3 * * * ? #master election every 3 minutes
+  websocket:
+    namespace:
+      cronExpression: 0 * * * * *
+      expireMinutes: 30
+```
+
+Below you can find a configuration .yaml to use scheduler service together with FLOWX.AI Engine:
+
+* **processCleanup**: A configuration for cleaning up processes. 
+* **enabled** specifies whether this feature is turned on or off. 
+* **cronExpression** is a schedule expression that determines when the cleanup process runs. In this case, it runs every day during the night (between 12:00 AM and 5:59 AM) and every 5 minutes, at the start of the minute. 
+* **batchSize** specifies the number of processes to be cleaned up in one batch.
+* **masterElection**: A configuration for electing a master.
+* **websocket**: A configuration for WebSocket connections.
+* **expireMinutes** specifies how long the WebSocket namespace is valid for (30 minutes in this case).

@@ -21,7 +21,7 @@ The FLOWX.AI Engine requires the following components to be set up before it can
 
 * [**Database**](#database---postgres--oracle)
 * [**Redis server**](../platform-setup-guides.md#redis-configuration)
-* [**Kafka**](#kafka-configuration)
+* [**Kafka**](#configuring-kafka)
 * [**Logging**](../platform-setup-guides.md#logging)
 
 For Microservices architecture, some Microservices holds their data individually using separate Databases.
@@ -76,11 +76,11 @@ A basic Postgres configuration can be set up using a helm values.yaml file as it
 * [**Logging**](../platform-setup-guides.md#logging)
 * [**Authorization & access roles**](../platform-setup-guides.md#authorization--access-roles)
 * [**Configuring access roles for processes**](configuring-access-roles-for-processes)
-* [**Kafka configuration**](#kafka-configuration)
+* [**Kafka configuration**](#configuring-kafka)
 
 ### Configuring Kafka
 
-Kafka handles all communication between the FLOWX Engine and external plugins and integrations. It is also used for notifying running process instances when certain events occur. 
+Kafka handles all communication between the FLOWX.AI Engine and external plugins and integrations. It is also used for notifying running process instances when certain events occur. 
 
 Both a producer and a consumer must be configured. The following Kafka-related configurations can be set by using environment variables:
 
@@ -193,10 +193,10 @@ The suggested topic pattern naming convention is the following:
 
 * `KAFKA_TOPIC_PROCESS_OPERATIONS_IN` - used for receiving calls from the task management plugin
 
-| Default parameter (env var)       | Default FLOWX.AI value (can be overwritten)    |
-| --------------------------------- | ---------------------------------------------- |
-| KAFKA_TOPIC_TASK_OUT              | ai.flowx.dev.plugin.tasks.trigger.save.task.v1 |
-| KAFKA_TOPIC_PROCESS_OPERATIONS_IN | ai.flowx.dev.core.trigger.operations.v1        |
+| Default parameter (env var)         | Default FLOWX.AI value (can be overwritten)    |
+| ----------------------------------- | ---------------------------------------------- |
+| `KAFKA_TOPIC_TASK_OUT`              | ai.flowx.dev.plugin.tasks.trigger.save.task.v1 |
+| `KAFKA_TOPIC_PROCESS_OPERATIONS_IN` | ai.flowx.dev.core.trigger.operations.v1        |
 
 
 #### **Topics related to the scheduler extension**
@@ -240,7 +240,7 @@ The suggested topic pattern naming convention is the following:
 
 | Default parameter (env var) | Default FLOWX.AI value (can be overwritten) |
 | --------------------------- | ------------------------------------------- |
-| `KAFKA_TOPIC_AUDIT_OUT`     | ai.flowx.dev.core.save.audit.v1             |
+| KAFKA_TOPIC_AUDIT_OUT       | ai.flowx.dev.core.save.audit.v1             |
 
 #### **Processes that can be started by sending messages to a Kafka topic**
 
@@ -248,10 +248,10 @@ The suggested topic pattern naming convention is the following:
 
 * `KAFKA_TOPIC_PROCESS_START_OUT` - used for sending out the reply after starting a new process instance
 
-| Default parameter (env var)     | Default FLOWX.AI value (can be overwritten) |
-| ------------------------------- | ------------------------------------------- |
-| `KAFKA_TOPIC_PROCESS_START_IN`  | ai.flowx.dev.core.trigger.start.rpocess.v1  |
-| `KAFKA_TOPIC_PROCESS_START_OUT` | ai.flowx.dev.core.confirm.start.process.v1  |
+| Default parameter (env var)   | Default FLOWX.AI value (can be overwritten) |
+| ----------------------------- | ------------------------------------------- |
+| KAFKA_TOPIC_PROCESS_START_IN  | ai.flowx.dev.core.trigger.start.rpocess.v1  |
+| KAFKA_TOPIC_PROCESS_START_OUT | ai.flowx.dev.core.confirm.start.process.v1  |
 
 ### Configuring WebSockets
 
@@ -282,3 +282,36 @@ To use advancing controller, the following env vars are needed for `process-engi
 * `ADVANCING_DATASOURCE_PASSWORD` - environment variable used to set the password for a data source connection
 
 [Advancing controller setup](../flowx-engine-setup-guide/advancing-controller-setup-guide)
+
+### Configuring Scheduler
+
+### Configuring Scheduler  
+
+Below you can find a configuration .yaml to use [scheduler](../../platform-deep-dive/core-components/core-extensions/scheduler.md) service together with FLOWX.AI Engine:
+
+
+```yaml
+scheduler:
+  processCleanup:
+    enabled: false
+    cronExpression: 0 */5 0-5 * * ? #every day during the night, every 5 minutes, at the start of the minute.
+    batchSize: 1000
+  masterElection:
+    cronExpression: 30 */3 * * * ? #master election every 3 minutes
+  websocket:
+    namespace:
+      cronExpression: 0 * * * * *
+      expireMinutes: 30
+```
+
+Below you can find a configuration .yaml to use scheduler service together with FLOWX.AI Engine:
+
+* **processCleanup**: A configuration for cleaning up processes. 
+* **enabled** specifies whether this feature is turned on or off. 
+* **cronExpression** is a schedule expression that determines when the cleanup process runs. In this case, it runs every day during the night (between 12:00 AM and 5:59 AM) and every 5 minutes, at the start of the minute. 
+* **batchSize** specifies the number of processes to be cleaned up in one batch.
+* **masterElection**: A configuration for electing a master.
+* **websocket**: A configuration for WebSocket connections.
+* **expireMinutes** specifies how long the WebSocket namespace is valid for (30 minutes in this case).
+
+
