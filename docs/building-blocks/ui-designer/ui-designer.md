@@ -30,6 +30,12 @@ Depending on the [component type](./ui-component-types) different properties are
 
 ![](./img/use_ui_designer3.gif)
 
+:::info
+For more flexibility, undo or redo actions are available within the UI Designer. This includes tasks such as dragging, dropping, or deleting elements from the preview section, as well as adjusting settings within the styling and settings panel.
+
+To undo or redo an action, users can simply click the corresponding icons in the UI Designer toolbar, or use the keyboard commands for even quicker access.
+:::
+
 ## UI components
 
 FLOWX.AI offers a wide range of [UI components](./ui-component-types) that can be customized using the UI Designer. For example, when configuring a [card](./ui-component-types/root-components/card) element (which is a root component), the following properties can be customized:
