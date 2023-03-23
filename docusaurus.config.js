@@ -83,7 +83,7 @@ const config = {
       announcementBar: {
         id: 'banner_release',
         content:
-         '🆕  Check our latest release <a target="_blank" rel="noopener noreferrer" href="https://docs.flowx.ai/release-notes/v3.0.0-february-2023/"> 3.1.0 </a>  🔍',
+         '🆕  Check our latest release <a target="_blank" rel="noopener noreferrer" href="https://docs.flowx.ai/release-notes/v3.1.0-march-2023/"> 3.1.0 </a>  🔍',
         backgroundColor: '#E7A811',
         textColor: '#FFFF',
         isCloseable: true,
