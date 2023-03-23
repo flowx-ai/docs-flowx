@@ -15,14 +15,14 @@ After updating to **3.1.0** FLOWX.AI release, importing old processes definition
 | :ballot_box_with_check:        | 3.1.0      | 3.0.0  | 2.14.0   | 2.13.0  | 2.12.0  | 2.11.0  | 2.10.0  | 2.9.0   | 2.8.1   | 2.8.0   | 2.7.0   | 2.6.0   | 2.5.0   | 2.4.0   | 2.3.0   | 2.2.0   | 2.1.0     |
 | ------------------------------ | ---------- | ------ | -------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | --------- |
 | **Process engine**             | **2.1.2**  | 2.0.7  | 0.4.104  | 0.4.95  | 0.4.90  | 0.4.83  | 0.4.60  | 0.4.49  | 0.4.44  | 0.4.42  | 0.4.42  | 0.4.36  | 0.4.29  | 0.4.22  | 0.4.21  | 0.4.18  | 0.4.13    |
-| **Designer**                   | **3.14.4** | 3.2.1  | 2.78.4-1 | 2.63.6  | 2.60.7  | 2.48.9  | 2.39.2  | 2.33.0  | 2.28.1  | 2.24.2  | 2.23.0  | 2.19.2  | 2.18.2  | 2.17.4  | 2.15.2  | 2.14.4  | 2.11.2    |
+| **Designer**                   | **3.15.1** | 3.2.1  | 2.78.4-1 | 2.63.6  | 2.60.7  | 2.48.9  | 2.39.2  | 2.33.0  | 2.28.1  | 2.24.2  | 2.23.0  | 2.19.2  | 2.18.2  | 2.17.4  | 2.15.2  | 2.14.4  | 2.11.2    |
 | **CMS Core**                   | **1.0.3**  | 1.0.2  | 0.2.38   | 0.2.36  | 0.2.33  | 0.2.30  | 0.2.25  | 0.2.23  | 0.2.23  | 0.2.23  | 0.2.23  | 0.2.23  | 0.2.20  | 0.2.20  | 0.2.18  | 0.2.17  | 0.2.17    |
 | **Scheduler Core**             | **1.0.4**  | 1.0.1  | 0.0.34   | 0.0.34  | 0.0.34  | 0.0.33  | 0.0.28  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.24  | 0.0.24  | 0.0.23  | 0.0.23  | 0.0.23    |
-| **flowx-process-renderer**     | **3.14.4** | 3.2.1  | 2.78.4-1 | 2.63.6  | 2.60.7  | 2.48.9  | 2.39.2  | 2.33.0  | 2.28.1  | 2.24.2  | 2.23.0  | 2.19.2  | 2.18.2  | 2.17.4  | 2.15.2  | 2.14.4  | 2.11.2    |
+| **flowx-process-renderer**     | **3.15.1** | 3.2.1  | 2.78.4-1 | 2.63.6  | 2.60.7  | 2.48.9  | 2.39.2  | 2.33.0  | 2.28.1  | 2.24.2  | 2.23.0  | 2.19.2  | 2.18.2  | 2.17.4  | 2.15.2  | 2.14.4  | 2.11.2    |
 | **iOS renderer**               | **2.0.4**  | 2.0.0  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
 | **Android renderer**           | 2.0.1      | 2.0.1  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
-| **flowx-web-components**       | **3.14.4** | 3.2.1  | 2.78.4-1 | 2.63.6  | 2.60.7  | 0.2.10  | 0.2.10  | 0.2.10  | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.5   | 0.2.4     |
-| **Admin**                      | **2.1.1**  | 2.0.8  | 0.3.119  | 0.3.103 | 0.3.92  | 0.3.81  | 0.3.60  | 0.3.55  | 0.3.47  | 0.3.43  | 0.3.40  | 0.3.36  | 0.3.34  | 0.3.29  | 0.3.23  | 0.3.21  | 0.3.13    |
+| **flowx-web-components**       | **3.15.1** | 3.2.1  | 2.78.4-1 | 2.63.6  | 2.60.7  | 0.2.10  | 0.2.10  | 0.2.10  | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.5   | 0.2.4     |
+| **Admin**                      | **2.1.3**  | 2.0.8  | 0.3.119  | 0.3.103 | 0.3.92  | 0.3.81  | 0.3.60  | 0.3.55  | 0.3.47  | 0.3.43  | 0.3.40  | 0.3.36  | 0.3.34  | 0.3.29  | 0.3.23  | 0.3.21  | 0.3.13    |
 | **Notification Plugin**        | **2.0.3**  | 2.0.1  | 1.0.206  | 1.0.206 | 1.0.206 | 1.0.205 | 1.0.200 | 1.0.198 | 1.0.198 | 1.0.197 | 1.0.194 | 1.0.194 | 1.0.191 | 1.0.191 | 1.0.190 | 1.0.190 | 1.0.186-1 |
 | **Document Plugin**            | **2.0.3**  | 2.0.2  | 1.0.53   | 1.0.53  | 1.0.53  | 1.0.52  | 1.0.47  | 1.0.42  | 1.0.41  | 1.0.38  | 1.0.37  | 1.0.37  | 1.0.35  | 1.0.35  | 1.0.31  | 1.0.31  | 1.0.30    |
 | **OCR Plugin**                 | 0.1.33     | 0.1.33 | 0.1.33   | 0.1.33  | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.0.109 | 0.0.109 | 0.0.109   |
@@ -90,22 +90,33 @@ To use advancing controller with OracleDBs, the following .yml files must be edi
 
 #### Advancing controller
 
-* `application-datasource-sql.yml`:
-
 `SPRING_JPA_DATABASE`- value: `oracle`
 
-#### Process engine 
+`SPRING_JPA_DATABASE_PLATFORM`
 
-* `application-datasource-advancing.yml`:
+`SPRING_DATASOUCE_URL`
 
 `SPRING_DATASOURCE_DRIVERCLASSNAME`
 
-`ADVANCING_DATASOURCE_JDBC_URL`
+[Advancing controller setup](../../docs/platform-setup-guides/flowx-engine-setup-guide/advancing-controller-setup-guide)
+
+#### Process engine 
+
+`SPRING_JPA_DATABASE`- value: `oracle`
+
+`SPRING_JPA_DATABASE_PLATFORM`
+
+`SPRING_DATASOUCE_URL`- environment variable used to configure a data source URL for a Spring application, it typically contains the JDBC driver name, the server name, port number, and database name
+
+`SPRING_DATASOURCE_DRIVERCLASSNAME` - environment variable used to set the class name of the JDBC driver that the Spring datasource will use to connect to the database
+
+`ADVANCING_DATASOURCE_DRIVERCLASSNAME`
+
+`ADVANCING_DATASOURCE_URL`
 
 `ADVANCING_DATASOURCE_JDBC_URL`
 
-
-
+[Process engine setup](../../docs/platform-setup-guides/flowx-engine-setup-guide)
 
 
 
