@@ -274,6 +274,17 @@ Configuration needed to clear the offline sessions of a user session from the id
 `SPRING_ELASTICSEARCH_REST_PASSWORD`
 
 
+### Undo/redo actions
+
+```yaml
+flowx:
+	undo-redo:
+	    ttl: 6000000   <---- redis ttl for undoable actions by user+nodeid (seconds)
+	    cleanup:
+	      cronExpression: 0 2 * * * * # every day at 2am   <---- when to run cleanup marked as deleted
+	      days: 2   <----- marked as deleted will be deleted when older than days number
+```
+
 ## **Steps to deploy Frontend app**
 
 The FLOWX Designer is an SPA application that is packaged in a docker image with `nginx:1.19.10`. The web application allows an authenticated user to administrate the FLOWX platform.
@@ -290,3 +301,4 @@ flowx-process-renderer:
     KEYCLOAK_CLIENT_ID: {{client ID}}
     STATIC_ASSETS_PATH: {{mediaLibrary.s3.publicUrl }}/{{env}}
 ```
+
