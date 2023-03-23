@@ -24,7 +24,7 @@ Kafka events are used for communication between FLOWX.AI components such as the 
 
 To check the status of a process or troubleshoot a failed process, follow these steps:
 
-1. Open **FLOWX Designer**.
+1. Open **FLOWX.AI Designer**.
 2. Go to **Processes → Active Process → Process instances**.
 3. Click **Process status** button.
 

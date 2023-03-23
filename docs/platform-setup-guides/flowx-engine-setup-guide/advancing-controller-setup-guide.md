@@ -1,26 +1,26 @@
 # Advancing Controller setup guide
 
-## Introduction
-
 This guide will walk you through the process of setting up the Advancing Controller and configuring it to meet your needs.
 
-## Infrastructure Prerequisites
+## Infrastructure prerequisites
 
 Advancing controller requires the following components to be set up before it can be started:
 
-* **FLOWX.AI Engine deployment** - the Advancing Controller is dependent on the FLOWX.AI Engine and must be deployed in the same environment, refer to the [FLOWX.AI Engine setup guide](../flowx-engine-setup-guide/flowx-engine-setup-guide.md) for more information on how to set up the Engine
-* **DB instance** - the Advancing Controller uses a PostgreSQL database instance
+* **FLOWX.AI Engine deployment** - the Advancing Controller is dependent on the FLOWX.AI Engine and must be deployed in the same environment, refer to the FLOWX.AI Engine setup guide for more information on how to set up the Engine
+* **DB instance** - the Advancing Controller uses a PostgreSQL or OracleDB as database instance
 
 
 ## Dependencies
 
-* [**Database**](#database---postgres)
-* [**Datasource**](#configuring-datasource)
-* [**FLOWX.AI Engine**](../flowx-engine-setup-guide/flowx-engine-setup-guide.md)
+* [Database](#database-configuration)
+* [Datasource](#configuring-datasource)
+* [FLOWX.AI Engine](./flowx-engine-setup-guide.md)
 
-### Database - Postgres
+### Database configuration
 
-A basic Postgres configuration for the Advancing Controller can be set up using a Helm values.yaml file as follows:
+#### Postgres
+
+A basic Postgres configuration for Advancing:
 
 ```yaml
 postgresql:
@@ -32,7 +32,7 @@ postgresql:
   postgresqlMaxConnections: 200
   persistence:
     enabled: true
-    storageClass: premium-rwo
+    storageClass: standard-rwo
     size: 20Gi
   resources:
     limits:
@@ -57,21 +57,29 @@ postgresql:
 
 The following configuration details need to be added using environment variables:
 
-### Configuring datasource
+Advancing controller uses a PostgreSQL or an Oracle database as a dependency.
 
 * the user, password, connection link, and database name need to be configured correctly, if these details are not configured correctly, errors will occur at startup
 * the datasource is configured automatically via a Liquibase script inside the engine. All updates will include migration scripts.
 
-:::info
-For more details on what environment variables must to be configured, click [**here**](../platform-setup-guides.md#datasource-configuration).
-:::
+### Configuring datasource
+
+The following configuration details need to be added using environment variables:
+
+* `SPRING_DATASOURCE_URL` - environment variable used to configure a data source URL for a Spring application, it typically contains the JDBC driver name, the server name, port number, and database name
+
+* `SPRING_DATASOURCE_USERNAME` - environment variable used to set the username for the database connection, this can be used to connect to a database instance
+
+
+* `SPRING_DATASOURCE_PASSWORD` - environment variable used to store the password for the database connection, this can be used to secure access to the database and ensure that only authorized users have access to the data
+
+* `SPRING_JPA_DATABASE` - relevant because it is used to specify the type of database that the Spring application should connect to (accepted values: `oracle` or `postgresql`)
+
+* `SPRING_JPA_PROPERTIES_HIBERNATE_DEFAULTSCHEMA` (❗️only for Oracle DBs) - dpecifies the default schema to use for the database (default value: `public`)
+
+You will need to make sure that the user, password, connection link and db name are configured correctly, otherwise, you will receive errors at start time.
 
 :::caution
 It's important to keep in mind that the Advancing Controller is tightly integrated with the FLOWX.AI Engine. Therefore, it is important to ensure that both the Engine and the Advancing Controller are configured correctly and are in sync.
 :::
-
-
-
-
-
 

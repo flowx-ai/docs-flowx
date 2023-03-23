@@ -311,3 +311,5 @@ Below you can find a configuration .yaml to use scheduler service together with 
 * **masterElection**: A configuration for electing a master.
 * **websocket**: A configuration for WebSocket connections.
 * **expireMinutes** specifies how long the WebSocket namespace is valid for (30 minutes in this case).
+
+[Scheduler setup guide](../scheduler-setup-guide.md)
