@@ -14,7 +14,7 @@ Think of the process definition as the blueprint for a house and the process ins
 
 The engine takes care of going through the process steps defined and handles all the business logic on the process definition.
 
-The [**FLOWX.AI Engine**](../../../../platform-deep-dive/core-components/flowx-engine) is responsible for executing the steps in the process definition and handling all of the business logic. The token represents the current position in the process and moves from one node to the next based on the sequences and rules defined in the exclusive gateways. In the case of parallel gateways, child tokens are created and eventually merged back into the parent token.
+The [**FLOWX.AI Engine**](../../../../platform-deep-dive/core-components/flowx-engine) is responsible for executing the steps in the process definition and handling all the business logic. The token represents the current position in the process and moves from one node to the next based on the sequences and rules defined in the exclusive gateways. In the case of parallel gateways, child tokens are created and eventually merged back into the parent token.
 
 Kafka events are used for communication between FLOWX.AI components such as the engine and integrations/plugins. Each event type is associated with a Kafka topic to track and orchestrate the messages sent on Kafka. The engine updates the UI by sending messages through sockets.
 
@@ -110,11 +110,11 @@ When starting a new process instance, we can also set it to [inherit some values
 If everything is configured correctly, the new process instance should be visible in the UI and added to the database. However, if you encounter issues, here are some common error messages and their possible solutions:
 Possible errors include:
 
-| Error Message                        | Description                                                                                   |
-|-------------------------------------|-----------------------------------------------------------------------------------------------|
-| *"Process definition not found."*  | The process definition with the requested name was not set as published.                      |
-| *"Start node for process definition not found."* | The start node was not properly configured.                                                  |
+| Error Message                                                      | Description                                                                                      |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| *"Process definition not found."*                                  | The process definition with the requested name was not set as published.                         |
+| *"Start node for process definition not found."*                   | The start node was not properly configured.                                                      |
 | *"Multiple start nodes found, but start condition not specified."* | Multiple start nodes were defined, but the start condition to choose the start node was not set. |
-| *"Some mandatory params are missing."* | Some parameters set as mandatory were not included in the start request.                        |
-| `HTTP code 403 - Forbidden`        | The current user does not have the process access role for starting that process.             |
-| `HTTP code 401 - Unauthorized`     | The current user is not logged in.                                                            |
+| *"Some mandatory params are missing."*                             | Some parameters set as mandatory were not included in the start request.                         |
+| `HTTP code 403 - Forbidden`                                        | The current user does not have the process access role for starting that process.                |
+| `HTTP code 401 - Unauthorized`                                     | The current user is not logged in.                                                               |

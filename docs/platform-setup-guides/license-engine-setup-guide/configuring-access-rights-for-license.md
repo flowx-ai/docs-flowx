@@ -2,7 +2,7 @@
 
 Granular access rights can be configured for restricting access to the License component.
 
-The following access authorizations is provided, with the specified access scopes:
+The following access authorizations are provided, with the specified access scopes:
 
 1. **Manage-licenses** - for configuring access for managing license related details
 

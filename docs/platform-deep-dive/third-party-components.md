@@ -46,7 +46,7 @@ FLOWX.AI uses a number of third-party software components:
 
 
 :::info
-Since Kafka version 2.8, the self-managed (Kraft) mode is available alongside ZooKeeper. It was released as a preview feature in version 3.0. Finally, with several improvements, it has been declared production ready in version 3.3.1. Kafka may possibly deprecate ZooKeeper in version 3.4. 
+Since Kafka version 2.8, the self-managed (Kraft) mode is available alongside ZooKeeper. It was released as a preview feature in version 3.0. Finally, with several improvements, it has been declared production ready in version 3.3.1. Kafka may deprecate ZooKeeper in version 3.4. 
 :::
 
 ### Summary
