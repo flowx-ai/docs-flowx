@@ -6,13 +6,14 @@ sidebar_position: 3
 
 ## Android project requirements
 
-The minimum requirements are:
+To use the Android Renderer library, ensure that your Android project meets the following minimum requirements:
 
 * minSdk 26
 
 ## Installing the library
 
-- in your Android project's settings.gradle:
+1. Add the following code to your Android project's `settings.gradle` file::
+
 ```
 dependencyResolutionManagement {
     ...
@@ -28,7 +29,8 @@ dependencyResolutionManagement {
     }
 }
 ```
-- in your app/build.gradle: 
+2. Add the following code to your `app/build.gradle` file:
+
 ```
 dependencies {
     ...
@@ -39,14 +41,24 @@ dependencies {
 
 ### Library dependencies
 
+The Android Renderer library depends on the following libraries:
+
 * Koin
 * Retrofit
 * Coil
 
 ## Accessing the documentation
 
-- download the javadoc.jar file that can be found in the same repository as the library
-- extract the javadoc.jar file
-- run index.html in your browser
-- navigate to ai.flowx.android.sdk.FlowxSdkApi
+To access the Android Renderer library's documentation, follow these steps:
+
+1. Download the **javadoc.jar** file from the same repository as the library.
+2. Extract the **javadoc.jar** file.
+3. Open the **index.html** file in your browser.
+4. Navigate to `ai.flowx.android.sdk.FlowxSdkApi`.
+
+
+
+
+
+
 
