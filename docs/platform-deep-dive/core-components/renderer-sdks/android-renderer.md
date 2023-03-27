@@ -12,7 +12,8 @@ The minimum requirements are:
 
 ## Installing the library
 
-- in your Android project's settings.gradle: 
+- in your Android project's settings.gradle:
+```
 dependencyResolutionManagement {
     ...
     repositories {
@@ -26,12 +27,15 @@ dependencyResolutionManagement {
         }
     }
 }
+```
 - in your app/build.gradle: 
+```
 dependencies {
     ...
     implementation "ai.flowx.android:android-sdk:2.0.1"
     ...
 }
+```
 
 ### Library dependencies
 
