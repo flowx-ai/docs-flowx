@@ -19,8 +19,8 @@ dependencyResolutionManagement {
         ...
         maven {
             credentials {
-                username "flowx-dev-android"
-                password "c4lm-Lemur28-20211117"
+                username "YOUR_USERNAME_HERE"
+                password "YOUR_PASSWORD_HERE"
             }
             url 'https://nexus-jx.dev.rd.flowx.ai/repository/flowx-maven-releases/'
         }
