@@ -58,8 +58,6 @@ pod 'FlowX'
 
 ### Library dependencies
 
-The iOS Renderer library depends on the following libraries:
-
 * Socket.IO-Client-Swift
 * Alamofire
 * SVProgressHUD
