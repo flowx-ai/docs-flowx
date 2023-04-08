@@ -198,7 +198,12 @@ The file storage solution can be configured using the following environment vari
 
 `APPLICATION_FILE_STORAGE_S3_BUCKET_PREFIX`
 
-`APPLICATION_FILESTORAGE_PARTITIONSTRATEGY`
+`APPLICATION_FILESTORAGE_PARTITIONSTRATEGY` - used to set the partition strategy:
+* value `NONE` - saving documents in `minio/amazon-s3` will be done as before in a bucket for each process instance   
+* value `PROCESS_DATE` - documents will be saved in a single bucket, with a subfolder, for example: `bucket/2022/2022-07-04/process-id-xxxx/customer-id/file.pdf`         
+
+
+
 
 :::info
 Make sure to follow the recommended [bucket naming rules](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html) when choosing the bucket prefix name.

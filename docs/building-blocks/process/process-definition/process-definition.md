@@ -139,14 +139,15 @@ In the General settings, you can edit the process definition name, include the p
 
 * **Process definition name** - edit process definition name
 * **Use process in reporting** - if switched on, the process will be included in reporting
+* **Use process in task management** - if switched on, tasks will be created and displayed in the Task manager plugin, more information [here](../../../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md)
 * **General data** - data that you can set and receive on a response
 * **Expiry time** - a user can set up a `expiryTime` function on a process, for example, a delay of 30s will be set up like: `30 16 11 4 7 1`
 
-For more information about **Cron Expressions** and **ISO 8601** formatting, check the following section:
+For more information about **Cron Expressions** and **ISO 8601** formatting, check the following section;
 
 [Timer Expressions](../../../platform-overview/frameworks-and-standards/timer-expressions.md)
 
-![](../../../platform-deep-dive/img/process_settings.png)
+![](../img/process_settings.png)
 
 ### Swimlanes
 

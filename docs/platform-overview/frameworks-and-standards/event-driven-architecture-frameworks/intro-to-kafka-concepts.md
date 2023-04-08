@@ -23,9 +23,9 @@ Kafka encourages you to see the world as sequences of events, which it models as
 
 Because the world is filled with so many events, Kafka gives us a means to organize them and keep them in order: topics. A topic is an ordered log of events. When an external system writes an event to Kafka, it is appended to the end of a topic.
 
-In FLOWX.AI, Kafka handles all communication between the [FLOWX Engine ](../../../platform-deep-dive/core-components/flowx-engine.md) and external plugins and integrations. It is also used for notifying running process instances when certain events occur.  More information about KAFKA configuration on the section below:
+In FLOWX.AI, Kafka handles all communication between the [FLOWX Engine ](../../../platform-deep-dive/core-components/flowx-engine/flowx-engine.md) and external plugins and integrations. It is also used for notifying running process instances when certain events occur.  More information about KAFKA configuration on the section below:
 
-[Flowx engine setup guide](../../../platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide/flowx-engine-setup-guide.md)
+[FLOWX engine setup guide](../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md)
 
 
 ### Producer
