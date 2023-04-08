@@ -16,7 +16,7 @@ const config = {
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon2.ico',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -95,7 +95,7 @@ const config = {
         title: 'FLOWX.AI DocPortal',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'img/logo2.svg',
           width: 40,
         },
         items: [
@@ -192,7 +192,7 @@ const config = {
         logo: {
           height: 100,
           alt: 'FLOWX.AI logo',
-          src: '/img/FlowX_logo_footer.svg',
+          src: '/img/logo_footer2.svg',
           href: 'https://flowx.ai',
         },
         copyright: `Copyright © FLOWX.AI ${new Date().getFullYear()}`,
