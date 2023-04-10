@@ -118,6 +118,7 @@ The error that the validator returns **MUST** match the validator name.
 
 Below you can find an example of a custom validator (`currentOrLastYear`) that restricts data selection to the current or the previous year:
    
+##### currentOrLastYear
 
 ```typescript
 currentOrLastYear: function currentOrLastYear(AC: AbstractControl): { [key: string]: any } {
@@ -135,6 +136,32 @@ currentOrLastYear: function currentOrLastYear(AC: AbstractControl): { [key: stri
 
     return null;
 ```
+
+##### smallerOrEqualsToNumber
+
+Below is another custom validator example that returns `AsyncValidatorFn` param, which is a function that can be used to validate form input asynchronously. The validator is called `smallerOrEqualsToNumber` and takes an array of `params$` as an input.
+
+:::info
+For this custom validator the execution type should be marked as `async` using the UI Designer.
+:::
+
+```typescript
+export function smallerOrEqualsToNumber (params$: Observable<any>[]): AsyncValidatorFn {
+  return (AC): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> => {
+    return new Observable((observer) => {
+      combineLatest(params$).subscribe(([maximumLoanAmount]) => {
+        const validationError =
+          maximumLoanAmount === undefined || !AC.value || Number(AC.value) <= maximumLoanAmount ? null : {smallerOrEqualsToNumber: true};
+
+        observer.next(validationError);
+        observer.complete();
+      });
+    });
+  };
+}
+```
+
+If the input value is undefined or the input value is smaller or equal to the maximum loan amount value, the function returns `null`, indicating that the input is valid. If the input value is greater than the maximum loan amount value, the function returns a `ValidationErrors` object with a key `smallerOrEqualsToNumber` and a value of true, indicating that the input is invalid.
 
 :::info
 For more details about custom validators please check this [link](../../platform-deep-dive/core-components/renderer-sdks/angular-renderer.md).
