@@ -141,7 +141,7 @@ A naming pattern must be defined on the process engine to use the defined topics
 
 * **Key Name** - will hold the result received from the external system, if the key already exists in the process values, it will be overwritten - `crmResponse`
 
-For more information about Kafka configuration, click [here](../../platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide/flowx-engine-setup-guide.md#kafka-configuration).
+For more information about Kafka configuration, click [here](../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#kafka-configuration).
 
 ![Example of a message receive task for a CRM integration](./img/message_receive_kafka.png)
 

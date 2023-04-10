@@ -4,7 +4,7 @@ sidebar_position: 9
 
 # Media library
 
-All the media files (such as images, gifs etc.) used on the processes that were uploaded to processes are listed in the media library. This is where you can manage all existing media files or upload new files.
+All the media files (such as images, GIFs etc.) used on the processes that were uploaded to processes are listed in the media library. This is where you can manage all existing media files or upload new files.
 
 ![](../../../../../../release-notes/img/media_library.gif)
 
@@ -16,7 +16,7 @@ You can also upload an image directly to the Media Library on the spot when conf
 
 To upload an asset to the Media Library, follow the next steps:
 
-1. Open FLOWX.AI Designer.
+1. Open FLOWX Designer.
 2. Go to **Content Management** tab and select **Media Library**.
 3. Click **Add new item**, the following details will be displayed:
     * **Upload item** - opens a local file browser

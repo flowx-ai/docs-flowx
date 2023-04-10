@@ -6,7 +6,7 @@ Let's go through the configuration updates that need to be made in order for the
 
 #### Application configuration
 
-A new role name needs to be configured in order to allow a user to see all the process instances in the FlowX Designer. The following key must be added in the application configuration file or an appropriate environment value needs to be set.
+A new role name needs to be configured in order to allow a user to see all the process instances in the FLOWX Designer. The following key must be added in the application configuration file or an appropriate environment value needs to be set.
 
 ```
 application:
@@ -16,10 +16,10 @@ application:
 The new role must also be configured in the identity provider and set to the users that should be granted this permission.
 
 :::caution
-If this role is not configured in your identity provider solution, the users will not see any process instances in the FlowX Designer.
+If this role is not configured in your identity provider solution, the users will not see any process instances in the FLOWX Designer.
 :::
 
-[Configuring access roles for processes](../../docs/platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide/configuring-access-roles-for-processes)
+[Configuring access roles for processes](../../docs/platform-setup-guides/flowx-engine-setup-guide/configuring-access-roles-for-processes)
 
 We now introduced more advanced **debugging features**, in this version, there is the possibility to take a snapshot of the process status after each action, this comes with an exponential increase of database usage so the next flag I suggest you have it true on debugging media and false production ones
 
@@ -27,8 +27,7 @@ We now introduced more advanced **debugging features**, in this version, there i
 application:
     debug: ${PROCESS_DEBUG:false} 
 ```
-
-[Flowx engine setup guide](../../docs/platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide)
+[Flowx engine setup guide](../../docs/platform-setup-guides/flowx-engine-setup-guide)
 
 #### New Kafka topics
 
@@ -40,7 +39,7 @@ A few additional Kafka topics must be added:
 * `topicNameParentNotify: "${KAFKA_TOPIC_PARENT_NOTIFY}"` - Topic used for sub-processes to notify parent process when finished
 
 
-[Flowx engine setup guide](../../docs/platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide)
+[Flowx engine setup guide](../../docs/platform-setup-guides/flowx-engine-setup-guide)
 
 ### On notifications
 

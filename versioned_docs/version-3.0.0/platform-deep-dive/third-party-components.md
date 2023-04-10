@@ -22,21 +22,21 @@ FLOWX.AI uses a number of third-party software components:
 
 ### Third-party open-source components supported/tested versions
 
-| FLOWX.AI Platform Version | Component name               | Supported/tested versions             |
-| ------------------------- | ---------------------------  | ------------------------------------- |
-| 2.3.0 → 3.0.0             | Keycloak                     | 18.0.x                                |  
-| 2.3.0 → 3.0.0             | Kafka / Zookeeper*           | 3.0.1 / 3.6.6                         |  
-| 2.3.0 → 3.0.0             | Jaeger                       | 1.34.1                                |
-| 2.3.0 → 3.0.0             | AKHQ                         | 0.17.0                                |  
-| 2.3.0 → 3.0.0             | PostgreSQL                   | 14.3.0                                |
-| 2.3.0 → 3.0.0             | MongoDB                      | 5.0.8                                 |
-| 2.3.0 → 3.0.0             | Redis                        | 6.2.6                                 |
-| 2.3.0 → 3.0.0             | NGINX Ingress Controller     | 1.2.0                                 |
-| 2.3.0 → 3.0.0             | Elasticsearch                | 7.17                                  |
-| 2.3.0 → 3.0.0             | Fluentd                      | 3.3.0                                 |
-| 2.3.0 → 3.0.0             | Kibana                       | 7.9.3                                 |
-| 2.3.0 → 3.0.0             | S3 (Min.IO) / minio-operator | 2022-05-26T05-48-41Z / 4.5.4          |
-| 2.3.0 → 3.0.0             | RabbitMQ                     | 3.11.2                                |
+| FLOWX.AI Platform Version | Component name               | Supported/tested versions    |
+| ------------------------- | ---------------------------- | ---------------------------- |
+| 2.3.0 → 3.0.0             | Keycloak                     | 18.0.x                       |
+| 2.3.0 → 3.0.0             | Kafka / Zookeeper*           | 3.0.1 / 3.6.6                |
+| 2.3.0 → 3.0.0             | Jaeger                       | 1.34.1                       |
+| 2.3.0 → 3.0.0             | AKHQ                         | 0.17.0                       |
+| 2.3.0 → 3.0.0             | PostgreSQL                   | 14.3.0                       |
+| 2.3.0 → 3.0.0             | MongoDB                      | 5.0.8                        |
+| 2.3.0 → 3.0.0             | Redis                        | 6.2.6                        |
+| 2.3.0 → 3.0.0             | NGINX Ingress Controller     | 1.2.0                        |
+| 2.3.0 → 3.0.0             | Elasticsearch                | 7.17                         |
+| 2.3.0 → 3.0.0             | Fluentd                      | 3.3.0                        |
+| 2.3.0 → 3.0.0             | Kibana                       | 7.9.3                        |
+| 2.3.0 → 3.0.0             | S3 (Min.IO) / minio-operator | 2022-05-26T05-48-41Z / 4.5.4 |
+| 2.3.0 → 3.0.0             | RabbitMQ                     | 3.11.2                       |
 
 ### Third-party components supported/tested versions
 
@@ -46,7 +46,7 @@ FLOWX.AI uses a number of third-party software components:
 
 
 :::info
-Since Kafka version 2.8, the self-managed (Kraft) mode is available alongside ZooKeeper. It was released as a preview feature in version 3.0. Finally, with several improvements, it has been declared production ready in version 3.3.1. Kafka may possibly deprecate ZooKeeper in version 3.4. 
+Since Kafka version 2.8, the self-managed (Kraft) mode is available alongside ZooKeeper. It was released as a preview feature in version 3.0. Finally, with several improvements, it has been declared production ready in version 3.3.1. Kafka may deprecate ZooKeeper in version 3.4. 
 :::
 
 ### Summary
@@ -61,7 +61,7 @@ Keycloak is an open-source software product to allow single sign-on with Identit
 
 Apache Kafka is an open-source distributed event streaming platform that can handle a high volume of data and enables you to pass messages from one end-point to another.
 
-Kafka is a unified platform for handling all the real-time data feeds. Kafka supports low latency message delivery and gives a guarantee for fault tolerance in the presence of machine failures. It has the ability to handle a large number of diverse consumers.
+Kafka is a unified platform for handling all the real-time data feeds. Kafka supports low latency message delivery and gives a guarantee for fault tolerance in the presence of machine failures. It has the ability to handle many diverse consumers.
 
 Kafka is very fast and performs 2 million writes/sec. Kafka persists all data to the disk, which essentially means that all the writes go to the page cache of the OS (RAM). This makes it very efficient to transfer data from a page cache to a network socket.
 

@@ -1,22 +1,22 @@
 # Integration management
 
-Integration management helps you configure integrations between the following components: FLOWX Process engine, plugins, or different adapters. The only requirement is that they should connect to [Kafka](../../../../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-kafka-concepts.md) to communicate with the [FLOWX.AI Engine](../../flowx-engine/).
+Integration management helps you configure integrations between the following components: FLOWX Process engine, plugins, or different adapters. The only requirement is that they should connect to [Kafka](../../../../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-kafka-concepts.md) to communicate with the [FLOWX Engine](../../flowx-engine/).
 
 Integration management enables you to keep track of each integration and its correspondent component and different scenarios used: creating an OTP, document generation, notifications, etc.
 
 [Integrations](../../../integrations/integrations.md)
 
 :::warning
-Integrations must be compatible with Kafka, so they can communicate with external adapters and FLOWX.AI Engine. Communication is done through Kafka topics (handled by consumers and producers, see [Kafka configuration](../../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#configuring-kafka) section for more details).
+Integrations must be compatible with Kafka, so they can communicate with external adapters and FLOWX Engine. Communication is done through Kafka topics (handled by consumers and producers, see [Kafka configuration](../../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#configuring-kafka) section for more details).
 :::
 
 After defining one integration (inside **Integration management**) you can open a compatible node and start using them.
 
 :::info
-Integrations are used with the following nodes: [task nodes](../../../../building-blocks/node/task-node/task-node.md), [user task nodes](../../../../building-blocks/node/user-task-node/user-task-node.md), [message send tasks](../../../../building-blocks/node/message-send-received-task-node.md#message-send-task), and [message receive tasks](../../../../building-blocks/node/message-send-received-task-node.md#message-receive-task)).
+Integrations are used with the following nodes: [task nodes](../../../../building-blocks/node/task-node/task-node.md), [user task nodes](../../../../building-blocks/node/user-task-node/user-task-node.md), [message send tasks](../../../../building-blocks/node/message-send-received-task-node.md#message-send-task), and [message receive tasks](../../../../building-blocks/node/message-send-received-task-node.md#message-receive-task).
 :::
 
-You can easily create or import an integration using the **Integration management** feature just by accessing **FLOWX.AI Admin-> Integration management**.
+You can easily create or import an integration using the **Integration management** feature just by accessing **FLOWX Designer → Integration management**.
 
 ![Integration management](../../../img/integrations.png)
 
@@ -24,7 +24,7 @@ You can easily create or import an integration using the **Integration managemen
 
 To access Integration management:
 
-1. Open **FLOWX FLOWX.AI Admin** and go to the **General Settings** tab.
+1. Open **FLOWX Designer** and go to the **General Settings** tab.
 2. From the expanded menu, select **Integration management**.
 3. From the list, select an **Integration**.
 4. Click the **arrow** icon to expand the list with the scenarios.
@@ -91,7 +91,7 @@ After you created a scenario you can configure the **data model** for it by foll
 
 Topics are defined depending on the environment where you want to use them. You need to configure the following details:
 
-* **Input (in)** - the information that the FLOWX.AI Engine is reading, coming from the plugin or from the adapter
+* **Input (in)** - the information that the FLOWX Engine is reading, coming from the plugin or from the adapter
 * **Environment** - the environment where the topic should be used (if you leave this field empty, all the environments will be selected)
 
 <div class="image-scaled">
@@ -102,20 +102,20 @@ Topics are defined depending on the environment where you want to use them. You 
 
 #### Configuring topics for Receive scenario
 
-* **Input (out)** - the information that the FLOWX.AI Engine is reading, coming from the plugin or from the adapter
+* **Input (out)** - the information that the FLOWX Engine is reading, coming from the plugin or from the adapter
 * **Environment** - the environment where the topic should be used (if you leave this field empty, all the environments will be selected)
 
 ### Configuring message data model
 
-**SEND scenario**: The message data model represents the content of the message that the adapters or plugins send to the FLOWX.AI Engine.
+**SEND scenario**: The message data model represents the content of the message that the adapters or plugins send to the FLOWX Engine.
 
-**RECEIVE scenario**: The output data model represents the content of the message that FLOWX.AI Engine sends to the adapters or plugins.
+**RECEIVE scenario**: The output data model represents the content of the message that FLOWX Engine sends to the adapters or plugins.
 
 ![](../../../img/send_message_dat_model.png)
 
 To configure a new message data model, follow the next steps:
 
-1. Open FLOWX.AI Admin.
+1. Open FLOWX Designer.
 2. From the left-side menu, select **Integration Management**.
 3. Select an **integration**.
 4. Select the type of the scenario then click "**+**" button.
@@ -157,15 +157,15 @@ Headers may also contain Kafka authorization (token in the header).
 
 ## Using integrations
 
-As mentioned earlier, you can use integrations management to configure integrations between FLOWX.AI Engine and different plugins and adapters. These configurations are defined so that when you create a process (and it is using Kafka-related activities) you will no longer have to manually search for suitable topics or environments.&#x20;
+As mentioned earlier, you can use integrations management to configure integrations between FLOWX Engine and different plugins and adapters. These configurations are defined so that when you create a process (and it is using Kafka-related activities) you will no longer have to manually search for suitable topics or environments.
 
 Use predefined integrations, that you have already configured, on different processes and nodes. Places where integrations will be used:
 
-* Node -> Actions ->  **Kafka Send Action** (to send data to the integration)
+* Node → Actions → **Kafka Send Action** (to send data to the integration)
 
 ![](../../../img/using_integrations.gif)
 
-* Node -> Node config -> **Data stream topics** (the topic name where the [process engine](../../flowx-engine/) listens for the response)
+* Node → Node config → **Data stream topics** (the topic name where the [process engine](../../flowx-engine/) listens for the response)
 
 ![](../../../img/integrations_node_config.png)
 

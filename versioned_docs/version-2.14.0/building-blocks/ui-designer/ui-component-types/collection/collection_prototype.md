@@ -2,7 +2,7 @@
 
 ## Description
 
-This additional container type is needed to allow multiple prototypes to be defined for a single [Collection](./). This allows elements from the same collection to be displayed differently.&#x20;
+This additional container type is needed to allow multiple prototypes to be defined for a single [Collection](./). This allows elements from the same collection to be displayed differently.
 
 For example, suppose you are creating a piece of UI in which the user is presented a list of possible products from which to choose, but you want one of the products to be highlighted as the recommended one. This example requires a collection with two **collection prototypes** (one for the normal product and one for the recommended one).
 

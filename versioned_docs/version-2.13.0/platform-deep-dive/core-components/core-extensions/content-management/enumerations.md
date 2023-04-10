@@ -17,7 +17,7 @@ On the main screen inside **Enumerations**, you have the following elements:
 * **Open** - button used to access an enumeration to configure it/ add more values, etc.
 * **Delete** - button used to delete an enumeration
 * **New enumeration** - button used to create a new enumeration
-* **Breadcrumbs >** **Import/Export**
+* **Breadcrumbs** → **Import/Export**
 
 For each entry (when you hit the **Open** button) inside an enumeration we have to define the following properties:
 
@@ -54,7 +54,7 @@ To configure an enumeration value, follow the next steps:
 
 ### **Creating a child collection**
 
-Enumerations can also be defined as a hierarchy - for each entry, we can define a list of children values (eg. name of the countries defined under the continents enumeration values); hierarchies further enable cascading values in the end-user interface (eg. after selecting a continent in the first select [UI component](../../../../building-blocks/ui-designer/ui-component-types), the second select component will contain only the children of this continent).
+Enumerations can also be defined as a hierarchy - for each entry, we can define a list of children values (e.g. name of the countries defined under the continents' enumeration values); hierarchies further enable cascading values in the end-user interface (e.g. after selecting a continent in the first select [UI component](../../../../building-blocks/ui-designer/ui-component-types), the second select component will contain only the children of this continent).
 
 ![](../../../img/enum_child_collection.png)
 
@@ -73,9 +73,9 @@ Enumerations, for instance, can be used to build elaborate lists of values (with
 
 We have the following example for _**Activity Domain Companies**_:
 
-#### **Activity Domain Companies -> Agriculture forestry and fishing:**
+#### **Activity Domain Companies → Agriculture forestry and fishing:**
 
-* **Agriculture, hunting, and related services ->**
+* **Agriculture, hunting, and related services →**
 
 <details>
 
@@ -109,7 +109,7 @@ We have the following example for _**Activity Domain Companies**_:
 
 </details>
 
-* **Forestry and logging ->**
+* **Forestry and logging →**
 
 <details>
 
@@ -135,7 +135,7 @@ We have the following example for _**Activity Domain Companies**_:
 
 </details>
 
-* **Fisheries and aquaculture ->**
+* **Fisheries and aquaculture →**
 
 <details>
 

@@ -9,7 +9,7 @@ sidebar_position: 3
 :::info
 **What is it?** Task Management is a plugin suitable for back-officers and supervisors as it can be used to easily track and assign activities/tasks inside a company.
 
-**Why is it useful?** The Task Management plugin has the scope to show a process that you defined using FLOWX.AI Designer, using a more business-oriented view. It also offers interactions at the assignment level.
+**Why is it useful?** The Task Management plugin has the scope to show a process that you defined using FLOWX Designer, using a more business-oriented view. It also offers interactions at the assignment level.
 :::
 
 ![Task Manager](../../../img/task_management_overview.gif)
@@ -25,10 +25,10 @@ Inside the **Task details** tab you can find the following information about a p
 ![Task details](../../../img/task_mngmnt_task_details.png)
 
 :::caution
-Specific roles need to be defined in a process to use all the task management features. For more details, check the [Configuring access roles for processes](../../../platform-setup-guide/flowx-engine-setup-guide/configuring-access-roles-for-processes.md) section.
+Specific roles need to be defined in a process to use all the task management features. For more details, check the [Configuring access roles for processes](../../../../platform-setup-guides/flowx-engine-setup-guide/configuring-access-roles-for-processes.md) section.
 :::
 
-### Statuses & Definitions in Task Manager
+### Statuses & definitions in Task Manager
 
 There are multiple statuses that Task Manager could display, depending on the state of the process.
 

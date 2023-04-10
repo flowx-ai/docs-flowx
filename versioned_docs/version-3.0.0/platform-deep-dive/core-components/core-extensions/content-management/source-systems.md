@@ -20,7 +20,7 @@ On the main screen inside **Source systems**, you have the following elements:
 
 To add a new source system, follow the next steps.
 
-1. Go to **FLOWX.AI Designer** and select the **Content Management** tab.
+1. Go to **FLOWX Designer** and select the **Content Management** tab.
 2. Select **Source systems** from the list.
 3. Fill in the necessary details:
    * Code

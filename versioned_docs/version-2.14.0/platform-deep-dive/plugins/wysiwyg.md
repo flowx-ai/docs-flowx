@@ -1,6 +1,6 @@
 # WYSIWYG editor
 
-FLOWX Designer's WYSIWYG ( **"What You See Is What You Get**") editor enables you to create and modify [notification](./custom-plugins/notifications-plugin/notifications-plugin.md) and [document](./custom-plugins/documents-plugin/documents-plugin.md) templates without the need for complicated coding from the developers. WYSIWYG editors make the creation/editing of any type of document or notification easier for the end-user. 
+FLOWX Designer's WYSIWYG (**"What You See Is What You Get"**) editor enables you to create and modify [notification](./custom-plugins/notifications-plugin/notifications-plugin.md) and [document](./custom-plugins/documents-plugin/documents-plugin.md) templates without the need for complicated coding from the developers. WYSIWYG editors make the creation/editing of any type of document or notification easier for the end-user. 
 
 Displaying how the document will be published or printed on the screen, the user can adjust the text, graphics, photos, or other document/notification elements before generating the final output.
 
@@ -44,8 +44,6 @@ Notification WYSIWYG body has some additional fields (other than documents templ
 [Managing notifications templates](./custom-plugins/notifications-plugin/using-notifications-plugin/managing-notification-templates.md)
 
 ### Data Model
-
-#### Data Model
 
 Using the data model, you can define key pair values (parameters) that will be displayed and reused in the body. Multiple parameters can be added:
 

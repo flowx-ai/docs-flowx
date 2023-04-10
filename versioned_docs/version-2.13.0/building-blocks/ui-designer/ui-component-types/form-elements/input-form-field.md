@@ -19,7 +19,7 @@ The available configuration options for this form element are:
    * **Field Label** - the label of the input
    * **Input type** - text/number/email/password - based on this configuration look and feel will expect a string or a number
    * **Display as** - it can be displayed as box or line
-   * **Disabled expressions** - javascript expressions that should be evaluated as true or false. It's important to make sure that hidden fields also have the same expression configured under expressions -> hide
+   * **Disabled expressions** - javascript expressions that should be evaluated as true or false. It's important to make sure that hidden fields also have the same expression configured under expressions → hide
    * **Suffix** - a label that will be added as a suffix
    * **Prefix** - a label that will be added like a prefix
 3. **Validators** - multiple validators can be added to an input (more details [here](../..//validators.md))

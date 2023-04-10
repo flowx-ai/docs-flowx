@@ -4,13 +4,11 @@ sidebar_position: 3
 
 # Validators
 
-Data validation is an essential aspect of building robust and reliable applications. It ensures that the data entered by the user is accurate, complete, and consistent. 
-
-Validators are an essential tool for enforcing data validation rules in Angular applications. They provide a set of pre-defined validation rules that can be used to validate various form inputs such as text fields, number fields, email fields, date fields, and more.
+Validators are an essential part of building robust and reliable applications. They ensure that the data entered by the user is accurate, complete, and consistent. In Angular applications, validators provide a set of pre-defined validation rules that can be used to validate various form inputs such as text fields, number fields, email fields, date fields, and more.
 
 ![](./img/validators_gen.png)
 
-Some Angular default validators are available:
+Angular provides default validators such as:
 
 1. [min](https://angular.io/api/forms/Validators#min)
 2. [max](https://angular.io/api/forms/Validators#max)
@@ -84,7 +82,6 @@ This validator checks whether the input value matches the specified pattern (for
 
 ### datepicker - isSameOrBeforeToday 
 
-
 This validator can be used to validate [datepicker](./ui-component-types/form-elements/datepicker-form-field.md) inputs. It checks whether the selected date is today or in the past. If there are no characters at all, this validator will not trigger. It is advisable to use this validator with a [required](#required-validator) validator.
 
 ![isSameOrBeforeToday](./img/validator_issameday.png)
@@ -98,9 +95,7 @@ This validator can be used to validate datepicker inputs. It checks whether the 
 
 ## Custom validators
 
-Developers can create custom validators in the web application and reference them by name.
-
-Available configurations are:
+Additionally, custom validators can be created within the web application and referenced by name. These custom validators can have various configurations such as execution type, name, parameters, and error message.
 
 1. **Execution type** - sync/async validator (for more details check [this](https://angular.io/api/forms/AsyncValidator))
 2. **Name** - name provided by the developer to uniquely identify the validator

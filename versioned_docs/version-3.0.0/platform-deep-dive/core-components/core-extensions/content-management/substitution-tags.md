@@ -28,7 +28,7 @@ On the main screen inside **Substitution tags**, you have the following elements
 
 To add a new substitution tag, follow the next steps.
 
-1. Go to **FLOWX.AI Designer** and select the **Content Management** tab.
+1. Go to **FLOWX Designer** and select the **Content Management** tab.
 2. Select **Substitution tags** from the list.
 3. Click **New value**.
 4. Fill in the necessary details:

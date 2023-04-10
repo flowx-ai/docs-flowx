@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Substitution tags
 
-Substitution tags are used to generate dynamic content across the platform. As enumerations, substitution tags can be defined for each language set for the solution.&#x20;
+Substitution tags are used to generate dynamic content across the platform. As enumerations, substitution tags can be defined for each language set for the solution.
 
 ![](../../../img/substitution_tags.png)
 
@@ -13,7 +13,7 @@ On the main screen inside **Substitution tags**, you have the following elements
 * **Key**
 * **Values** - strings that are used in the end-user interface, according to the [language](languages) set for the generated solution
 * **Edit** - button used to edit substitution tags
-* **Delete** -  button used to delete substitution tags
+* **Delete** - button used to delete substitution tags
 * **New value** - button used to add a new substitution tag
 * **Breadcrumbs menu:**
   * **Import**

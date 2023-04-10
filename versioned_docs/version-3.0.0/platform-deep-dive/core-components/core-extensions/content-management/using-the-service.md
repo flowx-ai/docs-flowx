@@ -8,7 +8,7 @@ After you deployed the CMS service in your infrastructure, you can start definin
 
 You can also set the default application name to be used in your configuration. This is needed when retrieving the contents.
 
-```
+```yaml
 application:
     defaultApplication: DEFAULT_APPLICATION_NAME
 ```
@@ -70,7 +70,7 @@ If the value for `application` is not sent,  the `defaultApplication` value will
 
 The service will respond with the following message structure:
 
-```json
+```javascript
 {
   "entries": [
     {

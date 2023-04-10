@@ -10,7 +10,7 @@ sidebar_position: 4
 **Why is it important?**  Using [**subprocesses**](../../process/subprocess.md) is a good way to split the complexity of your business flow into multiple, simple and reusable processes.
 :::
 
-### Configuring a Start Subprocess Action
+### Configuring a Start Subprocess action
 
 After you create a process designed to be used as a [subprocess](../../process/subprocess.md), you will need to start it from another (parent) [process](../../process/process.md). To do this, you need to add a **Start Subprocess action** on a [**Task Node** ](./) from the parent process.
 
@@ -27,9 +27,9 @@ The following properties must be configured:
 * **Order** - if multiple actions are defined on the same node, the running order should be set using this option
 * **Timer expression** - it can be used if a delay is required on that action. The format used for this is [ISO 8601 duration format ](https://www.w3.org/TR/NOTE-datetime)(for example, a delay of 30 seconds will be set up as `PT30S`)
 * **Action type** - should be set to **Start Subprocess**
-* **Trigger type** (options are Automatic/Manual) - choose if this action should be triggered automatically (when the process flow reaches this step) or manually (triggered by the user); in most use cases, this will be set to automatic&#x20;
+* **Trigger type** (options are Automatic/Manual) - choose if this action should be triggered automatically (when the process flow reaches this step) or manually (triggered by the user); in most use cases, this will be set to automatic
 * **Required type** (options are Mandatory/Optional) - automatic actions can only be defined as mandatory. Manual actions can be defined as mandatory or optional.&#x20;
-* **Repeatable** - should be checked if the action can be triggered multiple times&#x20;
+* **Repeatable** - should be checked if the action can be triggered multiple times
 * **Autorun Children** - when this is switched on, the child actions (the ones defined as mandatory and automatic) will run immediately after the execution of the parent action is finalized
 
 #### **Back in steps**

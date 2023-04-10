@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# FLOWX.AI Engine setup guide
+# FLOWX Engine setup guide
 
 ## Introduction
 
@@ -10,7 +10,7 @@ This guide will provide instructions on how to set up and configure the FLOWX.AI
 
 ## Infrastructure prerequisites
 
-The FLOWX.AI Engine requires the following components to be set up before it can be started:
+The FLOWX Engine requires the following components to be set up before it can be started:
 
 * **Docker engine** - version 17.06 or higher
 * **Kafka** - version 2.8 or higher

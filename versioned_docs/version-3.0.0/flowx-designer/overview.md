@@ -145,7 +145,7 @@ Using the content management feature you can perform multiple actions that enabl
 
 [Headless CMS](../platform-deep-dive/core-components/core-extensions/content-management/content-management.md)
 
-[CMS Setup Guide](../platform-deep-dive/platform-setup-guide/cms-setup-guide/cms-setup-guide.md)
+[CMS setup guide](../platform-setup-guides/cms-setup-guide/cms-setup-guide.md)
 
 ## Managing tasks
 

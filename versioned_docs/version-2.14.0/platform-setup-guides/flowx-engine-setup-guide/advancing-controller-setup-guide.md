@@ -6,7 +6,7 @@ This guide will walk you through the process of setting up the Advancing Control
 
 Advancing controller requires the following components to be set up before it can be started:
 
-* **FLOWX.AI Engine deployment** - the Advancing Controller is dependent on the FLOWX.AI Engine and must be deployed in the same environment, refer to the FLOWX.AI Engine setup guide for more information on how to set up the Engine
+* **FLOWX Engine deployment** - the Advancing Controller is dependent on the FLOWX Engine and must be deployed in the same environment, refer to the FLOWX Engine setup guide for more information on how to set up the Engine
 * **DB instance** - the Advancing Controller uses a PostgreSQL or OracleDB as database instance
 
 
@@ -14,7 +14,7 @@ Advancing controller requires the following components to be set up before it ca
 
 * [Database](#database-configuration)
 * [Datasource](#configuring-datasource)
-* [FLOWX.AI Engine](./flowx-engine-setup-guide.md)
+* [FLOWX Engine](./flowx-engine-setup-guide.md)
 
 ### Database configuration
 
@@ -80,6 +80,6 @@ The following configuration details need to be added using environment variables
 You will need to make sure that the user, password, connection link and db name are configured correctly, otherwise, you will receive errors at start time.
 
 :::caution
-It's important to keep in mind that the Advancing Controller is tightly integrated with the FLOWX.AI Engine. Therefore, it is important to ensure that both the Engine and the Advancing Controller are configured correctly and are in sync.
+It's important to keep in mind that the Advancing Controller is tightly integrated with the FLOWX Engine. Therefore, it is important to ensure that both the Engine and the Advancing Controller are configured correctly and are in sync.
 :::
 

@@ -13,8 +13,9 @@ The UI action informs the UI element to execute the given action when triggered.
 ![](./img/ui_actions.gif)
 
 There are two main types of UI Actions:
-   - [Process UI Actions](#process-ui-actions)
-   - [External UI Actions](#external-ui-actions)
+
+- [Process UI Actions](#process-ui-actions)
+- [External UI Actions](#external-ui-actions)
 
 ## Process UI actions
 

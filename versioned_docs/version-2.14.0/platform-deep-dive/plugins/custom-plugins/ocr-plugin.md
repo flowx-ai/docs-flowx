@@ -45,7 +45,7 @@ If you choose to use a specific flow on FLOWX.AI, there are some advantages:
 ![](../../img/ocr_kafka_send.png)
 
 :::info
-The Kafka topic where you want to generate the template must match the topic defined on the **`KAFKA_TOPIC_DOCUMENT_GENERATE_HTML_IN`** variable. Click [**here**](../../platform-setup-guide/) for more details on how to configure kafka topics. For more information, check the [**Documents plugin setup guide**](../plugins-setup-guide/documents-plugin-setup).
+The Kafka topic where you want to generate the template must match the topic defined on the **`KAFKA_TOPIC_DOCUMENT_GENERATE_HTML_IN`** variable. Click [**here**](../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#configuring-kafka) for more details on how to configure kafka topics. For more information, check the [**Documents plugin setup guide**](../plugins-setup-guide/documents-plugin-setup).
 :::
 
 3. Fill in the **Message**. Values expected in the request body:

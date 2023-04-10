@@ -94,7 +94,7 @@ The following Kafka-related configurations can be set by using environment varia
 Each action available in the service corresponds to a Kafka event. A separate Kafka topic must be configured for each use case.
 
 :::caution
-FLOWX.AI Engine is listening for messages on topics with names of a certain pattern, make sure to use correct outgoing topic names when configuring the services.
+FLOWX Engine is listening for messages on topics with names of a certain pattern, make sure to use correct outgoing topic names when configuring the services.
 :::
 
 ## Redis configuration 

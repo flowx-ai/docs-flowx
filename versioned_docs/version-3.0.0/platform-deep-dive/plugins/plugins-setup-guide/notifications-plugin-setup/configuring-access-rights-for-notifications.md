@@ -4,7 +4,7 @@ Granular access rights can be configured for restricting access to the Notificat
 
 
 
-The following access authorizations is provided, with the specified access scopes:
+The following access authorizations are provided, with the specified access scopes:
 
 1. **Manage-notification-templates** - for configuring access for managing notification templates
 
@@ -14,8 +14,6 @@ Available scopes:
 * read - users are able to view notification templates
 * edit - users are able to edit notification templates
 * admin - users are able to publish or delete notification templates
-
-
 
 The Notification plugin is preconfigured with the following default users roles for each of the access scopes mentioned above:
 

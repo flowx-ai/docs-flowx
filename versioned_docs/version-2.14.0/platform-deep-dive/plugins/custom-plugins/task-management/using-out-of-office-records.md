@@ -12,7 +12,7 @@ Users with out-of-office status are excluded from the candidates for automatic t
 
 To add out-of-office records, follow the next steps:
 
-1. Open **FLOWX.AI Designer**.
+1. Open **FLOWX Designer**.
 2. From the side menu, under **Task Management,** select the **Out office entry**.
 
 ![](../../../img/access_out_of_office.png)

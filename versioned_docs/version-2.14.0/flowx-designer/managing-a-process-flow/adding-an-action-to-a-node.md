@@ -14,7 +14,7 @@ For more information about actions, check the following section:
 
 To create an action:
 
-1. Open **FLOWX.AI Designer** and from the **Processes** tab select **Definitions**.
+1. Open **FLOWX Designer** and from the **Processes** tab select **Definitions**.
 2. Select your **process**.
 3. Click the **Edit** **process** button.
 4. Add a new **node**/ edit an existing one.

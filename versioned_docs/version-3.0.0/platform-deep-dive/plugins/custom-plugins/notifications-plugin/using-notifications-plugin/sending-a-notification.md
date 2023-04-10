@@ -18,15 +18,15 @@ To configure a business process that sends notifications you must follow the nex
 
 The following values are expected in the request body:
 
-|        Key        |                                          Definition                                         |                |
-| :---------------: | :-----------------------------------------------------------------------------------------: | :------------: |
-|      language     |                               The language that should be used                              |    Mandatory   |
-|    templateName   |                      The name of the notification template that is used                     |    Mandatory   |
-|      channel      |                             Notification channel: SMS/MAIL                                  |    Mandatory   |
-|     receivers     |                          Notification receivers: email/phone number                         |    Mandatory   |
-|    senderEmail    |                                  Notification sender email                                  |    Optional    |
-|     senderName    |                                   Notification sender name                                  |    Optional    |
-|    attachments    | Attachments that are sent with the notification template (only used for MAIL notifications) |    Optional    |
+|     Key      |                                         Definition                                          |           |
+| :----------: | :-----------------------------------------------------------------------------------------: | :-------: |
+|   language   |                              The language that should be used                               | Mandatory |
+| templateName |                     The name of the notification template that is used                      | Mandatory |
+|   channel    |                               Notification channel: SMS/MAIL                                | Mandatory |
+|  receivers   |                         Notification receivers: email/phone number                          | Mandatory |
+| senderEmail  |                                  Notification sender email                                  | Optional  |
+|  senderName  |                                  Notification sender name                                   | Optional  |
+| attachments  | Attachments that are sent with the notification template (only used for MAIL notifications) | Optional  |
 
 :::info
 Check the detailed example below.

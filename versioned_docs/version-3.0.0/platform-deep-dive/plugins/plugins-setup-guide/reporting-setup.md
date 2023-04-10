@@ -11,7 +11,7 @@ The reporting plugin is available a docker image, and it has the following depen
 * Superset:
   * a Superset PostgreSQL db
   * a [Redis](https://redis.io/) instance for caching
-  * exposes the UI through an ingress -> host needed
+  * exposes the UI through an ingress → host needed
 
 ### Postgres database
 

@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Content models
 
-Content models are used to create complex content collections using customizable pieces of content. For example, you can define content models for an article that will be displayed on a page,  creating customizable content.
+Content models are used to create complex content collections using customizable pieces of content. For example, you can define content models for an article that will be displayed on a page, creating customizable content.
 
 ![](../../../img/content_models.png)
 

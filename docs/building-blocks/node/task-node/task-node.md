@@ -45,10 +45,10 @@ When encountering a step with `canGoBack` switched to false, all steps found beh
 *  **Topic Name** - the topic name where the [process engine](../../../platform-deep-dive/core-components/flowx-engine/flowx-engine.md) listens for the response (this should be added to the platform and match the topic naming rule for the engine to listen to it) - available for UPDATES topics (Kafka receive events)
 
 :::warning
-A naming pattern must be defined on the [process engine configuration](../../../) to use the defined topics. It is important to know that all the events that start with a configured pattern will be consumed by the Engine. For example, `KAFKA_TOPIC_PATTERN` is the topic name pattern where the Engine listens for incoming Kafka events.
+A naming pattern must be defined on the [process engine configuration](../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#configuring-kafka) to use the defined topics. It is important to know that all the events that start with a configured pattern will be consumed by the Engine. For example, `KAFKA_TOPIC_PATTERN` is the topic name pattern where the Engine listens for incoming Kafka events.
 :::
 
-* **Key Name** -  will hold the result received from the external system, if the key already exists in the process values, it will be overwritten&#x20;
+* **Key Name** - will hold the result received from the external system, if the key already exists in the process values, it will be overwritten
 
 #### Task Management
 
@@ -89,7 +89,7 @@ Depending on the type of the [**action**](../../actions.md), different propertie
 
 [Supported scripting languages](../../../building-blocks/supported-scripts.md)
 
-### Business Rule Action
+### Business Rule action
 
 A [business rule](business-rule-action/) is a Task action that allows a script to run. For now, the following script languages are supported:
 
@@ -99,35 +99,35 @@ A [business rule](business-rule-action/) is a Task action that allows a script t
 * Groovy
 * [DMN](../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-dmn.md) - more details about a DMN business rule configuration can be found [here](business-rule-action/dmn-business-rule-action.md)
 
-For more details on how to configure a Business Rule Action, check the following section:
+For more details on how to configure a Business Rule action, check the following section:
 
 
 [Business rule action](business-rule-action/)
 
-### Websocket Send Action
+### Websocket Send action
 
 Being an event-driven platform FLOWX uses web socket communication in order to push events from the frontend application.
-For more details on how to configure a Websocket Send Action, check the following section:
+For more details on how to configure a Websocket Send action, check the following section:
 
 [Websocket send action](websocket-send-action.md)
 
-### Upload File Action
+### Upload File action
 
 Upload file action will be used to upload a file from the frontend application and send it via a Kafka topic to the document management system.
 
-For more details on how to configure an Upload File Action, check the following section:
+For more details on how to configure an Upload File action, check the following section:
 
 [Upload file action](upload-file-action.md)
 
-### Start Subprocess Action
+### Start Subprocess action
 
 In order to create reusability between business processes, as well as split complex processes into smaller, easier-to-maintain flows, the start subprocess business rule can be used to trigger the same sequence multiple times.
 
-For more details on how to configure a Business Rule Action, check the following section:
+For more details on how to configure a Business Rule action, check the following section:
 
 [Start subprocess action](start-subprocess-action.md)
 
-### Append Params to Parent Process&#x20;
+### Append Params to Parent Process
 
 Used for copying data in the subprocess from its parent process.
 For more details about the configuration, check the following section:

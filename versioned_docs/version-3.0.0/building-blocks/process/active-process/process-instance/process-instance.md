@@ -14,7 +14,7 @@ Think of the process definition as the blueprint for a house and the process ins
 
 The engine takes care of going through the process steps defined and handles all the business logic on the process definition.
 
-The [**FLOWX.AI Engine**](../../../../platform-deep-dive/core-components/flowx-engine) is responsible for executing the steps in the process definition and handling all of the business logic. The token represents the current position in the process and moves from one node to the next based on the sequences and rules defined in the exclusive gateways. In the case of parallel gateways, child tokens are created and eventually merged back into the parent token.
+The [**FLOWX.AI Engine**](../../../../platform-deep-dive/core-components/flowx-engine) is responsible for executing the steps in the process definition and handling all the business logic. The token represents the current position in the process and moves from one node to the next based on the sequences and rules defined in the exclusive gateways. In the case of parallel gateways, child tokens are created and eventually merged back into the parent token.
 
 Kafka events are used for communication between FLOWX.AI components such as the engine and integrations/plugins. Each event type is associated with a Kafka topic to track and orchestrate the messages sent on Kafka. The engine updates the UI by sending messages through sockets.
 
@@ -95,13 +95,13 @@ In the **Process Status** view, some nodes are highlighted with different colors
 
 ## Starting a new process instance
 
-To start a new process instance, a request must be made to the [FLOWX.AI Engine](../../../../platform-deep-dive/core-components/flowx-engine). This is handled by the web/mobile application. The current user must have the appropriate role/permission to start a new process instance.
+To start a new process instance, a request must be made to the [FLOWX Engine](../../../../platform-deep-dive/core-components/flowx-engine). This is handled by the web/mobile application. The current user must have the appropriate role/permission to start a new process instance.
 
 ![](../../img/process_instance_diagram.png)
 
 To be able to start a new process instance, the current user needs to have the appropriate role/permissions:
 
-[Configuring access roles for processes](../../../../platform-setup-guides/flowx-engine-setup-guide/configuring-access-roles-for-processes.mdd)
+[Configuring access roles for processes](../../../../platform-setup-guides/flowx-engine-setup-guide/configuring-access-roles-for-processes.md)
 
 When starting a new process instance, we can also set it to [inherit some values from a previous process instance](../../../../platform-deep-dive/core-components/flowx-engine/flowx-engine.md#orchestration).
 

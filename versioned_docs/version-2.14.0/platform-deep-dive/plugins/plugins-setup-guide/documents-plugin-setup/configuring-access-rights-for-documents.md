@@ -15,8 +15,6 @@ Available scopes:
 * edit - users are able to edit document templates
 * admin - users are able to publish or delete document templates
 
-
-
 The Document plugin is preconfigured with the following default users roles for each of the access scopes mentioned above:
 
 * manage-document-templates

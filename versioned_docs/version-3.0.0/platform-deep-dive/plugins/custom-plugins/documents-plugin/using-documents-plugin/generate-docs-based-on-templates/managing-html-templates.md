@@ -13,13 +13,13 @@ Use case: include the company name and registration number in an offer document
 
 HTML template specifications:
 
-```
+```html
 <p><strong>Lorem ipsum: <span th:text="${companyName}"></span></strong>, dolor sit amet <strong><span th:text="${cui}"></span></strong>.</p>
 ```
 
 Data specifications:
 
-```
+```json
 {
   "data": {
     "companyName": "Test Company SRL",
@@ -54,7 +54,7 @@ HTML template specifications:
 
 Data specifications:
 
-```
+```json
 "data": {
    "offerValuesHeader": [ 
      "Name", 
@@ -114,7 +114,7 @@ HTML template specifications:
 
 Data specifications:
 
-```
+```json
   "data": {
     "consumptionPoints": [
       {
@@ -169,7 +169,7 @@ HTML template specifications:
 
 Data specifications:
 
-```
+```json
  "data": {
     "pjCLient": true
   }
@@ -189,7 +189,7 @@ HTML template specifications:
 
 Data specifications:
 
-```
+```json
 "data": {
     "signature": "INSERT_BASE64_IMAGE"
   }
@@ -218,7 +218,7 @@ HTML template specifications:
 
 Data specifications:
 
-```
+```json
 {
     "data": {
         "incomeSource": [

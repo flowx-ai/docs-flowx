@@ -18,10 +18,10 @@ There are 3 types of events:
 
 **Start & End events**
 
-| Start Event Icon                                                                    | End Event Icon                                                                     |
-| ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| ![](./img/event_start.png#center)  | ![](./img/event_end.png#center)
-| event that triggers the process                                                     | event that defines the state that terminates the process                           |
+| Start Event Icon                  | End Event Icon                                           |
+| --------------------------------- | -------------------------------------------------------- |
+| ![](./img/event_start.png#center) | ![](./img/event_end.png#center)                          |
+| event that triggers the process   | event that defines the state that terminates the process |
 
 ### Intermediate events
 
@@ -31,10 +31,10 @@ There are 3 types of events:
 * Receive Message Event - incoming message occurring during the process flow, somewhere between start and end
 * Send Message Event - outgoing message
 
-| Send Message Event Icon                                                                              | Receive Message Event Icon                                                                               |
-| ---------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| Send Message Event Icon            | Receive Message Event Icon            |
+| ---------------------------------- | ------------------------------------- |
 | ![](./img/message_send.png#center) | ![](./img/message_receive.png#center) |
-| outgoing message                                                                                     | incoming message                                                                                         |
+| outgoing message                   | incoming message                      |
 
 ### Activities
 
@@ -81,10 +81,10 @@ In business processes, you typically need to make choices — **business decisio
 
 In many cases, you want to split up the flow within your business process. For example the sales and risk departments may examine a new mortgage application at the same time. This reduces the total cycle time for a case. To express parallel flow in BPMN, you use a **parallel gateway**.
 
-| Exclusive gateway (XOR)                                                                   | Parallel gateway (AND)                                                                    |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-|   ![](../../img/gateway_exclusive.png#center)                                                    |       ![](../../img/gateway_parallel.png#center)                                                 |
-| <ul><li>defines a decision point</li></ul>                                                | <ul><li>no decision making; </li><li>all outgoing branches are activated</li></ul>        |
+| Exclusive gateway (XOR)                     | Parallel gateway (AND)                                                             |
+| ------------------------------------------- | ---------------------------------------------------------------------------------- |
+| ![](../../img/gateway_exclusive.png#center) | ![](../../img/gateway_parallel.png#center)                                         |
+| <ul><li>defines a decision point</li></ul>  | <ul><li>no decision-making; </li><li>all outgoing branches are activated</li></ul> |
 
 **Closing gateway**
 

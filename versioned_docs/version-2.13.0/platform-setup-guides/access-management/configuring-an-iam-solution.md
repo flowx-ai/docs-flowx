@@ -133,7 +133,7 @@ Protocol mappers perform transformation on tokens and documents. They can do thi
 There are multiple types of mappers that we will use in the following examples:
 
 * [Group Membership mapper ](#group-membership-mapper)- it can be used to map user groups to the authorization token
-* [User Attribute mapper](#user-attribute-mapper) - it can be used to map custom attributes, for example, mapping the [businessFilters ](../../user-roles-management/business-filters.md) list to the token claim
+* [User Attribute mapper](#user-attribute-mapper) - it can be used to map custom attributes, for example, mapping the [businessFilters ](../../platform-deep-dive/user-roles-management/business-filters.md) list to the token claim
 * [User Realm Role](#user-realm-role) - it can be used to map a user realm role to a token claim
 
 ### **Group Membership mapper**
@@ -155,7 +155,7 @@ Add customer **business filters** attribute to `{example}-authenticate` client -
 
 You can find more information about business filters in the following section:
 
-[Business filters](../../user-roles-management/business-filters.md)
+[Business filters](../../platform-deep-dive/user-roles-management/business-filters.md)
 
 
 ### User realm role
@@ -262,7 +262,7 @@ The **admin service account** defined in the example above can have the followin
 
 For more information, check the following section:
 
-[Configuring access rights for admin](../../../flowx-designer/designer-setup-guide/configuring-access-rights-for-admin.md)
+[Configuring access rights for admin](../../flowx-designer/designer-setup-guide/configuring-access-rights-for-admin.md)
 
 ### **Task management service account**
 
@@ -300,4 +300,4 @@ The **task management service account** defined in the example above can have th
 
 For more information, check the following section:
 
-[Configuring access rights for Task Management](../../plugins/plugins-setup-guide/task-management-plugin-setup/configuring-access-rights-for-task-management.md)
+[Configuring access rights for Task Management](../../platform-deep-dive/plugins/plugins-setup-guide/task-management-plugin-setup/configuring-access-rights-for-task-management.md)

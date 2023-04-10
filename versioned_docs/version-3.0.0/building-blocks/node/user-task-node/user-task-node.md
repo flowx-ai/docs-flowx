@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # User task node
 
-This node represents an interaction with the user. It is used to display a piece of UI (defined in the [UI Designer](../../ui-designer/ui-designer.md) or a [custom Angular component](../../ui-designer/ui-component-types/root-components/custom.md). You can also define actions available for the users to interact with the process.
+This node represents an interaction with the user. It is used to display a piece of UI (defined in the [UI Designer](../../ui-designer/ui-designer.md)) or a [custom Angular component](../../ui-designer/ui-component-types/root-components/custom.md). You can also define actions available for the users to interact with the process.
 
 ### Configuring a user task node
 
@@ -25,7 +25,7 @@ When encountering a step with `canGoBack` switched to false, all steps found beh
 :::
 
 * [**Swimlane**](../../../platform-deep-dive/user-roles-management/swimlanes.md) - choose a swimlane (if there are multiple swimlanes on the process) to make sure only certain user roles have access only for certain process nodes- if there are no multiple swimlanes, the value is **Default**
-* [**Stage** ](../../../platform-deep-dive/plugins/custom-plugins/task-management/using-stages.md)- assign a stage to the node
+* [**Stage** ](../../../platform-deep-dive/plugins/custom-plugins/task-management/using-stages.md) - assign a stage to the node
 
 #### Response Timeout 
 
@@ -84,20 +84,19 @@ More details in the following section:
 
 [Root components](../../ui-designer/ui-component-types/root-components/root-components.md)
 
-
 **2. Components**
 
 The root component can hold a hierarchical component structure.
 
-Available children for **Form Group** and **Container** are:
+Available children for **Card** and **Container** are:
 
 * **Container** - used to group and align its children
-* **Form** -  used to group and align form field elements (**inputs**, **radios**, **checkboxes**, etc)
+* **Form** - used to group and align form field elements (**inputs**, **radios**, **checkboxes**, etc)
 * **Image** - allows you to configure an image in the document
 * **Text** - a simple text can be configured via this component, basic configuration is available
 * **Hint** - multiple types of hints can be configured via this component
 * **Link** - used to configure a hyperlink that opens in a new tab
-* **Button** - Multiple options  are available for configuration, the most important part being the possibility to add actions
+* **Button** - Multiple options are available for configuration, the most important part being the possibility to add actions
 * **File Upload** - A specific type of button that allows you to select a file
 * **Custom** - custom components
 

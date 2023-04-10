@@ -21,4 +21,4 @@ After migrating to the 3.0 release, please take in consideration the following c
 `Min H` and `Max H` props have been removed.
 9. The hint and message UI components were combined into a single component called 'message' with the following properties: `type`, `fill`, `border`, and `text`.
 10. The [button](./ui-component-types/buttons) element no longer has the `fill`, `border`, and `flat` types. It now has 4 types: `primary`, `secondary`, `ghost`, and `text`.
-11. Added Helpertext (to replace Info tooltip) - this new element can be found on [Form elements](./ui-component-types/form-elements) and provides additional information about each element, which can be hidden within an infopoint.
+11. Added Helpertext (to replace Info tooltip) - this new element can be found as a property on [Form elements](./ui-component-types/form-elements) and provides additional information about each element, which can be hidden within an infopoint.
