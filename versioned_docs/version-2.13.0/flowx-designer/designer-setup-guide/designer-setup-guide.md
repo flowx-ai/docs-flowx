@@ -18,7 +18,7 @@ The backend microservice needs to be able to connect to the Kafka cluster in cas
 
 ### NGINX
 
-It would be best if the FLOWX Designer used a separate [NGINX ](../../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-nginx.md)load balancer from the Engine. This is used in order to route API calls from the [SPA](designer-setup-guide.md#for-configuring-the-spa) (single page application) to the backend service, to the engine and to various plugins.
+It would be best if the FLOWX Designer used a separate [NGINX ](../../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-nginx.md) load balancer from the Engine. This is used in order to route API calls from the [SPA](designer-setup-guide.md#for-configuring-the-spa) (single page application) to the backend service, to the engine and to various plugins.
 
 This is used in order to route API calls from the SPA (single page application) to the backend service, to the engine, and to various plugins.&#x20;
 

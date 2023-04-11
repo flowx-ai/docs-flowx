@@ -4,10 +4,9 @@ sidebar_position: 1
 
 # What is the FLOWX Designer?
 
-FLOWX.AI Designer is the FLOWX.AI no-code visual development environment. It allows users to create web and mobile applications without having to know how to code.
+FLOWX Designer is the FLOWX.AI no-code visual development environment. It allows users to create web and mobile applications without having to know how to code.
 
 ![image alt](./img/flowx-designer.png#center)
-
 
 With the FLOWX.AI Designer, you can:
 

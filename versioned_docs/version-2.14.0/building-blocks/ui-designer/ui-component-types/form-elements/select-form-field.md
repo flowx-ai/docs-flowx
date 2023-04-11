@@ -89,16 +89,16 @@ Follow the next steps to create the process from scratch:
 
 3.  On the **user task node,** add a new **Action** (submit action, this will validate the forms and save the date) with the following properties:
 
-* Action type - **Save Data**
-* **Manual**
-* **Mandatory**
-* **Data to send** (the key where the data will be sent) - `application`
+    * Action type - **Save Data**
+    * **Manual**
+    * **Mandatory**
+    * **Data to send** (the key where the data will be sent) - `application`
 
 ![](../../img/dynamic6.gif)
 
 Below you can find the MVEL script used in the above example:
 
-```
+```java
 output.put("application",
 {
     "client": {

@@ -58,7 +58,7 @@ Contains all the information for extracting and processing data from the DB, inc
 
 It is mandatory that before using Superset, the reporting plugin need to have a PostgreSQL database installed and configured.
 
-[FLOWX.AI Engine DB configuration](../../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide)
+[FLOWX.AI Engine DB configuration](../../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#database)
 
 [Reporting DB configuration](../../../../platform-deep-dive/plugins/plugins-setup-guide/reporting-setup.md)
 
@@ -202,5 +202,5 @@ To create a dashboard follow the next steps:
 
 ![](../../../img/save_dashboard.gif)
 
-[Reporting setup guide](../plugins-setup-guide/reporting-setup)
+[Reporting setup guide](../../plugins-setup-guide/reporting-setup.md)
 

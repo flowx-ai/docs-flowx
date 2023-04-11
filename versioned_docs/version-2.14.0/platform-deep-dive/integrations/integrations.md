@@ -2,7 +2,7 @@
 
 ## What is an integration?
 
-**Connecting legacy systems or third-party apps** to the engine is easily done through custom integrations. These can be developed using any tech stack, the only requirement is that they connect to Kafka in order to communicate with the FLOWX.AI process engine.
+**Connecting legacy systems or third-party apps** to the engine is easily done through custom integrations. These can be developed using any tech stack, the only requirement is that they connect to Kafka in order to communicate with the FLOWX process engine.
 
 Integrations can be used for anything from legacy APIs, custom file exchange solutions, or RPAs.
 
@@ -52,7 +52,7 @@ Connectors should act as a light business logic layer that:
 Keep in mind that you are in an event-driven architecture and the communication between the engine and the connector is asynchronous. The connectors will need to be designed in such a way that they do not bloat the platform. Depending on the communication type between the connector and the legacy system you might need to also add custom implementation for load balancing requests, scaling the connector, and such.
 
 :::caution
-In order for the connector to communicate correctly with the Engine, you have to make sure to include all the received Kafka headers in the response that is sent back to the FLOWX.AI Engine.
+In order for the connector to communicate correctly with the Engine, you have to make sure to include all the received Kafka headers in the response that is sent back to the FLOWX Engine.
 :::
 
 To be able to easily trace the process flow, a minimal setup for Jaeger tracing should be added to custom Connectors.

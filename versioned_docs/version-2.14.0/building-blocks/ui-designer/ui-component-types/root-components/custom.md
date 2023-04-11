@@ -16,10 +16,7 @@ The properties that can be configured are as follows:
 2. **Input keys** - used to define the process model paths from which the components will receive their data
 3. [**UI Actions**](../../ui-actions.md) - actions defined here will be made available to the custom component
 
-
 ![](../../img/ui_designer_custom_settings.png#center)
-
-
 
 #### When will a user task display a user interface element?
 

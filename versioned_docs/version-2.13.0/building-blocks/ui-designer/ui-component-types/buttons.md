@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Buttons
 
-There are   two types of buttons, similar to each other but with different purposes:
+There are two types of buttons, similar to each other but with different purposes:
 
 ### Button
 
@@ -16,14 +16,12 @@ Sections that can be configured regarding general settings:
    * Button type: fill/flat
    * Label
 2. Styling - where extra CSS can be added
-3. Expressions -  you can add here `if` expressions that will be evaluated to be true or false
-4. **UI Action -** that defines what action will trigger ([more details on how to configure](../ui-actions.md))
+3. Expressions - you can add here `if` expressions that will be evaluated to be true or false
+4. **UI Action** - that defines what action will trigger ([more details on how to configure](../ui-actions.md))
 
 ![Button configuration for a save action](../img/button_config.png)
 
-
-
-### File Upload Button
+### File Upload button
 
 This button will be used to select a file and do custom validation on it. Only the Flowx props will be different. Additional properties:
 

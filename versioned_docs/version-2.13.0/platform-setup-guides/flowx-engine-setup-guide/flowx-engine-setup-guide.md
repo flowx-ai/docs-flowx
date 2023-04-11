@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# FLOWX.AI Engine Setup guide
+# FLOWX.AI Engine setup guide
 
 ## Infrastructure Prerequisites
 

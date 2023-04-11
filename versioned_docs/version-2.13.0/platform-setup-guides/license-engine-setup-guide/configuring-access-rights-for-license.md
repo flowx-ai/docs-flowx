@@ -12,8 +12,6 @@ Available scopes:
 * edit - users are able to update the license model and sync license data
 * admin - users are able to download the license data
 
-
-
 The License component is preconfigured with the following default users roles for each of the access scopes mentioned above:
 
 * manage-licenses

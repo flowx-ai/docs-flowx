@@ -51,7 +51,6 @@ The suggested naming convention is the following:
 ```
 :::
 
-
 * you will need to configure this topic pattern when setting up the Engine
 * and make sure to use it when sending messages from the Connectors back to the Engine
 * all Kafka headers received by the Connector should be sent back to the Engine with the result

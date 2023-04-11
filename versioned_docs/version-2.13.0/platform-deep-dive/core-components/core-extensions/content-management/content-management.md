@@ -23,7 +23,7 @@ It can be quickly deployed on the chosen infrastructure, preloaded with the need
 
 Let's go through the steps needed to deploy and set up the service:
 
-[CMS setup guide](../../../platform-setup-guide/cms-setup-guide/cms-setup-guide.md)
+[CMS setup guide](../../../../platform-setup-guides/cms-setup-guide/cms-setup-guide.md)
 
 We've prepared some examples of various use cases where this service is helpful:
 

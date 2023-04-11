@@ -24,7 +24,7 @@ The available configuration options for this form element are:
 4. **Data source**
    * **Default Value** - the default values of the DatePicker element
 5. Expressions
-   * **Disabled expressions** - javascript expressions that should be evaluated as true or false. It's important to make sure that hidden fields also have the same expression configured under expressions -> hide
+   * **Disabled expressions** - javascript expressions that should be evaluated as true or false. It's important to make sure that hidden fields also have the same expression configured under expressions → hide
    * **Hide Expression** - javascript expressions used to hide components when they're truthy
 
 #### Datepicker styling

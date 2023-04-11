@@ -13,9 +13,7 @@ Use the [WYSIWYG](../../../../wysiwyg.md) editor to create a document template.
 1. Create a process in which you add a [**Kafka send event node**](../../../../../../building-blocks/node/message-send-received-task-node.md#message-send-task) and a [**Kafka receive event node**](../../../../../../building-blocks/node/message-send-received-task-node.md#message-receive-task) (one to send the request, one to receive the reply).
 2. Configure the first node (Kafka send event) - add a **Kafka send action**.
 
-
 3. Add the [**Kafka topic**](../../../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md#kafka-configuration) where to send the request:
-
 
 4. Fill in the Message. Values expected in the request body:
 

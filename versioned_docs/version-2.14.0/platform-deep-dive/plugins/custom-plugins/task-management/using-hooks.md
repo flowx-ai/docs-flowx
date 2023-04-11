@@ -43,7 +43,7 @@ import TabItem from '@theme/TabItem';
 
 To create a new hook, follow the next steps:
 
-1. Open **FLOWX.AI Designer**.
+1. Open **FLOWX Designer**.
 2. Go to Task Manager and select **Hooks**.
 3. Click **New Hook** (you can also import or export a hook).
 4. Fill in the required details.

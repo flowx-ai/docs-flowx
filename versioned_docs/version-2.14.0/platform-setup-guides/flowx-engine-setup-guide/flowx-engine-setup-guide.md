@@ -2,22 +2,22 @@
 sidebar_position: 2
 ---
 
-# FLOWX.AI Engine setup guide
+# FLOWX Engine setup guide
 
 ## Introduction
 
-This guide will provide instructions on how to set up and configure the FLOWX.AI Engine to meet your specific requirements.
+This guide will provide instructions on how to set up and configure the FLOWX Engine to meet your specific requirements.
 
 ## Infrastructure prerequisites
 
-The FLOWX.AI Engine requires the following components to be set up before it can be started:
+The FLOWX Engine requires the following components to be set up before it can be started:
 
 * **Docker engine** - version 17.06 or higher
 * **Kafka** - version 2.8 or higher
 * **Elasticsearch** - version 7.11.0 or higher
 * **DB instance** 
 
-# Dependencies
+## Dependencies
 
 * [**Database**](#database---postgres--oracle)
 * [**Redis server**](../platform-setup-guides.md#redis-configuration)
@@ -25,6 +25,8 @@ The FLOWX.AI Engine requires the following components to be set up before it can
 * [**Logging**](../platform-setup-guides.md#logging)
 
 For Microservices architecture, some Microservices holds their data individually using separate Databases.
+
+#### Database
 
 A basic Postgres configuration can be set up using a helm values.yaml file as it follows:
 
@@ -62,8 +64,6 @@ A basic Postgres configuration can be set up using a helm values.yaml file as it
             cpu: 200m
             memory: 512Mi
     ```
-
-## Dependencies
 
 * **Redis server** - a Redis cluster is required for the engine to cache process definitions, compiled scripts, and Kafka responses
 * **Kafka cluster** - Kafka is the backbone of the engine and all plugins and integrations are accessed via the Kafka broker
@@ -269,7 +269,7 @@ To use advancing controller, the following env vars are needed for `process-engi
 
 ### Configuring Scheduler  
 
-Below you can find a configuration .yaml to use [scheduler](../../platform-deep-dive/core-components/core-extensions/scheduler.md) service together with FLOWX.AI Engine:
+Below you can find a configuration .yaml to use [scheduler](../../platform-deep-dive/core-components/core-extensions/scheduler.md) service together with FLOWX Engine:
 
 
 ```yaml
@@ -286,7 +286,7 @@ scheduler:
       expireMinutes: 30
 ```
 
-Below you can find a configuration .yaml to use scheduler service together with FLOWX.AI Engine:
+Below you can find a configuration .yaml to use scheduler service together with FLOWX Engine:
 
 * **processCleanup**: A configuration for cleaning up processes. 
 * **enabled** specifies whether this feature is turned on or off. 

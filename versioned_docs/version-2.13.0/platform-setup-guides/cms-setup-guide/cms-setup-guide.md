@@ -44,7 +44,7 @@ cms-mdb:
 
 ### **Redis server** <a href="#faa668e8-966f-468a-8009-f4e903e01d14" id="faa668e8-966f-468a-8009-f4e903e01d14"></a>
 
-The service can use the [Redis component](../../../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-redis.md) already deployed for the engine.
+The service can use the [Redis component](../../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-redis.md) already deployed for the engine.
 
 ## Configuration <a href="#bad24571-ff23-4ec3-83d9-8a2ace74a6b4" id="bad24571-ff23-4ec3-83d9-8a2ace74a6b4"></a>
 

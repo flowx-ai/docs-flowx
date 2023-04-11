@@ -9,7 +9,7 @@ Using elastic search, the new search microservice will be able to search for key
 ::: 
 
 :::caution
-Elastic search indexing must be switched on the FLOWX.AI Engine configuration. You can find more details in the [**Search data service setup guide**](.././../../platform-setup-guides/search-data-service-setup-guide.md).
+Elastic search indexing must be switched on the FLOWX Engine configuration. You can find more details in the [**Search data service setup guide**](.././../../platform-setup-guides/search-data-service-setup-guide.md).
 :::
 
 ## Using search data
@@ -72,7 +72,7 @@ The **body message** of the response will look like this:
 * Example (dummy values extracted from a process):
 
 :::tip
-To access the view of your process variables, tokens and subprocesses go to **FLOWX.AI Designer > Active process > Process Instances**. Here you will find the response.
+To access the view of your process variables, tokens and subprocesses go to **FLOWX Designer → Active process > Process Instances**. Here you will find the response.
 ::: 
 
 ![](../../img/search_data_no_result.png)

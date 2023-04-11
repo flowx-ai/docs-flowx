@@ -72,9 +72,9 @@ Example:
 }
 ```
 
-2. Web socket progress message
+2. Web socket progress message:
 
-```
+```json
 {
   "progressUpdateDTO": {
     "processInstanceUuid": "db573705-71dd-4216-9d94-5ba2fb36ff2a",
@@ -84,6 +84,6 @@ Example:
 }
 ```
 
-3\. **ProgressUpdateDto** will trigger the **SDK** to search for the UI element having the same **nodeId** as the one from the web socket progress event
+3. **ProgressUpdateDto** will trigger the **SDK** to search for the UI element having the same **nodeId** as the one from the web socket progress event
 
-4\. Additionally it will ask for data and actions that are required for this component via a GET request`{{processUrl}}/api/process/db573705-71dd-4216-9d94-5ba2fb36ff2a/data/42062`
+4. Additionally it will ask for data and actions that are required for this component via a GET request `{{processUrl}}/api/process/db573705-71dd-4216-9d94-5ba2fb36ff2a/data/42062`

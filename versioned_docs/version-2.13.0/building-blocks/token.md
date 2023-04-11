@@ -21,7 +21,7 @@ There will be cases when the token needs to be stopped in a node until some inpu
 
 ### Checking the token status
 
-The current process instance status can be retrieved using the FLOWX Designer. It will display some info on the tokens related to that process instance and the current nodes they are in.&#x20;
+The current process instance status can be retrieved using the FLOWX Designer. It will display some info on the tokens related to that process instance and the current nodes they are in.
 
 ![](./img/check_token_status.png)
 

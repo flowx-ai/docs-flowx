@@ -108,7 +108,7 @@ To create this kind of process, we need the following elements:
 
 Follow the next steps to create the process from scratch:
 
-1. Open **FLOWX.AI Admin** and from the **Processes** tab select **Definitions**.
+1. Open **FLOWX Designer* and from the **Processes** tab select **Definitions**.
 2. Click on the breadcrumbs (top-right corner) then click **New process** (the Process Designer will now open).
 3. Now add all the **necessary nodes** (as mentioned above).
 
@@ -132,7 +132,7 @@ Follow the next steps to create the process from scratch:
 
 Below you can find the MVEL script used in the above example:
 
-```json
+```java
 output.put("application",
 {
     "client": {
@@ -189,7 +189,7 @@ output.put("application",
 
 Follow the next steps to configure the UI needed:
 
-1. Select the **user task node** and click the **brush icon** to open [**UI Designer**](../../ui-designer).
+1. Select the **user task node** and click the **brush icon** to open [**UI Designer**](../../ui-designer.md).
 2. Add a [**card**](../root-components/card.md) element as a [**root component**](../root-components/) (this will group the other elements inside it) with the following properties:
    * **Message** - `{"application": ${application}}`
    * **Title** - _Customer Contract_

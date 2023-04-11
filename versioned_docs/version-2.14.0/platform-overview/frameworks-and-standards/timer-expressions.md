@@ -43,7 +43,7 @@ ISO 8601 is an international standard covering the worldwide exchange and commun
 
 More details:
 
-[ISO 8601](https://www.digi.com/resources/documentation/digidocs/90001437-13/reference/r_iso_8601_duration_format.htm)
+[ISO 8601](https://www.w3.org/TR/NOTE-datetime)
 
 #### ISO 8601 format is used in the following examples:
 

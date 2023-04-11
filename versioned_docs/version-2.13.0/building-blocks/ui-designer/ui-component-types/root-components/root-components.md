@@ -13,7 +13,7 @@ Root components are used to group different types of components, each having a d
 
 ![](../../img/root_components.gif)
 
-The root component can hold a hierarchical component structure as follows
+The root component can hold a hierarchical component structure as follows:
 
 ![](../../img/root_components_structure.png)
 
@@ -27,7 +27,7 @@ Available children for **Form Group** and **Container** are:
 6. **Link** - used to configure a hyperlink that opens in a new tab
 7. [**Button**](../buttons.md) - Multiple options are available for configuration, the most important part being the possibility to add actions
 8. [**File Upload**](../buttons.md) - A specific type of button that allows you to select a file
-9. [**Custom** ](custom.md)- custom components&#x20;
+9. [**Custom** ](custom.md)- custom components
 
 For more information about the available children for Form Group, check the following section:
 

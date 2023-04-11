@@ -8,7 +8,7 @@ The License Engine is a service that can be set up using a Docker image. This gu
 
 * **DB instance** 
 * **Kafka** - version 2.8 or higher
-* [**FLOWX.AI Designer**](../../flowx-designer/designer-setup-guide/designer-setup-guide.md)
+* [**FLOWX Designer**](../../flowx-designer/designer-setup-guide/designer-setup-guide.md)
 
 ## Dependencies
 

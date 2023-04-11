@@ -20,7 +20,7 @@ You can use the **Access management** tab under **General Settings** to administ
 :::
 
 :::warning
-To be able to access the roles defined in the identity provider solution, a [**service account**](../access-management/configuring-an-iam-solution.md#adding-service-accounts) with appropriate permissions needs to be added in the identity provider. And the details of that service account [**need to be set up in the platform configuration**](../../../flowx-designer/designer-setup-guide#authorization--access-roles).
+To be able to access the roles defined in the identity provider solution, a [**service account**](../access-management/configuring-an-iam-solution.md#adding-service-accounts) with appropriate permissions needs to be added in the identity provider. And the details of that service account [**need to be set up in the platform configuration**](../../flowx-designer/designer-setup-guide/designer-setup-guide.md#authorization--access-roles).
 :::
 
 

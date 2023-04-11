@@ -36,7 +36,7 @@ When encountering a step with `canGoBack` switched to false, all steps found beh
 
 #### Response Timeout
 
-* **Response timeout** - can be triggered if, for example, a topic that you define and add in the [Data stream topics](./#data-stream-topics) tab does not respect the pattern, the format used for this is [ISO 8601 duration format ](https://www.digi.com/resources/documentation/digidocs/90001437-13/reference/r\_iso\_8601\_duration\_format.htm)(for example, a delay of 30s will be set up like `PT30S`)
+* **Response timeout** - can be triggered if, for example, a topic that you define and add in the [Data stream topics](./#data-stream-topics) tab does not respect the pattern, the format used for this is [ISO 8601 duration format ](https://www.w3.org/TR/NOTE-datetime)(for example, a delay of 30s will be set up like `PT30S`)
 
 ![](../img/task_node_response_timeout.png)
 
@@ -45,7 +45,7 @@ When encountering a step with `canGoBack` switched to false, all steps found beh
 *   **Topic Name** - the topic name where the [process engine](../../../platform-deep-dive/core-components/flowx-engine.md) listens for the response (this should be added to the platform and match the topic naming rule for the engine to listen to it) - available for UPDATES topics (Kafka receive events)
 
     :::warning
-    A naming pattern must be defined on the [process engine configuration](../../../platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide/flowx-engine-setup-guide.md#kafka-configuration) to use the defined topics. It is important to know that all the events that start with a configured pattern will be consumed by the Engine. For example, `KAFKA_TOPIC_PATTERN` is the topic name pattern where the Engine listens for incoming Kafka events.
+    A naming pattern must be defined on the [process engine configuration](../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#kafka-configuration) to use the defined topics. It is important to know that all the events that start with a configured pattern will be consumed by the Engine. For example, `KAFKA_TOPIC_PATTERN` is the topic name pattern where the Engine listens for incoming Kafka events.
     :::
 * **Key Name** -  will hold the result received from the external system, if the key already exists in the process values, it will be overwritten&#x20;
 

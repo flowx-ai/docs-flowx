@@ -16,7 +16,7 @@ In some cases it might be necessary to restrict access to process nodes based on
 
 Depending on the type of node added in a swimlane, only the users that have the necessary swimlane roles will be able to start process instances, view process instances and execute actions on process instances.
 
-When creating a new process definition, a default swimlane will automatically be added.&#x20;
+When creating a new process definition, a default swimlane will automatically be added.
 
 While the token moves from one node to the next, it might move from one swimlane to another. If the user that interacts with the process instance no longer has access on the new swimlane, they will view the process in read-only mode and not be able to interact with it until the token returns on a swimlane they have access to.
 

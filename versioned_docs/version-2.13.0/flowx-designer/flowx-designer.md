@@ -16,7 +16,7 @@ With the FLOWX Designer, you can:
 * Define business rules and validations via [DMN](../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-dmn.md) files or via [MVEL](../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md), or using other supported scripting languages
 * Create integration connectors in a visual manner
 * Create data models for your applications
-* Adding new capabilitiesby using [plugins](../platform-deep-dive/plugins/plugins.md)
+* Adding new capabilities by using [plugins](../platform-deep-dive/plugins/plugins.md)
 * Manage users access
 
 This section will go through the steps to set up the FLOWX Designer and how to use it.

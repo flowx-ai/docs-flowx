@@ -4,7 +4,7 @@ The service is available as a docker image.
 
 It has the following dependencies:
 
-* a [postgres ](https://www.mongodb.com/2)database
+* a [postgres](https://www.mongodb.com/2) database
 * it needs to be able to connect to the same Kafka instance as the one used by the engine
 * requests made to the License engine should be routed from the FLOWX Designer using NGINX
 

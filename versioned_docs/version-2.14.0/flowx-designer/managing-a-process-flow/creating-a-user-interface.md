@@ -8,7 +8,7 @@ sidebar_position: 6
 
 To create a stepper structure:
 
-1. Go to **FLOWX.AI Designer** and go to the **Definitions** tab.
+1. Go to **FLOWX Designer** and go to the **Definitions** tab.
 2. Click on the **New process** button, using the **breadcrumbs** from the top-right corner.
 3. Add a **start node**.
 4. Add a new **milestone** to describe all the user tasks.

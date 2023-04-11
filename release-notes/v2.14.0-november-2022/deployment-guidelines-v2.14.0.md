@@ -60,8 +60,8 @@ The following env vars are needed for `process-engine` to connect to Advancing P
 
 `ADVANCING_DATASOURCE_PASSWORD`
 
-[FLOWX.AI Engine setup guide](../../docs/platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide)
+[FLOWX Engine setup guide](../../docs/platform-setup-guides/flowx-engine-setup-guide)
 
 [Advancing controller](../../docs/platform-deep-dive/core-components/flowx-engine#advancing-controller)
 
-[Advancing controller setup guide](../../docs/platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide/advancing-controller-setup-guide)
+[Advancing controller setup guide](../../docs/platform-setup-guides/flowx-engine-setup-guide/advancing-controller-setup-guide)

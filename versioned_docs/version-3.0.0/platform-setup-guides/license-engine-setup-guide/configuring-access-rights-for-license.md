@@ -2,7 +2,7 @@
 
 Granular access rights can be configured for restricting access to the License component.
 
-The following access authorizations is provided, with the specified access scopes:
+The following access authorizations are provided, with the specified access scopes:
 
 1. **Manage-licenses** - for configuring access for managing license related details
 
@@ -11,8 +11,6 @@ Available scopes:
 * read - users are able to view the license report
 * edit - users are able to update the license model and sync license data
 * admin - users are able to download the license data
-
-
 
 The License component is preconfigured with the following default users roles for each of the access scopes mentioned above:
 

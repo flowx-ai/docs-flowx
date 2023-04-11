@@ -4,7 +4,7 @@ At the core of the platform are the process definitions. These are the blueprint
 
 ![](../../../platform-deep-dive/img/process_definitions_new.png)
 
-While designing the FLOWX.AI components, we've tried to keep them as close to their BPMN counterparts as possible.
+While designing the FLOWX components, we've tried to keep them as close to their BPMN counterparts as possible.
 
 ![](../img/process_def.png)
 
@@ -59,7 +59,7 @@ When you create a new swimlane, it comes with two default permissions assigned b
 Other Permissions can be added manually, depending on the needs of the user.
 :::
 
-[Configuring access rights for processes](../../../platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide/configuring-access-roles-for-processes.md)
+[Configuring access rights for processes](../../../platform-setup-guides/flowx-engine-setup-guide/configuring-access-roles-for-processes.md)
 
 #### Task management
 

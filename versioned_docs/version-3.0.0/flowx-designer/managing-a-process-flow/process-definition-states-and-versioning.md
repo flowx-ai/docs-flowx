@@ -1,6 +1,6 @@
 # Process definition states & versioning
 
-Process Definitions in FLOWX.AI Designer can be edited with ease. To keep track of updates and changes, each definition is assigned a version number and state.
+Process Definitions in FLOWX Designer can be edited with ease. To keep track of updates and changes, each definition is assigned a version number and state.
 
 ![](../img/pf_proc_def_state.png)
 

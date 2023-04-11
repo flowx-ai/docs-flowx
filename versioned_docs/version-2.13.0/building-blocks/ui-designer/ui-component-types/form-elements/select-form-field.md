@@ -28,7 +28,7 @@ The available configuration options for this form element are:
    * **Select Options** - label - value pairs can be defined here (values from CMS and defined options together are not possible)
 5. **Expressions**
    * **Hide** - javascript expressions used to hide components when they're truthy
-   * **Disabled expressions** - javascript expressions that should be evaluated as true or false. It's important to make sure that hidden fields also have the same expression configured under expressions -> hide
+   * **Disabled expressions** - javascript expressions that should be evaluated as true or false. It's important to make sure that hidden fields also have the same expression configured under expressions → hide
 
 ![](../../img/select_form_field_settings.png)
 
