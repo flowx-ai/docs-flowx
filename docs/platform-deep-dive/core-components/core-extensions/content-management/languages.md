@@ -13,6 +13,10 @@ On the main screen inside **Languages**, you have the following elements:
 * **Name** - the name of the language
 * **Default** - you can set a language as **Default** (default values can't be deleted)
 
+:::caution
+When working with [substitution tags](./substitution-tags.md) or other elements that imply values from other languages defined in the CMS, when running a process, the default values extracted will be the ones marked by the default language.
+:::
+
 ![Default values](../../../img/lang_default_values.png)
 
 * **Edit** - button used to edit a language

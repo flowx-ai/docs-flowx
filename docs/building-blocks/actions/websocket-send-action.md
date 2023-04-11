@@ -12,12 +12,12 @@ sidebar_position: 2
 
 ### Configuring a Websocket Send action
 
-Multiple options are available for this type of action and can be configured via the FLOWX Designer. To configure a Websocket Send Action, use the **Actions** tab at the [task node level](../../../flowx-designer/managing-a-process-flow/adding-a-new-node.md), which has the following configuration options:
+Multiple options are available for this type of action and can be configured via the FLOWX Designer. To configure a Websocket Send Action, use the **Actions** tab at the [task node level](../../flowx-designer/managing-a-process-flow/adding-a-new-node.md), which has the following configuration options:
 
-* [Action Edit](websocket-send-action.md#action-edit)
-* [Back in steps (for Manual actions)](websocket-send-action.md#back-in-steps)
-* [Parameters](websocket-send-action.md#parameters)
-* [Data to send (for Manual actions)](websocket-send-action.md#data-to-send)
+* [Action Edit](#action-edit)
+* [Back in steps (for Manual actions)](#back-in-steps)
+* [Parameters](#parameters)
+* [Data to send (for Manual actions)](#data-to-send)
 
 #### Action Edit
 
@@ -32,9 +32,9 @@ Multiple options are available for this type of action and can be configured via
 
 #### **Back in steps**
 
-* **Allow BACK on this action** - back in process is a functionality that allows you to go back in a business process and redo a series of previous actions in the process. For more details, check [Moving a token backwards in a process](../../../flowx-designer/managing-a-process-flow/moving-a-token-backwards-in-a-process.md) section.
+* **Allow BACK on this action** - back in process is a functionality that allows you to go back in a business process and redo a series of previous actions in the process. For more details, check [Moving a token backwards in a process](../../flowx-designer/managing-a-process-flow/moving-a-token-backwards-in-a-process.md) section.
 
-![](../img/websocket_action_edit.png)
+![](../node/img/websocket_action_edit.png)
 
 #### **Parameters**
 
@@ -80,16 +80,16 @@ If you are defining this action on a [**subprocess**](../../process/subprocess),
 **Data to send** option is configurable only when the action **trigger type** is **Manual**.
 :::
 
-![](../img/websocket_data_to_send.gif)
+![](../node/img/websocket_data_to_send.gif)
 
 #### Send Update Data example
 
-To send the latest value from the [process instance](../../process/active-process/process-instance/process-instance.md) data found at `application.client.firstName` key, to the frontend app, you can do the following:
+To send the latest value from the [process instance](../process/active-process/process-instance/process-instance.md) data found at `application.client.firstName` key, to the frontend app, you can do the following:
 
-1. Add a **Websocket Send Action.**
+1. Add a **Websocket Send Action**.
 2. Set the **Message Type** to **Default** (this is default value for `data`).
 3. Add a **Message** with the data you want to send:
    * `{ "name": "${application.client.firstName}" }`
 4. Choose the **Target Process**.
 
-![](../img/websocket_send_update_data.gif)
+![](../node/img/websocket_send_update_data.gif)

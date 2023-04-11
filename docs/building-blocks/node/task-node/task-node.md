@@ -93,14 +93,13 @@ Depending on the type of the [**action**](../../actions.md), different propertie
 
 A [business rule](business-rule-action/) is a Task action that allows a script to run. For now, the following script languages are supported:
 
-* [Mvel](../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md)
+* [MVEL](../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md)
 * JavaScript
 * Python
 * Groovy
 * [DMN](../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-dmn.md) - more details about a DMN business rule configuration can be found [here](business-rule-action/dmn-business-rule-action.md)
 
 For more details on how to configure a Business Rule action, check the following section:
-
 
 [Business rule action](business-rule-action/)
 
@@ -131,6 +130,5 @@ For more details on how to configure a Business Rule action, check the following
 
 Used for copying data in the subprocess from its parent process.
 For more details about the configuration, check the following section:
-
 
 [Append params to parent process](append-params-to-parent-process.md)

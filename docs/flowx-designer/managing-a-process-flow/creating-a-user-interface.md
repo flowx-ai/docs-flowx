@@ -23,7 +23,7 @@ To create a stepper structure:
 * All the UI elements are configured via the Node UI designer
 * Starting from our basic process, we need to set the start of the stepper template config
 * It is enough to open the drag and drop menu and add a Stepper template config for now
-* For the first step, it will be useful to add also a label&#x20;
+* For the first step, it will be useful to add also a label
 * Clear the cache to test what we have until now
 
 ![](../img/process_flowx_configuring_UI.gif)
@@ -47,7 +47,7 @@ To create a stepper structure:
 
 ![Adding input](../img/pf_adding_input.gif)
 
-### Testing  our first input
+### Testing our first input
 
 1. **Start** one more time **the process** that you just configured.
 2. The **input** is displayed.

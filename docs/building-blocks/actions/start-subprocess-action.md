@@ -7,19 +7,19 @@ sidebar_position: 4
 :::info
 **What is it?** A **Start Subprocess action** is an action that allows you to start a subprocess from another (parent) process.
 
-**Why is it important?**  Using [**subprocesses**](../../process/subprocess.md) is a good way to split the complexity of your business flow into multiple, simple and reusable processes.
+**Why is it important?**  Using [**subprocesses**](../process/subprocess.md) is a good way to split the complexity of your business flow into multiple, simple and reusable processes.
 :::
 
 ### Configuring a Start Subprocess Action
 
-After you create a process designed to be used as a [subprocess](../../process/subprocess.md), you will need to start it from another (parent) [process](../../process/process.md). To do this, you need to add a **Start Subprocess action** on a [**Task Node** ](./) from the parent process.
+After you create a process designed to be used as a [subprocess](../process/subprocess.md), you will need to start it from another (parent) [process](../process/process.md). To do this, you need to add a **Start Subprocess action** on a [**Task Node** ](../node/task-node/task-node.md) from the parent process.
 
 The following properties must be configured:
 
-* [Action Edit](start-subprocess-action.md#action-edit)
-* [Back in steps (for Manual actions)](start-subprocess-action.md#back-in-steps)
-* [Parameters](start-subprocess-action.md#parameters)
-* [Data to send (for Manual actions)](start-subprocess-action.md#data-to-send)
+* [Action Edit](#action-edit)
+* [Back in steps (for Manual actions)](#back-in-steps)
+* [Parameters](#parameters)
+* [Data to send (for Manual actions)](#data-to-send)
 
 #### Action Edit
 
@@ -34,13 +34,13 @@ The following properties must be configured:
 
 #### **Back in steps**
 
-* **Allow BACK on this action** - back in process is a functionality that allows you to go back in a business process and redo a series of previous actions in the process. For more details, check [**Moving a token backwards in a process**](../../../flowx-designer/managing-a-process-flow/moving-a-token-backwards-in-a-process.md) section.
+* **Allow BACK on this action** - back in process is a functionality that allows you to go back in a business process and redo a series of previous actions in the process. For more details, check [**Moving a token backwards in a process**](../../flowx-designer/managing-a-process-flow/moving-a-token-backwards-in-a-process.md) section.
 
 #### **Parameters**
 
 * **Subprocess name** - the name of the process that you want to start as a subprocess
-* **Exclude from current state -** what fields do you want to exclude when copying the data from the parent process to the subprocess (by default all data fields are copied)
-* **Copy from current state -** if a value is set here, it will overwrite the default behavior (of copying the whole data) with copying just the data that is specified
+* **Exclude from current state** - what fields do you want to exclude when copying the data from the parent process to the subprocess (by default all data fields are copied)
+* **Copy from current state** - if a value is set here, it will overwrite the default behavior (of copying the whole data) with copying just the data that is specified
 
 **Advanced configuration**
 
@@ -54,7 +54,7 @@ The following properties must be configured:
 **Data to send** option is configurable only when the action **trigger type** is **Manual**.
 :::
 
-![](../img/subprocess_action_data.png)
+![](../node/img/subprocess_action_data.png)
 
 ### Example
 
@@ -68,6 +68,6 @@ To start a subprocess, we can, for example, create the following minimum configu
 
 * **Target process (parentProcessInstanceId)** - `${processInstanceId}` **** - current process ID
 
-![](../img/subprocess_action_example.png)
+![](../node/img/subprocess_action_example.png)
 
 

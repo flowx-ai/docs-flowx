@@ -10,7 +10,6 @@ Flow decisions can be configured using an Exclusive Gateway. Using this node wil
 
 ![Exclusive gateway](./img/gateway_exclusive.png#center)
 
-
 To configure this kind of node, it is useful to previously configure the **in** and **out** sequence from the gateway process.
 
 ![](./img/gateway_exclusive_diagram.png)

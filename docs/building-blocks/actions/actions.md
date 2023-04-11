@@ -12,24 +12,23 @@ sidebar_position: 3
 
 The FLOWX.AI platform handles the following **types of actions**:
 
-* [Business Rule](./node/task-node/business-rule-action/business-rule-action.md)
+* [Business Rule](./business-rule-action)
 * Save Data
-* [Kafka Send Action](./node/message-send-received-task-node.md)
-* [Websocket Send action](./node/task-node/websocket-send-action.md)
-* Validate Field
-* [Upload File](./node/task-node/upload-file-action.md)
-* [Start Subprocess](./node/task-node/start-subprocess-action.md)
-* [Append Params to Parent Process](./node/task-node/append-params-to-parent-process.md)
+* [Kafka Send](../node/message-send-received-task-node.md)
+* [Websocket Send](./websocket-send-action)
+* [Upload File](./upload-file-action)
+* [Start Subprocess](./start-subprocess-action)
+* [Append Params to Parent Process](./append-params-to-parent-process)
 
-:::warning
-You can only define and add actions on the following types of nodes: [Message send task](./node/message-send-received-task-node.md), [Task](./node/task-node/task-node.md) and [User task](./node/user-task-node/user-task-node.md).
+:::info
+You can only define and add actions on the following types of nodes: [**Message send task**](../node/message-send-received-task-node.md#message-send-task), [**Task**](../node/task-node/task-node.md) and [**User task**](../node/user-task-node/user-task-node.md).
 :::
 
 ### Action rules
 
-Business rules can be attached to a node by using actions with [**action rules**](./node/task-node/business-rule-action/business-rule-action.md) on them. These can be specified using [DMN rules](./node/task-node/business-rule-action/dmn-business-rule-action.md), MVEL expressions, or scripts written in Javascript, Python, or Groovy.
+Business rules can be attached to a node by using actions with [**action rules**](#action-rules) on them. These can be specified using [DMN rules](./business-rule-action/dmn-business-rule-action), MVEL expressions, or scripts written in JavaScript, Python, or Groovy.
 
-[Supported scripts](./supported-scripts.md)
+[Supported scripts](../supported-scripts.md)
 
 Each button on the user interface corresponds to a manual user action.
 
@@ -41,13 +40,13 @@ Actions can be:
 
 Some actions can be set to run immediately after another action is performed. In order to achieve this, we need to set the `parentName` field on the action to be used as a callback. The callback actions can be performed when a certain message is received by the Engine. In order for this to happen the `callbacksForAction` header needs to be set on the message. Callback actions can also be configured to run immediately after the parent action is run, by setting the `autoRunChildren` flag to true for the parent action.
 
-[Business Rule Action](./node/task-node/business-rule-action/business-rule-action.md)
+[Business Rule Action](./business-rule-action)
 
 ### Action parameters
 
 **Action params** are used to set extra values for actions. They are stored as key/value pairs. For example, we can set a topic to use for sending outgoing messages or the message format to be sent to the front-end.
 
-The decision that needs to be defined on an exclusive gateway is defined using a **node rule**. Similar to action rules, these can be set using [DMN](../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-dmn.md) or [MVEL](../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md).
+The decision that needs to be defined on an exclusive gateway is defined using a **node rule**. Similar to action rules, these can be set using [DMN](../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-dmn.md) or [MVEL](../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md).
 
 There are two possible kinds of actions:&#x20;
 
@@ -67,20 +66,20 @@ Actions have a few characteristics that need to be set:
 For more information, check the following section:
 
 
-[Adding an action to a node](../flowx-designer/managing-a-process-flow/adding-an-action-to-a-node.md)
+[Adding an action to a node](../../flowx-designer/managing-a-process-flow/adding-an-action-to-a-node.md)
 
 
 ## Linking actions together
 
 There are two ways actions could be linked together, so certain actions can be set to run immediately after others.
 
-### Defining callbacks
-
-Child actions can be marked as callbacks to be run after a reply from an external system is received. They will need to be set when defining the interaction with the external system (the Kafka send action).
-
-### Choosing to automatically run child actions
+### Child actions
 
 A parent action has a flag `autoRunChildren`, set to `false` by default. When this flag is set to `true`, the child actions (the ones defined as mandatory and automatic) will be run immediately after the execution of the parent action is finalized.
+
+### Callbacks actions
+
+Child actions can be marked as callbacks to be run after a reply from an external system is received. They will need to be set when defining the interaction with the external system (the Kafka send action).
 
 ## Scheduling actions
 

@@ -131,7 +131,7 @@ A process definition is uniquely identified by its name and version number.
 
 ## Viewing active process instances
 
-The complete list of active [process instances](../building-blocks/process/active-process/process-instance/process-instance.md) is visible from the FLOWX Designer. They can be filtered by [process definition](../building-blocks/process/process-definition/process-definition.md) names and searched by their unique id. You can also view the current process instance status and data.
+The complete list of active [process instances](../building-blocks/process/active-process/process-instance/process-instance.md) is visible from the FLOWX Designer. They can be filtered by [process definition](../building-blocks/process/process-definition/process-definition.md) names and searched by their unique ID. You can also view the current process instance status and data.
 
 ![Active process](./img/designer_active_process.png)
 

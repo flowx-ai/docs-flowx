@@ -1,21 +1,21 @@
 # Append Params to Parent Process
 
 :::info
-**What is it?**  It is a type of action that allows you to send data from a [subprocess](../../process/subprocess.md) to a parent [process](../../process/process.md).
+**What is it?**  It is a type of action that allows you to send data from a [subprocess](../process/subprocess.md) to a parent [process](../process/process.md).
 
-**Why is it important?**   If you are using subprocesses that produce data that needs to be sent back to the main process, you can do that by using an **Append Params to Parent Process** action.
+**Why is it important?**  If you are using subprocesses that produce data that needs to be sent back to the main process, you can do that by using an **Append Params to Parent Process** action.
 :::
 
 ### Configuring an Append Params to Parent Process
 
-After you create a process designed to be used as a [subprocess](../../process/subprocess.md), you can configure the action. To do this, you need to add an **Append Params to Parent Process** on a [**Task Node** ](./)in the subprocess.
+After you create a process designed to be used as a [subprocess](../process/subprocess.md), you can configure the action. To do this, you need to add an **Append Params to Parent Process** on a [**Task Node**](./)in the subprocess.
 
 The following properties must be configured:
 
-* [Action Edit](append-params-to-parent-process.md#action-edit)
-* [Back in steps (for Manual actions)](append-params-to-parent-process.md#back-in-steps)
-* [Parameters](append-params-to-parent-process.md#parameters)
-* [Data to send (for Manual actions)](append-params-to-parent-process.md#data-to-send)
+* [Action Edit](#action-edit)
+* [Back in steps (for Manual actions)](#back-in-steps)
+* [Parameters](#parameters)
+* [Data to send (for Manual actions)](#data-to-send)
 
 #### Action Edit
 
@@ -30,12 +30,12 @@ The following properties must be configured:
 
 #### **Back in steps**
 
-* **Allow BACK on this action** - back in process is a functionality that allows you to go back in a business process and redo a series of previous actions in the process. For more details, check [**Moving a token backwards in a process**](../../../flowx-designer/managing-a-process-flow/moving-a-token-backwards-in-a-process.md) section
+* **Allow BACK on this action** - back in process is a functionality that allows you to go back in a business process and redo a series of previous actions in the process. For more details, check [**Moving a token backwards in a process**](../../flowx-designer/managing-a-process-flow/) section
 
 #### **Parameters**
 
 * **Copy from current state** - data that you want to be copied back to the parent process
-* **Destination in the parent state** -  on what key to copy the param values
+* **Destination in the parent state** - on what key to copy the param values
 
 :::success
 To recap: if you have a **Copy from current state** with a simple **JSON** -`{"age": 17}`, that needs to be available in the parent process, on the `application.client.age` key, you will need to set this field (**Destination in the parent state**) with `application.client`, which will be the key to append to in the parent process.
@@ -43,7 +43,7 @@ To recap: if you have a **Copy from current state** with a simple **JSON** -`{"a
 
 **Advanced configuration**
 
-* **Show Target Process** -  ID of the parent process where you need to copy the params, this was made available on to the `${parentProcessInstanceId}` variable, if you defined it when you [started the subprocess](start-subprocess-action.md)
+* **Show Target Process** - ID of the parent process where you need to copy the params, this was made available on to the `${parentProcessInstanceId}` variable, if you defined it when you [started the subprocess](start-subprocess-action)
 
 #### Data to send
 
@@ -55,17 +55,17 @@ To recap: if you have a **Copy from current state** with a simple **JSON** -`{"a
 
 ### Example
 
-We have a subprocess that allows us to enter the age of the client on the **data.client.age** key, and we want to copy the value back to the parent process. The key to which we want to receive this value in the parent process is **application.client.age**.&#x20;
+We have a subprocess that allows us to enter the age of the client on the **data.client.age** key, and we want to copy the value back to the parent process. The key to which we want to receive this value in the parent process is **application.client.age**.
 
 This is the configuration to apply the above scenario:
 
 **Parameters**
 
-* **Copy from current state** - `{"client": ${data.client.age}}` to copy the age of the client (the param value we want to copy)&#x20;
-* **Destination in the parent state**  - `application` to append the data o to the **application** key on the parent process
+* **Copy from current state** - `{"client": ${data.client.age}}` to copy the age of the client (the param value we want to copy)
+* **Destination in the parent state** - `application` to append the data o to the **application** key on the parent process
 
 **Advanced configuration**
 
-* **Show Target Process** -  `${parentProcessInstanceId}`to copy the data on the parent of this subprocess&#x20;
+* **Show Target Process** - `${parentProcessInstanceId}`to copy the data on the parent of this subprocess
 
-![](../img/append_params_example.png)
+![](../node/img/append_params_example.png)

@@ -23,7 +23,7 @@ If this role is not configured in your identity provider solution, the users wil
 
 We now introduced more advanced **debugging features**, in this version, there is the possibility to take a snapshot of the process status after each action, this comes with an exponential increase of database usage so the next flag I suggest you have it true on debugging media and false production ones
 
-```css
+```
 application:
     debug: ${PROCESS_DEBUG:false} 
 ```
