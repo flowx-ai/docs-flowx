@@ -29,7 +29,6 @@ To create a process that converts from PDF to JPEG format:
 * `fileId` = file ID that will be converted 
 * `to` = file extension to convert to
 
-
 :::info
 Kafka topic names can be set by using (overwriting) the following environment variables in the deployment:
 

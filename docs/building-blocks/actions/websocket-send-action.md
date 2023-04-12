@@ -69,12 +69,12 @@ If you need to start a new process using a **Websocket Send action**, you can do
 * **Target Process** - is used to specify to what running process instance should this message be sent - **Active process** or **Parent process**
 
 :::info
-If you are defining this action on a [**subprocess**](../../process/subprocess), you can send the message to the parent process using **Target Process: Parent process**.
+If you are defining this action on a [**subprocess**](../node/subprocess-run-node.md), you can send the message to the parent process using **Target Process: Parent process**.
 :::
 
 #### Data to send
 
-* **Keys** - are used when data is sent from the frontend via an action to validate the data (you can find more information in the [User Task configuration](../user-task-node/) section)
+* **Keys** - are used when data is sent from the frontend via an action to validate the data (you can find more information in the [User Task configuration](../node/user-task-node.md) section)
 
 :::warning
 **Data to send** option is configurable only when the action **trigger type** is **Manual**.

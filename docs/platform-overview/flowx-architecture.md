@@ -29,19 +29,19 @@ We call it the engine because it’s a nice analogy, once deployed on an existin
 
 ![](./img/engine_architecture.png)
 
-You can use FLOWX.AI Engine to do the following:
+You can use FLOWX Engine to do the following:
 
-* create any type of external or internal facing application&#x20;
+* create any type of external or internal facing application
 * redesign business processes from analog, paper-based ones to fully digital and automated processes
 * manage integrations, so you can hook it up to existing CRMs, ERPs, KYC, transaction data and many more
 * to read process definitions (if it is connected to the same DB as FLOWX.AI Admin)
 
-[FLOWX.AI Engine](../platform-deep-dive/core-components/flowx-engine/flowx-engine.md) runs the business processes, coordinating integrations and the omnichannel UI. It is a [Kafka-based](./frameworks-and-standards/event-driven-architecture-frameworks/intro-to-kafka-concepts) event-driven platform, that is able to orchestrate, generate and integrate with any type of legacy system, without expensive or risky upgrades.&#x20;
+[FLOWX Engine](../platform-deep-dive/core-components/flowx-engine/flowx-engine.md) runs the business processes, coordinating integrations and the omnichannel UI. It is a [Kafka-based](./frameworks-and-standards/event-driven-architecture-frameworks/intro-to-kafka-concepts) event-driven platform, that is able to orchestrate, generate and integrate with any type of legacy system, without expensive or risky upgrades.&#x20;
 
 This is extremely important because often, digital apps used by a bank’s clients, for example, are limited by the load imposed by the core banking system. And the customers see blocked screens and endlessly spinning flywheels. FLOWX.AI buffers this load, offering a 0.2s response time, thus the customer never has to wait for data to load.
 
 
-[FLOWX.AI Engine](../platform-deep-dive/core-components/flowx-engine/flowx-engine.md)
+[FLOWX Engine](../platform-deep-dive/core-components/flowx-engine/flowx-engine.md)
 
 
 ### FLOWX.AI Designer
@@ -103,10 +103,10 @@ Every communication that comes from a consumer application, goes through a publi
 
 Plugins are bits of functionality that allow you to expand the functionality of the platform - for example, we have the following custom plugins:
 
-* [FLOWX.AI Notifications Plugin](../platform-deep-dive/plugins/custom-plugins/notifications-plugin/notifications-plugin.md)
-* [FLOWX.AI Documents Plugin](../platform-deep-dive/plugins/custom-plugins/documents-plugin/documents-plugin.md)
-* [FLOWX.AI OCR Plugin](../platform-deep-dive/plugins/custom-plugins/ocr-plugin.md)
-* [FLOWX.AI Task Management Plugin](../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md)
+* [FLOWX Notifications Plugin](../platform-deep-dive/plugins/custom-plugins/notifications-plugin/notifications-plugin.md)
+* [FLOWX Documents Plugin](../platform-deep-dive/plugins/custom-plugins/documents-plugin/documents-plugin.md)
+* [FLOWX OCR Plugin](../platform-deep-dive/plugins/custom-plugins/ocr-plugin.md)
+* [FLOWX Task Management Plugin](../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md)
 
 ![](./img/plugins_architecture.png)
 

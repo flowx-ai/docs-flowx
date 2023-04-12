@@ -39,7 +39,7 @@ To create a stepper structure:
 ## Adding a card with one input
 
 1. Go to your **user task** (this will represent the **first card** of your step).
-2. Add a **`FORM GROUP`** (this is the UI card element).
+2. Add a **`CARD`** (this is the UI card element).
 3. Add a **Form** to it (Form elements group inputs together).
 4. Add an **input** into the form:
    * Configure the **key** - you can use the key to retrieve the data form saved on that element
@@ -58,7 +58,7 @@ To create a stepper structure:
 ## Adding second input and a submit action
 
 1. Go to your **user task** node and add a new input via **Node UI designer**.
-2. Now go back to the process and add a new [**action rule**](../../building-blocks/actions.md):
+2. Now go back to the process and add a new [**action rule**](../../building-blocks/actions/actions.md):
    * first we need to configure the action - the action is called when the button is pressed - the action should be **Manual** (not automatic because it is triggered by a user)
    * we need to keep in mind the name of the action - `saveDataFirstStep`
 3. Go back to the Node UI designer and add a button (we need to link the **button** to the **action** based on the name).

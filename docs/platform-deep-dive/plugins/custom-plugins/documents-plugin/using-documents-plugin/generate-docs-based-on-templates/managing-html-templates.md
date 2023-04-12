@@ -19,7 +19,7 @@ HTML template specifications:
 
 Data specifications:
 
-```
+```json
 {
   "data": {
     "companyName": "Test Company SRL",
@@ -54,7 +54,7 @@ HTML template specifications:
 
 Data specifications:
 
-```
+```json
 "data": {
    "offerValuesHeader": [ 
      "Name", 
@@ -114,7 +114,7 @@ HTML template specifications:
 
 Data specifications:
 
-```
+```json
   "data": {
     "consumptionPoints": [
       {
@@ -169,7 +169,7 @@ HTML template specifications:
 
 Data specifications:
 
-```
+```json
  "data": {
     "pjCLient": true
   }
@@ -218,7 +218,7 @@ HTML template specifications:
 
 Data specifications:
 
-```
+```json
 {
     "data": {
         "incomeSource": [

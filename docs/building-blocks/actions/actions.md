@@ -21,7 +21,7 @@ The FLOWX.AI platform handles the following **types of actions**:
 * [Append Params to Parent Process](./append-params-to-parent-process)
 
 :::info
-You can only define and add actions on the following types of nodes: [**Message send task**](../node/message-send-received-task-node.md#message-send-task), [**Task**](../node/task-node/task-node.md) and [**User task**](../node/user-task-node/user-task-node.md).
+You can only define and add actions on the following types of nodes: [**Message send task**](../node/message-send-received-task-node.md#message-send-task), [**Task**](../node/task-node.md) and [**User task**](../node/user-task-node.md).
 :::
 
 ### Action rules
@@ -48,7 +48,7 @@ Some actions can be set to run immediately after another action is performed. In
 
 The decision that needs to be defined on an exclusive gateway is defined using a **node rule**. Similar to action rules, these can be set using [DMN](../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-dmn.md) or [MVEL](../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md).
 
-There are two possible kinds of actions:&#x20;
+There are two possible kinds of actions:
 
 * business logic rules
 * interactions with users

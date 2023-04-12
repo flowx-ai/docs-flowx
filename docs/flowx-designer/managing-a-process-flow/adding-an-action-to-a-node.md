@@ -31,6 +31,6 @@ To create an action:
 ![](../img/process_flowx_adding_an_action.gif)
 
 :::info
-The nodes that support actions are [task nodes](../../building-blocks/node/task-node/task-node.md), [user task nodes](../../building-blocks/node/user-task-node/user-task-node.md), and [message send nodes](../../building-blocks/node/message-send-received-task-node.md).
+The nodes that support actions are [task nodes](../../building-blocks/node/task-node.md), [user task nodes](../../building-blocks/node/user-task-node.md), and [message send nodes](../../building-blocks/node/message-send-received-task-node.md).
 :::
 

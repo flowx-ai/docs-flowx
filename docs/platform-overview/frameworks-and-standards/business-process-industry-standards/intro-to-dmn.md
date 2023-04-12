@@ -13,7 +13,7 @@ We needed **a convenient way of specifying the business rules** and we picked tw
 * defining them as DMN decisions
 
 :::info
-You can now define a DMN Business Rule Action directly in FLOWX Designer. For more information, check the [**DMN Business Rule Action**](../../../building-blocks/node/task-node/business-rule-action/dmn-business-rule-action.md) section.
+You can now define a DMN Business Rule Action directly in FLOWX Designer. For more information, check the [**DMN Business Rule Action**](../../../building-blocks/actions/business-rule-action/dmn-business-rule-action.md) section.
 :::
 
 * adding [MVEL](intro-to-mvel.md#what-is-mvel) scripts
@@ -25,7 +25,7 @@ You can now define a DMN Business Rule Action directly in FLOWX Designer. For mo
 **The Business Process Model and Notation** is used to create the majority of process models **(BPMN)**. The DMN standard was developed to complement BPMN by providing a mechanism for modeling decision-making represented by a Task within a process model. DMN does not have to be used in conjunction with BPMN, but it is highly compatible.
 
 :::warning
-FLOWX.AI  supports [DMN 1.3](https://www.omg.org/spec/DMN/1.3/) version.
+FLOWX.AI supports [DMN 1.3](https://www.omg.org/spec/DMN/1.3/) version.
 :::
 
 ### DMN Elements
@@ -150,7 +150,7 @@ You can use this XML example with FLOWX Designer, adding it to a Business Rule A
 As mentioned previously, DMN can be used with FLOWX Designer for the following scenarios:
 
 * For defining gateway decisions, using [exclusive gateways](../../../building-blocks/node/exclusive-gateway-node.md).
-* For defining [business rules actions](../../../building-blocks/node/task-node/business-rule-action/business-rule-action.md) attached to a [task node](../../../building-blocks/node/task-node/task-node.md).
+* For defining [business rules actions](../../../building-blocks/actions/business-rule-action/business-rule-action.md) attached to a [task node](../../../building-blocks/node/task-node.md).
 
 ### In depth docs
 

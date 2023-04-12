@@ -16,15 +16,19 @@ The plugin offers the possibility to:
 
 ![](../../../img/doc_plugin_wysiwyg.png)
     
-* import already created templates
+* import already created templates from other environments
 
 ![](../../../img/doc_plugin_create_import.png)
+
+:::caution
+After exporting a document template, it is transformed into a json that can be imported later.
+:::
 
 * convert documents from PDF to JPEG 
 * splitting bulk documents into smaller separate documents
 * editing documents to add generated barcodes/signatures and assets
 
-It can be quickly deployed on the chosen infrastructure, preloaded with the needed industry-specific document templates using an intuitive WYSIWYG editor, and then connected to the FLOWX.AI Engine through Kafka events.
+It can be quickly deployed on the chosen infrastructure, preloaded with the needed industry-specific document templates using an intuitive WYSIWYG editor, and then connected to the FLOWX Engine through Kafka events.
 
 It can be easily used and integrated into your business [processes definitions](../../../../building-blocks/process/process-definition/process-definition.md) by using Kafka send/receive event nodes.
 

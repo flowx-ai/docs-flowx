@@ -24,8 +24,7 @@ The kafka topics used for the Customer Management plugin can be defined/overwrit
 * `KAFKA_TOPIC_CUSTOMER_SEARCH_OUT` - used to get the response from the customer management plugin to the Engine.
 :::
 
-
-The request sent to the plugin can use any key that was previously configured in the elaticsearch index where the customers are saved.
+The request sent to the plugin can use any key that was previously configured in the elasticsearch index where the customers are saved.
 
 Example of an elastic search index:
 

@@ -32,7 +32,7 @@ You will need to add a separate entry for each Kafka message exchange between th
 
 **Responses**
 
-200 -  the newly added kafka exchange will be returned
+200 - the newly added kafka exchange will be returned
 
 </details>
 

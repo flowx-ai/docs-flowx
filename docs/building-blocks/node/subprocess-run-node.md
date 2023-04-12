@@ -15,7 +15,7 @@ A node that provides advanced options for starting subprocesses.
 
 [Subprocess](../process/subprocess.md)
 
-
+s
 It contains a default action for starting a sub-process.
 
 A subprocess can be started in two modes:

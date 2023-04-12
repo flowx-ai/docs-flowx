@@ -16,33 +16,33 @@ FLOWX.AI uses a number of third-party software components:
 * [S3 (MinIO)](third-party-components.md#s3-minio)
 * [RabbitMQ (for OCR plugin)](third-party-components.md#rabbitmq)
 
-### Not open-source
+### Not open-source 
 
 * [OracleDB](third-party-components.md#oracledb)
 
 ### Third-party open-source components supported/tested versions
 
-| FLOWX.AI Platform Version | Component name               | Supported/tested versions             |
-| ------------------------- | ---------------------------  | ------------------------------------- |
-| 2.3.0 → 3.0.0             | Keycloak                     | 18.0.x                                |  
-| 2.3.0 → 3.0.0             | Kafka / Zookeeper*           | 3.0.1 / 3.6.6                         |  
-| 2.3.0 → 3.0.0             | Jaeger                       | 1.34.1                                |
-| 2.3.0 → 3.0.0             | AKHQ                         | 0.17.0                                |  
-| 2.3.0 → 3.0.0             | PostgreSQL                   | 14.3.0                                |
-| 2.3.0 → 3.0.0             | MongoDB                      | 5.0.8                                 |
-| 2.3.0 → 3.0.0             | Redis                        | 6.2.6                                 |
-| 2.3.0 → 3.0.0             | NGINX Ingress Controller     | 1.2.0                                 |
-| 2.3.0 → 3.0.0             | Elasticsearch                | 7.17                                  |
-| 2.3.0 → 3.0.0             | Fluentd                      | 3.3.0                                 |
-| 2.3.0 → 3.0.0             | Kibana                       | 7.9.3                                 |
-| 2.3.0 → 3.0.0             | S3 (Min.IO) / minio-operator | 2022-05-26T05-48-41Z / 4.5.4          |
-| 2.3.0 → 3.0.0             | RabbitMQ                     | 3.11.2                                |
+| FLOWX.AI Platform Version | Component name               | Supported/tested versions    |
+| ------------------------- | ---------------------------- | ---------------------------- |
+| 2.3.0 → 3.1.0             | Keycloak                     | 18.0.x                       |
+| 2.3.0 → 3.1.0             | Kafka / Zookeeper*           | 3.0.1 / 3.6.6                |
+| 2.3.0 → 3.1.0             | Jaeger                       | 1.34.1                       |
+| 2.3.0 → 3.1.0             | AKHQ                         | 0.17.0                       |
+| 2.3.0 → 3.1.0             | PostgreSQL                   | 14.3.0                       |
+| 2.3.0 → 3.1.0             | MongoDB                      | 5.0.8                        |
+| 2.3.0 → 3.1.0             | Redis                        | 6.2.6                        |
+| 2.3.0 → 3.1.0             | NGINX Ingress Controller     | 1.2.0                        |
+| 2.3.0 → 3.1.0             | Elasticsearch                | 7.17                         |
+| 2.3.0 → 3.1.0             | Fluentd                      | 3.3.0                        |
+| 2.3.0 → 3.1.0             | Kibana                       | 7.9.3                        |
+| 2.3.0 → 3.1.0             | S3 (Min.IO) / minio-operator | 2022-05-26T05-48-41Z / 4.5.4 |
+| 2.3.0 → 3.1.0             | RabbitMQ                     | 3.11.2                       |
 
 ### Third-party components supported/tested versions
 
 | FLOWX.AI Platform version | Component name | Supported/tested versions |
 | ------------------------- | -------------- | ------------------------- |
-| 2.3.0 → 3.0.0             | OracleDB       | 12C / 18-XE               |
+| 2.3.0 → 3.1.0             | OracleDB       | 12C / 18-XE               |
 
 
 :::info

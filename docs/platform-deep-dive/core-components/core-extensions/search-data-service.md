@@ -33,7 +33,7 @@ Use case:
 		+ `processDefinitionNames` - the process definition names where to perform the search
 		+ `processStartDateAfter` - the service will look into process definitions created after the defined date
 
-```javascript
+```json
 {
 	"searchKey": "application.client.name",
 	"value": "12344",
@@ -59,7 +59,7 @@ The **body message** of the response will look like this:
 
 	❗️If there is no result:
 
-```javascript
+```json
 {
 	"searchKey": "application.client.name",
 	"result": [],
@@ -79,8 +79,8 @@ To access the view of your process variables, tokens and subprocesses go to **FL
     
 	❗️If there is a list of results:
 
-```javascript
-{
+```json
+
 	"searchKey": "application.client.name"
 	"result":[{
 			"processInstanceUUID": "UUID",

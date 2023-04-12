@@ -2,14 +2,13 @@
 
 ## Exceptions
 
-Exceptions are types of errors meant to help you debug a failure in the execution of a process.&#x20;
-
+Exceptions are types of errors meant to help you debug a failure in the execution of a process.
 ![](../img/exceptions1.png)
 
 Exceptions can be accessed from multiple places:
 
-* **Failed process start** tab from **Active process** menu in FLOWX.AI Designer
-* **Process Status** view, accessible from **Process instances** list in FLOWX.AI Designer
+* **Failed process start** tab from **Active process** menu in FLOWX Designer
+* **Process Status** view, accessible from **Process instances** list in FLOWX Designer
 
 ![](../img/exceptions2.png)
 
@@ -35,12 +34,12 @@ When you click **view** button, a detailed exception will be displayed.
 
 #### Possible sources:
 
-* [Action](../../actions.md)
+* [Action](../../actions/actions.md)
 * [Node](../../node/node.md)
 * [Subprocess](../subprocess.md)
 * [Process Definition](../process-definition/process-definition.md)
 
-### Exceptions types
+### Exceptions type
 
 Based on the exception type, there are multiple causes that could make a process fail. Here are some examples:
 

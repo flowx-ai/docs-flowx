@@ -52,7 +52,7 @@ Multiple options are available for this type of action and can be configured via
 
 #### Action Edit
 
-* **Name** - used internally to make a distinction between different [actions](../actions.md) on nodes in the process. We recommend defining an action naming standard to be able to easily find the process actions
+* **Name** - used internally to make a distinction between different [actions](../actions/actions.md) on nodes in the process. We recommend defining an action naming standard to be able to easily find the process actions
 * **Order** - if multiple actions are defined on the same node, the running order should be set using this option
 * **Timer expression** - it can be used if a delay is required on that action. The format used for this is [ISO 8601 duration format ](https://www.digi.com/resources/documentation/digidocs/90001437-13/reference/r\_iso\_8601\_duration\_format.htm)(for example, a delay of 30 seconds will be set up as `PT30S`)
 * **Action type** - should be set to **Kafka Send Action** for actions used to send messages to external systems

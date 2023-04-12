@@ -24,7 +24,7 @@ There are two possible values for `partition-strategy`: **NONE** and **PROCESS_D
 | Property                                  | Value        | Explanation                                                                                                                              |
 | ----------------------------------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | APPLICATION_FILESTORAGE_PARTITIONSTRATEGY | NONE         | saving documents in `minio/amazon-s3` will be done as before in a bucket for each process instance                                       |
-| APPLICATION_FILESTORAGE_PARTITIONSTRATEGY | PROCESS_DATE | documents will be saved in a single bucket, with a subfolder, for example: `bucket/2022/2022-07-04/process-id-xxxx/customer-id/file.pdf` |
+| APPLICATION_FILESTORAGE_PARTITIONSTRATEGY | PROCESS_DATE | documents will  be saved in a single bucket, with a subfolder, for example: `bucket/2022/2022-07-04/process-id-xxxx/customer-id/file.pdf` |
 
 
 ## REST API

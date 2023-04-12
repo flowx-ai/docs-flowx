@@ -10,8 +10,8 @@ You can choose between a series of available node types below. For an overview o
 
 * [start event](../../building-blocks/node/start-end-node.md)
 * [end event](../../building-blocks/node/start-end-node.md)
-* [service task](../../building-blocks/node/task-node/task-node.md)
-* [user task](../../building-blocks/node/user-task-node/user-task-node.md)
+* [service task](../../building-blocks/node/task-node.md)
+* [user task](../../building-blocks/node/user-task-node.md)
 * [parallel gateway](../../building-blocks/node/parallel-gateway.md)
 * [exclusive gateway](../../building-blocks/node/exclusive-gateway-node.md)
 * [message send event](../../building-blocks/node/message-send-received-task-node.md)
@@ -23,17 +23,17 @@ You can choose between a series of available node types below. For an overview o
 
 To create a new node on an existing process:
 
-1. Open **FLOWX.AI Designer** and from the **Processes** tab select **Definitions**.
+1. Open **FLOWX Designer** and from the **Processes** tab select **Definitions**.
 2. Open your **process**.
 3. Click the **Edit process** button from the process definition.
 4. Drag and drop one **node element**.
 5. To connect the node that you just created:
-   * Click  the node, select the **arrow** command
+   * Click the node, select the **arrow** command
    * Click the node that you wish to link to the newly added node
 
 ![](../img/process_flow_adding_a_node.gif)
 
-For each new node, you can set its name, and a set of values (timeout, topic name, key name) and you can also add various [actions](../../building-blocks/actions.md) to it.
+For each new node, you can set its name, and a set of values (timeout, topic name, key name) and you can also add various [actions](../../building-blocks/actions/actions.md) to it.
 
 [Node](../../building-blocks/node)
 

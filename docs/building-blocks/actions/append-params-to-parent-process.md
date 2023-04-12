@@ -47,7 +47,7 @@ To recap: if you have a **Copy from current state** with a simple **JSON** -`{"a
 
 #### Data to send
 
-* **Keys** - are used when data is sent from the frontend via an action to validate the data (you can find more information in the [User Task configuration](../user-task-node/) section)
+* **Keys** - are used when data is sent from the frontend via an action to validate the data (you can find more information in the [User Task configuration](../node/user-task-node.md) section)
 
 :::warning
 **Data to send** option is configurable only when the action **trigger type** is **Manual.**

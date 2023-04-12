@@ -20,14 +20,12 @@ Available children for **Card** and **Container** are:
 
 1. [**Form**](../form-elements/) - used to group and align form field elements (**inputs**, **radios**, **checkboxes**, etc.)
 2. [**Image**](../image.md) - allows you to configure an image in the document
-3. **Text** - a simple text can be configured via this component, a basic configuration is available ([check here for more details](../../))
-4. **Hint** - multiple types of hints can be configured via this component ([check here for more details](../../))
-5. **Link** - used to configure a hyperlink that opens in a new tab
-6. [**Button**](../buttons.md) - multiple options are available for configuration, the most important part being the possibility to add actions
-7. [**File Upload**](../buttons.md) - a specific type of button that allows you to select a file
-8. [**Custom**](custom.md) - custom components
+3. **Text** - a simple text can be configured via this component, a basic configuration is available
+4. **Link** - used to configure a hyperlink that opens in a new tab
+5. [**Button**](../buttons.md) - multiple options are available for configuration, the most important part being the possibility to add actions
+6. [**File Upload**](../buttons.md) - a specific type of button that allows you to select a file
+7. [**Custom**](custom.md) - custom components
 
 For more information about the form elements, check the following section:
-
 
 [Form elements](../form-elements/form-elements.md)

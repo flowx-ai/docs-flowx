@@ -2,8 +2,7 @@
 
 For a brief introduction to Decision Model and Notation, check the following section:
 
-
-[Intro to DMN](../../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-dmn.md)
+[Intro to DMN](../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-dmn.md)
 
 ### **Creating a DMN Business Rule action**
 
@@ -24,7 +23,7 @@ We have the following scenario, a bank needs to perform client identification ta
 
 A business person or specialist can use DMN to design this business rule, without having to go deep into technical definitions.
 
-Here is an example of an [MVEL](../../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md) script - defined as a business rule action inside a [Service Task](../task-node.md) node:
+Here is an example of an [MVEL](../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md) script - defined as a business rule action inside a [Service Task](../../node/task-node.md) node:
 
 ```java
 closedClientType = ["PF_CLOSED", "PF_SPECIAL", "PF_ABC", "PJ_CLOSED"];

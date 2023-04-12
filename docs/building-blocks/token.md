@@ -7,7 +7,7 @@ Token is the concept that describes the current position in the process flow. Wh
 
 The token is a [BPMN](../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-bpmn/intro-to-bpmn.md) concept that represents a state within a process instance. It keeps track of the current position in the process flow and is used to store data related to the current process instance state.
 
-A token is created each time a new process instance is started. As the actions on the process instance are executed, the token advances from one node to the next. As a node can have several [actions](actions.md) that need to be executed, the token is also used for keeping track of the actions executed in each node.
+A token is created each time a new process instance is started. As the actions on the process instance are executed, the token advances from one node to the next. As a node can have several [actions](./actions/actions.md) that need to be executed, the token is also used for keeping track of the actions executed in each node.
 
 In case of [parallel gateways](./node/parallel-gateway.md), child tokens are created for each flow branch. The parent token moves to the gateway sync node and only advances after all the child tokens also reach that node.
 
@@ -21,7 +21,7 @@ There will be cases when the token needs to be stopped in a node until some inpu
 
 ### Checking the token status
 
-The current process instance status can be retrieved using the FLOWX Designer. It will display some info on the tokens related to that process instance and the current nodes they are in.&#x20;
+The current process instance status can be retrieved using the FLOWX Designer. It will display some info on the tokens related to that process instance and the current nodes they are in.
 
 ![](./img/check_token_status.png)
 

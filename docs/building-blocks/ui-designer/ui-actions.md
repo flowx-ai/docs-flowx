@@ -4,9 +4,9 @@ sidebar_position: 2
 
 # UI actions
 
-Multiple UI elements can be linked to an [action](../actions.md) via a UI Action. If the action is just a method to interact with the process, the UI Action adds information about how that UI should react. For example, should a loader appear after executing the action, should a modal be dismissed, or if some default data should be sent back to the process.
+Multiple UI elements can be linked to an [action](../actions/actions.md) via a UI Action. If the action is just a method to interact with the process, the UI Action adds information about how that UI should react. For example, should a loader appear after executing the action, should a modal be dismissed, or if some default data should be sent back to the process.
 
-UI actions create a link between an [**action**](../actions.md) and a UI component or [**custom component**](./ui-component-types/root-components/custom.md). 
+UI actions create a link between an [**action**](../actions/actions.md) and a UI component or [**custom component**](./ui-component-types/root-components/custom.md). 
 
 The UI action informs the UI element to execute the given action when triggered. Other options are available for configuration when setting an action to a button and are detailed below.
 
@@ -21,7 +21,7 @@ There are two main types of UI Actions:
 
 This is a UI action that describes how a [**Button**](../ui-designer/ui-component-types/buttons.md) (generated or custom) should interact with a process Manual action.
 
-First, we need to configure the [manual action](../actions.md) that will be referred from the UI Action. For more information on how to add an action to a node, and how to configure it, check the following section:
+First, we need to configure the [manual action](../actions/actions.md) that will be referred from the UI Action. For more information on how to add an action to a node, and how to configure it, check the following section:
 
 [Adding an action to a node](../../flowx-designer/managing-a-process-flow/adding-an-action-to-a-node.md)
 
@@ -39,7 +39,7 @@ First, we need to configure the [manual action](../actions.md) that will be refe
 When this prerequisite is ready we can define the UI Action.
 
 :::caution
-UI Actions and Actions should be configured on the same node.
+UI Actions and [Actions](../actions/actions.md) should be configured on the same node.
 :::
 
 ### UI action configuration example

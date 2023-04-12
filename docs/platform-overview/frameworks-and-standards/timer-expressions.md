@@ -64,6 +64,6 @@ ISO 8601 dates and times:
 
 ![](./img/timer_response_timeout.png)
 
-* [**Actions**](../../building-blocks/actions.md) - **Timer expression** - it can be used if a delay is required on that action
+* [**Actions**](../../building-blocks/actions/actions.md) - **Timer expression** - it can be used if a delay is required on that action
 
 ![](./img/timer_action_edit.png)
