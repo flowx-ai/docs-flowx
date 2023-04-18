@@ -90,6 +90,10 @@ To use advancing controller with OracleDBs, the following .yml files must be edi
 
 #### Advancing controller
 
+:::caution
+If the parallel advancing configuration already exists, resetting the 'advancing' database must be done by executing the SQL command `DROP DATABASE advancing;`. Once the database has been dropped, the Liquibase script will automatically re-enable it.
+:::
+
 `SPRING_JPA_DATABASE`- value: `oracle`
 
 `SPRING_JPA_DATABASE_PLATFORM`
