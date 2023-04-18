@@ -23,7 +23,7 @@ To create a stepper structure:
 * All the UI elements are configured via the Node UI designer
 * Starting from our basic process, we need to set the start of the stepper template config
 * It is enough to open the drag and drop menu and add a Stepper template config for now
-* For the first step, it will be useful to add also a label&#x20;
+* For the first step, it will be useful to add also a label
 * Clear the cache to test what we have until now
 
 ![](../img/process_flowx_configuring_UI.gif)
@@ -39,7 +39,7 @@ To create a stepper structure:
 ## Adding a card with one input
 
 1. Go to your **user task** (this will represent the **first card** of your step).
-2. Add a **`FORM GROUP`** (this is the UI card element).
+2. Add a **`CARD`** (this is the UI card element).
 3. Add a **Form** to it (Form elements group inputs together).
 4. Add an **input** into the form:
    * Configure the **key** - you can use the key to retrieve the data form saved on that element
@@ -47,7 +47,7 @@ To create a stepper structure:
 
 ![Adding input](../img/pf_adding_input.gif)
 
-### Testing  our first input
+### Testing our first input
 
 1. **Start** one more time **the process** that you just configured.
 2. The **input** is displayed.
@@ -58,7 +58,7 @@ To create a stepper structure:
 ## Adding second input and a submit action
 
 1. Go to your **user task** node and add a new input via **Node UI designer**.
-2. Now go back to the process and add a new [**action rule**](../../building-blocks/actions.md):
+2. Now go back to the process and add a new [**action rule**](../../building-blocks/actions/actions.md):
    * first we need to configure the action - the action is called when the button is pressed - the action should be **Manual** (not automatic because it is triggered by a user)
    * we need to keep in mind the name of the action - `saveDataFirstStep`
 3. Go back to the Node UI designer and add a button (we need to link the **button** to the **action** based on the name).

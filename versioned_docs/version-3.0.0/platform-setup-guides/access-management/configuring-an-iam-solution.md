@@ -45,7 +45,7 @@ If you are logged in to the master realm this dropdown menu lists all the realms
 
 ![](../../platform-deep-dive/img/iam2.png)
 
-4. Go to **Realm Settings -> Tokens** and set the following properties:
+4. Go to **Realm Settings → Tokens** and set the following properties:
 
 * **SSO Session idle** - suggested: 30 Minutes
 * **Access Token Lifespan** - suggested: 30 Minutes

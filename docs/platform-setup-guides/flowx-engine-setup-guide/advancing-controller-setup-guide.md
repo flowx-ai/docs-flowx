@@ -53,6 +53,10 @@ postgresql:
 
 ```
 
+:::caution
+If the parallel advancing configuration already exists, resetting the 'advancing' database must be done by executing the SQL command `DROP DATABASE advancing;`. Once the database has been dropped, the Liquibase script will automatically re-enable it.
+:::
+
 ## Configuration
 
 The following configuration details need to be added using environment variables:

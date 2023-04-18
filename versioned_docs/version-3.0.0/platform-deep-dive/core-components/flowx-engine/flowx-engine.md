@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# FLOWX.AI Engine
+# FLOWX Engine
 
 The engine is the core of the platform, it is the service that runs instances of the process definitions, generates UI, communicates with the frontend and also with custom integrations and plugins. It keeps track of all currently running process instances and makes sure the process flows run correctly.
 
@@ -138,7 +138,7 @@ If none of these keys have values, all the parameter values from the parent proc
 
 </details>
 
-[FLOWX.AI Engine setup guide](../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md)
+[FLOWX Engine setup guide](../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md)
 
 ## Triggering or skipping nodes on a process based on Flow Names
 

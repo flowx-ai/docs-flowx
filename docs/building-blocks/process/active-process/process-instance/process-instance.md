@@ -10,9 +10,8 @@ A process instance is a specific execution of a business process that is defined
 
 ## Overview
 
-Think of the process definition as the blueprint for a house and the process instance as the actual house. Each process instance holds its current state and related business data.
+Once the desired processes are defined in the platform, they are ready to be used. Each time a process needs to be used, for example each time a customer wants to request, for example, a new credit card, a new instance of the specified process definition is started in the platform. Think of the process definition as a blueprint for a house, and of the process instance as each house of that type being built.
 
-The engine takes care of going through the process steps defined and handles all the business logic on the process definition.
 
 The [**FLOWX Engine**](../../../../platform-deep-dive/core-components/flowx-engine) is responsible for executing the steps in the process definition and handling all the business logic. The token represents the current position in the process and moves from one node to the next based on the sequences and rules defined in the exclusive gateways. In the case of parallel gateways, child tokens are created and eventually merged back into the parent token.
 

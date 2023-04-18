@@ -14,10 +14,10 @@ Integrations must be compatible with Kafka, so they can communicate with externa
 After defining one integration (inside **Integration management**) you can open a compatible node and start using them.
 
 :::info
-Integrations are used with the following nodes: [task nodes](../../../../building-blocks/node/task-node/task-node.md), [user task nodes](../../../../building-blocks/node/user-task-node/user-task-node.md), [message send tasks](../../../../building-blocks/node/message-send-received-task-node.md#message-send-task), and [message receive tasks](../../../../building-blocks/node/message-send-received-task-node.md#message-receive-task)).
+Integrations are used with the following nodes: [task nodes](../../../../building-blocks/node/task-node.md), [user task nodes](../../../../building-blocks/node/user-task-node.md), [message send tasks](../../../../building-blocks/node/message-send-received-task-node.md#message-send-task), and [message receive tasks](../../../../building-blocks/node/message-send-received-task-node.md#message-receive-task).
 :::
 
-You can easily create or import an integration using the **Integration management** feature just by accessing **FLOWX.AI Admin-> Integration management**.
+You can easily create or import an integration using the **Integration management** feature just by accessing **FLOWX Designer → Integration management**.
 
 ![Integration management](../../../img/integrations.png)
 
@@ -25,7 +25,7 @@ You can easily create or import an integration using the **Integration managemen
 
 To access Integration management:
 
-1. Open **FLOWX FLOWX.AI Admin** and go to the **General Settings** tab.
+1. Open **FLOWX Designer** and go to the **General Settings** tab.
 2. From the expanded menu, select **Integration management**.
 3. From the list, select an **Integration**.
 4. Click the **arrow** icon to expand the list with the scenarios.
@@ -151,7 +151,7 @@ The following details need to be configured:
 All integrations have `processInstanceId` as a default header parameter.
 
 :::info
-If you have actions that contain [callbacks](../../../../building-blocks/actions.md#defining-callbacks), multiple headers can be added, like the action name or the name of the node.
+If you have actions that contain [callbacks](../../../../building-blocks/actions/actions.md#callbacks-actions), multiple headers can be added, like the action name or the name of the node.
 :::
 
 Headers may also contain Kafka authorization (token in the header).
@@ -162,11 +162,11 @@ As mentioned earlier, you can use integrations management to configure integrati
 
 Use predefined integrations, that you have already configured, on different processes and nodes. Places where integrations will be used:
 
-* Node -> Actions ->  **Kafka Send Action** (to send data to the integration)
+* Node → Actions → **Kafka Send Action** (to send data to the integration)
 
 ![](../../../img/using_integrations.gif)
 
-* Node -> Node config -> **Data stream topics** (the topic name where the [process engine](../../flowx-engine/) listens for the response)
+* Node → Node config → **Data stream topics** (the topic name where the [process engine](../../flowx-engine/) listens for the response)
 
 ![](../../../img/integrations_node_config.png)
 

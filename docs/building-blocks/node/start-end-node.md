@@ -17,7 +17,7 @@ A process can have one or more start nodes. If you defined multiple start nodes,
 
 ### Configuring a start node
 
-Node configuration is done by accessing the **Node Config** tab. You have the following configuration options for a start node**:**
+Node configuration is done by accessing the **Node Config** tab. You have the following configuration options for a **start node**:
 
 * [General Config](#general-config)
 * [Start condition](#start-condition)
@@ -25,7 +25,7 @@ Node configuration is done by accessing the **Node Config** tab. You have the fo
 #### General Config
 
 * **Node name** - the name of the node
-* **Can go back** -  switching this option to true will allow users to return to this step after completing it
+* **Can go back** - switching this option to true will allow users to return to this step after completing it
 
 :::info
 When encountering a step with `canGoBack` switched to false, all steps found behind it will become unavailable.

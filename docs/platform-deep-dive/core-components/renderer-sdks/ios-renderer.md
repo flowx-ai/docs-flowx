@@ -17,7 +17,7 @@ The iOS Renderer is available through Cocoapods and Swift Package Manager.
 
 ### Swift Package Manager
 
-In Xcode, click `File` -> `Add Packages...`, enter FlowX repo's URL `https://github.com/flowx-ai/flowx-ios-sdk`.
+In Xcode, click `File` → `Add Packages...`, enter FlowX repo's URL `https://github.com/flowx-ai/flowx-ios-sdk`.
 Set the dependency rule to `Up To Next Major` and add package.
 
 If you are developing a framework and use FlowX as a dependency, add to your `Package.swift` file:
@@ -79,13 +79,13 @@ This config is used for general purpose properties.
 
 #### Properties
 
-| Name          | Description                                                           | Type                    | Requirement                 |
-|---------------|-----------------------------------------------------------------------|-------------------------|-----------------------------|
-| baseURL       | The base URL used for REST networking                                 | String                  | Mandatory                   |
-| imageBaseURL  | The base URL used for media library images                            | String                  | Mandatory                   |
-| language      | The language used for retrieving enumerations and substitution tags   | String                  | Mandatory. Defaults to "en" |
-| stepViewType  | The type of the custom step view class                                | FXStepViewProtocol.Type | Optional                    |
-| logEnabled    | Value indicating whether console logging is enabled. Default is false | Bool                    | Optional                    |
+| Name         | Description                                                           | Type                    | Requirement                 |
+| ------------ | --------------------------------------------------------------------- | ----------------------- | --------------------------- |
+| baseURL      | The base URL used for REST networking                                 | String                  | Mandatory                   |
+| imageBaseURL | The base URL used for media library images                            | String                  | Mandatory                   |
+| language     | The language used for retrieving enumerations and substitution tags   | String                  | Mandatory. Defaults to "en" |
+| stepViewType | The type of the custom step view class                                | FXStepViewProtocol.Type | Optional                    |
+| logEnabled   | Value indicating whether console logging is enabled. Default is false | Bool                    | Optional                    |
 
 **Sample**
 

@@ -6,7 +6,7 @@ sidebar_position: 6
 
 ## Supported scripts
 
-Scripts are used to define and run [actions](actions.md) but also properties inside [nodes](./node/node.md). For now, the following script languages are supported:
+Scripts are used to define and run [actions](./actions/actions.md) but also properties inside [nodes](./node/node.md). For now, the following script languages are supported:
 
 * [Python](#python) (Jython)
 * [DMN](supported-scripts.md#dmn)
@@ -20,7 +20,7 @@ Scripts are used to define and run [actions](actions.md) but also properties ins
 | DMN                         | 1.3     |
 | MVEL                        | 2.4.10  |
 | Groovy                      | 3.0.8   |
-| Nashorn engine (JavaScript) | 15.4    |   
+| Nashorn engine (JavaScript) | 15.4    |
 
 ## Python
 
@@ -63,7 +63,7 @@ FLOWX uses [BPMN.io](https://bpmn.io/) (based on **camunda-engine-dmn** version 
 
 [Intro to DMN](../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-dmn.md)
 
-[DMN Business Rule Action](./node/task-node/business-rule-action/dmn-business-rule-action.md)
+[DMN Business Rule Action](./actions/business-rule-action/dmn-business-rule-action.md)
 
 ## MVEL
 

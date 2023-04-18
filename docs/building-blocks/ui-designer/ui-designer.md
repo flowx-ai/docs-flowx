@@ -19,7 +19,7 @@ The FLOWX.AI platform includes an intuitive **UI Designer** for creating diverse
 ![](./img/access_ui_designer.gif)
 
 :::caution
-The UI designer is available for [**User task**](../node/user-task-node/user-task-node.md) nodes and [**Milestone**](../node/milestone-node.md) nodes (nodes that require human interaction).
+The UI designer is available for [**User task**](../node/user-task-node.md) nodes and [**Milestone**](../node/milestone-node.md) nodes (nodes that require human interaction).
 :::
 
 After adding a specific component to the node, the right-side menu will display more configuration options.
@@ -43,7 +43,7 @@ FLOWX.AI offers a wide range of [UI components](./ui-component-types) that can b
 
 #### Settings
 
-* **Message** - a valid JSON string that is pushed to the frontend application when the process reaches [user task](../node/user-task-node/user-task-node.md); this property is only available for [Root components](./ui-component-types/root-components/root-components.md)
+* **Message** - a valid JSON string that is pushed to the frontend application when the process reaches [user task](../node/user-task-node.md); this property is only available for [Root components](./ui-component-types/root-components/root-components.md)
 * **Properties** - custom properties that vary depending on the component type
 * **Has Accordion** (available only for **Card** component) - a Bootstrap accordion is a component that organizes content within collapsible items, allowing only one collapsed item to be displayed at a time
 
@@ -91,8 +91,8 @@ When adjusting the Fit W and Fit H settings, users can control the size and shap
 
 Margin and padding are CSS properties used to create space between elements in a web page:
 
-* margin - the space outside of an element
-* padding - the space inside of an element
+* margin - the space outside an element
+* padding - the space inside an element
 
 ![](./img/ui_spacing.gif)
 

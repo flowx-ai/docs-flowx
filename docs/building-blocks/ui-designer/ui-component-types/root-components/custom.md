@@ -33,6 +33,7 @@ When a user task is reached in the process instance, a web socket message is sen
 Example:
 
 1. Starting a process:
+
 * The following is an example of starting a process instance via a **POST** request to `{{processUrl}}/api/internal/process/DemoProcess/start`:
 
 ```json

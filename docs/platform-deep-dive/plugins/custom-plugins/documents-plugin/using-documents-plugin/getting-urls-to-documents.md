@@ -11,12 +11,12 @@ For example, get documents URLs to send to the notification plugin and attach th
 1. Create a process in which you add the following nodes: 
 * a [**Kafka send event node**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node),
 * a [**Kafka receive event node**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node)
-* a [**user task node**](../../../../../building-blocks/node/user-task-node/user-task-node.md)
+* a [**user task node**](../../../../../building-blocks/node/user-task-node.md)
 * [**start / end milestone**](../../../../../building-blocks/node/milestone-node.md) nodes to [create a modal](../../../../../building-blocks/node/milestone-node.md#modal)
 
 ![](../../../../img/getting_urls_proc.png)
 
-2. Configure the **user task node**, and add an [**Upload action**](../../../../../building-blocks/node/task-node/upload-file-action.md) to it.
+2. Configure the **user task node**, and add an [**Upload action**](../../../../../building-blocks/actions/upload-file-action.md) to it.
 
 ![](../../../../img/getting_urls_upload_ac.png)
 
@@ -29,7 +29,7 @@ For more details on how to upload a document and how to configure an upload acti
 
 [**Upload document**](uploading-a-new-document.md)
 
-[**Upload action**](../../../../../building-blocks/node/task-node/upload-file-action.md)
+[**Upload action**](../../../../../building-blocks/actions/upload-file-action.md)
 :::
 
 4. Configure the Kafka send event node - add a **Kafka send action** and configure the [**Kafka topic**](../../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md#kafka-configuration) where to send the request:

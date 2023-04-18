@@ -37,10 +37,10 @@ A **Default** swimlane comes with two default permissions assigned based on a sp
 This is valid for **> 2.11.0** FLOWX.AI platform release.
 :::
 
-Other **Permissions** can be added manually, depending on the needs of the user. Some of the permissions are needed to be configured so you can use features inside [Task Management](../../platform-deep-dive/plugins/custom-plugins/task-management) plugin. Specific roles need to be assigned separately on a few available process operations. These are:
+Other **Permissions** can be added manually, depending on the needs of the user. Some permissions are needed to be configured so you can use features inside [Task Management](../../platform-deep-dive/plugins/custom-plugins/task-management) plugin. Specific roles need to be assigned separately on a few available process operations. These are:
 
 * **view** - the user will be able to view process instance data
-* **assign** - user can assign tasks to other users (this operation is only accessible through the **Task managemen**t plugin)
+* **assign** - user can assign tasks to other users (this operation is only accessible through the **Task management** plugin)
 * **unassign** - user can unassign tasks from other users (this operation is only accessible through the **Task management** plugin)
 * **hold** - user can mark the process instance as on hold (this operation is only accessible through the **Task management** plugin)
 * **unhold** - user can mark the process instance as not on hold (this operation is only accessible through the **Task management** plugin)

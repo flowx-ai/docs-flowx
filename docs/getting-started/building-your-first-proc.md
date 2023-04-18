@@ -11,9 +11,9 @@ Let's dive into an example. :rocket:
 
 - [x] **Step 1**: [Design a BPMN process](../flowx-designer/managing-a-process-flow)
 
-- [x] **Step 2**: Define and manage a process flow using FLOWX.AI Process Designer
+- [x] **Step 2**: Define and manage a process flow using FLOWX Process Designer
 
-- [x] **Step 3**: Run a process instance in FLOWX.AI Engine
+- [x] **Step 3**: Run a process instance in FLOWX Engine
 
 - [x] **Step 4**: Create the front-end app
 
@@ -22,7 +22,7 @@ Let's dive into an example. :rocket:
 
 ## Designing the BPMN process: request a new credit card from a bank app
 
-Let's start with designing the BPMN process diagram for our sample use case:  requesting a new credit card from a bank app.
+Let's start with designing the BPMN process diagram for our sample use case: requesting a new credit card from a bank app.
 
 ## Sample process steps
 

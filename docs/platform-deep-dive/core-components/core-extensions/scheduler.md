@@ -30,7 +30,7 @@ For example the engine topics KAFKA_TOPIC_PROCESS_SCHEDULE_OUT_SET and KAFKA_TOP
 
 When a process is scheduled to expire, the engine sends the following message to the scheduler service (on the topic `KAFKA_TOPIC_SCHEDULE_IN_SET`):
 
-```
+```json
 {
   "applicationName": "onboarding",
   "applicationId": "04f82408-ee66-4c68-8162-b693b06bba00",
@@ -47,16 +47,16 @@ The scheduled time should be defined as `java.time.Instant`.
 
 At the scheduled time, the payload will be sent back to the response topic defined in the message, like so:
 
-```
+```json
 {
   "scheduledEventType": "EXPIRE_PROCESS",
   "processInstanceUuid": "04f82408-ee66-4c68-8162-b693b06bba00"
 }
 ```
 
-If you don't need the scheduled message anymore, you can discard it by sending the following message ( on the topic `KAFKA_TOPIC_SCHEDULE_IN_STOP`)
+If you don't need the scheduled message anymore, you can discard it by sending the following message (on the topic `KAFKA_TOPIC_SCHEDULE_IN_STOP`)
 
-```
+```json
 {
   "applicationName": "onboarding",
   "applicationId": "04f82408-ee66-4c68-8162-b693b06bba00"

@@ -31,7 +31,7 @@ For each entry (when you hit the **Open** button) inside an enumeration we have 
 
 To add a new enumeration, follow the next steps:
 
-1. Go to **FLOWX.AI Designer** and select the **Content Management** tab.
+1. Go to **FLOWX Designer** and select the **Content Management** tab.
 2. Select **Enumerations** from the list.
 3. Add a suggestive name for your enumeration and then click **Add**.
 
@@ -73,9 +73,9 @@ Enumerations, for instance, can be used to build elaborate lists of values (with
 
 We have the following example for _**Activity Domain Companies**_:
 
-#### **Activity Domain Companies -> Agriculture forestry and fishing:**
+#### **Activity Domain Companies → Agriculture forestry and fishing:**
 
-* **Agriculture, hunting, and related services ->**
+* **Agriculture, hunting, and related services →**
 
 <details>
 
@@ -109,7 +109,7 @@ We have the following example for _**Activity Domain Companies**_:
 
 </details>
 
-* **Forestry and logging ->**
+* **Forestry and logging →**
 
 <details>
 
@@ -135,7 +135,7 @@ We have the following example for _**Activity Domain Companies**_:
 
 </details>
 
-* **Fisheries and aquaculture ->**
+* **Fisheries and aquaculture →**
 
 <details>
 

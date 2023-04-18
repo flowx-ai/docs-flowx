@@ -2,8 +2,6 @@
 
 Granular access rights can be configured for restricting access to the Documents plugin component.
 
-
-
 The following access authorizations is provided, with the specified access scopes:
 
 1. **Manage-document-templates** - for configuring access for managing document templates
@@ -14,9 +12,6 @@ Available scopes:
 * read - users are able to view document templates
 * edit - users are able to edit document templates
 * admin - users are able to publish or delete document templates
-
-
-
 The Document plugin is preconfigured with the following default users roles for each of the access scopes mentioned above:
 
 * manage-document-templates

@@ -24,7 +24,7 @@ For each entry (when you hit the **Open** button) inside an enumeration we have 
 * **Name**
 * **Attributes (depending on what you add as attributes)**
 
-### Configuring Attributes
+### Configuring attributes
 
 Attributes that can be added to a content model can have the following values:
 

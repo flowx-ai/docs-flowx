@@ -30,9 +30,7 @@ If you choose to use a specific flow on FLOWX.AI, there are some advantages:
 3. On the flow, the document is uploaded.
 4. FLOWX validates the template (barcode) and the signatures.
 
-
 ### FLOWX.AI generated documents scenario
-
 
 1. Use the [**Documents plugin**](./documents-plugin) to create a [**document template**](./documents-plugin/using-documents-plugin/generate-docs-based-on-templates).
 
@@ -81,7 +79,7 @@ The Kafka topic where you want to generate the template must match the topic def
 
 ![](../../img/ocr_receive_response.png)
 
-6. Add a [**user task node**](../../../building-blocks/node/user-task-node) and configure an [**Upload file action**](../../../building-blocks/node/task-node/upload-file-action.md) - the action will send the file on the topic (defined at the **`KAFKA_TOPIC_DOCUMENT_PERSIST_IN`**) to the [Min.io](https://min.io/) - storage solution.
+6. Add a [**user task node**](../../../building-blocks/node/user-task-node) and configure an [**Upload file action**](../../../building-blocks/actions/upload-file-action.md) - the action will send the file on the topic (defined at the **`KAFKA_TOPIC_DOCUMENT_PERSIST_IN`**) to the [Min.io](https://min.io/) - storage solution.
 
 ![](../../img/ocr_upload_file.png)
 

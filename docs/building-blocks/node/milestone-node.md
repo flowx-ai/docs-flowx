@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # Milestone node
 
-A **milestone node** is used to define how [user tasks](./user-task-node/user-task-node.md) (which are placed between two milestones - **start milestone** and **end milestone**) will be displayed.
+A **milestone node** is used to define how [user tasks](../node/user-task-node.md) (which are placed between two milestones - **start milestone** and **end milestone**) will be displayed.
 
 ![Start milestone node](./img/milestone_node_start.png#center)
 ![End milestone node](./img/milestone_node_end.png#center)
@@ -41,7 +41,7 @@ To configure a user task to be displayed in a Modal:
 
 ### Modal
 
-You can configure a start milestone node and an end milestone node before and after a [user task](user-task-node/). After adding the milestones, you can add a modal template to the start milestone node to display a modal screen (like in the example above).
+You can configure a start milestone node and an end milestone node before and after a [user task](../node/user-task-node.md). After adding the milestones, you can add a modal template to the start milestone node to display a modal screen (like in the example above).
 
 ![Modal screen](./img/modal_screen.png)
 

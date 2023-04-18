@@ -16,7 +16,7 @@ You can also upload an image directly to the Media Library on the spot when conf
 
 To upload an asset to the Media Library, follow the next steps:
 
-1. Open FLOWX.AI Designer.
+1. Open FLOWX Designer.
 2. Go to **Content Management** tab and select **Media Library**.
 3. Click **Add new item**, the following details will be displayed:
     * **Upload item** - opens a local file browser

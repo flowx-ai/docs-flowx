@@ -15,7 +15,7 @@ On the main screen inside **Substitution tags**, you have the following elements
 * **Edit** - button used to edit substitution tags
 * **Delete** - button used to delete substitution tags
 * **New value** - button used to add a new substitution tag
-* **Breadcrumbs menu:**
+* **Breadcrumbs menu**:
   * **Import**
     * from JSON
     * from CSV
@@ -28,7 +28,7 @@ On the main screen inside **Substitution tags**, you have the following elements
 
 To add a new substitution tag, follow the next steps.
 
-1. Go to **FLOWX.AI Designer** and select the **Content Management** tab.
+1. Go to **FLOWX Designer** and select the **Content Management** tab.
 2. Select **Substitution tags** from the list.
 3. Click **New value**.
 4. Fill in the necessary details:
@@ -37,6 +37,10 @@ To add a new substitution tag, follow the next steps.
 5. Click **Add** after you finish.
 
 ![](../../../img/add_new_substitution.png)
+
+:::caution
+When working with substitution tags or other elements that imply values from other languages defined in the CMS, when running a process, the default values extracted will be the ones marked by the default language.
+:::
 
 ### Getting a substitution tag by key
 

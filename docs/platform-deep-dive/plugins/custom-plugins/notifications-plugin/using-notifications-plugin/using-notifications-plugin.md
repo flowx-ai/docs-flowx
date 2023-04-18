@@ -23,7 +23,7 @@ More details: [here](../../../../../platform-setup-guides/flowx-engine-setup-gui
 * to receive a reply from the plugin, the process definition needs to have a receiving node with a node value with key `topicName` and the topic name as the value
 
 :::
-
+    
 After all the setup is in place, you can start adding custom actions to the processes.
 
 Let's go through a few examples. These examples cover both the configuration part, and the integration with the engine for all the use cases.

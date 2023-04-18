@@ -9,7 +9,7 @@ There are two timer expressions formats supported:
 
 ### **Cron Expressions**
 
-A cron expression is a string made up of **six mandatory subexpressions (fields) that each specifies an aspect of the schedule** (for example,  `* * * * * *`). These fields, separated by white space, can contain any of the allowed values with various combinations of the allowed characters for that field.
+A cron expression is a string made up of **six mandatory subexpressions (fields) that each specifies an aspect of the schedule** (for example, `* * * * * *`). These fields, separated by white space, can contain any of the allowed values with various combinations of the allowed characters for that field.
 
 :::info
 A field may be an asterisk (`*`), which always stands for “first-last”. For the day-of-the-month or day-of-the-week fields, a question mark (`?`) may be used instead of an asterisk.
@@ -33,13 +33,13 @@ More details:
 
 #### Cron Expressions are used in the following example:
 
-* [**Process definition**](../../building-blocks/process/process-definition/process-definition.md) - **Expiry time** - a user can set up an `expiryTime` function on a process, for example, a delay of 30s will be set up like:
+* [**Process definition**](../../building-blocks/process/process-definition/process-definition.md) - **Expiry time** - a user can set up a `expiryTime` function on a process, for example, a delay of 30s will be set up like:
 
 ![](./img/timer_process_settings.png)
 
 ### **ISO 8601**
 
-ISO 8601 is an international standard covering the worldwide exchange and communication of date and time-related data. It can be used to standardize the following: dates, time of delay, time intervales, recurring time intervals, etc.
+ISO 8601 is an international standard covering the worldwide exchange and communication of date and time-related data. It can be used to standardize the following: dates, time of delay, time intervals, recurring time intervals, etc.
 
 More details:
 
@@ -64,6 +64,6 @@ ISO 8601 dates and times:
 
 ![](./img/timer_response_timeout.png)
 
-* [**Actions**](../../building-blocks/actions.md) - **Timer expression** - it can be used if a delay is required on that action
+* [**Actions**](../../building-blocks/actions/actions.md) - **Timer expression** - it can be used if a delay is required on that action
 
 ![](./img/timer_action_edit.png)

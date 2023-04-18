@@ -10,23 +10,23 @@ The plugin can be used for sending many kinds of notifications such as emails or
 
 To configure a business process that sends notifications you must follow the next steps:
 
-* use FLOWX.AI Designer app to create/edit a [notification template](./managing-notification-templates.md)
+* use FLOWX Designer app to create/edit a [notification template](./managing-notification-templates.md)
 * use Process Designer to add a [**Message send task**](../../../../../building-blocks/node/message-send-received-task-node.md#message-send-task) and a [**Message received task**](../../../)
-* configure the needed [actions](../../../../../building-blocks/actions.md)
+* configure the needed [actions](../../../../../building-blocks/actions/actions.md)
 * configure the request body
 * configure the needed [Kafka topics](../../../plugins-setup-guide/notifications-plugin-setup/notifications-plugin-setup.md)
 
 The following values are expected in the request body:
 
-|        Key        |                                          Definition                                         |                |
-| :---------------: | :-----------------------------------------------------------------------------------------: | :------------: |
-|      language     |                               The language that should be used                              |    Mandatory   |
-|    templateName   |                      The name of the notification template that is used                     |    Mandatory   |
-|      channel      |                             Notification channel: SMS/MAIL                                  |    Mandatory   |
-|     receivers     |                          Notification receivers: email/phone number                         |    Mandatory   |
-|    senderEmail    |                                  Notification sender email                                  |    Optional    |
-|     senderName    |                                   Notification sender name                                  |    Optional    |
-|    attachments    | Attachments that are sent with the notification template (only used for MAIL notifications) |    Optional    |
+|     Key      |                                         Definition                                          |           |
+| :----------: | :-----------------------------------------------------------------------------------------: | :-------: |
+|   language   |                              The language that should be used                               | Mandatory |
+| templateName |                     The name of the notification template that is used                      | Mandatory |
+|   channel    |                               Notification channel: SMS/MAIL                                | Mandatory |
+|  receivers   |                         Notification receivers: email/phone number                          | Mandatory |
+| senderEmail  |                                  Notification sender email                                  | Optional  |
+|  senderName  |                                  Notification sender name                                   | Optional  |
+| attachments  | Attachments that are sent with the notification template (only used for MAIL notifications) | Optional  |
 
 :::info
 Check the detailed example below.

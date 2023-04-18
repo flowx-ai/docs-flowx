@@ -29,7 +29,6 @@ To upload a document using a process, follow the next steps.
         * Folder
     * (UI) Configure the upload button
 
-
 ## Configuring the process definition
 
 ### User task node

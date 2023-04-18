@@ -5,7 +5,7 @@ The Notifications plugin is available as a docker image, and it has the followin
 * a [MongoDB](https://www.mongodb.com/2) database
 * needs to be able to connect to the Kafka instance used by the engine
 * a [Redis](https://redis.io/) instance for caching notification templates
-* in case you need to also attach documents to the sent notifications, the plugin will need to be able to acces your chosen storage solution. It can use an S3 compatible file storage solution (we have successfully used [Min.io](https://min.io/))
+* in case you need to also attach documents to the sent notifications, the plugin will need to be able to access your chosen storage solution. It can use an S3 compatible file storage solution (we have successfully used [Min.io](https://min.io/))
 
 The plugin comes with most of the needed configuration properties filled in, but there are a few that need to be set up using some custom environment variables.
 
@@ -65,13 +65,13 @@ The following variables need to be set in order to connect to the identity manag
 
 ### MongoDB configuration
 
-The only thing that needs to be configured is the DB access info, the rest will be handled by the plugin.&#x20;
+The only thing that needs to be configured is the DB access info, the rest will be handled by the plugin.
 
-`SPRING_DATA_MONGODB_URI` - the uri for the mongodb database
+`SPRING_DATA_MONGODB_URI` - the URI for the MongoDB database
 
 ### Redis configuration
 
-The following values should be set with the corresponding Redis related values.&#x20;
+The following values should be set with the corresponding Redis related values.
 
 `SPRING_REDIS_HOST`
 
@@ -113,7 +113,7 @@ Each action available in the service corresponds to a Kafka event. A separate Ka
 
 `KAFKA_TOPIC_OTP_VALIDATE_IN` - Event send on this topic with an OTP and an identifier will check if the OTP is valid
 
-`KAFKA_TOPIC_OTP_VALIDATE_OUT` - Response to the request to validate an OTP will be send back to the Engine on this topic
+`KAFKA_TOPIC_OTP_VALIDATE_OUT` - Response to the request to validate an OTP will be sent back to the Engine on this topic
 
 :::caution
 The Engine is listening for messages on topics with names of a certain pattern, make sure to use correct outgoing topic names when configuring the notifications plugin.
