@@ -11,7 +11,6 @@ Advancing controller requires the following components to be set up before it ca
 * **FLOWX Engine deployment** - the Advancing Controller is dependent on the FLOWX Engine and must be deployed in the same environment, refer to the [FLOWX Engine setup guide](../flowx-engine-setup-guide/flowx-engine-setup-guide.md) for more information on how to set up the Engine
 * **DB instance** - the Advancing Controller uses a PostgreSQL database instance
 
-
 ## Dependencies
 
 * [**Database**](#database---postgres)

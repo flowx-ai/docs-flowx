@@ -43,13 +43,13 @@ The following properties must be configured for a **Start subprocess** action:
 * **Repeatable** - should be checked if the action can be triggered multiple times
 * **Autorun Children** - when this is switched on, the child actions (the ones defined as mandatory and automatic) will run immediately after the execution of the parent action is finalized
 
-### **Back in steps**
+### Back in steps
 
 * **Allow BACK on this action** - back in process is a functionality that allows you to go back in a business process and redo a series of previous actions in the process. For more details, check [**Moving a token backwards in a process**](../../flowx-designer/managing-a-process-flow/moving-a-token-backwards-in-a-process.md) section.
 
-### **Parameters**
+### Parameters
 
-* **Subprocess name** - the name of the process that you want to start as a subprocess
+* **Subprocess** - the name of the process that you want to start as a subprocess
 * **Exclude from current state** - what fields do you want to exclude when copying the data from the parent process to the subprocess (by default all data fields are copied)
 * **Copy from current state** - if a value is set here, it will overwrite the default behavior (of copying the whole data from the subprocess) with copying just the data that is specified (based on keys)
 
@@ -78,16 +78,33 @@ When copying from the current state using a subprocess, it is mandatory to speci
 
 ## Example
 
-To start a subprocess, we can, for example, create the following minimum configuration:
+Let's create a main process, in this process we will add a user task node that will represent a menu page. In this newly added node we will add multiple subprocess actions that will represent menu items. When you select a menu item, a subprocess will run representing that particular menu item.
 
-* **Subprocess name** - _`subprocessDemoProcess`_ - name of the process that we want to start as a subprocess
-* **Exclude from current state** - _`["client"]`_ - copy all the data from the parent, except the client data
-* **Copy from current state** - we leave this field empty in order to copy all the data (except the keys that are specified in the **Exclude from current state** field)
+![](../img/subprocess_menu.png)
+
+To start a subprocess, we can, for example, create the following minimum configuration in a user task node (now we configure the process where we want to start a subprocess):
+
+* **Action** - `menu_item_1` - used internally to make a distinction between different actions on nodes in the process. We recommend defining an action naming standard to be able to quickly find the process actions
+* **Trigger type** - Manual; Optional
+* **Repeatable** - yes
+* **Subprocess** - `docs_menu_item_1` - the name of the process that you want to start as a subprocess
+
+![](../img/subprocess_example1.png)
+
+* **Exclude from current state** - `test.price` - copy all the data from the parent, except the price data
+* **Copy from current state** - leave this field empty in order to copy all the data (except the keys that are specified in the **Exclude from current state** field), if not, add the keys from which you wish to copy the data
+
+![](../img/subprocess_example2.png)
+
+:::caution
+When copying from the current state using a subprocess, it is mandatory to specify the `webSocketAddress` and `webSocketPath` as parameters. This ensures that the Engine can accurately transmit the relevant information to the frontend, enabling it to display the appropriate UI. 
+:::
 
 **Advanced configuration**
 
 * **Target process (parentProcessInstanceId)** - `${processInstanceId}` - current process ID
 
-![](../node/img/subprocess_action_example.png)
+#### Result
 
+![](../img/subprocess_example.gif)
 

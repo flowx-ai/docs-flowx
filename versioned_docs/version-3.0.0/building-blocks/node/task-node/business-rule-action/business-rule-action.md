@@ -69,7 +69,7 @@ Let's take look at the following example. We have some data about the gender of 
 ### :warning: Flattened vs unflattened keys
 
 :::warning
-With version [**2.5.0**](/release-notes/v2.5.0-april-2022) we introduced unflattened keys inside business rules. Flattened keys are now obsolete. You are notified when you need to delete and recreate a business rule so it contains an unflattened key.
+With version [**2.5.0**](/release-notes/v2.5.0-april-2022) we introduced unflattened keys inside business rules. Flattened keys are now obsolete. You are notified when you need to delete and recreate a business rule, so it contains an unflattened key.
 :::
 
 ![Obsolete business rule](./img/obsolete_business_rule.png)

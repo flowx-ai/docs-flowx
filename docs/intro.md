@@ -26,7 +26,7 @@ FLOWX.AI platform brings **a layer of scalability to your existing stack**, beyo
 
 **Unified interface across multiple systems or platforms** - often, say for an in-branch onboarding process, a teller has to use 4 or 5 different applications - to access various customer data such as a CRM, public reference checks, a KYC system and so on. With a process designed in FLOWX, you create just one application that unifies the purpose and the data from all those other applications. And this is very liberating for employees, it saves up time, eliminates the possibility of errors and overall, makes the experience of using the onboarding application a pleasant one.
 
-With FLOWX you **build omnichannel experiences across all digital channels**, be they web applications, mobile apps or in-branch terminals. What’s more, our applications are built with a hand-off capability - meaning the user can start the process on the web and then pick up on the mobile app later that evening.&#x20;
+With FLOWX you **build omnichannel experiences across all digital channels**, be they web applications, mobile apps or in-branch terminals. What’s more, our applications are built with a hand-off capability - meaning the user can start the process on the web and then pick up on the mobile app later that evening.
 
 **The UI is generated on the fly, by our AI model.** This means that you don’t need coding or design skills to create interfaces. Of course, you can inject your own code for CSS styling, apply your own design system with logo, corporate colors and fonts - but this is just if you want it. By default, you don’t need it.
 

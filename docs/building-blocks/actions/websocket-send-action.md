@@ -5,14 +5,14 @@ sidebar_position: 2
 # Websocket Send action
 
 :::info
-**What is it?** A **Websocket Send action** is an action type that allows the process to push data to the frontend application.
+**What is it?** A WebSocket is a bidirectional communication protocol that enables real-time communication between a client (such as a web browser) and a server. A **Websocket Send action** is an action type that allows the process to push data to the frontend application.
 
 **Why is it useful?** It provides real-time updates and communication between the process and the frontend application.
 :::
 
 ### Configuring a Websocket Send action
 
-Multiple options are available for this type of action and can be configured via the FLOWX Designer. To configure a Websocket Send Action, use the **Actions** tab at the [task node level](../../flowx-designer/managing-a-process-flow/adding-a-new-node.md), which has the following configuration options:
+Multiple options are available for this type of action and can be configured via the FLOWX Designer. To configure a Websocket Send action, use the **Actions** tab at the [task node level](../../flowx-designer/managing-a-process-flow/adding-a-new-node.md), which has the following configuration options:
 
 * [Action Edit](#action-edit)
 * [Back in steps (for Manual actions)](#back-in-steps)
@@ -86,7 +86,7 @@ If you are defining this action on a [**subprocess**](../node/subprocess-run-nod
 
 To send the latest value from the [process instance](../process/active-process/process-instance/process-instance.md) data found at `application.client.firstName` key, to the frontend app, you can do the following:
 
-1. Add a **Websocket Send Action**.
+1. Add a **Websocket Send action**.
 2. Set the **Message Type** to **Default** (this is default value for `data`).
 3. Add a **Message** with the data you want to send:
    * `{ "name": "${application.client.firstName}" }`

@@ -22,11 +22,8 @@ You can also use the plugin to track what notifications have been sent and to wh
 
 Let's go through the steps needed to deploy and set up the plugin:
 
-
 [Notifications plugins setup](../../plugins-setup-guide/notifications-plugin-setup/)
 
-
 Below you can find some examples of various use cases where the notifications plugin can be useful:
-
 
 [Using the plugin](./using-notifications-plugin/)

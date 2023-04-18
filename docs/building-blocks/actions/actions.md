@@ -65,9 +65,7 @@ Actions have a few characteristics that need to be set:
 
 For more information, check the following section:
 
-
 [Adding an action to a node](../../flowx-designer/managing-a-process-flow/adding-an-action-to-a-node.md)
-
 
 ## Linking actions together
 
@@ -77,9 +75,27 @@ There are two ways actions could be linked together, so certain actions can be s
 
 A parent action has a flag `autoRunChildren`, set to `false` by default. When this flag is set to `true`, the child actions (the ones defined as mandatory and automatic) will be run immediately after the execution of the parent action is finalized.
 
-### Callbacks actions
+### Callback actions
+
+Child actions can be marked as callbacks to be run after a reply from an external system is received. They will need to be set when defining the interaction with the external system (the [Kafka send action](../node/message-send-received-task-node.md#configuring-a-message-send-task-node)).
+
+For example, a callback function might be used to handle a user's interaction with a web page, such as upload a file. When the user performs the action, the callback function is executed, allowing the web application to respond appropriately.
+
+![](../img/callback1.png)
 
 Child actions can be marked as callbacks to be run after a reply from an external system is received. They will need to be set when defining the interaction with the external system (the Kafka send action).
+
+![](../img/callback2.png)
+
+#### Example
+
+Callback actions are added in the **Advanced configuration** tab, in the **header** param - `callbacksForAction`.
+
+```js
+{"processInstanceId": ${processInstanceId}, "destinationId": "upload_file", "callbacksForAction": "upload_file"}
+```
+
+* `callbacksForAction` - the value of this key is a string that specifies a callback action associated with the "upload_file" destination ID. This is part of an event-driven system (Kafka send action) where this callback will be called once the "upload_file" action is completed.
 
 ## Scheduling actions
 

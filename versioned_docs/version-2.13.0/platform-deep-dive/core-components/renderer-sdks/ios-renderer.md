@@ -17,10 +17,10 @@ The iOS Renderer is available through Cocoapods and Swift Package Manager.
 
 ### Swift Package Manager
 
-In Xcode, click `File` -> `Add Packages...`, enter FlowX repo's URL `https://github.com/flowx-ai/flowx-ios-sdk`.
+In Xcode, click `File` → `Add Packages...`, enter FLOWX repo's URL `https://github.com/flowx-ai/flowx-ios-sdk`.
 Set the dependency rule to `Up To Next Major` and add package.
 
-If you are developing a framework and use FlowX as a dependency, add to your `Package.swift` file:
+If you are developing a framework and use FLOWX as a dependency, add to your `Package.swift` file:
 
 ```
 dependencies: [

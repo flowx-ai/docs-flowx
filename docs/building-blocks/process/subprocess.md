@@ -16,7 +16,7 @@ They can be started by a parent process in one of two ways:
 * by using a StartSubprocess action inside any of the task nodes in the process
 * by adding a custom Subprocess Run node type in the process
 
-In both cases, by default, the sub-process will inherit all of the parent process parameter values. It can be configured to inherit only some of the parameter values from its parent. The available action parameters for this are:
+In both cases, by default, the sub-process will inherit all the parent process parameter values. It can be configured to inherit only some parameter values from its parent. The available action parameters for this are:
 
 * _paramsToCopy_ - choose which of the keys from the parent process parameters to be copied to the sub-process
 * _withoutParams_ - choose which of the keys from the parent process parameters are to be ignored when copying parameter values from the parent process to the sub-process
