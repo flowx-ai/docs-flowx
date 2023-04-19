@@ -107,6 +107,8 @@ To configure the Kafka server, you need to set the following environment variabl
 
 * `KAFKA_AUTH_EXCEPTION_RETRY_INTERVAL` - the interval between retries after `AuthorizationException` is thrown by `KafkaConsumer`
 
+* `KAFKA_TOPIC_AUDIT_OUT` - the topic key for receiving audit logs
+
 Each action available in the service corresponds to a Kafka event. A separate Kafka topic must be configured for each use case.
 
 :::caution
@@ -132,3 +134,5 @@ To control the log levels, the following environment variables can be set:
 * `APPLICATION_FILE_STORAGE_S3_ROOT_DIRECTORY` - environment variable used to store the root directory within the S3 bucket where the files for the application are stored
 
 * `APPLICATION_FILE_STORAGE_S3_CREATE_BUCKET` - environment variable used to indicate whether the S3 bucket should be created if it does not already exist, it can be set to true or false
+
+

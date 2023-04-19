@@ -1,11 +1,11 @@
-# Deployment guidelines v3.1.0
+# Deployment guidelines v3.2.0
 
 :::info
 Do not forget, when upgrading to a new platform version, always check and make sure your installed component versions match the versions stated in the release. To do that, go to **FLOWX.AI Designer > Platform Status**.
 :::
 
 :::caution Process compatibility
-After updating to **3.1.0** FLOWX.AI release, importing old processes definitions in the new platform release is not possible (available for exports from **<= 3.1.0** releases).
+After updating to **3.2.0** FLOWX.AI release, importing old processes definitions in the new platform release is not possible (available for exports from **<= 3.2.0** releases).
 :::
 
 ![](../img/release_platform_version_check.png)
@@ -36,91 +36,31 @@ After updating to **3.1.0** FLOWX.AI release, importing old processes definition
 
 
 
-### 3.1.0 recommended versions
+### 3.2.0 recommended versions
 
-| FLOWX.AI Platform Version 	| Component name 	                | Recommended version (tested versions) |
-|---------------------------	|---------------------------------| --------------------------------------|
-| 3.1                        	| Keycloak       	                | 18.0.x                               	|
-| 3.1                       	| Kafka          	                | 3.2.0                               	|
-| 3.1                       	| PostgreSQL     	                | 14.3.0                               	|
-| 3.1                        	| MongoDB        	                | 5.0.8                                	|
-| 3.1                        	| Redis          	                | 6.2.6                                	|
-| 3.1                       	| Elasticsearch   	              | 7.17                                 	|
-| 3.1                       	| S3 (Min.IO) / minio-operator    | 2022-05-26T05-48-41Z / 4.5.4          |
-| 3.1                       	| OracleDB       	                | 19.8.0.0.0                           	|
-| 3.1                         | Angular (Web SDK)               | 14.2.2                                |
+| FLOWX.AI Platform Version | Component name               | Recommended version (tested versions) |
+| ------------------------- | ---------------------------- | ------------------------------------- |
+| 3.2                       | Keycloak                     | 18.0.x                                |
+| 3.2                       | Kafka                        | 3.2.0                                 |
+| 3.2                       | PostgreSQL                   | 14.3.0                                |
+| 3.2                       | MongoDB                      | 5.0.8                                 |
+| 3.2                       | Redis                        | 6.2.6                                 |
+| 3.2                       | Elasticsearch                | 7.17                                  |
+| 3.2                       | S3 (Min.IO) / minio-operator | 2022-05-26T05-48-41Z / 4.5.4          |
+| 3.2                       | OracleDB                     | 19.8.0.0.0                            |
+| 3.2                       | Angular (Web SDK)            | 15.2.0                                |
 
 
 ## Additional configuration
 
-### Process engine - scheduler
-
-Configuration for scheduler to be added on [**Process engine setup**](../../docs/platform-setup-guides/flowx-engine-setup-guide).
-
-```yaml
-scheduler:
-  processCleanup:
-    enabled: false
-    cronExpression: 0 */5 0-5 * * ? #every day during the night, every 5 minutes, at the start of the minute.
-    batchSize: 1000
-  masterElection:
-    cronExpression: 30 */3 * * * ? #master election every 3 minutes
-  websocket:
-    namespace:
-      cronExpression: 0 * * * * *
-      expireMinutes: 30
-```
-
-### Undo/redo
-
-Configuration for undo/redo actions in UI Designer to be added on [**Admin setup**](../../docs/flowx-designer/designer-setup-guide).
-
-```yaml
-flowx:
-  undo-redo:
-    ttl: 86400 # in seconds
-    cleanup:
-      cronExpression: 0 0 2 ? * * # every day at 2am
-      days: 2
-```
-
-### Advancing controller with Oracle
-
-To use advancing controller with OracleDBs, the following .yml files must be edited, configuring the right environment variables:
-
-#### Advancing controller
-
-:::caution
-If the parallel advancing configuration already exists, resetting the 'advancing' database must be done by executing the SQL command `DROP DATABASE advancing;`. Once the database has been dropped, the Liquibase script will automatically re-enable it.
-:::
-
-`SPRING_JPA_DATABASE`- value: `oracle`
-
-`SPRING_JPA_DATABASE_PLATFORM`
-
-`SPRING_DATASOUCE_URL`
-
-`SPRING_DATASOURCE_DRIVERCLASSNAME`
-
-[Advancing controller setup](../../docs/platform-setup-guides/flowx-engine-setup-guide/advancing-controller-setup-guide)
-
-#### Process engine 
-
-`SPRING_JPA_DATABASE`- value: `oracle`
-
-`SPRING_JPA_DATABASE_PLATFORM`
-
-`SPRING_DATASOUCE_URL`- environment variable used to configure a data source URL for a Spring application, it typically contains the JDBC driver name, the server name, port number, and database name
-
-`SPRING_DATASOURCE_DRIVERCLASSNAME` - environment variable used to set the class name of the JDBC driver that the Spring datasource will use to connect to the database
-
-`ADVANCING_DATASOURCE_DRIVERCLASSNAME`
-
-`ADVANCING_DATASOURCE_URL`
-
-`ADVANCING_DATASOURCE_JDBC_URL`
-
-[Process engine setup](../../docs/platform-setup-guides/flowx-engine-setup-guide)
+### UI Designer analytics
 
 
 
+### CMS audit log
+
+New environment variable that needs to be configured on CMS microservice:
+
+* KAFKA_TOPIC_AUDIT_OUT: `ai.flowx.audit.log.v1.{{ .Values.flowx.environment }}`
+
+[CMS setup guide](../../docs/platform-setup-guides/cms-setup-guide)

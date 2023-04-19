@@ -36,17 +36,17 @@ If you are using an older version of Angular (for example, v13.0), please consul
 Use the following command to install the **renderer** library and its required dependencies:
 
 ```bash
-npm install 
-  flowx/ui-sdk@3.0 
-  @flowxai/ui-toolkit@3.0 
-  @flowx/ui-theme@3.0 
-  paperflow-web-components 
-  vanillajs-datepicker@^1.2.0 
-  moment@^2.27.0 
-  @angular/flex-layout@14.0.0-beta.40 
-  @angular/material@^14.2.2 
-  @angular/material-moment-adapter@^14.2.2 
-  @angular/cdk@^14.2.2
+npm install flowx/ui-sdk@3.0 
+@flowxai/ui-toolkit@3.0 
+@flowx/ui-theme@3.0 
+paperflow-web-components 
+vanillajs-datepicker@^1.2.0 
+moment@^2.27.0 
+@angular/flex-layout@14.0.0-beta.40 
+@angular/material@^14.2.2 
+@angular/material-moment-adapter@^14.2.2 
+@angular/cdk@^14.2.2 
+ng2-pdfjs-viewer@13.2.2
 ```
 
 The above command installs several packages to use in your web development project:
@@ -61,6 +61,7 @@ The above command installs several packages to use in your web development proje
 * @angular/material: version 14.2.2 or a compatible version of the Angular Material library
 * @angular/material-moment-adapter: version 14.2.2 or a compatible version of the Angular Material Moment adapter library
 * @angular/cdk: version 14.2.2 or a compatible version of the Angular CDK library
+* ng2-pdfjs-viewer: version 13.2.2 or a compatible version
 
 
 ## Using the library
