@@ -67,6 +67,13 @@ const config = {
       src: 'https://app.happyreact.com/widget/reactions.js',
       defer: true,
     },
+
+    {
+      src: 'https://cdn.jsdelivr.net/gh/RelevanceAI/ask-relevance-widget/dist/bundle.min.js',
+      config:'eyJ1cmwiOiJodHRwczovL2FwaS1kN2I2MmIuc3RhY2sudHJ5cmVsZXZhbmNlLmNvbS9sYXRlc3QvZGF0YXNldHMvZmxvd3gtZG9jcy9zaW1wbGVfc2VhcmNoIiwiZmllbGQiOiJmaWxlX2NvbnRlbnQiLCJ2ZWN0b3JfZmllbGQiOiJmaWxlX2NvbnRlbnRfdmVjdG9yXyIsImF1dGhfaGVhZGVyIjoiODM0MmIxZjM0NGNjLTQwOWQtODc0OC0wNDQyY2NhNGYwNjU6TXpkbE56TXdNak10Wm1FelpDMDBOMlpqTFdFMlpERXRNVEJoT0dJeE0yRTVaREk0IiwicmVmZXJlbmNlX3RpdGxlX2ZpZWxkIjoidGl0bGUiLCJyZWZlcmVuY2VfdXJsX2ZpZWxkIjoidXJsIiwic2hvd0RvY3VtZW50cyI6dHJ1ZX0', 
+      defer: true,
+    }
+
   ],
 
   themeConfig:
@@ -127,7 +134,7 @@ const config = {
 
           {
             type: 'search',
-            position: 'left',
+            position: 'right',
           }
         ],
       },
@@ -217,23 +224,7 @@ const config = {
   
     plugins: [
       require.resolve('docusaurus-plugin-image-zoom'),
-      [
-        require.resolve("@easyops-cn/docusaurus-search-local"),
-        {
-          indexPages: true,
-          indexDocs: true,
-          docsRouteBasePath: "/",
-          docsDir: "versioned_docs",
-          hashed: true,
-          language: ["en"],
-          highlightSearchTermsOnTargetPage: false,
-          searchResultContextMaxLength: 35,
-          searchResultLimits: 10,
-          searchBarShortcut: true,
-          searchBarShortcutHint: true,
-        }
-      ],
-
+    
       [
         "@docusaurus/plugin-content-docs",
         {
@@ -265,7 +256,6 @@ const config = {
       ],
 
     ],
-
   
 };
 
