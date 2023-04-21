@@ -16,7 +16,7 @@ const config = {
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon2.ico',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -26,6 +26,7 @@ const config = {
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
+  
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -66,11 +67,6 @@ const config = {
       src: 'https://app.happyreact.com/widget/reactions.js',
       defer: true,
     },
-  {
-    src: 'https://cdn.jsdelivr.net/gh/RelevanceAI/ask-relevance-widget/dist/bundle.min.js',
-    config:'eyJ1cmwiOiJodHRwczovL2FwaS1kN2I2MmIuc3RhY2sudHJ5cmVsZXZhbmNlLmNvbS9sYXRlc3QvZGF0YXNldHMvZmxvd3gtYWktdGVzdC9zaW1wbGVfc2VhcmNoIiwiZmllbGQiOiJmaWxlX2NvbnRlbnQiLCJ2ZWN0b3JfZmllbGQiOiJmaWxlX2NvbnRlbnRfdmVjdG9yXyIsImF1dGhfaGVhZGVyIjoiODM0MmIxZjM0NGNjLTQwOWQtODc0OC0wNDQyY2NhNGYwNjU6WldZek5qYzBOVEV0WVRrMFpDMDBNRFZpTFdFMVpETXRaV1l5TkdNeE5qUmpNR1EyIiwicmVmZXJlbmNlX3RpdGxlX2ZpZWxkIjoidGl0bGUiLCJyZWZlcmVuY2VfdXJsX2ZpZWxkIjoiZmlsZW5hbWUiLCJzaG93RG9jdW1lbnRzIjp0cnVlfQ==', 
-    defer: true,
-  }
   ],
 
   themeConfig:
@@ -100,7 +96,7 @@ const config = {
         title: 'FLOWX.AI DocPortal',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'img/logo2.svg',
           width: 40,
         },
         items: [
@@ -131,7 +127,7 @@ const config = {
 
           {
             type: 'search',
-            position: 'right',
+            position: 'left',
           }
         ],
       },
@@ -195,9 +191,8 @@ const config = {
           },
         ],
         logo: {
-          height: 100,
           alt: 'FLOWX.AI logo',
-          src: '/img/FlowX_logo_footer.svg',
+          src: '/img/logo_footer2.svg',
           href: 'https://flowx.ai',
         },
         copyright: `Copyright © FLOWX.AI ${new Date().getFullYear()}`,
@@ -223,6 +218,23 @@ const config = {
     plugins: [
       require.resolve('docusaurus-plugin-image-zoom'),
       [
+        require.resolve("@easyops-cn/docusaurus-search-local"),
+        {
+          indexPages: true,
+          indexDocs: true,
+          docsRouteBasePath: "/",
+          docsDir: "versioned_docs",
+          hashed: true,
+          language: ["en"],
+          highlightSearchTermsOnTargetPage: false,
+          searchResultContextMaxLength: 35,
+          searchResultLimits: 10,
+          searchBarShortcut: true,
+          searchBarShortcutHint: true,
+        }
+      ],
+
+      [
         "@docusaurus/plugin-content-docs",
         {
           id: "release-notes",
@@ -241,6 +253,17 @@ const config = {
           anonymizeIP: true,
         },
       ],
+
+      [
+        '@docusaurus/plugin-sitemap',
+        {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
+        },
+      ],
+
     ],
 
   
