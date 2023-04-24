@@ -14,8 +14,8 @@ After updating to **3.2.0** FLOWX.AI release, importing old processes definition
 
 | :ballot_box_with_check:        | 3.2.0      | 3.1.0  | 3.0.0  | 2.14.0   | 2.13.0  | 2.12.0  | 2.11.0  | 2.10.0  | 2.9.0   | 2.8.1   | 2.8.0   | 2.7.0   | 2.6.0   | 2.5.0   | 2.4.0   | 2.3.0   | 2.2.0   | 2.1.0     |
 | ------------------------------ | ---------- | ------ | ------ | -------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | --------- |
-| **Process engine**             | **2.2.0**  | 2.1.2  | 2.0.7  | 0.4.104  | 0.4.95  | 0.4.90  | 0.4.83  | 0.4.60  | 0.4.49  | 0.4.44  | 0.4.42  | 0.4.42  | 0.4.36  | 0.4.29  | 0.4.22  | 0.4.21  | 0.4.18  | 0.4.13    |
-| **Admin**                      | **2.2.4**  | 2.1.3  | 2.0.8  | 0.3.119  | 0.3.103 | 0.3.92  | 0.3.81  | 0.3.60  | 0.3.55  | 0.3.47  | 0.3.43  | 0.3.40  | 0.3.36  | 0.3.34  | 0.3.29  | 0.3.23  | 0.3.21  | 0.3.13    |
+| **Process engine**             | **2.2.1**  | 2.1.2  | 2.0.7  | 0.4.104  | 0.4.95  | 0.4.90  | 0.4.83  | 0.4.60  | 0.4.49  | 0.4.44  | 0.4.42  | 0.4.42  | 0.4.36  | 0.4.29  | 0.4.22  | 0.4.21  | 0.4.18  | 0.4.13    |
+| **Admin**                      | **2.2.2**  | 2.1.3  | 2.0.8  | 0.3.119  | 0.3.103 | 0.3.92  | 0.3.81  | 0.3.60  | 0.3.55  | 0.3.47  | 0.3.43  | 0.3.40  | 0.3.36  | 0.3.34  | 0.3.29  | 0.3.23  | 0.3.21  | 0.3.13    |
 | **Designer**                   | **3.21.0** | 3.15.1 | 3.2.1  | 2.78.4-1 | 2.63.6  | 2.60.7  | 2.48.9  | 2.39.2  | 2.33.0  | 2.28.1  | 2.24.2  | 2.23.0  | 2.19.2  | 2.18.2  | 2.17.4  | 2.15.2  | 2.14.4  | 2.11.2    |
 | **@flowx/ui-sdk**              | **3.21.0** | 3.15.1 | 3.2.1  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
 | **@flowx/ui-toolkit**          | **3.21.0** | 3.15.1 | 3.2.1  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
@@ -72,14 +72,14 @@ New environment variable that is used by Designer web app must be configured:
 
 New environment variable that needs to be configured on CMS microservice:
 
-* `KAFKA_TOPIC_AUDIT_OUT` - environment variable that contains the tracking ID used to track UI Designer
+* `KAFKA_TOPIC_AUDIT_OUT`- the identifier for the Kafka topic used to receive audit logs
 
 [CMS setup guide](../../docs/platform-setup-guides/cms-setup-guide)
 
 
 ### Notifications plugin
 
-New environment variables added to configure the error handler on Notifications plugin - Kafka consumer (default values above):
+New environment variables added to configure the error handler on Notifications plugin - Kafka consumer (default values below):
 
 ```
 KAFKA_CONSUMER_ERROR_HANDLING_ENABLED: FALSE
