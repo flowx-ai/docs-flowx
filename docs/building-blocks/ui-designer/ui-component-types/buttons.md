@@ -6,7 +6,7 @@ sidebar_position: 3
 
 There are two types of buttons available, each with a different purpose. These types are:
 
-* [Basic button](#button)
+* [Basic button](#basic-button)
 * [File upload button](#file-upload)
 
 ![](../img/basic_buttons.png#center)
@@ -59,7 +59,6 @@ This section enables you to select the type of button using the styling tab in t
 :::info
 For more information on valid CSS properties, click [here](../ui-designer.md#styling)
 :::
-
 
 ## File upload 
 

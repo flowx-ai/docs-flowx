@@ -3,6 +3,7 @@ import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import styles from './styles.module.css'
 
 
+
 const VotedYes = () => {
     return <span>Thanks for your feedback.</span>;
   };

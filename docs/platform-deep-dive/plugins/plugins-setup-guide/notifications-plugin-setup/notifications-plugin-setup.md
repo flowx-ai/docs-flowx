@@ -199,3 +199,16 @@ The following environment variables could be set in order to control log levels:
 <!--
 `LOGGING_LEVEL_FCM_CLIENT` - Google API client logs, related to sending push notifications using Firebase
 -->
+
+### Error handling
+
+`KAFKA_CONSUMER_ERROR_HANDLING_ENABLED`- default value: `FALSE`→ allows control on Kafka consumer applications to handle errors and failures during message consumption - When this variable is set to `true`, it enables the consumer application to handle any errors that occur during message consumption
+
+`KAFKA_CONSUMER_ERROR_HANDLING_RETRIES`- default value: `0`→ when `KAFKA_CONSUMER_ERROR_HANDLING_ENABLED` is set to `true`, this environment variable specifies the maximum number of retries that the consumer application should attempt before giving up on processing a message; for example, if `KAFKA_CONSUMER_ERROR_HANDLING_RETRIES` is set to `5`, the consumer application will attempt to process a message up to 5 times before giving up
+
+`KAFKA_CONSUMER_ERROR_HANDLING_RETRY_INTERVAL`- default value: `1000`→ when `KAFKA_CONSUMER_ERROR_HANDLING_ENABLED` is set to true and retries are enabled with `KAFKA_CONSUMER_ERROR_HANDLING_RETRIES`, this environment variable specifies the amount of time that the consumer application should wait before attempting to retry processing a message
+
+:::info
+For example, if KAFKA_CONSUMER_ERROR_HANDLING_RETRY_INTERVAL is set to 5 seconds, the consumer application will wait 5 seconds before attempting to retry processing a failed message. This interval is applied to all retry attempts, so if KAFKA_CONSUMER_ERROR_HANDLING_RETRIES is set to 5 and the retry interval is 5 seconds, the consumer application will make up to 5 attempts, waiting 5 seconds between each attempt.
+:::
+

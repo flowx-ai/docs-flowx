@@ -12,6 +12,10 @@ Follow the Release Notes space to find all the information on the features and i
 
 <summary>v.3.x.x</summary>
 
+Q2 - April 2023
+
+* [v3.2.0](/release-notes/v3.2.0-april-2023)
+
 Q1 - March 2023
 
 * [v3.1.0](/release-notes/v3.1.0-march-2023)
