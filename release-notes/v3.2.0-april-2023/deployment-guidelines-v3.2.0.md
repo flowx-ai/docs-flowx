@@ -87,6 +87,10 @@ KAFKA_CONSUMER_ERROR_HANDLING_RETRIES: 0
 KAFKA_CONSUMER_ERROR_HANDLING_RETRY_INTERVAL: 1000
 ```
 
+More information about the new environment variables:
+
+[Notifications plugin setup guide](../../docs/platform-deep-dive/plugins/plugins-setup-guide/notifications-plugin-setup#error-handling)
+
 ### Client and environment
 
 Only users with the following admin role can set/edit the new client and environment feature:
