@@ -33,13 +33,14 @@ If you are using an older version of Angular (for example, v13.0), please consul
 
 :::
 
+
 Use the following command to install the **renderer** library and its required dependencies:
 
 ```bash
 npm install 
-  flowx/ui-sdk@3.0 
-  @flowxai/ui-toolkit@3.0 
-  @flowx/ui-theme@3.0 
+  flowx/ui-sdk@3.2.1
+  @flowxai/ui-toolkit@3.2.1
+  @flowx/ui-theme@3.2.1
   paperflow-web-components 
   vanillajs-datepicker@^1.2.0 
   moment@^2.27.0 
@@ -48,6 +49,14 @@ npm install
   @angular/material-moment-adapter@^14.2.2 
   @angular/cdk@^14.2.2
 ```
+
+::::caution
+Starting with **FLOWX.AI 3.0** release `flowx-process-renderer` is transformed to `@flowx\ui-sdk.`
+
+:::info
+Also, starting with`paperflow-web-components` lib is no longer maintained. The new components are moved into `@flowxai/ui-toolkit@3.0`.
+:::
+::::
 
 The above command installs several packages to use in your web development project:
 
