@@ -4,43 +4,62 @@ The OCR plugin is a docker image that can be deployed using the following infras
 
 ## Infrastructure Prerequisites:
 
-### S3 deployment
+* S3 bucket or alternative (eg. minio)
+* Kafka cluster
 
-To deploy the OCR plugin, you will need to configure S3 with the following:
+  **Note: Starting with ocr-plugin 1.X it no longer requires rabbitmq**
 
-* A basic helm values.yaml file
 
-You can override the following environment variables and their default values:
+## Deployment/Configuration
 
-* `STORAGE_S3_ACCESS_KEY` - default value: `minio.access-key`
-* `STORAGE_S3_SECRET_KEY` - default value: `minio.secret-key`
+To deploy the OCR plugin, you will need to deploy `ocr-plugin` helm chart with custom values file.
 
-## Configuration
+Most important sections are these, but more can be extracted from helm chart. 
+```
+image:
+  repository: <repository>/ocr-plugin
 
-Configure the plugin in a pod with one container, and provide the following configurations:
+applicationSecrets: {}
 
-* Kafka configuration
-* S3 Configuration
+replicaCount: 2
+
+resources: {}
+  
+env: []
+```
+
+### Credentials
+S3 bucket:
+```
+applicationSecrets:
+  enable: true
+  envSecretKeyRef:
+    STORAGE_S3_ACCESS_KEY: access-key
+    STORAGE_S3_SECRET_KEY: secret-key
+  existingSecret: true
+  secretName: ocr-plugin-application-config
+```
 
 ### Kafka configuration
+You can override the following environment variables:
 
-You can override the following environment variables and their default values:
-
-* `KAFKA_ADDRESS`- default value: `[kafka-server1:9092]`
-* `KAFKA_CONSUME_SCHEDULE` - default value: `"30"`
-* `KAFKA_INPUT_TOPIC` - default value: `flowx-ocr-receive-{{environment}}`
-* `KAFKA_OCR_CONSUMER_GROUPID` - default value: `ocr_group`
-* `KAFKA_OUTPUT_TOPIC` - default value: `ai.flowx.updates.{{environment}}.ocr.send`
+* `KAFKA_ADDRESS`- eg: `['kafka-server1:9092']`
+* `ENABLE_KAFKA_SASL` - default False
+* `KAFKA_CONSUME_SCHEDULE` - default: `"30"`
+* `KAFKA_OCR_CONSUMER_GROUPID` - default: `ocr_group`
+* `KAFKA_INPUT_TOPIC` - default empty
+* `KAFKA_OUTPUT_TOPIC` - default empty
 
 ### S3 configuration
 
-You can override the following environment variables and their default values:
+You can override the following environment variables:
 
-* `STORAGE_S3_HOST` - default value: `minio:9000`
-* `STORAGE_S3_LOCATION` - default value: `zone`
-* `STORAGE_S3_OCR_SCANS_BUCKET` - default value: `pdf-scans`
-* `STORAGE_S3_OCR_SIGNATURE_BUCKET` - default value: `extracted-signatures`
-* `STORAGE_S3_OCR_SIGNATURE_FILENAME` - default value: `extracted_signature_{}.png`
+* `STORAGE_S3_HOST` - eg: `minio:9000`,`https://s3.eu-west-1.amazonaws.com/`
+* `STORAGE_S3_SECURE_CONNECTION`: default False
+* `STORAGE_S3_LOCATION` - eg. `eu-west-1`
+* `STORAGE_S3_OCR_SCANS_BUCKET` - default empty, eg: `pdf-scans`
+* `STORAGE_S3_OCR_SIGNATURE_BUCKET` - default empty, eg: `extracted-signatures`
+* `STORAGE_S3_OCR_SIGNATURE_FILENAME` - default empty, eg `extracted_signature_{}.png`
 
 :::caution
 When configuring the OCR plugin, make sure to use the correct outgoing topic names that match [**the pattern expected by the Engine**](../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#configuring-kafka), which listens for messages on topics with specific names.
