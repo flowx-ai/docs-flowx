@@ -26,7 +26,7 @@ After updating to **3.2.0** FLOWX.AI release, importing old processes definition
 | **Scheduler Core**             | 1.0.4      | 1.0.4  | 1.0.1  | 0.0.34   | 0.0.34  | 0.0.34  | 0.0.33  | 0.0.28  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.24  | 0.0.24  | 0.0.23  | 0.0.23  | 0.0.23    |
 | **Notification Plugin**        | **2.0.5**  | 2.0.3  | 2.0.1  | 1.0.206  | 1.0.206 | 1.0.206 | 1.0.205 | 1.0.200 | 1.0.198 | 1.0.198 | 1.0.197 | 1.0.194 | 1.0.194 | 1.0.191 | 1.0.191 | 1.0.190 | 1.0.190 | 1.0.186-1 |
 | **Document Plugin**            | 2.0.3      | 2.0.3  | 2.0.2  | 1.0.53   | 1.0.53  | 1.0.53  | 1.0.52  | 1.0.47  | 1.0.42  | 1.0.41  | 1.0.38  | 1.0.37  | 1.0.37  | 1.0.35  | 1.0.35  | 1.0.31  | 1.0.31  | 1.0.30    |
-| **OCR Plugin**                 | 0.1.33     | 0.1.33 | 0.1.33 | 0.1.33   | 0.1.33  | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.0.109 | 0.0.109 | 0.0.109   |
+| **OCR Plugin**                 | **1.0.2**  | 0.1.33 | 0.1.33 | 0.1.33   | 0.1.33  | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.0.109 | 0.0.109 | 0.0.109   |
 | **License Core**               | 1.0.2      | 1.0.2  | 1.0.1  | 0.1.28   | 0.1.28  | 0.1.28  | 0.1.27  | 0.1.23  | 0.1.19  | 0.1.18  | 0.1.18  | 0.1.18  | 0.1.18  | 0.1.15  | 0.1.15  | 0.1.13  | 0.1.13  | 0.1.12    |
 | **Customer Management Plugin** | 0.2.3      | 0.2.3  | 0.2.1  | 0.1.28   | 0.1.28  | 0.1.28  | 0.1.27  | 0.1.23  | 0.1.22  | 0.1.22  | 0.1.22  | 0.1.22  | 0.1.22  | 0.1.20  | 0.1.20  | 0.1.18  | 0.1.18  | 0.1.18    |
 | **Task Management Plugin**     | 1.0.4      | 1.0.4  | 1.0.1  | 0.0.42   | 0.0.42  | 0.0.40  | 0.0.37  | 0.0.29  | 0.0.28  | 0.0.28  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.22  | 0.0.22  | 0.0.21  | 0.0.21  | 0.0.16    |
@@ -72,7 +72,7 @@ New environment variable that is used by Designer web app must be configured:
 
 New environment variable that needs to be configured on CMS microservice:
 
-* `KAFKA_TOPIC_AUDIT_OUT`- the identifier for the Kafka topic used to receive audit logs
+* `KAFKA_TOPIC_AUDIT_OUT` - the identifier for the Kafka topic used to receive audit logs
 
 [CMS setup guide](../../docs/platform-setup-guides/cms-setup-guide)
 
@@ -96,3 +96,28 @@ More information about the new environment variables:
 Only users with the following admin role can set/edit the new client and environment feature:
 
 * `ROLE_ADMIN_MANAGE_PLATFORM_ADMIN` 
+
+### Ocr plugin
+
+:::info
+Replaced `MINIO_` prefix with `STORAGE_S3_` for storage related environment variables.
+:::
+
+New environment variables:
+
+* `STORAGE_S3_ACCESS_KEY`
+* `STORAGE_S3_SECRET_KEY`
+* `STORAGE_S3_HOST`
+* `STORAGE_S3_LOCATION` 
+* `STORAGE_S3_OCR_SCANS_BUCKET` 
+* `STORAGE_S3_OCR_SIGNATURE_BUCKET` 
+* `STORAGE_S3_OCR_SIGNATURE_FILENAME` 
+
+:::caution IMPORTANT
+The following environment from previous releases must be removedin order to use OCR plugin: `CELERY_BROKER_URL`.
+:::
+
+More information available in the below section:
+
+[OCR setup guide](../../docs/platform-deep-dive/plugins/plugins-setup-guide/ocr-plugin-setup)
+
