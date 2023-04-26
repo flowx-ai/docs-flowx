@@ -62,12 +62,6 @@ With the release of **FLOWX.AI 3.0**, there have been some changes that you need
 
 ## Additional configuration
 
-### UI Designer analytics
-
-New environment variable that is used by Designer web app must be configured:
-
-* `GA_TRACKING_ID` - environment variable that contains the tracking ID used by Google Analytics to track UI Designer custom events and user behavior
-
 ### CMS audit log
 
 New environment variable that needs to be configured on CMS microservice:
@@ -97,7 +91,7 @@ Only users with the following admin role can set/edit the new client and environ
 
 * `ROLE_ADMIN_MANAGE_PLATFORM_ADMIN` 
 
-### Ocr plugin
+### OCR plugin
 
 :::info
 Replaced `MINIO_` prefix with `STORAGE_S3_` for storage related environment variables.
@@ -114,7 +108,7 @@ New environment variables:
 * `STORAGE_S3_OCR_SIGNATURE_FILENAME` 
 
 :::caution IMPORTANT
-The following environment from previous releases must be removed in order to use OCR plugin: `CELERY_BROKER_URL`.
+The following environment from previous releases must be removed in§§ order to use OCR plugin: `CELERY_BROKER_URL`.
 :::
 
 More information available in the below section:
