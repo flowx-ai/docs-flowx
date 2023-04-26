@@ -303,7 +303,8 @@ interface Color {
 
 For more information on how to use the web renderer, check the following section:
 
-[Using the Angular Renderer - Theming](/docs/platform-deep-dive/core-components/renderer-sdks/angular-renderer#theming)
+[Using the Angular Renderer - Theming](../../docs/3.0.0/platform-deep-dive/core-components/renderer-sdks/angular-renderer)
+
 
 ### Task management plugin
 

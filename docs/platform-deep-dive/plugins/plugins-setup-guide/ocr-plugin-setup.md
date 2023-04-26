@@ -1,76 +1,72 @@
 # OCR plugin setup
 
+The OCR plugin is a docker image that can be deployed using the following infrastructure prerequisites:
+
 ## Infrastructure Prerequisites:
 
-The OCR plugin is available as two docker images, so we need previously to configure:
-
-### RabbitMQ
-
-This infrastructure item is required internally
-
-basic RabbitMQ helm values.yaml
-
-```jsx
-  ocr-queue:
-    image:
-      registry: docker.io
-      repository: bitnami/rabbitmq
-      tag: 3.7.17-debian-9-r37
-    persistence:
-      enabled: true
-      path: /opt/bitnami/rabbitmq/var/lib/rabbitmq
-      size: 1Gi
-    rabbitmq:
-      clustering:
-        address_type: hostname
-        k8s_domain: cluster.local
-      existingPasswordSecret: svc-ocr-application-config
-      username: users
-    service:
-      distPort: 25672
-      managerPort: 15672
-      port: 5672
-      tlsPort: 5671
-      type: ClusterIP
-```
-
-### [Min.io](http://min.io/) deployment
-
-A basic configuration for minio:
-
-* A basic helm values.yaml
-
-  ```jsx
-  MINIO_ACCESS_KEY: minio.access-key
-  MINIO_SECRET_KEY: minio.secret-key
-  ```
-
-## Configuration
-
-### OCR
-
-Configuration for the two components should be grouped in a pod with two containers and configurations should be provided for:
-
-* Internal queue system
-* Kafka configuration
-* Min.io Configuration
-
-```jsx
-CELERY_BROKER_URL: amqp://users:users_328947@jx-ocr-queue:5672
-
-KAFKA_ADDRESS: flowxdev-default-noauth-kafka-bootstrap.kafka.svc:9092
-KAFKA_CONSUME_SCHEDULE: "30"
-KAFKA_INPUT_TOPIC: paperflow-ocr-receive
-KAFKA_OCR_CONSUMER_GROUPID: ocr_group
-KAFKA_OUTPUT_TOPIC: paperflow-ocr-send
-
-MINIO_HOST: minio-service:9000
-MINIO_LOCATION: zone
-MINIO_OCR_SCANS_BUCKET: pdf-scans
-MINIO_OCR_SIGNATURE_BUCKET: extracted-signatures
-MINIO_OCR_SIGNATURE_FILENAME: extracted_signature_{}.png
-```
+* S3 bucket or alternative (eg. minio)
+* Kafka cluster
 
 :::caution
-The Engine is listening for messages on topics with names of a certain pattern, make sure to use correct outgoing topic names when configuring the notifications plugin.
+Starting with `ocr-plugin 1.X` it no longer requires RabbitMQ.
 :::
+
+
+## Deployment/Configuration
+
+To deploy the OCR plugin, you will need to deploy `ocr-plugin` helm chart with custom values file.
+
+Most important sections are these, but more can be extracted from helm chart. 
+
+```
+image:
+  repository: <repository>/ocr-plugin
+
+applicationSecrets: {}
+
+replicaCount: 2
+
+resources: {}
+  
+env: []
+```
+
+### Credentials
+
+S3 bucket:
+```
+applicationSecrets:
+  enable: true
+  envSecretKeyRef:
+    STORAGE_S3_ACCESS_KEY: access-key
+    STORAGE_S3_SECRET_KEY: secret-key
+  existingSecret: true
+  secretName: ocr-plugin-application-config
+```
+
+### Kafka configuration
+You can override the following environment variables:
+
+* `KAFKA_ADDRESS`- for example: `['kafka-server1:9092']`
+* `ENABLE_KAFKA_SASL` - default `False`
+* `KAFKA_CONSUME_SCHEDULE` - default: `"30"`
+* `KAFKA_OCR_CONSUMER_GROUPID` - default: `ocr_group`
+* `KAFKA_INPUT_TOPIC` - default empty
+* `KAFKA_OUTPUT_TOPIC` - default empty
+
+:::caution
+When configuring the OCR plugin, make sure to use the correct outgoing topic names that match [**the pattern expected by the Engine**](../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#configuring-kafka), which listens for messages on topics with specific names.
+:::
+
+### S3 configuration
+
+You can override the following environment variables:
+
+* `STORAGE_S3_HOST` - for example: `minio:9000`,`https://s3.eu-west-1.amazonaws.com/`
+* `STORAGE_S3_SECURE_CONNECTION`: default False
+* `STORAGE_S3_LOCATION` - for example:`eu-west-1`
+* `STORAGE_S3_OCR_SCANS_BUCKET` - default empty, example: `pdf-scans`
+* `STORAGE_S3_OCR_SIGNATURE_BUCKET` - default empty, example: `extracted-signatures`
+* `STORAGE_S3_OCR_SIGNATURE_FILENAME` - default empty, example `extracted_signature_{}.png`
+
+

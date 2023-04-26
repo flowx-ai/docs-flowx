@@ -12,11 +12,16 @@ After updating to **3.1.0** FLOWX.AI release, importing old processes definition
 
 ## Component versions
 
-:::danger IMPORTANT
+::::danger IMPORTANT
 With the release of **FLOWX.AI 3.0**, there have been some changes that you need to be aware when upgrading to the latest version:
 * The `flowx-process-renderer` has been migrated to `@flowx\ui-sdk`.
 * As of **FLOWX.AI 3.0**, the `paperflow-web-components` library is no longer being maintained. Instead, the new components can be found in `@flowxai/ui-toolkit@3.0`.
+
+:::info
+For more information, check [**Using the Angular Renderer**](../../docs/3.1.0/platform-deep-dive/core-components/renderer-sdks/angular-renderer) section.
 :::
+
+::::
 
 | :ballot_box_with_check:        | 3.1.0      | 3.0.0  | 2.14.0   | 2.13.0  | 2.12.0  | 2.11.0  | 2.10.0  | 2.9.0   | 2.8.1   | 2.8.0   | 2.7.0   | 2.6.0   | 2.5.0   | 2.4.0   | 2.3.0   | 2.2.0   | 2.1.0     |
 | ------------------------------ | ---------- | ------ | -------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | --------- |
@@ -101,7 +106,7 @@ To use advancing controller with OracleDBs, the following .yml files must be edi
 If the parallel advancing configuration already exists, resetting the 'advancing' database must be done by executing the SQL command `DROP DATABASE advancing;`. Once the database has been dropped, the Liquibase script will automatically re-enable it.
 :::
 
-`SPRING_JPA_DATABASE`- value: `oracle`
+`SPRING_JPA_DATABASE` - value: `oracle`
 
 `SPRING_JPA_DATABASE_PLATFORM`
 
@@ -113,11 +118,11 @@ If the parallel advancing configuration already exists, resetting the 'advancing
 
 #### Process engine 
 
-`SPRING_JPA_DATABASE`- value: `oracle`
+`SPRING_JPA_DATABASE` - value: `oracle`
 
 `SPRING_JPA_DATABASE_PLATFORM`
 
-`SPRING_DATASOUCE_URL`- environment variable used to configure a data source URL for a Spring application, it typically contains the JDBC driver name, the server name, port number, and database name
+`SPRING_DATASOUCE_URL` - environment variable used to configure a data source URL for a Spring application, it typically contains the JDBC driver name, the server name, port number, and database name
 
 `SPRING_DATASOURCE_DRIVERCLASSNAME` - environment variable used to set the class name of the JDBC driver that the Spring datasource will use to connect to the database
 
