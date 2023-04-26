@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Content management
 
 The Headless Content Management System is part of the core components of the FLOWX platform. It can be easily added to your custom FLOWX deployment to **enhance the core platform capabilities with functionality specific to taxonomies and managing various content types**.

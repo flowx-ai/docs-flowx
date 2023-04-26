@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # Integration management
 
 Integration management helps you configure integrations between the following components: FLOWX.AI Engine, plugins, or different adapters. The only requirement is that they should connect to [Kafka](../../../../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-kafka-concepts.md) to communicate with the [FLOWX.AI Engine](../../flowx-engine/).
