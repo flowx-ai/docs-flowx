@@ -14,7 +14,7 @@ To build a minimal required Keycloak you have to configure the following items:
 * [service accounts](#adding-service-accounts)
 
 :::info
-Recommended keycloak version: **15.0**
+Recommended keycloak version: **18.0.x**
 :::
 
 [Keycloak documentation](https://www.keycloak.org/documentation)
