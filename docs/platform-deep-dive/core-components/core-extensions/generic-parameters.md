@@ -10,7 +10,15 @@ They are often used to make software more flexible and configurable, and to help
 
 Through the FLOWX Designer, you can create, edit, import, or export these generic parameters. You can also assign the relevant environment(s) to these parameters, ensuring they are applied exactly where they are needed.
 
-## Adding a new generic parameter
+#### Why do you need generic parameters?
+
+Generic parameters can be defined and used in many scenarios. Here are a few examples of useful generic parameters:
+
+| Parameter   | Description                                                                                                                                                                                                            |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| baseURL     | This parameter can be used to define the base URL of an API or website, which can be utilized across multiple environments                                                                                             |
+| redirectURL | This parameter can be used to define the URL to which a user should be redirected after completing a certain action or process. This can save time and effort by avoiding the need to hardcode multiple redirect URLs. |
+| envFilePath | This parameter can be used to define the path of the environment file that stores a document uploaded                                                                                                                  |
 
 To add a new generic parameter, follow the next steps:
 
@@ -32,8 +40,9 @@ To configure a generic parameter you need to fill in the following details:
 * **Add a new value** - to add a new value for the same key but for a different environment
 
 :::info
-For example, if you want to set a `baseURL` generic parameter (the URL will be different, depending on the environment).
+For example, if you want to set a `baseURL` generic parameter (the URL will be different, depending on the environmaent).
 :::
+
 
 
 ![](../../img/generic_params_base.png)
@@ -84,9 +93,9 @@ output.put("envfilePath", additionalData.applicationConfiguration.get("envfilePa
 
 ![](../../img/generic_params_init.png)
 
-This MVEL business rule is assigning a value to a key `envfilePath` (our defined generic parameter) in the "output" map object. The value assigned to the key is retrieved from another object `additionalData.applicationConfiguration` using the "get" method and passing the key `envfilePath` as the parameter.
+This MVEL business rule assigns a value to a key, `envFilePath` (our defined generic parameter) in the "output" map object. The value assigned to the key is retrieved from another object, `additionalData.applicationConfiguration`, using the "get" method and passing the key `envFilePath` as the parameter.
 
-In other words, this rule is extracting the value of the `envfilePath` generic param from the `additionalData.applicationConfiguration` object and assigning it to the `envfilePath` key in the "output" map object.
+In other words, this rule extracts the value of the `envFilePath` generic parameter from the `additionalData.applicationConfiguration` object and assigns it to the `envFilePath` key in the "output" map object.
 
 It is important to note that the `additionalData.applicationConfiguration` object and the "output" map object must be previously defined and accessible in the current context for this rule to work.
 
@@ -97,7 +106,6 @@ On this node we will define the following:
 * an Upload File action with two child actions:
     * a Business Rule
     * a WebSocket send action
-
 
 
 :::info
@@ -155,7 +163,7 @@ if(uploadedDocument.?downloadPath != null && uploadedDocument.?downloadPath != "
 1. The business rule is expecting two inputs: `envfilePath` and `uploadedDocument`.
 2. It is checking if the `downloadPath` property of the `uploadedDocument` input is not null and not an empty string. If it's not, then it proceeds to the next steps.
 3. It concatenates the `envfilePath` and the `downloadPath` to form the full file path (filePath) where the uploaded document is expected to be located.
-4. It updates the `uploadedDocumen`t input by adding a new property called `filePath` with the value of `filePath`.
+4. It updates the `uploadedDocument` input by adding a new property called `filePath` with the value of `filePath`.
 5. It puts the updated `uploadedDocument` object into the output object as a key-value pair, with the key being "uploadedDocument".
 
 In summary, the code seems to be processing an uploaded document by checking its download path, constructing a full file path, and updating the document object with the new file path. Finally, it outputs the updated document object.
@@ -174,3 +182,7 @@ In summary, the code seems to be processing an uploaded document by checking its
 
 
 "filePath": This is a key in the object which holds the value ${uploadedDocument.filePath}. The syntax ${...} suggests that it's a variable placeholder that will be replaced with the actual value at runtime.
+
+After configuring all the nodes and parameters, run the process:
+
+![](../../img/generic_parameters.gif)
