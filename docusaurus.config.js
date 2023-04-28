@@ -70,7 +70,7 @@ const config = {
 
     {
       src: 'https://cdn.jsdelivr.net/gh/RelevanceAI/ask-relevance-widget/dist/bundle.min.js',
-      config:'eyJ1cmwiOiJodHRwczovL2FwaS1kN2I2MmIuc3RhY2sudHJ5cmVsZXZhbmNlLmNvbS9sYXRlc3QvZGF0YXNldHMvZmxvd3gtZG9jcy9zaW1wbGVfc2VhcmNoIiwiZmllbGQiOiJmaWxlX2NvbnRlbnQiLCJ2ZWN0b3JfZmllbGQiOiJmaWxlX2NvbnRlbnRfdmVjdG9yXyIsImF1dGhfaGVhZGVyIjoiODM0MmIxZjM0NGNjLTQwOWQtODc0OC0wNDQyY2NhNGYwNjU6TXpkbE56TXdNak10Wm1FelpDMDBOMlpqTFdFMlpERXRNVEJoT0dJeE0yRTVaREk0IiwicmVmZXJlbmNlX3RpdGxlX2ZpZWxkIjoidGl0bGUiLCJyZWZlcmVuY2VfdXJsX2ZpZWxkIjoidXJsIiwic2hvd0RvY3VtZW50cyI6dHJ1ZX0', 
+      config:'eyJ1cmwiOiJodHRwczovL2FwaS1kN2I2MmIuc3RhY2sudHJ5cmVsZXZhbmNlLmNvbS9sYXRlc3QvZGF0YXNldHMvZmxvd3gtZG9jcy9zaW1wbGVfc2VhcmNoIiwiZmllbGQiOiJmaWxlX2NvbnRlbnQiLCJ2ZWN0b3JfZmllbGQiOiJmaWxlX2NvbnRlbnRfdmVjdG9yXyIsImF1dGhfaGVhZGVyIjoiODM0MmIxZjM0NGNjLTQwOWQtODc0OC0wNDQyY2NhNGYwNjU6Tm1abFl6UXpZbVl0TVRJNU9DMDBZemMwTFdFMll6Z3RaR1prWW1VNE5qYzJOemd6IiwicmVmZXJlbmNlX3RpdGxlX2ZpZWxkIjoidGl0bGUiLCJyZWZlcmVuY2VfdXJsX2ZpZWxkIjoiZmlsZW5hbWUiLCJzaG93RG9jdW1lbnRzIjp0cnVlfQ==', 
       defer: true,
     }
 
@@ -102,13 +102,8 @@ const config = {
       navbar: {
         logo: {
           alt: 'My Site Logo',
-<<<<<<< HEAD
-          src: 'img/logo-big.svg',
-          width: 110
-=======
           src: 'img/logo2.svg',
           width: 40,
->>>>>>> AI_powered_search
         },
         items: [
 
