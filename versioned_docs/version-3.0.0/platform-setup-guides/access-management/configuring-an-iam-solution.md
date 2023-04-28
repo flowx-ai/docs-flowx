@@ -14,7 +14,7 @@ To build a minimal required Keycloak you have to configure the following items:
 * [service accounts](#adding-service-accounts)
 
 :::info
-Recommended keycloak version: **15.0**
+Recommended keycloak version: **18.0.x**
 :::
 
 [Keycloak documentation](https://www.keycloak.org/documentation)
@@ -45,7 +45,7 @@ If you are logged in to the master realm this dropdown menu lists all the realms
 
 ![](../../platform-deep-dive/img/iam2.png)
 
-4. Go to **Realm Settings -> Tokens** and set the following properties:
+4. Go to **Realm Settings → Tokens** and set the following properties:
 
 * **SSO Session idle** - suggested: 30 Minutes
 * **Access Token Lifespan** - suggested: 30 Minutes

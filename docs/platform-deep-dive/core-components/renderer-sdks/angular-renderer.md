@@ -8,59 +8,54 @@ FlowxProcessRenderer is a low code library designed to render UI configured via 
 
 ## Angular project requirements
 
-Your app MUST be created using the NG app from the @angular/cli~14 package. It also MUST use SCSS for styling.
+Your app MUST be created using the NG app from the @angular/cli~15 package. It also MUST use SCSS for styling.
 
 ```
-npm install -g @angular/cli@14.2.2
+npm install -g @angular/cli@15.0
 ng new my-flowx-app
 ```
-
-## Installing the library
 
 :::info
 To install the npm libraries provided by FLOWX you will need to obtain access to the private FLOWX Nexus registry. Please consult with your project DevOps.
 :::
 
 :::caution
-The library uses Angular version **@angular\~14.2.2**, **npm v8.1.2** and **node v16.13.2**.
+The library uses Angular version **@angular\~15**, **npm v8.1.2** and **node v16.13.2**.
 :::
 
-:::info
+:::caution
+If you are using an older version of Angular (for example, v14), please consult the following link for update instructions: 
 
-If you are using an older version of Angular (for example, v13.0), please consult the following link for update instructions: 
-
-[**Update Angular from v13.0 to v14.0**](https://update.angular.io/?l=2&v=13.0-14.0)
-
+[**Update Angular from v14.0 to v15.0**](https://update.angular.io/?v=14.0-15.0)
 :::
+
+## Installing the library
 
 Use the following command to install the **renderer** library and its required dependencies:
 
 ```bash
-npm install 
-  flowx/ui-sdk@3.0 
-  @flowxai/ui-toolkit@3.0 
-  @flowx/ui-theme@3.0 
-  paperflow-web-components 
-  vanillajs-datepicker@^1.2.0 
-  moment@^2.27.0 
-  @angular/flex-layout@14.0.0-beta.40 
-  @angular/material@^14.2.2 
-  @angular/material-moment-adapter@^14.2.2 
-  @angular/cdk@^14.2.2
+npm install @flowx/ui-sdk@3.21.0
+@flowx/ui-toolkit@3.21.0
+@flowx/ui-theme@3.21.0
+paperflow-web-components 
+vanillajs-datepicker@1.3.1 
+moment@^2.27.0 
+@angular/flex-layout@15.0.0-beta.42 
+@angular/material@15.2.0 
+@angular/material-moment-adapter@15.2.0 
+@angular/cdk@15.2.0 
+ng2-pdfjs-viewer@15.0.0
 ```
 
-The above command installs several packages to use in your web development project:
+Also, in order to successfully link the pdf viewer, add the following declaration in the assets property of you project's angular.json:
 
-* flowx/ui-sdk: version 3.0 of the UI SDK from FlowX
-* @flowxai/ui-toolkit: version 3.0 of the UI toolkit from FlowX
-* @flowx/ui-theme: version 3.0 of the UI theme from FlowX
-* paperflow-web-components: web components from Paperflow
-* vanillajs-datepicker: version 1.2.0 or a compatible version of the VanillaJS Datepicker library
-* moment: version 2.27.0 or a compatible version of the Moment.js library
-* @angular/flex-layout: version 14.0.0-beta.40 of Angular Flex Layout library
-* @angular/material: version 14.2.2 or a compatible version of the Angular Material library
-* @angular/material-moment-adapter: version 14.2.2 or a compatible version of the Angular Material Moment adapter library
-* @angular/cdk: version 14.2.2 or a compatible version of the Angular CDK library
+```json
+{
+  "glob": "**/*",
+  "input": "node_modules/ng2-pdfjs-viewer/pdfjs",
+  "output": "/assets/pdfjs"
+}
+```
 
 
 ## Using the library
@@ -251,16 +246,16 @@ The component is the main container of the UI, which will build and render the c
 
 #### Parameters:
 
-| Name             | Description                                                                                                                                                                             | Type    | Mandatory | Default value | Example                                          |
-| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | --------- | ------------- | ------------------------------------------------ |
-| baseApiUrl       | Your base url                                                                                                                                                                           | string  | true      | -             | [https://yourDomain.dev](https://yourdomain.dev) |
-| processApiPath   | Engine API prefix                                                                                                                                                                       | string  | true      | -             | /onboarding                                      |
-| processName      | Identifies a process                                                                                                                                                                    | string  | true      | -             | client\_identification                           |
-| processStartData | Data required to start the process                                                                                                                                                      | json    | true      | -             | { "firstName": "John", "lastName": "Smith"}      |
-| debugLogs        | When set to true this will print WS messages in the console                                                                                                                             | boolean | false     | false         | -                                                |
-| language         | Language used to localize the application.                                                                                                                                              | string  | false     | ro-RO         | -                                                |
-| keepState        | <p>By default all process data is reset when the process renderer component gets destroyed. Setting this to true will keep process data even if the viewport gets destroyed</p><p></p>  | boolean | false     | false         | -                                                |
-| isDraft          | When true allows starting a process in draft state. \*Note that isDraft = true requires that processName be the **id** (number) of the process and NOT the name.                        | boolean | false     | false         | -                                                |
+| Name             | Description                                                                                                                                                                            | Type    | Mandatory | Default value | Example                                          |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | --------- | ------------- | ------------------------------------------------ |
+| baseApiUrl       | Your base url                                                                                                                                                                          | string  | true      | -             | [https://yourDomain.dev](https://yourdomain.dev) |
+| processApiPath   | Engine API prefix                                                                                                                                                                      | string  | true      | -             | /onboarding                                      |
+| processName      | Identifies a process                                                                                                                                                                   | string  | true      | -             | client\_identification                           |
+| processStartData | Data required to start the process                                                                                                                                                     | json    | true      | -             | { "firstName": "John", "lastName": "Smith"}      |
+| debugLogs        | When set to true this will print WS messages in the console                                                                                                                            | boolean | false     | false         | -                                                |
+| language         | Language used to localize the application.                                                                                                                                             | string  | false     | ro-RO         | -                                                |
+| keepState        | <p>By default all process data is reset when the process renderer component gets destroyed. Setting this to true will keep process data even if the viewport gets destroyed</p><p></p> | boolean | false     | false         | -                                                |
+| isDraft          | When true allows starting a process in draft state. \*Note that isDraft = true requires that processName be the **id** (number) of the process and NOT the name.                       | boolean | false     | false         | -                                                |
 
 #### Data and actions
 

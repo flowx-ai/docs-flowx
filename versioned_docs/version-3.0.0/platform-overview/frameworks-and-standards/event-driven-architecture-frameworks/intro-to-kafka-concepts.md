@@ -4,11 +4,11 @@
 
 Apache Kafka is an open-source distributed event streaming platform that can handle a high volume of data and enables you to pass messages from one end-point to another.
 
-Kafka is a unified platform for handling all the real-time data feeds. Kafka supports low latency message delivery and gives a guarantee for fault tolerance in the presence of machine failures. It can handle a large number of diverse consumers. Kafka is very fast, and performs 2 million writes/sec. Kafka persists all data to the disk, which essentially means that all the writes go to the page cache of the OS (RAM). This makes it very efficient to transfer data from a page cache to a network socket.
+Kafka is a unified platform for handling all the real-time data feeds. Kafka supports low latency message delivery and gives a guarantee for fault tolerance in the presence of machine failures. It can handle many diverse consumers. Kafka is very fast, and performs 2 million writes/sec. Kafka persists all data to the disk, which essentially means that all the writes go to the page cache of the OS (RAM). This makes it very efficient to transfer data from a page cache to a network socket.
 
 ### Benefits of using Kafka
 
-* **Reliability** − Kafka is distributed, partitioned, replicated, and fault tolerant
+* **Reliability** − Kafka is distributed, partitioned, replicated, and fault-tolerant
 * **Scalability** − Kafka messaging system scales easily without downtime
 * **Durability** − Kafka uses Distributed commit log which means messages persist on disk as fast as possible
 * **Performance** − Kafka has high throughput for both publishing and subscribing messages. It maintains a stable performance even though many TB of messages are stored.
@@ -23,9 +23,9 @@ Kafka encourages you to see the world as sequences of events, which it models as
 
 Because the world is filled with so many events, Kafka gives us a means to organize them and keep them in order: topics. A topic is an ordered log of events. When an external system writes an event to Kafka, it is appended to the end of a topic.
 
-In FLOWX.AI, Kafka handles all communication between the [FLOWX Engine ](../../../platform-deep-dive/core-components/flowx-engine.md) and external plugins and integrations. It is also used for notifying running process instances when certain events occur.  More information about KAFKA configuration on the section below:
+In FLOWX.AI, Kafka handles all communication between the [FLOWX Engine](../../../platform-deep-dive/core-components/flowx-engine/flowx-engine.md) and external plugins and integrations. It is also used for notifying running process instances when certain events occur.  More information about KAFKA configuration on the section below:
 
-[Flowx engine setup guide](../../../platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide/flowx-engine-setup-guide.md)
+[FLOWX engine setup guide](../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md)
 
 
 ### Producer

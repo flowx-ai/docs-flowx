@@ -4,10 +4,6 @@ sidebar_position: 6
 
 # Supported scripts
 
-# Supported scripts
-
-## Supported scripts
-
 Scripts are used to define and run [actions](actions.md) but also properties inside [nodes](./node/node.md). For now, the following script languages are supported:
 
 * [Python](#python) (Jython)

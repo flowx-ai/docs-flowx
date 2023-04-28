@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Business Rule Action
+# Business Rule action
 
 :::info
 **What is it?**  A business rule is an action type that allows you to configure a script on a BPMN task node. When the process instance token reaches this task, the defined script will be executed.

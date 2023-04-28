@@ -10,7 +10,7 @@ The runtime allows MVEL expressions to be executed either interpretively, or thr
 
 ## Example
 
-```
+```java
 if( input.get("user.credit_score") >= 700 ) { 
     output.setNextNodeName("TASK_SET_CREDIT_CARD_TYPE_PREMIUM"); 
 } else { 

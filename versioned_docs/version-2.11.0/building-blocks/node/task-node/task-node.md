@@ -32,11 +32,11 @@ When encountering a step with `canGoBack` switched to false, all steps found beh
 :::
 
 * [**Swimlane**](../../../platform-deep-dive/user-roles-management/swimlanes.md) - choose a swimlane (if there are multiple swimlanes on the process) to make sure only certain user roles have access only for certain process nodes- if there are no multiple swimlanes, the value is **Default**
-* [**Stage** ](../../../platform-deep-dive/plugins/custom-plugins/task-management/using-stages.md)- assign a stage to the node
+* [**Stage**](../../../platform-deep-dive/plugins/custom-plugins/task-management/using-stages.md) - assign a stage to the node
 
 #### Response Timeout
 
-* **Response timeout** - can be triggered if, for example, a topic that you define and add in the [Data stream topics](./#data-stream-topics) tab does not respect the pattern, the format used for this is [ISO 8601 duration format ](https://www.digi.com/resources/documentation/digidocs/90001437-13/reference/r\_iso\_8601\_duration\_format.htm)(for example, a delay of 30s will be set up like `PT30S`)
+* **Response timeout** - can be triggered if, for example, a topic that you define and add in the [Data stream topics](./#data-stream-topics) tab does not respect the pattern, the format used for this is [ISO 8601 duration format](https://www.digi.com/resources/documentation/digidocs/90001437-13/reference/r\_iso\_8601\_duration\_format.htm)(for example, a delay of 30s will be set up like `PT30S`)
 
 ![](../img/task_node_response_timeout.png)
 
@@ -47,11 +47,12 @@ When encountering a step with `canGoBack` switched to false, all steps found beh
     :::warning
     A naming pattern must be defined on the [process engine configuration](../../../platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide/flowx-engine-setup-guide.md#kafka-configuration) to use the defined topics. It is important to know that all the events that start with a configured pattern will be consumed by the Engine. For example, `KAFKA_TOPIC_PATTERN` is the topic name pattern where the Engine listens for incoming Kafka events.
     :::
-* **Key Name** -  will hold the result received from the external system, if the key already exists in the process values, it will be overwritten&#x20;
+    
+* **Key Name** - will hold the result received from the external system, if the key already exists in the process values, it will be overwritten&#x20;
 
 #### Task Management
 
-* **Update task management** - force [Task Manager Plugin ](../../../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md)to update information about this process after this node
+* **Update task management** - force [Task Manager Plugin](../../../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md) to update information about this process after this node
 
 ![](../img/task_node_task_management.png)
 
@@ -66,15 +67,15 @@ Multiple options are available when configuring an action on a task node. To con
 
 1. **Name** - used internally to differentiate between different actions on nodes in the process. We recommend defining an action naming standard to be able to quickly find the process actions.
 2. **Order** - if multiple actions are defined on the same node, their running order should be set using this option
-3. **Timer Expression** - can be used if a delay is required on that action. The format used for this is [ISO 8601 duration format ](https://www.digi.com/resources/documentation/digidocs/90001437-13/reference/r\_iso\_8601\_duration\_format.htm)(for example, a delay of 30s will be set up like `PT30S`)
+3. **Timer Expression** - can be used if a delay is required on that action. The format used for this is [ISO 8601 duration format](https://www.digi.com/resources/documentation/digidocs/90001437-13/reference/r\_iso\_8601\_duration\_format.htm)(for example, a delay of 30s will be set up like `PT30S`)
 4. **Action type** - defines the appropriate action type
 5. **Trigger type** - (options are Automatic/Manual) - choose if this action should be triggered automatically (when the process flow reaches this step) or manually (triggered by the user); In most use cases, this will be set to automatic.
-6. **Required type** - (options are Mandatory/Optional) - automatic actions can only be defined as mandatory. Manual actions can be defined as mandatory or optional.&#x20;
+6. **Required type** - (options are Mandatory/Optional) - automatic actions can only be defined as mandatory. Manual actions can be defined as mandatory or optional.
 7. **Repeatable** - should be checked if the action can be triggered multiple times
 
 ![](../img/task_node_action_edit.png)
 
-### Business Rule Action
+### Business Rule action
 
 A [business rule](business-rule-action/) is a Task action that allows a script to run. For now, the following script languages are supported:
 
@@ -84,38 +85,37 @@ A [business rule](business-rule-action/) is a Task action that allows a script t
 * Groovy
 * [DMN](../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-dmn.md) - more details about a DMN business rule configuration can be found [here](business-rule-action/dmn-business-rule-action.md)
 
-For more details on how to configure a Business Rule Action, check the following section:
+For more details on how to configure a Business Rule action, check the following section:
 
 
 [Business rule action](business-rule-action/)
 
-### Websocket Send Action
+### Websocket Send action
 
 Being an event-driven platform FLOWX uses web socket communication in order to push events from the frontend application.
-For more details on how to configure a Websocket Send Action, check the following section:
+For more details on how to configure a Websocket Send action, check the following section:
 
 [Websocket send action](websocket-send-action.md)
 
-### Upload File Action
+### Upload File action
 
 Upload file action will be used to upload a file from the frontend application and send it via a Kafka topic to the document management system.
 
-For more details on how to configure an Upload File Action, check the following section:
+For more details on how to configure an Upload File action, check the following section:
 
 [Upload file action](upload-file-action.md)
 
-### Start Subprocess Action
+### Start Subprocess action
 
 In order to create reusability between business processes, as well as split complex processes into smaller, easier-to-maintain flows, the start subprocess business rule can be used to trigger the same sequence multiple times.
 
-For more details on how to configure a Business Rule Action, check the following section:
+For more details on how to configure a Business Rule action, check the following section:
 
 [Start subprocess action](start-subprocess-action.md)
 
-### Append Params to Parent Process&#x20;
+### Append Params to Parent Process
 
 Used for copying data in the subprocess from its parent process.
 For more details about the configuration, check the following section:
-
 
 [Append params to parent process](append-params-to-parent-process.md)

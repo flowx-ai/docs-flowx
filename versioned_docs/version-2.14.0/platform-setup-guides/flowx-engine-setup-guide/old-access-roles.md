@@ -13,7 +13,7 @@ You can restrict access to process definitions by user roles. This can be done b
 
 Start by adding the needed roles in the database. These need to match the roles configured in the identity provider solution. Each role can have one or more permissions defined on it. Permissions can be applied to all users or only to the owner of the specific resource (for example the person that started the process instance).
 
-After saving a new process definition, you can also save specific user roles for it to restrict user access.&#x20;
+After saving a new process definition, you can also save specific user roles for it to restrict user access.
 
 Access rights can be defined on the following operations that can be performed on a process definition:
 
@@ -52,7 +52,7 @@ Access rights can be defined on the following operations that can be performed o
 
 Here's an example of setting operation permissions for a process definition:
 
-```
+```json
 {
     "START": ["PROCESS_START"], 
     "VIEW": ["PROCESS_VIEW", "PROCESS_VIEW_ALL"]

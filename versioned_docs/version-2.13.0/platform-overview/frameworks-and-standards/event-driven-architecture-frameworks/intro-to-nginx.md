@@ -8,7 +8,7 @@
 
 NGINX allows you to hide a server application's complexity from a front-end application. It uses an event-driven, asynchronous approach to create a new process for each web request, with requests handled in a single thread.
 
-### Using NGINX with FlowX Designer
+### Using NGINX with FLOWX Designer
 
 **[The NGINX Ingress Controller for Kubernetes](https://kubernetes.github.io/ingress-nginx/)** - `ingress-nginx` is an ingress controller for Kubernetes using NGINX as a reverse proxy and load balancer.
 
@@ -20,7 +20,7 @@ For more information, check the following section:
 
 [Using NGINX as a K8S ingress controller](https://www.nginx.com/resources/videos/using-nginx-as-a-kubernetes-ingress-controller)
 
-#### Integrating with FlowX Designer
+#### Integrating with FLOWX Designer
 
 FLOWX Designer is using NGINX ingress controller for the following actions:
 
@@ -31,7 +31,7 @@ FLOWX Designer is using NGINX ingress controller for the following actions:
 * Testing process definitions from the FLOWX Designer - route the API calls and WebSocket communications to the FLOWX engine backend
 * Accessing REST API of the backend microservice
 
-3. For configuring the Single Page Application (SPA) -  FLOWX Designer SPA will use the backend service to manage the platform via REST calls
+3. For configuring the Single Page Application (SPA) - FLOWX Designer SPA will use the backend service to manage the platform via REST calls
 
 In the following section, you can find a suggested NGINX setup, the one used by FLOWX.AI:
 

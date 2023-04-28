@@ -1,6 +1,6 @@
 # Process definition states & versioning
 
-Process definitions can be easily edited using the FLOWX.AI Designer. To be able to update existing definitions and keep track of the changes, we also store a version number and a state on each definition.
+Process definitions can be easily edited using the FLOWX Designer. To be able to update existing definitions and keep track of the changes, we also store a version number and a state on each definition.
 
 ![](../img/pf_proc_def_state.png)
 
@@ -17,7 +17,7 @@ At any time there can only be one published and one draft version for a certain 
 
 A new process definition can be created:
 
-* by adding it to the FLOWX.AI Designer
+* by adding it to the FLOWX Designer
 * by importing an existing definition
 * by cloning an existing definition
 

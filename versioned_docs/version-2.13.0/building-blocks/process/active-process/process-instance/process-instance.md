@@ -24,8 +24,8 @@ The engine is also responsible with updating the UI when some actions occur. Thi
 
 To check the status of your process or to debug/troubleshoot a failed process, follow the next steps:
 
-1. Open **FLOWX Designer**.
-2. Go to **Processes -> Active Process -> Process instances**.
+1. Open **FLOWX.AI Designer**.
+2. Go to **Processes → Active Process → Process instances**.
 3. Click **Process status** button.
 
 ![](../../img/process_status.png)
@@ -40,7 +40,7 @@ To check the status of your process or to debug/troubleshoot a failed process, f
   * DISMISSED
   * EXPIRED
   * FINISHED
-* **Process definition** -  the name of the process
+* **Process definition** - the name of the process
 * **Active process instance** - process instance UUID (a copy action is also available)
 * **Variables** - variables are displayed as an expanded JSON
 
@@ -97,7 +97,7 @@ The new instances will be started by making a request to the [FLOWX.AI Engine](.
 
 To be able to start a new process instance, the current user needs to have the appropriate role/permissions:
 
-[Configuring access roles for processes](../../../../platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide/configuring-access-roles-for-processes.md)
+[Configuring access roles for processes](../../../../platform-setup-guides/flowx-engine-setup-guide/configuring-access-roles-for-processes.md)
 
 When starting a new process instance, we can also set it to [inherit some values from a previous process instance](../../../../platform-deep-dive/core-components/flowx-engine.md#orchestration)
 ## Troubleshooting possible errors

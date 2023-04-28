@@ -19,9 +19,9 @@ To create flow with exclusive branches:
 5. Add a new **exclusive gateway** to merge the two flow branches back into one branch.
 6. Add a **new rule** to a node to add a **business decision**, for example:
 
-* select  a **scripting language** from the dropdown
-* `input.get("application.client.creditScore") >= 700` <- proceed to node for premium credit card
-* `input.get("application.client.creditScore") < 700` <- proceed to node for standard credit card
+* select a **scripting language** from the dropdown
+* `input.get("application.client.creditScore") >= 700` ← proceed to node for premium credit card
+* `input.get("application.client.creditScore") < 700` ← proceed to node for standard credit card
 
 7. Add a **closing exclusive gateway** to continue the flow.
 8. Add and **end node**.

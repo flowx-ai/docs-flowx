@@ -27,14 +27,14 @@ Let's take look at the following example. We have some data about the gender of 
 
 1.  This is how the process instance data looks like before it reaches the business rule
 
-    ```
+    ```json
     {
         "application" : {
             "client" : 
             {
-                "firstName" : "David"
-                "surName" : "James"
-                "gender" : "M",
+                "firstName" : "David",
+                "surName" : "James",
+                "gender" : "M"
                 
             }
         }
@@ -42,7 +42,7 @@ Let's take look at the following example. We have some data about the gender of 
     ```
 2.  When the token reaches this node the following script (defined for the business rule is executed). The language used here for scripting is MVEL
 
-    ```
+    ```java
     if(input.?get("application.client.gender")== "F"){
         output.put("application.client.salutation", "Ms");
     } else if(input.?get("application.client.gender")== "M") {
@@ -53,7 +53,7 @@ Let's take look at the following example. We have some data about the gender of 
     ```
 3. After the script is executed, the process instance data will look like this
 
-```
+```json
 {
     "application": {
         "client": {
@@ -69,7 +69,7 @@ Let's take look at the following example. We have some data about the gender of 
 ### :warning: Flattened vs unflattened keys
 
 :::warning
-With version [**2.5.0**](/release-notes/v2.5.0-april-2022) we introduced unflattened keys inside business rules. Flattened keys are now obsolete. You are notified when you need to delete and recreate a business rule so it contains an unflattened key.
+With version [**2.5.0**](/release-notes/v2.5.0-april-2022) we introduced unflattened keys inside business rules. Flattened keys are now obsolete. You are notified when you need to delete and recreate a business rule, so it contains an unflattened key.
 :::
 
 ![Obsolete business rule](./img/obsolete_business_rule.png)
@@ -80,12 +80,12 @@ With version [**2.5.0**](/release-notes/v2.5.0-april-2022) we introduced unflatt
 Example for deprecated versions previous to [**v2.5.0**](/release-notes/v2.5.0-april-2022)
 :::
 
-```
+```java
 def createActionForCustomer (name, cnp)
 {
     return{
-     "name":name,
-      "cnp:cnp
+     "name": name,
+      "cnp": cnp
   }
  }
  String cif = input.get("clientIdentification.cif");
@@ -99,7 +99,7 @@ def createActionForCustomer (name, cnp)
 Example available for [**v2.5.0**](/release-notes/v2.5.0-april-2022) version and higher
 :::
 
-```
+```java
 def createActionForCustomer (name, cnp)
 {
   return {

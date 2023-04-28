@@ -11,7 +11,7 @@ const urlEmbed = require('./src/remark/url-embed');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'FLOWX.AI Docs',
-  tagline: 'Find out more',
+  tagline: 'Meet FLOWX.AI',
   url: process.env.URL,
   baseUrl: '/',
   onBrokenLinks: 'warn',
@@ -41,7 +41,7 @@ const config = {
           lastVersion: 'current',
           versions:{
             current:{
-              label: '3.1.0',
+              label: '3.2.0',
               path: '',
               badge: true,
             },
@@ -91,7 +91,7 @@ const config = {
       announcementBar: {
         id: 'banner_release',
         content:
-         '🆕  Check our latest release <a target="_blank" rel="noopener noreferrer" href="https://docs.flowx.ai/release-notes/v3.1.0-march-2023/"> 3.1.0 </a>  🔍',
+         '🆕  Check our latest release <a target="_blank" rel="noopener noreferrer" href="https://docs.flowx.ai/release-notes/v3.2.0-april-2023/"> 3.2.0 </a>  🔍',
         backgroundColor: '#E7A811',
         textColor: '#FFFF',
         isCloseable: true,
@@ -100,25 +100,25 @@ const config = {
       },
       
       navbar: {
-        title: 'FLOWX.AI DocPortal',
         logo: {
           alt: 'My Site Logo',
+<<<<<<< HEAD
+          src: 'img/logo-big.svg',
+          width: 110
+=======
           src: 'img/logo2.svg',
           width: 40,
+>>>>>>> AI_powered_search
         },
         items: [
-          {
-            type: 'docsVersionDropdown',
-            position: 'right',
-            dropdownItemsAfter: [{to: '/release-notes', label: 'All versions'}],
-            dropdownActiveClassDisabled: true,
-          },
+
           {
             type: 'doc',
             docId: 'intro',
             position: 'left',
             label: 'Documentation',
           },
+
           {
             type: 'doc',
             docId: 'release-notes',
@@ -126,11 +126,18 @@ const config = {
             position: 'left',
             label: 'Release Notes',
           },
-          {to: '/faqs', label: 'FAQs', position: 'left'},
-          {to: 'https://support.flowx.ai/', label: 'Support', position: 'right'},
+
+          {
+            type: 'docsVersionDropdown',
+            position: 'left',
+            dropdownItemsAfter: [{to: '/release-notes', label: 'All versions'}],
+            dropdownActiveClassDisabled: true,
+          },
+       
+          {to: '/faqs', label: 'FAQs', position: 'right'},
           {to: 'https://www.flowx.ai/contact-us', label: 'Contact', position: 'right'},
           {to: 'https://flowxai.canny.io/documentation-feedback', label: 'Feedback', position: 'right'},
-          {to: 'https://discord.gg/Hr6FZpj7', label: 'Discord', position: 'right', className: 'discord-link' },
+          {to: 'https://discord.gg/6ejETBkj', label: 'Discord', position: 'right', className: 'discord-link' },
 
           {
             type: 'search',

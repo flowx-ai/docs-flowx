@@ -21,7 +21,7 @@ To create an action:
 5. :exclamation:A few **action parameters** will need to be filled in depending on the selected action type.
 6. Add **an action** to the **task node**, for example **sending a Kafka event** to an integration:
 
-* set  **Address** (topic) name
+* set **Address** (topic) name
 * set message content to be sent
   * `{"test" : ${processInstanceId}, "title": "Test title"}`
 * a custom header is always set by default to

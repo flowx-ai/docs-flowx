@@ -2,21 +2,21 @@
 
 ## Component versions
 
-|             :ballot_box_with_check:  | 2.4.0       | 2.3.0   | 2.2.0   | 2.1.0     | 2.0.0     | 1.16.0  | 1.15    | 1.14    | **1.13.0** | 1.12.0 | 1.11.0  |
-| --------------------------------------- | ----------- | ------- | ------- | --------- | --------- | ------- | ------- | ------- | ---------- | ------ | ------- |
-| **Process engine**                      | **0.4.22**  | 0.4.21  | 0.4.18  | 0.4.13    | 0.4.12    | 0.4.4   | 0.3.26  | 0.3.21  | 0.3.14     | 0.3.9  | 0.3.7   |
-| **Designer**                            | **2.17.4**  | 2.15.2  | 2.14.4  | 2.11.2    | 2.10.0    | 2.5.0   | 2.1.1   | 1.21.0  | 1.16.3     | 1.15.2 | 1.14.0  |
-| **CMS Core**                            | **0.2.20**  | 0.2.18  | 0.2.17  | 0.2.17    | 0.2.17    | 0.2.14  | 0.2.9   | 0.2.9   | 0.2.9      | 0.2.5  | 0.2.3   |
-| **Scheduler Core**                      | **0.0.24**  | 0.0.23  | 0.0.23  | 0.0.23    | 0.0.23    | 0.0.19  | 0.0.12  | 0.0.12  | 0.0.12     | NA     | 0.0.6   |
-| **flowx-process-renderer**              | **2.17.4**  | 2.15.2  | 2.14.4  | 2.11.2    | 2.10.0    | 2.4.2   | 2.1.1   | 1.21.0  | 1.16.3     | 1.15.2 | 1.14.0  |
-| **flowx-web-components**                | 0.2.6       | 0.2.6   | 0.2.5   | 0.2.4     | 0.2.1     | 0.2.1   | 0.0.298 | 0.0.298 | 0.0.298    | NA     | 0.0.293 |
-| **Admin**                               | **0.3.29**  | 0.3.23  | 0.3.21  | 0.3.13    | 0.3.13    | 0.3.3   | 0.2.26  | 0.2.26  | 0.2.26     | 0.2.25 | 0.2.23  |
-| **Notification Plugin**                 | **1.0.191** | 1.0.190 | 1.0.190 | 1.0.186-1 | 1.0.186-1 | 1.0.186 | 1.0.182 | 1.0.182 | 1.0.182    | NA     | 1.0.179 |
-| **Document Plugin**                     | **1.0.35**  | 1.0.31  | 1.0.31  | 1.0.30    | 1.0.30    | 1.0.26  | 1.0.24  | 1.0.20  | 1.0.18     | NA     | 1.0.15  |
-| **OCR Plugin**                          | **0.1.5**   | 0.0.109 | 0.0.109 | 0.0.109   | 0.0.109   | 0.0.109 | 0.0.106 |         |            |        |         |
-| **License Core**                        | **0.1.15**  | 0.1.13  | 0.1.13  | 0.1.12    | 0.1.12    | 0.1.10  | 0.1.5   | n/a     |            |        |         |
-| **Customer Management Plugin**          | **0.1.20**  | 0.1.18  | 0.1.18  | 0.1.18    | 0.1.18    | 0.1.16  | 0.1.10  | 0.1.10  | 0.1.10     | NA     | 0.1.6   |
-| **Task Management Plugin**              | **0.0.22**  | 0.0.21  | 0.0.21  | 0.0.16    | 0.0.16    | 0.0.14  |         |         |            |        |         |
+| :ballot_box_with_check:        | 2.4.0       | 2.3.0   | 2.2.0   | 2.1.0     | 2.0.0     | 1.16.0  | 1.15    | 1.14    | **1.13.0** | 1.12.0 | 1.11.0  |
+| ------------------------------ | ----------- | ------- | ------- | --------- | --------- | ------- | ------- | ------- | ---------- | ------ | ------- |
+| **Process engine**             | **0.4.22**  | 0.4.21  | 0.4.18  | 0.4.13    | 0.4.12    | 0.4.4   | 0.3.26  | 0.3.21  | 0.3.14     | 0.3.9  | 0.3.7   |
+| **Designer**                   | **2.17.4**  | 2.15.2  | 2.14.4  | 2.11.2    | 2.10.0    | 2.5.0   | 2.1.1   | 1.21.0  | 1.16.3     | 1.15.2 | 1.14.0  |
+| **CMS Core**                   | **0.2.20**  | 0.2.18  | 0.2.17  | 0.2.17    | 0.2.17    | 0.2.14  | 0.2.9   | 0.2.9   | 0.2.9      | 0.2.5  | 0.2.3   |
+| **Scheduler Core**             | **0.0.24**  | 0.0.23  | 0.0.23  | 0.0.23    | 0.0.23    | 0.0.19  | 0.0.12  | 0.0.12  | 0.0.12     | NA     | 0.0.6   |
+| **flowx-process-renderer**     | **2.17.4**  | 2.15.2  | 2.14.4  | 2.11.2    | 2.10.0    | 2.4.2   | 2.1.1   | 1.21.0  | 1.16.3     | 1.15.2 | 1.14.0  |
+| **flowx-web-components**       | 0.2.6       | 0.2.6   | 0.2.5   | 0.2.4     | 0.2.1     | 0.2.1   | 0.0.298 | 0.0.298 | 0.0.298    | NA     | 0.0.293 |
+| **Admin**                      | **0.3.29**  | 0.3.23  | 0.3.21  | 0.3.13    | 0.3.13    | 0.3.3   | 0.2.26  | 0.2.26  | 0.2.26     | 0.2.25 | 0.2.23  |
+| **Notification Plugin**        | **1.0.191** | 1.0.190 | 1.0.190 | 1.0.186-1 | 1.0.186-1 | 1.0.186 | 1.0.182 | 1.0.182 | 1.0.182    | NA     | 1.0.179 |
+| **Document Plugin**            | **1.0.35**  | 1.0.31  | 1.0.31  | 1.0.30    | 1.0.30    | 1.0.26  | 1.0.24  | 1.0.20  | 1.0.18     | NA     | 1.0.15  |
+| **OCR Plugin**                 | **0.1.5**   | 0.0.109 | 0.0.109 | 0.0.109   | 0.0.109   | 0.0.109 | 0.0.106 |         |            |        |         |
+| **License Core**               | **0.1.15**  | 0.1.13  | 0.1.13  | 0.1.12    | 0.1.12    | 0.1.10  | 0.1.5   | n/a     |            |        |         |
+| **Customer Management Plugin** | **0.1.20**  | 0.1.18  | 0.1.18  | 0.1.18    | 0.1.18    | 0.1.16  | 0.1.10  | 0.1.10  | 0.1.10     | NA     | 0.1.6   |
+| **Task Management Plugin**     | **0.0.22**  | 0.0.21  | 0.0.21  | 0.0.16    | 0.0.16    | 0.0.14  |         |         |            |        |         |
 
 ## Additional configuration
 
@@ -90,12 +90,11 @@ For more details you can check the next links:
 
 [Configuring access rights for admin](../../docs/flowx-designer/designer-setup-guide/configuring-access-rights-for-admin)
 
+[Configuring access rights for engine](../../docs/platform-setup-guides/flowx-engine-setup-guide/configuring-access-rights-for-engine)
 
-[Configurig access rights for engine](../../docs/platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide/configuring-access-rights-for-engine)
+[Configuring access rights for license](../../docs/platform-setup-guides/license-engine-setup-guide/configuring-access-rights-for-license)
 
-[Configuring access rights for license](../../docs/platform-deep-dive/platform-setup-guide/license-engine-setup-guide/configuring-access-rights-for-license)
-
-[Configuring access rights for CMS](../../docs/platform-deep-dive/platform-setup-guide/cms-setup-guide/configuring-access-rights-for-cms)
+[Configuring access rights for CMS](../../docs/platform-setup-guides/cms-setup-guide/configuring-access-rights-for-cms)
 
 [Configuring access rights for task management](../../docs/platform-deep-dive/plugins/plugins-setup-guide/task-management-plugin-setup/configuring-access-rights-for-task-management)
 

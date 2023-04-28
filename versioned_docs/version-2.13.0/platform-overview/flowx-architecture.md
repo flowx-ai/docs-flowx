@@ -15,8 +15,8 @@ Let's go through the main components of the FLOWX.AI platform:
 **Microservices:**
 
 * **FLOWX.AI Engine** - is the core of the platform. It runs the business processes, coordinating integrations and the UI
-* **FLOWX.AI Admin**  - used to store/edit process definitions (FLOWX.AI Admin Microservice connects to the same Postgres / Oracle database as the FLOWX.AI Engine)
-* **FLOWX.AI Scheduler** (part of the core components) - used to store/edit process definitions&#x20;
+* **FLOWX.AI Admin** - used to store/edit process definitions (FLOWX.AI Admin Microservice connects to the same Postgres / Oracle database as the FLOWX.AI Engine)
+* **FLOWX.AI Scheduler** (part of the core components) - used to store/edit process definitions
 * **FLOWX.AI Content Management** (part of the core components) - can be quickly deployed on the chosen infrastructure, preloaded with the needed taxonomies or contents, and then connected to the FLOWX Engine through Kafka events
 * **FLOWX.AI License Manager** (part of the core components) - is used for displaying reports regarding the usage of the platform in the FLOWX.AI Designer
 * **FLOWX.AI Plugins** - the platform comes with some ready-made integrations, such as a [document management] solution, a plugin for sending various types of [notifications](../platform-deep-dive/plugins/custom-plugins/notifications-plugin/notifications-plugin.md), an [OCR](../platform-deep-dive/plugins/custom-plugins/ocr-plugin.md) plugin, and a task management plugin
@@ -34,9 +34,9 @@ You can use FLOWX.AI Engine to do the following:
 * create any type of external or internal facing application&#x20;
 * redesign business processes from analog, paper-based ones to fully digital and automated processes
 * manage integrations, so you can hook it up to existing CRMs, ERPs, KYC, transaction data and many more
-* to read process definitions (if it is connected to the same DB as FLOWX.AI Admin
+* to read process definitions (if it is connected to the same DB as FLOWX.AI Admin)
 
-[FLOWX.AI Engine](../platform-deep-dive/core-components/flowx-engine.md) runs the business processes, coordinating integrations and the omnichannel UI. It is a [Kafka-based](./frameworks-and-standards/event-driven-architecture-frameworks/intro-to-kafka-concepts) event-driven platform, that is able to orchestrate, generate and integrate with any type of legacy system, without expensive or risky upgrades.&#x20;
+[FLOWX.AI Engine](../platform-deep-dive/core-components/flowx-engine.md) runs the business processes, coordinating integrations and the omnichannel UI. It is a [Kafka-based](./frameworks-and-standards/event-driven-architecture-frameworks/intro-to-kafka-concepts) event-driven platform, that is able to orchestrate, generate and integrate with any type of legacy system, without expensive or risky upgrades.
 
 This is extremely important because often, digital apps used by a bank’s clients, for example, are limited by the load imposed by the core banking system. And the customers see blocked screens and endlessly spinning flywheels. FLOWX.AI buffers this load, offering a 0.2s response time, thus the customer never has to wait for data to load.
 
@@ -70,7 +70,7 @@ Unlike other no-code/full-code platforms which provide templates or building blo
 
 ### FLOWX.AI Content Management
 
-This is another Java microservice that enables you to store and manage content. **The go-to place for all taxonomies.** The extension offers a convenient way of managing various content pieces such as lists or content translations. Anything that is under content management is managed by the [CMS backend service](../platform-deep-dive/platform-setup-guide/cms-setup-guide/cms-setup-guide.md). To store content, the service will use a MongoDB database (unstructured database). For example, each time you edit an [enumeration](../platform-deep-dive/core-components/core-extensions/content-management/enumerations.md), the FLOWX.AI Designer will send an HTTP request to the microservice.
+This is another Java microservice that enables you to store and manage content. **The go-to place for all taxonomies.** The extension offers a convenient way of managing various content pieces such as lists or content translations. Anything that is under content management is managed by the [CMS backend service](../platform-setup-guides/cms-setup-guide/cms-setup-guide.md). To store content, the service will use a MongoDB database (unstructured database). For example, each time you edit an [enumeration](../platform-deep-dive/core-components/core-extensions/content-management/enumerations.md), the FLOWX.AI Designer will send an HTTP request to the microservice.
 
 
 [Content Management](../platform-deep-dive/core-components/core-extensions/content-management/content-management.md)
@@ -84,7 +84,7 @@ If you need to **set a timer on** a process that needs to end after X days, you 
 When you start a process, the process must have an expiry date.
 :::
 
-Scheduler microservice communicates with the FLOWX.AI Engine through Kafka Event Queue => it creates a new message (write some data) then will send that message to Kafka (with the scheduler address) -> when the reminder time comes up, the scheduler will put back a new message in the Kafka layer with engine's destination (time + ID of the process).
+Scheduler microservice communicates with the FLOWX.AI Engine through Kafka Event Queue → it creates a new message (write some data) then will send that message to Kafka (with the scheduler address) → when the reminder time comes up, the scheduler will put back a new message in the Kafka layer with engine's destination (time + ID of the process).
 
 
 [Scheduler](../platform-deep-dive/core-components/core-extensions/scheduler.md)

@@ -95,12 +95,14 @@ div[class^="announcementBar"][role="banner"] {
   font-family: var(--ifm-font-family-base);
   font-size: 110%;
   font-weight: bold;
+  background-color: #ffd966;
 }
 
 
 .discord-link {
   align-items: center;
   display: flex;
+  margin-right: 45px;
 }
 .discord-link:before {
   align-self: center;

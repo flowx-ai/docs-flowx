@@ -22,3 +22,5 @@ Datasource
 MVEL
 MVEL
 infopoint
+FLOWX
+Subprocess

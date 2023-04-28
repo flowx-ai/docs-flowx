@@ -17,11 +17,11 @@ To access the allocation rules, follow the next steps:
 
 ![](../../../img/access_allocation_rules.png)
 
-### **Adding process and allocation rules**
+### Adding process and allocation rules
 
-To add process and allocation rules, follow the next steps:&#x20;
+To add process and allocation rules, follow the next steps:
 
-1. Click **Add process** button, in the top-right corner. (More details on how to create/configure a process are [here](../../../../flowx-designer/managing-a-process-flow/creating-a-new-process-definition.md).
+1. Click **Add process** button, in the top-right corner. (More details on how to create/configure a process are [here](../../../../flowx-designer/managing-a-process-flow/creating-a-new-process-definition.md)).
 
 
 ![](../../../img/adding_process_and_allocation.png)
@@ -78,9 +78,9 @@ The allocation rules list displays all the configured swimlanes grouped by proce
 
 ![](../../../img/view_allocation_rules.png)
 
-### **Exporting/importing process allocation rules**
+### Exporting/importing process allocation rules
 
-To copy process allocation rules and move them between different environments, you can use the export/import feature.&#x20;
+To copy process allocation rules and move them between different environments, you can use the export/import feature.
 
 You can export process allocation rules as JSON files directly from the allocation rules list:
 

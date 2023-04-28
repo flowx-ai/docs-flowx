@@ -1,6 +1,6 @@
 # License engine
 
-The License Engine is part of the core components of the FLOWX platform. It is used for displaying reports regarding the usage of the platform in the FLOWX Designer. &#x20;
+The License Engine is part of the core components of the FLOWX platform. It is used for displaying reports regarding the usage of the platform in the FLOWX Designer. 
 
 It can be quickly deployed on the chosen infrastructure and then connected to the FLOWX Engine through Kafka events.
 

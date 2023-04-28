@@ -138,7 +138,7 @@ If none of these keys have values, all the parameter values from the parent proc
 
 </details>
 
-[FLOWX.AI Engine setup guide](../platform-setup-guide/flowx-engine-setup-guide/flowx-engine-setup-guide.md)
+[FLOWX Engine setup guide](../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md)
 
 ## Triggering or skipping nodes on a process based on Flow Names
 

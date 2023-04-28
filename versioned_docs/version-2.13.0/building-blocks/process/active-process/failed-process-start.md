@@ -8,8 +8,8 @@ Exceptions are types of errors meant to help you debug a failure in the executio
 
 Exceptions can be accessed from multiple places:
 
-* **Failed process start** tab from **Active process** menu in FLOWX.AI Designer
-* **Process Status** view, accessible from **Process instances** list in FLOWX.AI Designer
+* **Failed process start** tab from **Active process** menu in FLOWX Designer
+* **Process Status** view, accessible from **Process instances** list in FLOWX Designer
 
 ![](../img/exceptions2.png)
 

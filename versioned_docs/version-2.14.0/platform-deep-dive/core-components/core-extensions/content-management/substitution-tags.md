@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Substitution tags
 
-Substitution tags are used to generate dynamic content across the platform. As enumerations, substitution tags can be defined for each language set for the solution.&#x20;
+Substitution tags are used to generate dynamic content across the platform. As enumerations, substitution tags can be defined for each language set for the solution.
 
 ![](../../../img/substitution_tags.png)
 

@@ -8,7 +8,7 @@
 
 NGINX allows you to hide a server application's complexity from a front-end application. It uses an event-driven, asynchronous approach to create a new process for each web request, with requests handled in a single thread.
 
-### Using NGINX with FlowX Designer
+### Using NGINX with FLOWX Designer
 
 **[The NGINX Ingress Controller for Kubernetes](https://kubernetes.github.io/ingress-nginx/)** - `ingress-nginx` is an ingress controller for Kubernetes using NGINX as a reverse proxy and load balancer.
 

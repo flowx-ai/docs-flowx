@@ -8,7 +8,9 @@
 
 These could be either one of the provided custom plugins that we've already built or building your desired plugin.
 
+:::info
 On our roadmap, we’re also looking to enhance the **plugins library** with 3rd party providers, so stay tuned for more.
+:::
 
 ## High-level architecture
 

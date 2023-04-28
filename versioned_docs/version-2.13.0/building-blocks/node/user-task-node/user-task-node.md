@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # User task node
 
-This node represents an interaction with the user. It is used to display a piece of UI (defined in the [UI Designer](../../ui-designer/ui-designer.md) or a [custom Angular component](../../ui-designer/ui-component-types/root-components/custom.md). You can also define actions available for the users to interact with the process.
+This node represents an interaction with the user. It is used to display a piece of UI (defined in the [UI Designer](../../ui-designer/ui-designer.md)) or a [custom Angular component](../../ui-designer/ui-component-types/root-components/custom.md). You can also define actions available for the users to interact with the process.
 
 ### Configuring a user task node
 
@@ -38,7 +38,7 @@ When encountering a step with `canGoBack` switched to false, all steps found beh
 * **Topic Name** - the topic name where the [process engine](../../../platform-deep-dive/core-components/flowx-engine.md) listens for the response (this should be added to the platform and match the topic naming rule for the engine to listen to it) - available for UPDATES topics (Kafka receive events)
 
 :::warning
-A naming pattern must be defined on the [process engine configuration](../../../platform-deep-dive/platform-setup-guide/flowx-engine-setup-guide/flowx-engine-setup-guide.md) to use the defined topics. It is important to know that all the events that start with a configured pattern will be consumed by the Engine. For example, `KAFKA_TOPIC_PATTERN` is the topic name pattern where the Engine listens for incoming Kafka events.
+A naming pattern must be defined on the [process engine configuration](../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md) to use the defined topics. It is important to know that all the events that start with a configured pattern will be consumed by the Engine. For example, `KAFKA_TOPIC_PATTERN` is the topic name pattern where the Engine listens for incoming Kafka events.
 :::
 
 * **Key Name** - will hold the result received from the external system, if the key already exists in the process values, it will be overwritten

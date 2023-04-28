@@ -27,7 +27,6 @@ Events describe something that happens during the course of a process. There are
 ### Activities
 
 An activity represents a unit of work to be performed by the business process. An activity can be atomic (a task) or can represent a group of more activities (a sub-process).
-
 ![various types of activities](./img/activities.png)
 
 ### Gateways

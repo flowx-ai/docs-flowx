@@ -10,7 +10,7 @@ This infrastructure item is required internally
 
 basic RabbitMQ helm values.yaml
 
-```jsx
+```javascript
   ocr-queue:
     image:
       registry: docker.io

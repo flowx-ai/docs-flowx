@@ -57,8 +57,6 @@ cms-mdb:
     usePassword: true
 ```
 
-
-
 ## Configuration <a href="#bad24571-ff23-4ec3-83d9-8a2ace74a6b4" id="bad24571-ff23-4ec3-83d9-8a2ace74a6b4"></a>
 
 ### Configuring authorization & access roles

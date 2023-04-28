@@ -12,10 +12,10 @@ The following properties can be configured:
 
 #### Settings
 
-1. **General -** where you define the **Key** and **Message**
+1. **General** - where you define the **Key** and **Message**
    * **Key** - all values from child form elements will be grouped under this key in the frontend model; it is also used on the button configuration to tell the button what form it should submit and validate
    * **Message** - describes the data pushed to the frontend application when the process reaches this [user task](../../../node/user-task-node/user-task-node.md); should be a valid JSON
-2. **Expressions (Hide)** -  javascript expressions used to hide components when they're true
+2. **Expressions (Hide)** - javascript expressions used to hide components when they're true
 
 ![](../../img/form_group_settings.png)
 

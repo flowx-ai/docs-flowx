@@ -52,4 +52,4 @@ Depending on which **Source location** is selected, different Flowx props are av
 
 ### Image styling
 
-* **valid CSS properties** - more details [here](../../#styling)
+* **valid CSS properties** - more details [here](../ui-designer.md#styling)
