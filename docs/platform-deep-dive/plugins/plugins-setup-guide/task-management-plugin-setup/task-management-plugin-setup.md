@@ -131,7 +131,7 @@ The Engine is listening for messages on topics with names of a certain pattern, 
 
 ### Web socket configuration
 
-The engine also communicates with the frontend application via WebSockets. The socket server connection details also need to be configured:
+The engine also communicates with the frontend application via Websockets. The socket server connection details also need to be configured:
 
 `WEB_SOCKET_SERVER_URL_EXTERNAL`
 
@@ -152,3 +152,4 @@ The following environment variables could be set in order to control log levels:
 ### Filtering
 
 `USERNAME_SEARCH_PARTIAL` - filter possible assignees by partial names (default: true)
+
