@@ -1423,17 +1423,10 @@
     "@docusaurus/utils-validation" "2.4.0"
     "tslib" "^2.4.0"
 
-<<<<<<< HEAD
-"@docusaurus/plugin-sitemap@^2.4.0", "@docusaurus/plugin-sitemap@2.4.0":
-  "integrity" "sha512-pZxh+ygfnI657sN8a/FkYVIAmVv0CGk71QMKqJBOfMmDHNN1FeDeFkBjWP49ejBqpqAhjufkv5UWq3UOu2soCw=="
-  "resolved" "https://registry.npmjs.org/@docusaurus/plugin-sitemap/-/plugin-sitemap-2.4.0.tgz"
-  "version" "2.4.0"
-=======
 "@docusaurus/plugin-sitemap@^2.3.1", "@docusaurus/plugin-sitemap@2.3.1":
   "integrity" "sha512-8Yxile/v6QGYV9vgFiYL+8d2N4z4Er3pSHsrD08c5XI8bUXxTppMwjarDUTH/TRTfgAWotRbhJ6WZLyajLpozA=="
   "resolved" "https://registry.npmjs.org/@docusaurus/plugin-sitemap/-/plugin-sitemap-2.3.1.tgz"
   "version" "2.3.1"
->>>>>>> AI_powered_search
   dependencies:
     "@docusaurus/core" "2.4.0"
     "@docusaurus/logger" "2.4.0"
