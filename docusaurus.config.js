@@ -102,13 +102,8 @@ const config = {
       navbar: {
         logo: {
           alt: 'My Site Logo',
-<<<<<<< HEAD
           src: 'img/logo-big.svg',
           width: 110
-=======
-          src: 'img/logo2.svg',
-          width: 40,
->>>>>>> AI_powered_search
         },
         items: [
 
