@@ -6,8 +6,6 @@ sidebar_position: 2
 
 Generic parameters are variables or settings that are used to control the behavior of a software application or system. These parameters are designed to be flexible and adaptable, allowing users to customize the software to their specific needs. 
 
-They are often used to make software more flexible and configurable, and to help ensure that it can be adapted to a wide range of use cases and scenarios.
-
 Through the FLOWX Designer, you can create, edit, import, or export these generic parameters. You can also assign the relevant environment(s) to these parameters, ensuring they are applied exactly where they are needed.
 
 #### Why do you need generic parameters?
@@ -42,8 +40,6 @@ To configure a generic parameter you need to fill in the following details:
 :::info
 For example, if you want to set a `baseURL` generic parameter (the URL will be different, depending on the environmaent).
 :::
-
-
 
 ![](../../img/generic_params_base.png)
 

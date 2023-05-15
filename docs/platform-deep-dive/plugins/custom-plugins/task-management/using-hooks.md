@@ -2,7 +2,7 @@
 
 Hooks allow you to extract stateful logic from a component, so it can be tested and reused independently.
 
-Users with task management permissions can create hooks to trigger a specific process instance. For example, sending a notification when an event occurs in the process. See below how to set up roles to be able to use hooks:
+Users with task management permissions can create hooks to trigger specific process instances, such as sending notifications when events occur. Follow the instructions below to set up roles for hooks scope usage:
 
 [Manage hooks roles](../../plugins-setup-guide/task-management-plugin-setup/task-management-plugin-setup.md)
 
