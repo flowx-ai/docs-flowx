@@ -5,10 +5,8 @@ import BuildingBlocksSvg from '@site/static/img/undraw_building_blocks_re_5ahy.s
 
 export default function BuildingBlocks() {
   return (
-    <div className={styles.buildingBlocksContainer}>
-      <div className={styles.buildingBlocks}>
-        <BuildingBlocksSvg className={styles.buildingBlocksSvg} />
-      </div>
+    <div className={styles.buildingBlocks}>
+      <BuildingBlocksSvg className={styles.buildingBlocks} />
     </div>
   );
 }
