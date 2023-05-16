@@ -219,9 +219,6 @@ Kafka is used only for saving audit logs. Only a producer needs to be configured
 
 `KAFKA_TOPIC_AUDIT_OUT` - topic key for sending audit logs. Default value: `ai.flowx.audit.log`
 
-
-[How to create a Kafka producer](../../platform-deep-dive/integrations/creating-a-kafka-producer)
-
 ### Redis configuration
 
 The following values should be set with the corresponding Redis-related values:

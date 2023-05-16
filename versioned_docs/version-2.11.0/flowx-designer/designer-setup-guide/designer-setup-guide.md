@@ -219,10 +219,6 @@ Kafka is used only for saving audit logs. Only a producer needs to be configured
 
 `KAFKA_TOPIC_AUDIT_OUT` - the topic where audit logs will be sent
 
-
-[How to create a Kafka producer](../../platform-deep-dive/integrations/creating-a-kafka-producer)
-
-
 ### Logging
 
 The following environment variables could be set in order to control log levels:
