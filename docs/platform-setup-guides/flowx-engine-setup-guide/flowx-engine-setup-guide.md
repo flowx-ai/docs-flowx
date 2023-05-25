@@ -253,6 +253,7 @@ The suggested topic pattern naming convention is the following:
 | KAFKA_TOPIC_PROCESS_START_IN  | ai.flowx.dev.core.trigger.start.rpocess.v1  |
 | KAFKA_TOPIC_PROCESS_START_OUT | ai.flowx.dev.core.confirm.start.process.v1  |
 
+
 ### Configuring WebSockets
 
 The engine communicates with the frontend application via WebSockets. The following environment variables need to be configured for the socket server connection details:
@@ -313,3 +314,4 @@ Below you can find a configuration .yaml to use scheduler service together with 
 * **expireMinutes** specifies how long the WebSocket namespace is valid for (30 minutes in this case).
 
 [Scheduler setup guide](../scheduler-setup-guide.md)
+

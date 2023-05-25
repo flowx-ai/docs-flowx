@@ -37,18 +37,18 @@ The available configuration options for this form element are:
 
 The following validators can be added to a segmented button: `required` and `custom` (more details [here](../../validators.md)).
 
-![](../../img/switch_details.png)
+![](../../img/segmented_button_props.png)
 
 
 #### UI actions
 
 UI actions can be added to the segmented button element to define its behavior and interactions.
 
-* Event - possible value: CHANGE
-* Action Type - select the action type
+* **Event** - possible value: CHANGE
+* **Action Type** - select the action type
 
 :::info
-For more details on how to configure a UI action, click [here](../../ui-actions.md).
+For more details on how to configure a UI action, click [**here**](../../ui-actions.md).
 :::
 
 ### Segmented button styling
@@ -67,17 +67,17 @@ To create a segmented button with specific styling, sizing, typography, and colo
 
 Choose an appropriate font family, size, and weight for the button label text.
 
-* Label Color - set the color of the button label text
-* Selected State - set the color of the label text when the button is selected
-* Unselected State - set the color of the label text when the button is not selected.
+* **Label Color** - set the color of the button label text
+* **Selected State** - set the color of the label text when the button is selected
+* **Unselected State** - set the color of the label text when the button is not selected
 
 #### Background
 
-* For the selected state - set the background color of the button.
-* For the unselected state - set the background color of the button.
+* **Selected state** - set the background color of the button
+* **Unselected state** - set the background color of the button
 
-![](../../img/switch_styling.gif)
+![](../../img/segmented_button_styling.png)
 
 :::info
-For more valid CSS properties, click [here](../../#styling).
+For more valid CSS properties, click [**here**](../../#styling).
 :::

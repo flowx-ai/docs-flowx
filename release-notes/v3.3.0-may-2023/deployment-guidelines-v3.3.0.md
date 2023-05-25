@@ -12,30 +12,30 @@ After updating to **3.3.0** FLOWX.AI release, importing old processes definition
 
 ## Component versions
 
-| :ballot_box_with_check:        | 3.2.0      | 3.1.0  | 3.0.0  | 2.14.0   | 2.13.0  | 2.12.0  | 2.11.0  | 2.10.0  | 2.9.0   | 2.8.1   | 2.8.0   | 2.7.0   | 2.6.0   | 2.5.0   | 2.4.0   | 2.3.0   | 2.2.0   | 2.1.0     |
-| ------------------------------ | ---------- | ------ | ------ | -------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | --------- |
-| **Process engine**             | **2.2.1**  | 2.1.2  | 2.0.7  | 0.4.104  | 0.4.95  | 0.4.90  | 0.4.83  | 0.4.60  | 0.4.49  | 0.4.44  | 0.4.42  | 0.4.42  | 0.4.36  | 0.4.29  | 0.4.22  | 0.4.21  | 0.4.18  | 0.4.13    |
-| **Admin**                      | **2.2.2**  | 2.1.3  | 2.0.8  | 0.3.119  | 0.3.103 | 0.3.92  | 0.3.81  | 0.3.60  | 0.3.55  | 0.3.47  | 0.3.43  | 0.3.40  | 0.3.36  | 0.3.34  | 0.3.29  | 0.3.23  | 0.3.21  | 0.3.13    |
-| **Designer**                   | **3.21.1** | 3.15.1 | 3.2.1  | 2.78.4-1 | 2.63.6  | 2.60.7  | 2.48.9  | 2.39.2  | 2.33.0  | 2.28.1  | 2.24.2  | 2.23.0  | 2.19.2  | 2.18.2  | 2.17.4  | 2.15.2  | 2.14.4  | 2.11.2    |
-| **@flowx/ui-sdk**              | **3.21.1** | 3.15.1 | 3.2.1  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
-| **@flowx/ui-toolkit**          | **3.21.1** | 3.15.1 | 3.2.1  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
-| **@flowx/ui-theme**            | **3.21.1** | 3.15.1 | 3.2.1  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
-| **paperflow-web-components**   | -          | -      | -      | 2.78.4-1 | 2.63.6  | 2.60.7  | 0.2.10  | 0.2.10  | 0.2.10  | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.5   | 0.2.4     |
-| **flowx-process-renderer**     | -          | -      | -      | 2.78.4-1 | 2.63.6  | 2.60.7  | 2.48.9  | 2.39.2  | 2.33.0  | 2.28.1  | 2.24.2  | 2.23.0  | 2.19.2  | 2.18.2  | 2.17.4  | 2.15.2  | 2.14.4  | 2.11.2    |
-| **CMS Core**                   | **1.2.0**  | 1.0.3  | 1.0.2  | 0.2.38   | 0.2.36  | 0.2.33  | 0.2.30  | 0.2.25  | 0.2.23  | 0.2.23  | 0.2.23  | 0.2.23  | 0.2.23  | 0.2.20  | 0.2.20  | 0.2.18  | 0.2.17  | 0.2.17    |
-| **Scheduler Core**             | 1.0.4      | 1.0.4  | 1.0.1  | 0.0.34   | 0.0.34  | 0.0.34  | 0.0.33  | 0.0.28  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.24  | 0.0.24  | 0.0.23  | 0.0.23  | 0.0.23    |
-| **Notification Plugin**        | **2.0.5**  | 2.0.3  | 2.0.1  | 1.0.206  | 1.0.206 | 1.0.206 | 1.0.205 | 1.0.200 | 1.0.198 | 1.0.198 | 1.0.197 | 1.0.194 | 1.0.194 | 1.0.191 | 1.0.191 | 1.0.190 | 1.0.190 | 1.0.186-1 |
-| **Document Plugin**            | 2.0.3      | 2.0.3  | 2.0.2  | 1.0.53   | 1.0.53  | 1.0.53  | 1.0.52  | 1.0.47  | 1.0.42  | 1.0.41  | 1.0.38  | 1.0.37  | 1.0.37  | 1.0.35  | 1.0.35  | 1.0.31  | 1.0.31  | 1.0.30    |
-| **OCR Plugin**                 | **1.0.2**  | 0.1.33 | 0.1.33 | 0.1.33   | 0.1.33  | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.0.109 | 0.0.109 | 0.0.109   |
-| **License Core**               | 1.0.2      | 1.0.2  | 1.0.1  | 0.1.28   | 0.1.28  | 0.1.28  | 0.1.27  | 0.1.23  | 0.1.19  | 0.1.18  | 0.1.18  | 0.1.18  | 0.1.18  | 0.1.15  | 0.1.15  | 0.1.13  | 0.1.13  | 0.1.12    |
-| **Customer Management Plugin** | 0.2.3      | 0.2.3  | 0.2.1  | 0.1.28   | 0.1.28  | 0.1.28  | 0.1.27  | 0.1.23  | 0.1.22  | 0.1.22  | 0.1.22  | 0.1.22  | 0.1.22  | 0.1.20  | 0.1.20  | 0.1.18  | 0.1.18  | 0.1.18    |
-| **Task Management Plugin**     | 1.0.4      | 1.0.4  | 1.0.1  | 0.0.42   | 0.0.42  | 0.0.40  | 0.0.37  | 0.0.29  | 0.0.28  | 0.0.28  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.22  | 0.0.22  | 0.0.21  | 0.0.21  | 0.0.16    |
-| **Data search**                | 0.1.4      | 0.1.4  | 0.1.3  | 0.0.8    | 0.0.8   | 0.0.6   | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
-| **Audit Core**                 | **1.0.5**  | 1.0.4  | 1.0.1  | 0.0.8    | 0.0.5   | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
-| **Reporting**                  | 0.0.40     | 0.0.40 | 0.0.39 | 0.0.39   | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
-| **advancing-controller**       | 0.1.4      | 0.1.4  | 0.1.2  | 0.0.6    | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
-| **iOS renderer**               | **2.0.7**  | 2.0.4  | 2.0.0  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
-| **Android renderer**           | 2.0.1      | 2.0.1  | 2.0.1  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
+| :ballot_box_with_check:        | 3.3.0 | 3.2.0      | 3.1.0  | 3.0.0  | 2.14.0   | 2.13.0  | 2.12.0  | 2.11.0  | 2.10.0  | 2.9.0   | 2.8.1   | 2.8.0   | 2.7.0   | 2.6.0   | 2.5.0   | 2.4.0   | 2.3.0   | 2.2.0   | 2.1.0     |
+| ------------------------------ | ----- | ---------- | ------ | ------ | -------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | --------- |
+| **Process engine**             |       | **2.2.1**  | 2.1.2  | 2.0.7  | 0.4.104  | 0.4.95  | 0.4.90  | 0.4.83  | 0.4.60  | 0.4.49  | 0.4.44  | 0.4.42  | 0.4.42  | 0.4.36  | 0.4.29  | 0.4.22  | 0.4.21  | 0.4.18  | 0.4.13    |
+| **Admin**                      |       | **2.2.2**  | 2.1.3  | 2.0.8  | 0.3.119  | 0.3.103 | 0.3.92  | 0.3.81  | 0.3.60  | 0.3.55  | 0.3.47  | 0.3.43  | 0.3.40  | 0.3.36  | 0.3.34  | 0.3.29  | 0.3.23  | 0.3.21  | 0.3.13    |
+| **Designer**                   |       | **3.21.1** | 3.15.1 | 3.2.1  | 2.78.4-1 | 2.63.6  | 2.60.7  | 2.48.9  | 2.39.2  | 2.33.0  | 2.28.1  | 2.24.2  | 2.23.0  | 2.19.2  | 2.18.2  | 2.17.4  | 2.15.2  | 2.14.4  | 2.11.2    |
+| **@flowx/ui-sdk**              |       | **3.21.1** | 3.15.1 | 3.2.1  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
+| **@flowx/ui-toolkit**          |       | **3.21.1** | 3.15.1 | 3.2.1  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
+| **@flowx/ui-theme**            |       | **3.21.1** | 3.15.1 | 3.2.1  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
+| **paperflow-web-components**   |       | -          | -      | -      | 2.78.4-1 | 2.63.6  | 2.60.7  | 0.2.10  | 0.2.10  | 0.2.10  | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.5   | 0.2.4     |
+| **flowx-process-renderer**     |       | -          | -      | -      | 2.78.4-1 | 2.63.6  | 2.60.7  | 2.48.9  | 2.39.2  | 2.33.0  | 2.28.1  | 2.24.2  | 2.23.0  | 2.19.2  | 2.18.2  | 2.17.4  | 2.15.2  | 2.14.4  | 2.11.2    |
+| **CMS Core**                   |       | **1.2.0**  | 1.0.3  | 1.0.2  | 0.2.38   | 0.2.36  | 0.2.33  | 0.2.30  | 0.2.25  | 0.2.23  | 0.2.23  | 0.2.23  | 0.2.23  | 0.2.23  | 0.2.20  | 0.2.20  | 0.2.18  | 0.2.17  | 0.2.17    |
+| **Scheduler Core**             |       | 1.0.4      | 1.0.4  | 1.0.1  | 0.0.34   | 0.0.34  | 0.0.34  | 0.0.33  | 0.0.28  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.24  | 0.0.24  | 0.0.23  | 0.0.23  | 0.0.23    |
+| **Notification Plugin**        |       | **2.0.5**  | 2.0.3  | 2.0.1  | 1.0.206  | 1.0.206 | 1.0.206 | 1.0.205 | 1.0.200 | 1.0.198 | 1.0.198 | 1.0.197 | 1.0.194 | 1.0.194 | 1.0.191 | 1.0.191 | 1.0.190 | 1.0.190 | 1.0.186-1 |
+| **Document Plugin**            |       | 2.0.3      | 2.0.3  | 2.0.2  | 1.0.53   | 1.0.53  | 1.0.53  | 1.0.52  | 1.0.47  | 1.0.42  | 1.0.41  | 1.0.38  | 1.0.37  | 1.0.37  | 1.0.35  | 1.0.35  | 1.0.31  | 1.0.31  | 1.0.30    |
+| **OCR Plugin**                 |       | **1.0.2**  | 0.1.33 | 0.1.33 | 0.1.33   | 0.1.33  | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.0.109 | 0.0.109 | 0.0.109   |
+| **License Core**               |       | 1.0.2      | 1.0.2  | 1.0.1  | 0.1.28   | 0.1.28  | 0.1.28  | 0.1.27  | 0.1.23  | 0.1.19  | 0.1.18  | 0.1.18  | 0.1.18  | 0.1.18  | 0.1.15  | 0.1.15  | 0.1.13  | 0.1.13  | 0.1.12    |
+| **Customer Management Plugin** |       | 0.2.3      | 0.2.3  | 0.2.1  | 0.1.28   | 0.1.28  | 0.1.28  | 0.1.27  | 0.1.23  | 0.1.22  | 0.1.22  | 0.1.22  | 0.1.22  | 0.1.22  | 0.1.20  | 0.1.20  | 0.1.18  | 0.1.18  | 0.1.18    |
+| **Task Management Plugin**     |       | 1.0.4      | 1.0.4  | 1.0.1  | 0.0.42   | 0.0.42  | 0.0.40  | 0.0.37  | 0.0.29  | 0.0.28  | 0.0.28  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.22  | 0.0.22  | 0.0.21  | 0.0.21  | 0.0.16    |
+| **Data search**                |       | 0.1.4      | 0.1.4  | 0.1.3  | 0.0.8    | 0.0.8   | 0.0.6   | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
+| **Audit Core**                 |       | **1.0.5**  | 1.0.4  | 1.0.1  | 0.0.8    | 0.0.5   | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
+| **Reporting**                  |       | 0.0.40     | 0.0.40 | 0.0.39 | 0.0.39   | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
+| **advancing-controller**       |       | 0.1.4      | 0.1.4  | 0.1.2  | 0.0.6    | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
+| **iOS renderer**               |       | **2.0.7**  | 2.0.4  | 2.0.0  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
+| **Android renderer**           |       | 2.0.1      | 2.0.1  | 2.0.1  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
 
 
 :::danger IMPORTANT
@@ -45,73 +45,204 @@ With the release of **FLOWX.AI 3.0**, there have been some changes that you need
 :::
 
 
-### 3.2.0 recommended versions
+### 3.3.0 recommended versions
 
 | FLOWX.AI Platform Version | Component name               | Recommended version (tested versions) |
 | ------------------------- | ---------------------------- | ------------------------------------- |
-| 3.2                       | Keycloak                     | 18.0.x                                |
-| 3.2                       | Kafka                        | 3.2.0                                 |
-| 3.2                       | PostgreSQL                   | 14.3.0                                |
-| 3.2                       | MongoDB                      | 5.0.8                                 |
-| 3.2                       | Redis                        | 6.2.6                                 |
-| 3.2                       | Elasticsearch                | 7.17                                  |
-| 3.2                       | S3 (Min.IO) / minio-operator | 2022-05-26T05-48-41Z / 4.5.4          |
-| 3.2                       | OracleDB                     | 19.8.0.0.0                            |
-| 3.2                       | Angular (Web SDK)            | 15.0.0                                |
+| 3.3                       | Keycloak                     | 18.0.x                                |
+| 3.3                       | Kafka                        | 3.2.0                                 |
+| 3.3                       | PostgreSQL                   | 14.3.0                                |
+| 3.3                       | MongoDB                      | 5.0.8                                 |
+| 3.3                       | Redis                        | 6.2.6                                 |
+| 3.3                       | Elasticsearch                | 7.17                                  |
+| 3.3                       | S3 (Min.IO) / minio-operator | 2022-05-26T05-48-41Z / 4.5.4          |
+| 3.3                       | OracleDB                     | 19.8.0.0.0                            |
+| 3.3                       | Angular (Web SDK)            | 15.0.0                                |
 
 
 ## Additional configuration
 
-### CMS audit log
+### Process engine
 
-New environment variable that needs to be configured on CMS microservice:
+#### Process Instance Indexing through Kafka transport
 
-* `KAFKA_TOPIC_AUDIT_OUT` - the identifier for the Kafka topic used to receive audit logs
+Adding new Kafka transport strategy for sending details about process instances to be indexed in Elastic Search. Check the following environment variables and their values to set up the indexing accordingly:
 
-[CMS setup guide](../../docs/platform-setup-guides/cms-setup-guide)
+* `FLOWX_INDEXING_ENABLED`
 
+| Variable Name          | Enabled | Description                                                |
+| ---------------------- | ------- | ---------------------------------------------------------- |
+| FLOWX_INDEXING_ENABLED | true    | Indexing with Elastic Search for the whole app is enabled  |
+| FLOWX_INDEXING_ENABLED | false   | Indexing with Elastic Search for the whole app is disabled |
 
-### Notifications plugin
+* `FLOWX_INDEXING_PROCESSINSTANCE_INDEXING_TYPE`
 
-New environment variables added to configure the error handler on Notifications plugin - Kafka consumer (default values below):
+| Variable Name                                | Indexing Type - Values | Definition                                                                                                                          |
+| -------------------------------------------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| FLOWX_INDEXING_PROCESSINSTANCE_INDEXING_TYPE | no-indexing            | No indexing is performed for process instances                                                                                      |
+| FLOWX_INDEXING_PROCESSINSTANCE_INDEXING_TYPE | http                   | Process instances are indexed via HTTP (direct connection from process-engine to Elastic Search thorugh HTTP calls)                 |
+| FLOWX_INDEXING_PROCESSINSTANCE_INDEXING_TYPE | kafka                  | Process instances are indexed via Kafka (send data to be indexed through a kafka topic - the new strategy for the applied solution) |
 
-```
-KAFKA_CONSUMER_ERROR_HANDLING_ENABLED: FALSE
-KAFKA_CONSUMER_ERROR_HANDLING_RETRIES: 0
-KAFKA_CONSUMER_ERROR_HANDLING_RETRY_INTERVAL: 1000
-```
-
-More information about the new environment variables:
-
-[Notifications plugin setup guide](../../docs/platform-deep-dive/plugins/plugins-setup-guide/notifications-plugin-setup#error-handling)
-
-### Client and environment
-
-Only users with the following admin role can set/edit the new client and environment feature:
-
-* `ROLE_ADMIN_MANAGE_PLATFORM_ADMIN` 
-
-### OCR plugin
-
-:::info
-Replaced `MINIO_` prefix with `STORAGE_S3_` for storage related environment variables.
+:::warning
+For Kafka indexing, the Kafka Connect with Elastic Search Sink Connector must be deployed in the infrastructure.
 :::
 
-New environment variables:
 
-* `STORAGE_S3_ACCESS_KEY`
-* `STORAGE_S3_SECRET_KEY`
-* `STORAGE_S3_HOST`
-* `STORAGE_S3_LOCATION` 
-* `STORAGE_S3_OCR_SCANS_BUCKET` 
-* `STORAGE_S3_OCR_SIGNATURE_BUCKET` 
-* `STORAGE_S3_OCR_SIGNATURE_FILENAME` 
+* `FLOWX-INDEXING_PROCESSINSTANCE_INDEX_NAME`:
+* `FLOWX_INDEXING_PROCESSINSTANCE_SHARDS`:
+* `FLOWX_INDEXING_PROCESSINSTANCE_REPLICAS`:
 
-:::caution IMPORTANT
-The following environment from previous releases must be removed in§§ order to use OCR plugin: `CELERY_BROKER_URL`.
-:::
 
-More information available in the below section:
+#### Kafka Connect with configuration
 
-[OCR setup guide](../../docs/platform-deep-dive/plugins/plugins-setup-guide/ocr-plugin-setup)
+```json
+body:
+{
+    "connector.class": "io.confluent.connect.elasticsearch.ElasticsearchSinkConnector",
+    "tasks.max": "1",
+    "topics": "process_instance-minute-test", //the source Kafka topic. Must be the same with the one declare din process enfine as ${kafka.topic.naming.prefix}.core.index.process${kafka.topic.naming.suffix}
+    "key.ignore": "false", // this tells KC to process the key of the message - it will be used as id of the object in ES. 
+    "schema.ignore": "true", //this tells KC to ignore the mapping from the Kafka mesage. ES will use internal mapping. See below. 
+    "connection.url": "https://elasticsearch-es-http:9200", // URL to ES
+    "connection.username": "elastic", 
+    "connection.password": "in config files",
+    "elastic.security.protocol": "SSL",
+    "elastic.https.ssl.keystore.location": "/opt/kafka/external-configuration/elasticsearch-keystore-volume/keystore.jks",
+    "elastic.https.ssl.keystore.password": "in config files",
+    "elastic.https.ssl.key.password": "in config files",
+    "elastic.https.ssl.keystore.type": "JKS",
+    "elastic.https.ssl.truststore.location": "/opt/kafka/external-configuration/elasticsearch-keystore-volume/keystore.jks",
+    "elastic.https.ssl.truststore.password": "in config files",
+    "elastic.https.ssl.truststore.type": "JKS",
+    "elastic.https.ssl.protocol": "TLS",
+    "batch.size": 1000,   // the size off the message batch that KC will process.
+    "linger.ms": 1,
+    "read.timeout.ms": 10000,    //increased to 10000 from the default 3000 due to the flush.synchrounously = true.
+    "flush.synchronously": "true",   // the way of writting to ES. It must stay "true" for the routr below to work.
+    "drop.invalid.message": "true",   //if false - the connector will wait for a configuration that allows to process the message. If true - the connector will just drop the invalid message.
+    "behavior.on.null.value": "IGNORE",   //must be IGNORE to avoid blocking the processing on null messages
+    "behavior.on.malformed.documents": "IGNORE",  //must be IGNORE to avoif blocking the processing on invalid JSONs
+    "write.method": "UPSERT",  //UPSERT to create or update the index
+    "type.name": "_doc",
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter", 
+    "key.converter.schemas.enable": "false",  //no scehma defined for key in the message
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter.schemas.enable": "false",  //no scehma defined for value in the message body
+    "transforms":"routeTS",  //very important the router that helps creating indices dynamically based on timestamp (process instance start date)
+    "transforms.routeTS.type":"org.apache.kafka.connect.transforms.TimestampRouter",  
+    "transforms.routeTS.topic.format":"process_instance-${timestamp}", //It is important that this value must start with the value defined in process-engine and data-search in config: spring.elasticsearch.index-settings.name The name of the index will start with a prefix ("process_instance-" in this example) and must have the timestamp appended after for dynamically creating indices. For backwards compatibility (utilising the data in the existing index), the prefix must be "process_instance-". But backwards compatibility isn"t specifically a must here.
+    "transforms.routeTS.timestamp.format":"yyyyMMddHHmm" // the timestamp format that 
+}
+```
 
+#### Update for Elastic Search (index template)
+
+Since mappings between messages and Elasticsearch data types are unknown, a mapping needs to be specified. This is achieved through an index template created by the process engine during startup. The template applies to indices starting with the value defined in `spring.elasticsearch.index-settings.name` config. An example of the index template is:
+
+```json 
+//process_instance_template
+{
+    "index_patterns": ["process_instance*"],
+    "priority": 300,
+    "template":  
+    {
+	  "mappings": {
+	    "_doc": {
+	      "properties": {
+	        "_class": {
+	          "type": "keyword",
+	          "index": false,
+	          "doc_values": false
+	        },
+	        "dateStarted": {
+	          "type": "date",
+	          "format": "date_optional_time||epoch_millis"
+	        },
+	        "id": {
+	          "type": "text",
+	          "fields": {
+	            "keyword": {
+	              "type": "keyword",
+	              "ignore_above": 256
+	            }
+	          }
+	        },
+	        "indexLastUpdatedTime": {
+	          "type": "date",
+	          "format": "date_optional_time||epoch_millis"
+	        },
+	        "keyIdentifiers": {
+	          "type": "nested",
+	          "include_in_parent": true,
+	          "properties": {
+	            "_class": {
+	              "type": "keyword",
+	              "index": false,
+	              "doc_values": false
+	            },
+	            "key": {
+	              "type": "text",
+	              "fields": {
+	                "keyword": {
+	                  "type": "keyword",
+	                  "ignore_above": 256
+	                }
+	              }
+	            },
+	            "originalValue": {
+	              "type": "text",
+	              "fields": {
+	                "keyword": {
+	                  "type": "keyword",
+	                  "ignore_above": 256
+	                }
+	              }
+	            },
+	            "path": {
+	              "type": "text",
+	              "fields": {
+	                "keyword": {
+	                  "type": "keyword",
+	                  "ignore_above": 256
+	                }
+	              }
+	            },
+	            "value": {
+	              "type": "text",
+	              "fields": {
+	                "keyword": {
+	                  "type": "keyword",
+	                  "ignore_above": 256
+	                }
+	              }
+	            }
+	          }
+	        },
+	        "processDefinitionName": {
+	          "type": "text",
+	          "fields": {
+	            "keyword": {
+	              "type": "keyword",
+	              "ignore_above": 256
+	            }
+	          }
+	        },
+	        "state": {
+	          "type": "text",
+	          "fields": {
+	            "keyword": {
+	              "type": "keyword",
+	              "ignore_above": 256
+	            }
+	          }
+	        }
+	      }
+	    }
+	  },
+        "settings":{
+        "number_of_shards":5,
+        "number_of_replicas":1
+        }
+    }
+}
+```
