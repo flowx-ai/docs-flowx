@@ -22,7 +22,7 @@ It would be best if the FLOWX Designer used a separate [NGINX](../../platform-ov
 
 This is used in order to route API calls from the SPA (single page application) to the backend service, to the engine, and to various plugins.
 
-The FLOWX Designer SPA will use the backend service to manage the platform via REST calls, will use API calls to manage specific content for the plugins and will use REST and [WebSocket](../../building-blocks/actions/websocket-send-action.md) calls to connect to the engine.
+The FLOWX Designer SPA will use the backend service to manage the platform via REST calls, will use API calls to manage specific content for the plugins and will use REST and [SSE](../../building-blocks/actions/send-data-to-user-interface.md) calls to connect to the engine.
 
 Here's an example/suggestion of an NGINX setup:
 

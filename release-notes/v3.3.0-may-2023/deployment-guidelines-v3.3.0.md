@@ -88,9 +88,9 @@ For Kafka indexing, the Kafka Connect with Elastic Search Sink Connector must be
 :::
 
 
-* `FLOWX-INDEXING_PROCESSINSTANCE_INDEX_NAME`:
-* `FLOWX_INDEXING_PROCESSINSTANCE_SHARDS`:
-* `FLOWX_INDEXING_PROCESSINSTANCE_REPLICAS`:
+* `FLOWX-INDEXING_PROCESSINSTANCE_INDEX_NAME`
+* `FLOWX_INDEXING_PROCESSINSTANCE_SHARDS`
+* `FLOWX_INDEXING_PROCESSINSTANCE_REPLICAS`
 
 
 #### Kafka Connect with configuration
@@ -100,9 +100,9 @@ body:
 {
     "connector.class": "io.confluent.connect.elasticsearch.ElasticsearchSinkConnector",
     "tasks.max": "1",
-    "topics": "process_instance-minute-test", //the source Kafka topic. Must be the same with the one declare din process enfine as ${kafka.topic.naming.prefix}.core.index.process${kafka.topic.naming.suffix}
+    "topics": "process_instance-minute-test", //the source Kafka topic. Must be the same with the one declare din process defined as ${kafka.topic.naming.prefix}.core.index.process${kafka.topic.naming.suffix}
     "key.ignore": "false", // this tells KC to process the key of the message - it will be used as id of the object in ES. 
-    "schema.ignore": "true", //this tells KC to ignore the mapping from the Kafka mesage. ES will use internal mapping. See below. 
+    "schema.ignore": "true", //this tells KC to ignore the mapping from the Kafka message. ES will use internal mapping. See below. 
     "connection.url": "https://elasticsearch-es-http:9200", // URL to ES
     "connection.username": "elastic", 
     "connection.password": "in config files",
@@ -118,19 +118,19 @@ body:
     "batch.size": 1000,   // the size off the message batch that KC will process.
     "linger.ms": 1,
     "read.timeout.ms": 10000,    //increased to 10000 from the default 3000 due to the flush.synchrounously = true.
-    "flush.synchronously": "true",   // the way of writting to ES. It must stay "true" for the routr below to work.
+    "flush.synchronously": "true",   // the way of writing to ES. It must stay "true" for the routr below to work.
     "drop.invalid.message": "true",   //if false - the connector will wait for a configuration that allows to process the message. If true - the connector will just drop the invalid message.
     "behavior.on.null.value": "IGNORE",   //must be IGNORE to avoid blocking the processing on null messages
-    "behavior.on.malformed.documents": "IGNORE",  //must be IGNORE to avoif blocking the processing on invalid JSONs
+    "behavior.on.malformed.documents": "IGNORE",  //must be IGNORE to avoid blocking the processing on invalid JSONs
     "write.method": "UPSERT",  //UPSERT to create or update the index
     "type.name": "_doc",
     "key.converter": "org.apache.kafka.connect.storage.StringConverter", 
-    "key.converter.schemas.enable": "false",  //no scehma defined for key in the message
+    "key.converter.schemas.enable": "false",  //no schema defined for key in the message
     "value.converter": "org.apache.kafka.connect.json.JsonConverter",
-    "value.converter.schemas.enable": "false",  //no scehma defined for value in the message body
+    "value.converter.schemas.enable": "false",  //no schema defined for value in the message body
     "transforms":"routeTS",  //very important the router that helps creating indices dynamically based on timestamp (process instance start date)
     "transforms.routeTS.type":"org.apache.kafka.connect.transforms.TimestampRouter",  
-    "transforms.routeTS.topic.format":"process_instance-${timestamp}", //It is important that this value must start with the value defined in process-engine and data-search in config: spring.elasticsearch.index-settings.name The name of the index will start with a prefix ("process_instance-" in this example) and must have the timestamp appended after for dynamically creating indices. For backwards compatibility (utilising the data in the existing index), the prefix must be "process_instance-". But backwards compatibility isn"t specifically a must here.
+    "transforms.routeTS.topic.format":"process_instance-${timestamp}", //It is important that this value must start with the value defined in process-engine and data-search in config: spring.elasticsearch.index-settings.name The name of the index will start with a prefix ("process_instance-" in this example) and must have the timestamp appended after for dynamically creating indices. For backwards compatibility (utilizing the data in the existing index), the prefix must be "process_instance-". But backwards compatibility isn"t specifically a must here.
     "transforms.routeTS.timestamp.format":"yyyyMMddHHmm" // the timestamp format that 
 }
 ```
