@@ -1,3 +1,7 @@
+---
+sidebar_position: 8
+---
+
 # Segmented button
 
 ![](../../img/segmented_button1.gif)
