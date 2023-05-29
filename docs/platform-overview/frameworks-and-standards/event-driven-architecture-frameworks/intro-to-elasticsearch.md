@@ -56,6 +56,8 @@ For more details on how to configure process instance indexing through Kakfa tra
 
 [Configuring elasticsearch indexing](../../../platform-setup-guides/flowx-engine-setup-guide/configuring-elasticsearch-indexing)
 
+[Configuration guidlines](../../../platform-setup-guides/flowx-engine-setup-guide/configuring-elasticsearch-indexing/process-instance-indexing-config-guidelines)
+
 
 
 

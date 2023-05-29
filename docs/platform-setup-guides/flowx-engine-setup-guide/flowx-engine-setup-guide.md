@@ -242,6 +242,12 @@ The suggested topic pattern naming convention is the following:
 | --------------------------- | ------------------------------------------- |
 | KAFKA_TOPIC_AUDIT_OUT       | ai.flowx.dev.core.save.audit.v1             |
 
+#### **Topics related to process event messages**
+
+| Default parameter (env var)   | Default FLOWX.AI value (can be overwritten) |
+| ----------------------------- | ------------------------------------------- |
+| KAFKA_TOPIC_PROCESS_START_IN  | ai.flowx.dev.core.trigger.start.process.v1  |
+
 #### **Processes that can be started by sending messages to a Kafka topic**
 
 * `KAFKA_TOPIC_PROCESS_START_IN` - the Engine listens on this topic for requests to start a new process instance
@@ -250,7 +256,7 @@ The suggested topic pattern naming convention is the following:
 
 | Default parameter (env var)   | Default FLOWX.AI value (can be overwritten) |
 | ----------------------------- | ------------------------------------------- |
-| KAFKA_TOPIC_PROCESS_START_IN  | ai.flowx.dev.core.trigger.start.rpocess.v1  |
+| KAFKA_TOPIC_PROCESS_START_IN  | ai.flowx.dev.core.trigger.start.process.v1  |
 | KAFKA_TOPIC_PROCESS_START_OUT | ai.flowx.dev.core.confirm.start.process.v1  |
 
 
