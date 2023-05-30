@@ -23,7 +23,7 @@ The solution includes an index template that gets created with the settings from
 
 [What is sharding?](../../../platform-overview/frameworks-and-standards//event-driven-architecture-frameworks//intro-to-elasticsearch.md#sharding)
 
-[Index template](../configuring-elasticsearch-indexing.md#elasticsearch-update-index-template)
+[Index template](../configuring-elasticsearch-indexing/configuring-elasticsearch-indexing.md#elasticsearch-update-index-template)
 
 Once an index is created, you cannot update its number of shards and replicas. However, you can update the settings from the index template at runtime in Elasticsearch, and new indices will be created with the updated settings. Note that the mapping should not be altered as it is required by the application.
 
@@ -44,13 +44,16 @@ To manage functional indexing operations and resources efficiently, consider the
 
 Recommendations:
 
-* Start with monthly indexes that have 1 shard and 1 replica. This setup is typically sufficient for handling up to 200k process instances per day.
+* Start with monthly indexes that have 2 shards and 1 replica. This setup is typically sufficient for handling up to 200k process instances per day; ensures a parallel indexing in two main shards and has also 1 replica per each main shard (4 shards in total). This would create 48 shards per year in the elastic search nodes; A lot less than the default 1000 shards, so you will have enough space for other indexes as well.
+    * If you observe that the indexing gets really, really slow, then you should look at the physical resources / shard size and start adapting the config.
+    * If you observe that indexing one monthly index gets massive and affects the performance, then think about switching to weekly indices.
+    * If you have huge spikes of parallel indexing load (even though that depends on the Kafka connect cluster configuration), then think about adding more main shards.
 * Consider having at least one replica for high availability. However, keep in mind that the number of replicas is applied to each shard, so creating many replicas may lead to increased resource usage.
 * Monitor the number of shards created and estimate when you might reach the maximum shards per node, taking into account the number of nodes in your cluster.
 
 #### Balancing
 
-When configuring index settings, consider the number of nodes in your cluster. The total number of shards (primary + replicas) for an index should be directly proportional to the number of nodes. This helps Elasticsearch distribute the load evenly across nodes and avoid overloading a single node. Avoid adding shards and replicas unnecessarily.
+When configuring index settings, consider the number of nodes in your cluster. The total number of shards (calculated by the formula: primary_shards_number * (replicas_number +1)) for an index should be directly proportional to the number of nodes. This helps Elasticsearch distribute the load evenly across nodes and avoid overloading a single node. Avoid adding shards and replicas unnecessarily.
 
 #### Delete unneeded indices
 

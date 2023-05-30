@@ -1,21 +1,21 @@
-# Process instance indexing through Kafka transport
+# Process instance indexing
 
 This section provides configuration steps for enabling process instance indexing using the Kafka transport strategy. Before proceeding, it is recommended to familiarize yourself with Elasticsearch and its indexing process by referring to the Intro to Elasticsearch section:
 
 [Intro to Elasticsearch](../../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-elasticsearch)
 
 
-## Configurationg updates
+## Configuration updates
 
-To enable the new indexing strategy, the previous configuration parameter `flowx.use-elasticsearch` is being replaced. However, to ensure backward compatibility, it will still be preserved in the configuration. Below is an example of how to configure it:
+To enable Kafka indexing strategy, the previous configuration parameter `flowx.use-elasticsearch` is being replaced. However, to ensure backward compatibility, it will still be preserved in the configuration. Below is an example of how to configure it:
 
 ```json
 spring:
   elasticsearch:
     index-settings:
       name: process_instance
-      shards: 2
-      replicas: 2
+      shards: 1
+      replicas: 1
 
 ```
 
@@ -28,23 +28,28 @@ flowx:
     processInstance:  // set of configurations for indexing process instances. Can be duplicated for other objects.
       indexing-type: kafka  // no-indexing | http | kafka - the chosen indexing strategy.
       index-name: process_instance  // the index name that is part of the search pattern.
-      shards: 2
-      replicas: 2
+      shards: 1
+      replicas: 1
 ```
 
-The `flowx.indexing.enabled` property determines whether indexing with Elastic Search is enabled. When set to false or missing, no indexing will be performed for any entities defined below. When set to true, indexing with Elastic Search is enabled.
+The `flowx.indexing.enabled` property determines whether indexing with Elasticsearch is enabled. When set to false or missing, no indexing will be performed for any entities defined below. When set to true, indexing with Elasticsearch is enabled.
+
+
+:::info
+If the `FLOWX_INDEXING_ENABLED` configuration is set to false, the following configuration information and guidelines are not applicable to your use case.
+:::
 
 The `flowx.indexing.processInstance.indexing-type` property defines the indexing strategy for process instances. It can have one of the following values:
 
 * **no-indexing**: No indexing will be performed for process instances.
-* **http**: Direct connection from the process engine to Elastic Search through HTTP calls.
-* **kafka**: Data will be sent to be indexed via a Kafka topic using the new strategy. To implement this strategy, the Kafka Connect with Elastic Search Sink Connector must be deployed in the infrastructure.
+* **http**: Direct connection from the process engine to Elasticsearch through HTTP calls.
+* **kafka**: Data will be sent to be indexed via a Kafka topic using the new strategy. To implement this strategy, the Kafka Connect with Elasticsearch Sink Connector must be deployed in the infrastructure.
 
 ## Configuration Steps
 
 To enable indexing with Elasticsearch for the entire application, update the process-engine configuration with the following parameters:
 
-* `FLOWX_INDEXING_ENABLED`: set this parameter to `true` to enable indexing with Elastic Search for the entire application
+* `FLOWX_INDEXING_ENABLED`: set this parameter to `true` to enable indexing with Elastisearch for the entire application
 
 | Variable Name          | Enabled | Description                                                |
 | ---------------------- | ------- | ---------------------------------------------------------- |
@@ -63,6 +68,8 @@ To enable indexing with Elasticsearch for the entire application, update the pro
 For Kafka indexing, the Kafka Connect with Elastic Search Sink Connector must be deployed in the infrastructure.
 :::
 
+[Elasticsearch Service Sink Connector](https://docs.confluent.io/kafka-connectors/elasticsearch/current/overview.html)
+
 * `FLOWX_INDEXING_PROCESSINSTANCE_INDEX_NAME`: specify the name of the index used for process instances
 * `FLOWX_INDEXING_PROCESSINSTANCE_SHARDS`: set the number of shards for the index
 * `FLOWX_INDEXING_PROCESSINSTANCE_REPLICAS`: set the number of replicas for the index
@@ -78,8 +85,8 @@ flowx:
     processInstance:
       indexing-type: kafka
       index-name: process_instance
-      shards: 2
-      replicas: 2
+      shards: 1
+      replicas: 1
 ```
 
 #### Kafka Connect configuration
@@ -121,31 +128,70 @@ body:
     "transforms.routeTS.type":"org.apache.kafka.connect.transforms.TimestampRouter",  
     "transforms.routeTS.topic.format":"process_instance-${timestamp}", // It is important that this value must start with the value defined in process-engine and data-search in config: spring.elasticsearch.index-settings.name. The name of the index will start with a prefix ("process_instance-" in this example) and must have the timestamp appended after for dynamically creating indices. For backward compatibility (utilizing the data in the existing index), the prefix must be "process_instance-". However, backward compatibility isn't specifically required here.
     "transforms.routeTS.timestamp.format":"yyyyMMddHHmm" // This format ensures that the timestamp is represented consistently and can be easily parsed when creating or searching for indices based on the process instance start date.
+}
 ```
-
+```yaml
+spec:
+  class: io.confluent.connect.elasticsearch.ElasticsearchSinkConnector
+  tasksMax: 2
+  config:
+    tasks.max: "2" # The maximum number of tasks that can be run in parallel for this connector, which is 2 in this case.
+    topics: "ai.flowx.core.index.process.v1" # Source Kafka topic. Must be the same as the one declared in the process defined as ${kafka.topic.naming.prefix}.core.index.process${kafka.topic.naming.suffix}
+    key.ignore: "false" # This tells Kafka Connect (KC) to process the key of the message - it will be used as the ID of the object in Elasticsearch. 
+    schema.ignore: "true" # This tells KC to ignore the mapping from the Kafka message. Elasticsearch will use internal mapping. See below. 
+    connection.url: "https://elasticsearch-es-http:9200" # URL to Elasticsearch
+    connection.username: "elastic"
+    connection.password: "Yyh03ZI66310Hyw59MXcR8xt"
+    elastic.security.protocol: "SSL"
+    elastic.https.ssl.keystore.location: "/opt/kafka/external-configuration/elasticsearch-keystore-volume/keystore.jks"
+    elastic.https.ssl.keystore.password: "MPx57vkACsRWKVap"
+    elastic.https.ssl.key.password: "MPx57vkACsRWKVap"
+    elastic.https.ssl.keystore.type: "JKS"
+    elastic.https.ssl.truststore.location: "/opt/kafka/external-configuration/elasticsearch-keystore-volume/keystore.jks"
+    elastic.https.ssl.truststore.password: "MPx57vkACsRWKVap"
+    elastic.https.ssl.truststore.type: "JKS"
+    elastic.https.ssl.protocol: "TLS"
+    batch.size: 1000 # The size of the message batch that KC will process.
+    linger.ms: 1
+    read.timeout.ms: 30000 # Increased to 30000 from the default 3000 due to flush.synchronously = true.
+    flush.synchronously: "true" # The way of writing to Elasticsearch. It must stay "true" for the router below to work.
+    drop.invalid.message: "true" # If false, the connector will wait for a configuration that allows processing the message. If true, the connector will drop the invalid message.
+    behavior.on.null.values: "IGNORE" #Must be IGNORE to avoid blocking the processing of null messages.
+    behavior.on.malformed.documents: "IGNORE" #Must be IGNORE to avoid blocking the processing of invalid JSONs.
+    write.method: "UPSERT" # UPSERT to create or update the index.
+    type.name: "_doc"
+    key.converter: "org.apache.kafka.connect.storage.StringConverter"
+    key.converter.schemas.enable: "false" # No schema defined for the key in the message.
+    value.converter: "org.apache.kafka.connect.json.JsonConverter"
+    value.converter.schemas.enable: "false" # No schema defined for the value in the message body.
+    transforms: "routeTS" # The router that helps create indices dynamically based on the timestamp (process instance start date).
+    transforms.routeTS.type: "org.apache.kafka.connect.transforms.TimestampRouter"
+    transforms.routeTS.topic.format: "process_instance-${timestamp}" #It is important that this value must start with the value defined in process-engine and data-search in config: spring.elasticsearch.index-settings.name. The name of the index will start with a prefix ("process_instance-" in this example) and must have the timestamp appended after for dynamically creating indices. For backward compatibility (utilizing the data in the existing index), the prefix must be "process_instance-". However, backward compatibility isn't specifically required here.
+    transforms.routeTS.timestamp.format: "yyyyMMdd" #This format ensures that the timestamp is represented consistently and can be easily parsed when creating or searching for indices based on the process instance start date.
+```
 
 #### Example configuration for using HTTP indexing
 
-```json
+```yaml
 flowx:
   indexing:
     enabled: true
     processInstance:
       indexing-type: http
       index-name: process_instance
-      shards: 2
-      replicas: 2
+      shards: 1
+      replicas: 1
 ```
 
 If you don't want to remove the existing configuration parameters, you can use the following example:
 
-```json
+```yaml
 spring:
   elasticsearch:
     index-settings:
       name: process_instance
-      shards: 2
-      replicas: 2
+      shards: 1
+      replicas: 1
 flowx.use-elasticsearch: true
 flowx:
   indexing:
@@ -163,22 +209,6 @@ flowx:
 To read from multiple indices, queries in Elasticsearch have been updated. The queries now run against an index pattern that identifies multiple indices instead of a single index. The index pattern is derived from the value defined in the configuration property:
 
 `spring.elasticsearch.index-settings.name`
-
-Here is an example of a query generated when searching from the Designer web app:
-
-```json
-{
-  "query": {
-    "wildcard": {
-      "keyIdentifiers.value.keyword": {
-        "boost": 1,
-        "wildcard": "*name*"
-      }
-    }
-  }
-}
-```
-
 
 ### Kafka topics
 
@@ -200,84 +230,6 @@ This topic is used for sending the data to be indexed from Process engine. The d
 - the attribute: **indexLastUpdatedTime** is new and will be populated for the kafka-connect strategy. This will tell have the timestamp when last operation was done on the object in the index.
 
 :::
-
-
-
-### Data Search
-
-Similar to the querying changes, data search in Elasticsearch now runs against an index pattern representing multiple indices. The index pattern is derived from the configuration property:
-
-`spring.elasticsearch.index-settings.name`
-
-Below is an example of a filter to be used in Kibana (as generated by data search):
-
-```json
-{
-  "query": {
-    "bool": {
-      "adjust_pure_negative": true,
-      "boost": 1,
-      "must": [
-        {
-          "nested": {
-            "boost": 1,
-            "ignore_unmapped": false,
-            "path": "keyIdentifiers",
-            "query": {
-              "bool": {
-                "adjust_pure_negative": true,
-                "boost": 1,
-                "must": [
-                  {
-                    "match": {
-                      "keyIdentifiers.key.keyword": {
-                        "auto_generate_synonyms_phrase_query": true,
-                        "boost": 1,
-                        "fuzzy_transpositions": true,
-                        "lenient": false,
-                        "max_expansions": 50,
-                        "operator": "OR",
-                        "prefix_length": 0,
-                        "query": "astonishingAttribute",
-                        "zero_terms_query": "NONE"
-                      }
-                    }
-                  },
-                  {
-                    "match": {
-                      "keyIdentifiers.originalValue.keyword": {
-                        "auto_generate_synonyms_phrase_query": true,
-                        "boost": 1,
-                        "fuzzy_transpositions": true,
-                        "lenient": false,
-                        "max_expansions": 50,
-                        "operator": "OR",
-                        "prefix_length": 0,
-                        "query": "OriginalGangsta",
-                        "zero_terms_query": "NONE"
-                      }
-                    }
-                  }
-                ]
-              }
-            },
-            "score_mode": "none"
-          }
-        },
-        {
-          "terms": {
-            "boost": 1,
-            "processDefinitionName.keyword": [
-              "TEST_PORCESS_NAME_0",
-              "TEST_PORCESS_NAME_1"
-            ]
-          }
-        }
-      ]
-    }
-  }
-}
-```
 
 ### Elasticsearch Update (Index Template)
 

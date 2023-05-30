@@ -24,25 +24,25 @@ FLOWX.AI uses a number of third-party software components:
 
 | FLOWX.AI Platform Version | Component name               | Supported/tested versions    |
 | ------------------------- | ---------------------------- | ---------------------------- |
-| 2.3.0 → 3.2.0             | Keycloak                     | 18.0.x                       |
-| 2.3.0 → 3.2.0             | Kafka / Zookeeper*           | 3.0.1 / 3.6.6                |
-| 2.3.0 → 3.2.0             | Jaeger                       | 1.34.1                       |
-| 2.3.0 → 3.2.0             | AKHQ                         | 0.17.0                       |
-| 2.3.0 → 3.2.0             | PostgreSQL                   | 14.3.0                       |
-| 2.3.0 → 3.2.0             | MongoDB                      | 5.0.8                        |
-| 2.3.0 → 3.2.0             | Redis                        | 6.2.6                        |
-| 2.3.0 → 3.2.0             | NGINX Ingress Controller     | 1.2.0                        |
-| 2.3.0 → 3.2.0             | Elasticsearch                | 7.17                         |
-| 2.3.0 → 3.2.0             | Fluentd                      | 3.3.0                        |
-| 2.3.0 → 3.2.0             | Kibana                       | 7.9.3                        |
-| 2.3.0 → 3.2.0             | S3 (Min.IO) / minio-operator | 2022-05-26T05-48-41Z / 4.5.4 |
+| 2.3.0 → 3.3.0             | Keycloak                     | 18.0.x                       |
+| 2.3.0 → 3.3.0             | Kafka / Zookeeper*           | 3.0.1 / 3.6.6                |
+| 2.3.0 → 3.3.0             | Jaeger                       | 1.34.1                       |
+| 2.3.0 → 3.3.0             | AKHQ                         | 0.17.0                       |
+| 2.3.0 → 3.3.0             | PostgreSQL                   | 14.3.0                       |
+| 2.3.0 → 3.3.0             | MongoDB                      | 5.0.8                        |
+| 2.3.0 → 3.3.0             | Redis                        | 6.2.6                        |
+| 2.3.0 → 3.3.0             | NGINX Ingress Controller     | 1.2.0                        |
+| 2.3.0 → 3.3.0             | Elasticsearch                | 7.17                         |
+| 2.3.0 → 3.3.0             | Fluentd                      | 3.3.0                        |
+| 2.3.0 → 3.3.0             | Kibana                       | 7.17                         |
+| 2.3.0 → 3.3.0             | S3 (Min.IO) / minio-operator | 2022-05-26T05-48-41Z / 4.5.4 |
 
 
 ### Third-party components supported/tested versions
 
 | FLOWX.AI Platform version | Component name | Supported/tested versions |
 | ------------------------- | -------------- | ------------------------- |
-| 2.3.0 → 3.2.0             | OracleDB       | 12C / 18-XE               |
+| 2.3.0 → 3.3.0             | OracleDB       | 12C / 18-XE               |
 
 
 :::info
@@ -142,6 +142,10 @@ Used by FLOWX.AI in the core component and optionally to allow searching for bus
 [Elastic stack documentation](https://www.elastic.co/elastic-stack/)
 
 [Fluentd documentation](https://docs.fluentd.org/)
+
+#### Kafka Connect Elasticsearch Service Sink
+
+The Kafka Connect Elasticsearch Service Sink connector moves data from Apache Kafka® to Elasticsearch. It writes data from a topic in Kafka to an index in Elasticsearch. All data for a topic have the same type in Elasticsearch. This allows an independent evolution of schemas for data from different topics. This simplifies the schema evolution because Elasticsearch has one enforcement on mappings; that is, all fields with the same name in the same index must have the same mapping type.
 
 #### S3 (MinIO)
 
