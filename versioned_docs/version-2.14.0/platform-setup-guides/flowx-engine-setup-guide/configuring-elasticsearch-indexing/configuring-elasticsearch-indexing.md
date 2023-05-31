@@ -93,6 +93,64 @@ For Kafka indexing, the Kafka Connect with Elastic Search Sink Connector must be
 
 #### Example configuration for applying the solution with Kafka Connect:
 
+* Kafka Connect
+  * assumes kafka cluster installed with strimzi operator and elasticsearch with eck-operator
+  * can save the image built by kafka connect to a local registry and comment build section
+```yaml
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaConnect
+metadata:
+  name: kafka-connect-kafka-flowx
+  annotations:
+    strimzi.io/use-connector-resources: "true"
+spec:
+  version: 3.0.0
+  replicas: 1
+  bootstrapServers: kafka-flowx-kafka-bootstrap:9093
+  tls:
+    trustedCertificates:
+      - secretName: kafka-flowx-cluster-ca-cert
+        certificate: ca.crt
+  image: ttl.sh/strimzi-connect-ttlsh266-3.0.0:24h
+  config:
+    group.id: flowx-kafka-connect
+    offset.storage.topic: kafka-connect-cluster-offsets
+    config.storage.topic: kafka-connect-cluster-configs
+    status.storage.topic: kafka-connect-cluster-status
+    # -1 means it will use the default replication factor configured in the broker
+    config.storage.replication.factor: -1
+    offset.storage.replication.factor: -1
+    status.storage.replication.factor: -1
+    topic.creation.enable: true
+  build:
+   output:
+     type: docker
+     # This image will last only for 24 hours and might be overwritten by other users
+     # Strimzi will use this tag to push the image. But it will use the digest to pull
+     # the container image to make sure it pulls exactly the image we just built. So
+     # it should not happen that you pull someone else's container image. However, we
+     # recommend changing this to your own container registry or using a different
+     # image name for any other than demo purposes.
+     image: ttl.sh/strimzi-connect-ttlsh266-3.0.0:24h
+   plugins:
+     - name: kafka-connect-elasticsearch
+       artifacts:
+         - type: zip
+           url: https://d1i4a15mxbxib1.cloudfront.net/api/plugins/confluentinc/kafka-connect-elasticsearch/versions/14.0.6/confluentinc-kafka-connect-elasticsearch-14.0.6.zip
+  externalConfiguration:
+    volumes:
+      - name: elasticsearch-keystore-volume
+        secret:
+          secretName: elasticsearch-keystore
+    env:
+      - name: SPRING_ELASTICSEARCH_REST_PASSWORD
+        valueFrom:
+          secretKeyRef:
+            name: elasticsearch-es-elastic-user
+            key: elastic
+```
+
+* Kafka Elasticsearch Connector
 ```yaml
 spec:
   class: io.confluent.connect.elasticsearch.ElasticsearchSinkConnector
