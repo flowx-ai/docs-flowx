@@ -64,15 +64,30 @@ To enable indexing with Elasticsearch for the entire application, update the pro
 | FLOWX_INDEXING_PROCESSINSTANCE_INDEXING_TYPE | http                   | Process instances are indexed via HTTP (direct connection from process-engine to Elastic Search thorugh HTTP calls)                 |
 | FLOWX_INDEXING_PROCESSINSTANCE_INDEXING_TYPE | kafka                  | Process instances are indexed via Kafka (send data to be indexed through a kafka topic - the new strategy for the applied solution) |
 
+* `FLOWX_INDEXING_PROCESSINSTANCE_INDEX_NAME`: specify the name of the index used for process instances
+
+| Variable Name                                      | Values           | Definition                                                                                      |
+| -------------------------------------------------- | ---------------- | ----------------------------------------------------------------------------------------------- |
+| FLOWX_INDEXING_PROCESSINSTANCE_INDEXING_INDEX_NAME | process_instance | The name of the index used for storing process instances. It is also part of the search pattern |
+
+* `FLOWX_INDEXING_PROCESSINSTANCE_SHARDS`: set the number of shards for the index
+
+| Variable Name                         | Values | Definition                                                                 |
+| ------------------------------------- | ------ | -------------------------------------------------------------------------- |
+| FLOWX_INDEXING_PROCESSINSTANCE_SHARDS | 1      | The number of shards for the Elasticsearch index storing process instances |
+
+* `FLOWX_INDEXING_PROCESSINSTANCE_REPLICAS`: set the number of replicas for the index
+
+| Variable Name                           | Values | Definition                                                                   |
+| --------------------------------------- | ------ | ---------------------------------------------------------------------------- |
+| FLOWX_INDEXING_PROCESSINSTANCE_REPLICAS | 1      | The number of replicas for the Elasticsearch index storing process instances |
+
 :::warning
 For Kafka indexing, the Kafka Connect with Elastic Search Sink Connector must be deployed in the infrastructure.
 :::
 
 [Elasticsearch Service Sink Connector](https://docs.confluent.io/kafka-connectors/elasticsearch/current/overview.html)
 
-* `FLOWX_INDEXING_PROCESSINSTANCE_INDEX_NAME`: specify the name of the index used for process instances
-* `FLOWX_INDEXING_PROCESSINSTANCE_SHARDS`: set the number of shards for the index
-* `FLOWX_INDEXING_PROCESSINSTANCE_REPLICAS`: set the number of replicas for the index
 
 ### Configuration examples
 
