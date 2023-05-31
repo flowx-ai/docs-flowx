@@ -117,8 +117,6 @@ For more details please check the following section:
 
 [Process Instance Indexing through Kafka transport](../../docs/platform-setup-guides/flowx-engine-setup-guide/configuring-elasticsearch-indexing)
 
-
-
 ### Events gateway
 
 Added new **events-gateway** microservice, the following configuration is needed:
