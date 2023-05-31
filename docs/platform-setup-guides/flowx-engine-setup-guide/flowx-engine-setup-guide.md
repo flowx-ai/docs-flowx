@@ -246,7 +246,7 @@ The suggested topic pattern naming convention is the following:
 
 | Default parameter (env var)   | Default FLOWX.AI value (can be overwritten) |
 | ----------------------------- | ------------------------------------------- |
-| KAFKA_TOPIC_PROCESS_START_IN  | ai.flowx.dev.core.trigger.start.process.v1  |
+| KAFKA_TOPIC_PROCESS_INDEX_OUT | ai.flowx.dev.core.index.process.v1          |
 
 #### **Processes that can be started by sending messages to a Kafka topic**
 
@@ -260,15 +260,10 @@ The suggested topic pattern naming convention is the following:
 | KAFKA_TOPIC_PROCESS_START_OUT | ai.flowx.dev.core.confirm.start.process.v1  |
 
 
-### Configuring WebSockets
+### Configuring events-gateway
 
-The engine communicates with the frontend application via WebSockets. The following environment variables need to be configured for the socket server connection details:
+The engine communicates with the frontend application via the events-gateway service. The following environment variables need to be configured:
 
-* `WEB_SOCKET_SERVER_URL_EXTERNAL` - the external URL of the WebSocket server
-
-* `WEB_SOCKET_SERVER_PORT` - the port on which the WebSocket server is running
-
-* `WEB_SOCKET_SERVER_PATH` - the WebSocket server path
 
 ### Configuring file upload size
 
@@ -297,27 +292,20 @@ Below you can find a configuration .yaml to use [scheduler](../../platform-deep-
 
 ```yaml
 scheduler:
+  threads: 10
   processCleanup:
     enabled: false
     cronExpression: 0 */5 0-5 * * ? #every day during the night, every 5 minutes, at the start of the minute.
     batchSize: 1000
   masterElection:
     cronExpression: 30 */3 * * * ? #master election every 3 minutes
-  websocket:
-    namespace:
-      cronExpression: 0 * * * * *
-      expireMinutes: 30
+
 ```
-
-Below you can find a configuration .yaml to use scheduler service together with FLOWX.AI Engine:
-
 * **processCleanup**: A configuration for cleaning up processes. 
 * **enabled** specifies whether this feature is turned on or off. 
 * **cronExpression** is a schedule expression that determines when the cleanup process runs. In this case, it runs every day during the night (between 12:00 AM and 5:59 AM) and every 5 minutes, at the start of the minute. 
 * **batchSize** specifies the number of processes to be cleaned up in one batch.
 * **masterElection**: A configuration for electing a master.
-* **websocket**: A configuration for WebSocket connections.
-* **expireMinutes** specifies how long the WebSocket namespace is valid for (30 minutes in this case).
 
 [Scheduler setup guide](../scheduler-setup-guide.md)
 

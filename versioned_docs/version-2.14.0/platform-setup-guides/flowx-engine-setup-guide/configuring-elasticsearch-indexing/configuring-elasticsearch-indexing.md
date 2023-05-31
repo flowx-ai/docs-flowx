@@ -78,58 +78,6 @@ For Kafka indexing, the Kafka Connect with Elastic Search Sink Connector must be
 
 #### Example configuration for applying the solution with Kafka Connect:
 
-```json
-flowx:
-  indexing:
-    enabled: true
-    processInstance:
-      indexing-type: kafka
-      index-name: process_instance
-      shards: 1
-      replicas: 1
-```
-
-#### Kafka Connect configuration
-
-```json
-body:
-{
-    "connector.class": "io.confluent.connect.elasticsearch.ElasticsearchSinkConnector",
-    "tasks.max": "1",
-    "topics": "process_instance-minute-test", //Source Kafka topic. Must be the same as the one declared in the process defined as ${kafka.topic.naming.prefix}.core.index.process${kafka.topic.naming.suffix}
-    "key.ignore": "false", //This tells Kafka Connect (KC) to process the key of the message - it will be used as the ID of the object in Elasticsearch. 
-    "schema.ignore": "true", //This tells KC to ignore the mapping from the Kafka message. Elasticsearch will use internal mapping. See below. 
-    "connection.url": "https://elasticsearch-es-http:9200", // URL to Elasticsearch
-    "connection.username": "elastic", 
-    "connection.password": "in config files",
-    "elastic.security.protocol": "SSL",
-    "elastic.https.ssl.keystore.location": "/opt/kafka/external-configuration/elasticsearch-keystore-volume/keystore.jks",
-    "elastic.https.ssl.keystore.password": "in config files",
-    "elastic.https.ssl.key.password": "in config files",
-    "elastic.https.ssl.keystore.type": "JKS",
-    "elastic.https.ssl.truststore.location": "/opt/kafka/external-configuration/elasticsearch-keystore-volume/keystore.jks",
-    "elastic.https.ssl.truststore.password": "in config files",
-    "elastic.https.ssl.truststore.type": "JKS",
-    "elastic.https.ssl.protocol": "TLS",
-    "batch.size": 1000,   //The size of the message batch that KC will process.
-    "linger.ms": 1,
-    "read.timeout.ms": 10000,  //Increased to 10000 from the default 3000 due to flush.synchronously = true.
-    "flush.synchronously": "true",   //The way of writing to Elasticsearch. It must stay "true" for the router below to work.
-    "drop.invalid.message": "true",   //If false, the connector will wait for a configuration that allows processing the message. If true, the connector will drop the invalid message.
-    "behavior.on.null.value": "IGNORE",  // Must be IGNORE to avoid blocking the processing of null messages.
-    "behavior.on.malformed.documents": "IGNORE",  //Must be IGNORE to avoid blocking the processing of invalid JSONs.
-    "write.method": "UPSERT",   //UPSERT to create or update the index.
-    "type.name": "_doc",
-    "key.converter": "org.apache.kafka.connect.storage.StringConverter", 
-    "key.converter.schemas.enable": "false",  // No schema defined for the key in the message.
-    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
-    "value.converter.schemas.enable": "false",  // No schema defined for the value in the message body.
-    "transforms":"routeTS",  // The router that helps create indices dynamically based on the timestamp (process instance start date).
-    "transforms.routeTS.type":"org.apache.kafka.connect.transforms.TimestampRouter",  
-    "transforms.routeTS.topic.format":"process_instance-${timestamp}", // It is important that this value must start with the value defined in process-engine  flowx.indexing.processInstance.index-name. The name of the index will start with a prefix ("process_instance-" in this example) and must have the timestamp appended after for dynamically creating indices. For backward compatibility (utilizing the data in the existing index), the prefix must be "process_instance-". However, backward compatibility isn't specifically required here.
-    "transforms.routeTS.timestamp.format":"yyyyMMddHHmm" // This format ensures that the timestamp is represented consistently and can be easily parsed when creating or searching for indices based on the process instance start date.
-}
-```
 ```yaml
 spec:
   class: io.confluent.connect.elasticsearch.ElasticsearchSinkConnector

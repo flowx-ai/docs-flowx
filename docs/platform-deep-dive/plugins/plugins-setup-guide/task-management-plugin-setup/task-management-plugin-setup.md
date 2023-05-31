@@ -129,15 +129,6 @@ Each action available in the service corresponds to a Kafka event. A separate Ka
 The Engine is listening for messages on topics with names of a certain pattern, make sure to use correct outgoing topic names when configuring the notifications plugin.
 :::
 
-### Web socket configuration
-
-The engine also communicates with the frontend application via Websockets. The socket server connection details also need to be configured:
-
-`WEB_SOCKET_SERVER_URL_EXTERNAL`
-
-`WEB_SOCKET_SERVER_PORT`
-
-`WEB_SOCKET_SERVER_PATH`
 
 ### Logging
 
@@ -147,7 +138,7 @@ The following environment variables could be set in order to control log levels:
 
 `LOGGING_LEVEL_APP` - app level logs
 
-`LOGGING_LEVEL_MONGO_DRIVER` - mongo db driver logs
+`LOGGING_LEVEL_MONGO_DRIVER` - MongoDB driver logs
 
 ### Filtering
 

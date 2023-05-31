@@ -67,7 +67,7 @@ The following environment variables could be set in order to control log levels:
 * `LOGGING_LEVEL_APP` - for app level logs
 
 
-### Data Search
+### Elasticsearch
 
 Data search in Elasticsearch runs against an index pattern representing multiple indices. The index pattern is derived from the configuration property:
 

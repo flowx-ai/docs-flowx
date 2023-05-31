@@ -100,3 +100,35 @@ For Kafka indexing, the Kafka Connect with Elastic Search Sink Connector must be
 For more details please check the following section:
 
 [Process Instance Indexing through Kafka transport](../../docs/platform-setup-guides/flowx-engine-setup-guide/configuring-elasticsearch-indexing)
+
+
+
+### Events gateway
+
+Added new kafka topics:
+
+* KAFKA_TOPIC_EVENTSGATEWAY_OUT_MESSAGE: ai.flowx.eventsgateway.engine.commands.message-100p
+* KAFKA_TOPIC_EVENTSGATEWAY_OUT_DISCONNECT: ai.flowx.eventsgateway.engine.commands.disconnect-100p
+* KAFKA_TOPIC_EVENTSGATEWAY_OUT_CONNECT: ai.flowx.eventsgateway.engine.commands.connect-100p
+
+### SSE 
+
+:::caution WebSocket Protocol Removal
+Starting with the 3.3 platform release, the WebSocket protocol has been removed. Therefore, if you are using `socket.io-client`, you will need to make some changes. Here's what you should do:
+:::
+
+1. Uninstall `socket.io-client`:
+
+Before proceeding, ensure that you uninstall `socket.io-client` from your project. You can do this using the following command:
+
+```bash
+npm uninstall socket.io-client
+```
+
+2. Install `event-source-polyfill@1.0.31`:
+
+To replace the functionality provided by socket.io-client, you will need to use a new package called `event-source-polyfill@1.0.31` (as mentioned in the [Installing the library](#installing-the-library)). This package serves as a polyfill for the EventSource API, which enables servers to send events to clients over HTTP. The EventSource API is commonly used for server-sent events (SSE) and real-time web applications.
+
+```bash
+npm install event-source-polyfill@1.0.31
+```

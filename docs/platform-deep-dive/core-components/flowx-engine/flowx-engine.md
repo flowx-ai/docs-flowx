@@ -153,22 +153,3 @@ If no _flowName_ value is set on a node, this means the node will be included in
 :::
 
 A node could also be a part of multiple flow names.
-
-## Advancing controller
-
-The process engine needs the advancing controller, a support service, to orchestrate advancing more efficiently with equal distribution and redistribution of load during scale-up and scale-down. 
-
-Advancing controller microservice uses Postgres triggers in the database configuration.
-
-:::info
-A Postgres trigger is a function called automatically whenever an event such as an insert, update, or deletion occurs.
-:::
-
-:::info
-If the process engine is up and running, make sure the advancing microservice is up as well. 
-:::
-
-
-Check out the section below for further information on how to set up the microservice:
-
-[Advancing controller setup guide](../../../platform-setup-guides/flowx-engine-setup-guide/advancing-controller-setup-guide.md)
