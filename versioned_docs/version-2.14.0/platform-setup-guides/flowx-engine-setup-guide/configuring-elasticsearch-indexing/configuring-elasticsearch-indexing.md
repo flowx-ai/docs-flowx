@@ -98,40 +98,41 @@ spec:
   class: io.confluent.connect.elasticsearch.ElasticsearchSinkConnector
   tasksMax: 2
   config:
-    tasks.max: "2" # The maximum number of tasks that can be run in parallel for this connector, which is 2 in this case.
+    tasks.max: "2" # The maximum number of tasks that can be run in parallel for this connector, which is 2 in this case. You can start with 2 and increase in case of huge load, but pay attention to the load that will be produced on Elasticsearch and also to the resources that you allocate to KafkaConnect so that it can support the threads.
     topics: "ai.flowx.core.index.process.v1" # Source Kafka topic. Must be the same as the one declared in the process defined as ${kafka.topic.naming.prefix}.core.index.process${kafka.topic.naming.suffix}
-    key.ignore: "false" # This tells Kafka Connect (KC) to process the key of the message - it will be used as the ID of the object in Elasticsearch. 
-    schema.ignore: "true" # This tells KC to ignore the mapping from the Kafka message. Elasticsearch will use internal mapping. See below. 
-    connection.url: "https://elasticsearch-es-http:9200" # URL to Elasticsearch
-    connection.username: "elastic"
-    connection.password: "Yyh03ZI66310Hyw59MXcR8xt"
-    elastic.security.protocol: "SSL"
-    elastic.https.ssl.keystore.location: "/opt/kafka/external-configuration/elasticsearch-keystore-volume/keystore.jks"
-    elastic.https.ssl.keystore.password: "MPx57vkACsRWKVap"
-    elastic.https.ssl.key.password: "MPx57vkACsRWKVap"
-    elastic.https.ssl.keystore.type: "JKS"
-    elastic.https.ssl.truststore.location: "/opt/kafka/external-configuration/elasticsearch-keystore-volume/keystore.jks"
-    elastic.https.ssl.truststore.password: "MPx57vkACsRWKVap"
-    elastic.https.ssl.truststore.type: "JKS"
-    elastic.https.ssl.protocol: "TLS"
-    batch.size: 1000 # The size of the message batch that KC will process.
-    linger.ms: 1
+    key.ignore: "false" # Don't change this value! This tells Kafka Connect (KC) to process the key of the message - it will be used as the ID of the object in Elasticsearch.  
+    schema.ignore: "true" # Don't change this value!!! This tells KC to ignore the mapping from the Kafka message. Elasticsearch will use internal mapping. See below. 
+    connection.url: "https://elasticsearch-es-http:9200" # The URL to Elasticsearch. You should configure this.
+    connection.username: "elastic" # The username to authenticate with Elasticsearch. You should configure this.
+    connection.password: "Yyh03ZI66310Hyw59MXcR8xt" # The password to authenticate with Elasticsearch. You should configure this.
+    elastic.security.protocol: "SSL" # The security protocol to use for connecting to Elasticsearch. You should use SSL if possible.
+    elastic.https.ssl.keystore.location: "/opt/kafka/external-configuration/elasticsearch-keystore-volume/keystore.jks" # You should configure the path to the keystore where the Elastic search key is added.
+    elastic.https.ssl.keystore.password: "MPx57vkACsRWKVap" # The password for the keystore file. You should configure this.
+    elastic.https.ssl.key.password: "MPx57vkACsRWKVap" # The password for the key within the keystore file.
+    elastic.https.ssl.keystore.type: "JKS" # The type of the keystore file. It is set to "JKS" (Java KeyStore).
+    elastic.https.ssl.truststore.location: "/opt/kafka/external-configuration/elasticsearch-keystore-volume/keystore.jks" # you should configure the path to the keystore where the Elastic search key is added.
+    elastic.https.ssl.truststore.password: "MPx57vkACsRWKVap" # The password for the truststore file. You should configure this
+    elastic.https.ssl.truststore.type: "JKS" # The type of the truststore file. It is set to "JKS".
+    elastic.https.ssl.protocol: "TLS" # The SSL/TLS protocol to use for communication. It is set to "TLS".
+    batch.size: 1000 # The size of the message batch that KC will process. This should be fine as default value. If you experience slowness and want to increase the speed, changing this may help but it will be based on your scenario. Consult the documentation for more details.
+    linger.ms: 1 # #Start with this value and change it only if needed. Consult the documentation for connector for more details.
     read.timeout.ms: 30000 # Increased to 30000 from the default 3000 due to flush.synchronously = true.
-    flush.synchronously: "true" # The way of writing to Elasticsearch. It must stay "true" for the router below to work.
-    drop.invalid.message: "true" # If false, the connector will wait for a configuration that allows processing the message. If true, the connector will drop the invalid message.
-    behavior.on.null.values: "IGNORE" #Must be IGNORE to avoid blocking the processing of null messages.
-    behavior.on.malformed.documents: "IGNORE" #Must be IGNORE to avoid blocking the processing of invalid JSONs.
-    write.method: "UPSERT" # UPSERT to create or update the index.
-    type.name: "_doc"
-    key.converter: "org.apache.kafka.connect.storage.StringConverter"
-    key.converter.schemas.enable: "false" # No schema defined for the key in the message.
-    value.converter: "org.apache.kafka.connect.json.JsonConverter"
-    value.converter.schemas.enable: "false" # No schema defined for the value in the message body.
-    transforms: "routeTS" # The router that helps create indices dynamically based on the timestamp (process instance start date).
-    transforms.routeTS.type: "org.apache.kafka.connect.transforms.TimestampRouter"
-    transforms.routeTS.topic.format: "process_instance-${timestamp}" #It is important that this value must start with the value defined in process-engine config: flowx.indexing.processInstance.index-name. The name of the index will start with a prefix ("process_instance-" in this example) and must have the timestamp appended after for dynamically creating indices. For backward compatibility (utilizing the data in the existing index), the prefix must be "process_instance-". However, backward compatibility isn't specifically required here.
-    transforms.routeTS.timestamp.format: "yyyyMMdd" #This format ensures that the timestamp is represented consistently and can be easily parsed when creating or searching for indices based on the process instance start date.
+    flush.synchronously: "true" # Don't change this value! The way of writing to Elasticsearch. It must stay "true" for the router below to work.
+    drop.invalid.message: "true" # Don't change this value! If set to false, the connector will wait for a configuration that allows processing the message. If set to true, the connector will drop the invalid message.
+    behavior.on.null.values: "IGNORE" # Don't change this value! Must be set to IGNORE to avoid blocking the processing of null messages.
+    behavior.on.malformed.documents: "IGNORE" # Don't change this value!  Must be IGNORE to avoid blocking the processing of invalid JSONs.
+    write.method: "UPSERT" # Don't change this value!  UPSERT to create or update the index.
+    type.name: "_doc" # Don't change this value! This is the name of the Elasticsearch type for indexing. 
+    key.converter: "org.apache.kafka.connect.storage.StringConverter" # Don't change this value!
+    key.converter.schemas.enable: "false" # Don't change this value! No schema defined for the key in the message.
+    value.converter: "org.apache.kafka.connect.json.JsonConverter" # Don't change this value!
+    value.converter.schemas.enable: "false" # Don't change this value! No schema defined for the value in the message body.
+    transforms: "routeTS" # Don't change this value! This represents router that helps create indices dynamically based on the timestamp (process instance start date).
+    transforms.routeTS.type: "org.apache.kafka.connect.transforms.TimestampRouter" # Don't change this value! It helps with routing the message to the correct index.
+    transforms.routeTS.topic.format: "process_instance-${timestamp}" # You should configure this. It is important that this value must start with the value defined in process-engine config: flowx.indexing.processInstance.index-name. The name of the index will start with a prefix ("process_instance-" in this example) and must have the timestamp appended after for dynamically creating indices. For backward compatibility (utilizing the data in the existing index), the prefix must be "process_instance-". However, backward compatibility isn't specifically required here.
+    transforms.routeTS.timestamp.format: "yyyyMMdd" # This format ensures that the timestamp is represented consistently and can be easily parsed when creating or searching for indices based on the process instance start date. You can change this with the value you want. If you want monthly indexes set it to "yyyyMM". But be aware that once you set it, when you change it, the existing object indexed will not be updated anymore. The update messages will be threated as new objects and indexed again because they are going to be sent to new indexes. This is important! Try to find your index size and stick with it.
 ```
+
 
 #### Example configuration for using HTTP indexing
 
