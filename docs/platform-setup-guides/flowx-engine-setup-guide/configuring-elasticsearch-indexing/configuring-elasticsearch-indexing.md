@@ -4,6 +4,7 @@ This section provides configuration steps for enabling process instance indexing
 
 [Intro to Elasticsearch](../../../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-elasticsearch.md)
 
+
 ## Configuration updates
 
 To enable Kafka indexing strategy, the previous configuration parameter `flowx.use-elasticsearch` is being replaced. However, to ensure backward compatibility, it will still be preserved in the configuration. Below is an example of how to configure it:
@@ -362,3 +363,6 @@ Since mappings between messages and Elasticsearch data types are unknown, a mapp
 }
 ```
 
+Here are some guidelines to help you get started:
+
+[Configuration guidelines](./process-instance-indexing-config-guidelines.md)
