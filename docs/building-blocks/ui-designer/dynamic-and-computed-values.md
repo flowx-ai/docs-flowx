@@ -32,13 +32,22 @@ Dynamic values are supported for specific elements such as:
 
 Computed values refer to values that are dynamically generated or calculated based on JavaScript expressions rather than being statically predefined. 
 
-:::info
-If a user wants to enter a computed value, he has to explicitly check “Computed value” option (**f(x)** icon), case in which the input field becomes a JavaScript editor.
-:::
 
 ![](./img/computed1.png)
 
-Computed values can be created by writing JavaScript expressions that operate on process parameters or other variables within the application. These expressions can perform calculations, transformations, or other operations to generate the desired value at runtime. By enabling computed values, the application provides flexibility and the ability to create dynamic and responsive user interfaces.
+Computed values can be created by writing JavaScript expressions that operate on process parameters or other variables within the application. 
+
+:::info
+To add a computed value, you have to explicitly check “Computed value” option (**f(x)** icon), case in which the desired field becomes a JavaScript editor.
+<div class = "image-scaled">
+
+![](./img/computed_default_value.png)
+
+</div>
+
+:::
+
+These expressions can perform calculations, transformations, or other operations to generate the desired value at runtime. By enabling computed values, the application provides flexibility and the ability to create dynamic and responsive user interfaces.
 
 ![](../../../release-notes/img/computed.gif)
 
@@ -89,12 +98,17 @@ The UI Designer now allows JavaScript expressions to be used for certain setting
     - Maximum Value (max Value)
     - Default Value (default Value)
 
+![](./img/slider_computed.png)
+
 * Any UI element that accepts validators (min, max, minLength, maxLength):
 
     - Parameters (params)
 
 * Default Value:
-    - For input elements (e.g., text input may require a default value from a process variable, while a number input may need a computed value)
+
+:::caution
+For input elements (e.g., text input may require a default value from a process variable, while a number input may need a computed value).
+:::
 
 * Text element
 
