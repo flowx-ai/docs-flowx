@@ -24,76 +24,74 @@ Set the following Kafka-related configurations using environment variables:
 
 * `SPRING_KAFKA_BOOTSTRAP_SERVERS` - the address of the Kafka server, it should be in the format "host:port"
 
-* `KAFKA_CONSUMER_GROUP_ID_PROCESS_ENGINE_COMMANDS` - 
+#### Groupd IDs
 
-* `KAFKA_CONSUMER_GROUP_ID_PROCESS_ENGINE_COMMANDS_MESSAGE` - 
+The configuration parameters "KAFKA_CONSUMER_GROUP_ID_*" are used to set the consumer group name for Kafka consumers that consume messages from topics. Consumer groups in Kafka allow for parallel message processing by distributing the workload among multiple consumer instances. By configuring the consumer group ID, you can specify the logical grouping of consumers that work together to process messages from the same topic, enabling scalable and fault-tolerant message consumption in your Kafka application.
 
-* `KAFKA_CONSUMER_GROUP_ID_PROCESS_ENGINE_COMMANDS_DISCONNECT` -
+| Configuration Parameter                                      | Default value                        | Description                                                          |
+| ------------------------------------------------------------ | ---------------------------- | -------------------------------------------------------------------- |
+| `KAFKA_CONSUMER_GROUP_ID_PROCESS_ENGINE_COMMANDS_MESSAGE`    | `engine-commands-message`    | Consumer group ID for processing engine commands messages            |
+| `KAFKA_CONSUMER_GROUP_ID_PROCESS_ENGINE_COMMANDS_DISCONNECT` | `engine-commands-disconnect` | Consumer group ID for processing engine commands disconnect messages |
+| `KAFKA_CONSUMER_GROUP_ID_PROCESS_ENGINE_COMMANDS_CONNECT`    | `engine-commands-connect`    | Consumer group ID for processing engine commands connect messages    |
+| `KAFKA_CONSUMER_GROUP_ID_PROCESS_TASK_COMMANDS`              | `task-commands-message`      | Consumer group ID for processing task commands                       |
 
-* `KAFKA_CONSUMER_GROUP_ID_PROCESS_ENGINE_COMMANDS_CONNECT` - 
 
-* `KAFKA_CONSUMER_GROUP_ID_PROCESS_TASK_COMMANDS` - 
+#### Threads
 
-* `KAFKA_CONSUMER_THREADS_PROCESS_ENGINE_COMMANDS_MESSAGE` -
+The configuration parameters "KAFKA_CONSUMER_THREADS_*" are utilized to specify the number of threads assigned to Kafka consumers for processing messages from topics. These parameters allow you to fine-tune the concurrency and parallelism of your Kafka consumer application, enabling efficient and scalable message consumption from Kafka topics.
 
-* `KAFKA_CONSUMER_THREADS_PROCESS_ENGINE_COMMANDS_DISCONNECT` -
+| Configuration Parameter                                     | Default value | Description                                                                              |
+| ----------------------------------------------------------- | ------------- | ---------------------------------------------------------------------------------------- |
+| `KAFKA_CONSUMER_THREADS_PROCESS_ENGINE_COMMANDS_MESSAGE`    | 10            | Number of threads for processing engine commands messages                                |
+| `KAFKA_CONSUMER_THREADS_PROCESS_ENGINE_COMMANDS_DISCONNECT` | 5             | Number of threads for processing engine commands disconnect messages                     |
+| `KAFKA_CONSUMER_THREADS_PROCESS_ENGINE_COMMANDS_CONNECT`    | 5             | Number of threads for processing engine commands connect messages                        |
+| `KAFKA_CONSUMER_THREADS_TASK_COMMANDS`                      | 10            | Number of threads for task commands                                                      |
+| `KAFKA_AUTH_EXCEPTION_RETRY_INTERVAL`                       | 10            | Interval between retries after an AuthorizationException is thrown by the Kafka consumer |
 
-* `KAFKA_CONSUMER_THREADS_PROCESS_ENGINE_COMMANDS_CONNECT` - 
-
-* `KAFKA_CONSUMER_THREADS_TASK_COMMANDS` - 
-
-* `KAFKA_TOPIC_EVENTS_GATEWAY_PROCESS_INSTANCE_IN_MESSAGE` - 
-
-* `KAFKA_TOPIC_EVENTS_GATEWAY_PROCESS_INSTANCE_IN_DISCONNECT`-
-
-* `KAFKA_TOPIC_EVENTS_GATEWAY_PROCESS_INSTANCE_IN_CONNECT` - 
-
-* `KAFKA_TOPIC_EVENTS_GATEWAY_TASK_IN_MESSAGE` - 
-
-* `KAFKA_AUTH_EXCEPTION_RETRY_INTERVAL` - the interval between retries after AuthorizationException is thrown by Kafka consumer
 
 #### Kafka topics related to process instances
 
-* `KAFKA_TOPIC_EVENTS_GATEWAY_PROCESS_INSTANCE_IN_MESSAGE` - 
-
-* `KAFKA_TOPIC_EVENTS_GATEWAY_PROCESS_INSTANCE_IN_DISCONNECT` - 
-
-* `KAFKA_TOPIC_EVENTS_GATEWAY_PROCESS_INSTANCE_IN_CONNECT` -
+| Configuration Parameter                                     | Default value                                              |
+| ----------------------------------------------------------- | ---------------------------------------------------------- |
+| `KAFKA_TOPIC_EVENTS_GATEWAY_PROCESS_INSTANCE_IN_MESSAGE`    | `ai.flowx.dev.eventsgateway.engine.commands.message.v1`    |
+| `KAFKA_TOPIC_EVENTS_GATEWAY_PROCESS_INSTANCE_IN_DISCONNECT` | `ai.flowx.dev.eventsgateway.engine.commands.disconnect.v1` |
+| `KAFKA_TOPIC_EVENTS_GATEWAY_PROCESS_INSTANCE_IN_CONNECT`    | `ai.flowx.dev.eventsgateway.engine.commands.connect.v1`    |
 
 
 #### Kafka topics related to tasks
 
-* `KAFKA_TOPIC_EVENTS_GATEWAY_TASK_IN_MESSAGE` -
-
-### Configuring Elasticsearch
-
-Set the following Elasticsearch-related configurations using environment variables:
-
-* `SPRING_ELASTICSEARCH_REST_URIS` 
-
-* `SPRING_ELASTICSEARCH_REST_DISABLESSL` 
-
-* `SPRING_ELASTICSEARCH_REST_USERNAME`
-
-* `SPRING_ELASTICSEARCH_REST_PASSWORD`
-
-* `SPRING_ELASTICSEARCH_INDEX_SETTINGS_NAME` - the index can be customized for data-search and it should be similar to what is configured on the process-engine
-
+| Configuration Parameter                      | Default value                                           |
+| -------------------------------------------- | ------------------------------------------------------- |
+| `KAFKA_TOPIC_EVENTS_GATEWAY_TASK_IN_MESSAGE` | `ai.flowx.eventsgateway.task.commands.message.v1` |
 
 ### Configuring authorization & access roles
 
 Set the following environment variables to connect to the identity management platform:
 
-* `SECURITY_OAUTH2_BASE_SERVER_URL`
+| Configuration Parameter                | Description                             |
+| -------------------------------------- | --------------------------------------- |
+| `SECURITY_OAUTH2_BASE_SERVER_URL`      | Base URL of the OAuth2 server           |
+| `SECURITY_OAUTH2_CLIENT_CLIENT_ID`     | Client ID for OAuth2 authentication     |
+| `SECURITY_OAUTH2_CLIENT_CLIENT_SECRET` | Client secret for OAuth2 authentication |
+| `SECURITY_OAUTH2_REALM`                | Realm for OAuth2 authentication         |
 
-* `SECURITY_OAUTH2_CLIENT_CLIENT_ID`
 
-* `SECURITY_OAUTH2_REALM`
+### Redis
+
+| Configuration Parameter | Description                                                        |
+| ----------------------- | ------------------------------------------------------------------ |
+| `SPRING_REDIS_HOST`     | Hostname of the Redis server                                       |
+| `SPRING_REDIS_PASSWORD` | Password for Redis server                                          |
+| `SPRING_REDIS_TTL`      | Time-to-live for Redis keys (default value:5000000 # milliseconds) |
+
 
 ### Configuring logging
 
 The following environment variables could be set in order to control log levels:
 
-* `LOGGING_LEVEL_ROOT` - for root spring boot microservice logs
+| Configuration Parameter | Description                                               |
+| ----------------------- | --------------------------------------------------------- |
+| `LOGGING_LEVEL_ROOT`    | Logging level for the root Spring Boot microservice logs. |
+| `LOGGING_LEVEL_APP`     | Logging level for the application-level logs.             |
 
-* `LOGGING_LEVEL_APP` - for app level logs
+
