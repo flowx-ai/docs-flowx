@@ -101,7 +101,7 @@ On this node we will define the following:
 
 * an Upload File action with two child actions:
     * a Business Rule
-    * a WebSocket send action
+    * a Send data to user interface action
 
 
 :::info
@@ -165,7 +165,7 @@ if(uploadedDocument.?downloadPath != null && uploadedDocument.?downloadPath != "
 In summary, the code seems to be processing an uploaded document by checking its download path, constructing a full file path, and updating the document object with the new file path. Finally, it outputs the updated document object.
 
 
-#### Configuring Websocket send action 
+ #### Configuring a Send data to user interface action
 
 
 ```json

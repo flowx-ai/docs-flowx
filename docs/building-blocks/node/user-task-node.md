@@ -148,65 +148,134 @@ Example:
 
 1. Start a process: **POST** `{{processUrl}}/api/internal/process/DemoProcess/start`
 
-```json
-{
-    "processDefinitionName": "DemoProcess",
-    "tokens": [
-        {
-            "currentNodeId": 40201,
-            "uuid": "98f32ee3-0b17-417b-9fa4-7a1acb105e0e"
-        }
-    ],
-    "state": "STARTED",
-    "templateConfig": [
-        {
-            "id": 39888,
-            "nodeDefinitionId": 40202,
-            "componentIdentifier": "CONTAINER",
-            "type": "FLOWX",
-            "order": 1,
-            "canGoBack": true,
-            "templateConfig": [
-                {
-                    "id": 39889,
-                    "uiTemplateParentId": 39888,
-                    "componentIdentifier": "TEXT",
-                    "type": "FLOWX",
-                    "order": 1,
-                    "displayOptions": {
-                        "flowxProps": {
-                            "text": "Demo Text"
-                        }
-                    },
-                    "templateConfig": [],
-                    "formFields": [],
-                    "inputKeys": []
-                }
-            ],
-            "formFields": []
-        }
-    ],
-    "webSocketPath": "/ws/updates/process",
-    "uuid": "3647c9fd-c0f2-4f17-b142-4095b79f459c",
-    "generalData": null
-}
-```
-
-2. Web socket progress message
+:::info
+The provided instruction involves initiating a process by making a `POST` request to the specified URL `({{processUrl}}/api/internal/process/DemoProcess/start)`. This API call triggers the start of a process named "DemoProcess" by sending relevant data to the server.
+:::
 
 ```json
 {
-  "progressUpdateDTO": {
-    "processInstanceUuid": "db573705-71dd-4216-9d94-5ba2fb36ff2a",
-    "tokenUuid": "b00d98c5-6d64-4ce8-9070-ef82738a3c00",
-    "currentNodeId": 40202
-  }
+"processDefinitionName" : "DemoProcess",
+  "tokens" : [ {
+    "id" : 759224,
+    "startNodeId" : null,
+    "currentNodeId" : 662807,
+    "currentNodeName" : null,
+    "state" : "ACTIVE",
+    "statusCurrentNode" : "ARRIVED",
+    "dateUpdated" : "2023-05-31T09:44:39.969634Z",
+    "uuid" : "d310996d-f3b9-44e5-983d-3631c844409e"
+  } ],
+  "state" : "STARTED",
+  "templateConfig" : [ {
+    "id" : 630831,
+    "flowxUuid" : "80ea0a85-2b0b-442a-a123-2480c7aa2dce",
+    "nodeDefinitionId" : 662856,
+    "componentIdentifier" : "CONTAINER",
+    "type" : "FLOWX",
+    "order" : 1,
+    "canGoBack" : true,
+    "displayOptions" : {
+      "flowxProps" : { },
+      "style" : null,
+      "flexLayout" : {
+        "fxLayoutGap" : 0,
+        "fxLayoutAlign" : "start stretch",
+        "fxLayout" : "column"
+      },
+      "className" : null,
+      "platform" : "DEFAULT"
+    },
+    "templateConfig" : [ {
+      "id" : 630832,
+      "flowxUuid" : "38e2c164-f8cd-4f6e-93c8-39b7cdd734cf",
+      "nodeDefinitionId" : 662856,
+      "uiTemplateParentId" : 630831,
+      "componentIdentifier" : "TEXT",
+      "type" : "FLOWX",
+      "order" : 0,
+      "key" : "",
+      "canGoBack" : true,
+      "displayOptions" : {
+        "flowxProps" : {
+          "text" : "Demo text"
+        },
+        "style" : null,
+        "flexLayout" : null,
+        "className" : null,
+        "platform" : "DEFAULT"
+      },
+      "expressions" : {
+        "hide" : ""
+      },
+      "templateConfig" : [ ],
+      "dataSource" : {
+        "processData" : {
+          "parentFlowxUuid" : null
+        },
+        "nomenclator" : {
+          "parentFlowxUuid" : null
+        }
+      }
+    } ]
+  } ],
+  "uuid" : "44177340-5ac6-4591-89ad-04df0815fbd0",
+  "generalData" : null,
+  "backCounter" : 0,
+  "startedByActionId" : null,
+  "subProcesses" : null,
+  "subprocessesUuids" : null,
+  "baseUrl" : null
 }
 ```
 
-3. **ProgressUpdateDto** will trigger the **SDK** to search for the UI element having the same **nodeId** with the one from the web socket progress event
+2. **ProgressUpdateDto** will trigger the **SDK** to search for the UI element having the same **nodeId** with the one in the SSE event.
 
-4. Additionally it will ask for data and actions that are required for this component via a **GET request** `{{processUrl}}/api/process/db573705-71dd-4216-9d94-5ba2fb36ff2a/data/42062`
+3. Additionally, it will ask for data and actions that are required for this component via a **GET request** `{{processUrl}}/api/process/db573705-71dd-4216-9d94-5ba2fb36ff2a/data/42062`
+
+```json
+...
+nodeDefinitionId" : 662856,
+      "processDefinitionId" : 662952,
+      "actionParams" : [ {
+        "id" : 759458,
+        "key" : "headers",
+        "value" : "{\"processInstanceId\": ${processInstanceId}}",
+        "replaceValues" : true,
+        "actionDefinitionId" : 759403
+      }, {
+        "id" : 759457,
+        "key" : "customId",
+        "value" : "folder",
+        "replaceValues" : true,
+        "actionDefinitionId" : 759403
+      }, {
+        "id" : 759456,
+        "key" : "documentType",
+        "value" : "document",
+        "replaceValues" : false,
+        "actionDefinitionId" : 759403
+      }, {
+        "id" : 759455,
+        "key" : "topicName",
+        "value" : "test.topic",
+        "replaceValues" : false,
+        "actionDefinitionId" : 759403
+      } ],
+      "actionRuleDefinitions" : [ ],
+      "callbackActions" : null,
+      "timerExpression" : "",
+      "order" : 1,
+      "manual" : false,
+      "repeatable" : false,
+      "optional" : false,
+      "autoRunChildren" : false,
+      "allowTokenReset" : false,
+      "restartFromSnapshot" : false,
+      "keysForRestart" : [ ],
+      "keys" : [ ]
+ ...
+ ```
+    
 
 ## Values 
 

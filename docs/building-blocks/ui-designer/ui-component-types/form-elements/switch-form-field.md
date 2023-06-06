@@ -30,7 +30,7 @@ The available configuration options for this form element are:
 #### Properties
 
 * **Label** - the label of the switch
-* **Helpertext** - additional information about the radio (can be hidden inside an infopoint)
+* **Helpertext** - additional information about the switch element (can be hidden inside an infopoint)
 
 #### Datasource
 
@@ -38,7 +38,7 @@ The available configuration options for this form element are:
 
 #### Validators
 
-The following validators can be added to a radio: `requiredTrue` and `custom` (more details [here](../../validators.md)).
+The following validators can be added to a switch element: `requiredTrue` and `custom` (more details [here](../../validators.md)).
 
 ![](../../img/switch_details.png)
 

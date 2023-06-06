@@ -234,6 +234,12 @@ It is important to know that all the events that start with a configured pattern
 | `KAFKA_TOPIC_PROCESS_START_IN`  | ai.flowx.in.start.process                   |
 | `KAFKA_TOPIC_PROCESS_START_OUT` | ai.flowx.out.start.process                  |
 
+#### **Topics related to process event messages**
+
+| Default parameter (env var)     | Default FLOWX.AI value (can be overwritten) |
+| ------------------------------- | ------------------------------------------- |
+| `KAFKA_TOPIC_PROCESS_INDEX_OUT` | ai.flowx.dev.core.index.process.v1          |
+
 
 ### Configuring WebSockets
 

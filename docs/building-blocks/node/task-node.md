@@ -103,12 +103,12 @@ For more details on how to configure a Business Rule action, check the following
 
 [Business rule action](../actions/business-rule-action/business-rule-action.md)
 
-### Websocket Send action
+### Send data to user interface
 
 Being an event-driven platform FLOWX uses web socket communication in order to push events from the frontend application.
-For more details on how to configure a Websocket Send action, check the following section:
+For more details on how to configure a Send data to user interface action, check the following section:
 
-[Websocket send action](../actions/websocket-send-action.md)
+[Send data to user interface](../actions/send-data-to-user-interface.md)
 
 ### Upload File action
 

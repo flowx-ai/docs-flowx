@@ -53,14 +53,9 @@ The following properties must be configured for a **Start subprocess** action:
 * **Exclude from current state** - what fields do you want to exclude when copying the data from the parent process to the subprocess (by default all data fields are copied)
 * **Copy from current state** - if a value is set here, it will overwrite the default behavior (of copying the whole data from the subprocess) with copying just the data that is specified (based on keys)
 
-:::caution
-When copying from the current state using a subprocess, it is mandatory to specify the `webSocketAddress` and `webSocketPath` as parameters. This ensures that the Engine can accurately transmit the relevant information to the frontend, enabling it to display the appropriate UI. 
-:::
 
 ![](../img/websocket_send.png)
 
-* `webSocketAddress` - specifies the domain name or IP address where the WebSocket server is hosted
-* `webSocketPath` - specifies the specific endpoint on the server where the WebSocket connection can be established
 
 **Advanced configuration**
 
@@ -79,6 +74,7 @@ When copying from the current state using a subprocess, it is mandatory to speci
 ## Example
 
 Let's create a main process, in this process we will add a user task node that will represent a menu page. In this newly added node we will add multiple subprocess actions that will represent menu items. When you select a menu item, a subprocess will run representing that particular menu item.
+
 
 ![](../img/subprocess_menu.png)
 

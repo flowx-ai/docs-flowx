@@ -8,27 +8,13 @@ The core of the platform is the process definition, which is the blueprint of th
 
 ![](../../../platform-deep-dive/img/process_definitions_new.png)
 
-## Process designer
-
-When a process definition is displayed, the name contains the following:
-
-* Process definition name 
-* Version number
-* State
-
-We have designed FLOWX.AI components to closely resemble their BPMN counterparts for ease of use. In the following sections, we will provide more details on how to use the process designer.
-
-![](../img/process_def.png)
-
-Check the following section for more details about nodes and how to use them:
-
-[Node](../../node/node.md)
 
 Once a process is defined and set as published on the platform, it can be executed, monitored, and optimized. When a business process is started, a new instance of the definition is created.
 
 [Process instance](../active-process/process-instance/process-instance.md)
 
 [Failed process start](../active-process/failed-process-start.md)
+
 
 ## History
 
@@ -93,12 +79,26 @@ The Data Model supports the following attribute types:
 * BOOLEAN
 * OBJECT
 * ARRAY
+    * ARRAY OF STRINGS
+    * ARRAY OF NUMBERS
+    * ARRAY OF BOOLEANS
+    * ARRAY OF OBJECTS
+    * ARRAY OF ENUMS
 * ENUM
 
 :::info
-
 When you export or import a [**process definition**](process-definition.md), the data model will be included.
 :::
+
+
+### Data model reference
+
+You can use data model reference feature to view attribute usage within the data model. You can now easily see where a specific attribute is being used by accessing the "View References" feature. This feature provides a list of process keys associated with each attribute and displays possible references, such as UI Elements.
+
+For UI Elements, the references include the element label, node name, and UI Element key. Additionally, the context of the reference is provided, showing the node name and the UI element type along with its label. Users can conveniently navigate to the context by clicking the provided link to the node's UI page.
+
+![](../../img/data_model_ref.gif)
+
 
 ### Sensitive data
 

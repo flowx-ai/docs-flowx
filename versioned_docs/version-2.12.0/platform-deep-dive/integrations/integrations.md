@@ -6,9 +6,9 @@
 
 Integrations can be used for anything from legacy APIs, custom file exchange solutions, or RPAs.
 
-#### High-level architecture <a href="#high-level-architecture" id="high-level-architecture"></a>
+#### High-level architecture 
 
-![](../img/integrations_archi.svg)
+![](../img/intgr_final.png)
 
 Since they involve interaction with legacy systems and custom logic, they need to be developed the first time you need to integrate one into your FLOWX setup.
 

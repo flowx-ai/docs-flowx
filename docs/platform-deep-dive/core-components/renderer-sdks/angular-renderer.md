@@ -45,6 +45,7 @@ moment@^2.27.0
 @angular/material-moment-adapter@15.2.0 
 @angular/cdk@15.2.0 
 ng2-pdfjs-viewer@15.0.0
+event-source-polyfill@1.0.31
 ```
 
 Also, in order to successfully link the pdf viewer, add the following declaration in the assets property of you project's angular.json:
@@ -288,7 +289,7 @@ data: {
 
 #### Interacting with the process
 
-Data from the process is communicated via **websocket** protocol under the following keys:
+Data from the process is communicated via **SSE** protocol under the following keys:
 
 | Name            |                                        Description                                       | Example |   |
 | --------------- | :--------------------------------------------------------------------------------------: | :-----: | - |

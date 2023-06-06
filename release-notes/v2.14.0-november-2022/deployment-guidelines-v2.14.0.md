@@ -41,7 +41,7 @@ After updating to **2.14.0** FLOWX.AI release, importing old processes definitio
 | 2.14                      	| PostgreSQL     	                | 14.3.0                               	|
 | 2.14                      	| MongoDB        	                | 5.0.8                                	|
 | 2.14                      	| Redis          	                | 6.2.6                                	|
-| 2.14                      	| Elasticsearch   	                | 7.17                                 	|
+| 2.14                      	| Elasticsearch   	                | 7.10.1                             	|
 | 2.14                      	| S3 (Min.IO) / minio-operator      | 2022-05-26T05-48-41Z / 4.5.4          |
 | 2.14                      	| OracleDB       	                | 19.8.0.0.0                           	|
 | 2.14                          | Angular (Web SDK)                 | 14.2.2                                |
@@ -119,3 +119,42 @@ The following env vars are needed for `process-engine` to connect to Advancing P
 [Advancing controller](../../docs/platform-deep-dive/core-components/flowx-engine#advancing-controller)
 
 [Advancing controller setup guide](../../docs/platform-setup-guides/flowx-engine-setup-guide/advancing-controller-setup-guide)
+
+### Process engine
+
+#### Process Instance Indexing through Kafka transport
+
+Adding new Kafka transport strategy for sending details about process instances to be indexed in Elastic Search. Check the following environment variables and their values to set up the indexing accordingly:
+
+* `FLOWX_INDEXING_ENABLED`
+
+| Variable Name          | Enabled | Description                                                |
+| ---------------------- | ------- | ---------------------------------------------------------- |
+| FLOWX_INDEXING_ENABLED | true    | Indexing with Elastic Search for the whole app is enabled  |
+| FLOWX_INDEXING_ENABLED | false   | Indexing with Elastic Search for the whole app is disabled |
+
+* `FLOWX_INDEXING_PROCESSINSTANCE_INDEXING_TYPE`
+
+| Variable Name                                | Indexing Type - Values | Definition                                                                                                                          |
+| -------------------------------------------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| FLOWX_INDEXING_PROCESSINSTANCE_INDEXING_TYPE | no-indexing            | No indexing is performed for process instances                                                                                      |
+| FLOWX_INDEXING_PROCESSINSTANCE_INDEXING_TYPE | http                   | Process instances are indexed via HTTP (direct connection from process-engine to Elastic Search thorugh HTTP calls)                 |
+| FLOWX_INDEXING_PROCESSINSTANCE_INDEXING_TYPE | kafka                  | Process instances are indexed via Kafka (send data to be indexed through a kafka topic - the new strategy for the applied solution) |
+
+:::warning
+For Kafka indexing, the Kafka Connect with Elastic Search Sink Connector must be deployed in the infrastructure.
+:::
+
+* `FLOWX_INDEXING_PROCESSINSTANCE_INDEX_NAME`: specify the name of the index used for process instances
+* `FLOWX_INDEXING_PROCESSINSTANCE_SHARDS`: set the number of shards for the index
+* `FLOWX_INDEXING_PROCESSINSTANCE_REPLICAS`: set the number of replicas for the index
+
+#### Topics related to process event messages
+
+| Default parameter (env var)     | Default FLOWX.AI value (can be overwritten) |
+| ------------------------------- | ------------------------------------------- |
+| `KAFKA_TOPIC_PROCESS_INDEX_OUT` | ai.flowx.dev.core.index.process.v1          |
+
+For more details please check the following section:
+
+[Process Instance Indexing through Kafka transport](../../docs/platform-setup-guides/flowx-engine-setup-guide/configuring-elasticsearch-indexing)

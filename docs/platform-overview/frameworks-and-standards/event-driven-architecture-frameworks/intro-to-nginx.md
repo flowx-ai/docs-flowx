@@ -28,7 +28,7 @@ FLOWX Designer is using NGINX ingress controller for the following actions:
 2. For routing calls to the [FLOWX Engine](../../../platform-deep-dive/core-components/flowx-engine/flowx-engine.md):
 
 * Viewing current instances of processes running in the FLOWX engine
-* Testing process definitions from the FLOWX Designer - route the API calls and WebSocket communications to the FLOWX engine backend
+* Testing process definitions from the FLOWX Designer - route the API calls and SSE communications to the FLOWX engine backend
 * Accessing REST API of the backend microservice
 
 3. For configuring the Single Page Application (SPA) - FLOWX Designer SPA will use the backend service to manage the platform via REST calls

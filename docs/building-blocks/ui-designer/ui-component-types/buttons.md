@@ -23,7 +23,6 @@ When configuring a basic button, you can customize the button's settings by usin
 - [**UI action**](#ui-action)
 - [**Button styling**](#button-styling)
 
-
 Sections that can be configured regarding general settings:
 
 #### Properties

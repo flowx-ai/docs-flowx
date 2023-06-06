@@ -1,3 +1,7 @@
+---
+sidebar_position: 6
+---
+
 # Datepicker 
 
 ![](../../img/datepicker_form_field.png)

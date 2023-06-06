@@ -1,6 +1,6 @@
 # Advancing Controller setup guide
 
-This guide will walk you through the process of setting up the Advancing Controller and configuring it to meet your needs.
+This guide provides step-by-step instructions to help you configure and deploy the Advancing Controller effectively.
 
 ## Infrastructure prerequisites
 
