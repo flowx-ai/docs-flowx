@@ -60,9 +60,10 @@ The configuration parameters "KAFKA_CONSUMER_THREADS_*" are utilized to specify 
 
 #### Kafka topics related to tasks
 
-| Configuration Parameter                      | Default value                                           |
-| -------------------------------------------- | ------------------------------------------------------- |
+| Configuration Parameter                      | Default value                                     |
+| -------------------------------------------- | ------------------------------------------------- |
 | `KAFKA_TOPIC_EVENTS_GATEWAY_TASK_IN_MESSAGE` | `ai.flowx.eventsgateway.task.commands.message.v1` |
+
 
 ### Configuring authorization & access roles
 
@@ -78,20 +79,42 @@ Set the following environment variables to connect to the identity management pl
 
 ### Redis
 
+The process engine sends the messages to the events-gateway, which is responsible for sending them to Redis.
+
 | Configuration Parameter | Description                                                        |
 | ----------------------- | ------------------------------------------------------------------ |
 | `SPRING_REDIS_HOST`     | Hostname of the Redis server                                       |
 | `SPRING_REDIS_PASSWORD` | Password for Redis server                                          |
 | `SPRING_REDIS_TTL`      | Time-to-live for Redis keys (default value:5000000 # milliseconds) |
 
+#### Master replica
+
+The events-gateway can be configured to communicate with Redis using the MASTER_REPLICA replication mode by configuring the following property:
+
+spring.redis.sentinel.nodes: replica1, replica2, replica3, etc...
+
+##### Example
+
+```makefile
+spring.redis.sentinel.nodes=host1:26379,host2:26379,host3:26379
+```
+In the above example, the Spring Boot application will connect to three Redis Sentinel nodes: host1:26379, host2:26379, and host3:26379.
+
+The property value should be a comma-separated list of host:port pairs, where each pair represents the hostname or IP address and the port number of a Redis Sentinel node. 
+
+:::info
+By default, Redis is standalone, so the configuration with `redis-replicas` is optional for high load use cases.
+:::
+
+In the context of Spring Boot and Redis Sentinel integration, the `spring.redis.sentinel.nodes` property is used to specify the list of Redis Sentinel nodes that the Spring application should connect to. These nodes are responsible for monitoring and managing Redis instances.
 
 ### Configuring logging
 
 The following environment variables could be set in order to control log levels:
 
-| Configuration Parameter | Description                                               |
-| ----------------------- | --------------------------------------------------------- |
-| `LOGGING_LEVEL_ROOT`    | Logging level for the root Spring Boot microservice logs. |
-| `LOGGING_LEVEL_APP`     | Logging level for the application-level logs.             |
+| Configuration Parameter | Description                                              |
+| ----------------------- | -------------------------------------------------------- |
+| `LOGGING_LEVEL_ROOT`    | Logging level for the root Spring Boot microservice logs |
+| `LOGGING_LEVEL_APP`     | Logging level for the application-level logs             |
 
 
