@@ -31,7 +31,6 @@ To upload an asset to the Media Library, follow the next steps:
 Supported formats: PNG, JPEG, JPG, GIF, SVG or WebP format, 1 MB maximum size.
 :::
 
-
 ### Displaying assets
 
 Users can preview all the uploaded assets just be accessing the **Media Library**.
@@ -73,3 +72,58 @@ You have the following options when configuring image components using [UI Desig
 :::info
 More details on how to configure an image component using UI Designer - [**here**](../../../../building-blocks/ui-designer/ui-component-types/image).
 :::
+
+### Export/import media assets
+
+The import/export feature allows you to import or export media assets, enabling easy transfer and management of supported types of media files.
+
+![](../../../img/media_library_export.png)
+
+#### Import media assets
+
+Use this function to import media assets of various supported types. It provides a convenient way to bring in images, videos, or other media resources.
+
+#### Export all
+
+Use this function to export all media assets stored in your application or system. The exported data will be in JSON format, allowing for easy sharing, backup, or migration of the media assets.
+
+The exported JSON structure will resemble the following example:
+
+```json
+{
+  "images": [
+    {
+      "key": "cart",
+      "application": "flowx",
+      "filename": "maxresdefault.jpg",
+      "format": "jpeg",
+      "contentType": "image/jpeg",
+      "size": 39593,
+      "storagePath": "https://d22tnnndi9lo60.cloudfront.net/devmain/flowx/cart/1681982352417_maxresdefault.jpg",
+      "thumbnailStoragePath": "https://d22tnnndi9lo60.cloudfront.net/devmain/flowx/cart/1681982352417_thumbnail_maxresdefault.jpg"
+    },
+    {
+      "key": "pizza",
+      "application": "flowx",
+      "filename": "pizza.jpeg",
+      "format": "jpeg",
+      "contentType": "image/jpeg",
+      "size": 22845,
+      "storagePath": "https://d22tnnndi9lo60.cloudfront.net/devmain/flowx/pizza/1681982352165_pizza.jpeg",
+      "thumbnailStoragePath": "https://d22tnnndi9lo60.cloudfront.net/devmain/flowx/pizza/1681982352165_thumbnail_pizza.jpeg"
+    }
+  ],
+  "exportVersion": 1
+}
+```
+
+* `images`- is an array that contains multiple objects, each representing an image
+* `exportVersion` - represents the version number of the exported data, it holds the image-related information
+* `key`- represents a unique identifier or name for the image, it helps identify and differentiate images within the context of the application
+* `application` - specifies the name or identifier of the application associated with the image, it indicates which application or system the image is related to
+* `filename` - the name of the file for the image, it represents the original filename of the image file
+* `format` - a string property that specifies the format or file extension of the image
+* `contentType` - the MIME type or content type of the image, it specifies the type of data contained within the image file
+* `size` - represents the size of the image file in bytes, it indicates the file's storage size on a disk or in a data storage system
+* `storagePath` - the URL or path to the location where the original image file is stored, it points to the location from where the image can be accessed or retrieved
+* `thumbnailStoragePath` - the URL or path to the location where a thumbnail version of the image is stored, it points to the location from where the thumbnail image can be accessed or retrieved

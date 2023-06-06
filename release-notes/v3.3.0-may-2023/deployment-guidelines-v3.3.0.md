@@ -148,7 +148,6 @@ Now, instead of a server holding the messages, they are stored in Redis. However
 | ------------------------------------- | ------------------------------------- | ----------------------------------------------- |
 | KAFKA_TOPIC_EVENTSGATEWAY_OUT_MESSAGE | Outgoing messages from Events Gateway | ai.flowx.eventsgateway.task.commands.message.v1 |
 
-
 ### SSE 
 
 :::caution WebSocket Protocol Removal
