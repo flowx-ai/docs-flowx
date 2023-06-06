@@ -62,4 +62,3 @@ For more details on how to configure process instance indexing through Kakfa tra
 
 
 
-
