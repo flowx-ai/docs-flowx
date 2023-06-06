@@ -14,7 +14,7 @@ After updating to **2.14.0** FLOWX.AI release, importing old processes definitio
 
 | :ballot_box_with_check:        | 2.14.0        | 2.13.0  | 2.12.0  | 2.11.0  | 2.10.0  | 2.9.0   | 2.8.1   | 2.8.0   | 2.7.0   | 2.6.0   | 2.5.0   | 2.4.0   | 2.3.0   | 2.2.0   | 2.1.0     | 2.0.0     | 1.16.0  | 1.15    | 1.14    | 1.13.0  | 1.12.0 | 1.11.0  |
 | ------------------------------ | ------------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | --------- | --------- | ------- | ------- | ------- | ------- | ------ | ------- |
-| **Process engine**             | **0.4.104-4** | 0.4.95  | 0.4.90  | 0.4.83  | 0.4.60  | 0.4.49  | 0.4.44  | 0.4.42  | 0.4.42  | 0.4.36  | 0.4.29  | 0.4.22  | 0.4.21  | 0.4.18  | 0.4.13    | 0.4.12    | 0.4.4   | 0.3.26  | 0.3.21  | 0.3.14  | 0.3.9  | 0.3.7   |
+| **Process engine**             | **0.4.104-5** | 0.4.95  | 0.4.90  | 0.4.83  | 0.4.60  | 0.4.49  | 0.4.44  | 0.4.42  | 0.4.42  | 0.4.36  | 0.4.29  | 0.4.22  | 0.4.21  | 0.4.18  | 0.4.13    | 0.4.12    | 0.4.4   | 0.3.26  | 0.3.21  | 0.3.14  | 0.3.9  | 0.3.7   |
 | **Designer**                   | **2.78.4-2**  | 2.63.6  | 2.60.7  | 2.48.9  | 2.39.2  | 2.33.0  | 2.28.1  | 2.24.2  | 2.23.0  | 2.19.2  | 2.18.2  | 2.17.4  | 2.15.2  | 2.14.4  | 2.11.2    | 2.10.0    | 2.5.0   | 2.1.1   | 1.21.0  | 1.16.3  | 1.15.2 | 1.14.0  |
 | **CMS Core**                   | **0.2.38**    | 0.2.36  | 0.2.33  | 0.2.30  | 0.2.25  | 0.2.23  | 0.2.23  | 0.2.23  | 0.2.23  | 0.2.23  | 0.2.20  | 0.2.20  | 0.2.18  | 0.2.17  | 0.2.17    | 0.2.17    | 0.2.14  | 0.2.9   | 0.2.9   | 0.2.9   | 0.2.5  | 0.2.3   |
 | **Scheduler Core**             | 0.0.34        | 0.0.34  | 0.0.34  | 0.0.33  | 0.0.28  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.24  | 0.0.24  | 0.0.23  | 0.0.23  | 0.0.23    | 0.0.23    | 0.0.19  | 0.0.12  | 0.0.12  | 0.0.12  | NA     | 0.0.6   |
@@ -49,6 +49,60 @@ After updating to **2.14.0** FLOWX.AI release, importing old processes definitio
 
 
 ## Additional configuration
+
+### Process engine
+
+#### Process Instance Indexing through Kafka transport
+
+Adding new Kafka transport strategy for sending details about process instances to be indexed in Elastic Search. Check the following environment variables and their values to set up the indexing accordingly:
+
+* `FLOWX_INDEXING_ENABLED`
+
+| Variable Name          | Values | Description                                                |
+| ---------------------- | ------ | ---------------------------------------------------------- |
+| FLOWX_INDEXING_ENABLED | true   | Indexing with Elastic Search for the whole app is enabled  |
+| FLOWX_INDEXING_ENABLED | false  | Indexing with Elastic Search for the whole app is disabled |
+
+* `FLOWX_INDEXING_PROCESSINSTANCE_INDEXING_TYPE`
+
+| Variable Name                                | Indexing Type - Values | Definition                                                                                                                          |
+| -------------------------------------------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| FLOWX_INDEXING_PROCESSINSTANCE_INDEXING_TYPE | no-indexing            | No indexing is performed for process instances                                                                                      |
+| FLOWX_INDEXING_PROCESSINSTANCE_INDEXING_TYPE | http                   | Process instances are indexed via HTTP (direct connection from process-engine to Elastic Search thorugh HTTP calls)                 |
+| FLOWX_INDEXING_PROCESSINSTANCE_INDEXING_TYPE | kafka                  | Process instances are indexed via Kafka (send data to be indexed through a kafka topic - the new strategy for the applied solution) |
+
+:::warning
+For Kafka indexing, the Kafka Connect with Elastic Search Sink Connector must be deployed in the infrastructure.
+:::
+
+* `FLOWX_INDEXING_PROCESSINSTANCE_INDEX_NAME`: specify the name of the index used for process instances
+
+| Variable Name                                      | Values           | Definition                                                                                      |
+| -------------------------------------------------- | ---------------- | ----------------------------------------------------------------------------------------------- |
+| FLOWX_INDEXING_PROCESSINSTANCE_INDEXING_INDEX_NAME | process_instance | The name of the index used for storing process instances. It is also part of the search pattern |
+
+* `FLOWX_INDEXING_PROCESSINSTANCE_SHARDS`: set the number of shards for the index
+
+| Variable Name                         | Values | Definition                                                                 |
+| ------------------------------------- | ------ | -------------------------------------------------------------------------- |
+| FLOWX_INDEXING_PROCESSINSTANCE_SHARDS | 1      | The number of shards for the Elasticsearch index storing process instances |
+
+* `FLOWX_INDEXING_PROCESSINSTANCE_REPLICAS`: set the number of replicas for the index
+
+| Variable Name                           | Values | Definition                                                                   |
+| --------------------------------------- | ------ | ---------------------------------------------------------------------------- |
+| FLOWX_INDEXING_PROCESSINSTANCE_REPLICAS | 1      | The number of replicas for the Elasticsearch index storing process instances |
+
+
+#### Topics related to process event messages
+
+| Default parameter (env var)   | Default FLOWX.AI value (can be overwritten) |
+| ----------------------------- | ------------------------------------------- |
+| KAFKA_TOPIC_PROCESS_INDEX_OUT | ai.flowx.dev.core.index.process.v1          |
+
+For more details please check the following section:
+
+[Process Instance Indexing through Kafka transport](https://docs.flowx.ai/docs/2.14.0/platform-setup-guides/flowx-engine-setup-guide/configuring-elasticsearch-indexing)
 
 ### Advancing Controller
 
