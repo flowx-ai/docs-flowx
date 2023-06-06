@@ -109,6 +109,8 @@ For Kafka indexing, the Kafka Connect with Elastic Search Sink Connector must be
 
 #### Topics related to process event messages
 
+##### Process engine new kafka topics
+
 | Default parameter (env var)   | Default FLOWX.AI value (can be overwritten) |
 | ----------------------------- | ------------------------------------------- |
 | KAFKA_TOPIC_PROCESS_INDEX_OUT | ai.flowx.dev.core.index.process.v1          |
@@ -119,13 +121,33 @@ For more details please check the following section:
 
 ### Events gateway
 
-Added new **events-gateway** microservice, the following configuration is needed:
+Added new **events-gateway** microservice, the following configuration is needed.
+
+Events-gateway is designed specifically for handling events. Previously, each process-engine pod had a WebSocket (WS) server, and the front-end (FE) would connect to the engine to receive messages.
+
+Now, instead of a server holding the messages, they are stored in Redis. However, the engine sends the messages to the events-gateway, which is responsible for sending them to Redis. Users connect to the events-gateway using an HTTP request and wait for Server-Sent Events (SSE) to flow in that request. They keep the request open for as long as they want SSE on a specific instance.
 
 #### Kafka topics
 
-* KAFKA_TOPIC_EVENTSGATEWAY_OUT_MESSAGE: ai.flowx.eventsgateway.engine.commands.message-100p
-* KAFKA_TOPIC_EVENTSGATEWAY_OUT_DISCONNECT: ai.flowx.eventsgateway.engine.commands.disconnect-100p
-* KAFKA_TOPIC_EVENTSGATEWAY_OUT_CONNECT: ai.flowx.eventsgateway.engine.commands.connect-100p
+##### Process engine new kafka topics:
+
+| Topic Name                               | Description                             | Value                                                |
+| ---------------------------------------- | --------------------------------------- | ---------------------------------------------------- |
+| KAFKA_TOPIC_EVENTSGATEWAY_OUT_MESSAGE    | Outgoing messages from Events Gateway   | ai.flowx.eventsgateway.engine.commands.message.v1    |
+| KAFKA_TOPIC_EVENTSGATEWAY_OUT_DISCONNECT | Disconnect commands from Events Gateway | ai.flowx.eventsgateway.engine.commands.disconnect.v1 |
+| KAFKA_TOPIC_EVENTSGATEWAY_OUT_CONNECT    | Connect commands from Events Gateway    | ai.flowx.eventsgateway.engine.commands.connect.v1    |
+
+
+[Events gateway](../../docs/platform-deep-dive/core-components/events-gateway)
+
+[Events gateway setup guide](../../docs/platform-setup-guides/events-gateway-setup)
+
+# Task manager new kafka topic:
+
+| Topic Name                            | Description                           | Value                                           |
+| ------------------------------------- | ------------------------------------- | ----------------------------------------------- |
+| KAFKA_TOPIC_EVENTSGATEWAY_OUT_MESSAGE | Outgoing messages from Events Gateway | ai.flowx.eventsgateway.task.commands.message.v1 |
+
 
 ### SSE 
 
@@ -143,7 +165,7 @@ npm uninstall socket.io-client
 
 2. Install `event-source-polyfill@1.0.31`:
 
-To replace the functionality provided by socket.io-client, you will need to use a new package called `event-source-polyfill@1.0.31` (as mentioned in the [Installing the library](#installing-the-library)). This package serves as a polyfill for the EventSource API, which enables servers to send events to clients over HTTP. The EventSource API is commonly used for server-sent events (SSE) and real-time web applications.
+To replace the functionality provided by socket.io-client, you will need to use a new package called `event-source-polyfill@1.0.31` (as mentioned in the [**Installing the library**](../../docs/platform-deep-dive/core-components/renderer-sdks/angular-renderer#installing-the-library) section). This package serves as a polyfill for the EventSource API, which enables servers to send events to clients over HTTP. The EventSource API is commonly used for server-sent events (SSE) and real-time web applications.
 
 ```bash
 npm install event-source-polyfill@1.0.31

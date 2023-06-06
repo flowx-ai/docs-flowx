@@ -262,7 +262,19 @@ The suggested topic pattern naming convention is the following:
 
 ### Configuring events-gateway
 
-The engine communicates with the frontend application via the events-gateway service. The following environment variables need to be configured:
+* `KAFKA_TOPIC_EVENTSGATEWAY_OUT_MESSAGE` - outgoing messages from Events Gateway 
+
+* `KAFKA_TOPIC_EVENTSGATEWAY_OUT_DISCONNECT`- disconnect commands from Events Gateway
+
+* `KAFKA_TOPIC_EVENTSGATEWAY_OUT_CONNECT` - connect commands from Events Gateway  
+
+
+| Topic Name                               | Default FLOWX.AI value (can be overwritten)          |
+| ---------------------------------------- | ---------------------------------------------------- |
+| KAFKA_TOPIC_EVENTSGATEWAY_OUT_MESSAGE    | ai.flowx.eventsgateway.engine.commands.message.v1    |
+| KAFKA_TOPIC_EVENTSGATEWAY_OUT_DISCONNECT | ai.flowx.eventsgateway.engine.commands.disconnect.v1 |
+| KAFKA_TOPIC_EVENTSGATEWAY_OUT_CONNECT    | ai.flowx.eventsgateway.engine.commands.connect.v1    |
+
 
 
 ### Configuring file upload size
