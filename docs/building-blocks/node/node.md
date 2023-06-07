@@ -27,6 +27,7 @@ Let's go through the most important types of nodes. These can be selected when a
 + ​**Exclusive gateways**​​ - are used to mark a decision point in the process flow and decide on the branch that needs to be followed
 + **​Parallel gateways**​​ - used to split the process flow into two or more [branches](../../flowx-designer/managing-a-process-flow/adding-more-flow-branches.md) that take place at the same time
 + **​Milestones**​​ - start and end nodes for milestones are currently used to mark the beginning and end of definitions for [UI components](../ui-designer/ui-component-types/ui-component-types.md) (like steppers displayed on a page)
++ **Message events** - events that make use of a message reference to pause execution until a suitable message is received
 
 Advanced node types:​
 

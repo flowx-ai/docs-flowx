@@ -20,7 +20,7 @@ A Message Catch Start Event is a special event in a process that initiates the s
 * **The data field** - allows the user to define a JSON structure with the data to be sent along with the message
 * **Stage** - assign a stage to the node
 
-![](../img/message_throw_interm_config.png)
+![](../img/message_catch_start_config.png)
 
 
 
