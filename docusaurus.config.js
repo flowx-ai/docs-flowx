@@ -67,6 +67,13 @@ const config = {
       src: 'https://app.happyreact.com/widget/reactions.js',
       defer: true,
     },
+
+    {
+      src: 'https://cdn.jsdelivr.net/gh/RelevanceAI/ask-relevance-widget/dist/bundle.min.js',
+      config:'eyJ1cmwiOiJodHRwczovL2FwaS1kN2I2MmIuc3RhY2sudHJ5cmVsZXZhbmNlLmNvbS9sYXRlc3QvZGF0YXNldHMvZmxvd3gtc2l0ZW1hcC1hc2stcmVsZXZhbmNlL3NpbXBsZV9zZWFyY2giLCJmaWVsZCI6InVybF9jb250ZW50IiwidmVjdG9yX2ZpZWxkIjoidXJsX2NvbnRlbnRfdmVjdG9yXyIsImF1dGhfaGVhZGVyIjoiODM0MmIxZjM0NGNjLTQwOWQtODc0OC0wNDQyY2NhNGYwNjU6c2stTmpWaFpHWTRObVV0TWprMU9DMDBNVE5oTFRrMll6UXRaakUzWmpJeE5EbG1PV0V4IiwicmVmZXJlbmNlX3RpdGxlX2ZpZWxkIjoidXJsIiwicmVmZXJlbmNlX3VybF9maWVsZCI6InBhZ2VfdGl0bGUiLCJzaG93RG9jdW1lbnRzIjp0cnVlfQ==', 
+      defer: true,
+    }
+
   ],
 
   themeConfig:
@@ -219,23 +226,7 @@ const config = {
   
     plugins: [
       require.resolve('docusaurus-plugin-image-zoom'),
-      [
-        require.resolve("@easyops-cn/docusaurus-search-local"),
-        {
-          indexPages: true,
-          indexDocs: true,
-          docsRouteBasePath: "/",
-          docsDir: "versioned_docs",
-          hashed: true,
-          language: ["en"],
-          highlightSearchTermsOnTargetPage: false,
-          searchResultContextMaxLength: 35,
-          searchResultLimits: 10,
-          searchBarShortcut: true,
-          searchBarShortcutHint: true,
-        }
-      ],
-
+  
       [
         "@docusaurus/plugin-content-docs",
         {
@@ -255,7 +246,12 @@ const config = {
           anonymizeIP: true,
         },
       ],
+    
     ],
+
+  
+
+    
 
   
 };

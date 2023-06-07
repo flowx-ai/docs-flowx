@@ -122,3 +122,43 @@ div[class^="announcementBar"][role="banner"] {
   margin: 0.3rem 0;
 }
 
+
+/* Relevance AI button styles */
+.relevance_button {
+  border-radius: 0.5rem;
+  padding: 0.55rem 1.1rem;
+  background: #ffffff;
+  color: var(--ifm-color-primary-darkest);
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: color 0.2s ease-in-out, background 0.2s ease-in-out;
+  cursor: pointer;
+
+  /* Border animation effect */
+  border-color: transparent;
+  outline: none;
+  box-shadow: none;
+  --relevance-button-bg: white;
+  background-image: linear-gradient(var(--relevance-button-bg), var(--relevance-button-bg)),
+      linear-gradient(
+          315deg,
+          var(--ifm-color-primary-lightest),
+          rgb(233, 162, 49),
+          rgb(223, 209, 221),
+          rgb(24, 22, 27),
+          rgb(255, 204, 160)
+      );
+  background-size: 200% auto;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  animation: bg-hue 4s linear infinite;
+}
+
+html[data-theme='dark'] .relevance_button {
+  --relevance-button-bg: var(--ifm-background-surface-color);
+  color: white;
+}
+
+.relevance_button:hover {
+  color: var(--ifm-color-primary);
+}

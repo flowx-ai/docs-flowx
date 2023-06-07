@@ -26,7 +26,7 @@ These allow you to customize the settings for the Select Field:
 * [**UI actions**](#ui-actions)
 * [**Select styling**](#select-styling)
 
-#### General
+#### General 
    
 * **Process data key** - creates the binding between form element and process data so it can be later used in [decisions](../../../node/exclusive-gateway-node.md), [business rules](../../../actions/business-rule-action/business-rule-action.md) or [integrations](../../../node/message-send-received-task-node.md#from-integration)
 

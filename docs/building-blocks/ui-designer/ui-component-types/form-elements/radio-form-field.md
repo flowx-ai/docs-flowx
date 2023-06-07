@@ -36,7 +36,7 @@ The available configuration options for this form element are:
 
 * **Default Value** - the default values of the radio element
 * **Source Type** - it can be Static, Enumeration, or Process Data
-* **Add option** - label - value pairs can be defined here
+* **Add option** - value/label pairs can be defined here
 
 ![](../../img/radio_properties.png)
 
