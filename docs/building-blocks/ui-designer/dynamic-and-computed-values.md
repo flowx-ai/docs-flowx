@@ -1,17 +1,54 @@
 # Dynamic & computed values
 
+In modern application development, the ability to create dynamic and interactive user interfaces is essential for delivering personalized and responsive experiences to users. Dynamic values and computed values are powerful features that enable developers to achieve this level of flexibility and interactivity.
+
 ## Dynamic values
 
-You can now utilize process parameters or substitution tags for the following element properties: 
+Dynamic values refer to the capability of dynamically populating element properties in the user interface based on process parameters or substitution tags. These values can be customized at runtime, allowing the application to adapt to specific scenarios or user input. With dynamic values, you can personalize labels, placeholders, error messages, and other properties of UI elements, providing a tailored experience for users.
+
+You can now utilize process parameters or [**substitution tags**](../../platform-deep-dive/core-components/core-extensions/content-management/substitution-tags.md) for the following element properties: 
  
-* default value (excluding switch) 
-* label
-* placeholder 
-* helpertext 
-* error message 
-* prefix, and suffix
+* Default value (excluding switch) 
+* Label
+* Placeholder 
+* Helpertext 
+* Error message 
+* Prefix and suffix
+
+### Example using Substitution tags
 
 ![](../../../release-notes/img/dynamic_val.gif)
+
+### Example using process parameters
+
+![](./img/dynamic_values_params.gif)
+
+#### Business rule example
+
+In the above example, the following MVEL business rule was used to populate the keys with values from the task:
+
+```json
+///assigning a JSON object containing dynamic values for the specified keys to the "app" key 
+
+output.put("app",{"label":"This is a label",
+                    "title":"This is a title",
+                    "placeholder":"This is a placeholder",
+                    "helpertext":"This is a helper text",
+                    "errorM":"This is a error message",
+                    "prefix":"prx",
+                    "suffix":"sfx",
+                    "subtitile":"This is a subtitle",
+                    "message":"This is a message",
+                    "defaultV":"defaultValue",
+                    "value":"Value101",
+                    "value":"Value101",
+                    "confirmLabel":"This is a confirm label",
+                    "cancelLabel":"This is a cancel label",
+                    "defaultValue":"dfs",
+                    "defaultDate":"02.02.2025",
+                    "defaultSlider": 90});
+
+```
 
 Dynamic values are supported for specific elements such as:
 
@@ -31,20 +68,20 @@ Dynamic values are supported for specific elements such as:
 * Step
 
 :::caution
-Keep in mind that for <=3.3.0 release is not possible to have a concatenation for process params with substitution tags while using dynamic values.
+Please note that for releases **<= 3.3.0**, it is not possible to concatenate process parameters with substitution tags when using dynamic values.
 :::
 
 ## Computed values
 
-Computed values refer to values that are dynamically generated or calculated based on JavaScript expressions rather than being statically predefined. 
-
+Computed values take the concept of dynamic values a step further by allowing you to generate values dynamically using JavaScript expressions. Rather than relying solely on predefined values, computed values enable the calculation, transformation, and manipulation of data based on specific rules or conditions. 
 
 ![](./img/computed1.png)
 
 Computed values can be created by writing JavaScript expressions that operate on process parameters or other variables within the application. 
 
 :::info
-To add a computed value, you have to explicitly check “Computed value” option (**f(x)** icon), case in which the desired field becomes a JavaScript editor.
+To add a computed value, you have to explicitly check “Computed value” option (represented by the **f(x)** icon), which will transform the desired field into a JavaScript editor.
+
 <div class = "image-scaled">
 
 ![](./img/computed_default_value.png)
@@ -53,13 +90,13 @@ To add a computed value, you have to explicitly check “Computed value” optio
 
 :::
 
-These expressions can perform calculations, transformations, or other operations to generate the desired value at runtime. By enabling computed values, the application provides flexibility and the ability to create dynamic and responsive user interfaces.
+By enabling computed values, the application provides flexibility and the ability to create dynamic and responsive user interfaces.
 
 ![](../../../release-notes/img/computed.gif)
 
 ### Slider example
 
-The above example is provided for a Slider element, where JavaScript expressions are used to compute the minimum and maximum values based on a value entered on an input UI element (and linked by a process key - `${application.client.amount}`).
+The above example demonstrates the usage of computed values for a Slider element, where JavaScript expressions are used to compute the minimum and maximum values based on a value entered in an input UI element (linked by the process key `${application.client.amount}`).
 
 #### Min Value
 
@@ -113,7 +150,7 @@ The UI Designer now allows JavaScript expressions to be used for certain setting
 * Default Value:
 
 :::caution
-For input elements (e.g., text input may require a default value from a process variable, while a number input may need a computed value).
+For input elements (e.g., text input), you may require a default value from a process variable, while a number input may need a computed value.
 :::
 
 * Text element
