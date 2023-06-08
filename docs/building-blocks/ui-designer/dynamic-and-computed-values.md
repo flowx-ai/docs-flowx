@@ -2,14 +2,16 @@
 
 ## Dynamic values
 
-You can utilize process parameters or substitution tags for the following element properties: 
-
+You can now utilize process parameters or substitution tags for the following element properties: 
+ 
 * default value (excluding switch) 
 * label
 * placeholder 
 * helpertext 
 * error message 
 * prefix, and suffix
+
+![](../../../release-notes/img/dynamic_val.gif)
 
 Dynamic values are supported for specific elements such as:
 

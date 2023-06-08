@@ -169,3 +169,12 @@ To replace the functionality provided by socket.io-client, you will need to use 
 ```bash
 npm install event-source-polyfill@1.0.31
 ```
+
+### Message events
+
+#### Topics related to message events
+
+| Default parameter (env var)       | Default FLOWX.AI value (can be overwritten) |
+| --------------------------------- | ------------------------------------------- |
+| KAFKA_TOPIC_PROCESS_EVENT_MESSAGE | ai.flowx.devcore.mesage.event.proces.v1     |
+

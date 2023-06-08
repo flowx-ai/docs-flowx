@@ -34,6 +34,16 @@ The correlation key is optional, and if an instance with the same correlation ke
 
 [Message Catch Start Event](message-catch-start-event.md)
 
+### Message events correlation
+
+Messages are not sent directly to process instances. Instead, message correlation is achieved through message subscriptions, which consist of the message name and the correlation key (also referred to as the correlation value).
+
+:::info
+A correlation key is a key that can have the same value across multiple instances, and it is used to match instances based on their shared value. It is not important what the attribute's name is (even though we map based on this attribute), but rather the value itself when performing the matching between instances.
+
+For example, in an onboarding process for a user, you hold a unique personal identification number (SSN), and someone else needs a portion of your process, specifically the value of your input (SSN).
+:::
+
 ### Message events configuration
 
 * `attachedTo`: a property that applies to boundary events
@@ -51,3 +61,4 @@ The correlation key is optional, and if an instance with the same correlation ke
 	}
 }
 ```
+

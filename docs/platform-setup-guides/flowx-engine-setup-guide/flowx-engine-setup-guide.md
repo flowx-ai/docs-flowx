@@ -242,7 +242,7 @@ The suggested topic pattern naming convention is the following:
 | --------------------------- | ------------------------------------------- |
 | KAFKA_TOPIC_AUDIT_OUT       | ai.flowx.dev.core.save.audit.v1             |
 
-#### **Topics related to process event messages**
+#### **Topics related to ES indexing**
 
 | Default parameter (env var)   | Default FLOWX.AI value (can be overwritten) |
 | ----------------------------- | ------------------------------------------- |
@@ -258,6 +258,13 @@ The suggested topic pattern naming convention is the following:
 | ----------------------------- | ------------------------------------------- |
 | KAFKA_TOPIC_PROCESS_START_IN  | ai.flowx.dev.core.trigger.start.process.v1  |
 | KAFKA_TOPIC_PROCESS_START_OUT | ai.flowx.dev.core.confirm.start.process.v1  |
+
+
+#### **Topics related to message events**
+
+| Default parameter (env var)       | Default FLOWX.AI value (can be overwritten) |
+| --------------------------------- | ------------------------------------------- |
+| KAFKA_TOPIC_PROCESS_EVENT_MESSAGE | ai.flowx.devcore.mesage.event.proces.v1     |
 
 
 ### Configuring events-gateway
