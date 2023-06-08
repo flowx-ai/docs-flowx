@@ -30,6 +30,10 @@ Dynamic values are supported for specific elements such as:
 * Modal
 * Step
 
+:::caution
+Keep in mind that for <=3.3.0 release is not possible to have a concatenation for process params with substitution tags while using dynamic values.
+:::
+
 ## Computed values
 
 Computed values refer to values that are dynamically generated or calculated based on JavaScript expressions rather than being statically predefined. 
