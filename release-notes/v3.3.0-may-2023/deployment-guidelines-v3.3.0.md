@@ -183,6 +183,24 @@ New kafka topics that should be added in the process-engine configuration.
 | KAFKA_TOPIC_PROCESS_EVENT_MESSAGE   | ai.flowx.dev.core.message.event.process.v1           | This topic is used for throwing intermediate event messages. |
 | KAFKA_TOPIC_PROCESS_START_FOR_EVENT | ai.flowx.dev.core.trigger.start-for-event.process.v1 | This topic is used to start processes.                       |
 
+### Data model
 
+Added new `admin` endpoint:
 
+* PATCH `{{baseUrl}}/api/internal/link/data-model`
+
+```curl
+curl --location --request PATCH '{{baseUrl}}/api/internal/link/data-model' \
+--header 'EXECUTION-USER: upload_user' \
+--header 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXX' \
+--data ''
+```
+
+* needed roles:
+    * manage-processes
+    * admin
+
+For moore details about needed roles and scopes, check the following section:
+
+[Configuring access rights for Engine](../../docs/platform-setup-guides/flowx-engine-setup-guide/configuring-access-rights-for-engine)
 
