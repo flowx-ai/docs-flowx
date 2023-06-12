@@ -1,4 +1,4 @@
-# Deployment guidelines v3.3.0
+# Deployment guidelines v3.3.0 
 
 :::info
 Do not forget, when upgrading to a new platform version, always check and make sure your installed component versions match the versions stated in the release. To do that, go to **FLOWX.AI Designer > Platform Status**.
@@ -12,7 +12,7 @@ After updating to **3.3.0** FLOWX.AI release, importing old processes definition
 
 ## Component versions
 
-| :ballot_box_with_check:        | 3.3.0      | 3.2.0  | 3.1.0  | 3.0.0  | 2.14.0   | 2.13.0  | 2.12.0  | 2.11.0  | 2.10.0  | 2.9.0   | 2.8.1   | 2.8.0   | 2.7.0   | 2.6.0   | 2.5.0   | 2.4.0   | 2.3.0   | 2.2.0   | 2.1.0     |
+| 🧩                            | 3.3.0      | 3.2.0  | 3.1.0  | 3.0.0  | 2.14.0   | 2.13.0  | 2.12.0  | 2.11.0  | 2.10.0  | 2.9.0   | 2.8.1   | 2.8.0   | 2.7.0   | 2.6.0   | 2.5.0   | 2.4.0   | 2.3.0   | 2.2.0   | 2.1.0     |
 | ------------------------------ | ---------- | ------ | ------ | ------ | -------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | --------- |
 | **Process engine**             | **3.2.0**  | 2.2.1  | 2.1.2  | 2.0.7  | 0.4.104  | 0.4.95  | 0.4.90  | 0.4.83  | 0.4.60  | 0.4.49  | 0.4.44  | 0.4.42  | 0.4.42  | 0.4.36  | 0.4.29  | 0.4.22  | 0.4.21  | 0.4.18  | 0.4.13    |
 | **Admin**                      | **2.3.6**  | 2.2.2  | 2.1.3  | 2.0.8  | 0.3.119  | 0.3.103 | 0.3.92  | 0.3.81  | 0.3.60  | 0.3.55  | 0.3.47  | 0.3.43  | 0.3.40  | 0.3.36  | 0.3.34  | 0.3.29  | 0.3.23  | 0.3.21  | 0.3.13    |
@@ -46,7 +46,7 @@ With the release of **FLOWX.AI 3.0**, there have been some changes that you need
 :::
 
 
-### 3.3.0 recommended versions
+### 3.3.0 recommended versions ☑️
 
 | FLOWX.AI Platform Version | Component name               | Recommended version (tested versions) |
 | ------------------------- | ---------------------------- | ------------------------------------- |
@@ -127,9 +127,9 @@ Events-gateway is designed specifically for handling events. Previously, each pr
 
 Now, instead of a server holding the messages, they are stored in Redis. However, the engine sends the messages to the events-gateway, which is responsible for sending them to Redis. Users connect to the events-gateway using an HTTP request and wait for Server-Sent Events (SSE) to flow in that request. They keep the request open for as long as they want SSE on a specific instance.
 
-#### Kafka topics
+#### Events-gateway kafka topics
 
-##### Process engine new kafka topics:
+New kafka topics that should be added in the process-engine configuration.
 
 | Topic Name                               | Description                             | Value                                                |
 | ---------------------------------------- | --------------------------------------- | ---------------------------------------------------- |
@@ -142,7 +142,9 @@ Now, instead of a server holding the messages, they are stored in Redis. However
 
 [Events gateway setup guide](../../docs/platform-setup-guides/events-gateway-setup)
 
-# Task manager new kafka topic:
+#### Task manager new kafka topic
+
+New kafka topic that should be added in the process-engine configuration.
 
 | Topic Name                            | Description                           | Value                                           |
 | ------------------------------------- | ------------------------------------- | ----------------------------------------------- |
@@ -174,7 +176,13 @@ npm install event-source-polyfill@1.0.31
 
 #### Topics related to message events
 
-| Default parameter (env var)       | Default FLOWX.AI value (can be overwritten) |
-| --------------------------------- | ------------------------------------------- |
-| KAFKA_TOPIC_PROCESS_EVENT_MESSAGE | ai.flowx.devcore.mesage.event.proces.v1     |
+New kafka topics that should be added in the process-engine configuration.
+
+| Default parameter (env var)         | Default FLOWX.AI value (can be overwritten)          | Definition                                                   |
+| ----------------------------------- | ---------------------------------------------------- | ------------------------------------------------------------ |
+| KAFKA_TOPIC_PROCESS_EVENT_MESSAGE   | ai.flowx.dev.core.message.event.process.v1           | This topic is used for throwing intermediate event messages. |
+| KAFKA_TOPIC_PROCESS_START_FOR_EVENT | ai.flowx.dev.core.trigger.start-for-event.process.v1 | This topic is used to start processes.                       |
+
+
+
 

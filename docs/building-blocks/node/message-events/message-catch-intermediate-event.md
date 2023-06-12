@@ -7,8 +7,11 @@
 :::
 
 
-Similar to the Message Catch Boundary Event, the Message Catch Intermediate Event is important because it facilitates the communication and coordination between process instances or external systems through messages. By incorporating this event, the process can effectively synchronize and control the flow based on the arrival of specific messages.
+Similar to the Message Catch Boundary Event, the Message Catch Intermediate Event is important because it facilitates the communication and coordination between process instances through messages. By incorporating this event, the process can effectively synchronize and control the flow based on the arrival of specific messages.
 
+:::info
+Message Catch Intermediate Event can be used as a standalone node, this means that it will block a process until it receives an event.
+:::
 
 ## Configuring a Message Catch Intermediate Event
 

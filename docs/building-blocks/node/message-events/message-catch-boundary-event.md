@@ -10,6 +10,12 @@ sidebar_position: 2
 **Why it is important?** It allows the process to listen for and capture specific messages during the execution of the associated user task. 
 :::
 
+When used as a boundary event on a [**user task**](../user-task-node.md), message catch boundary event nodes behave similar to an [**exclusive gateway**](../exclusive-gateway-node.md), but they are activated upon receiving an event. This means you can proceed in the process without receiving an event and continue through the sequence initiated from the user task. 
+
+If an event is received, it advances through the sequence from the intermediate node. You can have multiple intermediate boundary events on the same user task, but only one can be activated at a time.
+
+![](../img/message_events_boundaries.png)
+
 There are two types of Message Catch Boundary Events: 
 
 * [**Interrupting**](#message-catch-interrupting-event)  
@@ -25,7 +31,14 @@ There are two types of Message Catch Boundary Events:
 
 When an Interrupting Message Catch Boundary Event is triggered by receiving a message, it interrupts the associated task that is being performed. The task is immediately finished, and the process flow continues to advance based on the received message.
 
+It can also be used as a standalone node, see more information on the following section:
+
+[Message Catch Intermediate Event](message-catch-intermediate-event.md)
+
 ## Message Catch Non-Interrupting Event
+
+It is used only as a boundary event and is placed only on a user task. If your process is in that user task and receives events, the event is activated, and a new token is created that advances independently. Sections with non-interrupting events should not contain user tasks. You can have multiple non-interrupting events on the same user task, and all of them can be activated simultaneously.
+
 
 <div className = "image-scaled">
 
@@ -47,7 +60,7 @@ It is used to establish the correlation between the catch event and the correspo
 By selecting the appropriate throw event, the catch event will be triggered when a message is thrown from that event.
 :::
 
-* **Correlation key** - is a process key that uniquely identifies the instance to which the message is sent
+* **Correlation key** - process key used to establish a correlation between the received message and a specific process instance
 
 :::info
 Correlation key serves as a means to correlate the incoming message with the specific process instance it belongs to.
