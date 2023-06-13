@@ -10,16 +10,24 @@ sidebar_position: 1
 **Why is it useful?** Using swimlanes we can make sure only certain user roles have access to certain process nodes.
 :::
 
-In some cases it might be necessary to restrict access to process nodes based on user roles. This can be done by adding the nodes on different swimlanes. The swimlanes will be configured to only allow access for certain user roles defined in the chosen identity provider platform.
+In certain scenarios, it is necessary to restrict access to specific process nodes based on user roles. This can be achieved by organizing nodes into different swimlanes. 
 
-![](../img/swimlanes.png)
+Each swimlane can be configured to grant access only to users with specific roles defined in the chosen identity provider platform.
 
-Depending on the type of node added in a swimlane, only the users that have the necessary swimlane roles will be able to start process instances, view process instances and execute actions on process instances.
+![](../img/multiple_swimlanes.png)
+
+Depending on the type of node added within a swimlane, only users with the corresponding swimlane roles will have the ability to initiate process instances, view process instances, and perform actions on them.
+
+[Click here to view the list of scopes and roles for managing processes](../../platform-setup-guides/flowx-engine-setup-guide/configuring-access-rights-for-engine.md)
+
+![](../img/swimlanes_permissions.gif)
 
 When creating a new process definition, a default swimlane will automatically be added.
 
-While the token moves from one node to the next, it might move from one swimlane to another. If the user that interacts with the process instance no longer has access on the new swimlane, they will view the process in read-only mode and not be able to interact with it until the token returns on a swimlane they have access to.
+![](../img/swimlanes_default.gif)
 
-The users will be notified when they can no longer interact with the process or when they can resume actions on the process.
+As the token moves from one node to the next, it may transition between swimlanes. If a user interacting with the process instance no longer has access to the new swimlane, they will observe the process in read-only mode and will be unable to interact with it until the token returns to a swimlane they have access to.
+
+Users will receive notifications when they can no longer interact with the process or when they can resume actions on it.
 
 [Configuring access roles for processes](../../platform-setup-guides/flowx-engine-setup-guide/configuring-access-roles-for-processes.md)

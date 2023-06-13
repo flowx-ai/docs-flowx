@@ -131,6 +131,38 @@ To generate a data model, follow these steps:
 
 By generating a data model, you can ensure that your data is structured and organized in a way that is appropriate for your business needs. It can also help you to identify any inconsistencies or errors in the data, allowing you to correct them before they cause problems down the line.
 
+## Swimlanes
+
+Swimlanes offer a useful method of organizing process nodes based on process participants. By utilizing swimlanes, you can establish controlled access to specific process nodes for particular user roles.
+
+#### Adding new swimlanes
+
+To add new swimlanes, please follow these steps:
+
+1. Access the **FLOWX.AI Designer**.
+2. Open an existing process definition or create a new one.
+3. Identify the default swimlane and select it to display the contextual menu.
+
+![](../img/add_new_swimlane.png)
+
+:::info
+With the contextual menu, you can easily perform various actions related to swimlanes, such as adding or removing swimlanes or reordering them. 
+:::
+
+4. Choose the desired location for the new swimlane, either below or above the default swimlane.
+5. Locate and click the **add swimlane icon** to create the new swimlane.
+
+![](../../img/swimlanes_docs.gif)
+
+
+For more details about user roles management, check the following section:
+
+[User roles management - Swimlanes](../../../platform-deep-dive/user-roles-management/swimlanes.md)
+
+For more details about setting up user role-based access on process definitions, check the following section:
+
+[Configuring access roles for processes](../../../platform-setup-guides/flowx-engine-setup-guide/configuring-access-roles-for-processes.md)
+
 ## Settings
 
 ### General
@@ -149,11 +181,6 @@ For more information about **Cron Expressions** and **ISO 8601** formatting, che
 
 ![](../img/process_settings.png)
 
-### Swimlanes
-
-Swimlanes provide a way of grouping process nodes by process participants. Using swimlanes, you can ensure that only certain user roles have access to certain process nodes. 
-
-![](../../img/process_swimlanes.png)
 
 ### Permissions
 
