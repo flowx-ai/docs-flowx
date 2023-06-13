@@ -6,14 +6,24 @@ In modern application development, the ability to create dynamic and interactive
 
 Dynamic values refer to the capability of dynamically populating element properties in the user interface based on process parameters or substitution tags. These values can be customized at runtime, allowing the application to adapt to specific scenarios or user input. With dynamic values, you can personalize labels, placeholders, error messages, and other properties of UI elements, providing a tailored experience for users.
 
-You can now utilize process parameters or [**substitution tags**](../../platform-deep-dive/core-components/core-extensions/content-management/substitution-tags.md) for the following element properties: 
- 
-* Default value (excluding switch) 
-* Label
-* Placeholder 
-* Helpertext 
-* Error message 
-* Prefix and suffix
+You can now utilize process parameters or [**substitution tags**](../../platform-deep-dive/core-components/core-extensions/content-management/substitution-tags.md) with the following UI elements and their properties:
+
+
+| Element                                           | Property                                                        | Accepts Params/Subst Tags |
+| ------------------------------------------------- | ---------------------------------------------------------------- | ------------------------- |
+| [**Form Elements**](./ui-component-types/form-elements)                                     | Default Value (except switch)                                    | Yes                       |
+|                                                   | Label, Placeholder                                               | Yes                       |
+|                                                   | Helper Text, Validators                                          | Yes                       |
+| [**Document Preview**](./ui-component-types/file-preview.md)                                  | Title, Subtitle                                                  | Yes                       |
+| [**Card**](./ui-component-types/root-components/card.md)                                              | Title, Subtitle                                                  | Yes                       |
+| Form                                              | Title                                                            | Yes                       |
+| Message                                           | Message                                                          | Yes                       |
+| [**Buttons**](./ui-component-types/buttons.md)                                   | Label                                                            | Yes                       |
+| Select, Checkbox, Radio,Segmented Button (Static) | Label, Value                                                     | Subst Tags Only           |
+| Text                                              | Text                                                             | Yes                       |
+| Link                                              | Link Text                                                        | Yes                       |
+| [**Modal**](../../building-blocks/node/milestone-node.md#modal)                                             | Modal Dismiss Alert, Title, Message, Confirm Label, Cancel Label | Yes                       |
+| [**Step**](../../building-blocks/node/milestone-node.md#stepper--steps)                                              | Label                                                            | Yes                       |
 
 ### Example using Substitution tags
 
@@ -49,23 +59,6 @@ output.put("app",{"label":"This is a label",
                     "defaultSlider": 90});
 
 ```
-
-Dynamic values are supported for specific elements such as:
-
-* [**Document Preview**](./ui-component-types/file-preview.md) 
-* [**Card**](./ui-component-types/root-components/card.md) 
-* [**Form**](./ui-component-types/form-elements) 
-* Message 
-* [**Button**](./ui-component-types/buttons.md)
-* [**Upload**](./ui-component-types/buttons.md#file-upload)
-* [**Select**](./ui-component-types/form-elements/select-form-field.md)
-* [**Checkbox**](./ui-component-types/form-elements/checkbox-form-field.md) 
-* [**Radio**](./ui-component-types/form-elements/radio-form-field.md) 
-* [**Segmented button**](./ui-component-types/form-elements/segmented-button.md) 
-* Text 
-* Link 
-* Modal
-* Step
 
 :::caution
 Please note that for releases **<= 3.3.0**, it is not possible to concatenate process parameters with substitution tags when using dynamic values.
@@ -134,25 +127,27 @@ In summary, the JS expressions demonstrates how a computed value can be derived 
 
 ### Usage
 
-The UI Designer now allows JavaScript expressions to be used for certain setting fields in various UI elements such as:
+The UI Designer now allows JavaScript expressions to create computed values used on the following UI elements with their properties:
 
-* Slider:
-    - Minimum Value (min Value)
-    - Maximum Value (max Value)
-    - Default Value (default Value)
 
-![](./img/slider_computed.png)
+| Element                                                               | Properties                                 |
+| --------------------------------------------------------------------- | --------------------------------------- |
+| Slider                                                                | min Value, max Value, default Value     |
+| Any UI Element that accepts validators min, max, minLength, maxLength | params                                  |
+| Default Value                                                         | Inputs (e.g., text input, number input) |
+| Text                                                                  | Text                                    |
+| Link                                                          | Link Text                               |
 
-* Any UI element that accepts validators (min, max, minLength, maxLength):
 
-    - Parameters (params)
+- **Slider**: The min value, max value, and default value for sliders can be set using JavaScript expressions applied to process parameters. This allows for dynamic configuration based on numeric values.
+- **Any UI Element that accepts validators min, max, minLength, maxLength**: The "params" field for these elements can also accept JavaScript expressions applied to process parameters. This enables flexibility in setting validator parameters dynamically.
+- **Default Value**: For input elements like text inputs or number inputs, the default value can be a variable from the process or a computed value determined by JavaScript expressions.
+- **Text**: The content of a text element can be set using JavaScript expressions, allowing for dynamic text generation or displaying process-related information.
+- **Link**: The link text can also accept JavaScript expressions, enabling dynamic generation of the link text based on process parameters or other conditions.
 
-* Default Value:
+Please note that these settings are specifically applicable to numeric values and are not intended for date or string values.
 
 :::caution
 For input elements (e.g., text input), you may require a default value from a process variable, while a number input may need a computed value.
 :::
 
-* Text element
-
-* Link text

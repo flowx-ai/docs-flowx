@@ -51,11 +51,22 @@ The following validators can be added to a slider: `required` and `custom` (more
 UI actions can be added to the slider element to define its behavior and interactions.
 
 * **Event** - possible value: CHANGE
-* **Action Type** - select the action type
+* **Action Type** - select the action type, ❗️ for more details on how to configure a UI action, click [**here**](../../ui-actions.md)
+
+
+### Multiple sliders
+
+You can also use multiple sliders UI elements that are interdependent, as you can see in the following example:
+
+![](../../img/multiple_sliders.gif)
 
 :::info
-For more details on how to configure a UI action, click [**here**](../../ui-actions.md).
+You can improve the configuration of the slider using computed values as in the example above. These values provide a more flexible and powerful approach for handling complex use cases. You can find an example by referring to the following documentation:
+
+[**<u>Dynamic & computed values</u>**](../../dynamic-and-computed-values.md#computed-values)
 :::
+
+
 
 ### Slider styling
 
