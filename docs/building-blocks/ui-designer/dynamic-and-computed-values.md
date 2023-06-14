@@ -9,21 +9,21 @@ Dynamic values refer to the capability of dynamically populating element propert
 You can now utilize process parameters or [**substitution tags**](../../platform-deep-dive/core-components/core-extensions/content-management/substitution-tags.md) with the following UI elements and their properties:
 
 
-| Element                                           | Property                                                        | Accepts Params/Subst Tags |
-| ------------------------------------------------- | ---------------------------------------------------------------- | ------------------------- |
-| [**Form Elements**](./ui-component-types/form-elements)                                     | Default Value (except switch)                                    | Yes                       |
-|                                                   | Label, Placeholder                                               | Yes                       |
-|                                                   | Helper Text, Validators                                          | Yes                       |
-| [**Document Preview**](./ui-component-types/file-preview.md)                                  | Title, Subtitle                                                  | Yes                       |
-| [**Card**](./ui-component-types/root-components/card.md)                                              | Title, Subtitle                                                  | Yes                       |
-| Form                                              | Title                                                            | Yes                       |
-| Message                                           | Message                                                          | Yes                       |
-| [**Buttons**](./ui-component-types/buttons.md)                                   | Label                                                            | Yes                       |
-| Select, Checkbox, Radio,Segmented Button (Static) | Label, Value                                                     | Subst Tags Only           |
-| Text                                              | Text                                                             | Yes                       |
-| Link                                              | Link Text                                                        | Yes                       |
-| [**Modal**](../../building-blocks/node/milestone-node.md#modal)                                             | Modal Dismiss Alert, Title, Message, Confirm Label, Cancel Label | Yes                       |
-| [**Step**](../../building-blocks/node/milestone-node.md#stepper--steps)                                              | Label                                                            | Yes                       |
+| Element                                                                 | Property                                                         | Accepts Params/Subst Tags |
+| ----------------------------------------------------------------------- | ---------------------------------------------------------------- | ------------------------- |
+| [**Form Elements**](./ui-component-types/form-elements)                 | Default Value (except switch)                                    | Yes                       |
+|                                                                         | Label, Placeholder                                               | Yes                       |
+|                                                                         | Helper Text, Validators                                          | Yes                       |
+| [**Document Preview**](./ui-component-types/file-preview.md)            | Title, Subtitle                                                  | Yes                       |
+| [**Card**](./ui-component-types/root-components/card.md)                | Title, Subtitle                                                  | Yes                       |
+| Form                                                                    | Title                                                            | Yes                       |
+| Message                                                                 | Message                                                          | Yes                       |
+| [**Buttons**](./ui-component-types/buttons.md)                          | Label                                                            | Yes                       |
+| Select, Checkbox, Radio,Segmented Button (Static)                       | Label, Value                                                     | Subst Tags Only           |
+| Text                                                                    | Text                                                             | Yes                       |
+| Link                                                                    | Link Text                                                        | Yes                       |
+| [**Modal**](../../building-blocks/node/milestone-node.md#modal)         | Modal Dismiss Alert, Title, Message, Confirm Label, Cancel Label | Yes                       |
+| [**Step**](../../building-blocks/node/milestone-node.md#stepper--steps) | Label                                                            | Yes                       |
 
 ### Example using Substitution tags
 
@@ -112,7 +112,7 @@ if ( !isNaN(parseInt(${application.client.amount})) ) {
 }
 ```
 
-#### Explanation
+#### Example details
 
 The code snippets check whether the value of `${application.client.amount}` key can be successfully parsed as an integer. Here's a step-by-step explanation:
 
@@ -130,13 +130,13 @@ In summary, the JS expressions demonstrates how a computed value can be derived 
 The UI Designer now allows JavaScript expressions to create computed values used on the following UI elements with their properties:
 
 
-| Element                                                               | Properties                                 |
-| --------------------------------------------------------------------- | --------------------------------------- |
-| Slider                                                                | min Value, max Value, default Value     |
-| Any UI Element that accepts validators min, max, minLength, maxLength | params                                  |
-| Default Value                                                         | Inputs (e.g., text input, number input) |
-| Text                                                                  | Text                                    |
-| Link                                                          | Link Text                               |
+| Element                                | Properties                          |
+| -------------------------------------- | ----------------------------------- |
+| Slider                                 | min Value, max Value, default Value |
+| Input                                  | Default Value                       |
+| Any UI Element that accepts validators | min, max, minLength, maxLength      |
+| Text                                   | Text                                |
+| Link                                   | Link Text                           |
 
 
 - **Slider**: The min value, max value, and default value for sliders can be set using JavaScript expressions applied to process parameters. This allows for dynamic configuration based on numeric values.
