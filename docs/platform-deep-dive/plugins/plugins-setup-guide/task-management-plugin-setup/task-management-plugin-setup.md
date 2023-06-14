@@ -11,7 +11,7 @@ It has the following dependencies:
 
 The plugin comes with most of the needed configuration properties filled in, but there are a few that need to be set up using some custom environment variables.
 
-## Dependencies <a href="#2939ce6e-c291-40c2-b3d6-1e789b1617d7" id="2939ce6e-c291-40c2-b3d6-1e789b1617d7"></a>
+## Dependencies 
 
 ### **Mongo database**
 
@@ -47,9 +47,9 @@ notification-mdb:
 
 The plugin can use the [Redis component](../../../../platform-setup-guides/platform-setup-guides.md#redis-configuration) already deployed for the engine.
 
-## Configuration <a href="#bad24571-ff23-4ec3-83d9-8a2ace74a6b4" id="bad24571-ff23-4ec3-83d9-8a2ace74a6b4"></a>
+## Configuration 
 
-### Authorization configuration & access roles
+## Authorization configuration & access roles
 
 The following variables need to be set in order to connect to the identity management platform:
 
@@ -57,7 +57,11 @@ The following variables need to be set in order to connect to the identity manag
 
 `SECURITY_OAUTH2_CLIENT_CLIENT_ID`
 
+`SECURITY_OAUTH2_CLIENT_CLIENT_SECRET`
+
 `SECURITY_OAUTH2_REALM`
+
+
 
 A specific service account should be configured in the OpenID provider to allow the Task management microservice to access realm specific data. It can be configured using the following environment variables:
 
@@ -94,7 +98,7 @@ The following values should be set with the corresponding Redis related values.
 `REDIS_TTL`
 
 
-### **Kafka configuration** <a href="#63673403-7b21-440b-a173-211fd5c9a86e" id="63673403-7b21-440b-a173-211fd5c9a86e"></a>
+## Kafka configuration
 
 The following Kafka related configurations can be set by using environment variables:
 
@@ -104,9 +108,13 @@ The following Kafka related configurations can be set by using environment varia
 
 `KAFKA_CONSUMER_THREADS` - the number of Kafka consumer threads
 
+`KAFKA_CONSUMER_EXCLUDE_USERS_THREADS` - 
+
 `KAFKA_AUTH_EXCEPTION_RETRY_INTERVAL` - the interval between retries after `AuthorizationException` is thrown by `KafkaConsumer`
 
 `KAFKA_MESSAGE_MAX_BYTES` - this is the largest size of the message that can be received by the broker from a producer.
+
+### Kafka topics
 
 Each action available in the service corresponds to a Kafka event. A separate Kafka topic must be configured for each use-case:
 
@@ -124,7 +132,7 @@ Each action available in the service corresponds to a Kafka event. A separate Ka
 
 `KAFKA_TOPIC_TASK_IN`- used to receive a message from the engine to start a new task. It needs to be matched with the corresponding task_out topic on the engine side.
 
-`KAFKA_TOPIC_EVENTSGATEWAY_OUT_MESSAGE` - outgoing messages from Events Gateway
+`KAFKA_TOPIC_EVENTS_GATEWAY_OUT_MESSAGE` - outgoing messages from Events Gateway
 
 :::caution
 The Engine is listening for messages on topics with names of a certain pattern, make sure to use correct outgoing topic names when configuring the notifications plugin.
@@ -143,5 +151,5 @@ The following environment variables could be set in order to control log levels:
 
 ### Filtering
 
-`USERNAME_SEARCH_PARTIAL` - filter possible assignees by partial names (default: true)
+`FLOWX_ALLOW_USERNAME_SEARCH_PARTIAL` - filter possible assignees by partial names (default: true)
 

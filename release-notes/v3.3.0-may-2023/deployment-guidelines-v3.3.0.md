@@ -127,15 +127,15 @@ Events-gateway is designed specifically for handling events. Previously, each pr
 
 Now, instead of a server holding the messages, they are stored in Redis. However, the engine sends the messages to the events-gateway, which is responsible for sending them to Redis. Users connect to the events-gateway using an HTTP request and wait for Server-Sent Events (SSE) to flow in that request. They keep the request open for as long as they want SSE on a specific instance.
 
-#### Events-gateway kafka topics
+### Events-gateway kafka topics
 
 New kafka topics that should be added in the process-engine configuration.
 
-| Topic Name                               | Description                             | Value                                                |
-| ---------------------------------------- | --------------------------------------- | ---------------------------------------------------- |
-| KAFKA_TOPIC_EVENTSGATEWAY_OUT_MESSAGE    | Outgoing messages from Events Gateway   | ai.flowx.eventsgateway.engine.commands.message.v1    |
-| KAFKA_TOPIC_EVENTSGATEWAY_OUT_DISCONNECT | Disconnect commands from Events Gateway | ai.flowx.eventsgateway.engine.commands.disconnect.v1 |
-| KAFKA_TOPIC_EVENTSGATEWAY_OUT_CONNECT    | Connect commands from Events Gateway    | ai.flowx.eventsgateway.engine.commands.connect.v1    |
+| Topic Name                                | Description                                               | Value                                                |
+| ----------------------------------------- | --------------------------------------------------------- | ---------------------------------------------------- |
+| KAFKA_TOPIC_EVENTS_GATEWAY_OUT_MESSAGE    | Outgoing messages from process-engine to events-gateway   | ai.flowx.eventsgateway.engine.commands.message.v1    |
+| KAFKA_TOPIC_EVENTS_GATEWAY_OUT_DISCONNECT | Disconnect commands from process-engine to events-gateway | ai.flowx.eventsgateway.engine.commands.disconnect.v1 |
+| KAFKA_TOPIC_EVENTS_GATEWAY_OUT_CONNECT    | Connect commands from process-engine to events-gateway    | ai.flowx.eventsgateway.engine.commands.connect.v1    |
 
 
 [Events gateway](../../docs/platform-deep-dive/core-components/events-gateway)
@@ -146,9 +146,9 @@ New kafka topics that should be added in the process-engine configuration.
 
 New kafka topic that should be added in the process-engine configuration.
 
-| Topic Name                            | Description                           | Value                                           |
-| ------------------------------------- | ------------------------------------- | ----------------------------------------------- |
-| KAFKA_TOPIC_EVENTSGATEWAY_OUT_MESSAGE | Outgoing messages from Events Gateway | ai.flowx.eventsgateway.task.commands.message.v1 |
+| Topic Name                             | Description                                             | Value                                           |
+| -------------------------------------- | ------------------------------------------------------- | ----------------------------------------------- |
+| KAFKA_TOPIC_EVENTS_GATEWAY_OUT_MESSAGE | Outgoing messages from events-gateway to process-engine | ai.flowx.eventsgateway.task.commands.message.v1 |
 
 ### SSE 
 
@@ -183,24 +183,33 @@ New kafka topics that should be added in the process-engine configuration.
 | KAFKA_TOPIC_PROCESS_EVENT_MESSAGE   | ai.flowx.dev.core.message.event.process.v1           | This topic is used for throwing intermediate event messages. |
 | KAFKA_TOPIC_PROCESS_START_FOR_EVENT | ai.flowx.dev.core.trigger.start-for-event.process.v1 | This topic is used to start processes.                       |
 
-### Data model
+### Bulk updates
 
-Added new `admin` endpoint:
+New kafka topics that should be added in the process-engine configuration, related to task management plugin.
 
-* PATCH `{{baseUrl}}/api/internal/link/data-model`
 
-```curl
-curl --location --request PATCH '{{baseUrl}}/api/internal/link/data-model' \
---header 'EXECUTION-USER: upload_user' \
---header 'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXX' \
---data ''
-```
+| Default parameter (env var)            | Default FLOWX.AI value (can be overwritten) | Definition                                                                                                                                                                |
+| -------------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| KAFKA_TOPIC_PROCESS_OPERATIONS_BULK_IN | ai.flowx.core.trigger.operations.bulk.v1    | On this topic, you can perform operations from the "KAFKA_TOPIC_PROCESS_OPERATIONS_IN" topic and send them as an array, allowing you to send multiple operations at once. |
 
-* needed roles:
-    * manage-processes
-    * admin
+#### Example
 
-For moore details about needed roles and scopes, check the following section:
 
-[Configuring access rights for Engine](../../docs/platform-setup-guides/flowx-engine-setup-guide/configuring-access-rights-for-engine)
+```json
+{
+    "operations": [
+    {
+       "operationType": "TERMINATE",
+        "processInstanceUuid": "6ae8274a-2778-4ff9-8fcb-6c84a5eb2bc6"
+        "taskId": "doesn't matter"
+    },
+    {
+       "operationType": "HOLD",
+        "processInstanceUuid": "6ae8274a-2778-4ff9-8fcb-6c84a5eb2bc6"
+        "taskId": "doesn't matter"
+    }
+    ]
+}
+```                                                                                                                                                                                                     
+
 
