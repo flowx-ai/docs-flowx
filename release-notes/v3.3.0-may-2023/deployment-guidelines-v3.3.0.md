@@ -1,25 +1,25 @@
 # Deployment guidelines v3.3.0 
 
 :::info
-Do not forget, when upgrading to a new platform version, always check and make sure your installed component versions match the versions stated in the release. To do that, go to **FLOWX.AI Designer > Platform Status**.
+Do not forget, when upgrading to a new platform version, always ensure that your installed component versions match the versions specified in the release notes. To verify this, navigate to **FLOWX.AI Designer > Platform Status**.
 :::
 
 :::caution Process compatibility
-After updating to **3.3.0** FLOWX.AI release, importing old processes definitions in the new platform release is not possible (available for exports from **<= 3.3.0** releases).
+After updating to **3.3.0** FLOWX.AI release, it is not possible to import old process definitions into the new platform release (available for exports from releases **<= 3.3.0**).
 :::
 
 ![](../img/release_platform_version_check.png)
 
 ## Component versions
 
-| 🧩                            | 3.3.0      | 3.2.0  | 3.1.0  | 3.0.0  | 2.14.0   | 2.13.0  | 2.12.0  | 2.11.0  | 2.10.0  | 2.9.0   | 2.8.1   | 2.8.0   | 2.7.0   | 2.6.0   | 2.5.0   | 2.4.0   | 2.3.0   | 2.2.0   | 2.1.0     |
+| 🧩                             | 3.3.0      | 3.2.0  | 3.1.0  | 3.0.0  | 2.14.0   | 2.13.0  | 2.12.0  | 2.11.0  | 2.10.0  | 2.9.0   | 2.8.1   | 2.8.0   | 2.7.0   | 2.6.0   | 2.5.0   | 2.4.0   | 2.3.0   | 2.2.0   | 2.1.0     |
 | ------------------------------ | ---------- | ------ | ------ | ------ | -------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | --------- |
-| **Process engine**             | **3.2.0**  | 2.2.1  | 2.1.2  | 2.0.7  | 0.4.104  | 0.4.95  | 0.4.90  | 0.4.83  | 0.4.60  | 0.4.49  | 0.4.44  | 0.4.42  | 0.4.42  | 0.4.36  | 0.4.29  | 0.4.22  | 0.4.21  | 0.4.18  | 0.4.13    |
-| **Admin**                      | **2.3.6**  | 2.2.2  | 2.1.3  | 2.0.8  | 0.3.119  | 0.3.103 | 0.3.92  | 0.3.81  | 0.3.60  | 0.3.55  | 0.3.47  | 0.3.43  | 0.3.40  | 0.3.36  | 0.3.34  | 0.3.29  | 0.3.23  | 0.3.21  | 0.3.13    |
-| **Designer**                   | **3.26.1** | 3.21.1 | 3.15.1 | 3.2.1  | 2.78.4-1 | 2.63.6  | 2.60.7  | 2.48.9  | 2.39.2  | 2.33.0  | 2.28.1  | 2.24.2  | 2.23.0  | 2.19.2  | 2.18.2  | 2.17.4  | 2.15.2  | 2.14.4  | 2.11.2    |
-| **@flowx/ui-sdk**              | **3.26.1** | 3.21.1 | 3.15.1 | 3.2.1  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
-| **@flowx/ui-toolkit**          | **3.26.1** | 3.21.1 | 3.15.1 | 3.2.1  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
-| **@flowx/ui-theme**            | **3.26.1** | 3.21.1 | 3.15.1 | 3.2.1  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
+| **Process engine**             | **3.2.2**  | 2.2.1  | 2.1.2  | 2.0.7  | 0.4.104  | 0.4.95  | 0.4.90  | 0.4.83  | 0.4.60  | 0.4.49  | 0.4.44  | 0.4.42  | 0.4.42  | 0.4.36  | 0.4.29  | 0.4.22  | 0.4.21  | 0.4.18  | 0.4.13    |
+| **Admin**                      | **2.3.8**  | 2.2.2  | 2.1.3  | 2.0.8  | 0.3.119  | 0.3.103 | 0.3.92  | 0.3.81  | 0.3.60  | 0.3.55  | 0.3.47  | 0.3.43  | 0.3.40  | 0.3.36  | 0.3.34  | 0.3.29  | 0.3.23  | 0.3.21  | 0.3.13    |
+| **Designer**                   | **3.26.4** | 3.21.1 | 3.15.1 | 3.2.1  | 2.78.4-1 | 2.63.6  | 2.60.7  | 2.48.9  | 2.39.2  | 2.33.0  | 2.28.1  | 2.24.2  | 2.23.0  | 2.19.2  | 2.18.2  | 2.17.4  | 2.15.2  | 2.14.4  | 2.11.2    |
+| **@flowx/ui-sdk**              | **3.26.4** | 3.21.1 | 3.15.1 | 3.2.1  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
+| **@flowx/ui-toolkit**          | **3.26.4** | 3.21.1 | 3.15.1 | 3.2.1  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
+| **@flowx/ui-theme**            | **3.26.4** | 3.21.1 | 3.15.1 | 3.2.1  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
 | **paperflow-web-components**   | -          | -      | -      | -      | 2.78.4-1 | 2.63.6  | 2.60.7  | 0.2.10  | 0.2.10  | 0.2.10  | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.5   | 0.2.4     |
 | **flowx-process-renderer**     | -          | -      | -      | -      | 2.78.4-1 | 2.63.6  | 2.60.7  | 2.48.9  | 2.39.2  | 2.33.0  | 2.28.1  | 2.24.2  | 2.23.0  | 2.19.2  | 2.18.2  | 2.17.4  | 2.15.2  | 2.14.4  | 2.11.2    |
 | **CMS Core**                   | 1.2.0      | 1.2.0  | 1.0.3  | 1.0.2  | 0.2.38   | 0.2.36  | 0.2.33  | 0.2.30  | 0.2.25  | 0.2.23  | 0.2.23  | 0.2.23  | 0.2.23  | 0.2.23  | 0.2.20  | 0.2.20  | 0.2.18  | 0.2.17  | 0.2.17    |
@@ -30,7 +30,7 @@ After updating to **3.3.0** FLOWX.AI release, importing old processes definition
 | **OCR Plugin**                 | 1.0.2      | 1.0.2  | 0.1.33 | 0.1.33 | 0.1.33   | 0.1.33  | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.0.109 | 0.0.109 | 0.0.109   |
 | **License Core**               | 1.0.2      | 1.0.2  | 1.0.2  | 1.0.1  | 0.1.28   | 0.1.28  | 0.1.28  | 0.1.27  | 0.1.23  | 0.1.19  | 0.1.18  | 0.1.18  | 0.1.18  | 0.1.18  | 0.1.15  | 0.1.15  | 0.1.13  | 0.1.13  | 0.1.12    |
 | **Customer Management Plugin** | **0.2.4**  | 0.2.3  | 0.2.3  | 0.2.1  | 0.1.28   | 0.1.28  | 0.1.28  | 0.1.27  | 0.1.23  | 0.1.22  | 0.1.22  | 0.1.22  | 0.1.22  | 0.1.22  | 0.1.20  | 0.1.20  | 0.1.18  | 0.1.18  | 0.1.18    |
-| **Task Management Plugin**     | **2.0.0**  | 1.0.4  | 1.0.4  | 1.0.1  | 0.0.42   | 0.0.42  | 0.0.40  | 0.0.37  | 0.0.29  | 0.0.28  | 0.0.28  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.22  | 0.0.22  | 0.0.21  | 0.0.21  | 0.0.16    |
+| **Task Management Plugin**     | **2.1.0**  | 1.0.4  | 1.0.4  | 1.0.1  | 0.0.42   | 0.0.42  | 0.0.40  | 0.0.37  | 0.0.29  | 0.0.28  | 0.0.28  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.22  | 0.0.22  | 0.0.21  | 0.0.21  | 0.0.16    |
 | **Data search**                | **0.2.0**  | 0.1.4  | 0.1.4  | 0.1.3  | 0.0.8    | 0.0.8   | 0.0.6   | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
 | **Audit Core**                 | **1.0.5**  | 1.0.5  | 1.0.4  | 1.0.1  | 0.0.8    | 0.0.5   | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
 | **Reporting**                  | 0.0.40     | 0.0.40 | 0.0.40 | 0.0.39 | 0.0.39   | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
@@ -42,11 +42,11 @@ After updating to **3.3.0** FLOWX.AI release, importing old processes definition
 :::danger IMPORTANT
 With the release of **FLOWX.AI 3.0**, there have been some changes that you need to be aware when upgrading to the latest version:
 * The `flowx-process-renderer` has been migrated to `@flowx\ui-sdk`.
-* As of **FLOWX.AI 3.0**, the `paperflow-web-components` library is no longer being maintained. Instead, the new components can be found in `@flowxai/ui-toolkit@3.0`.
+* The `paperflow-web-components` library is no longer maintained. Instead, use the new components available in `@flowxai/ui-toolkit@3.0`.
 :::
 
 
-### 3.3.0 recommended versions ☑️
+### Recommended Versions for FLOWX.AI 3.3.0 ☑️
 
 | FLOWX.AI Platform Version | Component name               | Recommended version (tested versions) |
 | ------------------------- | ---------------------------- | ------------------------------------- |
@@ -67,7 +67,7 @@ With the release of **FLOWX.AI 3.0**, there have been some changes that you need
 
 #### Process Instance Indexing through Kafka transport
 
-Adding new Kafka transport strategy for sending details about process instances to be indexed in Elastic Search. Check the following environment variables and their values to set up the indexing accordingly:
+Adding new Kafka transport strategy for sending details about process instances to be indexed in Elastic Search. To enable indexing of process instances in Elasticsearch through Kafka, configure the following environment variables:
 
 * `FLOWX_INDEXING_ENABLED`
 
@@ -185,7 +185,7 @@ New kafka topics that should be added in the process-engine configuration.
 
 ### Bulk updates
 
-New kafka topics that should be added in the process-engine configuration, related to task management plugin.
+New kafka topics that should be added in the process-engine configuration, related to task management plugin - bulk updates.
 
 
 | Default parameter (env var)            | Default FLOWX.AI value (can be overwritten) | Definition                                                                                                                                                                |
@@ -211,5 +211,18 @@ New kafka topics that should be added in the process-engine configuration, relat
     ]
 }
 ```                                                                                                                                                                                                     
+## Migration Steps
 
+To upgrade to FLOWX.AI 3.3.0, follow these steps:
 
+* Make sure you have taken a backup of your current platform and database configurations.
+* Verify that your current installed component versions match the versions specified in the release notes.
+* Update the FLOWX.AI platform and all related components to the recommended versions.
+* Update the necessary configuration files according to the additional configuration requirements.
+* Restart the FLOWX.AI platform and related services.
+* Verify that the platform is running correctly and all processes are functioning as expected.
+* If you encounter any issues or errors during the upgrade process, refer to the troubleshooting section in the release notes or contact FLOWX.AI support for assistance.
+
+## Troubleshooting
+
+If you encounter any issues during the upgrade process or while running the FLOWX.AI platform, refer to the troubleshooting section in the release notes or contact FLOWX.AI support for assistance.
