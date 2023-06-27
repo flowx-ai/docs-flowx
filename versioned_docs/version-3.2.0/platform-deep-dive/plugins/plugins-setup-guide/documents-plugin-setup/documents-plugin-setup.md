@@ -1,22 +1,26 @@
 # Documents plugin setup
 
+The Documents plugin provides functionality for generating, persisting, combining, and manipulating documents within the FLOWX.AI system.
+
 The plugin is available as a docker image.
 
-It has the following dependencies:
+## Dependencies
 
-* a [postgres](https://www.postgresql.org/) database
-* a [mongodb](https://www.mongodb.com/2) database in case the html templates feature is needed
-* needs to be able to connect to the Kafka instance used by the engine
-* a [redis](https://redis.io/) instance for caching&#x20;
-* an S3 compatible file storage solution (we have successfully used [Min.io](https://min.io/))
+Before setting up the plugin, ensure that you have the following dependencies installed and configured:
 
-The plugin comes with most of the needed configuration properties filled in, but there are a few that need to be set up using some custom environment variables.
+* [PostgreSQL](https://www.postgresql.org/) Database: You will need a PostgreSQL database to store data related to document templates and documents.
+* [MongoDB](https://www.mongodb.com/2) Database: MongoDB is required for the HTML templates feature of the plugin.
+* Kafka: Establish a connection to the Kafka instance used by the FLOWX.AI engine.
+* [Redis](https://redis.io/): Set up a Redis instance for caching purposes.
+* S3-Compatible File Storage Solution: Deploy an S3-compatible file storage solution, such as [Min.io](https://min.io/), to store document files.
 
-## Dependencies <a href="#2939ce6e-c291-40c2-b3d6-1e789b1617d7" id="2939ce6e-c291-40c2-b3d6-1e789b1617d7"></a>
+## Configuration
 
-### **Postgres database**
+The plugin comes with pre-filled configuration properties, but you need to set up a few custom environment variables to tailor it to your specific setup. Here are the key configuration steps:
 
-Basic Postgres configuration - helm values.yaml
+### Postgres database
+
+Configure the basic Postgres settings in the `values.yaml` file:
 
 ```yaml
 documentdb:
@@ -51,184 +55,138 @@ documentdb:
       fabric8.io/expose: "false"
 ```
 
-### **Redis server** <a href="#faa668e8-966f-468a-8009-f4e903e01d14" id="faa668e8-966f-468a-8009-f4e903e01d14"></a>
+### Redis server
 
-The plugin can use the [Redis component](https://app.gitbook.com/@flowx-ai/s/flowx-docs/flowx-engine/setup-guide#2-redis-server) already deployed for the engine.
+The plugin can utilize the [Redis component](https://app.gitbook.com/@flowx-ai/s/flowx-docs/flowx-engine/setup-guide#2-redis-server) already deployed for the FLOWX.AI engine. Make sure it is configured properly.
 
-### Document storage <a href="#4ea81105-00b4-4bf4-95f9-a55d87ea7b61" id="4ea81105-00b4-4bf4-95f9-a55d87ea7b61"></a>
+### Document storage 
 
-You need to have an S3 compatible file storage solution deployed in your setup.
-
-## Configuration <a href="#bad24571-ff23-4ec3-83d9-8a2ace74a6b4" id="bad24571-ff23-4ec3-83d9-8a2ace74a6b4"></a>
+Ensure that you have a deployed S3-compatible file storage solution, such as Min.io, which will be used to store document files.
 
 ### Authorization configuration
 
-The following variables need to be set in order to connect to the identity management platform:
+To connect to the identity management platform, set the following environment variables:
 
-`SECURITY_OAUTH2_BASE_SERVER_URL`
+* `SECURITY_OAUTH2_BASE_SERVER_URL`
+* `SECURITY_OAUTH2_CLIENT_CLIENT_ID`
+* `SECURITY_OAUTH2_REALM`
 
-`SECURITY_OAUTH2_CLIENT_CLIENT_ID`
+### Enable HTML template types 
 
-`SECURITY_OAUTH2_REALM`
-
-### Enable HTML template types <a href="#d3bc9c7c-bb00-4525-9dab-c790ff72b3bd" id="d3bc9c7c-bb00-4525-9dab-c790ff72b3bd"></a>
-
-In case you want to use html templates for documents, you need to override the following config by setting the `FLOWX_HTML_TEMPLATES_ENABLED` environment variable to true.
+If you want to use HTML templates for documents, set the `FLOWX_HTML_TEMPLATES_ENABLED` environment variable to true.
 
 ### Datasource configuration
 
-To store data related to document templates and documents the service uses a Postgres / Oracle database.
+The service uses a Postgres/Oracle database to store data related to document templates and documents. Configure the following details using environment variables:
 
-The following configuration details need to be added using environment variables:
+* `SPRING_DATASOURCE_URL`: The URL for the Postgres/Oracle database.
+* `SPRING_DATASOURCE_USERNAME`: The username for the database connection.
+* `SPRING_DATASOURCE_PASSWORD`: The password for the database connection.
+* `SPRING_JPA_PROPERTIES_HIBERNATE_DEFAULT_SCHEMA`: Use this property to overwrite the name of the database schema if needed.
 
-`SPRING_DATASOURCE_URL`
-
-`SPRING_DATASOURCE_USERNAME`
-
-`SPRING_DATASOURCE_PASSWORD`
-
-`SPRING_JPA_PROPERTIES_HIBERNATE_DEFAULT_SCHEMA` - used to overwrite the name of the database schema
-
-You will need to make sure that the user, password, connection link and db name are configured correctly, otherwise you will receive errors at start time.
-
-The datasource is configured automatically via a liquibase script inside the engine. All updates will include migration scripts.
-
-:::info
-Database schema is managed by a liquibase script that will create, manage and migrate future versions.
-:::
+Ensure that the user, password, connection URL, and database name are correctly configured to avoid startup errors. The datasource is automatically configured using a Liquibase script within the engine, including migration scripts.
 
 ### MongoDB configuration
 
-The only thing that needs to be configured is the DB access info, the rest will be handled by the plugin.&#x20;
-
-`SPRING_DATA_MONGODB_URI` - the URI for the MongoDB database
+Configure the MongoDB database access information by setting the `SPRING_DATA_MONGODB_URI` environment variable to the MongoDB database URI.
 
 ### Redis configuration
 
-The following values should be set with the corresponding Redis related values.&#x20;
+Set the following values with the corresponding Redis-related values:
 
-`SPRING_REDIS_HOST`
+* `SPRING_REDIS_HOST`: The host address of the Redis server.
+* `SPRING_REDIS_PASSWORD`: The password for the Redis server, if applicable.
+* `REDIS_TTL`: The time-to-live (TTL) value for Redis cache entries.
 
-`SPRING_REDIS_PASSWORD`
+### Kafka configuration
 
-`REDIS_TTL`
+Set the following Kafka-related configurations using environment variables:
 
-### **Kafka configuration**
+* `SPRING_KAFKA_BOOTSTRAP_SERVERS`: The address of the Kafka server.
+* `SPRING_KAFKA_CONSUMER_GROUP_ID`: The group ID for Kafka consumers.
+* `KAFKA_CONSUMER_THREADS`: The number of Kafka consumer threads to use.
+* `KAFKA_AUTH_EXCEPTION_RETRY_INTERVAL`: The interval between retries after a `AuthorizationException` is thrown by `KafkaConsumer`.
+* `KAFKA_MESSAGE_MAX_BYTES`: The maximum size of a message that can be received by the broker from a producer.
 
-The following Kafka related configurations can be set by using environment variables:
-
-`SPRING_KAFKA_BOOTSTRAP_SERVERS` - address of the Kafka server
-
-`SPRING_KAFKA_CONSUMER_GROUP_ID` - group of consumers
-
-`KAFKA_CONSUMER_THREADS` - the number of Kafka consumer threads
-
-`KAFKA_AUTH_EXCEPTION_RETRY_INTERVAL` - the interval between retries after `AuthorizationException` is thrown by `KafkaConsumer`
-
-`KAFKA_MESSAGE_MAX_BYTES` - this is the largest size of the message that can be received by the broker from a producer.
-
-Each action available in the service corresponds to a Kafka event. A separate Kafka topic must be configured for each use case.
+Each action in the service corresponds to a Kafka event. Configure a separate Kafka topic for each use case.
 
 #### Generate
 
-`KAFKA_TOPIC_DOCUMENT_GENERATE_HTML_IN`
-
-`KAFKA_TOPIC_DOCUMENT_GENERATE_HTML_OUT`
-
-`KAFKA_TOPIC_DOCUMENT_GENERATE_PDF_IN`
-
-`KAFKA_TOPIC_DOCUMENT_GENERATE_PDF_OUT`
+* `KAFKA_TOPIC_DOCUMENT_GENERATE_HTML_IN`
+* `KAFKA_TOPIC_DOCUMENT_GENERATE_HTML_OUT`
+* `KAFKA_TOPIC_DOCUMENT_GENERATE_PDF_IN`
+* `KAFKA_TOPIC_DOCUMENT_GENERATE_PDF_OUT`
 
 
 #### Persist
 
-`KAFKA_TOPIC_FILE_PERSIST_IN`
-
-`KAFKA_TOPIC_FILE_PERSIST_OUT`
-
-`KAFKA_TOPIC_DOCUMENT_PERSIST_IN`
-
-`KAFKA_TOPIC_DOCUMENT_PERSIST_OUT`
+* `KAFKA_TOPIC_FILE_PERSIST_IN`
+* `KAFKA_TOPIC_FILE_PERSIST_OUT`
+* `KAFKA_TOPIC_DOCUMENT_PERSIST_IN`
+* `KAFKA_TOPIC_DOCUMENT_PERSIST_OUT`
 
 #### Split
 
-`KAFKA_TOPIC_DOCUMENT_SPLIT_IN`
-
-`KAFKA_TOPIC_DOCUMENT_SPLIT_OUT`
+* `KAFKA_TOPIC_DOCUMENT_SPLIT_IN`
+* `KAFKA_TOPIC_DOCUMENT_SPLIT_OUT`
 
 #### Combine
 
-`KAFKA_TOPIC_FILE_COMBINE_IN`
-
-`KAFKA_TOPIC_FILE_COMBINE_OUT`
+* `KAFKA_TOPIC_FILE_COMBINE_IN`
+* `KAFKA_TOPIC_FILE_COMBINE_OUT`
 
 #### Get 
 
-`KAFKA_TOPIC_DOCUMENT_GET_URLS_IN`
-
-`KAFKA_TOPIC_DOCUMENT_GET_URLS_OUT`
+* `KAFKA_TOPIC_DOCUMENT_GET_URLS_IN`
+* `KAFKA_TOPIC_DOCUMENT_GET_URLS_OUT`
 
 #### Delete
 
-`KAFKA_TOPIC_FILE_DELETE_IN`
-
-`KAFKA_TOPIC_FILE_DELETE_OUT`
+* `KAFKA_TOPIC_FILE_DELETE_IN`
+* `KAFKA_TOPIC_FILE_DELETE_OUT`
 
 #### OCR
 
-`KAFKA_TOPIC_OCR_OUT`
-
-`KAFKA_TOPIC_OCR_IN`
+* `KAFKA_TOPIC_OCR_OUT`
+* `KAFKA_TOPIC_OCR_IN`
 
 :::caution
-The Engine is listening for messages on topics with names of a certain pattern, make sure to use correct outgoing topic names when configuring the documents plugin.
+Ensure that the Engine is listening to messages on topics with specific patterns. Use the correct outgoing topic names when configuring the documents plugin.
 :::
 
 ### File storage configuration
 
-Based on use case you can use directly a file system or an S3 compatible cloud storage solution (for example [min.io](http://min.io/)).
+Depending on your use case, you can choose either a file system or an S3-compatible cloud storage solution for document storage. Configure the file storage solution using the following environment variables:
 
-The file storage solution can be configured using the following environment variables:
-
-`APPLICATION_FILE_STORAGE_S3_SERVER_URL`
-
-`APPLICATION_FILE_STORAGE_S3_ACCESS_KEY`
-
-`APPLICATION_FILE_STORAGE_S3_SECRET_KEY`
-
-`APPLICATION_FILE_STORAGE_S3_BUCKET_PREFIX`
-
-`APPLICATION_FILESTORAGE_PARTITIONSTRATEGY` - used to set the partition strategy:
-* value `NONE` - saving documents in `minio/amazon-s3` will be done as before in a bucket for each process instance   
-* value `PROCESS_DATE` - documents will be saved in a single bucket, with a subfolder, for example: `bucket/2022/2022-07-04/process-id-xxxx/customer-id/file.pdf`         
-
-
+* `APPLICATION_FILE_STORAGE_S3_SERVER_URL`: The URL of the S3-compatible server.
+* `APPLICATION_FILE_STORAGE_S3_ACCESS_KEY`: The access key for the S3-compatible server.
+* `APPLICATION_FILE_STORAGE_S3_SECRET_KEY`: The secret key for the S3-compatible server.
+* `APPLICATION_FILE_STORAGE_S3_BUCKET_PREFIX`: The prefix to use for S3 bucket names.
+* `APPLICATION_FILESTORAGE_PARTITIONSTRATEGY`: Set the partition strategy for file storage. Use `NONE` to save documents in `minio/amazon-s3` as before, with a bucket for each process instance. Use `PROCESS_DATE` to save documents in a single bucket with a subfolder structure, for example: `bucket/2022/2022-07-04/process-id-xxxx/customer-id/file.pdf`.      
 
 
 :::info
 Make sure to follow the recommended [bucket naming rules](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html) when choosing the bucket prefix name.
 :::
 
-The maximum file size allowed for uploads can be set by using the `SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE` & `SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE` variables.
+You can set the maximum file size allowed for uploads using the `SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE` and `SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE` variables.
 
-### **Custom font path for pdf templates** <a href="#ec30c696-d67d-473d-adf0-130fdf06254b" id="ec30c696-d67d-473d-adf0-130fdf06254b"></a>
+### Custom font path for PDF templates
 
-The following config needs to be set in order to choose the font to be used when generating documents based on pdf templates: `FLOWX_PDF_GENERATION_FONT_PATH`
+Set the `FLOWX_PDF_GENERATION_FONT_PATH` config to select the font used for generating documents based on PDF templates.
 
 ### Custom font paths for HTML templates
 
-In case you want to use some specific fonts in your HTML templates, you need to override the following config: `FLOWX_HTML_TEMPLATES_FONT_PATHS`
+If you want to use specific fonts in your HTML templates, override the `FLOWX_HTML_TEMPLATES_FONT_PATHS` config. By default, Calibri and DejaVuSans are available fonts.
 
-If you don't override `FLOWX_HTML_TEMPLATES_PDFFONTPATHS`, you have Calibri and DejaVuSans as default fonts that you can use.
-
-After making this configuration, these fonts will become available to be used inside the HTML template.
+After making these configurations, the fonts will be available for use within HTML templates.
 
 ### Logging
 
 The following environment variables could be set in order to control log levels:
 
-`LOGGING_LEVEL_ROOT` - root spring boot microservice logs
+* `LOGGING_LEVEL_ROOT` - root spring boot microservice logs
+* `LOGGING_LEVEL_APP` - app-level logs
+* `LOGGING_LEVEL_MONGO_DRIVER` - MongoDB driver logs
 
-`LOGGING_LEVEL_APP` - app-level logs
-
-`LOGGING_LEVEL_MONGO_DRIVER` - MongoDB driver logs
+Adjust these variables according to your logging requirements.

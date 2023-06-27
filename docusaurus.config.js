@@ -123,7 +123,6 @@ const config = {
           },
        
           {to: '/faqs', label: 'FAQs', position: 'right'},
-          {to: 'https://www.flowx.ai/contact-us', label: 'Contact', position: 'right'},
           {to: 'https://flowxai.canny.io/documentation-feedback', label: 'Feedback', position: 'right'},
           {to: 'https://discord.gg/6ejETBkj', label: 'Discord', position: 'right', className: 'discord-link' },
 
@@ -159,17 +158,19 @@ const config = {
           {
             title: 'More',
             items: [
+
               {
-                label: 'Contact Us',
-                to: 'https://www.flowx.ai/contact-us',
+                label: 'About',
+                to: 'https://www.flowx.ai/#about',
               },
               {
-                label: 'Newsroom',
-                to: 'https://blog.flowx.ai/newsroom',
+                label: 'Contact',
+                to: 'mailto:gotaquestion@flowx.ai',
               },
+
               {
-                label: 'Request Demo',
-                to: 'https://www.flowx.ai/',
+                label: 'Platform',
+                to: 'https://www.flowx.ai/#platform',
               },
             ],
           },
@@ -181,13 +182,10 @@ const config = {
                 label: 'Academy',
                 to: 'https://academy.flowx.ai/',
               },
+
               {
-                label: 'Platform',
-                to: 'https://www.flowx.ai/platform',
-              },
-              {
-                label: 'Podcasts',
-                to: 'https://unbounded.flowx.ai/',
+                label: 'Support',
+                to: 'https://support.flowx.ai/',
               },
             ],
           },
