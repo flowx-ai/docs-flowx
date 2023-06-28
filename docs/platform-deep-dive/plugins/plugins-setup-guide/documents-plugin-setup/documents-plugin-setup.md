@@ -112,47 +112,50 @@ Each action in the service corresponds to a Kafka event. Configure a separate Ka
 
 #### Generate
 
-* `KAFKA_TOPIC_DOCUMENT_GENERATE_HTML_IN`
-* `KAFKA_TOPIC_DOCUMENT_GENERATE_HTML_OUT`
-* `KAFKA_TOPIC_DOCUMENT_GENERATE_PDF_IN`
-* `KAFKA_TOPIC_DOCUMENT_GENERATE_PDF_OUT`
+* `KAFKA_TOPIC_DOCUMENT_GENERATE_HTML_IN`:This Kafka topic is used for messages related to generating HTML documents (the topic that listens for the request from the engine)
+* `KAFKA_TOPIC_DOCUMENT_GENERATE_HTML_OUT`: This Kafka topic is used for messages related to generating HTML documents (the topic on which the engine will expect the reply)
+* `KAFKA_TOPIC_DOCUMENT_GENERATE_PDF_IN`: This Kafka topic is used for the input messages related to generating PDF documents (the topic that listens for the request from the engine)
+* `KAFKA_TOPIC_DOCUMENT_GENERATE_PDF_OUT`: This Kafka topic is used for the output messages related to generating PDF documents, it produces messages with the result of generating a PDF document (the topic on which the engine will expect the reply)
 
 
-#### Persist
+#### Persist (uploading a file/document)
 
-* `KAFKA_TOPIC_FILE_PERSIST_IN`
-* `KAFKA_TOPIC_FILE_PERSIST_OUT`
-* `KAFKA_TOPIC_DOCUMENT_PERSIST_IN`
-* `KAFKA_TOPIC_DOCUMENT_PERSIST_OUT`
+* `KAFKA_TOPIC_FILE_PERSIST_IN`: This Kafka topic is used for the input messages related to persisting files, it receives messages indicating the request to persist a file (the topic that listens for the request from the engine)
+* `KAFKA_TOPIC_FILE_PERSIST_OUT`: This Kafka topic is used for the output messages related to persisting files, it produces messages with the result of persisting a file (the topic on which the engine will expect the reply)
+* `KAFKA_TOPIC_DOCUMENT_PERSIST_IN`: This Kafka topic is used for the input messages related to persisting documents, it receives messages indicating the request to persist a document (the topic that listens for the request from the engine)
+* `KAFKA_TOPIC_DOCUMENT_PERSIST_OUT`: This Kafka topic is used for the output messages related to persisting documents, it produces messages with the result of persisting a document (the topic that listens for the request from the engine)
 
 #### Split
 
-* `KAFKA_TOPIC_DOCUMENT_SPLIT_IN`
-* `KAFKA_TOPIC_DOCUMENT_SPLIT_OUT`
+* `KAFKA_TOPIC_DOCUMENT_SPLIT_IN`: This Kafka topic is used for the input messages related to splitting documents, it receives messages indicating the request to split a document into multiple parts (the topic that listens for the request from the engine)
+* `KAFKA_TOPIC_DOCUMENT_SPLIT_OUT`: This Kafka topic is used for the output messages related to splitting documents, it produces messages with the result of splitting a document (the topic on which the engine will expect the reply)
 
 #### Combine
 
-* `KAFKA_TOPIC_FILE_COMBINE_IN`
-* `KAFKA_TOPIC_FILE_COMBINE_OUT`
+* `KAFKA_TOPIC_FILE_COMBINE_IN`: This Kafka topic is used for the input messages related to combining files, it receives messages indicating the request to combine multiple files into a single file (the topic that listens for the request from the engine)
+* `KAFKA_TOPIC_FILE_COMBINE_OUT`: This Kafka topic is used for the output messages related to combining files, it produces messages with the result of combining files (the topic on which the engine will expect the reply)
+
 
 #### Get 
 
-* `KAFKA_TOPIC_DOCUMENT_GET_URLS_IN`
-* `KAFKA_TOPIC_DOCUMENT_GET_URLS_OUT`
+* `KAFKA_TOPIC_DOCUMENT_GET_URLS_IN`: This Kafka topic is used for the input messages related to retrieving URLs for documents, it receives messages indicating the request to retrieve the URLs of documents (the topic that listens for the request from the engine)
+* `KAFKA_TOPIC_DOCUMENT_GET_URLS_OUT`: This Kafka topic is used for the output messages related to retrieving URLs for documents, it produces messages with the result of retrieving the URLs of documents (the topic on which the engine will expect the reply)
 
 #### Delete
 
-* `KAFKA_TOPIC_FILE_DELETE_IN`
-* `KAFKA_TOPIC_FILE_DELETE_OUT`
+* `KAFKA_TOPIC_FILE_DELETE_IN`: This Kafka topic is used for the input messages related to deleting files, it receives messages indicating the request to delete a file (the topic that listens for the request from the engine)
+* `KAFKA_TOPIC_FILE_DELETE_OUT`: This Kafka topic is used for the output messages related to deleting files, it produces messages with the result of deleting a file (the topic on which the engine will expect the reply)
 
 #### OCR
 
-* `KAFKA_TOPIC_OCR_OUT`
-* `KAFKA_TOPIC_OCR_IN`
+* `KAFKA_TOPIC_OCR_OUT`: This Kafka topic is used for the output messages related to optical character recognition (OCR), it produces messages with the OCR results (the topic on which the engine will expect the reply)
+* `KAFKA_TOPIC_OCR_IN`: This Kafka topic is used for the input messages related to optical character recognition (OCR), it receives messages indicating the request to perform OCR on a document (the topic that listens for the request from the engine)
 
 :::caution
 Ensure that the Engine is listening to messages on topics with specific patterns. Use the correct outgoing topic names when configuring the documents plugin.
 :::
+
+Each of these Kafka topics corresponds to a specific action or functionality within the service, allowing communication and data exchange between different components or services in a decoupled manner.
 
 ### File storage configuration
 

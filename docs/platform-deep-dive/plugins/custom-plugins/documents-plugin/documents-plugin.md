@@ -8,33 +8,31 @@ The document plugin can be easily added to your custom FLOWX.AI deployment to **
 
 ![](../../../img/doc_plugin_general.png)
 
-The plugin offers the possibility to:
+The plugin offers the following features:
 
-* store and make changes to documents
-* generate documents based on predefined templates and custom process related data
-* create various templates using the [WYSIWYG](../../wysiwyg.md) editor
+* **Document Storage and Editing**: Easily store and make changes to documents.
+* **Document Generation**: Generate documents using predefined templates and custom process-related data.
+* **WYSIWYG Editor**: Create various templates using a user-friendly ["What You See Is What You Get" (WYSIWYG) editor](../../wysiwyg.md).
 
 ![](../../../img/doc_plugin_wysiwyg.png)
     
-* import already created templates from other environments
+* **Template Import**: Import templates created in other environments.
 
 ![](../../../img/doc_plugin_create_import.png)
 
 :::caution
-After exporting a document template, it is transformed into a json that can be imported later.
+When exporting a document template, it is transformed into a JSON file that can be imported later.
 :::
 
-* convert documents from PDF to JPEG 
-* splitting bulk documents into smaller separate documents
-* editing documents to add generated barcodes/signatures and assets
+* **Document Conversion**: Convert documents from PDF to JPEG format.
+* **Document Splitting**: Split bulk documents into smaller separate documents.
+* **Document Editing**: Add generated barcodes, signatures, and assets to documents.
+* **OCR integration**: When a document requires OCR processing, the Document Plugin initiates the interaction by passing the document data or reference to the [**OCR Plugin**](../ocr-plugin.md).
 
-It can be quickly deployed on the chosen infrastructure, preloaded with the needed industry-specific document templates using an intuitive WYSIWYG editor, and then connected to the FLOWX Engine through Kafka events.
+The Documents Plugin can be easily deployed on your chosen infrastructure, preloaded with industry-specific document templates using an intuitive WYSIWYG editor, and connected to the FLOWX Engine through Kafka events.
 
-It can be easily used and integrated into your business [processes definitions](../../../../building-blocks/process/process-definition/process-definition.md) by using Kafka send/receive event nodes.
-
-[Kafka send event node](../../../../building-blocks/node/message-send-received-task-node.md#message-send-task)
-
-[Kafka receive event node](../../../../building-blocks/node/message-send-received-task-node.md#message-receive-task)
+* [<u>**Kafka send event node**</u>](../../../../building-blocks/node/message-send-received-task-node.md#message-send-task)
+* [<u>**Kafka receive event node**</u>](../../../../building-blocks/node/message-send-received-task-node.md#message-receive-task)
 
 Let's go through the steps needed to deploy and set up the plugin:
 
@@ -43,3 +41,14 @@ Let's go through the steps needed to deploy and set up the plugin:
 We've prepared some examples of various use cases where this plugin would be useful:
 
 [Using the plugin](./using-documents-plugin/using-documents-plugin.md)
+
+
+:::info Performance Considerations:
+
+To ensure optimal performance while using document plugin, consider the following recommendations:
+
+* For large or complex documents, it is recommended to allocate sufficient system resources, such as CPU and memory, to handle the conversion/editing process efficiently.
+* Avoid processing extremely large files or a large number of files simultaneously, as it may impact performance and responsiveness.
+* Monitor system resources during the generating/editing/converting etc. process and scale resources as needed to maintain smooth operations.
+* Following these performance considerations will help optimize the document processing and improve overall system performance.
+:::

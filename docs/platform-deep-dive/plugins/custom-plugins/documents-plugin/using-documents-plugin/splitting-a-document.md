@@ -4,17 +4,18 @@ sidebar_position: 4
 
 # Splitting a document
 
-Split a document into multiple parts. This might be the case, for example, when the client uploads a set of documents as a bulk scanned file that needs to be split into more separate files.
-
+You can split a document into multiple parts using the Documents Plugin. This feature is useful, for example, when a user uploads a bulk scanned file that needs to be separated into separate files.
 
 ## Sending the request
 
-1. Create a process in which you add a [**Kafka send event node**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) and a [**Kafka receive event node**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) (one to send the request, one to receive the reply).
-2. Configure the first node (Kafka send event) - add a **Kafka send action**.
+To split a document, follow these steps:
+
+1. Create a process and add a [**Kafka send event node**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) and a [**Kafka receive event node**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node). These nodes are used to send the request and receive the reply.
+2. Configure the first node, Kafka send event node by adding a **Kafka send action**.
 
 ![](../../../../img/kafka_split_action.png)
 
-3. Add the [**Kafka topic**](../../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md#kafka-configuration) where to send the request:
+3. Specify the [**Kafka topic**](../../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md#kafka-configuration) to which you want to send the request.
 
 ![](../../../../img/kafka_split_topic.png)
 
@@ -22,51 +23,46 @@ Split a document into multiple parts. This might be the case, for example, when 
 
 ![](../../../../img/split_doc_body.png)
 
-* `fileId`- the id of the file to be split
-* `parts` - a list of info about the expected document parts
-  * `documentType` - document type
-  * `customId` - the client ID
-  * `shouldOverride` - boolean, `true` to override an existing document already saved
-  * `pagesNo` - pages that you want to separate from the document
+* **fileId**: The ID of the file to be split.
+* **parts**: A list containing information about the expected document parts.
+  * **documentType**: The document type.
+  * **customId**: The client ID.
+  * **shouldOverride**: A boolean value (true or false) indicating whether to override an existing document if one with the same name already exists.
+  * **pagesNo**: The pages that you want to separate from the document.
 
 :::info
-Kafka topic names can be set by using (overwriting) the following environment variables in the deployment:
+You can customize the Kafka topic names by overwriting the following environment variables during deployment:
 
-`KAFKA_TOPIC_DOCUMENT_SPLIT_IN` - default value: `ai.flowx.in.qa.document.split.v1`
+`KAFKA_TOPIC_DOCUMENT_SPLIT_IN` - default value: `ai.flowx.in.qa.document.split.v1` - this is the topic that listens for the request from the engine
 
-`KAFKA_TOPIC_DOCUMENT_SPLIT_OUT` - default value: `ai.flowx.updates.qa.document.split.v1`
+`KAFKA_TOPIC_DOCUMENT_SPLIT_OUT` - default value: `ai.flowx.updates.qa.document.split.v1` - this is the topic on which the engine expects the reply
 
-The above examples of topics are extracted from an internal testing environment, when setting topics for other environments, follow the next pattern, for example, `ai.flowx.updates.{{environment}}.document.split.v1`.
+The above examples of topics are extracted from an internal testing environment. When setting topics for other environments, follow this pattern: `ai.flowx.updates.{{environment}}.document.split.v1`.
 :::
 
 :::caution
-The Engine is listening for messages on topics with names of a certain pattern, make sure to use an outgoing topic name that matches the pattern configured in the Engine.
+The Engine listens for messages on topics with specific names. Make sure to use an outgoing topic name that matches the pattern configured in the Engine.
 :::
 
 ## Receiving the reply
 
-:::info
-You can view the response by accessing the **Audit log** menu.
-:::
-
-
-The response will be sent on the out Kafka topic (defined on the Kafka receive event node), as available below:
+You can view the response by accessing the Audit log menu. The reply will be sent to the Kafka topic specified in the Kafka receive event node.
 
 ![](../../../../img/split_updates.png)
 
-Values expected in the reply body:
+The response body will contain the following values:
 
-* docs - list of documents
-  * customId - client ID
-  * fileId - file ID
-  * documentType - document type
-  * minioPath - minio path for the document
-  * downloadPath - download path for the document
-  * noOfPages - number of pages
+* **docs**: A list of documents.
+  * **customId**: The client ID.
+  * **fileId**: The ID of the file.
+  * **documentType**: The document type.
+  * **minioPath**: The storage path for the document.
+  * **downloadPath**: The download path for the document.
+  * **noOfPages**: The number of pages in the document.
 
 ![](../../../../img/split_doc_reply.png)
 
-Response:
+Here's an example of the response JSON:
 
 ```json
 {
