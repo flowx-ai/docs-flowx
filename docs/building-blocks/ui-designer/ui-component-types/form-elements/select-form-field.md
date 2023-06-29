@@ -89,6 +89,10 @@ When customizing the appearance of a Select UI element that includes an icon, yo
 * **Icon Key** - the key associated in the Media library, select the icon from the **Media Library**
 * **Icon Color** - select the color of the icon using the color picker 
 
+:::info
+When setting the color, the entire icon is filled with that color, the SVG's fill. Avoid changing colors for multicolor icons.
+:::
+
 ## Example - Dynamic dropdowns
 
 As mentioned previously, you can create dropdowns including static data, enumerations, or **process data**. Let's create an example using **process data** to create a process that contains **dynamic dropdowns**.

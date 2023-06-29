@@ -75,18 +75,21 @@ More details on how to configure an image component using UI Designer - [**here*
 
 ## Icons
 
-The Icons feature enables users to customize icons in UI elements. By uploading SVG files through the Media Library, users can select icons from the displayed list in the UI Designer.
+The Icons feature allows you to personalize the icons used in UI elements. By uploading SVG files through the Media Library and marking them, you can choose icons from the available list in the UI Designer.
 
 ![](../../../img/icons.png)
 
 :::info
-When selecting icons in the UI Designer, only SVG files marked as icons in the Media Library are shown.
+When selecting icons in the UI Designer, only SVG files marked as icons in the Media Library will be displayed.
 :::
 
-:::caution
-Please note that when utilizing icon sets for your application, it is recommended to use icons with the following sizes: 16px, 24px, 32px, and 43px. These sizes are optimized to ensure proper visual rendering and alignment within your UI elements.
+:::info
+To ensure optimal visual rendering and alignment within your UI elements, it is recommended to use icons with small sizes such as: 16px, 24px, 32px.
 
 Using icons specifically designed for these sizes helps maintain consistency and ensures a visually pleasing user interface. It is advisable to select icons from icon sets that provide these size options or to resize icons proportionally to fit within these dimensions.
+::::caution
+Icons are displayed or rendered at their original, inherent size.
+::::
 :::
 
 ### Customization

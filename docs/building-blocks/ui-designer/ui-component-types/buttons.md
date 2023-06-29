@@ -65,6 +65,11 @@ To further enhance the Button UI element with icons, you can include the followi
 
 * **Icon Key** - the key associated in the Media library, select the icon from the **Media Library**
 * **Icon Color** - select the color of the icon using the color picker 
+
+:::info
+When setting the color, the entire icon is filled with that color, the SVG's fill. Avoid changing colors for multicolor icons.
+:::
+
 * **Icon Position** - define the position of the icon within the button:c
     * Left
     * Right

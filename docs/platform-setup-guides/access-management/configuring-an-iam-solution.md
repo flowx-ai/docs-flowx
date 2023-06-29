@@ -267,7 +267,9 @@ The task management microservice requires a service account to make direct calls
 
 ![](../../platform-deep-dive/img/add_new_client.png)
 
-2. Next, set **Access type** as **confidential** and enable **Service Accounts**.
+2. Next, set the following properties:
+ * **Access type** - confidential 
+ * **Service Accounts Enabled** - ON
 
 ![](../../platform-deep-dive/img/iam15.png)
 
@@ -292,3 +294,35 @@ In the provided example, the **task management service account** can have the fo
 For more information, check the following section:
 
 [Configuring access rights for Task Management](../../platform-deep-dive/plugins/plugins-setup-guide/task-management-plugin-setup/configuring-access-rights-for-task-management.md)
+
+### Process engine service account
+
+The process engine requires a process engine service account to make direct calls to the Keycloak API. 
+
+:::info
+This service account is needed so the use of Start Catch Event node is possible.
+:::
+
+Follow these steps to add a **process engine service account**:
+
+1. Add a new client by selecting **Clients** then click **Create**.
+
+![](../../platform-deep-dive/img/process_engine_sa.png)
+
+2. Next, set **Access type** as **confidential** and enable **Service Accounts**.
+
+![](../../platform-deep-dive/img/iam11.png)
+
+3. Go to **Clients → realm-management → Roles** and add the following **service account client role**: **manage-users**.
+
+![](../../platform-deep-dive/img/iam12.png)
+
+4. Assign the necessary **service account roles**:
+
+![](../../platform-deep-dive/img/iam14.png)
+
+In the provided example, the **admin service account** can have the following assigned roles, depending on the required access scopes:
+
+* manage-users
+* query-users
+* manage-realm
