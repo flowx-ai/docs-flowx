@@ -31,7 +31,7 @@ To upload an asset to the Media Library, follow the next steps:
 Supported formats: PNG, JPEG, JPG, GIF, SVG or WebP format, 1 MB maximum size.
 :::
 
-### Displaying assets
+## Displaying assets
 
 Users can preview all the uploaded assets just be accessing the **Media Library**.
 
@@ -46,19 +46,19 @@ You have the following information about assets:
 
 ![](../../../img/media_library_preview.png)
 
-### Searching assets
+## Searching assets
 
 You can search an asset by using its key (full or substring).
 
 ![](../../../img/search_asset.png)
 
-### Replacing assets
+## Replacing assets
 
 You can replace an item on a specific key (this will not break references to process definitions).
 
 ![](../../../img/replace_asset.gif)
 
-### Referencing assets in UI Designer
+## Referencing assets in UI Designer
 
 You have the following options when configuring image components using [UI Designer](../../../../building-blocks/ui-designer):
 
@@ -73,17 +73,48 @@ You have the following options when configuring image components using [UI Desig
 More details on how to configure an image component using UI Designer - [**here**](../../../../building-blocks/ui-designer/ui-component-types/image).
 :::
 
-### Export/import media assets
+## Icons
+
+The Icons feature enables users to customize icons in UI elements. By uploading SVG files through the Media Library, users can select icons from the displayed list in the UI Designer.
+
+![](../../../img/icons.png)
+
+:::info
+When selecting icons in the UI Designer, only SVG files marked as icons in the Media Library are shown.
+:::
+
+:::caution
+Please note that when utilizing icon sets for your application, it is recommended to use icons with the following sizes: 16px, 24px, 32px, and 43px. These sizes are optimized to ensure proper visual rendering and alignment within your UI elements.
+
+Using icons specifically designed for these sizes helps maintain consistency and ensures a visually pleasing user interface. It is advisable to select icons from icon sets that provide these size options or to resize icons proportionally to fit within these dimensions.
+:::
+
+### Customization
+
+Content-specific icons pertain to the content of UI elements, such as icons for [input fields](../../../../building-blocks/ui-designer/ui-component-types/form-elements/input-form-field.md) or [send message buttons](../../../../building-blocks/ui-designer/ui-component-types/buttons.md). These icons are readily accessible in the [UI Designer](../../../../building-blocks/ui-designer/ui-designer.md).
+
+![](../../../img/icon_add_ui.gif)
+
+More details on how to add icons on each element, check the sections below:
+
+[Input element](../../../../building-blocks/ui-designer/ui-component-types/form-elements/input-form-field.md#icons)
+
+[Select element](../../../../building-blocks/ui-designer/ui-component-types/form-elements/select-form-field.md#icons)
+
+[Buttons](../../../../building-blocks/ui-designer/ui-component-types/buttons.md#icons)
+
+
+## Export/import media assets
 
 The import/export feature allows you to import or export media assets, enabling easy transfer and management of supported types of media files.
 
 ![](../../../img/media_library_export.png)
 
-#### Import media assets
+### Import media assets
 
 Use this function to import media assets of various supported types. It provides a convenient way to bring in images, videos, or other media resources.
 
-#### Export all
+### Export all
 
 Use this function to export all media assets stored in your application or system. The exported data will be in JSON format, allowing for easy sharing, backup, or migration of the media assets.
 

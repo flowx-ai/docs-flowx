@@ -120,9 +120,9 @@ Follow the next steps to create the process from scratch:
    * **Mandatory**
    * **Language** (we used an [**MVEL**](../../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md) script to create a list of objects)
 
-3.  On the **user task node**, add a new **Action** (submit action, this will validate the forms and save the date) with the following properties:
+3. On the **user task node**, add a new **Action** (submit action, this will validate the forms and save the date) with the following properties:
 
-* Action type - **Save Data**
+* **Action type** - Save Data
 * **Manual**
 * **Mandatory**
 * **Data to send** (the key where the data will be sent) - `application`

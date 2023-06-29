@@ -59,10 +59,29 @@ This section enables you to select the type of button using the styling tab in t
 For more information on valid CSS properties, click [here](../ui-designer.md#styling)
 :::
 
+#### Icons
+
+To further enhance the Button UI element with icons, you can include the following properties:
+
+* **Icon Key** - the key associated in the Media library, select the icon from the **Media Library**
+* **Icon Color** - select the color of the icon using the color picker 
+* **Icon Position** - define the position of the icon within the button:c
+    * Left
+    * Right
+    * Center
+
+:::info
+When selecting the center position for an icon, the button will display the icon only.
+
+![](../../../platform-deep-dive/img/button_icon.png)
+
+:::
+
+By utilizing these properties, you can create visually appealing Button UI elements with customizable icons, colors, and positions to effectively communicate their purpose and enhance the user experience.
+
 ## File upload 
 
 This button will be used to select a file and do custom validation on it. Only the Flowx props will be different. 
-
 
 ### Configuring a file upload button
 

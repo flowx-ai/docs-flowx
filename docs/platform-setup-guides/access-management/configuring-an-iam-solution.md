@@ -224,76 +224,67 @@ security:
 :::info
 **What is a service account?**
 
-A service account is an account that allows a component to directly access the Keycloak API.
+A service account is an account that grants direct access to the Keycloak API for a specific component.
 :::
 
 ### Admin service account
 
-This will be used by the admin microservice for making calls directly to the Keycloak API.
+The admin microservice requires an admin service account to make direct calls to the Keycloak API. 
 
-To add an **admin service account**, complete the next steps:
+Follow these steps to add an **admin service account**:
 
-1. Add a **new client**:
-   * set **Access type** as **confidential**
-   * check **Service Accounts Enabled**
+1. Add a new client by selecting **Clients** then click **Create**.
+
+![](../../platform-deep-dive/img/add_new_client.png)
+
+2. Next, set **Access type** as **confidential** and enable **Service Accounts**.
 
 ![](../../platform-deep-dive/img/iam11.png)
 
-2. Go to **Clients → realm-management → Roles** and add the following **service account client roles**: **manage-users.**
+3. Go to **Clients → realm-management → Roles** and add the following **service account client role**: **manage-users**.
 
 ![](../../platform-deep-dive/img/iam12.png)
 
-3. Add **realm roles mapper** to the newly created **admin-service-account** with the following properties:
-
-* **name**: _realm roles_
-* **Mapper Type**: _User Realm Role_
-* **Token Claim Name**: _roles_
-* **Claim JSON Type**: _String_
-
-![](../../platform-deep-dive/img/iam13.png)
-
-4. Give it the necessary **service account roles**:
+4. Assign the necessary **service account roles**:
 
 ![](../../platform-deep-dive/img/iam14.png)
 
-The **admin service account** defined in the example above can have the following assigned roles, based on the access scopes:
+In the provided example, the **admin service account** can have the following assigned roles, depending on the required access scopes:
 
 * manage-users
+* query-users
+* manage-realm
 
-For more information, check the following section:
+For detailed information, refer to the following section:
 
 [Configuring access rights for admin](../../flowx-designer/designer-setup-guide/configuring-access-rights-for-admin.md)
 
 ### Task management service account
 
-This will be used by the **task management microservice** for making calls directly to keycloak API.
+The task management microservice requires a service account to make direct calls to the Keycloak API. Follow these steps to add a task management service account:
 
-To add a task management service account:
+1. Add a new client by selecting **Clients** then click **Create**.
 
-1. Add a **new client**:
+![](../../platform-deep-dive/img/add_new_client.png)
 
-* set **Access type** as **confidential**
-* check **Service Accounts Enabled**
+2. Next, set **Access type** as **confidential** and enable **Service Accounts**.
 
 ![](../../platform-deep-dive/img/iam15.png)
 
-2. Go to **Clients → realm-management → Roles** and add the following **service account client roles** under **realm-management: view-users**.
+3. Go to **Clients → realm-management → Roles** and add the following **service account client role** under **realm-management**: **view-users**.
 
 ![](../../platform-deep-dive/img/iam16.png)
 
-3. Add role `ROLE_START_EXTERNAL` to it in **service account roles → realm roles.**
+4. Add the role `ROLE_START_EXTERNAL` to the **service account roles** under **realm roles**.
 
 ![](../../platform-deep-dive/img/iam17.png)
 
-4. Add a **realm-roles mapper**:
+5. Configure a **realm roles mapper**:
 
 ![](../../platform-deep-dive/img/iam18.png)
 
-5. Add the **necessary service accounts** to it:
 
-![](../../platform-deep-dive/img/iam19.png)
-
-The **task management service account** defined in the example above can have the following assigned roles, based on the access scopes:
+In the provided example, the **task management service account** can have the following assigned roles, depending on the required access scopes:
 
 * manage-tasks
 * manage-hooks
