@@ -76,13 +76,18 @@ For more details on how to configure a UI action, click [**here**](../../ui-acti
 
 Styling the Select field using CSS properties allows you to customize the appearance of the dropdown list and make it more visually appealing and consistent with the overall design of the website or application. 
 
-This can improve the user experience and make it easier for users to navigate and interact with the application.
-
 [UI Designer styling](../../ui-designer.md#styling)
 
 For example, a FORM element with a [layout](../../ui-designer.md#layout) configuration including direction of Horizontal and some inputs, and a select element will look like this:
 
 ![](../../img/select_form_field1.png)
+
+#### Icons
+
+When customizing the appearance of a Select UI element that includes an icon, you can utilize the following properties:
+
+* **Icon Key** - the key associated in the Media library, select the icon from the **Media Library**
+* **Icon Color** - select the color of the icon using the color picker 
 
 ## Example - Dynamic dropdowns
 
