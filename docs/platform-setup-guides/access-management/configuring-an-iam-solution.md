@@ -2,36 +2,31 @@
 
 ## Recommended Keycloak setup
 
-To build a minimal required Keycloak you have to configure the following items:
+To configure a minimal required Keycloak setup, follow these steps:
 
-* [a realm](#creating-a-new-realm)
-  * available roles - realm-level roles that can be assigned
-  * realm default roles - realm-level roles assigned to new users
-* [users](#creating-new-users)
-* [import user roles](#creatingimporting-user-groups-and-roles)
-* [clients](#adding-clients)
-* [role mappers](#adding-protocol-mappers)
-* [service accounts](#adding-service-accounts)
+* [Create a new realm](#creating-a-new-realm)
+  * Define available roles and realm-level roles assigned to new users.
+* [Create/import user roles and groups](#creatingimporting-user-groups-and-roles)
+* [Create new users](#creating-new-users)
+* [Add clients](#adding-clients)
+  * Configure access type, valid redirect URIs, and enable necessary flows.
+* [Add role mappers](#adding-protocol-mappers)
+* [Add service accounts](#adding-service-accounts)
+  * Set up **admin**, **task management**, and **process engine** service accounts.
 
 :::info
 Recommended keycloak version: **18.0.x**
 :::
 
-[Keycloak documentation](https://www.keycloak.org/documentation)
+For more detailed information, refer to the official Keycloak documentation:
 
-#### Follow the next steps to build your Keycloak setup:
+[Keycloak documentation](https://www.keycloak.org/documentation)
 
 ## Creating a new realm
 
-:::info
-**What are realms?**
+A realm is a space where you manage objects, including users, applications, roles, and groups. To create a new realm:
 
-A realm is a space where you manage objects, including users, applications, roles, and groups. A user belongs to and logs into a realm. One Keycloak deployment can define, store, and manage as many realms as there is space for in the database.
-:::
-
-To create a new realm, complete the following steps:
-
-1. Log in to the **Keycloak Admin Console** (go to the **keylock admin URL** corresponding to the selected environment, for example, let's say you use a QA or a development environment or a production).
+1. Log in to the **Keycloak Admin Console** using the appropriate URL for your environment (e.g., QA, development, production).
 
 ![](../../platform-deep-dive/img/iam1.png)
 
@@ -41,126 +36,133 @@ To create a new realm, complete the following steps:
 If you are logged in to the master realm this dropdown menu lists all the realms created. The **Add Realm** page opens.
 :::
 
-3. You will be creating a brand-new realm from scratch, so type a **realm name** and click **Create**.
+3. Enter a realm name and click Create.
 
 ![](../../platform-deep-dive/img/iam2.png)
 
-4. Go to **Realm Settings -> Tokens** and set the following properties:
+4. Configure the realm settings (**Realm Settings → Tokens**), such as SSO session idle and access token lifespan, according to your organization's needs:
 
-* **SSO Session idle** - suggested: 30 Minutes
-* **Access Token Lifespan** - suggested: 30 Minutes
+* **SSO Session idle** - suggested: **30 Minutes**
+* **Access Token Lifespan** - suggested: **30 Minutes**
 
 ![](../../platform-deep-dive/img/iam3.png)
-
-:::info
-This is just an example, you can set any values you want for the token, and do not forget to check and apply properties suitable for your organization's needs.
-:::
 
 ## Creating/importing user groups and roles
 
 You can either create or import a user group into a realm. We prepared a [script](./#importing-user-roles) that helps you to import a **super admin group** provided with the necessary **default user roles**.
 
-1. Run the Python script mentioned in the [previous section](./#importing-user-roles).
-2. Add an admin user, for example, `admin@flowx.ai` user in the group `SUPER_ADMIN_USERS`(this group is added automatically if you use the script).
-3. Add `ROLE_START_EXTERNAL` role in the **Roles** tab (this will be used later).
+You can create or import user groups into a realm. If you choose to import, follow the provided [<u>**script**</u>](./#importing-user-roles) to import a **super admin group**(`SUPER_ADMIN_USERS`) with **default user roles**. After importing, add an admin user to the group and assign the necessary roles.
 
-You can also validate if you were able to import all the roles by checking the following section:
+Make sure to validate the imported roles by checking the following section:
 
 [Default roles](./default-roles)
 
 ## Creating new users
 
-To create a new user in the `Flowx` realm as well as a temporary password for that account, complete the following steps:
+To create a new user in a realm and generate a temporary password:
 
-1. In the left menu bar click **Users**. The user list page opens.
-2. On the right side of the empty user list, click **Add User**. :exclamation:Make sure you validate the user email by setting the **Email Verified** to **ON**.
+1. In the left menu bar, click **Users** to open the user list page.
+2. On the right side of the empty user list, click **Add User**.
+3. Fill in the required fields, including the **username**, and ensure **Email Verified** is set to **ON**.
+4. In the **Groups** field, choose a group from the dropdown menu, in our case: `FLOWX_SUPER_USERS`.
 
-![](../../platform-deep-dive/img/iam4.png)
+![](../../platform-deep-dive/img/keycloakd_add_user.png)
 
-3. The only required field is `Username`. When you finish, click **Save**. The **management page** for your new user opens.
+5. Save the user, go to the **Credentials** tab, and set a temporary password.
 
-:::caution
-If the **Username** field is not visible (as you can see in the example above), please follow the next steps:
-:::
-
-4. Right-click on the **Add user** page menu, then click **inspect element**.
-
-5. Search for **username** (use **Ctrl + F**).
-
-![](../../platform-deep-dive/img/iam5.png)
-
-6. Delete the highlighted **`ng-hide attribute`** (from **`form-group ng-hide`**) and press **Enter**.
-
-7. The **Username** field will be available.
-
-8. Save the user and go to **Credentials**.
-
-9. Enter **a password** and set it not to be temporary.
-
-10. Go to the **Groups** tab and then click **join**.
-
-![](../../platform-deep-dive/img/iam6.png)
+![](../../platform-deep-dive/img/keycloak_user_password.png)
 
 ## Adding clients
 
-:::info
-**What are clients?**
+Clients represent trusted browser apps and web services in a realm. To add clients:
 
-Clients have trusted browser apps and web services in a realm. These clients can request Keycloak to authenticate a user. You can also define client-specific roles.
-:::
+1. Click **Clients** in the top left menu, then click **Create**.
+2. Set a client ID as `{example}-authenticate`, which will be used for login, logout, and refresh token operations.
+3. Set the **Client Protocol** type as `openid-connect`.
 
-To add clients, complete the next steps:
+![](../../platform-deep-dive/img/keycloak_add_client.png)
 
-1. In the top left menu, click **Clients** then click **Create**.
-2. Use `{example}-authenticate` as client ID - it will be used for login/logout/refresh token by web and mobile apps.
 3. Open the newly created **client** and edit the following properties:
-   * Set **Access type** to **public** (do not require a secret)
-   * Set **Valid redirect URIs** - define a valid URI pattern that a browser can redirect to after a successful login or logout
-   * Check **Direct Access Grants** **Enabled** and **Implicit Flow Enabled** to **ON**
 
-![](../../platform-deep-dive/img/iam7.png)
+* Set **Access type** to **public** (this will not require a secret)
+* Set **Valid redirect URIs**, specifying a valid URI pattern that a browser can redirect to after a successful login or logout, simple wildcards are allowed
+* Enable **Direct Access Grants** and **Implicit Flow** by setting them to **ON**.
+* Switch **Backchannel Logout Session Required** to **OFF**
 
-4. Add **groups mapper** to `{example}-authenticate` client - so the groups list will be added to the authorization token. For more information on how to add mappers to clients, check the following section.
+![](../../platform-deep-dive/img/keycloak_authenticate_settings.png)
+
+4. Add **mappers** to `{example}-authenticate` client.
+
+:::info
+Refer to the next section on how to add mappers and which mappers to clients.
+:::
 
 ## Adding protocol mappers
 
-:::info
-**What are protocol mappers?**
+Protocol mappers in Keycloak allow for the transformation of tokens and documents, enabling actions such as mapping user data into protocol claims or modifying requests between clients and the authentication server.
 
-Protocol mappers perform transformation on tokens and documents. They can do things like map used data into protocol claims, or just transform any requests going between the client and auth server.
-:::
+To enhance your clients, consider adding the following mappers:
 
-There are multiple types of mappers that we will use in the following examples:
+* [Group Membership mapper ](#group-membership-mapper) - `realm-groups`: This mapper can be utilized to map user groups to the authorization token.
+* [User Attribute mapper](#user-attribute-mapper) - `business filter mapper`: Use this mapper to map custom attributes, for example, mapping the [businessFilters ](../../platform-deep-dive/user-roles-management/business-filters.md) list, to the token claim.
+* [User Realm role](#user-realm-role) - `realm-roles`: This mapper enables mapping a user's realm role to a token claim.
 
-* [Group Membership mapper ](#group-membership-mapper)- it can be used to map user groups to the authorization token
-* [User Attribute mapper](#user-attribute-mapper) - it can be used to map custom attributes, for example, mapping the [businessFilters ](../../platform-deep-dive/user-roles-management/business-filters.md) list to the token claim
-* [User Realm role](#user-realm-role) - it can be used to map a user realm role to a token claim
+By incorporating these mappers, you can further customize and enrich the information contained within your tokens.
 
 ### Group Membership mapper
 
-To add a mapper, complete the next steps (example used: adding user groups in the authorization token):
+To add a group membership mapper:
 
-1. Go to **clients → your client → mappers**.
-2. Fill in a suggestive **Name** for the mapper.
-3. From the **Mapper Type** dropdown, choose **Group Membership**.
-4. In the **Token Claim Name**, insert the name of the claim that will be included in the token.
+1. Navigate to **Clients** and select your desired client, in our case, `{example}-authenticate`
+2. Go to the **Mappers** tab and click **Create** to create a new mapper.
+2. Provide a descriptive **Name** for the mapper to easily identify its purpose.
+3. Select **Group Membership** as the mapper type.
+4. Set the token claim name for including groups in the token. In this case, set it as `groups`.
 
-![](../../platform-deep-dive/img/iam8.png)
+![](../../platform-deep-dive/img/keycloak_groups_maper.png)
+
+By configuring the group membership mapper, you will be able to include the user's group information in the token for authorization purposes.
 
 ### User Attribute mapper
 
-Add customer **business filters** attribute to `{example}-authenticate` client - so the business filters list will be added to the token claim.
+To include custom attributes such as **business filters** in the token claim, you can add a user attribute mapper with the following settings:
 
-![](../../platform-deep-dive/img/iam9.png)
+1. Go to the desired client, `{example}-authenticate`, and navigate to the Mappers section.
+2. Click on **Create** to create a new mapper.
+3. Configure the following settings for the user attribute mapper:
+
+* **Mapper Type**: User Attribute
+* **User Attribute**: businessFilters
+* **Token Claim Name**: attirubtes.businessFilters
+* **Add to ID token**: OFF
+* **Multivalued**: ON
+
+![](../../platform-deep-dive/img/keycloak_business_filters.png)
+
+By adding this user attribute mapper, the custom attribute "businessFilters" will be included in the token claim under the name "attributes.businessFilters". This will allow you to access and utilize the business filters information within your application. 
 
 You can find more information about business filters in the following section:
 
 [Business filters](../../platform-deep-dive/user-roles-management/business-filters.md)
 
-
 ### User realm role
 
 Add **roles** **mapper** to `{example}-authenticate` client - so roles will be available on the OAuth user info response.
+
+To add a roles mapper, follow these steps:
+
+1. Go to the desired client, `{example}-authenticate`, and navigate to the Mappers section.
+2. Click on **Create** to create a new mapper.
+3. Configure the following settings for the user attribute mapper:
+
+* **Mapper Type**: User Realm Role
+* **Token Claim Name**: role
+* **Add to userinfo**: ON
+
+
+By adding this roles mapper, the assigned realm roles of the user will be available in the OAuth user info response under the claim name "roles". This allows you to access and utilize the user's realm roles within your application.
+
+Please note that you can repeat these steps to add multiple roles mappers if you need to include multiple realm roles in the token claim.
 
 ![](../../platform-deep-dive/img/iam10.png)
 
@@ -168,7 +170,7 @@ Add **roles** **mapper** to `{example}-authenticate` client - so roles will be a
 
 #### Login
 
-```url
+```curl
 curl --location --request POST 'http://localhost:8080/realms/flowx/protocol/openid-connect/token' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'grant_type=password' \
@@ -177,9 +179,9 @@ curl --location --request POST 'http://localhost:8080/realms/flowx/protocol/open
 --data-urlencode 'client_id= example-authenticate'
 ```
 
-#### **Refresh token**
+#### Refresh token
 
-```
+```curl
 curl --location --request POST 'http://localhost:8080/realms/flowx/protocol/openid-connect/token' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'grant_type=refresh_token' \
@@ -194,14 +196,21 @@ curl --location --request GET 'localhost:8080/realms/flowx/protocol/openid-conne
 --header 'Authorization: Bearer ACCESS_TOKEN' \
 ```
 
-#### Authorizing client
+### Authorizing client
 
-Add `{example}-authorize` client - it will be used to authorize rest requests to microservices and Kafka
+Add `{example}-platform-authorize` client - it will be used to authorize rest requests to microservices and Kafka
 
+* set **Client Protocol** to **openid-connect**
 * set **Access type** as **confidential**
-* check **Standard Flow Enabled**
+* disable **Direct Access Grants Enabled** - OFF
+* **Valid Redirect URIs** - mandatory
+* disable **Backchannel Logout Session Required** - OFF
 
-#### Minimal auth config for microservices
+Once you have configured these settings, the `{example}-platform-authorize` client will be created and can be used to authorize REST requests to microservices and Kafka within your application.
+
+![](../../platform-deep-dive/img/flowx_authorize.png)
+
+### Minimal auth config for microservices
 
 ```yaml
 security:
@@ -241,19 +250,26 @@ Follow these steps to add an **admin service account**:
 
 ![](../../platform-deep-dive/img/iam11.png)
 
-3. Go to **Clients → realm-management → Roles** and add the following **service account client role**: **manage-users**.
+3. Go to **Clients → realm-management → Roles** and add the following **service account client roles** under **realm-management**: 
 
-![](../../platform-deep-dive/img/iam12.png)
+* **view-users**
+* **query-groups**
+* **query-users**
 
 4. Assign the necessary **service account roles**:
 
-![](../../platform-deep-dive/img/iam14.png)
+![](../../platform-deep-dive/img/realm-mngt-admin.png)
 
 In the provided example, the **admin service account** can have the following assigned roles, depending on the required access scopes:
 
-* manage-users
-* query-users
-* manage-realm
+* **manage-users**
+* **query-users**
+* **manage-realm**
+
+
+:::info
+The admin service account does not require mappers as it doesn't utilize roles. Service account roles include client roles from the `realm-management`.
+:::
 
 For detailed information, refer to the following section:
 
@@ -268,28 +284,35 @@ The task management microservice requires a service account to make direct calls
 ![](../../platform-deep-dive/img/add_new_client.png)
 
 2. Next, set the following properties:
- * **Access type** - confidential 
- * **Service Accounts Enabled** - ON
+
+* **Access type** - confidential 
+* **Service Accounts Enabled** - ON
 
 ![](../../platform-deep-dive/img/iam15.png)
 
-3. Go to **Clients → realm-management → Roles** and add the following **service account client role** under **realm-management**: **view-users**.
+3. Go to **Clients → realm-management → Roles** and add the following **service account client roles**:
 
-![](../../platform-deep-dive/img/iam16.png)
+* **view-users**
+* **query-groups**
+* **query-users**
 
-4. Add the role `ROLE_START_EXTERNAL` to the **service account roles** under **realm roles**.
+![](../../platform-deep-dive/img/tsk-view-users.png)
 
-![](../../platform-deep-dive/img/iam17.png)
-
-5. Configure a **realm roles mapper**:
+4. Configure a **realm roles mapper**:
 
 ![](../../platform-deep-dive/img/iam18.png)
+
+5. Assign the necessary service account roles, including `FLOWX_ROLE`.
+
+![](../../platform-deep-dive/img/tsk-sa.png)
+
 
 
 In the provided example, the **task management service account** can have the following assigned roles, depending on the required access scopes:
 
-* manage-tasks
-* manage-hooks
+* **view-users**
+* **query-groups**
+* **query-users**
 
 For more information, check the following section:
 
@@ -313,16 +336,10 @@ Follow these steps to add a **process engine service account**:
 
 ![](../../platform-deep-dive/img/iam11.png)
 
-3. Go to **Clients → realm-management → Roles** and add the following **service account client role**: **manage-users**.
+:::info
+This service account does not require client roles.
+:::
 
-![](../../platform-deep-dive/img/iam12.png)
-
-4. Assign the necessary **service account roles**:
+3. Assign the necessary service account roles, including `FLOWX_ROLE`.
 
 ![](../../platform-deep-dive/img/iam14.png)
-
-In the provided example, the **admin service account** can have the following assigned roles, depending on the required access scopes:
-
-* manage-users
-* query-users
-* manage-realm
