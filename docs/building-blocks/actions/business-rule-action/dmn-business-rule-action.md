@@ -1,25 +1,25 @@
 # DMN Business Rule action
 
-For a brief introduction to Decision Model and Notation, check the following section:
+For a brief introduction to [**Decision Model and Notation**](../../../terms/dmn), check the following section:
 
 [Intro to DMN](../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-dmn.md)
 
-### **Creating a DMN Business Rule action**
+### Creating a DMN Business Rule action
 
-To create and attach a DMN business rule action to a task node, you must do the following:
+To create and attach a DMN [**business rule**](../../../terms/business-rules) action to a task [**node**](../../../terms/flowx-node), you must do the following:
 
-1. Open **FLOWX Designer** and go to **Process Definitions**.
+1. Open [**FLOWX Designer**](../../../terms/flowx-ai-designer) and go to [**Process Definitions**](../../../terms/flowx-process-definition).
 2. Select your process from the list and click **Edit process**.
 3. Select a **task node** then click the **edit button** (the key icon) - this will open the node configuration menu.
-4. In the opened menu, go to the **Actions** tab then click the "**+**" button.
+4. In the opened menu, go to the [**Actions**](../../../terms/flowx-actions) tab then click the "**+**" button.
 5. From the dropdown menu choose the action type - **Business Rule**.
 6. In the **Language** dropdown menu, select **DMN**.
 
 ![](./img/create_dmn_business_rule_action.gif)
 
-### **Using a DMN Business Rule action**
+### Using a DMN Business Rule action
 
-We have the following scenario, a bank needs to perform client identification tasks/actions. This action can be defined as a business rule inside a BPMN process using FLOWX Designer.
+We have the following scenario, a bank needs to perform client identification tasks/actions. This action can be defined as a [**business rule**](../../../terms/business-rules) inside a [**BPMN**](../../../terms/bpmn) process using [**FLOWX Designer**](../../../terms/flowx-ai-designer).
 
 A business person or specialist can use DMN to design this business rule, without having to go deep into technical definitions.
 
@@ -32,6 +32,7 @@ if (closedClientType.contains(clientType)) {
     alertTitle = "Customer no longer with the bank";
     alertDescription = "Hey! This person was a client before. For a new account modify the CIF.";
     output.put("applications", {"client": {"alertTitle": alertTitle, "alertDescription": alertDescription}});
+}
 
 ```
 

@@ -5,14 +5,14 @@ sidebar_position: 2
 # Send data to user interface
 
 :::info
-**What is it?** Send data to user interface action is based on Server-Sent Events (SSE), a web technology that enables servers to push real-time updates or events to clients over a single, long-lived HTTP connection. It provides a unidirectional communication channel from the server to the client, allowing the server to send updates to the client without the need for the client to continuously make requests.
+**What is it?** Send data to user interface [**action**](../../terms/flowx-actions) is based on Server-Sent Events (SSE), a web technology that enables servers to push real-time updates or events to clients over a single, long-lived HTTP connection. It provides a unidirectional communication channel from the server to the client, allowing the server to send updates to the client without the need for the client to continuously make requests.
 
-**Why is it useful?** It provides real-time updates and communication between the process and the frontend application.
+**Why is it useful?** It provides real-time updates and communication between the [**process**](../../terms/flowx-process) and the frontend application.
 :::
 
 ### Configuring a Send data to user interface action
 
-Multiple options are available for this type of action and can be configured via the FLOWX Designer. To configure a Send data to user interface, use the **Actions** tab at the [task node level](../../flowx-designer/managing-a-process-flow/adding-a-new-node.md), which has the following configuration options:
+Multiple options are available for this type of action and can be configured via the [**FLOWX Designer**](../../terms/flowx-ai-designer). To configure a Send data to user interface, use the **Actions** tab at the [task node level](../../flowx-designer/managing-a-process-flow/adding-a-new-node.md), which has the following configuration options:
 
 * [Action Edit](#action-edit)
 * [Back in steps (for Manual actions)](#back-in-steps)

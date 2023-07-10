@@ -5,7 +5,7 @@ sidebar_position: 1
 # Business Rule action
 
 :::info
-**What is it?**  A business rule is an action type that allows you to configure a script on a BPMN task node. When the process instance token reaches this task, the defined script will be executed.
+**What is it?**  A business rule is an action type that allows you to configure a script on a [**BPMN**](../../../terms/bpmn) task [**node**](../../../terms/flowx-node). When the [**process instance**](../../../terms/flowx-process-instance) [**token**](../../../terms/token) reaches this task, the defined script will be executed.
 
 **Why is it useful?** The script can read and write the data available on the process at the moment the script is executed. For this reason, it is very important to understand what data is available on the process when the script is executed.
 :::
@@ -25,7 +25,7 @@ You can also test your rules by using the **Test Rule** function.
 
 Let's take look at the following example. We have some data about the gender of a user and we need to create a business rule that computes the formal title based on the gender:
 
-1.  This is how the process instance data looks like before it reaches the business rule
+1.  This is how the process instance data looks like before it reaches the business rule:
 
     ```json
     {
@@ -40,7 +40,7 @@ Let's take look at the following example. We have some data about the gender of 
         }
     }
     ```
-2.  When the token reaches this node the following script (defined for the business rule is executed). The language used here for scripting is MVEL
+2.  When the token reaches this node the following script (defined for the business rule is executed). The language used here for scripting is MVEL.
 
     ```java
     if(input.?get("application.client.gender")== "F"){
@@ -51,7 +51,7 @@ Let's take look at the following example. We have some data about the gender of 
         output.put("application.client.salutation", "Mx");
     }
     ```
-3. After the script is executed, the process instance data will look like this
+3. After the script is executed, the process instance data will look like this:
 
 ```json
 {

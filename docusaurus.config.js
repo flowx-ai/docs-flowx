@@ -7,7 +7,6 @@ const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const urlEmbed = require('./src/remark/url-embed');
 
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'FLOWX.AI Docs',
@@ -58,6 +57,9 @@ const config = {
           require.resolve('./src/css/rubik.css'),
           ]
         },
+
+
+        
       }),
     ],
   ],
@@ -88,9 +90,11 @@ const config = {
         backgroundColor: '#E7A811',
         textColor: '#FFFF',
         isCloseable: true,
-        
-        
       },
+
+      
+
+      
       
       navbar: {
         logo: {
@@ -244,6 +248,8 @@ const config = {
           showLastUpdateTime: true,
           remarkPlugins: [urlEmbed],
         },
+      
+
       ],
 
       [
@@ -253,9 +259,14 @@ const config = {
           anonymizeIP: true,
         },
       ],
-    ],
+      
+    ['@grnet/docusaurus-terminology', {
+      termsDir: './docs/terms',
+      docsDir: './docs',
+      glossaryFilepath: './docs/glossary.md'
+    }],
 
-  
+    ],
 };
 
 module.exports = config;

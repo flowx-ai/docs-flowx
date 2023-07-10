@@ -5,7 +5,7 @@ sidebar_position: 4
 # Start Subprocess action
 
 :::info
-**What is it?** A **Start Subprocess action** is an action that allows you to start a subprocess from another (parent) process.
+**What is it?** A **Start Subprocess action** is an [**action**](../../terms/flowx-actions) that allows you to start a [**subprocess**](../../terms/flowx-subprocess) from another (parent) [**process**](../../terms/flowx-process).
 
 **Why is it important?**  Using [**subprocesses**](../process/subprocess.md) is a good way to split the complexity of your business flow into multiple, simple and reusable processes.
 :::
@@ -73,7 +73,7 @@ The following properties must be configured for a **Start subprocess** action:
 
 ## Example
 
-Let's create a main process, in this process we will add a user task node that will represent a menu page. In this newly added node we will add multiple subprocess actions that will represent menu items. When you select a menu item, a subprocess will run representing that particular menu item.
+Let's create a main [**process**](../../terms/flowx-process), in this process we will add a user task node that will represent a menu page. In this newly added node we will add multiple subprocess actions that will represent menu items. When you select a menu item, a subprocess will run representing that particular menu item.
 
 
 ![](../img/subprocess_menu.png)

@@ -159,7 +159,6 @@ The configuration related to consumers (group ids and thread numbers) can be con
 | KAFKA_CONSUMER_THREADS_PROCESS_BATCH_PROCESSING  | 6                                           |
 
 
-
 It is important to know that all the events that start with a configured pattern will be consumed by the engine. This makes it possible to create a new integration and connect it to the engine without changing the configuration of the engine.
 
 :::info
@@ -196,7 +195,7 @@ The suggested topic pattern naming convention is the following:
 | KAFKA_TOPIC_PATTERN                | ai.flowx.dev.engine.receive.*               |
 | KAFKA_TOPIC_LICENSE_OUT            | ai.flowx.dev.core.trigger.save.license.v1   |
 
-#### **Topics related to the Task Management plugin**
+#### Topics related to the Task Management plugin
 
 * `KAFKA_TOPIC_TASK_OUT` - used for sending notifications to the plugin
 

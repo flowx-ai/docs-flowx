@@ -137,18 +137,20 @@ New kafka topics that should be added in the process-engine configuration.
 | KAFKA_TOPIC_EVENTS_GATEWAY_OUT_DISCONNECT | Disconnect commands from process-engine to events-gateway | ai.flowx.eventsgateway.engine.commands.disconnect.v1 |
 | KAFKA_TOPIC_EVENTS_GATEWAY_OUT_CONNECT    | Connect commands from process-engine to events-gateway    | ai.flowx.eventsgateway.engine.commands.connect.v1    |
 
+New kafka topics that should be added in the events-gateway configuration.
+
+| Topic Name                                                | Description                                               | Value                                                |
+| --------------------------------------------------------- | --------------------------------------------------------- | ---------------------------------------------------- |
+| KAFKA_TOPIC_EVENTS_GATEWAY_PROCESS_INSTANCE_IN_MESSAGE    | Where events-gateway listens for messages from engine     | ai.flowx.eventsgateway.engine.commands.message.v1    |
+| KAFKA_TOPIC_EVENTS_GATEWAY_PROCESS_INSTANCE_IN_DISCONNECT | Disconnect commands from events-gateway to process-engine | ai.flowx.eventsgateway.engine.commands.disconnect.v1 |
+| KAFKA_TOPIC_EVENTS_GATEWAY_PROCESS_INSTANCE_IN_CONNECT    | Connect commands from events-gateway to process-engine    | ai.flowx.eventsgateway.engine.commands.connect.v1    |
+
 
 [Events gateway](../../docs/platform-deep-dive/core-components/events-gateway)
 
 [Events gateway setup guide](../../docs/platform-setup-guides/events-gateway-setup)
 
-#### Task manager new kafka topic
-
-New kafka topic that should be added in the process-engine configuration.
-
-| Topic Name                             | Description                                             | Value                                           |
-| -------------------------------------- | ------------------------------------------------------- | ----------------------------------------------- |
-| KAFKA_TOPIC_EVENTS_GATEWAY_OUT_MESSAGE | Outgoing messages from events-gateway to process-engine | ai.flowx.eventsgateway.task.commands.message.v1 |
+[Process engine topics](../../docs/platform-setup-guides/flowx-engine-setup-guide#configuring-events-gateway)
 
 ### SSE 
 
@@ -178,22 +180,20 @@ npm install event-source-polyfill@1.0.31
 
 New kafka topics that should be added in the process-engine configuration.
 
-| Default parameter (env var)         | Default FLOWX.AI value (can be overwritten)          | Definition                                                   |
-| ----------------------------------- | ---------------------------------------------------- | ------------------------------------------------------------ |
-| KAFKA_TOPIC_PROCESS_EVENT_MESSAGE   | ai.flowx.dev.core.message.event.process.v1           | This topic is used for throwing intermediate event messages. |
-| KAFKA_TOPIC_PROCESS_START_FOR_EVENT | ai.flowx.dev.core.trigger.start-for-event.process.v1 | This topic is used to start processes.                       |
+| Default parameter (env var)            | Default FLOWX.AI value (can be overwritten)          | Definition                                                   |
+| -------------------------------------- | ---------------------------------------------------- | ------------------------------------------------------------ |
+| KAFKA_TOPIC_PROCESS_EVENT_MESSAGE      | ai.flowx.dev.core.message.event.process.v1           | This topic is used for throwing intermediate event messages. |
+| KAFKA_TOPIC_PROCESS_START_FOR_EVENT_IN | ai.flowx.dev.core.trigger.start-for-event.process.v1 | This topic is used to start processes.                       |
 
 ### Bulk updates
 
 New kafka topics that should be added in the process-engine configuration, related to task management plugin - bulk updates.
-
 
 | Default parameter (env var)            | Default FLOWX.AI value (can be overwritten) | Definition                                                                                                                                                                |
 | -------------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | KAFKA_TOPIC_PROCESS_OPERATIONS_BULK_IN | ai.flowx.core.trigger.operations.bulk.v1    | On this topic, you can perform operations from the "KAFKA_TOPIC_PROCESS_OPERATIONS_IN" topic and send them as an array, allowing you to send multiple operations at once. |
 
 #### Example
-
 
 ```json
 {
@@ -210,7 +210,9 @@ New kafka topics that should be added in the process-engine configuration, relat
     }
     ]
 }
-```                                                                                                                                                                                                     
+```
+[Process engine topics](../../docs/platform-setup-guides/flowx-engine-setup-guide#topics-related-to-the-task-management-plugin)
+
 ## Migration Steps
 
 To upgrade to FLOWX.AI 3.3.0, follow these steps:

@@ -3,14 +3,14 @@ sidebar_position: 3
 ---
 # Task node
 
-A task node is a task that uses a Web service, an automated application, or other kinds of services in completing the task.
+A task node refers to a task that utilizes various services, such as Web services, automated applications, or other similar services, to accomplish a particular task.
 
-This type of node will be used in several cases:
+This type of node finds application in multiple scenarios, including:
 
-* a [business rule](../actions/business-rule-action/business-rule-action.md) needs to be run on the process instance data
-* a [subprocess](../actions/start-subprocess-action.md) needs to be started
-* a subprocess needs to send data to the parent process
-* some data needs to be sent to the frontend applications
+* Executing a [**business rule**](../../terms/business-rules) on the process instance data.
+* Initiating a [**subprocess**](../../terms/flowx-subprocess).
+* Transferring data from a [**subprocess**](../../terms/flowx-subprocess) to the parent process.
+* Transmitting data to frontend applications.
 
 ## Configuring task nodes
 

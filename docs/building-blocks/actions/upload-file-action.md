@@ -5,14 +5,14 @@ sidebar_position: 3
 # Upload File action
 
 :::info
-**What is it?** An **Upload File action** is an action type that allows you to upload a file to a service available on [Kafka](../../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-kafka-concepts.md).
+**What is it?** An **Upload File action** is an [**action**](../../terms/flowx-actions) type that allows you to upload a file to a service available on [**Kafka**](../../terms/flowx-kafka).
 
 **Why is it useful?** The action will receive a file from the frontend and send it to Kafka, and will also attach some metadata.
 :::
 
 ### Configuring an Upload File action
 
-Multiple options are available for this type of action and can be configured via the FLOWX.AI Designer. To configure an Upload File action, use the **Actions** tab at the [task node level](../../flowx-designer/managing-a-process-flow/adding-an-action-to-a-node.md), which has the following configuration options:
+Multiple options are available for this type of action and can be configured via the [**FLOWX Designer**](../../terms/flowx-ai-designer). To configure an Upload File action, use the **Actions** tab at the [task node level](../../flowx-designer/managing-a-process-flow/adding-an-action-to-a-node.md), which has the following configuration options:
 
 * [Action Edit](#action-edit)
 * [Back in steps (for Manual actions)](#back-in-steps)
