@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -27,15 +27,7 @@ function HomepageHeader() {
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
-  const [showModal, setShowModal] = useState(false);
-
-  useEffect(() => {
-    const hasVisitedBefore = localStorage.getItem('npsVisited');
-    if (!hasVisitedBefore) {
-      setShowModal(true);
-      localStorage.setItem('npsVisited', 'true');
-    }
-  }, []);
+  const [showModal, setShowModal] = useState(true);
 
   const closeModal = () => {
     setShowModal(false);
@@ -47,7 +39,7 @@ export default function Home() {
       <main>
         <HomepageFeatures />
       </main>
-      <NpsModal isOpen={showModal} onClose={closeModal} />
+      {showModal && <NpsModal isOpen={showModal} onClose={closeModal} />}
     </Layout>
   );
 }
