@@ -128,7 +128,7 @@ const config = {
        
           {to: '/faqs', label: 'FAQs', position: 'right'},
           {to: 'https://flowxai.canny.io/documentation-feedback', label: 'Feedback', position: 'right'},
-          {to: 'https://discord.gg/6ejETBkj', label: 'Discord', position: 'right', className: 'discord-link' },
+          {to: 'https://discord.gg/qUAhnGwY', label: 'Discord', position: 'right', className: 'discord-link' },
 
           {
             type: 'search',

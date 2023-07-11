@@ -1,26 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Modal from 'react-modal';
 import { useSpring, animated } from 'react-spring';
 
 const NpsModal = ({ isOpen, onClose }) => {
+  const [hasShownModal, setHasShownModal] = useState(false);
   const fadeAnimation = useSpring({
     opacity: isOpen ? 1 : 0,
     from: { opacity: 0 },
     config: { duration: 500 },
   });
 
+  useEffect(() => {
+    const hasShown = localStorage.getItem('hasShownModal');
+    if (hasShown) {
+      setHasShownModal(true);
+    }
+  }, []);
+
+  const closeModal = () => {
+    setHasShownModal(true);
+    localStorage.setItem('hasShownModal', 'true');
+    onClose();
+  };
+
   return (
     <>
-      {isOpen && (
+      {!hasShownModal && (
         <Modal
           isOpen={true}
-          onRequestClose={onClose}
+          onRequestClose={closeModal}
           contentLabel="NPS Survey"
           className="nps-modal"
           overlayClassName="nps-modal-overlay"
         >
           <animated.div style={fadeAnimation}>
-            <button className="nps-modal-close-button" onClick={onClose}>
+            <button className="nps-modal-close-button" onClick={closeModal}>
               <span aria-hidden="true">×</span>
             </button>
             <h2 className="nps-modal-title">NPS Survey</h2>

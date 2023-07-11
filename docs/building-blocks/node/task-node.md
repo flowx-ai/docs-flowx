@@ -3,14 +3,14 @@ sidebar_position: 3
 ---
 # Task node
 
-A task node refers to a task that utilizes various services, such as Web services, automated applications, or other similar services, to accomplish a particular task.
+A task [**node**](../../terms/flowx-node) refers to a task that utilizes various services, such as Web services, automated applications, or other similar services, to accomplish a particular task.
 
 This type of node finds application in multiple scenarios, including:
 
 * Executing a [**business rule**](../../terms/business-rules) on the process instance data.
 * Initiating a [**subprocess**](../../terms/flowx-subprocess).
 * Transferring data from a [**subprocess**](../../terms/flowx-subprocess) to the parent process.
-* Transmitting data to frontend applications.
+* Transmitting data to [**frontend applications**](../../terms/flowx-frontend-application).
 
 ## Configuring task nodes
 
@@ -18,7 +18,7 @@ This type of node finds application in multiple scenarios, including:
 
 One or more actions can be configured on a task node. The actions are executed in the configured order.
 
-Node configuration is done by accessing the **Node Config** tab. You have the following configuration options for a task node**:**
+Node configuration is done by accessing the **Node Config** tab. You have the following configuration options for a task node:
 
 #### General Config
 

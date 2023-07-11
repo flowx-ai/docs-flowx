@@ -2,40 +2,44 @@
 
 ## What is an integration?
 
-**Connecting legacy systems or third-party apps** to the engine is easily done through custom integrations. These can be developed using any tech stack, the only requirement is that they connect to Kafka in order to communicate with the FLOWX.AI process engine.
+Integrations play a crucial role in **connecting legacy systems** or **third-party applications** to the FLOWX.AI process engine. They enable seamless communication by leveraging custom code and the Kafka messaging system.
 
-Integrations can be used for anything from legacy APIs, custom file exchange solutions, or RPAs.
+![](../img/integrations_hl.jpeg)
+
+Integrations serve various purposes, including working with legacy APIs, implementing custom file exchange solutions, or integrating with RPAs.
 
 #### High-level architecture 
 
 ![](../img/intgr_final.png)
 
-Since they involve interaction with legacy systems and custom logic, they need to be developed the first time you need to integrate one into your FLOWX.AI setup.
+Integrations involve interaction with legacy systems and require custom development to integrate them into your FLOWX.AI setup.
 
-## Creating a custom integration
+## Developing a custom integration
 
-Creating integrations for the FLOWX.AI platform is pretty straightforward, you can use your preferred technology in order to write the custom code for them. The only constraint is that they need to be able to send and receive messages to/from the Kafka cluster.
+Developing custom integrations for the FLOWX.AI platform is a straightforward process. You can use your preferred technology to write the necessary custom code, with the requirement that it can send and receive messages from the Kafka cluster.
 
-#### Steps for creating an integration
+#### Steps to create a custom integration
 
-To create an integration follow the next steps:
+Follow these steps to create a custom integration:
 
-1. Create a Microservice (we'll refer to it as a Connector) that can listen for and react to Kafka events, using your preferred tech stack. Add custom logic for handling the received data from Kafka and obtaining related info from legacy systems. And finally, send the data back to Kafka.
-2. Add the related configuration in the [process definition](../../building-blocks/process/process-definition/process-definition.md), you will have to add a [message](../../building-blocks/node/message-send-received-task-node.md) send action in one of the [nodes](../../building-blocks/node/node.md) to send the needed data to the connector.
-3. When the response from the custom integration is ready, send it back to the engine, keep in mind, that your process will wait in a receive message node.
+1. Develop a microservice, referred to as a "Connector," using your preferred tech stack. The Connector should listen for Kafka events, process the received data, interact with legacy systems if required, and send the data back to Kafka.
 
-Here's the startup code for a Java Connector Microservice:
+2. Configure the [process definition](../../building-blocks/process/process-definition/process-definition.md) by adding a [message](../../building-blocks/node/message-send-received-task-node.md) send action in one of the [nodes](../../building-blocks/node/node.md). This action sends the required data to the Connector.
+
+3. Once the custom integration's response is ready, send it back to the FLOWX.AI engine. Keep in mind that the process will wait in a receive message node until the response is received.
+
+For Java-based Connector microservices, you can use the following startup code as a quickstart guide:
 
 [Quickstart connector](https://github.com/flowx-ai/quickstart-connector)
 
 ## Managing an integration
 
-#### How to manage Kafka Topics
+#### Managing Kafka topics
 
-Don't forget, the engine is configured to consume all the events on topics that start with a predefined topic pat, defined using a naming pattern (ex. ai.flowx.dev.engine.receive*)
+It's essential to configure the engine to consume events from topics that follow a predefined naming pattern. The naming pattern is defined using a topic prefix and suffix, such as "*ai.flowx.dev.engine.receive*."
 
 :::info
-The suggested naming convention is the following:
+The suggested naming convention is as follows:
 
 ```yaml
  topic:
@@ -51,26 +55,28 @@ The suggested naming convention is the following:
 ```
 :::
 
+To ensure proper communication, make sure to:
 
-* you will need to configure this topic pattern when setting up the Engine
-* and make sure to use it when sending messages from the Connectors back to the Engine
-* all Kafka headers received by the Connector should be sent back to the Engine with the result
+* Convert data between different domains (e.g., date formats, list of values, units).
+* Add integration-specific information that is not critical to the process flow (e.g., flags, trace GUIDs).
 
 ## Building a Connector
 
-Connectors should act as a light business logic layer that:
+Connectors act as lightweight business logic layers and perform the following tasks:
 
 * Converts data from one domain to another (date formats, list of values, units, etc.)
 * Adds information that is required by the integration but is not important for the process (a flag, generates a GUID for tracing, etc.)
 
-[Creating a Kafka consumer](./creating-a-kafka-consumer.md)
 
-[Creating a Kafka producer](./creating-a-kafka-producer.md)
+To build a Connector, you'll need to:
 
-Keep in mind that you are in an event-driven architecture and the communication between the engine and the connector is asynchronous. The connectors will need to be designed in such a way that they do not bloat the platform. Depending on the communication type between the connector and the legacy system you might need to also add custom implementation for load balancing requests, scaling the connector, and such.
+* Create a Kafka consumer - [**guide here**](./creating-a-kafka-consumer.md)
+* Create a Kafka producer - [**guide here**](./creating-a-kafka-producer.md)
+
+When designing Connectors, keep in mind that the communication between the engine and the Connector is asynchronous in an event-driven architecture. It is essential to design Connectors in a way that avoids bloating the platform. Depending on the communication type between the Connector and the legacy system, you may need to implement custom solutions for load balancing requests, scaling the Connector, etc.
 
 :::caution
-In order for the connector to communicate correctly with the Engine, you have to make sure to include all the received Kafka headers in the response that is sent back to the FLOWX.AI Engine.
+To ensure proper communication with the Engine, make sure to include all received Kafka headers in the response sent back to the FLOWX.AI Engine.
 :::
 
-To be able to easily trace the process flow, a minimal setup for Jaeger tracing should be added to custom Connectors.
+For easy process flow tracing, consider adding a minimal setup for Jaeger tracing to your custom Connectors.
