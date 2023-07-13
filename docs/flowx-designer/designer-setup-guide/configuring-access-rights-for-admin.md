@@ -8,53 +8,53 @@ Access authorizations are provided, each with specified access scopes:
 
 Available scopes:
 
-* read - users are able to view platform status
-* admin - users are able to force health check scan
+* **read** - users are able to view platform status
+* **admin** - users are able to force health check scan
    
 2. **Manage-processes** - for configuring access for managing process definitions
 
 Available scopes:
 
-* import - users are able to import process definitions and process stages
-* read - users are able to view process definitions and stages
-* edit - users are able to edit process definitions
-* admin - users are able to publish and delete process definitions, delete stages, edit sensitive data for process definitions
+* **import** - users are able to import process definitions and process stages
+* **read** - users are able to view process definitions and stages
+* **edit** - users are able to edit process definitions
+* **admin** - users are able to publish and delete process definitions, delete stages, edit sensitive data for process definitions
 
 3. **Manage-configurations** - for configuring access for managing generic parameters
 
 Available scopes:
 
-* import - users are able to import generic parameters
-* read - users are able to view generic parameters
-* edit - users are able to edit generic parameters
-* admin - users are able to delete generic parameters
+* **import** - users are able to import generic parameters
+* **read** - users are able to view generic parameters
+* **edit** - users are able to edit generic parameters
+* **admin** - users are able to delete generic parameters
 
 4. **Manage-users** - for configuring access for access management
 
 Available scopes:
 
-* read - users are able to read all users, groups and roles&#x20;
-* edit - users are able to create/update any user group or roles
-* admin - users are able to delete users, groups or roles
+* **read** - users are able to read all users, groups and roles&#x20;
+* **edit** - users are able to create/update any user group or roles
+* **admin** - users are able to delete users, groups or roles
 
 5. **Manage-integrations** - for configuring integrations with adapters
 
 Available scopes:
 
-* import - users are able to import integrations
-* read - users are able to view all the integrations, scenarios and scenarios configuration(topics/ input model/ output model/ headers)
-* edit - users are able to create/update/delete any values for integrations/scenarios and also scenarios configuration (topics/input model/ output model/ headers)
-* admin - users are able to delete integrations/scenarios with all children
+* **import** - users are able to import integrations
+* **read** - users are able to view all the integrations, scenarios and scenarios configuration(topics/ input model/ output model/ headers)
+* **edit** - users are able to create/update/delete any values for integrations/scenarios and also scenarios configuration (topics/input model/ output model/ headers)
+* **admin** - users are able to delete integrations/scenarios with all children
 
 The Admin service is configured with the following default users roles for each of the access scopes mentioned above:
 
-* manage-platform
+* **manage-platform**
   * read:
     * ROLE_ADMIN_MANAGE_PLATFORM_READ
     * ROLE_ADMIN_MANAGE_PLATFORM_ADMIN
   * admin:
     * ROLE_ADMIN_MANAGE_PLATFORM_ADMIN
-* manage-processes
+* **manage-processes**
   * import:
     * ROLE_ADMIN_MANAGE_PROCESS_IMPORT
     * ROLE_ADMIN_MANAGE_PROCESS_EDIT
@@ -69,7 +69,7 @@ The Admin service is configured with the following default users roles for each 
     * ROLE_ADMIN_MANAGE_PROCESS_ADMIN
   * admin:
     * ROLE_ADMIN_MANAGE_PROCESS_ADMIN
-* manage-configurations
+* **manage-configurations**
   * import:
     * ROLE_ADMIN_MANAGE_CONFIG_IMPORT
     * ROLE_ADMIN_MANAGE_CONFIG_EDIT
@@ -84,7 +84,7 @@ The Admin service is configured with the following default users roles for each 
     * ROLE_ADMIN_MANAGE_CONFIG_ADMIN
   * admin:
     * ROLE_ADMIN_MANAGE_CONFIG_ADMIN
-* manage-users
+* **manage-users**
   * read:
     * ROLE_ADMIN_MANAGE_USERS_READ
     * ROLE_ADMIN_MANAGE_USERS_EDIT
@@ -94,7 +94,7 @@ The Admin service is configured with the following default users roles for each 
     * ROLE_ADMIN_MANAGE_USERS_ADMIN
   * admin:
     * ROLE_ADMIN_MANAGE_USERS_ADMIN
-* manage-integrations
+* **manage-integrations**
     * import:
     * ROLE_ADMIN_MANAGE_INTEGRATIONS_IMPORT
     * ROLE_ADMIN_MANAGE_INTEGRATIONS_EDIT

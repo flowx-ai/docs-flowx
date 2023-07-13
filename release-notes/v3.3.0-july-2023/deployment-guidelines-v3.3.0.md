@@ -12,31 +12,31 @@ After updating to **3.3.0** FLOWX.AI release, it is not possible to import old p
 
 ## Component versions
 
-| 🧩                             | 3.3.0      | 3.2.0  | 3.1.0  | 3.0.0  | 2.14.0   | 2.13.0  | 2.12.0  | 2.11.0  | 2.10.0  | 2.9.0   | 2.8.1   | 2.8.0   | 2.7.0   | 2.6.0   | 2.5.0   | 2.4.0   | 2.3.0   | 2.2.0   | 2.1.0     |
-| ------------------------------ | ---------- | ------ | ------ | ------ | -------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | --------- |
-| **Process engine**             | **3.2.2**  | 2.2.1  | 2.1.2  | 2.0.7  | 0.4.104  | 0.4.95  | 0.4.90  | 0.4.83  | 0.4.60  | 0.4.49  | 0.4.44  | 0.4.42  | 0.4.42  | 0.4.36  | 0.4.29  | 0.4.22  | 0.4.21  | 0.4.18  | 0.4.13    |
-| **Admin**                      | **2.3.8**  | 2.2.2  | 2.1.3  | 2.0.8  | 0.3.119  | 0.3.103 | 0.3.92  | 0.3.81  | 0.3.60  | 0.3.55  | 0.3.47  | 0.3.43  | 0.3.40  | 0.3.36  | 0.3.34  | 0.3.29  | 0.3.23  | 0.3.21  | 0.3.13    |
-| **Designer**                   | **3.26.4** | 3.21.1 | 3.15.1 | 3.2.1  | 2.78.4-1 | 2.63.6  | 2.60.7  | 2.48.9  | 2.39.2  | 2.33.0  | 2.28.1  | 2.24.2  | 2.23.0  | 2.19.2  | 2.18.2  | 2.17.4  | 2.15.2  | 2.14.4  | 2.11.2    |
-| **@flowx/ui-sdk**              | **3.26.4** | 3.21.1 | 3.15.1 | 3.2.1  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
-| **@flowx/ui-toolkit**          | **3.26.4** | 3.21.1 | 3.15.1 | 3.2.1  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
-| **@flowx/ui-theme**            | **3.26.4** | 3.21.1 | 3.15.1 | 3.2.1  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
-| **paperflow-web-components**   | -          | -      | -      | -      | 2.78.4-1 | 2.63.6  | 2.60.7  | 0.2.10  | 0.2.10  | 0.2.10  | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.5   | 0.2.4     |
-| **flowx-process-renderer**     | -          | -      | -      | -      | 2.78.4-1 | 2.63.6  | 2.60.7  | 2.48.9  | 2.39.2  | 2.33.0  | 2.28.1  | 2.24.2  | 2.23.0  | 2.19.2  | 2.18.2  | 2.17.4  | 2.15.2  | 2.14.4  | 2.11.2    |
-| **CMS Core**                   | 1.2.0      | 1.2.0  | 1.0.3  | 1.0.2  | 0.2.38   | 0.2.36  | 0.2.33  | 0.2.30  | 0.2.25  | 0.2.23  | 0.2.23  | 0.2.23  | 0.2.23  | 0.2.23  | 0.2.20  | 0.2.20  | 0.2.18  | 0.2.17  | 0.2.17    |
-| **Scheduler Core**             | 1.0.4      | 1.0.4  | 1.0.4  | 1.0.1  | 0.0.34   | 0.0.34  | 0.0.34  | 0.0.33  | 0.0.28  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.24  | 0.0.24  | 0.0.23  | 0.0.23  | 0.0.23    |
-| **events-gateway**             | **1.0.2**  | -      | -      | -      | -        | -       | -       | -       | -       | -       | -       | -       | -       | -       | -       | -       | -       | -       | -         |
-| **Notification Plugin**        | 2.0.4      | 2.0.4  | 2.0.3  | 2.0.1  | 1.0.206  | 1.0.206 | 1.0.206 | 1.0.205 | 1.0.200 | 1.0.198 | 1.0.198 | 1.0.197 | 1.0.194 | 1.0.194 | 1.0.191 | 1.0.191 | 1.0.190 | 1.0.190 | 1.0.186-1 |
-| **Document Plugin**            | 2.0.3      | 2.0.3  | 2.0.3  | 2.0.2  | 1.0.53   | 1.0.53  | 1.0.53  | 1.0.52  | 1.0.47  | 1.0.42  | 1.0.41  | 1.0.38  | 1.0.37  | 1.0.37  | 1.0.35  | 1.0.35  | 1.0.31  | 1.0.31  | 1.0.30    |
-| **OCR Plugin**                 | **1.0.5**  | 1.0.2  | 0.1.33 | 0.1.33 | 0.1.33   | 0.1.33  | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.0.109 | 0.0.109 | 0.0.109   |
-| **License Core**               | 1.0.2      | 1.0.2  | 1.0.2  | 1.0.1  | 0.1.28   | 0.1.28  | 0.1.28  | 0.1.27  | 0.1.23  | 0.1.19  | 0.1.18  | 0.1.18  | 0.1.18  | 0.1.18  | 0.1.15  | 0.1.15  | 0.1.13  | 0.1.13  | 0.1.12    |
-| **Customer Management Plugin** | **0.2.4**  | 0.2.3  | 0.2.3  | 0.2.1  | 0.1.28   | 0.1.28  | 0.1.28  | 0.1.27  | 0.1.23  | 0.1.22  | 0.1.22  | 0.1.22  | 0.1.22  | 0.1.22  | 0.1.20  | 0.1.20  | 0.1.18  | 0.1.18  | 0.1.18    |
-| **Task Management Plugin**     | **2.1.0**  | 1.0.4  | 1.0.4  | 1.0.1  | 0.0.42   | 0.0.42  | 0.0.40  | 0.0.37  | 0.0.29  | 0.0.28  | 0.0.28  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.22  | 0.0.22  | 0.0.21  | 0.0.21  | 0.0.16    |
-| **Data search**                | **0.2.0**  | 0.1.4  | 0.1.4  | 0.1.3  | 0.0.8    | 0.0.8   | 0.0.6   | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
-| **Audit Core**                 | **1.0.5**  | 1.0.5  | 1.0.4  | 1.0.1  | 0.0.8    | 0.0.5   | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
-| **Reporting**                  | 0.0.40     | 0.0.40 | 0.0.40 | 0.0.39 | 0.0.39   | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
-| **advancing-controller**       | **0.2.0**  | 0.1.4  | 0.1.4  | 0.1.2  | 0.0.6    | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
-| **iOS renderer**               | **2.1.3**  | 2.0.7  | 2.0.4  | 2.0.0  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
-| **Android renderer**           | 2.0.1      | 2.0.1  | 2.0.1  | 2.0.1  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
+| 🧩                            | 3.3.0       | 3.2.0  | 3.1.0  | 3.0.0  | 2.14.0   | 2.13.0  | 2.12.0  | 2.11.0  | 2.10.0  | 2.9.0   | 2.8.1   | 2.8.0   | 2.7.0   | 2.6.0   | 2.5.0   | 2.4.0   | 2.3.0   | 2.2.0   | 2.1.0     |
+| ------------------------------ | ----------- | ------ | ------ | ------ | -------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | --------- |
+| **Process engine**             | **3.6.0**   | 2.2.1  | 2.1.2  | 2.0.7  | 0.4.104  | 0.4.95  | 0.4.90  | 0.4.83  | 0.4.60  | 0.4.49  | 0.4.44  | 0.4.42  | 0.4.42  | 0.4.36  | 0.4.29  | 0.4.22  | 0.4.21  | 0.4.18  | 0.4.13    |
+| **Admin**                      | **2.5.0**   | 2.2.2  | 2.1.3  | 2.0.8  | 0.3.119  | 0.3.103 | 0.3.92  | 0.3.81  | 0.3.60  | 0.3.55  | 0.3.47  | 0.3.43  | 0.3.40  | 0.3.36  | 0.3.34  | 0.3.29  | 0.3.23  | 0.3.21  | 0.3.13    |
+| **Designer**                   | **3.28.10** | 3.21.1 | 3.15.1 | 3.2.1  | 2.78.4-1 | 2.63.6  | 2.60.7  | 2.48.9  | 2.39.2  | 2.33.0  | 2.28.1  | 2.24.2  | 2.23.0  | 2.19.2  | 2.18.2  | 2.17.4  | 2.15.2  | 2.14.4  | 2.11.2    |
+| **@flowx/ui-sdk**              | **3.28.10** | 3.21.1 | 3.15.1 | 3.2.1  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
+| **@flowx/ui-toolkit**          | **3.28.10** | 3.21.1 | 3.15.1 | 3.2.1  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
+| **@flowx/ui-theme**            | **3.28.10** | 3.21.1 | 3.15.1 | 3.2.1  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
+| **paperflow-web-components**   | -           | -      | -      | -      | 2.78.4-1 | 2.63.6  | 2.60.7  | 0.2.10  | 0.2.10  | 0.2.10  | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.5   | 0.2.4     |
+| **flowx-process-renderer**     | -           | -      | -      | -      | 2.78.4-1 | 2.63.6  | 2.60.7  | 2.48.9  | 2.39.2  | 2.33.0  | 2.28.1  | 2.24.2  | 2.23.0  | 2.19.2  | 2.18.2  | 2.17.4  | 2.15.2  | 2.14.4  | 2.11.2    |
+| **CMS Core**                   | **1.3.0**   | 1.2.0  | 1.0.3  | 1.0.2  | 0.2.38   | 0.2.36  | 0.2.33  | 0.2.30  | 0.2.25  | 0.2.23  | 0.2.23  | 0.2.23  | 0.2.23  | 0.2.23  | 0.2.20  | 0.2.20  | 0.2.18  | 0.2.17  | 0.2.17    |
+| **Scheduler Core**             | 1.0.4       | 1.0.4  | 1.0.4  | 1.0.1  | 0.0.34   | 0.0.34  | 0.0.34  | 0.0.33  | 0.0.28  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.24  | 0.0.24  | 0.0.23  | 0.0.23  | 0.0.23    |
+| **events-gateway**             | **1.0.2**   | -      | -      | -      | -        | -       | -       | -       | -       | -       | -       | -       | -       | -       | -       | -       | -       | -       | -         |
+| **Notification Plugin**        | 2.0.4       | 2.0.4  | 2.0.3  | 2.0.1  | 1.0.206  | 1.0.206 | 1.0.206 | 1.0.205 | 1.0.200 | 1.0.198 | 1.0.198 | 1.0.197 | 1.0.194 | 1.0.194 | 1.0.191 | 1.0.191 | 1.0.190 | 1.0.190 | 1.0.186-1 |
+| **Document Plugin**            | **2.0.4**   | 2.0.3  | 2.0.3  | 2.0.2  | 1.0.53   | 1.0.53  | 1.0.53  | 1.0.52  | 1.0.47  | 1.0.42  | 1.0.41  | 1.0.38  | 1.0.37  | 1.0.37  | 1.0.35  | 1.0.35  | 1.0.31  | 1.0.31  | 1.0.30    |
+| **OCR Plugin**                 | **1.0.8**   | 1.0.2  | 0.1.33 | 0.1.33 | 0.1.33   | 0.1.33  | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.1.5   | 0.0.109 | 0.0.109 | 0.0.109   |
+| **License Core**               | 1.0.2       | 1.0.2  | 1.0.2  | 1.0.1  | 0.1.28   | 0.1.28  | 0.1.28  | 0.1.27  | 0.1.23  | 0.1.19  | 0.1.18  | 0.1.18  | 0.1.18  | 0.1.18  | 0.1.15  | 0.1.15  | 0.1.13  | 0.1.13  | 0.1.12    |
+| **Customer Management Plugin** | **0.2.4**   | 0.2.3  | 0.2.3  | 0.2.1  | 0.1.28   | 0.1.28  | 0.1.28  | 0.1.27  | 0.1.23  | 0.1.22  | 0.1.22  | 0.1.22  | 0.1.22  | 0.1.22  | 0.1.20  | 0.1.20  | 0.1.18  | 0.1.18  | 0.1.18    |
+| **Task Management Plugin**     | **2.1.2**   | 1.0.4  | 1.0.4  | 1.0.1  | 0.0.42   | 0.0.42  | 0.0.40  | 0.0.37  | 0.0.29  | 0.0.28  | 0.0.28  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.22  | 0.0.22  | 0.0.21  | 0.0.21  | 0.0.16    |
+| **Data search**                | **0.2.0**   | 0.1.4  | 0.1.4  | 0.1.3  | 0.0.8    | 0.0.8   | 0.0.6   | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
+| **Audit Core**                 | **1.0.6**   | 1.0.5  | 1.0.4  | 1.0.1  | 0.0.8    | 0.0.5   | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
+| **Reporting**                  | 0.0.40      | 0.0.40 | 0.0.40 | 0.0.39 | 0.0.39   | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
+| **advancing-controller**       | **0.3.0**   | 0.1.4  | 0.1.4  | 0.1.2  | 0.0.6    | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
+| **iOS renderer**               | **2.1.3**   | 2.0.7  | 2.0.4  | 2.0.0  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
+| **Android renderer**           | 2.0.1       | 2.0.1  | 2.0.1  | 2.0.1  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a       |
 
 
 :::danger IMPORTANT
@@ -63,26 +63,28 @@ With the release of **FLOWX.AI 3.0**, there have been some changes that you need
 
 ## Additional configuration
 
+This section describes the additional configuration that is required to use the new features in FlowX.AI.
+
 ### Process engine
 
 #### Process Instance Indexing through Kafka transport
 
-Adding new Kafka transport strategy for sending details about process instances to be indexed in Elastic Search. To enable indexing of process instances in Elasticsearch through Kafka, configure the following environment variables:
+Introducing a new Kafka transport strategy for sending details about process instances to be indexed in Elasticsearch. To enable indexing of process instances in Elasticsearch through Kafka, configure the following environment variables:
 
 * `FLOWX_INDEXING_ENABLED`
 
-| Variable Name          | Values | Description                                                |
-| ---------------------- | ------ | ---------------------------------------------------------- |
-| FLOWX_INDEXING_ENABLED | true   | Indexing with Elastic Search for the whole app is enabled  |
-| FLOWX_INDEXING_ENABLED | false  | Indexing with Elastic Search for the whole app is disabled |
+| Variable Name          | Values | Description                                            |
+| ---------------------- | ------ | ------------------------------------------------------ |
+| FLOWX_INDEXING_ENABLED | true   | Enables indexing with Elasticsearch for the whole app  |
+| FLOWX_INDEXING_ENABLED | false  | Disables indexing with Elasticsearch for the whole app |   
 
 * `FLOWX_INDEXING_PROCESSINSTANCE_INDEXING_TYPE`
 
-| Variable Name                                | Indexing Type - Values | Definition                                                                                                                          |
-| -------------------------------------------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| FLOWX_INDEXING_PROCESSINSTANCE_INDEXING_TYPE | no-indexing            | No indexing is performed for process instances                                                                                      |
-| FLOWX_INDEXING_PROCESSINSTANCE_INDEXING_TYPE | http                   | Process instances are indexed via HTTP (direct connection from process-engine to Elastic Search thorugh HTTP calls)                 |
-| FLOWX_INDEXING_PROCESSINSTANCE_INDEXING_TYPE | kafka                  | Process instances are indexed via Kafka (send data to be indexed through a kafka topic - the new strategy for the applied solution) |
+| Variable Name                                | Values      | Definition                                                                                                                          |
+| -------------------------------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| FLOWX_INDEXING_PROCESSINSTANCE_INDEXING_TYPE | no-indexing | No indexing is performed for process instances                                                                                      |
+| FLOWX_INDEXING_PROCESSINSTANCE_INDEXING_TYPE | http        | Process instances are indexed via HTTP (direct connection from process-engine to Elastic Search thorugh HTTP calls)                 |
+| FLOWX_INDEXING_PROCESSINSTANCE_INDEXING_TYPE | kafka       | Process instances are indexed via Kafka (send data to be indexed through a kafka topic - the new strategy for the applied solution) |
 
 :::warning
 For Kafka indexing, the Kafka Connect with Elastic Search Sink Connector must be deployed in the infrastructure.
@@ -121,15 +123,15 @@ For more details please check the following section:
 
 ### Events gateway
 
-Added new **events-gateway** microservice, the following configuration is needed.
+Added a new **events-gateway** microservice, which requires the following configuration.
 
-Events-gateway is designed specifically for handling events. Previously, each process-engine pod had a WebSocket (WS) server, and the front-end (FE) would connect to the engine to receive messages.
+The events-gateway is designed specifically for handling events. Previously, each [**process-engine**](../../docs/terms/flowxai-process-engine) pod had a WebSocket (WS) server, and the front-end (FE) would connect to the process-engine to receive messages.
 
-Now, instead of a server holding the messages, they are stored in Redis. However, the engine sends the messages to the events-gateway, which is responsible for sending them to Redis. Users connect to the events-gateway using an HTTP request and wait for Server-Sent Events (SSE) to flow in that request. They keep the request open for as long as they want SSE on a specific instance.
+Now, instead of a server holding the messages, they are stored in Redis. However, the process-engine sends the messages to the events-gateway, which is responsible for sending them to Redis. Users connect to the events-gateway using an HTTP request and wait for Server-Sent Events (SSE) to flow in that request. They keep the request open for as long as they want SSE on a specific instance.
 
 ### Events-gateway kafka topics
 
-New kafka topics that should be added in the process-engine configuration.
+New Kafka topics have been added for the events-gateway. These topics are used to send and receive messages between the events-gateway and the process-engine.
 
 | Topic Name                                | Description                                               | Value                                                |
 | ----------------------------------------- | --------------------------------------------------------- | ---------------------------------------------------- |
@@ -139,11 +141,11 @@ New kafka topics that should be added in the process-engine configuration.
 
 New kafka topics that should be added in the events-gateway configuration.
 
-| Topic Name                                                | Description                                               | Value                                                |
-| --------------------------------------------------------- | --------------------------------------------------------- | ---------------------------------------------------- |
-| KAFKA_TOPIC_EVENTS_GATEWAY_PROCESS_INSTANCE_IN_MESSAGE    | Where events-gateway listens for messages from engine     | ai.flowx.eventsgateway.engine.commands.message.v1    |
-| KAFKA_TOPIC_EVENTS_GATEWAY_PROCESS_INSTANCE_IN_DISCONNECT | Disconnect commands from events-gateway to process-engine | ai.flowx.eventsgateway.engine.commands.disconnect.v1 |
-| KAFKA_TOPIC_EVENTS_GATEWAY_PROCESS_INSTANCE_IN_CONNECT    | Connect commands from events-gateway to process-engine    | ai.flowx.eventsgateway.engine.commands.connect.v1    |
+| Topic Name                                                | Description                                                   | Value                                                |
+| --------------------------------------------------------- | ------------------------------------------------------------- | ---------------------------------------------------- |
+| KAFKA_TOPIC_EVENTS_GATEWAY_PROCESS_INSTANCE_IN_MESSAGE    | Where events-gateway listens for messages from process-engine | ai.flowx.eventsgateway.engine.commands.message.v1    |
+| KAFKA_TOPIC_EVENTS_GATEWAY_PROCESS_INSTANCE_IN_DISCONNECT | Disconnect commands from events-gateway to process-engine     | ai.flowx.eventsgateway.engine.commands.disconnect.v1 |
+| KAFKA_TOPIC_EVENTS_GATEWAY_PROCESS_INSTANCE_IN_CONNECT    | Connect commands from events-gateway to process-engine        | ai.flowx.eventsgateway.engine.commands.connect.v1    |
 
 
 [Events gateway](../../docs/platform-deep-dive/core-components/events-gateway)

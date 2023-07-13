@@ -1,6 +1,6 @@
 # Designer setup guide
 
-The [FLOWX Designer](../flowx-designer.md) app is made up of a backend microservice and a frontend app. The backend microservice handles saving and editing process definitions. It provides the REST API used by the FLOWX Designer. The processes defined here will be handled by the [FLOWX Engine](../../platform-deep-dive/core-components/flowx-engine/flowx-engine.md).
+The [FLOWX Designer](../flowx-designer.md) app is made up of a backend microservice and a frontend app. The backend microservice handles saving and editing process definitions. It provides the REST API used by the [**FLOWX Designer**](../../terms/flowx-ai-designer). The processes defined here will be handled by the [FLOWX Engine](../../platform-deep-dive/core-components/flowx-engine/flowx-engine.md).
 
 Follow to next steps in order to set them up in your environment.
 
@@ -18,7 +18,7 @@ The backend microservice needs to be able to connect to the Kafka cluster in cas
 
 ### NGINX
 
-It would be best if the FLOWX Designer used a separate [NGINX](../../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-nginx.md) load balancer from the Engine. This is used in order to route API calls from the [SPA](designer-setup-guide.md#for-configuring-the-spa) (single page application) to the backend service, to the engine and to various plugins.
+It would be best if the FLOWX Designer used a separate [NGINX](../../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-nginx.md) load balancer from the [**Engine**](../../terms/flowxai-process-engine). This is used in order to route API calls from the [SPA](designer-setup-guide.md#for-configuring-the-spa) (single page application) to the backend service, to the engine and to various plugins.
 
 This is used in order to route API calls from the SPA (single page application) to the backend service, to the engine, and to various plugins.
 
@@ -84,9 +84,9 @@ spec:
           servicePort: 80
 ```
 
-2. For testing process definitions from the FlowX Designer, we need to route API calls and WebSocket communication to the Engine backend.
+2. For testing process definitions from the FLOWX Designer, we need to route API calls to the Engine backend.
 
-setup for routing REST calls:
+Setup for routing REST calls:
 
 ```jsx
 apiVersion: extensions/v1beta1
@@ -107,32 +107,6 @@ spec:
       - path: /{{PROCESS_API_PATH}}/api(/|$)(.*)
         backend:
           serviceName: {{engine-service-name}}
-          servicePort: 80
-```
-
-setup for routing WS communication:
-
-```jsx
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  annotations:
-    kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/configuration-snippet: |
-      more_set_headers "Access-Control-Allow-Origin: $http_origin";
-    nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
-    nginx.ingress.kubernetes.io/enable-cors: "true"
-    nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
-    nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
-  name: flowx-admin-engine-ws
-spec:
-  rules:
-  - host: {{host}}
-    http:
-      paths:
-      - path: /ws
-        backend:
-          serviceName: {{engine-service-name-ws}}
           servicePort: 80
 ```
 
@@ -213,7 +187,7 @@ The database schema is managed by a [liquibase](https://www.liquibase.org/) scri
 
 ### Kafka configuration
 
-Kafka is used only for saving audit logs. Only a producer needs to be configured. The environment variables that need to be set are:
+[**Kafka**](../../terms/flowx-kafka) is used only for saving audit logs. Only a producer needs to be configured. The environment variables that need to be set are:
 
 `KAFKA_BOOTSTRAP_SERVERS` - the Kafka bootstrap servers URL
 
@@ -227,7 +201,6 @@ The following values should be set with the corresponding Redis-related values:
 `SPRING_REDIS_HOST`
 
 `SPRING_REDIS_PASSWORD`
-
 
 ### Logging
 

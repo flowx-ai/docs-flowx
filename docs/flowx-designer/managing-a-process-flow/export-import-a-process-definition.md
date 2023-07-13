@@ -1,16 +1,16 @@
 # Exporting / importing a process definition
 
-To copy process definitions and move them between different environments, you can use the export/import feature.
+To copy [**process definitions**](../../terms/flowx-process-definition) and move them between different environments, you can use the export/import feature.
 
 ## Export a process definition
 
-You can export a process definition as a JSON file directly from the process definitions list in the FLOWX Designer:
+You can export a process definition as a JSON file directly from the process definitions list in the [**FLOWX Designer**](../../terms/flowx-ai-designer):
 
 ![](../img/pf_export_definition.gif)
 
 ## Import a process definition
 
-You can then import the process definition from the FLOWX Designer. This will add a new definition to your database and set it as a draft. You can then check the imported definition and publish the process to be able to use it from the engine.
+You can then import the process definition from the FLOWX Designer. This will add a new definition to your database and set it as a draft. You can then check the imported definition and publish the process to be able to use it from the [**engine**](../../terms/flowxai-process-engine).
 
 ![](../img/pf_import_proc.gif)
 

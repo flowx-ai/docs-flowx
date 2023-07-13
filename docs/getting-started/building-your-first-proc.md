@@ -11,13 +11,13 @@ Let's dive into an example. :rocket:
 
 - [x] **Step 1**: [Design a BPMN process](../flowx-designer/managing-a-process-flow)
 
-- [x] **Step 2**: Define and manage a process flow using FLOWX Process Designer
+- [x] **Step 2**: Define and manage a process flow using [**FLOWX Process Designer**](../terms/flowx-process-designer)
 
-- [x] **Step 3**: Run a process instance in FLOWX Engine
+- [x] **Step 3**: Run a process instance in [**FLOWX Engine**](../terms/flowxai-process-engine)
 
-- [x] **Step 4**: Create the front-end app
+- [x] **Step 4**: Create the [**front-end app**](../terms/flowx-frontend-application)
 
-- [x] **Step 5**: Connect plugins
+- [x] **Step 5**: Connect [**plugins**](../terms/flowx-plugins)
 
 
 ## Designing the BPMN process: request a new credit card from a bank app
@@ -26,7 +26,7 @@ Let's start with designing the BPMN process diagram for our sample use case: req
 
 ## Sample process steps
 
-We'll take as a business process example a credit card application. It will have the following steps:
+We'll take as a [**business process example**](../terms/flowx-process) a credit card application. It will have the following steps:
 
 * a user makes a request for a new credit card - _**start event**_
 * the user has to fill in a form with their personal data - _**user task**_
@@ -43,7 +43,7 @@ We'll take as a business process example a credit card application. It will have
 
 ## Sample process diagram
 
-This is what the BPMN diagram looks like:
+This is what the [**BPMN**](../terms/bpmn) diagram looks like:
 
 ![Request a new credit card](./img/request_a_new_credit_card.png)
 

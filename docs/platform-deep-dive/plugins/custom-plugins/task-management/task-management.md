@@ -6,7 +6,7 @@ sidebar_position: 3
 
 ### What is Task management plugin?
 
-The Task Management plugin is a powerful plugin that enables back-officers and supervisors to efficiently track and assign tasks within a company. It provides a business-oriented view of a process defined using FLOWX.AI Designer and allows for seamless interactions at the assignment level.
+The Task Management plugin is a powerful plugin that enables back-officers and supervisors to efficiently track and assign tasks within a company. It provides a business-oriented view of a [**process**](../../../../terms/flowx-process) defined using [**FLOWX.AI Designer**](../../../../terms/flowx-ai-designer) and allows for seamless interactions at the assignment level.
 
 ![Task Manager](../../../img/task_management_overview.gif)
 
@@ -39,7 +39,6 @@ The **Task details** tab within the **Task Manager** displays key information ab
 :::caution
 Please note that specific roles must be defined in a process to utilize all the task management features. For more information on configuring access roles for processes, refer to the [<u>**Configuring access roles for processes**</u>](../../../../platform-setup-guides/flowx-engine-setup-guide/configuring-access-roles-for-processes.md).
 :::
-
 
 
 ### Statuses & Definitions in Task Manager

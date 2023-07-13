@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Overview
 
-:writing_hand: Let's go through the main options available in the FLOWX Designer:
+:writing_hand: Let's go through the main options available in the [**FLOWX Designer**](../terms/flowx-ai-designer):
 
 <details>
 
@@ -17,9 +17,9 @@ sidebar_position: 2
 
 #### Active Process
 
-* view active [process instances](../building-blocks/process/active-process/process-instance/process-instance.md)
-* [token](../building-blocks/token.md) instance and its content
-* [subprocesses](../building-blocks/process/subprocess.md)
+* view active [process instances](../terms/flowx-process-instance)
+* [token](../terms/token) instance and its content
+* [subprocesses](../terms/flowx-subprocess)
 
 </details>
 
@@ -47,7 +47,7 @@ sidebar_position: 2
 
 #### Source systems
 
-* used for multiple source systems, if multiple enumerations values are needed to communicate with other systems
+* used for multiple source systems, if multiple [**enumerations**](../terms/flowx-enumerations) values are needed to communicate with other systems
 
 [Example here](../platform-deep-dive/core-components/core-extensions/content-management/using-the-service.md#example-request-a-label-by-language-or-source-system-code)
 
@@ -59,7 +59,7 @@ sidebar_position: 2
 
 #### Task manager
 
-* it is a plugin suitable for back-officers and supervisors as it can be used to easily track and assign activities/tasks inside a company
+* it is a [**plugin**](../terms/flowx-plugins) suitable for back-officers and supervisors as it can be used to easily track and assign activities/tasks inside a company
 * for more information, check the [Task Management](../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md) section
 
 #### Notification templates
@@ -92,13 +92,13 @@ sidebar_position: 2
 
 #### Access management
 
-* Access Management is used  to administrate users, roles and groups
+* Access Management is used to administrate users, roles and groups
 * Access Management is accessing keycloak through an API call, extracting all the necessary details
 * it is based on user roles that need to be configured in the identity management solution
 
 #### Integration management
 
-* Integration management helps you configure integrations between the following components: FLOWX Process engine, plugins, or different adapters
+* Integration management helps you configure integrations between the following components: [**FLOWX Process engine**](../terms/flowxai-process-engine), [**plugins**](../terms/flowx-plugins), or different adapters
 * Integration management enables you to keep track of each integration and its correspondent component and different scenarios used: creating an OTP, document generation, notifications, etc
 
 </details>
@@ -108,7 +108,7 @@ sidebar_position: 2
 <summary>Platform status</summary>
 
 * you can check the platform's health by using the **Platform Status** feature
-* you can also check the installed versions against the suggested versions for each FLOWX Component
+* you can also check the installed versions against the suggested versions for each [**FLOWX Component**](../terms/microservices)
 
 </details>
 
@@ -121,7 +121,7 @@ Depending on your access rights, some tabs might not be visible. For more inform
 
 ## Managing process definitions
 
-A process definition is uniquely identified by its name and version number.
+A [**process definition**](../terms/flowx-process-definition) is uniquely identified by its name and version number.
 
 ![Process Definitions](./img/designer_process_definitions.gif)
 
@@ -131,7 +131,7 @@ A process definition is uniquely identified by its name and version number.
 
 ## Viewing active process instances
 
-The complete list of active [process instances](../building-blocks/process/active-process/process-instance/process-instance.md) is visible from the FLOWX Designer. They can be filtered by [process definition](../building-blocks/process/process-definition/process-definition.md) names and searched by their unique ID. You can also view the current process instance status and data.
+The complete list of active [**process instances**](../terms/flowx-process-instance) is visible from the FLOWX Designer. They can be filtered by [**process definition**](../terms/flowx-process-definition) names and searched by their unique ID. You can also view the current process instance status and data.
 
 ![Active process](./img/designer_active_process.png)
 
@@ -149,7 +149,7 @@ Using the content management feature you can perform multiple actions that enabl
 
 ## Managing tasks
 
-The Task Manager plugin has the scope to show a process that you defined in Designer, offering a more business-oriented view. It also offers interactions at the assignment level.&#x20;
+The Task Manager [**plugin**](../terms/flowx-plugins) has the scope to show a process that you defined in Designer, offering a more business-oriented view. It also offers interactions at the assignment level.
 
 ![Task Management](./img/designer_task_manager.png)
 
@@ -157,7 +157,7 @@ The Task Manager plugin has the scope to show a process that you defined in Desi
 
 ## Managing notification templates
 
-The notification templates plugin can be viewed, edited, and activated/inactivated from the FLOWX Designer.
+The notification templates plugin can be viewed, edited, and activated/inactivated from the [**FLOWX Designer**](../terms/flowx-ai-designer).
 
 ![](./img/designer_notification_templates.png)
 
@@ -173,7 +173,7 @@ One of the main features of the [document management plugin](../platform-deep-di
 
 ## Managing generic parameters
 
-Through the FLOWX Designer, you can edit generic parameters, and import or export them. You can set generic parameters and assign the environment(s) where they should apply.
+Through the [**FLOWX Designer**](../terms/flowx-ai-designer), you can edit generic parameters, and import or export them. You can set generic parameters and assign the environment(s) where they should apply.
 
 ![Generic Parameters](./img/designer_generic_params.png)
 
@@ -197,7 +197,7 @@ Integration management enables you to keep track of each integration and its cor
 
 ## Checking platform status
 
-You can quickly check the health status of all the FLOWX services and all of your custom connectors.
+You can quickly check the health status of all the [**FLOWX services**](../terms/microservices) and all of your custom connectors.
 
 ![Platform Status](./img/designer_platform_status.png)
 

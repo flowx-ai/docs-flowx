@@ -7,7 +7,7 @@ To set up a plugin in your environment, you must go through the next steps:
 
 Once you have deployed the necessary plugins in your environment, you can start integrating them in your process definitions.
 
-All of them listen for Kafka events sent by the Engine and performed certain actions depending on the received data. They can also send data back to the Engine.
+All of them listen for Kafka events sent by the [**Engine**](../../../terms/flowxai-process-engine) and performed certain actions depending on the received data. They can also send data back to the Engine.
 
 Some of them require some custom templates to be configured, for these cases, a [WYSIWYG Editor](../wysiwyg.md) is provided.
 

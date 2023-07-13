@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Exclusive gateway
 
-Flow decisions can be configured using an Exclusive Gateway. Using this node will make `if condition then go to this node` constructions are available.
+[**Flow**](../../terms/flowx-process) decisions can be configured using an Exclusive Gateway. Using this [**node**](../../terms/flowx-node) will make `if condition then go to this node` constructions are available.
 
 ## Configuring an Exclusive gateway node
 
@@ -34,7 +34,7 @@ When encountering a step with `canGoBack` switched to false, all steps found beh
 * **Conditions** - selecting the **Gateway Decisions** tab of the gateway we can see that we can configure a list of conditions (**if, else if, else**) and **select** from a dropdown where we should go if the condition is **true**
 
 :::warning
-Expression order is important because the first **true** evaluation will stop the execution and the token will move to the selected node.&#x20;
+Expression order is important because the first **true** evaluation will stop the execution and the token will move to the selected node.
 :::
 
 ![](./img/gateway_exclusive_conditions.png)

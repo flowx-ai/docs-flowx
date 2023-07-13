@@ -1,6 +1,6 @@
 # Using the plugin
 
-Once you have deployed the Documents Plugin in your infrastructure, you can start creating various document templates. After selecting a document template, proceed to create a process definition by including Kafka nodes and custom document-related actions in your process flow definitions.
+Once you have deployed the Documents Plugin in your infrastructure, you can start creating various document templates. After selecting a document template, proceed to create a [**process definition**](../../../../../terms/flowx-process-definition) by including Kafka nodes and custom document-related actions in your process flow.
 
 The plugin offers the following actions:
 
@@ -13,7 +13,7 @@ The plugin offers the following actions:
 * Listing stored documents
 * OCR integration
 
-Before adding these actions to your process definition, follow these steps:
+Before adding these actions to your [**process definition**](../../../../../terms/flowx-process-definition), follow these steps:
 
 1. Ensure that all custom information is properly configured in the plugin database, such as the document templates to be used.
 2. For each event type, you will need a corresponding Kafka topic.

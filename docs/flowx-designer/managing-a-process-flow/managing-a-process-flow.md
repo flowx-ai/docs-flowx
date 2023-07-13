@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Managing a process flow
 
-Now that we've covered the main components and building blocks of the FLOWX Platform, let's go through the steps needed to design a new process flow using the FLOWX Designer. 🧗‍♀️
+Now that we've covered the [**main components**](../../terms/microservices) and building blocks of the [**FLOWX Platform**](../../terms/flowx), let's go through the steps needed to design a new [**process flow**](../../terms/flowx-process) using the [**FLOWX Designer**](../../terms/flowx-process-designer). 🧗‍♀️
 
 [Creating a new process definition](creating-a-new-process-definition)
 

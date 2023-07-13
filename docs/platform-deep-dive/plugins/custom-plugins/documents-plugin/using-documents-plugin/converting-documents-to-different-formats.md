@@ -38,7 +38,7 @@ The examples provided above are extracted from an internal testing environment. 
 :::
 
 :::caution
-Make sure to use an outgoing topic name for the reply that matches the pattern configured in the Engine, as it listens for messages on topics with specific names.
+Make sure to use an outgoing topic name for the reply that matches the pattern configured in the [**Engine**](../../../../../terms/flowxai-process-engine), as it listens for messages on topics with specific names.
 :::
 
 ## Receiving the reply

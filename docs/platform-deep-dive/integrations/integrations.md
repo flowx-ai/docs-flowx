@@ -2,7 +2,7 @@
 
 ## What is an integration?
 
-Integrations play a crucial role in **connecting legacy systems** or **third-party applications** to the FLOWX.AI process engine. They enable seamless communication by leveraging custom code and the Kafka messaging system.
+Integrations play a crucial role in **connecting legacy systems** or **third-party applications** to the [**FLOWX.AI Process engine**](../../terms/flowxai-process-engine). They enable seamless communication by leveraging custom code and the [**Kafka**](../../terms/flowx-kafka) messaging system.
 
 ![](../img/integrations_hl.jpeg)
 
@@ -16,7 +16,7 @@ Integrations involve interaction with legacy systems and require custom developm
 
 ## Developing a custom integration
 
-Developing custom integrations for the FLOWX.AI platform is a straightforward process. You can use your preferred technology to write the necessary custom code, with the requirement that it can send and receive messages from the Kafka cluster.
+Developing custom integrations for the [**FLOWX.AI platform**](../../terms/flowx) is a straightforward process. You can use your preferred technology to write the necessary custom code, with the requirement that it can send and receive messages from the [**Kafka**](../../terms/flowx-kafka) cluster.
 
 #### Steps to create a custom integration
 
@@ -76,7 +76,7 @@ To build a Connector, you'll need to:
 When designing Connectors, keep in mind that the communication between the engine and the Connector is asynchronous in an event-driven architecture. It is essential to design Connectors in a way that avoids bloating the platform. Depending on the communication type between the Connector and the legacy system, you may need to implement custom solutions for load balancing requests, scaling the Connector, etc.
 
 :::caution
-To ensure proper communication with the Engine, make sure to include all received Kafka headers in the response sent back to the FLOWX.AI Engine.
+To ensure proper communication with the [**Engine**](../../terms/flowxai-process-engine), make sure to include all received Kafka headers in the response sent back to it.
 :::
 
 For easy process flow tracing, consider adding a minimal setup for Jaeger tracing to your custom Connectors.

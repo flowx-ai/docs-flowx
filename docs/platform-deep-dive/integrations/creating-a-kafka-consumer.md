@@ -1,7 +1,7 @@
 # Creating a Kafka consumer
 
 :::tip
-This guide focuses on creating a Kafka consumer using Spring Boot.
+This guide focuses on creating a [**Kafka**](../../terms/flowx-kafka) consumer using Spring Boot.
 :::
 
 Here are some tips, including the required configurations and code samples, to help you implement a Kafka consumer in Java.

@@ -4,10 +4,10 @@ sidebar_position: 2
 
 # Uploading a new document
 
-You can integrate document upload into a process definition by adding a user task node with an **Upload action**. This allows users to interact with the process and choose which file to upload.
+You can integrate document upload into a [**process definition**](../../../../../terms/flowx-process-definition) by adding a user task node with an **Upload action**. This allows users to interact with the process and choose which file to upload.
 
 :::info
-User task nodes enable you to define and configure UI templates and actions for specific template config nodes, such as an upload file button.
+User task [**nodes**](../../../../../terms/flowx-node) enable you to define and configure UI templates and actions for specific template config nodes, such as an upload file button.
 :::
 
 ![](../../../../img/docs_upload_proc.png)
@@ -35,7 +35,7 @@ To upload a document using a process, follow the next steps.
 
 
 :::caution
-A naming pattern must be defined in the process engine configuration to use the specified topics. It's important to ensure that all events starting with the configured pattern are consumed by the Engine. For example, the `KAFKA_TOPIC_PATTERN` is the topic name pattern where the Engine listens for incoming Kafka events.
+A naming pattern must be defined in the [**process engine**](../../../../../terms/flowxai-process-engine) configuration to use the specified topics. It's important to ensure that all events starting with the configured pattern are consumed by the Engine. For example, the `KAFKA_TOPIC_PATTERN` is the topic name pattern where the Engine listens for incoming [**Kafka**](../../../../../terms/flowx-kafka) events.
 :::
 
 * **Key Name**: This key will hold the result received from the external system. If the key already exists in the process values, it will be overwritten.

@@ -10,7 +10,7 @@ sidebar_position: 1
 **Why is it useful?** Using swimlanes we can make sure only certain user roles have access to certain process nodes.
 :::
 
-In certain scenarios, it is necessary to restrict access to specific process nodes based on user roles. This can be achieved by organizing nodes into different swimlanes. 
+In certain scenarios, it is necessary to restrict access to specific process [**nodes**](../../terms/flowx-node) based on user roles. This can be achieved by organizing nodes into different swimlanes. 
 
 Each swimlane can be configured to grant access only to users with specific roles defined in the chosen identity provider platform.
 

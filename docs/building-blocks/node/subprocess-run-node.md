@@ -5,20 +5,20 @@ sidebar_position: 8
 # Subprocess run node
 
 :::info
-There might be cases when extra functionality is needed on certain nodes.
+There might be cases when extra functionality is needed on certain [**nodes**](../../terms/flowx-node).
 :::
 
-A node that provides advanced options for starting subprocesses.
+A node that provides advanced options for starting [**subprocesses**](../../terms/flowx-subprocess).
 
 ![](./img/subprocess_run_node.png#center)
 
 [Subprocess](../process/subprocess.md)
 
-It contains a default action for starting a sub-process.
+It contains a default action for starting a subprocess.
 
 A subprocess can be started in two modes:
 
-* **async mode** - the parent process will continue without waiting for the sub-process to finish
+* **async mode** - the parent [**process**](../../terms/flowx-process) will continue without waiting for the sub-process to finish
 
 :::info
 Select if this task should be invoked asynchronously. Make tasks asynchronous if they cannot be executed instantaneously, for example, a task performed by an outside service.
@@ -32,7 +32,7 @@ In case the parent process needs to wait for the subprocess to finish and retrie
 
 ![](./img/subprocess_run_config.png)
 
-This node type can also be used for starting a set of subprocesses that will be started and run at the same time. This will prove useful in case we have an array of values in the parent process parameters and we want to start a sub-process for each of the elements in that array.
+This node type can also be used for starting a set of subprocesses that will be started and run at the same time. This will prove useful in case we have an array of values in the parent process parameters and we want to start a subprocess for each of the elements in that array.
 
 ![](./img/subprocess_run_config1.png)
 

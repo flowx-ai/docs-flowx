@@ -2,11 +2,11 @@
 
 ## Overview
 
-The Scheduler is part of the core components of the FLOWX.AI platform. It can be easily added to your custom FLOWX deployment to **enhance the core platform capabilities with functionality specific to scheduling messages.**
+The Scheduler is part of the core components of the [**FLOWX.AI platform**](../../../terms/flowx). It can be easily added to your custom FLOWX deployment to **enhance the core platform capabilities with functionality specific to scheduling messages.**
 
 The service offers the possibility to schedule a message that you only need to process after a configured time period.
 
-It can be quickly deployed on the chosen infrastructure and then connected to the FLOWX.AI Engine through Kafka events.
+It can be quickly deployed on the chosen infrastructure and then connected to the [**FLOWX.AI Engine**](../../../terms/flowxai-process-engine) through Kafka events.
 
 Let's go through the steps needed in order to deploy and set up the service:
 

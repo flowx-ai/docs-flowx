@@ -42,8 +42,6 @@ There are 3 types of events:
 
 * it is an atomic activity within a process flow. You create a task when the activity cannot be broken down to a finer level of detail. A task can only belong to one lane.
 
-
-
 | User task                                           | Service task                                                                                                |
 | --------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
 | ![](./img/user_task.png#center)                     | ![](./img/service_task.png#center)                                                                          |
@@ -63,15 +61,15 @@ There are 3 types of events:
 
 #### Service Task
 
-* is executed by a business process engine. The task defines a script that the engine can interpret. When the task begin, the engine will execute the script. The Task will be completed when the script is completed. It also provides a mechanism for a process to run a business rule on the process data.
+* is executed by a business process engine. The task defines a script that the [**process engine**](../../../../../terms/flowxai-process-engine) can interpret. When the task begin, the engine will execute the script. The Task will be completed when the script is completed. It also provides a mechanism for a process to run a [**business rule**](../../../../../terms/business-rules) on the process data.
 
-### BPMN Sub-Processes
+### BPMN Subprocesses
 
-In BPMN, a sub-process is a compound activity that represents a collection of other tasks and sub-processes. Generally, we create BPMN diagrams to communicate processes with others. To facilitate effective communications, we really do not want to make a business process diagram too complex. By using sub-processes, you can split a complex process into multiple levels, which allows you to focus on a particular area in a single process diagram.
+In BPMN, a subprocess is a compound activity that represents a collection of other tasks and subprocesses. Generally, we create BPMN diagrams to communicate processes with others. To facilitate effective communications, we really do not want to make a business process diagram too complex. By using subprocesses, you can split a complex process into multiple levels, which allows you to focus on a particular area in a single process diagram.
 
 ### Gateways
 
-Gateways allow to control as well as merge and split the process flow.
+Gateways allow to control as well as merge and split the [**process flow**](../../../../../terms/flowx-process).
 
 #### Exclusive gateways
 

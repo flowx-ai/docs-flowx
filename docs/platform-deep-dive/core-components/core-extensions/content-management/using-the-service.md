@@ -8,14 +8,14 @@ After you deployed the CMS service in your infrastructure, you can start definin
 
 You can also set the default application name to be used in your configuration. This is needed when retrieving the contents.
 
-```
+```yaml
 application:
     defaultApplication: DEFAULT_APPLICATION_NAME
 ```
 
 If this configuration is not set, the service will use `flowx` as the default value.
 
-## Define needed Kafka topics <a href="#define-needed-kafka-topics" id="define-needed-kafka-topics"></a>
+## Define needed Kafka topics 
 
 Kafka topic names can be set by using environment variables:
 
@@ -64,7 +64,7 @@ Example:
 }
 ```
 
-If the value for `application` is not sent,  the `defaultApplication` value will be used when retrieving the contents from the database.
+If the value for `application` is not sent, the `defaultApplication` value will be used when retrieving the contents from the database.
 
 `version` and `draft` are not mandatory, if they are not specified, the latest published content will be used.
 

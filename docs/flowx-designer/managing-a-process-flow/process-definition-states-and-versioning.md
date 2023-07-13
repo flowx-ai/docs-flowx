@@ -1,17 +1,17 @@
 # Process definition states & versioning
 
-Process Definitions in FLOWX.AI Designer can be edited with ease. To keep track of updates and changes, each definition is assigned a version number and state.
+[**Process Definitions**](../../terms/flowx-process-definition) in [**FLOWX.AI Designer**](../../terms/flowx-ai-designer) can be edited with ease. To keep track of updates and changes, each definition is assigned a version number and state.
 
 ![](../img/pf_proc_def_state.png)
 
 A Process Definition is unique and can be identified by its name and version number. It can have one of the following states:
 
-* **draft** - in progress and can't be used to create new instances, can only be started in test mode
+* **draft** - in progress and can't be used to create [**new instances**](../../terms/flowx-process-instance), can only be started in test mode
 * **published** - only one version can be published at a time, and it will be used to instantiate new processes; published versions can be edited
 * **deleted** - not visible or usable in the platform
 * **deprecated** - old versions
 
-At any time, there can only be one draft and one published version for a specific process definition. A new definition can be created by adding it in FLOWX.AI Designer, importing an existing one, or cloning an existing definition. A newly created definition will be in the draft state.
+At any time, there can only be one draft and one published version for a specific process definition. A new [**definition**](../../terms/flowx-process-definition) can be created by adding it in FLOWX.AI Designer, importing an existing one, or cloning an existing definition. A newly created definition will be in the draft state.
 
 Deleting a draft or published version will automatically delete all versions of that definition. When a new version is set to published, the previous published version becomes deprecated. A published version cannot be reset to draft.
 

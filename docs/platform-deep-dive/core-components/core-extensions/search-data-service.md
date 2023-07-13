@@ -18,7 +18,7 @@ Use case:
 * search for data in other processes
 * display results about other processes where the search key was found
 
-1. Create a process using Process Designer.
+1. Create a process using [**Process Designer**](../../../terms/flowx-process-designer).
 2. From the newly created process where you want to perform the search, add a [Task node](../../../building-blocks/node/task-node). 
 3. Configure a send event via a [Kafka send action](../../../building-blocks/node/message-send-received-task-node.md#example-of-a-message-send-event).
 ![](../../img/kafka_send_action_search.png)

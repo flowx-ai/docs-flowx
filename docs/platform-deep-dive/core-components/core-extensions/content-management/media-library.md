@@ -4,7 +4,7 @@ sidebar_position: 9
 
 # Media library
 
-All the media files (such as images, GIFs etc.) used on the processes that were uploaded to processes are listed in the media library. This is where you can manage all existing media files or upload new files.
+The media library serves as a centralized hub for managing and organizing various types of media files, including images, GIFs, and more. It encompasses all the files that have been uploaded to the [**processes**](../../../../terms/flowx-process-definition), providing a convenient location to view, organize, and upload new media files.
 
 ![](../../../../../release-notes/img/media_library.gif)
 
@@ -16,7 +16,7 @@ You can also upload an image directly to the Media Library on the spot when conf
 
 To upload an asset to the Media Library, follow the next steps:
 
-1. Open FLOWX Designer.
+1. Open [**FLOWX Designer**](../../../../terms/flowx-ai-designer).
 2. Go to **Content Management** tab and select **Media Library**.
 3. Click **Add new item**, the following details will be displayed:
     * **Upload item** - opens a local file browser
@@ -64,8 +64,8 @@ You have the following options when configuring image components using [UI Desig
 
 * Source Location - here you must select **Media Library** as source location 
 * Image Key  
-    * Option 1: trigger a dropdown with images keys - you can type and filter options or can select from the initial list in dropdown 
-    * Option 2: open a popup with images thumbnails and keys then you can type and filter options or can select from the initial list
+    * **Option 1**: trigger a dropdown with images keys - you can type and filter options or can select from the initial list in dropdown 
+    * **Option 2**: open a popup with images thumbnails and keys then you can type and filter options or can select from the initial list
 
 ![](../../../img/media_library_options.png)
 

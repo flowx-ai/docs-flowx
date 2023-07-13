@@ -6,7 +6,7 @@ sidebar_position: 2
 
 Generic parameters are variables or settings that are used to control the behavior of a software application or system. These parameters are designed to be flexible and adaptable, allowing users to customize the software to their specific needs. 
 
-Through the FLOWX Designer, you can create, edit, import, or export these generic parameters. You can also assign the relevant environment(s) to these parameters, ensuring they are applied exactly where they are needed.
+Through the [**FLOWX Designer**](../../../terms/flowx-ai-designer), you can create, edit, import, or export these generic parameters. You can also assign the relevant environment(s) to these parameters, ensuring they are applied exactly where they are needed.
 
 #### Why do you need generic parameters?
 
@@ -63,7 +63,7 @@ The minimum requirement to build an upload doc/image process:
 
 ### Configuring the task node
 
-Set a Business Rule action on the task node with the following properties:
+Set a [**Business Rule**](../../../terms/business-rules) action on the task node with the following properties:
 
 #### Action Edit
 
@@ -102,7 +102,6 @@ On this node we will define the following:
 * an Upload File action with two child actions:
     * a Business Rule
     * a Send data to user interface action
-
 
 :::info
 Child actions can be marked as callbacks to be run after a reply from an external system is received. They will need to be set when defining the interaction with the external system (the Kafka send action).
