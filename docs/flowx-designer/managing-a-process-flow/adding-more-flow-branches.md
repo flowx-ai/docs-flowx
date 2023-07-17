@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Adding more flow branches
 
-To split the process flow into more steps, you just need to use a [parallel gateway](../../building-blocks/node/parallel-gateway.md) node type.
+To split the [**process flow**](../../terms/flowx-process) into more steps, you just need to use a [parallel gateway](../../building-blocks/node/parallel-gateway.md) node type.
 
 ![Parallel Gateway](../img/process_flowx_parallel.png#center)
 
@@ -12,7 +12,7 @@ To split the process flow into more steps, you just need to use a [parallel gate
 
 To create a flow with two branches:
 
-1. Open **FLOWX Designer** and go to the **Definitions** tab.
+1. Open [**FLOWX Designer**](../../terms/flowx-ai-designer) and go to the **Definitions** tab.
 2. Click on the **New process** button, using the **breadcrumbs** from the top-right corner.
 3. Add a **start node** and a **parallel gateway node**.
 4. Add two different **task nodes** and link them after the **parallel gateway node**.

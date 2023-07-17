@@ -5,9 +5,9 @@ sidebar_position: 3
 # Actions
 
 :::info
-**What is it?** The activity that a node has to handle is defined using an **action**. These can have various types, they can be used to specify the communication details for plugins or integrations.
+**What is it?** The activity that a node has to handle is defined using an [**action**](../../terms/flowx-actions). These can have various types, they can be used to specify the communication details for plugins or integrations.
 
-**Why it is important?** Actions can be used to include business rules in a process, and also to send various data to be displayed in the front-end applications.
+**Why it is important?** Actions can be used to include [**business rules**](../../terms/business-rules) in a [**process**](../../terms/flowx-process), and also to send various data to be displayed in the front-end applications.
 :::
 
 The FLOWX.AI platform handles the following **types of actions**:
@@ -21,7 +21,7 @@ The FLOWX.AI platform handles the following **types of actions**:
 * [Append Params to Parent Process](./append-params-to-parent-process)
 
 :::info
-You can only define and add actions on the following types of nodes: [**Message send task**](../node/message-send-received-task-node.md#message-send-task), [**Task**](../node/task-node.md) and [**User task**](../node/user-task-node.md).
+You can only define and add actions on the following types of [**nodes**](../../terms/flowx-node): [**Message send task**](../node/message-send-received-task-node.md#message-send-task), [**Task**](../node/task-node.md) and [**User task**](../node/user-task-node.md).
 :::
 
 ### Action rules

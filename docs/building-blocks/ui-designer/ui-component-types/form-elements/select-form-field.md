@@ -76,13 +76,22 @@ For more details on how to configure a UI action, click [**here**](../../ui-acti
 
 Styling the Select field using CSS properties allows you to customize the appearance of the dropdown list and make it more visually appealing and consistent with the overall design of the website or application. 
 
-This can improve the user experience and make it easier for users to navigate and interact with the application.
-
 [UI Designer styling](../../ui-designer.md#styling)
 
 For example, a FORM element with a [layout](../../ui-designer.md#layout) configuration including direction of Horizontal and some inputs, and a select element will look like this:
 
 ![](../../img/select_form_field1.png)
+
+#### Icons
+
+When customizing the appearance of a Select UI element that includes an icon, you can utilize the following properties:
+
+* **Icon Key** - the key associated in the Media library, select the icon from the **Media Library**
+* **Icon Color** - select the color of the icon using the color picker 
+
+:::info
+When setting the color, the entire icon is filled with that color, the SVG's fill. Avoid changing colors for multicolor icons.
+:::
 
 ## Example - Dynamic dropdowns
 
@@ -120,9 +129,9 @@ Follow the next steps to create the process from scratch:
    * **Mandatory**
    * **Language** (we used an [**MVEL**](../../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md) script to create a list of objects)
 
-3.  On the **user task node**, add a new **Action** (submit action, this will validate the forms and save the date) with the following properties:
+3. On the **user task node**, add a new **Action** (submit action, this will validate the forms and save the date) with the following properties:
 
-* Action type - **Save Data**
+* **Action type** - Save Data
 * **Manual**
 * **Mandatory**
 * **Data to send** (the key where the data will be sent) - `application`

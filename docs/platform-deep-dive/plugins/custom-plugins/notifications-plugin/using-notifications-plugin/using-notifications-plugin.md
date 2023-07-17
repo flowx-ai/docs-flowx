@@ -1,13 +1,13 @@
 # Using the plugin
 
-After deploying the notifications plugin in your infrastructure, you can start sending notifications by configuring related actions in your process flow definitions.
+After deploying the notifications plugin in your infrastructure, you can start sending notifications by configuring related actions in your [**process flow definitions**](../../../../../terms/flowx-process-definition).
 
-Before adding the corresponding actions in your process definition, you will need to follow a few steps:
+Before adding the corresponding [**actions**](../../../../../terms/flowx-actions) in your process definition, you will need to follow a few steps:
 
 * make sure all prerequisites are prepared, for example, the [notification templates](managing-notification-templates.md) you want to use
 * the database is configured properly
-* for each kafka event type, you will need two Kafka topics: 
-    * one for the request sent from the engine to the plugin 
+* for each [**kafka**](../../../../../terms/flowx-kafka) event type, you will need two Kafka topics: 
+    * one for the request sent from the [**engine**](../../../../../terms/flowxai-process-engine) to the plugin 
     * one for the corresponding reply
 
 [Kafka configuration for Notifications plugin](../../../plugins-setup-guide/notifications-plugin-setup/notifications-plugin-setup.md#kafka-configuration)

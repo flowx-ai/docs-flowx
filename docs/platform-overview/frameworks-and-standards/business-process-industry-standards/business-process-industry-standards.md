@@ -5,7 +5,8 @@ id: business-process-industry-standards
 # Business process industry and standards
 
 The core element of the platform is a process. Think of it as a representation of your business use case, for example making a request for a new credit card, placing an online food order, registering your new car or creating an online fundraiser supporting your cause. 
-To easily design and model process flows, we use the standard BPMN 2.0 graphical representation. In case you are not familiar with the standard, the next section covers some basic concepts:
+
+To easily design and model process flows, we use the standard [**BPMN 2.0**](../../../terms/bpmn) graphical representation. In case you are not familiar with the standard, the next section covers some basic concepts:
 
 [Intro to BPMN](../business-process-industry-standards/intro-to-bpmn/intro-to-bpmn.md)
 

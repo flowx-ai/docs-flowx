@@ -10,7 +10,7 @@ sidebar_position: 1
 * It captures and unifies data offering enterprises **AI-based optimization** and innovation capabilities.
 * It **integrates easily with any infrastructure** and scales it as necessary.
 
-It is a modern **event-driven platform** built on a **microservices architecture**. It uses the most popular **industry standards** for process modeling, business rule management and integrates as easily with legacy systems as with the latest APIs and RPAs.&#x20;
+It is a modern [**event-driven platform**](./terms/event-driven-platform) built on a [**microservices architecture**](./terms/microservices). It uses the most popular **industry standards** for process modeling, business rule management and integrates as easily with legacy systems as with the latest APIs and RPAs.
 
 Also, all applications you create are **containerized, portable, scalable, and resilient** out of the box. You’re free to deploy anywhere and scale to any size without redesign.
 
@@ -31,7 +31,6 @@ With FLOWX you **build omnichannel experiences across all digital channels**, be
 **The UI is generated on the fly, by our AI model.** This means that you don’t need coding or design skills to create interfaces. Of course, you can inject your own code for CSS styling, apply your own design system with logo, corporate colors and fonts - but this is just if you want it. By default, you don’t need it.
 
 And of course, when it comes to processes, **we support a no-code/full-code framework that makes the platform available to any citizen developer**. This brings speed to development, since there is no disconnect between business and IT, supports agile ways of working and overall, has a positive impact over creativity and innovation.
-
 
 ## Next steps
 

@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Adding an action to a node
 
-We use actions to add business decisions to the flow or link the process to custom integrations and plugins.
+We use actions to add business decisions to the [**flow**](../../terms/flowx-process) or link the process to custom integrations and [**plugins**](../../terms/flowx-plugins).
 
 For more information about actions, check the following section:
 

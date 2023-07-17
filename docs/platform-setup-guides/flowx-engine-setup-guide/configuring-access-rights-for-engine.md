@@ -8,28 +8,30 @@ Two different access authorizations are provided, each with specified access sco
 
 Available scopes:
 
-* edit - users are able to start processes for testing and to test action rules
+* **edit** - users are able to start processes for testing and to test action rules
 
 2. **Manage-instances** - for configuring access for manipulating process instances
 
 Available scopes:
 
-* read - users can view the list of process instances
-* admin - users are able to retry an action on a process instance token
+* **read** - users can view the list of process instances
+* **admin** - users are able to retry an action on a process instance token
 
 The Engine service is preconfigured with the following default users roles for each of the access scopes mentioned above:
 
-* manage-processes
+* **manage-processes**
   * edit:
     * ROLE_ADMIN_MANAGE_PROCESS_EDIT
     * ROLE_ADMIN_MANAGE_PROCESS_ADMIN
+  
   * admin:
-    * ROLE_ADMIN_MANAGE_PROCESS_EDIT
     * ROLE_ADMIN_MANAGE_PROCESS_ADMIN
-* manage-instances
+
+* **manage-instances**
   * read:
     * ROLE_ENGINE_MANAGE_INSTANCE_READ
     * ROLE_ENGINE_MANAGE_INSTANCE_ADMIN
+  
   * admin:
     * ROLE_ENGINE_MANAGE_INSTANCE_ADMIN
 

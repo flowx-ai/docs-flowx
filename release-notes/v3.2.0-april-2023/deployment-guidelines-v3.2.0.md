@@ -108,7 +108,7 @@ New environment variables:
 * `STORAGE_S3_OCR_SIGNATURE_FILENAME` 
 
 :::caution IMPORTANT
-The following environment from previous releases must be removed in§§ order to use OCR plugin: `CELERY_BROKER_URL`.
+The following environment from previous releases must be removed in order to use OCR plugin: `CELERY_BROKER_URL`.
 :::
 
 More information available in the below section:

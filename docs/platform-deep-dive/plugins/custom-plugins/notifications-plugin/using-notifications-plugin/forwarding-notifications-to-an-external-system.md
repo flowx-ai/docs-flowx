@@ -26,7 +26,7 @@ Make sure that the **Forward on Kafka** checkbox is ticked, so the notification 
 
 2. Configure the data model for the template. 
 
-3.  To configure a document template, first, you need to define some information stored in the [Body](../../../wysiwyg.md#notification-templates):
+3. To configure a document template, first, you need to define some information stored in the [Body](../../../wysiwyg.md#notification-templates):
 
 * **Type** - MAIL (for email notifications)
 * ❗️**Forward on Kafka** - if this box is checked, the notification is not being sent directly by the plugin to the destination, but forwarded to another adapter

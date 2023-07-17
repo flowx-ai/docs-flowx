@@ -28,7 +28,7 @@ The properties that can be configured are as follows:
 
 When a process instance is initiated, the web application receives all the UI elements that can be displayed in the process under the `templateConfig` key.
 
-When a user task is reached in the process instance, a web socket message is sent to the SDK, triggering it to display the associated UI element.
+When a user task is reached in the process instance, the [**events-gateway**](../../../../platform-deep-dive/core-components/events-gateway.md) receive requests, triggering it to display the associated UI element.
 
 Example:
 
@@ -102,7 +102,6 @@ Example:
       }
     } ]
   } ],
-  "webSocketPath" : "/ws/updates/process",
   "uuid" : "d985d128-ae45-4408-a643-1dd026a644d3",
   "generalData" : null,
   "backCounter" : 0,
@@ -112,7 +111,7 @@ Example:
   "baseUrl" : null
 }
 ```
-2. The following is an example of a web socket progress message:
+2. The following is an example of a progress message:
 
 ```json
 {

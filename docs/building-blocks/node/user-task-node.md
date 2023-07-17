@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # User task node
 
-This node represents an interaction with the user. It is used to display a piece of UI (defined in the [UI Designer](../ui-designer/ui-designer.md)) or a [custom Angular component](../ui-designer/ui-component-types/root-components/custom.md). You can also define actions available for the users to interact with the process.
+This [**node**](../../terms/flowx-node) represents an interaction with the user. It is used to display a piece of UI (defined in the [UI Designer](../ui-designer/ui-designer.md)) or a [custom Angular component](../ui-designer/ui-component-types/root-components/custom.md). You can also define [**actions**](../../terms/flowx-actions) available for the users to interact with the process.
 
 ## Configuring a user task node
 
@@ -33,9 +33,9 @@ When encountering a step with `canGoBack` switched to false, all steps found beh
 
 ![](./img/user_task_node_response_timeout.png)
 
-#### Data stream topics
+#### [**Data stream topics**](../../terms/data-stream-topic)
 
-* **Topic Name** - the topic name where the [process engine](../../platform-deep-dive/core-components/flowx-engine/flowx-engine.md) listens for the response (this should be added to the platform and match the topic naming rule for the engine to listen to it) - available for UPDATES topics (Kafka receive events)
+* **Topic Name** - the topic name where the [**process engine**](../../terms/flowxai-process-engine) listens for the response (this should be added to the platform and match the topic naming rule for the engine to listen to it) - available for UPDATES topics (Kafka receive events)
 
 :::warning
 A naming pattern must be defined on the [process engine configuration](../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#configuring-kafka) to use the defined topics. It is important to know that all the events that start with a configured pattern will be consumed by the Engine. For example, `KAFKA_TOPIC_PATTERN` is the topic name pattern where the Engine listens for incoming Kafka events.
@@ -45,22 +45,22 @@ A naming pattern must be defined on the [process engine configuration](../../pla
 
 #### Task Management
 
-* **Update task management** - force [Task Management](../../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md) plugin to update information about this process after this node
+* **Update task management** - force [Task Management](../../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md) [**plugin**](../../terms/flowx-plugins) to update information about this process after this node
 
 ![](./img/user_task_node_task_mngmnt.png)
 
 ## Configuring the UI
 
-The FLOWX Designer includes an intuitive [UI Designer](../ui-designer/ui-designer.md) (drag-and-drop editor) for creating diverse UI templates. You can use various elements from basic [buttons](../ui-designer/ui-component-types/buttons.md), indicators, and [forms](../ui-designer/ui-component-types/form-elements/), but also predefined [collections](../ui-designer/ui-component-types/collection/collection.md) or [prototypes](../ui-designer/ui-component-types/collection/collection_prototype.md).
+The [**FLOWX Designer**](../../terms/flowx-ai-designer) includes an intuitive [UI Designer](../ui-designer/ui-designer.md) (drag-and-drop editor) for creating diverse UI templates. You can use various elements from basic [buttons](../ui-designer/ui-component-types/buttons.md), indicators, and [forms](../ui-designer/ui-component-types/form-elements/), but also predefined [collections](../ui-designer/ui-component-types/collection/collection.md) or [prototypes](../ui-designer/ui-component-types/collection/collection_prototype.md).
 
 ### Accessing the UI Designer
 
-To access the UI Designer, follow the next steps:
+To access the [**UI Designer**](../../terms/flowx-ai-ui-designer), follow the next steps:
 
 1. Open **FLOWX Designer** and from the **Processes** tab select **Definitions**.
 2. Select a **process** from the process definitions list.
 3. Click the **Edit** **process** button.
-4. Select a **user task** **node** from the Process Designer then click the **brush** icon to open the **UI Designer**.
+4. Select a **user task** **node** from the Pro dcess Designer then click the **brush** icon to open the **UI Designer**.
 
 ![](./img/access_ui_designer.gif)
 

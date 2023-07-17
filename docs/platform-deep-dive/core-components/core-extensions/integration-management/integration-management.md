@@ -4,15 +4,14 @@ sidebar_position: 3
 
 # Integration management
 
-Integration management helps you configure integrations between the following components: FLOWX.AI Engine, plugins, or different adapters. The only requirement is that they should connect to [Kafka](../../../../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-kafka-concepts.md) to communicate with the [FLOWX.AI Engine](../../flowx-engine/).
+Integration management helps you configure integrations between the following components: [**FLOWX.AI Engine**](../../../../terms/flowxai-process-engine), [**plugins**](../../../../terms/flowx-plugins), or different adapters. The only requirement is that they should connect to [Kafka](../../../../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-kafka-concepts.md) to communicate with the [FLOWX.AI Engine](../../flowx-engine/).
 
 Integration management enables you to keep track of each integration and its correspondent component and different scenarios used: creating an OTP, document generation, notifications, etc.
 
 [Integrations](../../../integrations/integrations.md)
 
-
 :::warning
-Integrations must be compatible with Kafka, so they can communicate with external adapters and FLOWX.AI Engine. Communication is done through Kafka topics (handled by consumers and producers, see [Kafka configuration](../../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#configuring-kafka) section for more details).
+Integrations must be compatible with [**Kafka**](../../../../terms/flowx-kafka), so they can communicate with external adapters and [**FLOWX.AI Engine**](../../../../terms/flowxai-process-engine). Communication is done through Kafka topics (handled by consumers and producers, see [Kafka configuration](../../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#configuring-kafka) section for more details).
 :::
 
 After defining one integration (inside **Integration management**) you can open a compatible node and start using them.

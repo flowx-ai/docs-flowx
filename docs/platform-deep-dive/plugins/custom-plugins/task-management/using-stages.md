@@ -6,7 +6,7 @@ You can define specific stages during the execution of a process. Stages are con
 
 To create a new stage, follow the next steps:
 
-1. Open **FLOWX Designer**.
+1. Open [**FLOWX Designer**](../../../../terms/flowx-ai-designer).
 2. Go to Task Manager and select **Stages**.
 3. Click **New Stage.**
 4. Fill in the required details.

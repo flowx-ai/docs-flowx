@@ -10,8 +10,8 @@ The plugin can be used for sending many kinds of notifications such as emails or
 
 To configure a business process that sends notifications you must follow the next steps:
 
-* use FLOWX Designer app to create/edit a [notification template](./managing-notification-templates.md)
-* use Process Designer to add a [**Message send task**](../../../../../building-blocks/node/message-send-received-task-node.md#message-send-task) and a [**Message received task**](../../../)
+* use [**FLOWX Designer**](../../../../../terms/flowx-ai-designer) web app to create/edit a [notification template](./managing-notification-templates.md)
+* use [**Process Designer**](../../../../../terms/flowx-process-designer) to add a [**Message send task**](../../../../../building-blocks/node/message-send-received-task-node.md#message-send-task) and a [**Message received task**](../../../)
 * configure the needed [actions](../../../../../building-blocks/actions/actions.md)
 * configure the request body
 * configure the needed [Kafka topics](../../../plugins-setup-guide/notifications-plugin-setup/notifications-plugin-setup.md)

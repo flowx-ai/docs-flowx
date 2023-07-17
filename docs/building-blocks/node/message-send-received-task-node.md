@@ -3,7 +3,7 @@ sidebar_position: 2
 ---
 # Message send/Message received task nodes
 
-**Message send task** and **message received** nodes are used to handle the interaction between a running process and any external systems.
+**Message send task** and **message received** [**nodes**](../../terms/flowx-node) are used to handle the interaction between a running process and any external systems.
 
 ## Message send task
 
@@ -13,7 +13,7 @@ This node is used to configure messages that should be sent to external systems.
 
 ### Configuring a message send task node
 
-Node configuration is done by accessing the **Node Config** tab. You have the following configuration options for a message send task node**:**
+Node configuration is done by accessing the **Node Config** tab. You have the following configuration options for a message send task node:
 
 #### General Config
 
@@ -31,19 +31,17 @@ When encountering a step with `canGoBack` switched to false, all steps found beh
 
 ![General Config](./img/message_send_task_action.png)
 
-To configure a message send task node, we first need to add a new node and then configure an action (**Kafka Send Action** type):
+To configure a message send task node, we first need to add a new node and then configure an [**action**](../../terms/flowx-actions) (**Kafka Send Action** type):
 
-1. Open **Process Designer** and start configuring a process.
+1. Open [**Process Designer**](../../terms/flowx-process-designer) and start configuring a process.
 2. Add a **message send task** node.
 3. Select the **message send task** node and open **node configuration**.
-4. Add an **action**, the type of the action set to **Kafka send**.
+4. Add an [**action**](../../terms/flowx-actions), the type of the action set to **Kafka send**.
 5. :exclamation:A few action parameters will need to be filled in depending on the selected action type.
 
 ![](./img/message_send_node.gif)
 
-Multiple options are available for this type of action and can be configured via the FLOWX.AI Designer:
-
-Multiple options are available for this type of action and can be configured via the FLOWX.AI Designer. To configure and [add an action to a node](../../flowx-designer/managing-a-process-flow/adding-an-action-to-a-node.md), use the **Actions** tab at the node level, which has the following configuration options:
+Multiple options are available for this type of action and can be configured via the FLOWX.AI Designer. To configure and [add an action to a node](../../flowx-designer/managing-a-process-flow/adding-an-action-to-a-node.md), use the [**Actions**](../../terms/flowx-actions) tab at the node level, which has the following configuration options:
 
 * [Action Edit](#action-edit)
 * [Back in steps (for Manual actions)](#back-in-steps)

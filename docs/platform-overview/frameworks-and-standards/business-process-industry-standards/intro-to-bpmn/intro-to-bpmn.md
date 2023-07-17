@@ -14,7 +14,7 @@ This is why we chose it for modeling the process flows. :sparkles:
 
 ## BPMN 2.0 elements
 
-A BPMN business process flow is represented as a set of process elements connected by sequences.
+A BPMN business [**process flow**](../../../../terms/flowx-process) is represented as a set of process elements connected by sequences.
 
 Let's review the most common types of elements:
 
@@ -26,17 +26,17 @@ Events describe something that happens during the course of a process. There are
 
 ### Activities
 
-An activity represents a unit of work to be performed by the business process. An activity can be atomic (a task) or can represent a group of more activities (a sub-process).
+An activity represents a unit of work to be performed by the business process. An activity can be atomic (a task) or can represent a group of more activities (a subprocess).
 
 ![various types of activities](./img/activities.png)
 
 ### Gateways
 
-Gateways are used to control how a process flows. They act as a decision point that picks which sequence flow should the process instance take. This is based on the result of the evaluation of condition(s) specified (in case of exclusive gateways) or they can be used to split a process into more branches (in case of parallel gateways).
+Gateways are used to control how a process flows. They act as a decision point that picks which sequence flow should the [**process instance**](../../../../terms/flowx-process-instance) take. This is based on the result of the evaluation of condition(s) specified (in case of exclusive gateways) or they can be used to split a process into more branches (in case of parallel gateways).
 
 ![exclusive and parallel gateways](./img/gateways.png)
 
-### Pools and lanes <a href="#pools-and-lanes" id="pools-and-lanes"></a>
+### Pools and lanes 
 
 Pools and lanes are used in order to group the process steps by process participants. To show that certain user roles are responsible for performing specific process steps you can divide the process using lanes.
 

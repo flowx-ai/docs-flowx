@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Enumerations
 
-A collection of values that can be utilized as content in UI components or templates is managed using **enumerations**. Values can be defined for certain [source systems](source-systems) or [languages](languages).
+A collection of values that can be utilized as content in UI components or templates is managed using [**enumerations**](../../../../terms/flowx-enumerations). Values can be defined for certain [source systems](source-systems) or [languages](languages).
 
 ![](../../../img/enumerations.png)
 

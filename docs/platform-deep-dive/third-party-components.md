@@ -22,6 +22,15 @@ FLOWX.AI uses a number of third-party software components:
 
 ### Third-party open-source components supported/tested versions
 
+:::info COMPATIBILITY
+The FLOWX.AI platform has been thoroughly tested and recommends the following versions for optimal compatibility. However, we understand that our clients may have unique requirements and preferences, so we also provide support for other versions of third-party components. Please refer to the compatibility matrix below when exploring alternative versions. If any incompatibility arises between FLOWX products and other third-party versions, we consider it a bug and will promptly address it.
+
+Compatibility Matrix:
+
+* FLOWX.AI Platform: Recommended and tested versions
+* Third-Party Components: Supported versions based on specific requirements and client preferences
+:::
+
 | FLOWX.AI Platform Version | Component name               | Supported/tested versions    |
 | ------------------------- | ---------------------------- | ---------------------------- |
 | 2.3.0 → 3.3.0             | Keycloak                     | 18.0.x                       |
@@ -36,6 +45,7 @@ FLOWX.AI uses a number of third-party software components:
 | 2.3.0 → 3.3.0             | Fluentd                      | 3.3.0                        |
 | 2.3.0 → 3.3.0             | Kibana                       | 7.17                         |
 | 2.3.0 → 3.3.0             | S3 (Min.IO) / minio-operator | 2022-05-26T05-48-41Z / 4.5.4 |
+
 
 
 ### Third-party components supported/tested versions

@@ -10,6 +10,10 @@
 
 A Message Catch Start Event is a special event in a process that initiates the start of a process instance upon receiving a specific message. It acts as the trigger for the process, waiting for the designated message to arrive. Once the message is received, the process instance is created and begins its execution, following the defined process flow from that point onwards. The Message Catch Start Event serves as the entry point for the process, enabling it to start based on the occurrence of the expected message.
 
+:::caution
+It is mandatory that in order to use this type of node together with task management plugin, to have a service account defined in your identity solution. For more information, check our documentation in how to create service accounts using Keycloak, [**here**](../../../platform-setup-guides/access-management/configuring-an-iam-solution.md#adding-service-accounts)
+:::
+
 ![](../img/throw_message_event.png#center)
 
 #### General config
@@ -20,7 +24,7 @@ A Message Catch Start Event is a special event in a process that initiates the s
 * **The data field** - allows the user to define a JSON structure with the data to be sent along with the message
 * **Stage** - assign a stage to the node
 
-![](../img/message_throw_interm_config.png)
+![](../img/message_catch_start_config.png)
 
 
 

@@ -1,38 +1,39 @@
 # Mock integrations
 
-In case you need to test the business process flow, but not all integrations are completed, you can still do so by using a mock integrations server included in the platform.
+If you need to test the business process flow but haven't completed all integrations, you can still do so by utilizing the mock integrations server included in the platform.
 
 ## Setup
 
-Configure DB settings for the microservice, it uses a Postgres DB.
+To begin, configure the microservice's DB settings to use a Postgres DB. Then, deploy the mocked adapter microservice.
 
-Deploy the mocked adapter microservice.
+## Adding a new integration
 
-## Add a new integration
+Setting up a mocked integration requires only one step: adding a mock Kafka request and response.
 
-The only thing that needs to be done in order to set up a mocked integration is to add a mock Kafka request and response.
+You have two options for accomplishing this:
 
-This can be done by adding the info directly to the DB or by using the provided API.
+1. Add the information directly to the DB.
+2. Use the provided API.
 
-You will need to add a separate entry for each Kafka message exchange between the engine and the integration.
+For each Kafka message exchange between the engine and the integration, you need to create a separate entry.
 
 <details>
 <summary><span class="postcall"><b>POST</b></span><b> MOCK_ADAPTER_URL/api/kafka-exchanges/ </b></summary>
 
-**add new Kafka exchange mock**
+**Add new Kafka exchange mock**
 
 **Parameters**
 
 **Body**
 
-* `sentMessageJson` (string) - the mocked json message that the integration will send
-* `receivedMessageJson` (string) - the json message the integration should reply to
+* `sentMessageJson` (string) - the mocked JSON message that the integration will send
+* `receivedMessageJson` (string) - the JSON message the integration should reply with
 * `outgoingTopic` (string) - should match the topic the engine listens on for replies from the integration
 * `incomingTopic` (string) - should match the topic name that the integration listens on
 
 **Responses**
 
-200 - the newly added kafka exchange will be returned
+200 - returns the newly added Kafka exchange
 
 </details>
 
@@ -40,9 +41,9 @@ You will need to add a separate entry for each Kafka message exchange between th
 <details>
 <summary><span class="getcall"><b>GET</b></span><b> MOCK_ADAPTER_URL/api/kafka-exchanges/ </b></summary>
 
-**view all available Kafka exchanges**
+**View all available Kafka exchanges**
 
-Returns the complete list of all available mocked Kafka exchange messages.
+Retrieves the complete list of all available mocked Kafka exchange messages.
 
 **Parameters**
 

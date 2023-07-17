@@ -1,14 +1,16 @@
 # Creating a Kafka producer 
 
 :::tip
-This guide is created using Spring Boot.
+This guide focuses on creating a [**Kafka**](../../terms/flowx-kafka) producer using Spring Boot.
 :::
 
-Here are some tips regarding needed configurations and code samples for implementing a Kafka producer using Java.
+Here are some tips, including the required configurations and code samples, to help you implement a Kafka producer in Java.
 
 ## Required dependencies
 
-```bash
+Ensure that you have the following dependencies in your project:
+
+```xml
 <dependency>
     <groupId>org.springframework.kafka</groupId>
     <artifactId>spring-kafka</artifactId>
@@ -35,7 +37,9 @@ Here are some tips regarding needed configurations and code samples for implemen
 
 ## Configuration
 
-```bash
+Ensure that you have the following configuration in your `application.yml` or `application.properties` file:
+
+```yaml
 spring.kafka:
       bootstrap-servers: URL_OF_THE_KAFKA_SERVER
       producer:
@@ -51,16 +55,16 @@ spring.kafka:
 
 kafka:
   authorizationExceptionRetryInterval: 10
-  ADD_NEEDED_TOPIC_NAMES_HERE # make sure to use the correct naming pattern for topics used to send data to the FlowX Engine
+  ADD_NEEDED_TOPIC_NAMES_HERE # make sure to use the correct naming pattern for topics used to send data to the FLOWX Engine
 ```
 
 ## Code sample for a Kafka producer
 
 :::danger
-In order for the adapter to communicate correctly with the Engine, you have to make sure to include all the received Kafka headers in the response that is sent back to the FLOWX Engine.
+Ensure that you have the necessary KafkaTemplate bean autowired in your producer class. The sendMessage method demonstrates how to send a message to a Kafka topic with the specified headers and payload. Make sure to include all the received Kafka headers in the response that is sent back to the [**FLOWX Engine**](../../terms/flowxai-process-engine).
 :::
 
-```
+```java
 private final KafkaTemplate<String, Object> kafkaTemplate;
 
 public void sendMessage(String topic, Headers headers, Object payload) {

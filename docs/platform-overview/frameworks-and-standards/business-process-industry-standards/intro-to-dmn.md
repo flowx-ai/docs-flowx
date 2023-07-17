@@ -8,19 +8,19 @@ As we've seen in the previous chapter, Business Process Model and Notation ([**B
 For more information on how to define DMN gateway decisions, check the [**Exclusive gateway node**](../../../building-blocks/node/exclusive-gateway-node.md) section.
 :::
 
-We needed **a convenient way of specifying the business rules** and we picked two possible ways of writing business rules:
+We needed a convenient way of specifying the [**business rules**](../../../terms/business-rules) and we picked two possible ways of writing business rules:
 
 * defining them as DMN decisions
 
 :::info
-You can now define a DMN Business Rule Action directly in FLOWX Designer. For more information, check the [**DMN Business Rule Action**](../../../building-blocks/actions/business-rule-action/dmn-business-rule-action.md) section.
+You can now define a DMN Business Rule Action directly in [**FLOWX Designer**](../../../terms/flowx-ai-designer). For more information, check the [**DMN Business Rule Action**](../../../building-blocks/actions/business-rule-action/dmn-business-rule-action.md) section.
 :::
 
 * adding [MVEL](intro-to-mvel.md#what-is-mvel) scripts
 
 ### What is Decision Model and Notation (DMN)?
 
-**Decision Model and Notation** (or DMN) is a graphical language that is used to specify business decisions. DMN acts as a translator, converting the code behind complex decision-making into easily readable diagrams.&#x20;
+**Decision Model and Notation** (or DMN) is a graphical language that is used to specify business decisions. DMN acts as a translator, converting the code behind complex decision-making into easily readable diagrams.
 
 **The Business Process Model and Notation** is used to create the majority of process models **(BPMN)**. The DMN standard was developed to complement BPMN by providing a mechanism for modeling decision-making represented by a Task within a process model. DMN does not have to be used in conjunction with BPMN, but it is highly compatible.
 
@@ -30,7 +30,7 @@ FLOWX.AI supports [DMN 1.3](https://www.omg.org/spec/DMN/1.3/) version.
 
 ### DMN Elements
 
-There are 4 basic elements of the **Decision Model** **and Notation**:
+There are 4 basic elements of the **Decision Model and Notation**:
 
 * [Decision](intro-to-dmn.md#decision)
 * [Business Knowledge Model](intro-to-dmn.md#business-knowledge-model)
@@ -63,7 +63,7 @@ This is the information used as an input to the normal decision. It’s the vari
 
 #### Knowledge Source
 
-It’s a source of knowledge that conveys a kind of legitimacy to the business.&#x20;
+It’s a source of knowledge that conveys a kind of legitimacy to the business.
 
 **Example**: policy, legislation, rules.
 

@@ -6,15 +6,15 @@ sidebar_position: 2
 
 ## What is a node?
 
-A node is a visual representation of a point in your process. To mark the entrance of a record into the process, nodes are added at certain process points.
+A node is a visual representation of a point in your [**process**](../../terms/flowx-process). To mark the entrance of a record into the process, [**nodes**](../../terms/flowx-node) are added at certain process points.
 
 ![](./img/node_diagram.png)
 
-FLOWX platforms support different [types of nodes], each needing a different configuration to fulfill its purpose in the business flow.
+FLOWX platforms support different types of nodes, each needing a different configuration to fulfill its purpose in the business flow.
 
 ## Node types
 
-Let's go through the most important types of nodes. These can be selected when adding a new node to a [process definition](../process/process-definition/process-definition.md) using the FLOWX Designer:
+Let's go through the most important types of nodes. These can be selected when adding a new node to a [process definition](../process/process-definition/process-definition.md) using the [**FLOWX Designer**](../../terms/flowx-ai-designer):
 
 ![](./img/nodes_types.png)
 
@@ -27,6 +27,7 @@ Let's go through the most important types of nodes. These can be selected when a
 + ​**Exclusive gateways**​​ - are used to mark a decision point in the process flow and decide on the branch that needs to be followed
 + **​Parallel gateways**​​ - used to split the process flow into two or more [branches](../../flowx-designer/managing-a-process-flow/adding-more-flow-branches.md) that take place at the same time
 + **​Milestones**​​ - start and end nodes for milestones are currently used to mark the beginning and end of definitions for [UI components](../ui-designer/ui-component-types/ui-component-types.md) (like steppers displayed on a page)
++ **Message events** - events that make use of a message reference to pause execution until a suitable message is received
 
 Advanced node types:​
 

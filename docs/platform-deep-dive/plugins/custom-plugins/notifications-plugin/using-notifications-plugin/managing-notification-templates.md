@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Managing notification templates
 
-You can create and manage notification templates using FLOWX.AI Designer web app, by accessing the dedicated section.
+You can create and manage notification templates using [**FLOWX.AI Designer**](../../../../../terms/flowx-ai-designer) web app, by accessing the dedicated section.
 
 ![](../../../../img/notif_overview.png)
 
@@ -25,7 +25,7 @@ You can edit the content of a notification template by using the [WYSIWYG](../..
 
 ### Configuring the data model
 
-Using the data model, you can define key pair values (parameters) that will be displayed and reused in the editor. Multiple parameters can be added:
+Using the [**data model**](../../../../../terms/flowx-data-model), you can define key pair values (parameters) that will be displayed and reused in the editor. Multiple parameters can be added:
 
 * STRING
 * NUMBER

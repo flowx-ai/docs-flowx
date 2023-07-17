@@ -4,7 +4,7 @@ sidebar_position: 8
 
 # Source systems
 
-If multiple enumerations values are needed to communicate with other systems, source systems can be used.
+If multiple [**enumerations**](../../../../terms/flowx-enumerations) values are needed to communicate with other systems, source systems can be used.
 
 ![](../../../img/source_system.png)
 
@@ -20,7 +20,7 @@ On the main screen inside **Source systems**, you have the following elements:
 
 To add a new source system, follow the next steps.
 
-1. Go to **FLOWX Designer** and select the **Content Management** tab.
+1. Go to [**FLOWX Designer**](../../../../terms/flowx-ai-designer) and select the **Content Management** tab.
 2. Select **Source systems** from the list.
 3. Fill in the necessary details:
    * Code

@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Substitution tags
 
-Substitution tags are used to generate dynamic content across the platform. As enumerations, substitution tags can be defined for each language set for the solution.
+Substitution tags are used to generate dynamic content across the platform. As [**enumerations**](../../../../terms/flowx-enumerations), substitution tags can be defined for each language set for the solution.
 
 ![](../../../img/substitution_tags.png)
 
@@ -28,7 +28,7 @@ On the main screen inside **Substitution tags**, you have the following elements
 
 To add a new substitution tag, follow the next steps.
 
-1. Go to **FLOWX Designer** and select the **Content Management** tab.
+1. Go to [**FLOWX Designer**](../../../../terms/flowx-ai-designer) and select the **Content Management** tab.
 2. Select **Substitution tags** from the list.
 3. Click **New value**.
 4. Fill in the necessary details:
@@ -39,7 +39,7 @@ To add a new substitution tag, follow the next steps.
 ![](../../../img/add_new_substitution.png)
 
 :::caution
-When working with substitution tags or other elements that imply values from other languages defined in the CMS, when running a process, the default values extracted will be the ones marked by the default language.
+When working with substitution tags or other elements that imply values from other languages defined in the CMS, when running a [**process**](../../../../terms/flowx-process-instance), the default values extracted will be the ones marked by the default language.
 :::
 
 ### Getting a substitution tag by key

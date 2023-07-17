@@ -1,19 +1,17 @@
 
 # Managing HTML templates
 
-## Defining an HTML template format
+In the Document Management Plugin, you have the flexibility to define and manage HTML templates for generating documents. These templates can incorporate various types of parameters to customize the content. Let's explore the different types of parameters and their specifications:
 
-The template can support the following types of parameters:
+## Configuring HTML templates
 
-1. **Text**
+### Text parameters
 
-Use case: include the company name and registration number in an offer document
+Text parameters are used to include dynamic text in the template. For example, you can include the company name and registration number in an offer document. Here's an example of HTML template specifications:
 
 ![](../../../../../img/docplugin_managing_html_template.png)
 
-HTML template specifications:
-
-```
+```html
 <p><strong>Lorem ipsum: <span th:text="${companyName}"></span></strong>, dolor sit amet <strong><span th:text="${cui}"></span></strong>.</p>
 ```
 
@@ -28,13 +26,11 @@ Data specifications:
 }
 ```
 
-**2. Dynamic tables - repeatable rows**
+### Dynamic tables - repeatable rows
 
-Use case: display in a table as many rows as the elements of a generated list of objects; in the example below we are listing the name and value of all the benefits included in a commercial offer
+Dynamic tables are useful when you want to display a table with repeatable rows. Each row can represent a different element from a generated list of objects. Here's an example of HTML template specifications:
 
 ![](../../../../../img/dynamic_tables_plugin_doc.png)
-
-HTML template specifications:
 
 ```html
 <table>
@@ -71,13 +67,11 @@ Data specifications:
 
 ```
 
-**3. Dynamic table - repeatable table**
+### Dynamic tables - repeatable table
 
-Use case: display a table as many times as the elements of a generated list of objects; in the example below we are listing the consumption points registered through the process
+This type of dynamic table allows you to display a table multiple times based on the elements of a generated list of objects. Here's an example of HTML template specifications:
 
 ![](../../../../../img/dynamic_table_reusable_table.png)
-
-HTML template specifications:
 
 ```html
 <p>Offer:</p>
@@ -147,13 +141,11 @@ Data specifications:
   }
 ```
 
-**4. Dynamic sections**
+### Dynamic sections
 
-Use case: display a paragraph only when a certain condition is met; in the example below, we display a section only if the client type is PJ
+Dynamic sections allow you to display specific content based on certain conditions. For example, you can display a paragraph only when a certain condition is met. Here's an example of HTML template specifications:
 
 ![](../../../../../img/docplugin_type_of_client.png)
-
-HTML template specifications:
 
 ```html
 <span th:if="${pjCLient==true}">
@@ -175,13 +167,11 @@ Data specifications:
   }
 ```
 
-**5. Images**
+### Images
 
-Use case: include in the final document images that are generated throughout the process; in the example below, we are attaching to the document the holograph signature of the client
+You can include images in your final document by referencing them in the template. Here's an example of HTML template specifications:
 
 ![](../../../../../img/docplugin_images.png)
-
-HTML template specifications:
 
 ```html
 <td class='align'><img th:src="*{'data:image/png;base64,'+signature}" alt=\"\" height='100px'/></td>
@@ -189,23 +179,25 @@ HTML template specifications:
 
 Data specifications:
 
-```
+```json
 "data": {
     "signature": "INSERT_BASE64_IMAGE"
   }
 ```
 
-**6. Barcodes**
+### Barcodes
 
- To opt for including a barcode, the parameter `includeBarcode` should be set as true.
+If you want to include a barcode, you can set the `includeBarcode` parameter to true.
 
-**7. Lists**
+For information on how to use barcodes and OCR, check the following section.
 
-Use case: display a bulleted list with values from selected items in a checkbox; in the example below we are listing the source of income:
+[OCR plugin](../../../ocr-plugin.md)
+
+### Lists
+
+Lists are useful for displaying values from selected items in a checkbox as a bulleted list. Here's an example of HTML template specifications:
 
 ![](../../../../../img/docplugin_income_source.png)
-
-HTML template specifications:
 
 ```html
   <div th:if="${incomeSource != null}">

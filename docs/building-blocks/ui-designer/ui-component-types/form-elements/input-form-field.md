@@ -79,6 +79,24 @@ For more details on how to configure a UI action, click [**here**](../../ui-acti
 
 ### Input styling
 
+#### Icons
+
+* **Icon Key** - the key associated in the Media library, select the icon from the **Media Library**
+* **Icon Color** - select the color of the icon using the color picker 
+
+:::info
+When setting the color, the entire icon is filled with that color, the SVG's fill.
+:::
+
+You have the option to enhance the Input element by incorporating two types of icons:
+
+* **Left Icon**: You can include an icon on the left side of the Input element. This icon can serve as a visual cue or symbol associated with the input field's purpose or content.
+* **Right Icon**: Same as left icon.
+
+By utilizing these two types of icons, you can provide users with a more intuitive and visually appealing experience when interacting with the Input element.
+
+![](../../../../platform-deep-dive/img/input_icons.png)
+
 * The Input Field can be styled using valid CSS properties (more details [here](../../#styling))
 
 ![](../../img/input_form_field_styling.gif)

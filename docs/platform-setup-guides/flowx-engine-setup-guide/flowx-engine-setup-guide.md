@@ -116,6 +116,8 @@ The configuration related to consumers (group ids and thread numbers) can be con
 
 * `KAFKA_CONSUMER_GROUP_ID_PROCESS_OPERATIONS` - related to a Kafka consumer group that receives messages related to processing operations from task management, it is used to configure the group ID for this consumer group
 
+* `KAFKA_CONSUMER_GROUP_ID_PROCESS_BATCH_PROCESSING`- related to a Kafka consumer group that receives messages related to processing bulk operations from task management, it is used to configure the group ID for this consumer group
+
 * `KAFKA_CONSUMER_THREADS_NOTIFY_ADVANCE` - the number of threads used by a Kafka consumer application to notify the Kafka broker about the progress of
 
 * `KAFKA_CONSUMER_THREADS_NOTIFY_PARENT` - the number of threads used by a Kafka consumer application, related to a process when it is blocked 
@@ -132,23 +134,29 @@ The configuration related to consumers (group ids and thread numbers) can be con
 
 * `KAFKA_CONSUMER_THREADS_PROCESS_OPERATIONS` - the number of threads used by a Kafka consumer application, related to processing operations from task management
 
+* `KAFKA_CONSUMER_THREADS_PROCESS_BATCH_PROCESSING` - the number of threads used by a Kafka consumer application, related to processing bulk operations from task management
 
-| Default parameter (env var)                  | Default FLOWX.AI value (can be overwritten) |
-| -------------------------------------------- | ------------------------------------------- |
-| KAFKA_CONSUMER_GROUP_ID_NOTIFY_ADVANCE       | notif123-preview                            |
-| KAFKA_CONSUMER_GROUP_ID_NOTIFY_PARENT        | notif123-preview                            |
-| KAFKA_CONSUMER_GROUP_ID_ADAPTERS             | notif123-preview                            |
-| KAFKA_CONSUMER_GROUP_ID_SCHEDULER_RUN_ACTION | notif123-preview                            |
-| KAFKA_CONSUMER_GROUP_ID_PROCESS_START        | notif123-preview                            |
-| KAFKA_CONSUMER_GROUP_ID_PROCESS_EXPIRE       | notif123-preview                            |
-| KAFKA_CONSUMER_GROUP_ID_PROCESS_OPERATIONS   | notif123-preview                            |
-| KAFKA_CONSUMER_THREADS_NOTIFY_ADVANCE        | 6                                           |
-| KAFKA_CONSUMER_THREADS_NOTIFY_PARENT         | 6                                           |
-| KAFKA_CONSUMER_THREADS_ADAPTERS              | 6                                           |
-| KAFKA_CONSUMER_THREADS_SCHEDULER_RUN_ACTION  | 6                                           |
-| KAFKA_CONSUMER_THREADS_PROCESS_START         | 6                                           |
-| KAFKA_CONSUMER_THREADS_PROCESS_EXPIRE        | 6                                           |
-| KAFKA_CONSUMER_THREADS_PROCESS_OPERATIONS    | 6                                           |
+
+| Default parameter (env var)                      | Default FLOWX.AI value (can be overwritten) |
+| ------------------------------------------------ | ------------------------------------------- |
+| KAFKA_CONSUMER_GROUP_ID_NOTIFY_ADVANCE           | notif123-preview                            |
+| KAFKA_CONSUMER_GROUP_ID_NOTIFY_PARENT            | notif123-preview                            |
+| KAFKA_CONSUMER_GROUP_ID_ADAPTERS                 | notif123-preview                            |
+| KAFKA_CONSUMER_GROUP_ID_SCHEDULER_RUN_ACTION     | notif123-preview                            |
+| KAFKA_CONSUMER_GROUP_ID_SCHEDULER_ADVANCING      | notif123-preview                            |
+| KAFKA_CONSUMER_GROUP_ID_PROCESS_START            | notif123-preview                            |
+| KAFKA_CONSUMER_GROUP_ID_PROCESS_EXPIRE           | notif123-preview                            |
+| KAFKA_CONSUMER_GROUP_ID_PROCESS_OPERATIONS       | notif123-preview                            |
+| KAFKA_CONSUMER_GROUP_ID_PROCESS_BATCH_PROCESSING | notif123-preview                            |
+| KAFKA_CONSUMER_THREADS_NOTIFY_ADVANCE            | 6                                           |
+| KAFKA_CONSUMER_THREADS_NOTIFY_PARENT             | 6                                           |
+| KAFKA_CONSUMER_THREADS_ADAPTERS                  | 6                                           |
+| KAFKA_CONSUMER_THREADS_SCHEDULER_ADVANCING       | 6                                           |
+| KAFKA_CONSUMER_THREADS_SCHEDULER_RUN_ACTION      | 6                                           |
+| KAFKA_CONSUMER_THREADS_PROCESS_START             | 6                                           |
+| KAFKA_CONSUMER_THREADS_PROCESS_EXPIRE            | 6                                           |
+| KAFKA_CONSUMER_THREADS_PROCESS_OPERATIONS        | 6                                           |
+| KAFKA_CONSUMER_THREADS_PROCESS_BATCH_PROCESSING  | 6                                           |
 
 
 It is important to know that all the events that start with a configured pattern will be consumed by the engine. This makes it possible to create a new integration and connect it to the engine without changing the configuration of the engine.
@@ -187,19 +195,70 @@ The suggested topic pattern naming convention is the following:
 | KAFKA_TOPIC_PATTERN                | ai.flowx.dev.engine.receive.*               |
 | KAFKA_TOPIC_LICENSE_OUT            | ai.flowx.dev.core.trigger.save.license.v1   |
 
-#### **Topics related to the Task Management plugin**
+#### Topics related to the Task Management plugin
 
 * `KAFKA_TOPIC_TASK_OUT` - used for sending notifications to the plugin
 
-* `KAFKA_TOPIC_PROCESS_OPERATIONS_IN` - used for receiving calls from the task management plugin
+* `KAFKA_TOPIC_PROCESS_OPERATIONS_IN` - used for receiving calls from the task management plugin with information regarding operations performed
 
-| Default parameter (env var)       | Default FLOWX.AI value (can be overwritten)    |
-| --------------------------------- | ---------------------------------------------- |
-| KAFKA_TOPIC_TASK_OUT              | ai.flowx.dev.plugin.tasks.trigger.save.task.v1 |
-| KAFKA_TOPIC_PROCESS_OPERATIONS_IN | ai.flowx.dev.core.trigger.operations.v1        |
+##### Response example
+
+```json
+{
+  "operationType": "UNASSIGN", //type of operation performed in Task Management plugin
+  "taskId": "some task id",
+  "processInstanceUuid": "1cff0b7d-966b-4b35-9e9b-63b1d6757ec6",
+  "swimlaneName": "Default",
+  "swimlaneId": "51ec1241-fe06-4576-9c84-31598c05c527",
+  "owner": {
+    "firstName": null,
+    "lastName": null,
+    "username": "service-account-flowx-process-engine-account",
+    "enabled": false
+  },
+  "author": "admin@flowx.ai"
+}
+```
+
+* `KAFKA_TOPIC_PROCESS_OPERATIONS_BULK_IN` - on this topic, you can perform operations from the "KAFKA_TOPIC_PROCESS_OPERATIONS_IN" topic and send them as an array, allowing you to send multiple operations at once
+
+##### Response example
+
+```json
+{
+    "operations": [
+    {
+       "operationType": "TERMINATE",
+        "processInstanceUuid": "6ae8274a-2778-4ff9-8fcb-6c84a5eb2bc6"
+        "taskId": "some task id"
+    },
+    {
+       "operationType": "HOLD",
+        "processInstanceUuid": "6ae8274a-2778-4ff9-8fcb-6c84a5eb2bc6"
+        "taskId": "some task id"
+    }
+    ]
+}
+```      
 
 
-#### **Topics related to the scheduler extension**
+| Default parameter (env var)            | Default FLOWX.AI value (can be overwritten)    |
+| -------------------------------------- | ---------------------------------------------- |
+| KAFKA_TOPIC_TASK_OUT                   | ai.flowx.dev.plugin.tasks.trigger.save.task.v1 |
+| KAFKA_TOPIC_PROCESS_OPERATIONS_IN      | ai.flowx.dev.core.trigger.operations.v1        |
+| KAFKA_TOPIC_PROCESS_OPERATIONS_BULK_IN | ai.flowx.core.trigger.operations.bulk.v1       |
+
+
+:::info
+Task manager operations could be the following: assignment, unassignment, hold, and unhold, it is matched with the `...operations_out` topic on the engine side. For more information check the Task Management plugin documentation:
+
+📄 [<u>**Task management plugin**</u>](../../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md)
+
+
+:::
+
+
+#### Topics related to the scheduler extension
 
 [Scheduler](../../platform-deep-dive/core-components/core-extensions/scheduler.md)
 
@@ -223,7 +282,7 @@ The suggested topic pattern naming convention is the following:
 
 [Using the scheduler](../../platform-deep-dive/core-components/core-extensions/scheduler.md#using-the-scheduler)
 
-#### **Topics related to the Search Data service**
+#### Topics related to the Search Data service
 
 * `KAFKA_TOPIC_DATA_SEARCH_IN` - the topic name that the Engine listens on for requests to search for processes
 
@@ -234,21 +293,21 @@ The suggested topic pattern naming convention is the following:
 | KAFKA_TOPIC_DATA_SEARCH_IN  | ai.flowx.dev.core.trigger.search.data.v1                |
 | KAFKA_TOPIC_DATA_SEARCH_OUT | ai.flowx.dev.engine.receive.core.search.data.results.v1 |
 
-#### **Topics related to the Audit service**
+#### Topics related to the Audit service
 
-* `KAFKA_TOPIC_AUDIT_OUT` - topic key for sending audit logs. Default value: `ai.flowx.audit.log`
+* `KAFKA_TOPIC_AUDIT_OUT` - topic key for sending audit logs
 
 | Default parameter (env var) | Default FLOWX.AI value (can be overwritten) |
 | --------------------------- | ------------------------------------------- |
 | KAFKA_TOPIC_AUDIT_OUT       | ai.flowx.dev.core.save.audit.v1             |
 
-#### **Topics related to process event messages**
+#### Topics related to ES indexing
 
 | Default parameter (env var)   | Default FLOWX.AI value (can be overwritten) |
 | ----------------------------- | ------------------------------------------- |
 | KAFKA_TOPIC_PROCESS_INDEX_OUT | ai.flowx.dev.core.index.process.v1          |
 
-#### **Processes that can be started by sending messages to a Kafka topic**
+#### Processes that can be started by sending messages to a Kafka topic
 
 * `KAFKA_TOPIC_PROCESS_START_IN` - the Engine listens on this topic for requests to start a new process instance
 
@@ -259,23 +318,26 @@ The suggested topic pattern naming convention is the following:
 | KAFKA_TOPIC_PROCESS_START_IN  | ai.flowx.dev.core.trigger.start.process.v1  |
 | KAFKA_TOPIC_PROCESS_START_OUT | ai.flowx.dev.core.confirm.start.process.v1  |
 
+#### Topics related to message events
+
+| Default parameter (env var)         | Default FLOWX.AI value (can be overwritten)          |
+| ----------------------------------- | ---------------------------------------------------- |
+| KAFKA_TOPIC_PROCESS_EVENT_MESSAGE   | ai.flowx.dev.core.message.event.process.v1           |
+| KAFKA_TOPIC_PROCESS_START_FOR_EVENT | ai.flowx.dev.core.trigger.start-for-event.process.v1 |
 
 ### Configuring events-gateway
 
-* `KAFKA_TOPIC_EVENTSGATEWAY_OUT_MESSAGE` - outgoing messages from Events Gateway 
+* `KAFKA_TOPIC_EVENTSGATEWAY_OUT_MESSAGE` - outgoing messages from process-engine to events-gateway
 
-* `KAFKA_TOPIC_EVENTSGATEWAY_OUT_DISCONNECT`- disconnect commands from Events Gateway
+* `KAFKA_TOPIC_EVENTSGATEWAY_OUT_DISCONNECT`- disconnect commands from process-engine to events-gateway
 
-* `KAFKA_TOPIC_EVENTSGATEWAY_OUT_CONNECT` - connect commands from Events Gateway  
-
+* `KAFKA_TOPIC_EVENTSGATEWAY_OUT_CONNECT` - connect commands from process-engine to events-gateway
 
 | Topic Name                               | Default FLOWX.AI value (can be overwritten)          |
 | ---------------------------------------- | ---------------------------------------------------- |
 | KAFKA_TOPIC_EVENTSGATEWAY_OUT_MESSAGE    | ai.flowx.eventsgateway.engine.commands.message.v1    |
 | KAFKA_TOPIC_EVENTSGATEWAY_OUT_DISCONNECT | ai.flowx.eventsgateway.engine.commands.disconnect.v1 |
 | KAFKA_TOPIC_EVENTSGATEWAY_OUT_CONNECT    | ai.flowx.eventsgateway.engine.commands.connect.v1    |
-
-
 
 ### Configuring file upload size
 

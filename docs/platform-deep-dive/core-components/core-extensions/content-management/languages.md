@@ -35,7 +35,7 @@ Before deleting a language make sure that this is not used in any content manage
 
 To add a new language, follow the next steps:
 
-1. Go to **FLOWX Designer** and select the **Content Management** tab.
+1. Go to [**FLOWX Designer**](../../../../terms/flowx-ai-designer) and select the **Content Management** tab.
 2. Select **Languages** from the list.
 3. Choose a new **language** from the list.
 4. Click **Add** after you finish.

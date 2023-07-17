@@ -2,7 +2,7 @@
 
 Hooks allow you to extract stateful logic from a component, so it can be tested and reused independently.
 
-Users with task management permissions can create hooks to trigger specific process instances, such as sending notifications when events occur. Follow the instructions below to set up roles for hooks scope usage:
+Users with task management permissions can create hooks to trigger specific [**process instances**](../../../../terms/flowx-process-instance), such as sending notifications when [**events**](../../../../terms/events) occur. Follow the instructions below to set up roles for hooks scope usage:
 
 [Manage hooks roles](../../plugins-setup-guide/task-management-plugin-setup/task-management-plugin-setup.md)
 
@@ -45,7 +45,7 @@ import TabItem from '@theme/TabItem';
 
 To create a new hook, follow the next steps:
 
-1. Open **FLOWX.AI Designer**.
+1. Open [**FLOWX.AI Designer**](../../../../terms/flowx-ai-designer).
 2. Go to Task Manager and select **Hooks**.
 3. Click **New Hook** (you can also import or export a hook).
 4. Fill in the required details.

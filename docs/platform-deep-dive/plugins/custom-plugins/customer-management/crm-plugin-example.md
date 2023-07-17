@@ -5,7 +5,7 @@
 Follow the next steps to use the user personal number to perform a search query in the customer management plugin.
 
 1. First make sure the details about customers are indexed in the search engine (for example, elasticSearch).
-2. Open FLOWX Designer web app and create a process.
+2. Open [**FLOWX Designer**](../../../../terms/flowx-ai-designer) web app and create a [**process**](../../../../terms/flowx-process).
 3. Add a [**Kafka send event**](../../../../building-blocks/node/message-send-received-task-node.md#message-send-task) node.
 4. Configure the [**Kafka send event**](../../../../building-blocks/node/message-send-received-task-node.md#message-send-task) node by adding the following elements:
 * Kafka topic - defined on the `KAFKA_TOPIC_CUSTOMER_SEARCH_IN` environment variable

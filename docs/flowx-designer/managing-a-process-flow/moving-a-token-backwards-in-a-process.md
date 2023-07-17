@@ -5,12 +5,12 @@ sidebar_position: 7
 # Moving a token backwards in a process
 
 :::info
-**What is it?** Back in process is a functionality that allows you to go back in a business process redo a series of previous actions in the process.
+**What is it?** Back in process is a functionality that allows you to go back in a business process redo a series of previous [**actions**](../../terms/flowx-actions) in the process.
 
-**Why is it useful?** Brings a whole new level of flexibility in using a business flow or journey, allowing the user to go back a step without losing all the data he/she inputted so far.
+**Why is it useful?** Brings a whole new level of flexibility in using a business flow or journey, allowing the user to go back a step without losing all the data inputted so far.
 :::
 
-In most cases, the token instance will just need to advance forward in the process as the actions on the process are completed.
+In most cases, the [**token**](../../terms/token) instance will just need to advance forward in the process as the actions on the process are completed.
 
 [Token](../../building-blocks/token)
 
