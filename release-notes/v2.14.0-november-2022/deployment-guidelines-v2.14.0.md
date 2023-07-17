@@ -32,19 +32,19 @@ After updating to **2.14.0** FLOWX.AI release, importing old processes definitio
 | **reporting**                  | **0.0.39**    | n/a     | n/a     | n/a     | n/a     |         |         |         |         |         |         |         |         |         |           |           |         |         |         |         |        |         |
 | **advancing-controller**       | **0.0.6-1**   | n/a     | n/a     | n/a     | n/a     |         |         |         |         |         |         |         |         |         |           |           |         |         |         |         |        |         |
 
-### 2.14.0 recommended versions
+### 2.14.0 Minimum Recommended Versions
 
-| FLOWX.AI Platform Version 	| Component name 	                | Recommended version (tested version) 	|
-|---------------------------	|---------------------------------- |--------------------------------------	|
-| 2.14                      	| Keycloak       	                | 18.0.x                               	|
-| 2.14                      	| Kafka          	                | 2.8.x                                	|
-| 2.14                      	| PostgreSQL     	                | 14.3.0                               	|
-| 2.14                      	| MongoDB        	                | 5.0.8                                	|
-| 2.14                      	| Redis          	                | 6.2.6                                	|
-| 2.14                      	| Elasticsearch   	                | 7.10.1                             	|
-| 2.14                      	| S3 (Min.IO) / minio-operator      | 2022-05-26T05-48-41Z / 4.5.4          |
-| 2.14                      	| OracleDB       	                | 19.8.0.0.0                           	|
-| 2.14                          | Angular (Web SDK)                 | 14.2.2                                |
+| FLOWX.AI Platform Version | Component Name               | Minimum Recommended Version (Tested Version) |
+| ------------------------- | ---------------------------- | -------------------------------------------- |
+| 2.14                      | Keycloak                     | 18.0.x                                       |
+| 2.14                      | Kafka                        | 3.2.0                                        |
+| 2.14                      | PostgreSQL                   | 14.3.0                                       |
+| 2.14                      | MongoDB                      | 5.0.8                                        |
+| 2.14                      | Redis                        | 6.2.6                                        |
+| 2.14                      | Elasticsearch                | 7.10.1                                       |
+| 2.14                      | S3 (Min.IO) / minio-operator | 2022-05-26T05-48-41Z / 4.5.4                 |
+| 2.14                      | OracleDB                     | 19.8.0.0.0                                   |
+| 2.14                      | Angular (Web SDK)            | 14.2.2                                       |
 
 
 

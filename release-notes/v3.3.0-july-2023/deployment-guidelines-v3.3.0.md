@@ -61,6 +61,17 @@ With the release of **FLOWX.AI 3.0**, there have been some changes that you need
 | 3.3                       | Angular (Web SDK)            | 15.0.0                                |
 
 
+:::info COMPATIBILITY
+The FLOWX.AI platform has been thoroughly tested and recommends the following versions for optimal compatibility. However, we understand that our clients may have unique requirements and preferences, so we also provide support for other versions of third-party components. Please refer to the compatibility matrix below when exploring alternative versions. If any incompatibility arises between FLOWX products and other third-party versions, we consider it a bug and will promptly address it.
+
+Compatibility Matrix:
+
+* FLOWX.AI Platform: Recommended and tested versions
+* Third-Party Components: Supported versions based on specific requirements and client preferences
+
+:::
+
+
 ## Additional configuration
 
 This section describes the additional configuration that is required to use the new features in FlowX.AI.

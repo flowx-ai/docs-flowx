@@ -23,7 +23,12 @@ FLOWX.AI uses a number of third-party software components:
 ### Third-party open-source components supported/tested versions
 
 :::info COMPATIBILITY
-While the following versions are recommended and tested for compatibility, it's worth noting that the FLOWX.AI platform may also support other versions of the third-party components depending on the specific requirements and preferences of our clients. Feel free to explore alternative versions, keeping in mind the compatibility matrix mentioned below.
+The FLOWX.AI platform has been thoroughly tested and recommends the following versions for optimal compatibility. However, we understand that our clients may have unique requirements and preferences, so we also provide support for other versions of third-party components. Please refer to the compatibility matrix below when exploring alternative versions. If any incompatibility arises between FLOWX products and other third-party versions, we consider it a bug and will promptly address it.
+
+Compatibility Matrix:
+
+* FLOWX.AI Platform: Recommended and tested versions
+* Third-Party Components: Supported versions based on specific requirements and client preferences
 :::
 
 | FLOWX.AI Platform Version | Component name               | Supported/tested versions    |
