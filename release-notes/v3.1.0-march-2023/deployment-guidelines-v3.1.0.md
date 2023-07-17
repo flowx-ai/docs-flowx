@@ -77,22 +77,6 @@ Compatibility Matrix:
 :::
 
 
-:::info compatibility
-FlowX.AI supports any version of the third-party components listed as prerequisites.
-
-For optimal performance and reliability, our internal QA process validates new releases using specific versions as indicated in the provided table.
-While exploring alternative versions that suit your company's specific requirements, we recommend referring to the compatibility matrix for guidance.
-
-In the unlikely event that you encounter any compatibility issues with FlowX.AI, please open a support ticket [**here**](https://support.flowx.ai/), and our dedicated team will address and resolve any identified bugs following our standard support process.
-
-Compatibility Matrix:
-
-* FLOWX.AI Platform: Recommended and tested versions
-* Third-Party Components: Supported versions based on specific requirements and client preferences
-:::
-
-
-
 ## Additional configuration
 
 ### Process engine - scheduler
