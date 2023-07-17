@@ -9,15 +9,15 @@ title: Building your first process
 
 Let's dive into an example. :rocket:
 
-- [x] **Step 1**: [Design a BPMN process](../flowx-designer/managing-a-process-flow)
+-  **Step 1**: [Design a BPMN process](../flowx-designer/managing-a-process-flow)
 
-- [x] **Step 2**: Define and manage a process flow using [**FLOWX Process Designer**](../terms/flowx-process-designer)
+-  **Step 2**: Define and manage a process flow using [**FLOWX Process Designer**](../terms/flowx-process-designer)
 
-- [x] **Step 3**: Run a process instance in [**FLOWX Engine**](../terms/flowxai-process-engine)
+-  **Step 3**: Run a process instance in [**FLOWX Engine**](../terms/flowxai-process-engine)
 
-- [x] **Step 4**: Create the [**front-end app**](../terms/flowx-frontend-application)
+-  **Step 4**: Create the [**front-end app**](../terms/flowx-frontend-application)
 
-- [x] **Step 5**: Connect [**plugins**](../terms/flowx-plugins)
+-  **Step 5**: Connect [**plugins**](../terms/flowx-plugins)
 
 
 ## Designing the BPMN process: request a new credit card from a bank app
