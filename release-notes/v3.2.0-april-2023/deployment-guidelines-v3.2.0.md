@@ -45,19 +45,33 @@ With the release of **FLOWX.AI 3.0**, there have been some changes that you need
 :::
 
 
-### 3.2.0 recommended versions
+### 3.2.0 Minimum Recommended Versions
 
-| FLOWX.AI Platform Version | Component name               | Recommended version (tested versions) |
-| ------------------------- | ---------------------------- | ------------------------------------- |
-| 3.2                       | Keycloak                     | 18.0.x                                |
-| 3.2                       | Kafka                        | 3.2.0                                 |
-| 3.2                       | PostgreSQL                   | 14.3.0                                |
-| 3.2                       | MongoDB                      | 5.0.8                                 |
-| 3.2                       | Redis                        | 6.2.6                                 |
-| 3.2                       | Elasticsearch                | 7.17                                  |
-| 3.2                       | S3 (Min.IO) / minio-operator | 2022-05-26T05-48-41Z / 4.5.4          |
-| 3.2                       | OracleDB                     | 19.8.0.0.0                            |
-| 3.2                       | Angular (Web SDK)            | 15.0.0                                |
+| FLOWX.AI Platform Version | Component name               | Minimum recommended version (tested versions) |
+| ------------------------- | ---------------------------- | --------------------------------------------- |
+| 3.2                       | Keycloak                     | 18.0.x                                        |
+| 3.2                       | Kafka                        | 3.2.0                                         |
+| 3.2                       | PostgreSQL                   | 14.3.0                                        |
+| 3.2                       | MongoDB                      | 5.0.8                                         |
+| 3.2                       | Redis                        | 6.2.6                                         |
+| 3.2                       | Elasticsearch                | 7.17                                          |
+| 3.2                       | S3 (Min.IO) / minio-operator | 2022-05-26T05-48-41Z / 4.5.4                  |
+| 3.2                       | OracleDB                     | 19.8.0.0.0                                    |
+| 3.2                       | Angular (Web SDK)            | 15.0.0                                        |
+
+:::info compatibility
+FlowX.AI supports any version of the third-party components listed as prerequisites.
+
+For optimal performance and reliability, our internal QA process validates new releases using specific versions as indicated in the provided table.
+While exploring alternative versions that suit your company's specific requirements, we recommend referring to the compatibility matrix for guidance.
+
+In the unlikely event that you encounter any compatibility issues with FlowX.AI, please open a support ticket [**here**](https://support.flowx.ai/), and our dedicated team will address and resolve any identified bugs following our standard support process.
+
+Compatibility Matrix:
+
+* FLOWX.AI Platform: Recommended and tested versions
+* Third-Party Components: Supported versions based on specific requirements and client preferences
+:::
 
 
 ## Additional configuration

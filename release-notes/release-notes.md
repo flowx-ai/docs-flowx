@@ -12,7 +12,7 @@ Hi there! 👋 Follow the Release Notes space to find all the information on the
 <details>
 <summary>Q3 - July 2023</summary>
 
-- [<u>v3.3.0</u>](/release-notes/v3.3.0-may-2023)
+- [<u>v3.3.0</u>](/release-notes/v3.3.0-july-2023)
 
 </details>
 
