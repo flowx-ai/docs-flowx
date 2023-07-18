@@ -266,6 +266,37 @@ const config = {
       glossaryFilepath: './docs/glossary.md'
     }],
 
+    [
+      'docusaurus-plugin-papersaurus',
+      {
+        keepDebugHtmls: false,
+        sidebarNames: ['tutorialSidebar'],
+        rootDocIds: [
+          { version: 'default', rootDocId: 'intro'}
+        ],
+        addDownloadButton: true,
+        autoBuildPdfs: true,
+        downloadButtonText: 'Download as PDF',
+        ignoreDocs: ['licenses'],
+        stylesheets: [],
+        scripts: [],
+        coverPageHeader: `...`,
+        coverPageFooter: `...`,
+        getPdfCoverPage: (siteConfig, pluginConfig, pageTitle, version) => {
+          return `...`;
+        },
+        getPdfPageHeader: (siteConfig, pluginConfig, pageTitle) => {
+          return `...`;
+        },
+        getPdfPageFooter: (siteConfig, pluginConfig, pageTitle) => {
+          return `...`;
+        },
+        author: 'Author name',
+        footerParser: /© Your company\d{4}-\d{2}-\d{2}Page \d* \/ \d*/g,
+      },
+    ],
+
+
     ],
 };
 
