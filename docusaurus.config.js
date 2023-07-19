@@ -7,6 +7,8 @@ const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const urlEmbed = require('./src/remark/url-embed');
 
+const papersaurus = require('./src/plugins/docusaurus-plugin-papersaurus')
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'FLOWX.AI Docs',
@@ -248,7 +250,6 @@ const config = {
           showLastUpdateTime: true,
           remarkPlugins: [urlEmbed],
         },
-      
 
       ],
 
@@ -267,32 +268,65 @@ const config = {
     }],
 
     [
-      'docusaurus-plugin-papersaurus',
+      require.resolve('./src/plugins/docusaurus-plugin-papersaurus/lib'),
       {
         keepDebugHtmls: false,
         sidebarNames: ['tutorialSidebar'],
         rootDocIds: [
-          { version: 'default', rootDocId: 'intro'}
+          { version: 'current', rootDocId: '/docs/intro'}
         ],
         addDownloadButton: true,
         autoBuildPdfs: true,
         downloadButtonText: 'Download as PDF',
-        ignoreDocs: ['licenses'],
+        ignoreDocs: ['licenses', 'glossary','survey'],
         stylesheets: [],
         scripts: [],
-        coverPageHeader: `...`,
-        coverPageFooter: `...`,
         getPdfCoverPage: (siteConfig, pluginConfig, pageTitle, version) => {
-          return `...`;
+          return  `
+          <!DOCTYPE html>
+          <html>
+          <head>
+            
+          </head>
+      
+            <body>
+              <div style="margin: 2cm;">
+                <h1 style="color:#005479;font-size:28px;font-family:sans-serif;font-weight:bold">${siteConfig.projectName}<h1>
+                <h2 style="color:#005479;font-size:16px;font-family:sans-serif;">${(pageTitle || siteConfig.tagline)}<h2>
+      
+                <dl style="font-family:sans-serif;margin-top:10em;display: flex; flex-flow: row; flex-wrap: wrap; width: 600px; overflow: visible;color:#005479;font-size:12px;font-weight:normal;">
+                  <dt style="margin-top:1em;flex: 0 0 20%; text-overflow: ellipsis; overflow: hidden;">Author:</dt>    
+                  <dd style="margin-top:1em;flex:0 0 80%; margin-left: auto; text-align: left;text-overflow: ellipsis; overflow: hidden;">Your name</dd>
+                  <dt style="margin-top:1em;flex: 0 0 20%; text-overflow: ellipsis; overflow: hidden;">Date:</dt>
+                  <dd style="margin-top:1em;flex:0 0 80%; margin-left: auto; text-align: left;text-overflow: ellipsis; overflow: hidden;">${new Date().toISOString().substring(0,10)}</dd>
+                </dl>
+              </div>
+            </body>
+      
+          </html>
+        `;
         },
         getPdfPageHeader: (siteConfig, pluginConfig, pageTitle) => {
-          return `...`;
+          return ` <div style="justify-content: center;align-items: center;height:2.5cm;display:flex;margin: 0 1.5cm;color: #005479;font-size:9px;font-family:sans-serif;width:100%;">
+          <div style="flex-grow: 1; width: 50%; text-align:left;margin-left:-3px">
+            <img 
+              style='display:block; width:2cm;' 
+              id='base64image'                 
+              src='data:image/svg+xml;base64, <Your Logo as base64>' 
+            />
+          </div>
+          <span style="flex-grow: 1; width: 50%; text-align:right;">${pageTitle}</span>
+        </div>`;
         },
         getPdfPageFooter: (siteConfig, pluginConfig, pageTitle) => {
-          return `...`;
+          return ` <div style="height:1cm;display:flex;margin: 0 1.5cm;color: #005479;font-size:9px;font-family:sans-serif;width:100%;">
+          <span style="flex-grow: 1; width: 33%;">© You</span>
+          <span style="flex-grow: 1; width: 33%; text-align:center;">${new Date().toISOString().substring(0,10)}</span>
+          <span style="flex-grow: 1; width: 33%; text-align:right;">Page <span class='pageNumber'></span> / <span class='totalPages'></span></span>
+        </div>`;
         },
-        author: 'Author name',
-        footerParser: /© Your company\d{4}-\d{2}-\d{2}Page \d* \/ \d*/g,
+        author: '',
+        footerParser: `Copyright © FLOWX.AI ${new Date().getFullYear()}`,
       },
     ],
 

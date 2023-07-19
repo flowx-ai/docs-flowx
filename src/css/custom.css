@@ -192,3 +192,12 @@ div[class^="announcementBar"][role="banner"] {
   color: #888;
   cursor: pointer;
 }
+
+
+.sidebar-title {
+  margin-top: 12px;
+}
+
+.menu__list-item:not(:first-child) {
+  margin-top: 12px;
+}
