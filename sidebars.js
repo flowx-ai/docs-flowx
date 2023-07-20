@@ -9,6 +9,8 @@
  Create as many sidebars as you want.
  */
 
+const { doc } = require('prettier');
+
 // @ts-check
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
@@ -39,6 +41,8 @@ const sidebars = {
       ],
       className: "sidebar-title"
     },
+
+
     {
       type: "category",
       label: "PLATFORM OVERVIEW", // This is the "Title" item.
@@ -59,16 +63,82 @@ const sidebars = {
               {
                 type: "category",
                 label: "Business process industry and standards",
-                link: {
+                link: 
+                {
                   type: "doc",
                   id: "platform-overview/frameworks-and-standards/business-process-industry-standards/business-process-industry-standards",
-                } ,
-                items: [
+                },
+                
+                items: 
+              [ 
+                {
+                    type: "category",
+                    label: "Intro to BPMN",
+                    link: 
+                    {
+                      type: "doc",
+                      id: "platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-bpmn/intro-to-bpmn",
+                    } ,
+                    items: 
+                    
+                  [
+                    {
+                    type: "doc",
+                    id: "platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-bpmn/bpmn-basic-concepts"
+                    }
+                  ]
+                },
 
-                ]
+                  "platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-dmn",
+                  "platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel",          
+                  
+              ],
+              },
+
+              {
+                type: "category",
+                label: "Event-driven architecture frameworks",
+                link: {
+                  type: "generated-index",
+                } ,
+                items: 
+                [ 
+                  { 
+                    type: "doc",
+                    id: "platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-elasticsearch"
+                  },
+                  { 
+                    type: "doc",
+                    id: "platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-kafka-concepts"
+                  },
+                  { 
+                    type: "doc",
+                    id: "platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-kubernetes"
+                  },
+                  { 
+                    type: "doc",
+                    id: "platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-nginx"
+                  },
+                  {
+                    type: "doc",
+                    id: "platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-redis"
+                  }
+                
+                ],
+              },
+
+              {
+                type: "doc",
+                id: "platform-overview/frameworks-and-standards/timer-expressions"
               }
-          ]
-        }
+
+          ],
+          
+        },
+
+       
+        
+
       ],
       className: "sidebar-title"
     },
@@ -106,7 +176,6 @@ const sidebars = {
       ],
       className: "sidebar-title"
     },
-  
 
   
     {

@@ -104,7 +104,9 @@ For UI Elements, the references include the element label, node name, and UI Ele
 
 To protect your data and your customer's data, you can hide data that could be visible in the process details or in the browser's console. You can now also secret data for a specific key.
 
-<!-- ![](../../../../release-notes/img/sensitive_data_new.png) -->
+<!--
+![](../../../../release-notes/img/sensitive_data_new.png)
+-->
 
 ### Reporting
 
@@ -126,8 +128,10 @@ To generate a data model, follow these steps:
 6. Click the **Load Data** button to display the data model body.
 7. Finally, click **Save** button to save the generated data model.
 
-<!-- 
-![](../../../../release-notes/img/generate_data_model.gif) -->
+
+<!--
+![](../../../../release-notes/img/generate_data_model.gif)
+-->
 
 By generating a data model, you can ensure that your data is structured and organized in a way that is appropriate for your business needs. It can also help you to identify any inconsistencies or errors in the data, allowing you to correct them before they cause problems down the line.
 
