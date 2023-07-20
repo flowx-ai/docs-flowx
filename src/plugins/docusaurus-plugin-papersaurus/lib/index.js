@@ -101,6 +101,8 @@ function default_1(_context, pluginOptions) {
               pdfname = pdfname.substr(pdfname.lastIndexOf('/') + 1);
             }
 
+            pdfname = slugFunction(activePageSidebarLink.text());
+
 
             var downloadItems = [];
             downloadItems.push({

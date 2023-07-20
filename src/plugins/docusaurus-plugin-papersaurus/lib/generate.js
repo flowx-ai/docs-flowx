@@ -293,7 +293,7 @@ async function createPdfFromArticles(documentTitle, documentVersion, pdfName, ar
         path: titlePdfFile,
         headerTemplate: pluginOptions.coverPageHeader,
         footerTemplate: pluginOptions.coverPageFooter,
-        displayHeaderFooter: true,
+        displayHeaderFooter: false,
         printBackground: true,
         margin: {
             top: '10cm',
@@ -346,7 +346,7 @@ async function createPdfFromArticles(documentTitle, documentVersion, pdfName, ar
     });
     tocLinksInfos = tocLinksInfos || [];
     for (const tocLinkInfo of tocLinksInfos) {
-        htmlToc = htmlToc.replace(tocLinkInfo.link, `<a href="${tocLinkInfo.href}"><span>${tocLinkInfo.text}</span><span class="dotLeader"></span><span class="pageNumber">_</span></a>`);
+        htmlToc = htmlToc.replace(tocLinkInfo.link, `<a href="${tocLinkInfo.href}"><span>${tocLinkInfo.text}</span><span class="dotLeader"></span></a>`);
     }
     let htmlStyles = '';
     if (pluginOptions.stylesheets && pluginOptions.stylesheets.length > 0) {
