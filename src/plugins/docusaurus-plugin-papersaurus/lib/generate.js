@@ -222,10 +222,9 @@ async function createPdfFilesRecursive(sideBarItem, parentTitles, documentVersio
 }
 function readHtmlForItem(item, parentTitles, rootDocUrl, rootDocId, htmlDir, version, siteConfig) {
     item.unVersionedId = item.id;
-    if (item.unVersionedId.indexOf('/') >= 0 && (item.unVersionedId.indexOf("/2") > 0 || item.unVersionedId.indexOf("/3") > 0) ) {
-        item.unVersionedId = item.unVersionedId.substr(item.unVersionedId.indexOf('/') + 1);
-    }
+    console.log('item id = ', item.id);
     let htmlFilePath = htmlDir;
+    
     if (item.unVersionedId !== rootDocId) {
         htmlFilePath = join(htmlFilePath, item.unVersionedId);
     }

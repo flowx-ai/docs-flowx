@@ -69,21 +69,17 @@ function default_1(_context, pluginOptions) {
 
           const getPdfPath = function() {
             var pdfPath = document.location.pathname;
-            console.log('1',pdfPath);
             if (pdfPath.endsWith('/')) {
               pdfPath = pdfPath.substr(0, pdfPath.length-1);
             }
-            console.log('2',pdfPath);
             const checkRootDoc = new RegExp("/docs(((\/[0-9]+\.[0-9]+)|\/next)?)$");
             if (!checkRootDoc.test(pdfPath)) {
               // ends with document (not with /docs or /docs/x.x or /docs/next), remove document 
               var lastSlashPos = pdfPath.lastIndexOf('/');
               pdfPath = pdfPath.substr(0, lastSlashPos);
-              console.log('3',pdfPath);
             }
             pdfPath = pdfPath + '/';
             pdfPath = pdfPath.replace('/docs/', '/pdfs/');
-            console.log('4',pdfPath);
             return pdfPath;
           }
 
@@ -99,11 +95,17 @@ function default_1(_context, pluginOptions) {
             if (!activePageSidebarLink) {
               return [];
             }
+            let pdfname = activePageSidebarLink[0].pathname
+            
+            if (pdfname.indexOf('/') >= 0) {
+              pdfname = pdfname.substr(pdfname.lastIndexOf('/') + 1);
+            }
+
 
             var downloadItems = [];
             downloadItems.push({
               title: 'Download this chapter (' + activePageSidebarLink.text() +')',
-              slug: slugFunction(activePageSidebarLink.text()),
+              slug: pdfname,
               type: 'page'
             });
 
@@ -113,9 +115,10 @@ function default_1(_context, pluginOptions) {
                 var activePageSidebarLinkQuery = parentMenuItem.find(".menu__link");
                 if (activePageSidebarLinkQuery.length > 0) {
                   activePageSidebarLink = activePageSidebarLinkQuery.first();
-                  slug = slugFunction(activePageSidebarLink.text());
+                 
+                  slug = activePageSidebarLink[0].pathname.substr(activePageSidebarLink[0].pathname.lastIndexOf('/') + 1);
                   downloadItems.forEach(function(downloadItem) {
-                    downloadItem.slug = slug + '-' + downloadItem.slug;
+                    downloadItem.slug = slug + '/' + downloadItem.slug;
                   });
                   downloadItems.push({
                     title: 'Download section (' + activePageSidebarLink.text() +')',
@@ -135,7 +138,7 @@ function default_1(_context, pluginOptions) {
               slug: slugFunction('${siteConfig.projectName}'),
               type: 'page'
             });
-
+            console.log('DownloadItems', downloadItems);
             return downloadItems;
           }
 
@@ -143,11 +146,13 @@ function default_1(_context, pluginOptions) {
             $('#pdfDownloadMenuList').empty();
 
             const downloadItems = getDownloadItems();
-            const pdfPath = getPdfPath();
+            //const pdfPath = getPdfPath();
+            const pdfPath = '/pdfs/';
 
             var printPopupContent = '';
             downloadItems.forEach(function(downloadItem) {
               printPopupContent += '<li>';
+              console.log('pdfPath', pdfPath, downloadItem.slug);
               printPopupContent += '<a class="dropdown__link" href="' + pdfPath + downloadItem.slug + '.pdf" download>' + downloadItem.title + '</a>';
               printPopupContent += '</li>';
             });
