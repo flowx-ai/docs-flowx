@@ -4,7 +4,7 @@ hide-title: true
 title: Learn more
 ---
 
-import Docs from "../../src/components/docsHome";
+import Docs from "../../../src/components/docsHome";
 
 <Docs />
 
