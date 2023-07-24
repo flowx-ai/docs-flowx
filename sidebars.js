@@ -84,7 +84,7 @@ const sidebars = {
                   [
                     {
                     type: "doc",
-                    id: "platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-bpmn/bpmn-basic-concepts"
+                    id: "platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-bpmn/bpmn-basic-concepts/bpmn-basic-concepts"
                     }
                   ]
                 },

@@ -181,6 +181,7 @@ async function createPdfFilesRecursive(sideBarItem, parentTitles, documentVersio
     let articles = [];
     let documentTitle = '';
     let pdfFilename = '';
+    let categorySubFolder = '';
     switch (sideBarItem.type) {
         case 'category': {
             const sideBarItemCategory = sideBarItem;
@@ -189,11 +190,20 @@ async function createPdfFilesRecursive(sideBarItem, parentTitles, documentVersio
             for (const categorySubItem of sideBarItemCategory.items) {
                 let subFolder = ""
                 if (categorySubItem.type === 'doc' && categorySubItem.unVersionedId.indexOf('/') >= 0) {
-                    subFolder = "/" + categorySubItem.unVersionedId.substr(0, categorySubItem.unVersionedId.indexOf('/')+1);
-                    categorySubItem.unVersionedId = categorySubItem.unVersionedId.substr(categorySubItem.unVersionedId.indexOf('/') );
+                    subFolder = "/" + categorySubItem.unVersionedId.substr(0, categorySubItem.unVersionedId.lastIndexOf('/'));
+                    categorySubItem.unVersionedId = categorySubItem.unVersionedId.substr(categorySubItem.unVersionedId.lastIndexOf('/') +1 );
                 }
-                const subDocs = await createPdfFilesRecursive(categorySubItem, newParentTitles, documentVersion, pluginOptions, siteConfig, buildDir + subFolder, browser, siteAddress);
+                if (!fs.existsSync(buildDir + subFolder)) {
+                    fs.mkdirSync(buildDir + subFolder, {recursive: true});
+                }
+                const subDocs = await createPdfFilesRecursive(categorySubItem, newParentTitles, documentVersion, pluginOptions, siteConfig, buildDir, browser, siteAddress);
                 articles.push(...subDocs);
+            }
+            if (sideBarItemCategory.link?.type==='doc' && sideBarItemCategory.link?.id.indexOf('/')>=0)
+            {
+                categorySubFolder = "/" + sideBarItemCategory.link?.id.substr(0, sideBarItemCategory.link?.id.lastIndexOf('/'));
+            } else if (sideBarItemCategory.link?.type==='generated-index') {
+                categorySubFolder = "/category";
             }
             documentTitle = sideBarItemCategory.label;
             break;
@@ -201,16 +211,13 @@ async function createPdfFilesRecursive(sideBarItem, parentTitles, documentVersio
         case 'doc': {
             const sideBarItemDoc = sideBarItem;
             articles.push(sideBarItemDoc);
-            documentTitle = sideBarItemDoc.pageTitle || '';
+            documentTitle = sideBarItemDoc.unVersionedId.substr(sideBarItemDoc.unVersionedId.indexOf('/') +1 ) || '';
             break;
         }
         default:
             break;
     }
     pdfFilename = he.decode(documentTitle);
-    // if (parentTitles.length > 1) {
-    //     pdfFilename = parentTitles.slice(1).join('-') + '-' + pdfFilename;
-    // }
     pdfFilename = slugger.slug(pdfFilename);
     if (parentTitles.length > 1) {
         documentTitle = parentTitles.slice(1).join(' / ') + ' / ' + documentTitle;
@@ -222,7 +229,6 @@ async function createPdfFilesRecursive(sideBarItem, parentTitles, documentVersio
 }
 function readHtmlForItem(item, parentTitles, rootDocUrl, rootDocId, htmlDir, version, siteConfig) {
     item.unVersionedId = item.id;
-    console.log('item id = ', item.id);
     let htmlFilePath = htmlDir;
     
     if (item.unVersionedId !== rootDocId) {
@@ -278,7 +284,7 @@ function readHtmlForItem(item, parentTitles, rootDocUrl, rootDocId, htmlDir, ver
 async function createPdfFromArticles(documentTitle, documentVersion, pdfName, articleList, pluginOptions, siteConfig, buildDir, browser, siteAddress) {
     console.log(`${pluginLogPrefix}Creating PDF ${buildDir}/${pdfName}.pdf...`);
     if (!fs.existsSync(buildDir)) {
-        fs.mkdirSync(buildDir);
+        fs.mkdirSync(buildDir , {recursive: true});
     }
     const pdfFooterRegex = new RegExp(pluginOptions.footerParser);
     const titlePdfFile = join(buildDir, `${pdfName}.title.pdf`);

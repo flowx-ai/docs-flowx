@@ -26,10 +26,8 @@ You can now utilize process parameters or [**substitution tags**](../../platform
 | [**Step**](../../building-blocks/node/milestone-node.md#stepper--steps) | Label                                                            | Yes                       |
 
 ### Example using Substitution tags
-
-<!--
-![](../../../release-notes/img/dynamic_val.gif)
--->
+<!-- 
+![](../../../release-notes/img/dynamic_val.gif) -->
 
 ### Example using process parameters
 
@@ -86,10 +84,8 @@ To add a computed value, you have to explicitly check “Computed value” optio
 :::
 
 By enabling computed values, the application provides flexibility and the ability to create dynamic and responsive user interfaces.
-
-<!--
-![](../../../release-notes/img/computed.gif)
--->
+<!-- 
+![](../../../release-notes/img/computed.gif) -->
 
 ### Slider example
 

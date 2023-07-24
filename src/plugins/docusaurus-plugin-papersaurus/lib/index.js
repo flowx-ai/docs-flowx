@@ -95,14 +95,15 @@ function default_1(_context, pluginOptions) {
             if (!activePageSidebarLink) {
               return [];
             }
-            let pdfname = activePageSidebarLink[0].pathname
-            
+            let pdfname = activePageSidebarLink[0].pathname;
+
+            if (pdfname.lastIndexOf('/') ===  pdfname.length-1) 
+            {
+              pdfname = pdfname.slice(0,-1);
+            }
             if (pdfname.indexOf('/') >= 0) {
               pdfname = pdfname.substr(pdfname.lastIndexOf('/') + 1);
             }
-
-            pdfname = slugFunction(activePageSidebarLink.text());
-
 
             var downloadItems = [];
             downloadItems.push({
@@ -113,12 +114,17 @@ function default_1(_context, pluginOptions) {
 
             var parentMenuItem = activePageSidebarLink.parent().parent().parent();
             while (parentMenuItem && parentMenuItem.length > 0) {
-              if (parentMenuItem.hasClass("menu__list-item")) {
+              if (parentMenuItem.hasClass("menu__list-item-collapsible")) {
                 var activePageSidebarLinkQuery = parentMenuItem.find(".menu__link");
+                
                 if (activePageSidebarLinkQuery.length > 0) {
                   activePageSidebarLink = activePageSidebarLinkQuery.first();
-                 
-                  slug = activePageSidebarLink[0].pathname.substr(activePageSidebarLink[0].pathname.lastIndexOf('/') + 1);
+                  slug = activePageSidebarLink[0].pathname;
+                  if (slug.lastIndexOf('/') ===  slug.length-1) 
+                  {
+                    slug = slug.slice(0,-1);
+                  }
+                  slug = slug.substr(slug.lastIndexOf('/') + 1);
                   downloadItems.forEach(function(downloadItem) {
                     downloadItem.slug = slug + '/' + downloadItem.slug;
                   });
@@ -140,7 +146,6 @@ function default_1(_context, pluginOptions) {
               slug: slugFunction('${siteConfig.projectName}'),
               type: 'page'
             });
-            console.log('DownloadItems', downloadItems);
             return downloadItems;
           }
 
@@ -154,7 +159,6 @@ function default_1(_context, pluginOptions) {
             var printPopupContent = '';
             downloadItems.forEach(function(downloadItem) {
               printPopupContent += '<li>';
-              console.log('pdfPath', pdfPath, downloadItem.slug);
               printPopupContent += '<a class="dropdown__link" href="' + pdfPath + downloadItem.slug + '.pdf" download>' + downloadItem.title + '</a>';
               printPopupContent += '</li>';
             });
