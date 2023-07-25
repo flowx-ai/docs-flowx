@@ -84,7 +84,7 @@ const sidebars = {
                   [
                     {
                     type: "doc",
-                    id: "platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-bpmn/bpmn-basic-concepts/bpmn-basic-concepts"
+                    id: "platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-bpmn/bpmn-basic-concepts"
                     }
                   ]
                 },
@@ -166,7 +166,7 @@ const sidebars = {
           items: [
             {
               type: "doc",
-              id: "building-blocks/process/process-definition/process-definition"
+              id: "building-blocks/process/process-definition"
             },
 
             {
@@ -178,8 +178,8 @@ const sidebars = {
               items: 
               [ 
                 { 
-                  type: "doc",
-                  id: "building-blocks/process/active-process/process-instance/process-instance"
+                  type: "doc",  
+                  id: "building-blocks/process/active-process/process-instance"
                 },
                 { 
                   type: "doc",
@@ -517,7 +517,7 @@ const sidebars = {
       items: [
         {
           type: 'doc',
-          id: 'flowx-designer/flowx-designer'
+          id: 'flowx-designer/designer'
         },
 
         {
@@ -625,7 +625,7 @@ const sidebars = {
           [ 
             { 
               type: "doc",
-              id: "platform-deep-dive/core-components/flowx-engine/flowx-engine"
+              id: "platform-deep-dive/core-components/flowx-engine"
             },
 
             { 
@@ -1180,7 +1180,7 @@ const sidebars = {
       items: [
         {
           type: 'doc',
-          id: 'platform-setup-guides/platform-setup-guides'
+          id: 'platform-setup-guides/platform-setup-guides-docs'
         },
 
         {
@@ -1257,7 +1257,7 @@ const sidebars = {
 
         { 
           type: "doc",
-          id: "platform-setup-guides/audit-setup-guide/audit-setup-guide"
+          id: "platform-setup-guides/audit-setup-guide"
         },
 
         {

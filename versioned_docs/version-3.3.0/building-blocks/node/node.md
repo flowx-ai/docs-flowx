@@ -14,12 +14,12 @@ FLOWX platforms support different types of nodes, each needing a different confi
 
 ## Node types
 
-Let's go through the most important types of nodes. These can be selected when adding a new node to a [process definition](../process/process-definition/process-definition.md) using the [**FLOWX Designer**](../../terms/flowx-ai-designer):
+Let's go through the most important types of nodes. These can be selected when adding a new node to a [process definition](../process/process-definition.md) using the [**FLOWX Designer**](../../terms/flowx-ai-designer)
 
 ![](./img/nodes_types.png)
 
 
-+ **​Start and end nodes**​​​ ​- they mark the beginning and end of a [process flow](../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-bpmn/intro-to-bpmn.md#bpmn-20-elements). A [process definition](../process/process-definition/process-definition.md) can have one or more start nodes (each linked with a start condition) and also one or more end nodes depending on the flow outcomes
++ **​Start and end nodes**​​​ ​- they mark the beginning and end of a [process flow](../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-bpmn/intro-to-bpmn.md#bpmn-20-elements). A [process definition](../process/process-definition.md) can have one or more start nodes (each linked with a start condition) and also one or more end nodes depending on the flow outcomes
 + **​Message send tasks and message received tasks** ​- are used to communicate with external systems (integrations and plugins)
 + **Message events** - designed to capture the interaction between different process participants by referencing messages
 + ​**Task nodes**​​ - can be added when a [business rule](../actions/business-rule-action/business-rule-action.md) needs to be run during a process flow

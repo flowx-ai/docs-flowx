@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Advancing controller
 
-The Advancing Controller is a support service for the [Process Engine](./flowx-engine/flowx-engine.md) that enhances the efficiency of advancing operations. It facilitates equal distribution and redistribution of the workload during scale-up and scale-down scenarios.
+The Advancing Controller is a support service for the [Process Engine](./flowx-engine.md) that enhances the efficiency of advancing operations. It facilitates equal distribution and redistribution of the workload during scale-up and scale-down scenarios.
 
 To achieve its functionality, the Advancing Controller microservice utilizes Postgres triggers in the database configuration.
 

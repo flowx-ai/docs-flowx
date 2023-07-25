@@ -42,7 +42,7 @@ When encountering a step with `canGoBack` switched to false, all steps found beh
 
 #### Data stream topics
 
-*  **Topic Name** - the topic name where the [process engine](../../platform-deep-dive/core-components/flowx-engine/flowx-engine.md) listens for the response (this should be added to the platform and match the topic naming rule for the engine to listen to it) - available for UPDATES topics (Kafka receive events)
+*  **Topic Name** - the topic name where the [process engine](../../platform-deep-dive/core-components/flowx-engine.md) listens for the response (this should be added to the platform and match the topic naming rule for the engine to listen to it) - available for UPDATES topics (Kafka receive events)
 
 :::warning
 A naming pattern must be defined on the [process engine configuration](../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#configuring-kafka) to use the defined topics. It is important to know that all the events that start with a configured pattern will be consumed by the Engine. For example, `KAFKA_TOPIC_PATTERN` is the topic name pattern where the Engine listens for incoming Kafka events.

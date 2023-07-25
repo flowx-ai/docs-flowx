@@ -25,7 +25,7 @@ For more information, check the following section:
 FLOWX Designer is using NGINX ingress controller for the following actions:
 
 1. For routing calls to plugins
-2. For routing calls to the [FLOWX Engine](../../../platform-deep-dive/core-components/flowx-engine/flowx-engine.md):
+2. For routing calls to the [FLOWX Engine](../../../platform-deep-dive/core-components/flowx-engine.md):
 
 * Viewing current instances of processes running in the FLOWX engine
 * Testing process definitions from the FLOWX Designer - route the API calls and SSE communications to the FLOWX engine backend

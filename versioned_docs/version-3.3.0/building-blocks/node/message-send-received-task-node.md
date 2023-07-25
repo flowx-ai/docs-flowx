@@ -131,7 +131,7 @@ For example, let's think about a CRM microservice that waits to receive requests
 
 The values you need to configure for this node are the following:
 
-* **Topic name** - the topic name where the [process engine](../../platform-deep-dive/core-components/flowx-engine/flowx-engine.md) listens for the response (this should be added to the platform and match the topic naming rule for the engine to listen to it) - `ai.flowx.out.crm.search.v1`
+* **Topic name** - the topic name where the [process engine](../../platform-deep-dive/core-components/flowx-engine.md) listens for the response (this should be added to the platform and match the topic naming rule for the engine to listen to it) - `ai.flowx.out.crm.search.v1`
 
 :::warning
 A naming pattern must be defined on the process engine to use the defined topics. It is important to know that all the events that start with a configured pattern will be consumed by the Engine. For example, `KAFKA_TOPIC_PATTERN` is the topic name pattern that the Engine listens to for incoming Kafka events.

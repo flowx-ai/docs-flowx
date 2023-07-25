@@ -84,7 +84,7 @@ If you are defining this action on a [**subprocess**](../node/subprocess-run-nod
 
 #### Send Update Data example
 
-To send the latest value from the [process instance](../process/active-process/process-instance/process-instance.md) data found at `application.client.firstName` key, to the frontend app, you can do the following:
+To send the latest value from the [process instance](../process/active-process/process-instance.md) data found at `application.client.firstName` key, to the frontend app, you can do the following:
 
 1. Add a **Send data to user interface**.
 2. Set the **Message Type** to **Default** (this is default value for `data`).

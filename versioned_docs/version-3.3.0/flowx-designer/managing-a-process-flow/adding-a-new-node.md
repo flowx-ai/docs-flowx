@@ -6,7 +6,7 @@ sidebar_position: 2
 
 Once you create a new [**process definition**](../../terms/flowx-process-definition), you can start configuring it by adding new [**nodes**](../../terms/flowx-node).
 
-You can choose between a series of available node types below. For an overview of what each node represents, see [BPMN 2.0 basic concepts](../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-bpmn/bpmn-basic-concepts/bpmn-basic-concepts.md):
+You can choose between a series of available node types below. For an overview of what each node represents, see [BPMN 2.0 basic concepts](../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-bpmn/bpmn-basic-concepts.md):
 
 * [start event](../../building-blocks/node/start-end-node.md)
 * [end event](../../building-blocks/node/start-end-node.md)

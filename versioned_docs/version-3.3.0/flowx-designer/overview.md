@@ -125,7 +125,7 @@ A [**process definition**](../terms/flowx-process-definition) is uniquely identi
 
 ![Process Definitions](./img/designer_process_definitions.gif)
 
-[Process definition](../building-blocks/process/process-definition/process-definition.md)
+[Process definition](../building-blocks/process/process-definition.md)
 
 [Managing a process flow](./managing-a-process-flow/managing-a-process-flow.md)
 
@@ -135,7 +135,7 @@ The complete list of active [**process instances**](../terms/flowx-process-insta
 
 ![Active process](./img/designer_active_process.png)
 
-[Process instance](../building-blocks/process/active-process/process-instance/process-instance.md)
+[Process instance](../building-blocks/process/active-process/process-instance.md)
 
 ## Managing CMS
 

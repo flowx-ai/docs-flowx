@@ -36,17 +36,17 @@ You can use FLOWX Engine to do the following:
 * manage integrations, so you can hook it up to existing CRMs, ERPs, KYC, transaction data and many more
 * to read process definitions (if it is connected to the same DB as FLOWX.AI Admin)
 
-[FLOWX Engine](../platform-deep-dive/core-components/flowx-engine/flowx-engine.md) runs the business processes, coordinating integrations and the omnichannel UI. It is a [Kafka-based](./frameworks-and-standards/event-driven-architecture-frameworks/intro-to-kafka-concepts) event-driven platform, that is able to orchestrate, generate and integrate with any type of legacy system, without expensive or risky upgrades.&#x20;
+[FLOWX Engine](../platform-deep-dive/core-components/flowx-engine.md) runs the business processes, coordinating integrations and the omnichannel UI. It is a [Kafka-based](./frameworks-and-standards/event-driven-architecture-frameworks/intro-to-kafka-concepts) event-driven platform, that is able to orchestrate, generate and integrate with any type of legacy system, without expensive or risky upgrades.&#x20;
 
 This is extremely important because often, digital apps used by a bank’s clients, for example, are limited by the load imposed by the core banking system. And the customers see blocked screens and endlessly spinning flywheels. FLOWX.AI buffers this load, offering a 0.2s response time, thus the customer never has to wait for data to load.
 
 
-[FLOWX Engine](../platform-deep-dive/core-components/flowx-engine/flowx-engine.md)
+[FLOWX Engine](../platform-deep-dive/core-components/flowx-engine.md)
 
 
 ### FLOWX.AI Designer
 
-[FLOWX.AI Designer](../flowx-designer/flowx-designer.md) is built to administrate everything in FLOWX.AI. It is a web application that runs in the browser, meaning that it resides out of a FLOWX deployment.
+[FLOWX.AI Designer](../flowx-designer/designer.md) is built to administrate everything in FLOWX.AI. It is a web application that runs in the browser, meaning that it resides out of a FLOWX deployment.
 
 The platform has **no-code/full-code capabilities**, meaning applications can be developed in a visual way, available for anyone with a powerful business idea. So we’re talking about business analysts, product managers - people without advanced programming skills, and also experienced developers.
 
@@ -55,7 +55,7 @@ The process visual designer works on [BPMN 2.0 standard](../platform-overview/fr
 However, we do support custom CSS or custom screens. Because we’re aware each brand is different and each has its own CI, so you need to have the ability to create UIs that respect your brand guidelines.
 
 
-[FLOWX.AI Designer](../flowx-designer/flowx-designer.md)
+[FLOWX.AI Designer](../flowx-designer/designer.md)
  
 
 ### FLOWX.AI SDKs

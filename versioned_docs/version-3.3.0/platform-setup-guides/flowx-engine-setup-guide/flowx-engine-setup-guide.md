@@ -20,9 +20,9 @@ The FLOWX.AI Engine requires the following components to be set up before it can
 # Dependencies
 
 * [**Database**](#database---postgres--oracle)
-* [**Redis server**](../platform-setup-guides.md#redis-configuration)
+* [**Redis server**](../platform-setup-guides-docs.md#redis-configuration)
 * [**Kafka**](#kafka-configuration)
-* [**Logging**](../platform-setup-guides.md#logging)
+* [**Logging**](../platform-setup-guides-docs.md#logging)
 
 For Microservices architecture, some Microservices holds their data individually using separate Databases.
 
@@ -67,14 +67,14 @@ A basic Postgres configuration can be set up using a helm values.yaml file as it
 
 * **Redis server** - a Redis cluster is required for the engine to cache process definitions, compiled scripts, and Kafka responses
 * **Kafka cluster** - Kafka is the backbone of the engine and all plugins and integrations are accessed via the Kafka broker
-* **Additional dependencies** - details about how to set up logging via Elasticsearch, monitoring, and tracing via Jaeger, can be found [**here**](../platform-setup-guides.md)
+* **Additional dependencies** - details about how to set up logging via Elasticsearch, monitoring, and tracing via Jaeger, can be found [**here**](../platform-setup-guides-docs.md)
 
 ## Configuration
 
-* [**Datasource configuration**](../platform-setup-guides.md#datasource-configuration)
-* [**Redis configuration**](../platform-setup-guides.md#redis-configuration)
-* [**Logging**](../platform-setup-guides.md#logging)
-* [**Authorization & access roles**](../platform-setup-guides.md#authorization--access-roles)
+* [**Datasource configuration**](../platform-setup-guides-docs.md#datasource-configuration)
+* [**Redis configuration**](../platform-setup-guides-docs.md#redis-configuration)
+* [**Logging**](../platform-setup-guides-docs.md#logging)
+* [**Authorization & access roles**](../platform-setup-guides-docs.md#authorization--access-roles)
 * [**Configuring access roles for processes**](configuring-access-roles-for-processes)
 * [**Kafka configuration**](#configuring-kafka)
 

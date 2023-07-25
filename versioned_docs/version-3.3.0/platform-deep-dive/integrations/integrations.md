@@ -24,7 +24,7 @@ Follow these steps to create a custom integration:
 
 1. Develop a microservice, referred to as a "Connector," using your preferred tech stack. The Connector should listen for Kafka events, process the received data, interact with legacy systems if required, and send the data back to Kafka.
 
-2. Configure the [process definition](../../building-blocks/process/process-definition/process-definition.md) by adding a [message](../../building-blocks/node/message-send-received-task-node.md) send action in one of the [nodes](../../building-blocks/node/node.md). This action sends the required data to the Connector.
+2. Configure the [process definition](../../building-blocks/process/process-definition.md) by adding a [message](../../building-blocks/node/message-send-received-task-node.md) send action in one of the [nodes](../../building-blocks/node/node.md). This action sends the required data to the Connector.
 
 3. Once the custom integration's response is ready, send it back to the FLOWX.AI engine. Keep in mind that the process will wait in a receive message node until the response is received.
 

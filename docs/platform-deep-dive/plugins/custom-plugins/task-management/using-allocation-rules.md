@@ -25,7 +25,7 @@ To add process and allocation rules, follow the next steps:
 
 ![](../../../img/adding_process_and_allocation.png)
 
-2.  Select a [**process definition**](../../../../building-blocks/process/process-definition/process-definition.md) from the drop-down list.
+2.  Select a [**process definition**](../../../../building-blocks/process/process-definition.md) from the drop-down list.
 
 3.  Click **Add swimlane allocations button (+)** to add allocations.
 

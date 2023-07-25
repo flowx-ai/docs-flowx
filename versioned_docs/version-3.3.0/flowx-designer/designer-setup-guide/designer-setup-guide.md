@@ -1,6 +1,6 @@
 # Designer setup guide
 
-The [FLOWX Designer](../flowx-designer.md) app is made up of a backend microservice and a frontend app. The backend microservice handles saving and editing process definitions. It provides the REST API used by the [**FLOWX Designer**](../../terms/flowx-ai-designer). The processes defined here will be handled by the [FLOWX Engine](../../platform-deep-dive/core-components/flowx-engine/flowx-engine.md).
+The **FLOWX Designer** app is made up of a backend microservice and a frontend app. The backend microservice handles saving and editing process definitions. It provides the REST API used by the [**FLOWX Designer**](../../terms/flowx-ai-designer). The processes defined here will be handled by the [FLOWX Engine](../../platform-deep-dive/core-components/flowx-engine.md).
 
 Follow to next steps in order to set them up in your environment.
 
@@ -22,7 +22,7 @@ It would be best if the FLOWX Designer used a separate [NGINX](../../platform-ov
 
 This is used in order to route API calls from the SPA (single page application) to the backend service, to the engine, and to various plugins.
 
-The FLOWX Designer SPA will use the backend service to manage the platform via REST calls, will use API calls to manage specific content for the plugins and will use REST and [SSE](../../building-blocks/actions/send-data-to-user-interface.md) calls to connect to the engine.
+The FLOWX Designer SPA will use the backend service to manage the platform via REST calls, will use API calls to manage specific content for the plugins and will use REST and SSE calls to connect to the engine.
 
 Here's an example/suggestion of an NGINX setup:
 
@@ -84,7 +84,7 @@ spec:
           servicePort: 80
 ```
 
-2. For testing process definitions from the FLOWX Designer, we need to route API calls to the Engine backend.
+2. For testing process definitions from the FLOWX Designer, we need to route API calls and SSE communication to the Engine backend.
 
 Setup for routing REST calls:
 
@@ -109,6 +109,30 @@ spec:
           serviceName: {{engine-service-name}}
           servicePort: 80
 ```
+
+Setup for routing SSE communication:
+
+```jsx
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/cors-allow-headers: "<your_defaultCorsAllowHeaders_value>"
+  name: flowx-public-subpath-events-rewrite
+spec:
+  rules:
+  - host: {{host}}
+    http:
+      paths:
+      - backend:
+          service:
+            name: events-gateway
+            port:
+              name: http
+        path: /api/events(/|$)(.*)
+```
+
+
 
 3. For accessing the REST API of the backend microservice
 

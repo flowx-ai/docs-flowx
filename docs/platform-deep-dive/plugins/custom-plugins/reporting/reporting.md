@@ -96,11 +96,11 @@ Before using the plugin, make sure you marked all the **Data models** and **Proc
 
 This flag can be used in the following places:
 
-* [**Data model**](../../../../building-blocks/process/process-definition/process-definition.md#data-model) - for the keys that must be used in the reporting
+* [**Data model**](../../../../building-blocks/process/process-definition.md#data-model) - for the keys that must be used in the reporting
 
 ![](../../../img/flag_data_model.gif)
 
-* [**Process settings**](../../../../building-blocks/process/process-definition/process-definition.md#settings) tab - to include a process definition in reporting.
+* [**Process settings**](../../../../building-blocks/process/process-definition.md#settings) tab - to include a process definition in reporting.
 
 ![](../../../img/reporting_flag.gif)
 

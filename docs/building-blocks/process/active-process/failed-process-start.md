@@ -37,7 +37,7 @@ When you click **view** button, a detailed exception will be displayed.
 * [Action](../../actions/actions.md)
 * [Node](../../node/node.md)
 * [Subprocess](../subprocess.md)
-* [Process Definition](../process-definition/process-definition.md)
+* [Process Definition](../process-definition.md)
 
 ### Exceptions type
 

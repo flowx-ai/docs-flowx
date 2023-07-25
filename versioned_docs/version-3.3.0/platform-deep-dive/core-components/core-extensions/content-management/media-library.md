@@ -6,7 +6,7 @@ sidebar_position: 9
 
 The media library serves as a centralized hub for managing and organizing various types of media files, including images, GIFs, and more. It encompasses all the files that have been uploaded to the [**processes**](../../../../terms/flowx-process-definition), providing a convenient location to view, organize, and upload new media files.
 
-<!-- ![](../../../../../release-notes/img/media_library.gif) -->
+![](../../../../../../release-notes/img/media_library.gif)
 
 :::info
 You can also upload an image directly to the Media Library on the spot when configuring a process using the [**UI Designer**](../../../../building-blocks/ui-designer). More information [**here**](../../../../building-blocks/ui-designer/ui-component-types/image#media-library).

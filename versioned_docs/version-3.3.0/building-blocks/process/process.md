@@ -27,7 +27,7 @@ The process is the core building block of the platform. Think of it as a represe
 
 A process is nothing more than a series of steps that need to be followed in order to get to the desired outcome: getting a new credit card, gathering online donations from friends or having your lunch brought to you. These steps involve a series of actions, whether automated or handled by a human, that allows you to complete your chosen business objective.
 
-[Process definition](./process-definition/process-definition.md)
+[Process definition](./process-definition.md)
 
 ## Process instance
 
@@ -35,7 +35,7 @@ Once the desired processes are defined in the platform, they are ready to be use
 
 From this point on, the platform takes care of following the process flow, handling the necessary actions, storing and interpreting the resulting data.
 
-[Process instance](./active-process/process-instance/process-instance.md)
+[Process instance](./active-process/process-instance.md)
 
 [Exceptions](./active-process/failed-process-start.md)
 

@@ -1,4 +1,4 @@
-# Timer expressions
+ # Timer expressions
 
 When working with FLOWX.AI components, there are multiple scenarios in which timer expressions are needed.
 
@@ -33,7 +33,7 @@ More details:
 
 #### Cron Expressions are used in the following example:
 
-* [**Process definition**](../../building-blocks/process/process-definition/process-definition.md) - **Expiry time** - a user can set up a `expiryTime` function on a process, for example, a delay of 30s will be set up like:
+* [**Process definition**](../../building-blocks/process/process-definition.md) - **Expiry time** - a user can set up a `expiryTime` function on a process, for example, a delay of 30s will be set up like:
 
 ![](./img/timer_process_settings.png)
 
