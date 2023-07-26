@@ -45,7 +45,7 @@ notification-mdb:
 
 ### Redis server
 
-The plugin can use the [Redis component](../../../../platform-setup-guides/platform-setup-guides.md#redis-configuration) already deployed for the engine.
+The plugin can use the [Redis component](../../../../platform-setup-guides/platform-setup-guides-docs.md#redis-configuration) already deployed for the engine.
 
 ## Configuration 
 

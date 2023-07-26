@@ -17,7 +17,7 @@ On the main screen inside **Enumerations**, you have the following elements:
 * **Open** - button used to access an enumeration to configure it/ add more values, etc.
 * **Delete** - button used to delete an enumeration
 * **New enumeration** - button used to create a new enumeration
-* **Breadcrumbs >** **Import/Export**
+* **Breadcrumbs **>** **Import/Export**
 
 For each entry (when you hit the **Open** button) inside an enumeration we have to define the following properties:
 

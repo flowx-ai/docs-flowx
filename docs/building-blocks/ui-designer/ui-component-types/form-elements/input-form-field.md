@@ -85,7 +85,7 @@ For more details on how to configure a UI action, click [**here**](../../ui-acti
 * **Icon Color** - select the color of the icon using the color picker 
 
 :::info
-When setting the color, the entire icon is filled with that color, the SVG's fill.
+When setting the color, the entire icon is filled with that color, the SVG's fill. Avoid changing colors for multicolor icons.
 :::
 
 You have the option to enhance the Input element by incorporating two types of icons:

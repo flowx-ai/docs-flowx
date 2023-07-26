@@ -19,14 +19,12 @@ This event throws a message and continues with the process flow.
 It enables the sending of a message to a unique destination.
 
 [Message Throw Intermediate Event](message-throw-intermediate-event.md)
-
+      
 ###  Message Catch Boundary Event
 
 This type of event can be triggered at any time while the associated task is being performed.
 For an interrupting event, when the message is received, the user task is finished, and the token advances in the process flow.
 For a non-interrupting event, the user task to which the event is attached is not finished immediately when messages are received. Multiple non-interrupting events can be received while the token is still active in the user task.
-
-
 
 
 [Message Catch Boundary Event](message-catch-boundary-event.md)

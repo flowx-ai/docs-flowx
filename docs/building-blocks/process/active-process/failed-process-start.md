@@ -41,7 +41,7 @@ When you click **view** button, a detailed exception will be displayed.
 
 ### Exceptions type
 
-Based on the exception type, there are multiple causes that could make a proc   ess fail. Here are some examples:
+Based on the exception type, there are multiple causes that could make a process fail. Here are some examples:
 
 | Type                     | Cause                                                                                                                                                                                                                     |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

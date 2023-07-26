@@ -16,10 +16,10 @@ The Audit service requires the following components to be set up before it can b
 
 The Audit service is built as a Docker image and runs on top of Kafka and Elasticsearch. Therefore, these services must be set up and running before starting the Audit service.
 
-* [**Kafka configuration**](./platform-setup-guides.md#kafka) 
-* [**Authorization & access roles**](./platform-setup-guides.md#authorization--access-roles)
+* [**Kafka configuration**](./platform-setup-guides-docs.md#kafka) 
+* [**Authorization & access roles**](./platform-setup-guides-docs.md#authorization--access-roles)
 * [**Elastic search**](#elastic-search)
-* [**Logging**](./platform-setup-guides.md#logging)
+* [**Logging**](./platform-setup-guides-docs.md#logging)
 
 ## Configuration
 

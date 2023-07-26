@@ -1,6 +1,6 @@
 # Documents plugin setup
 
-The Documents plugin provides functionality for generating, persisting, combining, and manipulating documents within the FLOWX.AI system.
+The Documents plugin provides functionality for generating, persisting, combining, and manipulating documents within the [**FLOWX.AI**](../../../../terms/flowx) system.
 
 The plugin is available as a docker image.
 

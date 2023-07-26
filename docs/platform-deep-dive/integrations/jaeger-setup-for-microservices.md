@@ -4,7 +4,7 @@ The scope of this document is to present some basic information on how to includ
 
 ## Required dependencies
 
-```markup
+```xml
 <dependency>
     <groupId>io.jaegertracing</groupId>
     <artifactId>jaeger-client</artifactId>
