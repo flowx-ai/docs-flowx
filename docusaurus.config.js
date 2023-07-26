@@ -276,7 +276,7 @@ const config = {
           { version: 'current', rootDocId: '/docs/intro'}
         ],
         addDownloadButton: true,
-        autoBuildPdfs: true,
+        autoBuildPdfs: false,
         downloadButtonText: 'Download as PDF',
         ignoreDocs: ['licenses', 'glossary','survey'],
         stylesheets: [],
