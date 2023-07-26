@@ -778,7 +778,7 @@ const sidebars = {
           [ 
             {
               type: "category",
-              label: "📦 Custom Plugins",
+              label: "Custom Plugins",
               link: {
                 type: "doc",
                 id: "platform-deep-dive/plugins/custom-plugins/custom-plugins"
@@ -787,7 +787,7 @@ const sidebars = {
               [ 
                 {
                   type: "category",
-                  label: "📦 Documents plugin",
+                  label: "Documents plugin",
                   link: {
                     type: "doc",
                     id: "platform-deep-dive/plugins/custom-plugins/documents-plugin/documents-plugin"
@@ -864,7 +864,7 @@ const sidebars = {
     
                 {
                   type: "category",
-                  label: "📦 Notifications plugin",
+                  label: "Notifications plugin",
                   link: {
                     type: "doc",
                     id: "platform-deep-dive/plugins/custom-plugins/notifications-plugin/notifications-plugin"
@@ -931,7 +931,7 @@ const sidebars = {
                 
                 {
                   type: "category",
-                  label: "📦 Task management",
+                  label: "Task management",
                   link: {
                     type: "doc",
                     id: "platform-deep-dive/plugins/custom-plugins/task-management/task-management"
@@ -965,7 +965,7 @@ const sidebars = {
                 
                 {
                   type: "category",
-                  label: "📦 Customer management",
+                  label: "Customer management",
                   link: {
                     type: "doc",
                     id: "platform-deep-dive/plugins/custom-plugins/customer-management/customer-management"
@@ -993,7 +993,7 @@ const sidebars = {
 
                 {
                   type: "category",
-                  label: "🗄️ Reporting",
+                  label: "Reporting",
                   link: {
                     type: "doc",
                     id: "platform-deep-dive/plugins/custom-plugins/reporting/reporting"
@@ -1007,12 +1007,6 @@ const sidebars = {
               
                   ],
                 },  
-
-                { 
-                  type: "doc",
-                  id: "platform-deep-dive/plugins/wysiwyg"
-                }, 
-                
                 
               ],
             },

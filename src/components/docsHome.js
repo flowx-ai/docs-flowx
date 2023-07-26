@@ -71,7 +71,7 @@
                      📌  <b>Building blocks</b>
                    </Link>
                    <br></br>
-                   <Link href={useBaseUrl("docs/flowx-designer")}>
+                   <Link href={useBaseUrl("docs/flowx-designer/designer")}>
                      📌  <b>Designer</b>
                    </Link>
                    <br></br>

@@ -629,7 +629,7 @@
           "items": [
             {
               "type": "category",
-              "label": "📦 Custom Plugins",
+              "label": "Custom Plugins",
               "link": {
                 "type": "doc",
                 "id": "platform-deep-dive/plugins/custom-plugins/custom-plugins"
@@ -637,7 +637,7 @@
               "items": [
                 {
                   "type": "category",
-                  "label": "📦 Documents plugin",
+                  "label": "Documents plugin",
                   "link": {
                     "type": "doc",
                     "id": "platform-deep-dive/plugins/custom-plugins/documents-plugin/documents-plugin"
@@ -699,7 +699,7 @@
                 },
                 {
                   "type": "category",
-                  "label": "📦 Notifications plugin",
+                  "label": "Notifications plugin",
                   "link": {
                     "type": "doc",
                     "id": "platform-deep-dive/plugins/custom-plugins/notifications-plugin/notifications-plugin"
@@ -753,7 +753,7 @@
                 },
                 {
                   "type": "category",
-                  "label": "📦 Task management",
+                  "label": "Task management",
                   "link": {
                     "type": "doc",
                     "id": "platform-deep-dive/plugins/custom-plugins/task-management/task-management"
@@ -779,7 +779,7 @@
                 },
                 {
                   "type": "category",
-                  "label": "📦 Customer management",
+                  "label": "Customer management",
                   "link": {
                     "type": "doc",
                     "id": "platform-deep-dive/plugins/custom-plugins/customer-management/customer-management"
@@ -801,7 +801,7 @@
                 },
                 {
                   "type": "category",
-                  "label": "🗄️ Reporting",
+                  "label": "Reporting",
                   "link": {
                     "type": "doc",
                     "id": "platform-deep-dive/plugins/custom-plugins/reporting/reporting"
@@ -812,11 +812,8 @@
                       "id": "platform-deep-dive/plugins/custom-plugins/reporting/access-and-authorization"
                     }
                   ]
-                },
-                {
-                  "type": "doc",
-                  "id": "platform-deep-dive/plugins/wysiwyg"
                 }
+      
               ]
             },
             {

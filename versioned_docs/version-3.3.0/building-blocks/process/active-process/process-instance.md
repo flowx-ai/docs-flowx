@@ -12,7 +12,7 @@ A process instance is a specific execution of a business process that is defined
 
 Once the desired processes are defined in the platform, they are ready to be used. Each time a process needs to be used, for example each time a customer wants to request, for example, a new credit card, a new instance of the specified process definition is started in the platform. Think of the process definition as a blueprint for a house, and of the process instance as each house of that type being built.
 
-The [**FLOWX Engine**](../../../../terms/flowxai-process-engine) is responsible for executing the steps in the process definition and handling all the business logic. The token represents the current position in the process and moves from one node to the next based on the sequences and rules defined in the exclusive gateways. In the case of parallel gateways, child tokens are created and eventually merged back into the parent token.
+The [**FLOWX Engine**](../../../terms/flowxai-process-engine) is responsible for executing the steps in the process definition and handling all the business logic. The token represents the current position in the process and moves from one node to the next based on the sequences and rules defined in the exclusive gateways. In the case of parallel gateways, child tokens are created and eventually merged back into the parent token.
 
 Kafka events are used for communication between FLOWX.AI components such as the engine and integrations/plugins. Each event type is associated with a Kafka topic to track and orchestrate the messages sent on Kafka. The engine updates the UI by sending messages through sockets.
 
@@ -51,7 +51,7 @@ The process status data includes the following:
 ![](../img/process_tokens.png)
 
 :::info
-For more information about token status details, [here](../../../token).
+For more information about token status details, [here](../../token.md).
 :::
 
 * **Subprocesses** - :exclamation:displayed only if the current [process instance](../../../terms/flowx-process-instance) generated a [subprocess](../subprocess.md) instance

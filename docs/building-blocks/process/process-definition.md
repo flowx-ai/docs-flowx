@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Process definition
 
-The core of the platform is the process definition, which is the blueprint of the business process made up of [nodes](../../node) that are linked by sequences.
+The core of the platform is the process definition, which is the blueprint of the business process made up of [nodes](../node/node.md) that are linked by sequences.
 
 ![](../../platform-deep-dive/img/process_definitions_new.png)
 

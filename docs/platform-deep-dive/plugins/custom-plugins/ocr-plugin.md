@@ -1,4 +1,4 @@
-# 📦 OCR plugin
+# OCR plugin
 
 The OCR (Optical Character Recognition) plugin is a powerful tool that enables you to read barcodes and extract handwritten signatures from .pdf documents with ease.
 

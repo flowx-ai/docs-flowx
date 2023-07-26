@@ -61,7 +61,7 @@ There are 3 types of events:
 
 #### Service Task
 
-* is executed by a business process engine. The task defines a script that the [**process engine**](../../../../../terms/flowxai-process-engine) can interpret. When the task begin, the engine will execute the script. The Task will be completed when the script is completed. It also provides a mechanism for a process to run a [**business rule**](../../../../../terms/business-rules) on the process data.
+* is executed by a business process engine. The task defines a script that the [**process engine**](../../../../terms/flowxai-process-engine) can interpret. When the task begin, the engine will execute the script. The Task will be completed when the script is completed. It also provides a mechanism for a process to run a [**business rule**](../../../../terms/business-rules) on the process data.
 
 ### BPMN Subprocesses
 
@@ -69,7 +69,7 @@ In BPMN, a subprocess is a compound activity that represents a collection of oth
 
 ### Gateways
 
-Gateways allow to control as well as merge and split the [**process flow**](../../../../../terms/flowx-process).
+Gateways allow to control as well as merge and split the [**process flow**](../../../../terms/flowx-process).
 
 #### Exclusive gateways
 
