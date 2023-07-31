@@ -193,7 +193,14 @@ const sidebars = {
               id: "building-blocks/process/subprocess"
             },
 
+            {
+              type: "doc",
+              id: "building-blocks/process/versioning"
+            },
+
           ]
+
+          
         
         },
         {
@@ -574,10 +581,6 @@ const sidebars = {
               id: "flowx-designer/managing-a-process-flow/export-import-a-process-definition"
             },
 
-            { 
-              type: "doc",
-              id: "flowx-designer/managing-a-process-flow/process-definition-states-and-versioning"
-            },
           ],
         },
 
@@ -688,6 +691,11 @@ const sidebars = {
                     { 
                       type: "doc",
                       id: "platform-deep-dive/core-components/core-extensions/content-management/media-library"
+                    },
+
+                    { 
+                      type: "doc",
+                      id: "platform-deep-dive/core-components/core-extensions/content-management/font-files"
                     },
                     
                     

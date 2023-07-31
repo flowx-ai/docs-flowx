@@ -70,10 +70,26 @@ For more details on how to configure a UI action, click [**here**](../../ui-acti
 
 ### Radio styling
 
+#### Properties
+
 The type of the radio can be selected by using the **styling** tab in **UI Designer**, possible values:
 
 * clear
 * bordered
+
+#### Typography
+
+You can customize the typography for the following properties:
+
+* Label
+* Options
+* Helper & errors
+
+![](../../../img/radio_typography.png)
+
+For more details on how to upload and manage fonts, check the following section:
+
+[Font management](../../../../platform-deep-dive/core-components/core-extensions/content-management/font-files.md)
 
 :::info
 For more valid CSS properties, click [here](../../#styling).

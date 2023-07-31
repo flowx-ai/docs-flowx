@@ -33,6 +33,7 @@ The Input Field offers the following configuration options:
 * **Type** - the type of data that the input field can accept, such as text, number, email, or password
 * **Prefix** - a label that appears as a prefix to the input field
 * **Suffix** - a label that appears as a suffix to the input field
+* **Has clear** - 
 * **Helpertext** - additional information about the input field (can be hidden inside an infopoint)
 
 ![](../../img/input_props.png)
@@ -44,6 +45,14 @@ The default value for the element can be configured here, this will autofill the
 ![](../../img/input_datasource1.png)
 
 ![](../../img/input_datasource.png)
+
+##### Computed datasource value
+
+To add a computed value, you have to explicitly check “Computed value” option (represented by the `f(x)` icon), which will transform the desired field into a JavaScript editor.
+
+Check the following example:
+
+[Computed values](../../dynamic-and-computed-values.md#computed-values)
 
 #### Validators
 
@@ -97,6 +106,20 @@ By utilizing these two types of icons, you can provide users with a more intuiti
 
 ![](../../../../platform-deep-dive/img/input_icons.png)
 
-* The Input Field can be styled using valid CSS properties (more details [here](../../#styling))
+#### Typography
+
+You can customize the typography for the following properties:
+
+* Label
+* Text
+* Helper & errors
+
+![](../../../img/input_typography.png)
+
+For more details on how to upload and manage fonts, check the following section:
+
+[Font management](../../../../platform-deep-dive/core-components/core-extensions/content-management/font-files.md)
+
+The Input Field can be styled using valid CSS properties (more details [here](../../#styling))
 
 ![](../../img/input_form_field_styling.gif)

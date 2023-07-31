@@ -34,18 +34,20 @@ If you are using an older version of Angular (for example, v14), please consult 
 Use the following command to install the **renderer** library and its required dependencies:
 
 ```bash
-npm install @flowx/ui-sdk@3.21.0
-@flowx/ui-toolkit@3.21.0
-@flowx/ui-theme@3.21.0
-paperflow-web-components 
-vanillajs-datepicker@1.3.1 
-moment@^2.27.0 
-@angular/flex-layout@15.0.0-beta.42 
-@angular/material@15.2.0 
-@angular/material-moment-adapter@15.2.0 
-@angular/cdk@15.2.0 
-ng2-pdfjs-viewer@15.0.0
-event-source-polyfill@1.0.31
+npm install \
+  @flowx/ui-sdk@latest \
+  @flowx/ui-toolkit@latest \
+  @flowx/ui-theme@latest \
+  event-source-polyfill@1.0.31 \
+  paperflow-web-components \
+  vanillajs-datepicker@1.3.1 \
+  moment@^2.27.0 \
+  @angular/flex-layout@15.0.0-beta.42 \
+  @angular/material@15.2.0 \
+  @angular/material-moment-adapter@15.2.0 \
+  @angular/cdk@15.2.0 \
+  ng2-pdfjs-viewer@15.0.0 \
+  marked@^5.0.0
 ```
 
 Also, in order to successfully link the pdf viewer, add the following declaration in the assets property of you project's angular.json:

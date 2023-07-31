@@ -100,14 +100,28 @@ Margin and padding are CSS properties used to create space between elements in a
 
 [Padding](https://www.w3schools.com/css/css_padding.asp)
 
+### Typography
+
 * **Typography** - typography options allow users to set font styles, colors, text indentation, and other formatting options; these properties can be found under the **Typography** section
-* **Background** - the Background section allows users to set the background color for their components, accepted values:
+
+![](../img/input_typography.png)
+
+:::info
+To learn how to upload custom font files, check the [<u>**Font Management**</u>](../../platform-deep-dive/core-components/core-extensions/content-management/font-files.md) section.
+:::
+
+
+### Background
+ 
+ **Background** - the Background section allows users to set the background color for their components, accepted values:
 
    - a valid color name - like `red`
    - a HEX value - like `#ff0000`
    - an RGB value - like `rgb(255,0,0)`
 
-* **Border** - border properties can be customized under the **Border** section, users can set the radius, width, or color of their component's borders
+### Border
+
+**Border** - border properties can be customized under the **Border** section, users can set the radius, width, or color of their component's borders
 
 [Border width](https://www.w3schools.com/css/css_border_width.asp)
 
@@ -118,6 +132,8 @@ Margin and padding are CSS properties used to create space between elements in a
 ![](./img/ui_designer_styling.gif#center)
 
 </div>
+
+### Advanced
 
 * **Advanced** - for advanced customization, users can add CSS classes to pre-defined components, this option is available under the **Advanced** section
 

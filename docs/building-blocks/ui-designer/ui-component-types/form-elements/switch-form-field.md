@@ -29,7 +29,15 @@ The available configuration options for this form element are:
 
 #### Properties
 
-* **Label** - the label of the switch
+* **Label** - The label of the Switch
+
+:::info
+The Label field supports Markdown syntax, enabling you to customize the text appearance with ease. To explore the Markdown syntax and its various formatting options, click [<u>**here**</u>](https://www.markdownguide.org/cheat-sheet/).
+
+![](../../../../platform-deep-dive/img/label_attributed.png)
+
+:::
+
 * **Helpertext** - additional information about the switch element (can be hidden inside an infopoint)
 
 #### Datasource
@@ -55,17 +63,17 @@ UI actions can be added to the switch element to define its behavior and interac
 * Action Type - select the action type
 
 :::info
-For more details on how to configure a UI action, click [here](../../ui-actions.md).
+For more details on how to configure a UI action, click [<u>**here**</u>](../../ui-actions.md).
 :::
 
-#### Switch styling
+### Switch styling
 
 The label of the switch can be positioned either as `start` or `end`.
 
 ![](../../img/switch_styling.gif)
 
 :::info
-For more valid CSS properties, click [here](../../#styling).
+For more valid CSS properties, click [<u>**here**</u>](../../#styling).
 :::
 
 

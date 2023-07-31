@@ -40,6 +40,10 @@ In the **Versions** tab you will find the following details:
 
 * View process - clicking on the eye icon will redirect you to the process definition 
 
+More details available in the following section:
+
+[Versioning](./versioning)
+
 ### Audit log
 
 In the **Audit log** tab you will find the following items:

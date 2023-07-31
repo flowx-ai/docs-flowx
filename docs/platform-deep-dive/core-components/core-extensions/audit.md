@@ -20,7 +20,16 @@ The Audit Log service provides a centralized location for all audit events. The 
 * UI Component
 * General Settings
 * Swimlane
+* Swimlane Permissions
 * Connector
+* Enumeration
+* Enumeration Value
+* Substitution Tag
+* Content Model
+* Language
+* Source System
+* Image
+* Font file
 
 </details>
 
