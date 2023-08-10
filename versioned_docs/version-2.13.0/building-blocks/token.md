@@ -13,7 +13,7 @@ In case of [parallel gateways](./node/parallel-gateway.md), child tokens are cre
 
 The image below shows how a token advances through a process flow:
 
-![](./img/image%20(140)%20(1)%20(1)%20(1)%20(1)%20(1).png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/image%20%28140%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29.png)
 
 The token will only move to the next node when there are no more mandatory actions from the current node that need to be executed. The token will also wait on a node in case the node is set to receive an event from an external system through Kafka.
 
@@ -23,11 +23,11 @@ There will be cases when the token needs to be stopped in a node until some inpu
 
 The current process instance status can be retrieved using the FLOWX Designer. It will display some info on the tokens related to that process instance and the current nodes they are in.
 
-![](./img/check_token_status.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/check_token_status.png)
 
 In case more details are needed about the token, you can click the **Process status** view button, choose a token then click the **view button** again:
 
-![](./img/token_view_button.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/token_view_button.gif)
 
 ### Token status details
 

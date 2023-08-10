@@ -46,11 +46,11 @@ Using a specific flow on FLOWX.AI offers several advantages:
 
 [Generating documents based on templates](./documents-plugin/using-documents-plugin/generate-docs-based-on-templates)
 
-![](../../img/ocr_doc_template.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/ocr_doc_template.gif)
 
 2. Create a process and add a [**Kafka Send Action**](../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) to a [**Message event send**](../../../building-blocks/node/message-send-received-task-node.md#message-send-task) node. Here you specify the [**kafka topic**](../../../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-kafka-concepts.md#topics) (address) where the template will be generated.
 
-![](../../img/ocr_kafka_send.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/ocr_kafka_send.png)
 
 :::info
 The Kafka topic for generating the template must match the topic defined in the **`KAFKA_TOPIC_DOCUMENT_GENERATE_HTML_IN`** variable. Refer to the [**Kafka configuration guide**](../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#configuring-kafka) for more details. For additional information, please see the [**Documents plugin setup guide**](../plugins-setup-guide/documents-plugin-setup).
@@ -65,12 +65,12 @@ The Kafka topic for generating the template must match the topic defined in the 
 * **includeBarcode** - true/false
 * **data** - a map containing the values that should replace the placeholders in the document template, the keys used in the map should match those defined in the HTML template
 
-![](../../img/ocr_message_body.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/ocr_message_body.png)
 
 :::info
 The [**`data` parameters**](../wysiwyg.md) must be defined in the document template beforehand. For more information, check the [**WYSIWYG Editor**](../wysiwyg.md) section.
 
-![](../../img/ocr_data_model.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/ocr_data_model.png)
 
 :::
 
@@ -87,11 +87,11 @@ The [**`data` parameters**](../wysiwyg.md) must be defined in the document templ
 Ensure that the topic matches the one defined in the **`KAFKA_TOPIC_DOCUMENT_GENERATE_HTML_OUT`** variable. 
 :::
 
-![](../../img/ocr_receive_response.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/ocr_receive_response.png)
 
 6. Add a [**user task node**](../../../building-blocks/node/user-task-node) and configure an [**Upload file action**](../../../building-blocks/actions/upload-file-action.md) to send the file (defined by the **`KAFKA_TOPIC_DOCUMENT_PERSIST_IN`** variable) to the storage solution (for example, S3).
 
-![](../../img/ocr_upload_file.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/ocr_upload_file.png)
 
 7. Next, the response will be sent back to the kafka topic defined by **`KAFKA_TOPIC_DOCUMENT_PERSIST_OUT`** environment variable through a callback action/subprocess.
 8. Next, send the response to the OCR Kafka topic defined at **`KAFKA_TOPIC_OCR_IN`** variable (representing the path to the S3 file)

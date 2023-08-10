@@ -8,7 +8,7 @@ This node represents an interaction with the user. It is used to display a piece
 
 ### Configuring a user task node
 
-![User Task Node](../img/user_task_node.png#center)
+![User Task Node](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/user_task_node.png#center)
 
 User task nodes allow you to define and configure UI templates and possible [actions](../../actions.md) for a certain template config node (ex: [button components](../../ui-designer/ui-component-types/buttons.md)).
 
@@ -18,7 +18,7 @@ User task nodes allow you to define and configure UI templates and possible [act
 * **Can go back** - setting this to true will allow users to return to this step after completing it. When encountering a step with `canGoBack` false, all steps found behind it will become unavailable.
 * **Flow Names** - leave this field empty if the node should be included in all flows
 
-![](../img/user_task_general_config.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/user_task_general_config.png)
 
 :::info
 When encountering a step with `canGoBack` switched to false, all steps found behind it will become unavailable.
@@ -31,7 +31,7 @@ When encountering a step with `canGoBack` switched to false, all steps found beh
 
 * **Response timeout** - can be triggered if, for example, a topic that you define and add in the [Data stream topics](./#data-stream-topics) tab does not respect the pattern, the format used for this is [ISO 8601 duration format ](https://www.digi.com/resources/documentation/digidocs/90001437-13/reference/r\_iso\_8601\_duration\_format.htm)(for example, a delay of 30s will be set up like `PT30S`)
 
-![](../img/user_task_node_response_timeout.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/user_task_node_response_timeout.png)
 
 #### Data stream topics
 
@@ -47,7 +47,7 @@ A naming pattern must be defined on the [process engine configuration](../../../
 
 * **Update task management** - force [Task Management plugin](../../../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md) to update information about this process after this node
 
-![](../img/user_task_node_task_mngmnt.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/user_task_node_task_mngmnt.png)
 
 ### Configuring the UI
 
@@ -62,7 +62,7 @@ To access the UI Designer, follow the next steps:
 3. Click the **Edit** **process** button.
 4. Select a **user task** **node** from the Process Designer then click the **brush** icon to open the **UI Designer**.
 
-![](../img/task_node_ui_designer.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/task_node_ui_designer.gif)
 
 [Configure a template config element](../../ui-designer/ui-designer.md#)
 
@@ -92,12 +92,12 @@ The root component can hold a hierarchical component structure.
 Available children for **Form Group** and **Container** are:
 
 * **Container** - used to group and align its children
-* **Form** -  used to group and align form field elements (**inputs**, **radios**, **checkboxes**, etc)
+* **Form** - used to group and align form field elements (**inputs**, **radios**, **checkboxes**, etc)
 * **Image** - allows you to configure an image in the document
 * **Text** - a simple text can be configured via this component, basic configuration is available
 * **Hint** - multiple types of hints can be configured via this component
 * **Link** - used to configure a hyperlink that opens in a new tab
-* **Button** - Multiple options  are available for configuration, the most important part being the possibility to add actions
+* **Button** - Multiple options are available for configuration, the most important part being the possibility to add actions
 * **File Upload** - A specific type of button that allows you to select a file
 * **Custom** - custom components
 
@@ -136,7 +136,7 @@ The sections that can be configured are as follows:
 2. **Input keys** - used to define the process model paths from which the components will receive its data
 3. [**UI Actions**](../../ui-designer/ui-actions.md) - actions defined here will be made available to the custom component. Multiple actions can be configured on a custom component and mapped to different triggers when developing it. Naming each action suggestively is important so the frontend engineer developing the component knows what actions should be triggered by certain events.
 
-More information about configuration, [here](using ui designer).
+More information about configuration, [here](using UI designer).
 
 ### Displaying a UI element
 
@@ -206,7 +206,7 @@ Example:
 
 3. **ProgressUpdateDto** will trigger the **SDK** to search for the UI element having the same **nodeId** with the one from the web socket progress event
 
-4. Additionally it will ask for data and actions that are required for this component via a **GET request** `{{processUrl}}/api/process/db573705-71dd-4216-9d94-5ba2fb36ff2a/data/42062`
+4. Additionally, it will ask for data and actions that are required for this component via a **GET request** `{{processUrl}}/api/process/db573705-71dd-4216-9d94-5ba2fb36ff2a/data/42062`
 
 ## Values 
 

@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # Slider
 
-![](../../img/slider.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/slider.gif)
 
 It allows users to pick only one option from a group of options, and you can choose to have between 2 and 5 options in the group. The segmented button is easy to use, and can help make your application easier for people to use.
 
@@ -40,7 +40,7 @@ The available configuration options for this form element are:
 
 * **Default Value** - the default value of the slider (static value - integer) the initial value set on the slider when it is first displayed or loaded, it represents a static value (integer), that serves as the starting point or pre-selected value for the slider, users can choose to keep the default value or adjust it as desired
 
-![](../../img/slider_general.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/slider_general.png)
 
 #### Validators
 
@@ -58,15 +58,13 @@ UI actions can be added to the slider element to define its behavior and interac
 
 You can also use multiple sliders UI elements that are interdependent, as you can see in the following example:
 
-![](../../img/multiple_sliders.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/multiple_sliders.gif)
 
 :::info
 You can improve the configuration of the slider using computed values as in the example above. These values provide a more flexible and powerful approach for handling complex use cases. You can find an example by referring to the following documentation:
 
 [**<u>Dynamic & computed values</u>**](../../dynamic-and-computed-values.md#computed-values)
 :::
-
-
 
 ### Slider styling
 
@@ -93,7 +91,7 @@ Choose an appropriate font family, size, and weight for the button label text.
 * **Selected BG** - set the background color of the button.
 * **ComponentBg** - set the background color of the button.
 
-![](../../img/slider_styling.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/slider_styling.png)
 
 :::info
 For more valid CSS properties, click [**here**](../../#styling).

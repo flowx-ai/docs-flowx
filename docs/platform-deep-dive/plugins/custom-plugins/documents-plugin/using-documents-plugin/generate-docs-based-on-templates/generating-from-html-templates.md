@@ -6,7 +6,7 @@ The Document Management Plugin allows you to generate documents based on previou
 
 Use the [WYSIWYG](../../../../wysiwyg.md) editor to create a document template.
 
-![](../../../../../img/ocr_doc_template.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/ocr_doc_template.gif)
 
 ## Sending the request
 
@@ -15,7 +15,7 @@ Use the [WYSIWYG](../../../../wysiwyg.md) editor to create a document template.
 3. Add the [**Kafka topic**](../../../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md#kafka-configuration) to which the request should be sent.
 4. Fill in the message with the following expected values in the request body:
 
-![](../../../../../img/html_generate_param.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/html_generate_param.png)
 
 * **documentList**: A list of documents to be generated with properties (name and value to be replaced in the document templates)
 * **customId**: Client ID
@@ -45,7 +45,7 @@ You can view the response by accessing the **Audit log** menu.
 
 The response will be sent on the output Kafka topic defined in the Kafka Receive Event Node. The response will contain the following information:
 
-![](../../../../../img/html_generate_reply.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/html_generate_reply.png)
 
 Values expected in the event body:
 

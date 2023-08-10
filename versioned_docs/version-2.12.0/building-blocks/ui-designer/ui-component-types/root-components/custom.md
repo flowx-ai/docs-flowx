@@ -4,11 +4,11 @@ sidebar_position: 3
 
 # Custom
 
-Custom components are developed in the web application and referenced here by component identifier. This will dictate where the component is displayed in the component hierarchy and what actions are available for the component.&#x20;
+Custom components are developed in the web application and referenced here by component identifier. This will dictate where the component is displayed in the component hierarchy and what actions are available for the component.
 
 To add a custom component in the template config tree, we need to know its unique identifier and the data it should receive from the process model.
 
-![](../../img/ui_designer_custom.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/ui_designer_custom.png)
 
 The properties that can be configured are as follows:
 
@@ -16,7 +16,7 @@ The properties that can be configured are as follows:
 2. **Input keys** - used to define the process model paths from which the components will receive their data&#x20;
 3. [**UI Actions**](../../ui-actions.md) - actions defined here will be made available to the custom component
 
-![](../../img/ui_designer_custom_settings.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/ui_designer_custom_settings.png)
 
 #### When will a user task display a user interface element?
 

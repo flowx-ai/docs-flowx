@@ -113,7 +113,7 @@ sidebar_position: 2
 </details>
 
 
-![FLOWX Designer](./img/designer_overview.gif#center)
+![FLOWX Designer](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/flowx-designer/designer_overview.gif#center)
 
 :::info
 Depending on your access rights, some tabs might not be visible. For more information, check [Configuring access rights for Admin](designer-setup-guide/configuring-access-rights-for-admin.md) section.
@@ -123,7 +123,7 @@ Depending on your access rights, some tabs might not be visible. For more inform
 
 A [**process definition**](../terms/flowx-process-definition) is uniquely identified by its name and version number.
 
-![Process Definitions](./img/designer_process_definitions.gif)
+![Process Definitions](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/flowx-designer/designer_process_definitions.gif)
 
 [Process definition](../building-blocks/process/process-definition.md)
 
@@ -133,7 +133,7 @@ A [**process definition**](../terms/flowx-process-definition) is uniquely identi
 
 The complete list of active [**process instances**](../terms/flowx-process-instance) is visible from the FLOWX Designer. They can be filtered by [**process definition**](../terms/flowx-process-definition) names and searched by their unique ID. You can also view the current process instance status and data.
 
-![Active process](./img/designer_active_process.png)
+![Active process](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/flowx-designer/designer_active_process.png)
 
 [Process instance](../building-blocks/process/active-process/process-instance.md)
 
@@ -141,7 +141,7 @@ The complete list of active [**process instances**](../terms/flowx-process-insta
 
 Using the content management feature you can perform multiple actions that enable manipulation of the content and simplification of it. You need first to deploy the CMS service in your infrastructure, so you can start defining and using the custom content types described in the **Content Management** tab above.
 
-![Content Management](./img/designer_cms.gif)
+![Content Management](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/flowx-designer/designer_cms.gif)
 
 [Headless CMS](../platform-deep-dive/core-components/core-extensions/content-management/content-management.md)
 
@@ -159,7 +159,7 @@ The Task Manager [**plugin**](../terms/flowx-plugins) has the scope to show a pr
 
 The notification templates plugin can be viewed, edited, and activated/inactivated from the [**FLOWX Designer**](../terms/flowx-ai-designer).
 
-![](./img/designer_notification_templates.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/flowx-designer/designer_notification_templates.png)
 
 [Notifications](../platform-deep-dive/plugins/custom-plugins/notifications-plugin/notifications-plugin.md)
 
@@ -175,7 +175,7 @@ One of the main features of the [document management plugin](../platform-deep-di
 
 Through the [**FLOWX Designer**](../terms/flowx-ai-designer), you can edit generic parameters, and import or export them. You can set generic parameters and assign the environment(s) where they should apply.
 
-![Generic Parameters](./img/designer_generic_params.png)
+![Generic Parameters](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/flowx-designer/designer_generic_params.png)
 
 :::caution
 The maximum length of an input value is 255 characters.
@@ -193,13 +193,13 @@ Access Management is used to administrate users, roles and groups, directly in F
 
 Integration management enables you to keep track of each integration and its correspondent component and different scenarios used: creating an OTP, document generation, notifications, etc.
 
-![](./img/designer_integrations.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/flowx-designer/designer_integrations.png)
 
 ## Checking platform status
 
 You can quickly check the health status of all the [**FLOWX services**](../terms/microservices) and all of your custom connectors.
 
-![Platform Status](./img/designer_platform_status.png)
+![Platform Status](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/flowx-designer/designer_platform_status.png)
 
 Check the next section to learn how to create and manage a process from scratch:
 

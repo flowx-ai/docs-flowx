@@ -8,7 +8,7 @@ Do not forget, when upgrading to a new platform version, always ensure that your
 After updating to **3.4.0** FLOWX.AI release, it is not possible to import old process definitions into the new platform release (available for exports from releases **<= 3.4.0**).
 :::
 
-![](../img/release_platform_version_check.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release-notes/release_platform_version_check.png)
 
 ## Component versions   
 
@@ -95,3 +95,14 @@ New access rights to be configured in order to use the new fonts feature in the 
 | manage-themes | edit   | ROLE_THEMES_EDIT   | Content Management |
 |               | edit   | ROLE_THEMES_ADMIN  | Content Management |
 | manage-themes | admin  | ROLE_THEMES_ADMIN  | Content Management |
+
+### Markdown support
+
+`marked@^5.0.0` refers to a specific version of the "marked" library or package in the npm ecosystem. "marked" is a popular open-source JavaScript library used for parsing and rendering Markdown text into HTML.
+
+To install the lib please make sure to run the following command:
+
+`npm install marked@^5.0.0`
+
+
+

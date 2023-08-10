@@ -3,14 +3,14 @@
 ## Exceptions
 
 Exceptions are types of errors meant to help you debug a failure in the execution of a process.
-![](../img/exceptions1.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/exceptions1.png)
 
 Exceptions can be accessed from multiple places:
 
 * **Failed process start** tab from **Active process** menu in FLOWX.AI Designer
 * **Process Status** view, accessible from **Process instances** list in FLOWX.AI Designer
 
-![](../img/exceptions2.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/exceptions2.png)
 
 :::caution
 If you open a process instance and it does not contain exceptions, the **Exceptions** tab will not be displayed.
@@ -20,7 +20,7 @@ If you open a process instance and it does not contain exceptions, the **Excepti
 
 When you click **view** button, a detailed exception will be displayed.
 
-![](../img/exceptions_data.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/exceptions_data.png)
 
 * **Process Definition** - the process where the exception was thrown
 * **Source** - the source of the exception (see the possible type of [sources](#possible-sources) below)

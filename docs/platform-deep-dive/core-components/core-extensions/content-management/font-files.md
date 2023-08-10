@@ -13,7 +13,7 @@ The "Font Management" screen displays a table with uploaded fonts. The following
 * **Style**: The style of the font, such as "italic" or "normal".
 * **Actions**: This tab contains options for managing the uploaded fonts, such as deleting or downloading them.
 
-![](../../../../../release-notes/img/fonts.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/fonts.png)
 
 ## Uploading fonts
 
@@ -32,13 +32,13 @@ Accepted font format: TTF (TrueType Font file).
 4. Click **Upload**. You can upload multiple TTF font files.
 5. For each uploaded font file, the system will automatically identify information such as font family, weight, and style.
 
-![](../../../img/fonts-metadata.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/fonts-metadata.png)
 
 ## Exporting fonts
 
 You can use the export feature to export a JSON file containing all the font files.
 
-![](../../../img/export_fonts.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/export_fonts.png)
 
 The exported JSON will look like this:
 
@@ -81,7 +81,7 @@ The exported JSON will look like this:
 
 You can use the import feature to import a JSON file containing the font files. If a font file already exists, you will be notified.
 
-![](../../../img/import_fonts.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/import_fonts.png)
 
 ## Using fonts in UI Designer
 
@@ -106,6 +106,6 @@ For example, let's take an input UI element; you can customize the typography fo
     * Font line height (px)
 
 
-![](../../../img/usinf_fonts.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/usinf_fonts.gif)
 
 

@@ -12,7 +12,7 @@ Configurable properties:
 
 Example
 
-![Collection configuration for displaying employees ](../../img/collection_example.png)
+![Collection configuration for displaying employees ](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/collection_example.png)
 
 Source collection data example:
 
@@ -36,10 +36,10 @@ employees: [{
 
 The following example will render:
 
-![](../../img/collection_render.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/collection_render.png)
 
 :::info
 Components used inside a collection use **relative paths** to the collection source. This means that wherever the collection is found inside the process data the components found inside a collection need their keys to be configured relating to that collection.
 :::
 
-![](../../img/collection_relative_paths.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/collection_relative_paths.png)

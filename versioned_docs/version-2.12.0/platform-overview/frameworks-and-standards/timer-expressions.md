@@ -33,13 +33,13 @@ More details:
 
 #### Cron Expressions are used in the following example:
 
-* [**Process definition**](../../building-blocks/process/process-definition/process-definition.md) - **Expiry time** - a user can set up an `expiryTime` function on a process, for example, a delay of 30s will be set up like:
+* [**Process definition**](../../building-blocks/process/process-definition/process-definition.md) - **Expiry time** - a user can set up a `expiryTime` function on a process, for example, a delay of 30s will be set up like:
 
-![](./img/timer_process_settings.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/timer_process_settings.png)
 
 ### **ISO 8601**
 
-ISO 8601 is an international standard covering the worldwide exchange and communication of date and time-related data. It can be used to standardize the following: dates, time of delay, time intervales, recurring time intervals, etc.
+ISO 8601 is an international standard covering the worldwide exchange and communication of date and time-related data. It can be used to standardize the following: dates, time of delay, time intervals, recurring time intervals, etc.
 
 More details:
 
@@ -62,8 +62,8 @@ ISO 8601 dates and times:
 | Second (s)           | ss, 00 to 59                                 |
 | Decimal fraction (f) | Fractions of seconds, any degree of accuracy |
 
-![](./img/timer_response_timeout.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/timer_response_timeout.png)
 
 * [**Actions**](../../building-blocks/actions.md) - **Timer expression** - it can be used if a delay is required on that action
 
-![](./img/timer_action_edit.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/timer_action_edit.png)

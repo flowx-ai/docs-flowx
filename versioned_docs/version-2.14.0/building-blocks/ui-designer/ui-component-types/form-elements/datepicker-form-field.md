@@ -1,6 +1,6 @@
 # DatePicker Form field
 
-![](../../img/datepicker_form_field.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/datepicker_form_field.png)
 
 The DatePicker (Calendar Picker) is a lightweight component that allows end users to enter or select a date value.&#x20;
 
@@ -19,13 +19,13 @@ The available configuration options for this form element are:
    * **Field Label** - the label of the input
    * **Min Date** - set the minimum valid date selectable in the DatePicker
    * **Max Date** - set the maximum valid date selectable in the DatePicker
-   * **Min Date, Max Date error** - when Date introduce by typing, define the error message to be displayed
+   * **Min Date, Max Date error** - when a Date is introduced by typing, define the error message to be displayed
 3. **Validators** - multiple validators can be added to a select (more details [here](../../validators.md))
 4. **Data source**
    * **Default Value** - the default values of the DatePicker element
 5. Expressions
-   * **Disabled expressions** - javascript expressions that should be evaluated as true or false. It's important to make sure that hidden fields also have the same expression configured under expressions -> hide
-   * **Hide Expression** - javascript expressions used to hide components when they're truthy
+   * **Disabled expressions** - JavaScript expressions that should be evaluated as true or false. It's important to make sure that hidden fields also have the same expression configured under expressions → hide
+   * **Hide Expression** - JavaScript expressions used to hide components when they're truthy
 
 #### Datepicker styling
 
@@ -33,4 +33,4 @@ The available configuration options for this form element are:
 
 An example of a DatePicker in form, with the DatePicker open:
 
-![DatePicker Form element example](../../img/datepicker_styling.png)
+![DatePicker Form element example](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/datepicker_styling.png)

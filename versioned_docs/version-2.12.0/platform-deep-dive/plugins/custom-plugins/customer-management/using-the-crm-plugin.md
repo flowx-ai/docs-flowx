@@ -2,7 +2,7 @@
 
 The customer management plugin offers the possibility of retrieving customer details from an Elastic Search engine.
 
-![](../../../img/crm-plugin.svg)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/crm-plugin.svg)
 
 The plugin listens for incoming requests on a Kafka topic and sends the reply to the Engine on an outgoing topic.
 

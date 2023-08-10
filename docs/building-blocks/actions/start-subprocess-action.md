@@ -23,7 +23,7 @@ Here are the steps to start a subprocess from a parent process:
 
 By following these steps, you can start a subprocess from a parent process and control its execution based on your specific use case.
 
-![](../img/process_subprocess.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/process_subprocess.png)
 
 The following properties must be configured for a **Start subprocess** action:
 
@@ -54,7 +54,7 @@ The following properties must be configured for a **Start subprocess** action:
 * **Copy from current state** - if a value is set here, it will overwrite the default behavior (of copying the whole data from the subprocess) with copying just the data that is specified (based on keys)
 
 
-![](../img/websocket_send.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/websocket_send.png)
 
 
 **Advanced configuration**
@@ -69,14 +69,14 @@ The following properties must be configured for a **Start subprocess** action:
 **Data to send** option is configurable only when the action **trigger type** is **Manual**.
 :::
 
-![](../node/img/subprocess_action_data.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/subprocess_action_data.png)
 
 ## Example
 
 Let's create a main [**process**](../../terms/flowx-process), in this process we will add a user task node that will represent a menu page. In this newly added node we will add multiple subprocess actions that will represent menu items. When you select a menu item, a subprocess will run representing that particular menu item.
 
 
-![](../img/subprocess_menu.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/subprocess_menu.png)
 
 To start a subprocess, we can, for example, create the following minimum configuration in a user task node (now we configure the process where we want to start a subprocess):
 
@@ -85,12 +85,12 @@ To start a subprocess, we can, for example, create the following minimum configu
 * **Repeatable** - yes
 * **Subprocess** - `docs_menu_item_1` - the name of the process that you want to start as a subprocess
 
-![](../img/subprocess_example1.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/subprocess_example1.png)
 
 * **Exclude from current state** - `test.price` - copy all the data from the parent, except the price data
 * **Copy from current state** - leave this field empty in order to copy all the data (except the keys that are specified in the **Exclude from current state** field), if not, add the keys from which you wish to copy the data
 
-![](../img/subprocess_example2.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/subprocess_example2.png)
 
 :::caution
 When copying from the current state using a subprocess, it is mandatory to specify the `webSocketAddress` and `webSocketPath` as parameters. This ensures that the Engine can accurately transmit the relevant information to the frontend, enabling it to display the appropriate UI. 
@@ -102,5 +102,5 @@ When copying from the current state using a subprocess, it is mandatory to speci
 
 #### Result
 
-![](../img/subprocess_example.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/subprocess_example.gif)
 

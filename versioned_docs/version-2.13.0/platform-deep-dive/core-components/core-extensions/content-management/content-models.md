@@ -6,7 +6,7 @@ sidebar_position: 4
 
 Content models are used to create complex content collections using customizable pieces of content. For example, you can define content models for an article that will be displayed on a page, creating customizable content.
 
-![](../../../img/content_models.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/content_models.png)
 
 On the main screen inside **Enumerations**, you have the following elements:
 
@@ -50,7 +50,7 @@ To add a new content model, follow the next steps:
      * **Mandatory** - mark an Attribute as mandatory
      * **Actions** - add or remove
 
-![Adding a new content model](../../../img/adding_new_content_model.png)
+![Adding a new content model](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/adding_new_content_model.png)
 
 ### Editing content models
 
@@ -61,4 +61,4 @@ To configure an entry inside a content model, follow the next steps:
 3. Click **View process** and then click **Open**.
 4. Click **Edit** to modify the values.
 
-![](../../../img/edit_content_model.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/edit_content_model.gif)

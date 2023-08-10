@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # Datepicker 
 
-![](../../img/datepicker_form_field.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/datepicker_form_field.png)
 
 The datepicker (Calendar Picker) is a lightweight component that allows end users to enter or select a date value.
 
@@ -39,7 +39,7 @@ The available configuration options for this form element are:
 * **Min Date, Max Date error** - when a date is introduced by typing, define the error message to be displayed
 * **Helpertext** - additional information about the input field (can be hidden inside an infopoint)
 
-![](../../img/datepicker1.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/datepicker1.png)
 
 #### Datasource
    
@@ -49,7 +49,7 @@ The available configuration options for this form element are:
 
 The following validators can be added to a datepicker: `required`, `custom`, `isSameOrBeforeToday` or `isSameOrAfterToday` (more details [here](../../validators.md)).
 
-![](../../img/datepicker2.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/datepicker2.png)
 
 #### Expressions
 
@@ -74,7 +74,7 @@ For more details on how to configure a UI action, click [**here**](../../ui-acti
 :::
 
 
-![](../../img/datepicker3.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/datepicker3.png)
 
 ### Datepicker styling
 

@@ -15,7 +15,7 @@ When a process definition is displayed, the name contains the following:
 
 We have designed FLOWX.AI components to closely resemble their BPMN counterparts for ease of use. In the following sections, we will provide more details on how to use the process designer.
 
-![](./img/process_def.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/process/process_def.png)
 
 Check the following section for more details about nodes and how to use them:
 

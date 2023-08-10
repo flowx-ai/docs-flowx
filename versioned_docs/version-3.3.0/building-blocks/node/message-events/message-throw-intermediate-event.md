@@ -14,7 +14,7 @@ sidebar_position: 1
 
 A Message Throw Intermediate Event is an event in a process where a message is sent to trigger a communication or action with another part of the process (can be correlated with a catch event). It represents the act of throwing a message to initiate a specific task or notification. The event creates a connection between the sending and receiving components, allowing information or instructions to be transmitted. Once the message is thrown, the process continues its flow while expecting a response or further actions from the receiving component.
 
-![](../img/throw_message_event.png#center)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/throw_message_event.png#center)
 
 #### General config
 
@@ -24,7 +24,7 @@ A Message Throw Intermediate Event is an event in a process where a message is s
 * **The data field** - allows the user to define a JSON structure with the data to be sent along with the message
 * **Stage** - assign a stage to the node
 
-![](../img/message_throw_interm_config.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_throw_interm_config.png)
 
 
 

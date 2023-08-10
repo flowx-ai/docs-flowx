@@ -1,6 +1,6 @@
 # Switch Form field
 
-![](../../img/switch_form_field.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/switch_form_field.gif)
 
 Another form element available for generating the UI interface is the switch, a toggle that can be used to pick a response. Depending on the user selection on the toggle, the corresponding true/false value will be stored in the process instance values.
 
@@ -25,4 +25,4 @@ The available configuration options for this form element are:
 
 This is how the switch element defined above will look in a form:
 
-![Switch element example](../../img/switch_form_field_styling.png)
+![Switch element example](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/switch_form_field_styling.png)

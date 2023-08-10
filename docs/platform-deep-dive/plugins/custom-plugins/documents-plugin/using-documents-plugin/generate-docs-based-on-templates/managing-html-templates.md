@@ -9,7 +9,7 @@ In the Document Management Plugin, you have the flexibility to define and manage
 
 Text parameters are used to include dynamic text in the template. For example, you can include the company name and registration number in an offer document. Here's an example of HTML template specifications:
 
-![](../../../../../img/docplugin_managing_html_template.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/docplugin_managing_html_template.png)
 
 ```html
 <p><strong>Lorem ipsum: <span th:text="${companyName}"></span></strong>, dolor sit amet <strong><span th:text="${cui}"></span></strong>.</p>
@@ -30,7 +30,7 @@ Data specifications:
 
 Dynamic tables are useful when you want to display a table with repeatable rows. Each row can represent a different element from a generated list of objects. Here's an example of HTML template specifications:
 
-![](../../../../../img/dynamic_tables_plugin_doc.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/dynamic_tables_plugin_doc.png)
 
 ```html
 <table>
@@ -71,7 +71,7 @@ Data specifications:
 
 This type of dynamic table allows you to display a table multiple times based on the elements of a generated list of objects. Here's an example of HTML template specifications:
 
-![](../../../../../img/dynamic_table_reusable_table.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/dynamic_table_reusable_table.png
 
 ```html
 <p>Offer:</p>
@@ -145,7 +145,7 @@ Data specifications:
 
 Dynamic sections allow you to display specific content based on certain conditions. For example, you can display a paragraph only when a certain condition is met. Here's an example of HTML template specifications:
 
-![](../../../../../img/docplugin_type_of_client.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/docplugin_type_of_client.png)
 
 ```html
 <span th:if="${pjCLient==true}">
@@ -171,7 +171,7 @@ Data specifications:
 
 You can include images in your final document by referencing them in the template. Here's an example of HTML template specifications:
 
-![](../../../../../img/docplugin_images.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/docplugin_images.png)
 
 ```html
 <td class='align'><img th:src="*{'data:image/png;base64,'+signature}" alt=\"\" height='100px'/></td>
@@ -197,7 +197,7 @@ For information on how to use barcodes and OCR, check the following section.
 
 Lists are useful for displaying values from selected items in a checkbox as a bulleted list. Here's an example of HTML template specifications:
 
-![](../../../../../img/docplugin_income_source.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/docplugin_income_source.png)
 
 ```html
   <div th:if="${incomeSource != null}">

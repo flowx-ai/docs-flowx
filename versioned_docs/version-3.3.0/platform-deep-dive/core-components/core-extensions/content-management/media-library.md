@@ -6,7 +6,7 @@ sidebar_position: 9
 
 The media library serves as a centralized hub for managing and organizing various types of media files, including images, GIFs, and more. It encompasses all the files that have been uploaded to the [**processes**](../../../../terms/flowx-process-definition), providing a convenient location to view, organize, and upload new media files.
 
-![](../../../../../../release-notes/img/media_library.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release-notes/media_library.gif)
 
 :::info
 You can also upload an image directly to the Media Library on the spot when configuring a process using the [**UI Designer**](../../../../building-blocks/ui-designer). More information [**here**](../../../../building-blocks/ui-designer/ui-component-types/image#media-library).
@@ -22,7 +22,7 @@ To upload an asset to the Media Library, follow the next steps:
     * **Upload item** - opens a local file browser
     * **Key** - the key must be unique, you cannot change it afterwards
 
-![](../../../../building-blocks/ui-designer/img/media_library_add_new.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/media_library_add_new.png)
 
 4. Click **Upload item** button and select a file from your local browser.
 5. Click **Upload item** button again to upload the asset.
@@ -44,19 +44,19 @@ You have the following information about assets:
 * Edited at 
 * Edited by
 
-![](../../../img/media_library_preview.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/media_library_preview.png)
 
 ## Searching assets
 
 You can search an asset by using its key (full or substring).
 
-![](../../../img/search_asset.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/search_asset.png)
 
 ## Replacing assets
 
 You can replace an item on a specific key (this will not break references to process definitions).
 
-![](../../../img/replace_asset.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/replace_asset.gif)
 
 ## Referencing assets in UI Designer
 
@@ -67,7 +67,7 @@ You have the following options when configuring image components using [UI Desig
     * **Option 1**: trigger a dropdown with images keys - you can type and filter options or can select from the initial list in dropdown 
     * **Option 2**: open a popup with images thumbnails and keys then you can type and filter options or can select from the initial list
 
-![](../../../img/media_library_options.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/media_library_options.png)
 
 :::info
 More details on how to configure an image component using UI Designer - [**here**](../../../../building-blocks/ui-designer/ui-component-types/image).
@@ -77,7 +77,7 @@ More details on how to configure an image component using UI Designer - [**here*
 
 The Icons feature allows you to personalize the icons used in UI elements. By uploading SVG files through the Media Library and marking them, you can choose icons from the available list in the UI Designer.
 
-![](../../../img/icons.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/icons.png)
 
 :::info
 When selecting icons in the UI Designer, only SVG files marked as icons in the Media Library will be displayed.
@@ -96,7 +96,7 @@ Icons are displayed or rendered at their original, inherent size.
 
 Content-specific icons pertain to the content of UI elements, such as icons for [input fields](../../../../building-blocks/ui-designer/ui-component-types/form-elements/input-form-field.md) or [send message buttons](../../../../building-blocks/ui-designer/ui-component-types/buttons.md). These icons are readily accessible in the [UI Designer](../../../../building-blocks/ui-designer/ui-designer.md).
 
-![](../../../img/icon_add_ui.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/icon_add_ui.gif)
 
 More details on how to add icons on each element, check the sections below:
 
@@ -111,7 +111,7 @@ More details on how to add icons on each element, check the sections below:
 
 The import/export feature allows you to import or export media assets, enabling easy transfer and management of supported types of media files.
 
-![](../../../img/media_library_export.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/media_library_export.png)
 
 ### Import media assets
 

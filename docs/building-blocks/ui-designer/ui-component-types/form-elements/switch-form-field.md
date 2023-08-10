@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Switch
 
-![](../../img/switch_form_field.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/switch_form_field.gif)
 
 A switch, a toggle switch, is another form element that can be utilized to create an intuitive user interface. The switch allows users to select a response by toggling it between two states. Based on the selection made by the user, the corresponding Boolean value of either true or false will be recorded and stored in the process instance values for future reference.
 
@@ -34,7 +34,7 @@ The available configuration options for this form element are:
 :::info
 The Label field supports Markdown syntax, enabling you to customize the text appearance with ease. To explore the Markdown syntax and its various formatting options, click [<u>**here**</u>](https://www.markdownguide.org/cheat-sheet/).
 
-![](../../../../platform-deep-dive/img/label_attributed.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/label_attributed.png)
 
 :::
 
@@ -48,7 +48,7 @@ The Label field supports Markdown syntax, enabling you to customize the text app
 
 The following validators can be added to a switch element: `requiredTrue` and `custom` (more details [here](../../validators.md)).
 
-![](../../img/switch_details.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/switch_details.png)
 
 #### Expressions
 
@@ -70,7 +70,7 @@ For more details on how to configure a UI action, click [<u>**here**</u>](../../
 
 The label of the switch can be positioned either as `start` or `end`.
 
-![](../../img/switch_styling.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/switch_styling.gif)
 
 :::info
 For more valid CSS properties, click [<u>**here**</u>](../../#styling).

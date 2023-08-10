@@ -7,7 +7,7 @@ sidebar_position: 3
 
 <div className= "image-scaled">
 
-![](./img/validators.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/validators.png)
 
 </div>
 
@@ -41,7 +41,7 @@ Important to be used with other validators like a [minlength](#2-minlength) one 
 
 <div className= "image-scaled">
 
-![required validator](./img/validators.png)
+![required validator](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/required_validator.png)
 
 </div>
 
@@ -51,7 +51,7 @@ Checks if the value has a minimum number of characters (no character at all will
 
 <div className= "image-scaled">
 
-![minlength validator](./img/validator_minlength.png)
+![minlength validator](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/validator_minlength.png)
 
 </div>
 
@@ -62,7 +62,7 @@ Checks if the value has a maximum number of characters (no character at all will
 
 <div className= "image-scaled">
 
-![maxlength validator](./img/validator_maxlength.png)
+![maxlength validator](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/validator_minlength.png)
 
 </div>
 
@@ -73,7 +73,7 @@ Checks if a numeric value is smaller (no character will trigger this validator s
 
 <div className= "image-scaled">
 
-![min validator](./img/validator_min.png)
+![min validator](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/validator_min.png)
 
 </div>
 
@@ -83,7 +83,7 @@ Checks if a numeric value is smaller (no character will trigger this validator s
 
 <div className= "image-scaled">
 
-![max validator](./img/validator_max.png)
+![max validator](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/validator_max.png)
 
 </div>
 
@@ -93,7 +93,7 @@ Checks if you entered an email (no character will not trigger this validator so 
 
 <div className= "image-scaled">
 
-![email validator](./img/validator_email.png)
+![email validator](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/validator_email.png)
 
 </div>
 
@@ -103,7 +103,7 @@ Checks if you entered a string that respects a pattern (in this case, a regex).
 
 <div className= "image-scaled">
 
-![](./img/validator_pattern.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/validator_pattern.png)
 
 </div>
 
@@ -115,7 +115,7 @@ Checks a date is today or in the past (no character will trigger this validator 
 
 <div className= "image-scaled">
 
-![isSameOrBeforeToday](./img/validator_issameday.png)
+![isSameOrBeforeToday](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/validator_issameday.png)
 
 </div>
 
@@ -125,7 +125,7 @@ Checks a date is today or in the past (no character will trigger this validator 
 
 <div className= "image-scaled">
 
-![](./img/validator_issamedayafter.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/validator_issamedayafter.png)
 
 </div>
 
@@ -135,7 +135,7 @@ Custom validators can be created by a developer in the web application before yo
 
 Available configurations are:
 
-1. **Validator name -** name provided by the developer to uniquely identify the validator
+1. **Validator name** - name provided by the developer to uniquely identify the validator
 2. **Type** - sync/ async validator (for more details check [this](https://angular.io/api/forms/AsyncValidator))
 3. **Error Message** - The message that will be displayed if the field is not valid
 4. **Validator parameters** - if the validator needs inputs to decide if the field is valid or not, you can pass them using this list
@@ -144,7 +144,7 @@ Available configurations are:
 
 <div className= "image-scaled">
 
-![custom validator](./img/validator_custom.png)
+![custom validator](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/validator_custom.png)
 
 </div>
 

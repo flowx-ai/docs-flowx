@@ -6,7 +6,7 @@ sidebar_position: 3
 
 Substitution tags are used to generate dynamic content across the platform. As enumerations, substitution tags can be defined for each language set for the solution.
 
-![](../../../img/substitution_tags.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/substitution_tags.png)
 
 On the main screen inside **Substitution tags**, you have the following elements:
 
@@ -36,7 +36,7 @@ To add a new substitution tag, follow the next steps.
    * Languages
 5. Click **Add** after you finish.
 
-![](../../../img/add_new_substitution.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/add_new_substitution.png)
 
 ### Getting a substitution tag by key
 

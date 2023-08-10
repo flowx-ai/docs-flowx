@@ -6,7 +6,7 @@ sidebar_position: 2
 
 A card is a graphical component that allows grouping and alignment of other components. It can also include an accordion element for expanding and collapsing content.
 
-![](../../img/card_element1.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/card_element1.gif)
 
 The following properties that can be configured:
 
@@ -24,7 +24,7 @@ Accordion element is not available for mobile.
 
 <div className= "image-scaled">
 
-![](../../img/ui_designer_settings.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/ui_designer_settings.png)
 
 </div>
 
@@ -43,7 +43,7 @@ More layout demos available below:
 
 This example will generate a card with the following layout configuration:
 
-![](../../img/card_layout.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/card_layout.png)
 
 For more information about styling and layout configuration, check the following section:
 
@@ -53,4 +53,4 @@ For more information about styling and layout configuration, check the following
 
 To validate all form elements under a card, you need to set the key of the form/element on the property of the button: _Forms To Validate._
 
-![](../../img/card_validate.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/card_validate.png)

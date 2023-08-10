@@ -14,17 +14,17 @@ In certain scenarios, it is necessary to restrict access to specific process [**
 
 Each swimlane can be configured to grant access only to users with specific roles defined in the chosen identity provider platform.
 
-![](../img/multiple_swimlanes.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/multiple_swimlanes.png)
 
 Depending on the type of node added within a swimlane, only users with the corresponding swimlane roles will have the ability to initiate process instances, view process instances, and perform actions on them.
 
 [Click here to view the list of scopes and roles for managing processes](../../platform-setup-guides/flowx-engine-setup-guide/configuring-access-rights-for-engine.md)
 
-![](../img/swimlanes_permissions.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/swimlanes_permissions.gif)
 
 When creating a new process definition, a default swimlane will automatically be added.
 
-![](../img/swimlanes_default.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/swimlanes_default.gif)
 
 As the token moves from one node to the next, it may transition between swimlanes. If a user interacting with the process instance no longer has access to the new swimlane, they will observe the process in read-only mode and will be unable to interact with it until the token returns to a swimlane they have access to.
 

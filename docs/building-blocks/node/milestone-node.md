@@ -6,8 +6,8 @@ sidebar_position: 7
 
 A **milestone node** is used to define how [user tasks](../node/user-task-node.md) (which are placed between two milestones - **start milestone** and **end milestone**) will be displayed.
 
-![Start milestone node](./img/milestone_node_start.png#center)
-![End milestone node](./img/milestone_node_end.png#center)
+![Start milestone node](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/milestone_node_start.png#center)
+![End milestone node](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/milestone_node_end.png#center)
 
 Multiple options are available for displaying the content:
 
@@ -27,7 +27,7 @@ To configure a user task to be displayed in a Modal:
 3. Add a **start milestone** before the user task.
 4. Add an **end milestone** after the user task.
 
-![](./img/milestone_node_modal_config.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/milestone_node_modal_config.gif)
 
 5. Select the **start milestone node** and open [UI Designer](../ui-designer/ui-designer.md) - here you can choose from multiple templates of how to display the content.
 
@@ -35,7 +35,7 @@ To configure a user task to be displayed in a Modal:
 
 7. No additional information is required for displaying a **user task** in a modal view but you can do multiple customizations via the different configurations using the UI Designer.
 
-![Modal template](./img/milestone_node_modal_config1.gif)
+![Modal template](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/milestone_node_modal_config1.gif)
 
 ## Available Components
 
@@ -43,13 +43,13 @@ To configure a user task to be displayed in a Modal:
 
 You can configure a start milestone node and an end milestone node before and after a [user task](../node/user-task-node.md). After adding the milestones, you can add a modal template to the start milestone node to display a modal screen (like in the example above).
 
-![Modal screen](./img/modal_screen.png)
+![Modal screen](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/modal_screen.png)
 
 ### Page
 
 A basic full page content can be displayed using this kind of template on a milestone start.
 
-![Page template](./img/milestone_page.png)
+![Page template](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/milestone_page.png)
 
 ### Stepper + Steps
 
@@ -59,7 +59,7 @@ To create a stepper architecture:
 2. Then add a **Stepper template** on the first node (and a **milestone end** after the **first node**).
 3. In between the **stepper milestones** add for each **step** a **milestone start** and a **milestone end** node with a **Step** configuration.
 
-![Example of a Stepper configuration with two steps](./img/stepper_config_two_steps.png)
+![Example of a Stepper configuration with two steps](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/stepper_config_two_steps.png)
 
 For more information about how to create a process with a Stepper + Steps structure, and how to configure the UI, check the following section:
 
@@ -69,4 +69,4 @@ For more information about how to create a process with a Stepper + Steps struct
 
 Containers allows us to display multiple user task on the same Page/Modal/Step with a different layout, other than the basic one. You can use **Layout** tab to play with multiple alignments.
 
-![Container template](./img/milestone_container.png)
+![Container template](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/milestone_container.png)

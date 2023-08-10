@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Select Form field
 
-![](../../img/select_form_field.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/select_form_field.png)
 
 This is a select element that allows a user to select from a predefined list.
 
@@ -16,21 +16,21 @@ The available configuration options for this form element are:
 
 1. **General**
    * **Key** - creates the biding between form element and process data so it can be later used in [decisions](../../../node/exclusive-gateway-node.md), [business rules](../../../node/task-node/task-node.md) or [integrations](../../../node/message-send-received-task-node.md)
-2. **Flowx props**&#x20;
+2. **Flowx props**
    * **Field Placeholder** - placeholder when the field has no value
    * **Field Label** - the label of the input
    * **Select type** - default or custom where the second one will allow the user to search between the options
    * **Empty message** - text displayed for custom type when no results are found
 3. **Validators** - multiple validators can be added to a select (more details [here](../../validators.md))
 4. **Data source**
-   * **Default Value** - auto-fills the select with this value. Going back to the example with Woman label with F value and Man with M to have a default value of Woman we need to configure here F
+   * **Default Value** - autofills the select with this value. Going back to the example with Woman label with F value and Man with M to have a default value of Woman we need to configure here F
    * **Source Type** - it can be Static, Enumeration, or Process Data
    * **Select Options** - label - value pairs can be defined here (values from CMS and defined options together are not possible)
 5. **Expressions**
-   * **Hide** - javascript expressions used to hide components when they're truthy
-   * **Disabled expressions** - javascript expressions that should be evaluated as true or false. It's important to make sure that hidden fields also have the same expression configured under expressions → hide
+   * **Hide** - JavaScript expressions used to hide components when they're truthy
+   * **Disabled expressions** - JavaScript expressions that should be evaluated as true or false. It's important to make sure that hidden fields also have the same expression configured under expressions → hide
 
-![](../../img/select_form_field_settings.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/select_form_field_settings.png)
 
 #### Select styling
 
@@ -38,26 +38,26 @@ The available configuration options for this form element are:
 
 A FORM with a [layout](../../layout-configuration.md) direction of row warp and some inputs and a select element will look like this:
 
-![](../../img/select_form_field_styling.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/select_form_field_styling.png)
 
 ### Example - Dynamic dropdowns
 
-As mentioned previously, you can create dropdowns including static data, enumerations, or **process data**. Let's create an example using **process data** to create a process that contains **dynamic dropdowns**.&#x20;
+As mentioned previously, you can create dropdowns including static data, enumerations, or **process data**. Let's create an example using **process data** to create a process that contains **dynamic dropdowns**.
 
 To create this kind of process, we need the following elements:
 
 * a [**start**](../../../node/start-end-node.md#start-node) node and an [**end**](../../../node/start-end-node.md#end-node) node
 * a [**start milestone**](../../../node/start-end-node.md#start-node) UI element to it and an [**end milestone**](../../../node/milestone-node.md) node
 
-![](../../img/dynamic_dropdown1.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/dynamic_dropdown1.gif)
 
 * a [**task node**](../../../node/task-node/task-node.md) (this will be used to set which data will be displayed on the dropdowns)
 
-![](../../img/dynamic_dropdown2.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/dynamic_dropdown2.png)
 
 * a [**user task node**](../../../node/user-task-node/user-task-node.md) (here we have the client forms and here we add the SELECT elements)
 
-![](../../img/dynamic_dropdown3.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/dynamic_dropdown3.gif)
 
 #### Creating the process
 
@@ -76,7 +76,7 @@ Follow the next steps to create the process from scratch:
    * **Mandatory**
    * **Language** (we used an [**MVEL**](../../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md) script to create a list of objects)
 
-![](../../img/configure_nodes_dropdown.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/configure_nodes_dropdown.gif)
 
 3.  On the **user task node,** add a new **Action** (submit action, this will validate the forms and save the date) with the following properties:
 
@@ -85,11 +85,11 @@ Follow the next steps to create the process from scratch:
 * **Mandatory**
 * **Data to send** (the key where the data will be sent) - `application`
 
-![](../../img/dynamic6.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/dynamic6.gif)
 
 Below you can find the MVEL script used in the above example:
 
-```mvel
+```java
 output.put("application",
 {
     "client": {
@@ -147,7 +147,7 @@ output.put("application",
 Follow the next steps to configure the UI needed:
 
 1. Select the **user task node** and click the **brush icon** to open [**UI Designer**](../../).
-2. Add a [**form group**](../root-components/form-group.md) element as a[ **root component**](../root-components/) (this will group the other elements inside it) with the following properties:
+2. Add a [**form group**](../root-components/form-group.md) element as a [**root component**](../root-components/) (this will group the other elements inside it) with the following properties:
    * **Key** - `form`
    * **Message** - `{"application": ${application}}`
    * **Title** - _Customer Contract_
@@ -166,15 +166,15 @@ Follow the next steps to configure the UI needed:
    * **Label** - Contract ID
    * **Type** - default
    * **Source Type** - Process Data
-   * **Name -** `application.contracts`
-   * **Parent Name -** `application.client.selectedClient`
+   * **Name** - `application.contracts`
+   * **Parent Name** - `application.client.selectedClient`
 7. Add a button under the form that contains the select elements with the following properties:
    * **Label** - Submit
    * **Type** - fill
-   * **Add ui action** (add the submit action attached earlier to the user task node)
+   * **Add UI action** (add the submit action attached earlier to the user task node)
 
-![](../../img/dynamic_dropdowns_4.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/dynamic_dropdowns_4.gif)
 
 8. Test and run the process by clicking **Start process**.
 
-![](../../img/dynamic_dropdowns5.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/dynamic_dropdowns5.gif)

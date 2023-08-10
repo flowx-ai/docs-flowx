@@ -10,7 +10,7 @@ UI actions create a link between an [**action**](../actions.md) and a UI compone
 
 The UI action informs the UI element to execute the given action when triggered. Other options are available for configuration when setting an action to a button and are detailed below.
 
-![](./img/ui_actions.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/ui_actions.gif)
 
 There are two main types of UI Actions:
    - [Process UI Actions](#process-ui-actions)
@@ -30,10 +30,10 @@ First, we need to configure the [manual action](../actions.md) that will be refe
 2. Select the action type - for example **Save Data**.
 3. The action **type** should be **manual**.
 4. **Keys** - it has two important implications:
-   * First, this is a prefix of the keys that will send back by the UI Action link to this action. For example, if we have a big form with a lot of elements, but we need an action that just sends the email back (maybe creating email validation functionality) we will add just the key of that field: `application.client.email`; if we need a button that will send back all the form elements that have keys that start with application.client we can add just this part
+   * First, this is a prefix of the keys that will send back by the UI Action link to this action. For example, if we have a big form with a lot of elements, but we need an action that just sends the email back (maybe creating email validation functionality) we will add just the key of that field: `application.client.email`; if we need a button that will send back all the form elements that have keys that start with `application.client` we can add just this part
    * Second, a backend validation will be run to accept and persist just the data that start with this prefix. If we have three explicit keys, `application.client.email`, `application.client.phone`, `application.client.address` and we send `application.client.age`this key will not be persisted
 
-![](./img/ui_action_key.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/ui_action_key.png)
 
 When this prerequisite is ready we can define the UI Action.
 
@@ -57,7 +57,7 @@ Multiple configurations are available - **ACTION** type example:
 
 <div className= "image-scaled">
 
-![](./img/ui_actions_multiple_configs.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/ui_actions_multiple_configs.png)
 
 </div>
 
@@ -67,7 +67,7 @@ Multiple configurations are available - **ACTION** type example:
 
 You can add an event depending on the element that you select. There are two events types available: **CLICK** and **CHANGE**.
 
-![](../img/../ui-designer/img/ui_action_events.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/ui_action_events.gif)
 
 :::info
 :exclamation:Not available for _UI Actions_ on [Custom Components](./ui-component-types/root-components/custom.md).
@@ -78,7 +78,7 @@ You can add an event depending on the element that you select. There are two eve
 The **action type** dropdown will be pre-filled with the following UI action types:
 
 * DISMISS - used to dismiss a modal after action execution
-* ACTION - used to link an action to an ui action
+* ACTION - used to link an action to a UI action
 * START_PROCESS_INHERIT - used to inherit data from another process
 * UPLOAD - used to create an un upload action
 * [EXTERNAL](ui-actions.md#external-ui-actions) - used to create an action that will open a link in a new tab
@@ -92,7 +92,7 @@ If we toggle the EXTERNAL type, a few new options are available:
 1. **URL** - web URL that will be used for the external action
 2. **Open in new tab** - this option will be available to decide if we want to run the action in the current tab or open a new one
 
-![](./img/ui_action_external.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/ui_action_external.png)
 
 For more information on how to add actions and how to configure a UI, check the following section:
 

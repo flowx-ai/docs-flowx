@@ -178,7 +178,7 @@ The suggested topic pattern naming convention is the following:
 ```
 :::
 
-![](../../platform-deep-dive/img/engine_kafka_pattern.svg) 
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/engine_kafka_pattern.svg) 
 
 * `KAFKA_TOPIC_PROCESS_NOTIFY_ADVANCE` - Kafka topic used internally by the engine
 

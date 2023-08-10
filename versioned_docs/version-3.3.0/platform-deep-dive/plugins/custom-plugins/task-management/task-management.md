@@ -8,7 +8,7 @@ sidebar_position: 3
 
 The Task Management plugin is a powerful plugin that enables back-officers and supervisors to efficiently track and assign tasks within a company. It provides a business-oriented view of a [**process**](../../../../terms/flowx-process) defined using [**FLOWX.AI Designer**](../../../../terms/flowx-ai-designer) and allows for seamless interactions at the assignment level.
 
-![Task Manager](../../../img/task_management_overview.gif)
+![Task Manager](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/task_management_overview.gif)
 
 ### Activities
 
@@ -22,7 +22,7 @@ Inside the **Task Manager → All tasks** you can find the **Activities** tab wh
 * **Last updated** - timestamp for the latest updates
 * **Search** - the search function is used to look for keys stored in the process
 
-![](../../../img/indexed_keys.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/indexed_keys.png)
 
 ### Task Details
 
@@ -34,7 +34,7 @@ The **Task details** tab within the **Task Manager** displays key information ab
 * **Comments** - comments left by the users
 * **History** - information such as who created a task, when a task was created, or when the status changed
 
-![Task details](../../../img/task_mngmnt_task_details.png)
+![Task details](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/task_mngmnt_task_details.png)
 
 :::caution
 Please note that specific roles must be defined in a process to utilize all the task management features. For more information on configuring access roles for processes, refer to the [<u>**Configuring access roles for processes**</u>](../../../../platform-setup-guides/flowx-engine-setup-guide/configuring-access-roles-for-processes.md).
@@ -85,7 +85,7 @@ The Task Manager plugin allows users to view a list of tasks and perform various
 * Adding comments
 * Viewing the application URL (could be also a generic parameter defined as a URL)
 
-![](../../../img/task_operations.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/task_operations.png)
 
 :::info
 You can configure Task Manager to send information about your process by enabling the **Use process in task management** button at the node level. This allows the Task Manager plugin to send updates about the process.
@@ -97,7 +97,7 @@ You can configure Task Manager to send information about your process by enablin
 2. From the left sidebar menu select the **Settings** tab.
 4. Enable the **Use process in task management** toggle button.
 
-![Update task management](../../../img/task_mngmnt_response.png)
+![Update task management](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/task_mngmnt_response.png)
 
 :::caution
 Please note that some actions may not be available based on user roles and access rights.
@@ -114,7 +114,7 @@ Please note that some actions may not be available based on user roles and acces
 You can set up this action for multiple nodes.
 :::
 
-![Update task management](../../../img/task_mngmnt_response1.png)
+![Update task management](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/task_mngmnt_response1.png)
 
 
 For more detailed information on configuring the Task Manager plugin, refer to the [Task Management plugin setup](../../plugins-setup-guide/task-management-plugin-setup/) section.

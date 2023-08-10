@@ -27,11 +27,11 @@ You can now utilize process parameters or [**substitution tags**](../../platform
 
 ### Example using Substitution tags
 
-![](../../../release-notes/img/dynamic_val.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release-notes/dynamic_val.gif)
 
 ### Example using process parameters
 
-![](./img/dynamic_values_params.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/dynamic_values_params.gif)
 
 #### Business rule example
 
@@ -68,7 +68,7 @@ Please note that for releases **<= 3.3.0**, it is not possible to concatenate pr
 
 Computed values take the concept of dynamic values a step further by allowing you to generate values dynamically using JavaScript expressions. Rather than relying solely on predefined values, computed values enable the calculation, transformation, and manipulation of data based on specific rules or conditions. 
 
-![](./img/computed1.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/computed1.png)
 
 Computed values can be created by writing JavaScript expressions that operate on process parameters or other variables within the application. 
 
@@ -77,7 +77,7 @@ To add a computed value, you have to explicitly check “Computed value” optio
 
 <div class = "image-scaled">
 
-![](./img/computed_default_value.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/computed_default_value.png)
 
 </div>
 
@@ -85,7 +85,7 @@ To add a computed value, you have to explicitly check “Computed value” optio
 
 By enabling computed values, the application provides flexibility and the ability to create dynamic and responsive user interfaces.
 
-![](../../../release-notes/img/computed.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release-notes/computed.gif)
 
 ### Slider example
 

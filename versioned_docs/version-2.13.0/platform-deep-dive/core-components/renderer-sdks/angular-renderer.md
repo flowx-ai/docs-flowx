@@ -242,7 +242,7 @@ Data from the process is communicated via **websocket** protocol under the follo
 
 #### Task management component
 
-![](../../img/renderer_task_mngment.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/add_source_system.png)
 
 The flx-task-management component is found in the FlxTaskManagementModule. In order to have access to it, import the module where needed:&#x20;
 

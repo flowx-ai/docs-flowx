@@ -2,11 +2,11 @@
 
 At the core of the platform are the process definitions. These are the blueprint of the business process, made up of [nodes](../../node) that are linked by sequences.
 
-![](../../../platform-deep-dive/img/process_definitions_new.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/process_definitions_new.png)
 
 While designing the FLOWX components, we've tried to keep them as close to their BPMN counterparts as possible.
 
-![](../img/process_def.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/process_def.png)
 
 Check the following section for more details about nodes and how to use them:
 
@@ -30,19 +30,19 @@ For more information about **Cron Expressions** and **ISO 8601** formatting, che
 
 [Timer Expressions](../../../platform-overview/frameworks-and-standards/timer-expressions.md)
 
-![](../../img/process_settings.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/process_settings.png)
 
 #### Sensitive data
 
 To protect your data and your customer's data, you can hide the data that could be visible in a process details (active processes or in the browser's console). You now have the possibility to secret data for a specific Key. 
 
-![](../img/process_sensitive_data.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/process_sensitive_data.png)
 
 #### Swimlanes
 
 Swimlanes provide a way of grouping process nodes by process participants. Using swimlanes you can make sure only certain user roles have access to certain process nodes.
 
-![](../img/process_swimlanes.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/process_swimlanes.png)
 
 #### Permissions
 
@@ -53,7 +53,7 @@ When you create a new swimlane, it comes with two default permissions assigned b
 * execute - the user will be able to start process instances and run actions on them
 * self-assign - the user can assign a process instance to them and start working on it
 
-![](../img/process_permissions.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/process_permissions.png)
 
 :::info
 Other Permissions can be added manually, depending on the needs of the user.
@@ -68,4 +68,4 @@ The Task Management plugin has the scope to show a process that you defined in D
 * **Application URL** - generic parameter pointing to the application URL where the flowx process is loaded 
 * **Search indexing** - process keys will be used to search data stored in the process
 
-![](../img/process_task_mngmnt.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/process_task_mngmnt.pngg)

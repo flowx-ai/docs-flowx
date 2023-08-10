@@ -34,7 +34,7 @@ Multiple options are available for this type of action and can be configured via
 
 * **Allow BACK on this action** - back in process is a functionality that allows you to go back in a business process and redo a series of previous actions in the process. For more details, check [Moving a token backwards in a process](../../flowx-designer/managing-a-process-flow/moving-a-token-backwards-in-a-process.md) section.
 
-![](../node/img/websocket_action_edit.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/websocket_action_edit.png)
 
 #### **Parameters**
 

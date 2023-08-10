@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Select 
 
-![](../../img/select_form_field.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/select_form_field.png)
 
 The Select form field is an element that enables users to make a choice from a list of predefined options. It consists of multiple values, each of which is defined by a label that is displayed in the dropdown menu, and a code that is saved.
 
@@ -59,7 +59,7 @@ The select field's behavior can be defined using JavaScript expressions for hidi
 It's important to make sure that disabled fields have the same expression configured under the path expressions → hide.
 :::
 
-![](../../img/select_form_field_settings.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/select_form_field_settings.png)
 
 #### UI actions
 
@@ -80,7 +80,7 @@ Styling the Select field using CSS properties allows you to customize the appear
 
 For example, a FORM element with a [layout](../../ui-designer.md#layout) configuration including direction of Horizontal and some inputs, and a select element will look like this:
 
-![](../../img/select_form_field1.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/select_form_field1.png)
 
 #### Icons
 
@@ -102,15 +102,15 @@ To create this kind of process, we need the following elements:
 * a [**start**](../../../node/start-end-node.md#start-node) node and an [**end**](../../../node/start-end-node.md#end-node) node
 * a [**start milestone**](../../../node/start-end-node.md#start-node) UI element to it and an [**end milestone**](../../../node/milestone-node.md) node
 
-![](../../img/dynamic_dropdown1.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/dynamic_dropdown1.gif)
 
 * a [**task node**](../../../node/task-node.md) (this will be used to set which data will be displayed on the dropdowns)
 
-![](../../img/dynamic_dropdown2.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/dynamic_dropdown2.gif)
 
 * a [**user task node**](../../../node/user-task-node.md) (here we have the client forms and here we add the SELECT elements)
 
-![](../../img/dynamic_dropdown3.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/dynamic_dropdown3.gif)
 
 ### Creating the process
 
@@ -136,7 +136,7 @@ Follow the next steps to create the process from scratch:
 * **Mandatory**
 * **Data to send** (the key where the data will be sent) - `application`
 
-![](../../img/dynamic6.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/dynamic6.gif)
 
 Below you can find the MVEL script used in the above example:
 
@@ -210,7 +210,7 @@ Follow the next steps to configure the UI needed:
    * **Source type** - Process Data (to extract the data added in the **task node**)
    * **Name** - `application.client.identity`
 
-![](../../img/select_customer_name.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/select_customer_name.png)
 
 6. For the second select element (Contract ID) set the following properties:
    * **Process data key** - `application.client.selectedContract`
@@ -220,14 +220,14 @@ Follow the next steps to configure the UI needed:
    * **Name** - `application.contracts`
    * **Parent** - `SELECT` (choose from the dropdown list)
 
-![](../../img/select_contract_id.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/select_contract_id.png)
 
 7. Add a button under the form that contains the select elements with the following properties:
    * **Label** - Submit
    * **Add UI action** - add the submit action attached earlier to the user task node
 
-![](../../img/button_submit.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/button_submit.png)
 
 8. Test and run the process by clicking **Start process**.
 
-![](../../img/dynamic_dropdowns5.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/dynamic_dropdowns5.gif)

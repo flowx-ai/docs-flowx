@@ -6,7 +6,7 @@ sidebar_position: 5
 
 Events Gateway a service that centralizes the communication with SSE (Server-sent Events) messages from Backend to Frontend.
 
-![](../img/events_gateway_archi.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/events_gateway_archi.png)
 
 It has an important role as a central component for handling and distributing events within the system:
 

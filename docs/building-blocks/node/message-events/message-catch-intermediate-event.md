@@ -17,7 +17,7 @@ Message Catch Intermediate Event can be used as a standalone node, this means th
 
 Imagine a process where multiple tasks are executed in sequence, but the execution of a particular task depends on the arrival of a certain message. By incorporating a Message Catch Intermediate Event after the preceding task, the process will pause until the expected message is received. This ensures that the subsequent task is not executed prematurely and allows for the synchronization of events within the process.
 
-![](../img/message_catch_intermediate_event.png#center)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_catch_intermediate_event.png#center)
 
 #### General config
 
@@ -27,4 +27,4 @@ Imagine a process where multiple tasks are executed in sequence, but the executi
 * **Receive data** - the process key that will be used to store the data received along with the message
 * **Stage** - assign a stage to the node
 
-![](../img/message_catch_intermediate_config.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_catch_intermediate_config.png)

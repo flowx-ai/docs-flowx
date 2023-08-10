@@ -11,7 +11,7 @@ Follow the next steps to use the user personal number to perform a search query 
 * Kafka topic - defined on the `KAFKA_TOPIC_CUSTOMER_SEARCH_IN` environment variable
 * Message body (example of identifiers for an indexed customers):
 
-![](../../../img/crm_params.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/crm_params.png)
 
 :::info
 For more examples of keys, check [**Using the customer management plugin**](using-the-crm-plugin.md).
@@ -20,7 +20,7 @@ For more examples of keys, check [**Using the customer management plugin**](usin
 5. Add a [**Kafka receive event**](../../../../building-blocks/node/message-send-received-task-node.md#message-receive-task).
 6. Configure the topic on which you want to receive the response from the CRM, on the value of `KAFKA_TOPIC_CUSTOMER_SEARCH_OUT` environment variable.
 
-![](../../../img/crm_response.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/crm_response.png)
 
 Response example:
 

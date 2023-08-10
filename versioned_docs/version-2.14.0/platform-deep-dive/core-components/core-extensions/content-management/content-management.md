@@ -2,7 +2,7 @@
 
 The Headless Content Management System is part of the core components of the FLOWX.AI platform. It can be easily added to your custom FLOWX.AI deployment to **enhance the core platform capabilities with functionality specific to taxonomies and managing various content types**.
 
-![](../../../img/content_management.png#center)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/content_management.png#center)
 
 The service includes the following features:
 

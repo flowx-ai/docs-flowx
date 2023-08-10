@@ -13,15 +13,15 @@ To split a document, follow these steps:
 1. Create a process and add a [**Kafka send event node**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) and a [**Kafka receive event node**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node). These nodes are used to send the request and receive the reply.
 2. Configure the first node, Kafka send event node by adding a **Kafka send action**.
 
-![](../../../../img/kafka_split_action.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/kafka_split_action.png)
 
 3. Specify the [**Kafka topic**](../../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md#kafka-configuration) to which you want to send the request.
 
-![](../../../../img/kafka_split_topic.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/kafka_split_topic.png)
 
 4. Fill in the body message request:
 
-![](../../../../img/split_doc_body.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/split_doc_body.png)
 
 * **fileId**: The ID of the file to be split.
 * **parts**: A list containing information about the expected document parts.
@@ -48,7 +48,7 @@ The Engine listens for messages on topics with specific names. Make sure to use 
 
 You can view the response by accessing the Audit log menu. The reply will be sent to the Kafka topic specified in the Kafka receive event node.
 
-![](../../../../img/split_updates.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/split_updates.png)
 
 The response body will contain the following values:
 
@@ -60,7 +60,7 @@ The response body will contain the following values:
   * **downloadPath**: The download path for the document.
   * **noOfPages**: The number of pages in the document.
 
-![](../../../../img/split_doc_reply.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/split_doc_reply.png)
 
 Here's an example of the response JSON:
 

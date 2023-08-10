@@ -8,8 +8,8 @@ If multiple operations can be done in parallel a Parallel Gateway can be used. T
 
 ## Configuring a Parallel gateway node
 
-![](./img/gateway_parallel.png#center)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/gateway_parallel.png#center)
 
 This kind of [**node**] has no special configuration and can start 2 or more parallel paths. It is important to keep in mind that the close Parallel node, required to close the parallel section will wait for all branches to finish before moving to next node.
 
-![](./img/gateway_parallel_config.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/gateway_parallel_config.png)

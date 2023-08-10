@@ -14,12 +14,12 @@ Business rules can be attached to a node by using actions with [**action rules**
 
 [Supported scripts](../../../supported-scripts)
 
-![Business rule action](./img/business_rule_action.png)
+![Business rule action](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/business_rule_action.png)
 
 
 You can also test your rules by using the **Test Rule** function.
 
-![](./img/test_rule_function.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/test_rule_function.png)
 
 ### Example
 
@@ -27,7 +27,7 @@ Let's take look at the following example. We have some data about the gender of 
 
 1.  This is how the process instance data looks like before it reaches the business rule
 
-    ```
+    ```js
     {
         "application" : {
             "client" : 
@@ -72,7 +72,7 @@ Let's take look at the following example. We have some data about the gender of 
 With version [**2.5.0**](/release-notes/v2.5.0-april-2022) we introduced unflattened keys inside business rules. Flattened keys are now obsolete. You are notified when you need to delete and recreate a business rule so it contains an unflattened key.
 :::
 
-![Obsolete business rule](./img/obsolete_business_rule.png)
+![Obsolete business rule](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/obsolete_business_rule.png)
 
 1. Here is an example of a flattened key inside a business rule:
 
@@ -80,12 +80,12 @@ With version [**2.5.0**](/release-notes/v2.5.0-april-2022) we introduced unflatt
 Example for deprecated versions previous to [**v2.5.0**](/release-notes/v2.5.0-april-2022)
 :::
 
-```
+```js
 def createActionForCustomer (name, cnp)
 {
     return{
      "name":name,
-      "cnp:cnp
+      "cnp":cnp
   }
  }
  String cif = input.get("clientIdentification.cif");

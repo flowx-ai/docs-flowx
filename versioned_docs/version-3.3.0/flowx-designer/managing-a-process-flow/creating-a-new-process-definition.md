@@ -17,6 +17,6 @@ To create a new [**process definition**](../../terms/flowx-process-definition):
 3. Enter a unique name for your process and click **Create**.
 4. You're automatically taken to the **FLOWX Designer** editor where you can start building your process.
 
-![Creating a process definition](../img/process_flow_process_definition.gif)
+![Creating a process definition](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/flowx-designer/process_flow_process_definition.gif)
 
 In the following section, you will learn how to add a new node to your newly created process.

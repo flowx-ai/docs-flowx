@@ -15,15 +15,15 @@ To create a process that converts a document from PDF to JPEG format, follow the
 1. Create a process that includes a [**Kafka send event**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) node and a [**Kafka receive event**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) node. The **send node** is used to send the conversion request, and the **receive node** is used to receive the reply.
 2. Configure the first node (**Kafka send event**) by adding a **Kafka send action**. Here is an example:
 
-![](../../../../img/pdf_to_jpeg.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/pdf_to_jpeg.png)
 
 3. Specify the [**Kafka topic**](../../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md#kafka-configuration) where you want to send the conversion request:
 
-![](../../../../img/doc_kafka_topic.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/doc_kafka_topic.png)
 
 4. Fill in the body of the message request:
 
-![](../../../../img/doc_message_body.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/doc_message_body.png)
 
 * `fileId`: The file ID that will be converted 
 * `to`: The file extension to convert to (in this case, "jpeg").
@@ -49,7 +49,7 @@ You can view the response by accessing the **Audit log** menu.
 
 The response will be sent to the outgoing Kafka topic (defined on the Kafka receive event node) and can be accessed as follows:
 
-![](../../../../img/convert_updates.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/convert_updates.png)
 
 Values expected in the reply body:
 
@@ -64,7 +64,7 @@ Values expected in the reply body:
 
 
 
-![](../../../../img/document_convert_pdf.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/document_convert_pdf.png)
 
 Response:
 

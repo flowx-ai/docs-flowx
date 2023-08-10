@@ -6,7 +6,7 @@ sidebar_position: 8
 
 If multiple [**enumerations**](../../../../terms/flowx-enumerations) values are needed to communicate with other systems, source systems can be used.
 
-![](../../../img/source_system.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/source_system.png)
 
 On the main screen inside **Source systems**, you have the following elements:
 
@@ -27,4 +27,4 @@ To add a new source system, follow the next steps.
    * Name
 4. Click **Add** after you finish.
 
-![](../../../img/add_source_system.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/add_source_system.png)

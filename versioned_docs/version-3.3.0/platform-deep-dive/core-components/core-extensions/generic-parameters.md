@@ -26,7 +26,7 @@ To add a new generic parameter, follow the next steps:
 4. Fill in the details.
 5. Click **Save**.
 
-![](../../img/generic_params.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/generic_params.gif)
 
 ## Configuring a generic parameter
 
@@ -41,7 +41,7 @@ To configure a generic parameter you need to fill in the following details:
 For example, if you want to set a `baseURL` generic parameter (the URL will be different, depending on the environmaent).
 :::
 
-![](../../img/generic_params_base.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/generic_params_base.png)
 
 ## Using generic parameters
 
@@ -49,7 +49,7 @@ For example, if you want to set a `baseURL` generic parameter (the URL will be d
 
 Imagine that you need to create a process in which you need to upload an image or a document. We will define a generic parameter called `envfilePath` that will represent the path where the document/image will be uploaded. 
 
-![](../../img/generic_param_env.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/generic_param_env.png)
 
 The minimum requirement to build an upload doc/image process:
 
@@ -58,7 +58,7 @@ The minimum requirement to build an upload doc/image process:
 * a user task node
 * an end node
 
-![](../../img/generic_params_proc.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/generic_params_proc.png)
 
 
 ### Configuring the task node
@@ -73,7 +73,7 @@ Set a [**Business Rule**](../../../terms/business-rules) action on the task node
 * **Trigger type** - Automatic - choose if this action should be triggered automatically (when the process flow reaches this step) 
 * **Required type** - automatic actions can only be defined as mandatory
 
-![](../../img/get_generic_params.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/get_generic_params.png)
 
 #### Parameters
 
@@ -87,7 +87,7 @@ Set a [**Business Rule**](../../../terms/business-rules) action on the task node
 output.put("envfilePath", additionalData.applicationConfiguration.get("envfilePath"));
 ```
 
-![](../../img/generic_params_init.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/generic_params_init.png)
 
 This MVEL business rule assigns a value to a key, `envFilePath` (our defined generic parameter) in the "output" map object. The value assigned to the key is retrieved from another object, `additionalData.applicationConfiguration`, using the "get" method and passing the key `envFilePath` as the parameter.
 
@@ -180,4 +180,4 @@ In summary, the code seems to be processing an uploaded document by checking its
 
 After configuring all the nodes and parameters, run the process:
 
-![](../../img/generic_parameters.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/generic_parameters.gif)

@@ -6,7 +6,7 @@ sidebar_position: 1
 
 The core of the platform is the process definition, which is the blueprint of the business process made up of [nodes](../node/node.md) that are linked by sequences.
 
-![](../../platform-deep-dive/img/process_definitions_new.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/process_definitions_new.png)
 
 
 Once a process is defined and set as published on the platform, it can be executed, monitored, and optimized. When a business process is started, a new instance of the definition is created.
@@ -23,7 +23,7 @@ In the **History** tab, you will find a record of all the modifications and even
 * **Versions** - provides information on who edited the process, when it was modified, and the version number and status
 * **Audit log** - provides a detailed record of events and changes
 
-![](./img/process_audit.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/process/process_audit.gif)
 
 ### Versions
 
@@ -62,13 +62,13 @@ Some items in the Audit log are filterable, making it easy to track changes in t
 
 In the Data Model, you can add new key-pair values, which enables you to use shortcuts when adding new keys using the UI Designer, without having to switch back and forth between menus.
 
-![](../img/add_new_data_model.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/add_new_data_model.png)
 
 ### Attributes type
 
 <div className = "image-scaled">
 
-![](../../platform-deep-dive/img/add_new_data_model.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/add_new_data_model.png)
 
 </div>
 
@@ -97,14 +97,14 @@ You can use data model reference feature to view attribute usage within the data
 
 For UI Elements, the references include the element label, node name, and UI Element key. Additionally, the context of the reference is provided, showing the node name and the UI element type along with its label. Users can conveniently navigate to the context by clicking the provided link to the node's UI page.
 
-![](../img/data_model_ref.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/data_model_ref.gif)
 
 
 ### Sensitive data
 
 To protect your data and your customer's data, you can hide data that could be visible in the process details or in the browser's console. You can now also secret data for a specific key.
 
-![](.././../../../release-notes/img/sensitive_data_new.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release-notes/sensitive_data_new.png)
 
 ### Reporting
 
@@ -127,7 +127,7 @@ To generate a data model, follow these steps:
 7. Finally, click **Save** button to save the generated data model.
 
 
-![](../../../../release-notes/img/generate_data_model.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release-notes/generate_data_model.gif)
 
 By generating a data model, you can ensure that your data is structured and organized in a way that is appropriate for your business needs. It can also help you to identify any inconsistencies or errors in the data, allowing you to correct them before they cause problems down the line.
 
@@ -143,7 +143,7 @@ To add new swimlanes, please follow these steps:
 2. Open an existing process definition or create a new one.
 3. Identify the default swimlane and select it to display the contextual menu.
 
-![](./img/add_new_swimlane.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/process/add_new_swimlane.png)
 
 :::info
 With the contextual menu, you can easily perform various actions related to swimlanes, such as adding or removing swimlanes or reordering them. 
@@ -152,7 +152,7 @@ With the contextual menu, you can easily perform various actions related to swim
 4. Choose the desired location for the new swimlane, either below or above the default swimlane.
 5. Locate and click the **add swimlane icon** to create the new swimlane.
 
-![](../img/swimlanes_docs.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/swimlanes_docs.gif)
 
 
 For more details about user roles management, check the following section:
@@ -179,7 +179,7 @@ For more information about **Cron Expressions** and **ISO 8601** formatting, che
 
 [Timer Expressions](../../platform-overview/frameworks-and-standards/timer-expressions.md)
 
-![](../img/process_settings.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/process_settings.png)
 
 
 ### Permissions
@@ -188,7 +188,7 @@ After defining roles in the identity provider solution, they will be available t
 
 When you create a new swimlane, it comes with two default permissions assigned based on a specific role: execute and self-assign. Other permissions can be added manually, depending on the needs of the user.
 
-![](../img/process_permissions.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/process_permissions.png)
 
 
 [Configuring access rights for processes](../../platform-setup-guides/flowx-engine-setup-guide/configuring-access-roles-for-processes.md)
@@ -197,5 +197,5 @@ When you create a new swimlane, it comes with two default permissions assigned b
 
 The Task Management plugin offers a business-oriented view of the process you defined in the Designer and allows for interactions at the assignment level. It also includes a generic parameter pointing to the application URL where the Flowx process is loaded and uses process keys to search data stored in the process.
 
-![](./img/process_task_mngmnt.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/process/process_task_mngmnt.png)
 

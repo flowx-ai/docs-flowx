@@ -2,7 +2,7 @@
 
 Process definitions can be easily edited using the FLOWX Designer. To be able to update existing definitions and keep track of the changes, we also store a version number and a state on each definition.
 
-![](../img/pf_proc_def_state.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/pf_proc_def_state.png)
 
 A process definition is uniquely identified by its name and version number.
 
@@ -31,7 +31,7 @@ When a new version of a process is obtained by cloning an existing version or im
 
 Importing and cloning a process definition will increment the existing maximum version number. If the process was imported/cloned on a new environment for the first time (no other versions exist in that environment), the definition will be saved with the version number that is set in the import content. If the version number is not present in the imported JSON, it will automatically be set to 1.
 
-![](../img/pf_proc_def_archi.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/pf_proc_def_archi.png)
 
 ## Testing draft versions
 

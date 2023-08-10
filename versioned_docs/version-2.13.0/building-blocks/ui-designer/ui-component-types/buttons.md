@@ -19,7 +19,7 @@ Sections that can be configured regarding general settings:
 3. Expressions - you can add here `if` expressions that will be evaluated to be true or false
 4. **UI Action** - that defines what action will trigger ([more details on how to configure](../ui-actions.md))
 
-![Button configuration for a save action](../img/button_config.png)
+![Button configuration for a save action](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/button_config.png)
 
 ### File Upload button
 
@@ -30,4 +30,4 @@ This button will be used to select a file and do custom validation on it. Only t
 * Max file size
 * Max file size error
 
-![](../img/file_upload_button.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/file_upload_button.png)

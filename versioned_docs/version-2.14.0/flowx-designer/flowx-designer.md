@@ -6,7 +6,7 @@ sidebar_position: 1
 
 FLOWX Designer is the FLOWX.AI no-code visual development environment. It allows users to create web and mobile applications without having to know how to code.
 
-![image alt](./img/flowx-designer.png#center)
+![image alt](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/flowx-designer.png#center)
 
 With the FLOWX.AI Designer, you can:
 

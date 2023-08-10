@@ -15,7 +15,7 @@ To create and attach a DMN [**business rule**](../../../terms/business-rules) ac
 5. From the dropdown menu choose the action type - **Business Rule**.
 6. In the **Language** dropdown menu, select **DMN**.
 
-![](./img/create_dmn_business_rule_action.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/create_dmn_business_rule_action.gif)
 
 ### Using a DMN Business Rule action
 

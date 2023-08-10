@@ -14,7 +14,7 @@ When used as a boundary event on a [**user task**](../user-task-node.md), messag
 
 If an event is received, it advances through the sequence from the intermediate [**node**](../../../terms/flowx-node). You can have multiple intermediate boundary events on the same user task, but only one can be activated at a time.
 
-![](../img/message_events_boundaries.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_events_boundaries.png)
 
 There are two types of Message Catch Boundary Events: 
 
@@ -25,7 +25,7 @@ There are two types of Message Catch Boundary Events:
 
 <div className = "image-scaled">
 
-![](../img/message_catch_interrupting_event.png#center)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_catch_interrupting_event.png#center)
 
 </div>
 
@@ -42,7 +42,7 @@ It is used only as a boundary event and is placed only on a user task. If your p
 
 <div className = "image-scaled">
 
-![](../img/%20message_catch_non_interrupting.png#center)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/%20message_catch_non_interrupting.png#center)
 
 </div>
 

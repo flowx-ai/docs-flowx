@@ -9,7 +9,7 @@ sidebar_position: 2
 
 This node is used to configure messages that should be sent to external systems.
 
-![Message send task](./img/message_send_task.png#center)
+![Message send task](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/message_send_task.png#center)
 
 ### Configuring a message send task node
 
@@ -29,7 +29,7 @@ When encountering a step with `canGoBack` switched to false, all steps found beh
 * [**Swimlane**](../../platform-deep-dive/user-roles-management/swimlanes.md) - choose a swimlane (if there are multiple swimlanes on the process) to make sure only certain user roles have access only for certain process nodes - if there are no multiple swimlanes, the value is **Default**
 * [**Stage** ](../../platform-deep-dive/plugins/custom-plugins/task-management/using-stages.md) assign a stage to the node
 
-![General Config](./img/message_send_task_action.png)
+![General Config](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/message_send_task_action.png)
 
 To configure a message send task node, we first need to add a new node and then configure an action (**Kafka Send Action** type):
 
@@ -39,7 +39,7 @@ To configure a message send task node, we first need to add a new node and then 
 4. Add an **action**, the type of the action set to **Kafka send**.
 5. :exclamation:A few action parameters will need to be filled in depending on the selected action type.
 
-![](./img/message_send_node.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/message_send_node.gif)
 
 Multiple options are available for this type of action and can be configured via the FLOWX.AI Designer:
 
@@ -65,7 +65,7 @@ Multiple options are available for this type of action and can be configured via
 
 * **Allow BACK on this action** - back in process is a functionality that allows you to go back in a business process and redo a series of previous actions in the process. For more details, check [Moving a token backwards in a process](../../flowx-designer/managing-a-process-flow/moving-a-token-backwards-in-a-process.md) section
 
-![Action Edit](./img/message_send_action_edit.png)
+![Action Edit](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/message_send_action_edit.png)
 
 #### Data to send
 
@@ -75,7 +75,7 @@ Multiple options are available for this type of action and can be configured via
 **Data to send** option is configurable only when the action **trigger type** is **Manual**.
 :::
 
-![Parameters](./img/parameters_message_send.gif)
+![Parameters](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/parameters_message_send.gif)
 
 For more information about what Kafka is, check the following sections:
 
@@ -111,23 +111,23 @@ More details about **Integrations management** you can find [here](../../platfor
 * **Message** -`{ "clientType": "${application.client.clientType}", "personalNumber": "${personalNumber.client.personalNumber}" }` - the message payload will have two keys, `clientType` and `personalNumber`, both with values from the process instance
 * **Headers** - `{ "processInstanceId": ${processInstanceId}}`
 
-![](./img/message_send_param1.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/message_send_param1.png)
 
-![](./img/message_send_param2.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/message_send_param2.png)
 
-![](./img/message_send_param3.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/message_send_param3.png)
 
 ## Message receive task
 
 This type of node is used when we need to wait for a reply from an external system.
 
-![Message receive task](./img/message_receive_node.png#center)
+![Message receive task](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/message_receive_node.png#center)
 
 The reply from the external system will be saved in the process instance values, on a specified key. If the message needs to be processed at a later time, a timeout can be set using the [ISO 8601](https://www.digi.com/resources/documentation/digidocs/90001437-13/reference/r\_iso\_8601\_duration\_format.htm) format.
 
 For example, let's think about a CRM microservice that waits to receive requests to look for a user in a database. It will send back the response when a topic is configured to listen for the response.
 
-![](./img/message_receive_example.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/message_receive_example.png)
 
 ### Configuring a message receive task node
 
@@ -143,7 +143,7 @@ A naming pattern must be defined on the process engine to use the defined topics
 
 For more information about Kafka configuration, click [here](../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#kafka-configuration).
 
-![Example of a message receive task for a CRM integration](./img/message_receive_kafka.png)
+![Example of a message receive task for a CRM integration](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/message_receive_kafka.png)
 
 
 ##### From integration
@@ -154,4 +154,4 @@ After defining one integration (inside [Integration management](../../platform-d
 * **Message** - the **Message data model** from your integration
 * **Headers** - all integrations have `processInstanceId` as a default header parameter, add any other relevant parameters
 
-![](./img/message_send_from_integr.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/message_send_from_integr.gif)

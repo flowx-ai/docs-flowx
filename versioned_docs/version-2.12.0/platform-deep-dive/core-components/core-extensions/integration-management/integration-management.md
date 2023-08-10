@@ -14,23 +14,23 @@ Integrations must be compatible with Kafka, so they can communicate with externa
 After defining one integration (inside **Integration management**) you can open a compatible node and start using them.
 
 :::info
-Integrations are used with the following nodes: [task nodes](../../../../building-blocks/node/task-node/task-node.md), [user task nodes](../../../../building-blocks/node/user-task-node/user-task-node.md), [message send tasks](../../../../building-blocks/node/message-send-received-task-node.md#message-send-task), and [message receive tasks](../../../../building-blocks/node/message-send-received-task-node.md#message-receive-task)).
+Integrations are used with the following nodes: [task nodes](../../../../building-blocks/node/task-node/task-node.md), [user task nodes](../../../../building-blocks/node/user-task-node/user-task-node.md), [message send tasks](../../../../building-blocks/node/message-send-received-task-node.md#message-send-task), and [message receive tasks](../../../../building-blocks/node/message-send-received-task-node.md#message-receive-task).
 :::
 
 You can easily create or import an integration using the **Integration management** feature just by accessing **FLOWX.AI Admin-> Integration management**.
 
-![Integration management](../../../img/integrations.png)
+![Integration management](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/integrations.png)
 
 ## Accessing Integration management
 
 To access Integration management:
 
-1. Open **FLOWX FLOWX.AI Admin** and go to the **General Settings** tab.
+1. Open **FLOWX.AI Admin** and go to the **General Settings** tab.
 2. From the expanded menu, select **Integration management**.
 3. From the list, select an **Integration**.
 4. Click the **arrow** icon to expand the list with the scenarios.
 
-![Integration management](../../../img/accessing_integration_mngmnt.gif)
+![Integration management](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/accessing_integration_mngmnt.gif)
 
 ### Configuring Access Rights for Integrations Management
 
@@ -50,7 +50,7 @@ To create a new integration, see the steps described in [Accessing Integration m
 
 <div class="image-scaled">
 
-![Add new integration](../../../img/%20add_new_integration.png)
+![Add new integration](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/%20add_new_integration.png)
 
 </div>
 
@@ -63,7 +63,7 @@ After you added a new integration, you can configure scenarios by following the 
 3. Click **+ Add new scenario** button and fill in the **name** of the scenario.
 
 
-![Add new scenario](../../../img/add_new_scenario.png)
+![Add new scenario](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/add_new_scenario.png)
 
 ### Configuring scenarios
 
@@ -97,7 +97,7 @@ Topics are defined depending on the environment where you want to use them. You 
 
 <div class="image-scaled">
 
-![](../../../img/add_send_topics.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/add_send_topics.png)
 
 </div>
 
@@ -112,7 +112,7 @@ Topics are defined depending on the environment where you want to use them. You 
 
 **RECEIVE scenario**: The output data model represents the content of the message that FLOWX.AI Engine sends to the adapters or plugins.
 
-![](../../../img/send_message_dat_model.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/send_message_dat_model.png)
 
 To configure a new message data model, follow the next steps:
 
@@ -128,10 +128,10 @@ The following details need to be configured:
   * NUMBER
   * BOOLEAN
   * OBJECT - you can add multiple values types inside an OBJECT
-![](../../../img/intgr_object.png) 
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/intgr_object.png) 
   * OBJECT_REF - used for values that are already defined in the process
   * ARRAY - for arrays you must specify the **Item type**
-![](../../../img/input_model_item_type.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/input_model_item_type.png)
   * ARRAY_REF - used for values that are already defined in the process
   * ENUM - a special data type that enables for a variable to be a set of predefined constants
 
@@ -141,7 +141,7 @@ The following details need to be configured:
 
 <div class="image-scaled">
 
-![](../../../img/input_properties_attributes.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/input_properties_attributes.png)
 
 </div>
 
@@ -158,17 +158,16 @@ Headers may also contain Kafka authorization (token in the header).
 
 ## Using integrations
 
-As mentioned earlier, you can use integrations management to configure integrations between FLOWX.AI Engine and different plugins and adapters. These configurations are defined so that when you create a process (and it is using Kafka-related activities) you will no longer have to manually search for suitable topics or environments.&#x20;
-
+As mentioned earlier, you can use integrations management to configure integrations between FLOWX.AI Engine and different plugins and adapters. These configurations are defined so that when you create a process (and it is using Kafka-related activities) you will no longer have to manually search for suitable topics or environments.
 Use predefined integrations, that you have already configured, on different processes and nodes. Places where integrations will be used:
 
-* Node -> Actions ->  **Kafka Send Action** (to send data to the integration)
+* Node → Actions → **Kafka Send Action** (to send data to the integration)
 
-![](../../../img/using_integrations.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/using_integrations.gif)
 
-* Node -> Node config -> **Data stream topics** (the topic name where the [process engine](../../flowx-engine/) listens for the response)
+* Node → Node config → **Data stream topics** (the topic name where the [process engine](../../flowx-engine/) listens for the response)
 
-![](../../../img/integrations_node_config.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/integrations_node_config.png)
 
 :::info
 Data stream topics are used to select the integration and the key on which the response is saved.
@@ -176,4 +175,4 @@ Data stream topics are used to select the integration and the key on which the r
 
 If your integration has scenarios that are already used in another process, you will always be notified.
 
-![](../../../img/integrations_in_use.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/integrations_in_use.png)

@@ -10,7 +10,7 @@ You can integrate document upload into a [**process definition**](../../../../..
 User task [**nodes**](../../../../../terms/flowx-node) enable you to define and configure UI templates and actions for specific template config nodes, such as an upload file button.
 :::
 
-![](../../../../img/docs_upload_proc.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/docs_upload_proc.png)
 
 To upload a document using a process, follow the next steps.
 
@@ -40,7 +40,7 @@ A naming pattern must be defined in the [**process engine**](../../../../../term
 
 * **Key Name**: This key will hold the result received from the external system. If the key already exists in the process values, it will be overwritten.
 
-![](../../../../img/doc_upload_file_con.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/doc_upload_file_con.png)
 
 #### **Actions**
 
@@ -52,7 +52,7 @@ A naming pattern must be defined in the [**process engine**](../../../../../term
 * **Reputable**: Check this option if the action can be triggered multiple times.
 * **Autorun Children**: When enabled, the child actions defined as mandatory and automatic will run immediately after the parent action is finalized.
 
-![](../../../../img/action_edit_doc_plugin.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/action_edit_doc_plugin.png)
 
 ##### Parameters
 
@@ -70,13 +70,13 @@ Kafka topic names can be customized by overwriting the following environment var
 The above examples of topics are extracted from an internal testing environment. When setting topics for other environments, follow this pattern: `ai.flowx.updates.{{environment}}.document.persist.v1`.
 :::
 
-![](../../../../img/doc_plugin_upload_param.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/doc_plugin_upload_param.png)
 
 ### Milestone nodes
 
 You can configure start and end milestone nodes before and after the user task. Additionally, you can add a modal template (e.g., a **Page**) to the start milestone node to display a modal screen, as shown in the example above.
 
-![](../../../../../building-blocks/node/img/milestone_page.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/milestone_page.png)
 
 ## Receiving the reply
 
@@ -93,7 +93,7 @@ The reply body is expected to contain the following values:
 You can view the response by accessing the **Audit log** menu.
 :::
 
-![](../../../../img/audit_log_doc_upload.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/audit_log_doc_upload.png)
 
 ```json
     {

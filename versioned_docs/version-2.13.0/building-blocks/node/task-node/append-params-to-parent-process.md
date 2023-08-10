@@ -3,7 +3,7 @@
 :::info
 **What is it?**  It is a type of action that allows you to send data from a [subprocess](../../process/subprocess.md) to a parent [process](../../process/process.md).
 
-**Why is it important?**   If you are using subprocesses that produce data that needs to be sent back to the main process, you can do that by using an **Append Params to Parent Process** action.
+**Why is it important?**  If you are using subprocesses that produce data that needs to be sent back to the main process, you can do that by using an **Append Params to Parent Process** action.
 :::
 
 ### Configuring an Append Params to Parent Process
@@ -35,7 +35,7 @@ The following properties must be configured:
 #### **Parameters**
 
 * **Copy from current state** - data that you want to be copied back to the parent process
-* **Destination in the parent state** -  on what key to copy the param values
+* **Destination in the parent state** - on what key to copy the param values
 
 :::success
 To recap: if you have a **Copy from current state** with a simple **JSON** -`{"age": 17}`, that needs to be available in the parent process, on the `application.client.age` key, you will need to set this field (**Destination in the parent state**) with `application.client`, which will be the key to append to in the parent process.
@@ -43,7 +43,7 @@ To recap: if you have a **Copy from current state** with a simple **JSON** -`{"a
 
 **Advanced configuration**
 
-* **Show Target Process** -  ID of the parent process where you need to copy the params, this was made available on to the `${parentProcessInstanceId}` variable, if you defined it when you [started the subprocess](start-subprocess-action.md)
+* **Show Target Process** - ID of the parent process where you need to copy the params, this was made available on to the `${parentProcessInstanceId}` variable, if you defined it when you [started the subprocess](start-subprocess-action.md)
 
 #### Data to send
 
@@ -55,17 +55,17 @@ To recap: if you have a **Copy from current state** with a simple **JSON** -`{"a
 
 ### Example
 
-We have a subprocess that allows us to enter the age of the client on the **data.client.age** key, and we want to copy the value back to the parent process. The key to which we want to receive this value in the parent process is **application.client.age**.&#x20;
+We have a subprocess that allows us to enter the age of the client on the **data.client.age** key, and we want to copy the value back to the parent process. The key to which we want to receive this value in the parent process is **application.client.age**.
 
 This is the configuration to apply the above scenario:
 
 **Parameters**
 
-* **Copy from current state** - `{"client": ${data.client.age}}` to copy the age of the client (the param value we want to copy)&#x20;
-* **Destination in the parent state**  - `application` to append the data o to the **application** key on the parent process
+* **Copy from current state** - `{"client": ${data.client.age}}` to copy the age of the client (the param value we want to copy)
+* **Destination in the parent state** - `application` to append the data o to the **application** key on the parent process
 
 **Advanced configuration**
 
-* **Show Target Process** -  `${parentProcessInstanceId}`to copy the data on the parent of this subprocess&#x20;
+* **Show Target Process** - `${parentProcessInstanceId}`to copy the data on the parent of this subprocess
 
-![](../img/append_params_example.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/append_params_example.png)

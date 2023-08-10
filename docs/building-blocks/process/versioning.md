@@ -2,7 +2,7 @@
 
 ## Process Definition list
 
-![](../../platform-deep-dive/img/versioning.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/versioning.png)
 
 1. Comprehensive Overview:
    - The tab provides a summary of all accessible process definitions in the current environment.

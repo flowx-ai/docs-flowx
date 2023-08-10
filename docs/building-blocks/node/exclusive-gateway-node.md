@@ -8,11 +8,11 @@ sidebar_position: 5
 
 ## Configuring an Exclusive gateway node
 
-![Exclusive gateway](./img/gateway_exclusive.png#center)
+![Exclusive gateway](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/gateway_exclusive.png#center)
 
 To configure this kind of node, it is useful to previously configure the **in** and **out** sequence from the gateway process.
 
-![](./img/gateway_exclusive_diagram.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/gateway_exclusive_diagram.png)
 
 #### General Config
 
@@ -26,7 +26,7 @@ When encountering a step with `canGoBack` switched to false, all steps found beh
 * [**Swimlane**](../../platform-deep-dive/user-roles-management/swimlanes.md) - choose a swimlane (if there are multiple swimlanes on the process) to make sure only certain user roles have access only for certain process nodes- if there are no multiple swimlanes, the value is **Default**
 * [**Stage** ](../../platform-deep-dive/plugins/custom-plugins/task-management/using-stages.md)- assign a stage to the node
 
-![](./img/gateway_exclusive_stages.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/gateway_exclusive_stages.png)
 
 #### Gateway Decisions
 
@@ -37,18 +37,18 @@ When encountering a step with `canGoBack` switched to false, all steps found beh
 Expression order is important because the first **true** evaluation will stop the execution and the token will move to the selected node.
 :::
 
-![](./img/gateway_exclusive_conditions.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/gateway_exclusive_conditions.png)
 
 After the exclusive part of the process (where a path or another will be used), you need to end each path or join back to a single process using a new exclusive gateway without any configuration on it.
 
-![](./img/exclusive_gateway_configuration.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/exclusive_gateway_configuration.png)
 
 #### Configuring a DMN Exclusive Gateway node
 
 You can use [DMN](/docs/platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-dmn.md) to define gateway decisions, using exclusive gateways.
 
-![Gateway Decisions](./img/exclusive_gateway_DMN.gif)
+![Gateway Decisions](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/exclusive_gateway_DMN.gif)
 
 **Gateway Decision - DMN example** [(applicable only for exclusive gateway - XOR)](exclusive-gateway-node.md)
 
-![Gateway Decision](./img/exclusive_gateway_decision.png)
+![Gateway Decision](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/exclusive_gateway_decision.png)

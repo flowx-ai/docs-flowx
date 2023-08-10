@@ -4,7 +4,7 @@ sidebar_position: 8
 
 # Segmented button
 
-![](../../img/segmented_button1.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/segmented_button1.gif)
 
 It allows users to pick only one option from a group of options, and you can choose to have between 2 and 5 options in the group. The segmented button is easy to use, and can help make your application easier for people to use.
 
@@ -41,7 +41,7 @@ The available configuration options for this form element are:
 
 The following validators can be added to a segmented button: `required` and `custom` (more details [here](../../validators.md)).
 
-![](../../img/segmented_button_props.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/segmented_button_props.png)
 
 
 #### UI actions
@@ -80,7 +80,7 @@ Choose an appropriate font family, size, and weight for the button label text.
 * **Selected state** - set the background color of the button
 * **Unselected state** - set the background color of the button
 
-![](../../img/segmented_button_styling.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/segmented_button_styling.png)
 
 :::info
 For more valid CSS properties, click [**here**](../../#styling).

@@ -10,11 +10,11 @@ Root components (layout elements) are used to group different types of component
 * [**Custom** ](custom.md)- these are Angular components developed in the container application and passed to the SDK at runtime, identified here by the component name
 * [**Card**](card.md) - acts like a [**Container**](container.md) component; it also has the option to become an accordion 
 
-![](../../img/root_components.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/root_components.gif)
 
 The root component can hold a hierarchical component structure as follows
 
-![](../../img/root_components_structure.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/root_components_structure.png)
 
 Available children for **Card** and **Container** are:
 

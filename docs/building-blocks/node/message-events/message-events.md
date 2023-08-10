@@ -2,7 +2,7 @@
 
 Message events serve as a means to incorporate messaging capabilities into business process modeling. These events are specifically designed to capture the interaction between different process participants by referencing messages. 
 
-![](../img/all_message_events.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/all_message_events.png)
 
 By leveraging message events, processes can pause their execution until the expected messages are received, enabling effective coordination and communication between various system components.
 

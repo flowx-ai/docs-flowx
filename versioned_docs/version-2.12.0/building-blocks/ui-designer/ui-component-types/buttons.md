@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Buttons
 
-There are  two types of buttons, similar to each other but with different purposes:
+There are two types of buttons, similar to each other but with different purposes:
 
 ### Button
 
@@ -16,10 +16,10 @@ Sections that can be configured regarding general settings:
    * Button type: fill/flat
    * Label
 2. Styling - where extra CSS can be added
-3. Expressions -  you can add here `if` expressions that will be evaluated to be true or false
-4. **UI Action -** that defines what action will trigger ([more details on how to configure](../ui-actions.md))
+3. Expressions - you can add here `if` expressions that will be evaluated to be true or false
+4. **UI Action** - that defines what action will trigger ([more details on how to configure](../ui-actions.md))
 
-![Button configuration for a save action](../img/button_config.png)
+![Button configuration for a save action](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/button_config.png)
 
 
 
@@ -32,4 +32,4 @@ This button will be used to select a file and do custom validation on it. Only t
 * Max file size
 * Max file size error
 
-![](../img/file_upload_button.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/file_upload_button.png)

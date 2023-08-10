@@ -8,7 +8,7 @@ sidebar_position: 2
 
 A node is a visual representation of a point in your [**process**](../../terms/flowx-process). To mark the entrance of a record into the process, [**nodes**](../../terms/flowx-node) are added at certain process points.
 
-![](./img/node_diagram.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/node_diagram.png)
 
 FLOWX platforms support different types of nodes, each needing a different configuration to fulfill its purpose in the business flow.
 
@@ -16,7 +16,7 @@ FLOWX platforms support different types of nodes, each needing a different confi
 
 Let's go through the most important types of nodes. These can be selected when adding a new node to a [process definition](../process/process-definition.md) using the [**FLOWX Designer**](../../terms/flowx-ai-designer)
 
-![](./img/nodes_types.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/nodes_types.png)
 
 
 + **​Start and end nodes**​​​ ​- they mark the beginning and end of a [process flow](../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-bpmn/intro-to-bpmn.md#bpmn-20-elements). A [process definition](../process/process-definition.md) can have one or more start nodes (each linked with a start condition) and also one or more end nodes depending on the flow outcomes
@@ -31,7 +31,7 @@ Let's go through the most important types of nodes. These can be selected when a
 
 Advanced node types:​
 
-![](./img/subprocess_node.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/subprocess_node.png)
 
 * ​**​Subprocess run node**​ - a node that provides advanced options for starting subprocessesAfter you get a broader overview of each node, you can play with them to create a process, more details are in the below section:
 

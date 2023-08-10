@@ -216,5 +216,5 @@ Hi there! 👋 Follow the Release Notes space to find all the information on the
 </details>
 
 <p align="center">
-  <img src="https://i.ibb.co/WNhMFSJ/Release-notes-undraw.png" alt="Release Notes" />
+  <img src="https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/assets/release_notes_undraw.png" alt="Release Notes" />
 </p>

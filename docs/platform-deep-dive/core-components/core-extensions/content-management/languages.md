@@ -5,7 +5,7 @@ sidebar_position: 7
 
 The FLOWX Headless CMS can store and manage languages. You can add a language and use it in almost any content management configuration.
 
-![Languages](../../../img/languages.png)
+![Languages](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/languages.png)
 
 On the main screen inside **Languages**, you have the following elements:
 
@@ -17,11 +17,11 @@ On the main screen inside **Languages**, you have the following elements:
 When working with [substitution tags](./substitution-tags.md) or other elements that imply values from other languages defined in the CMS, when running a process, the default values extracted will be the ones marked by the default language.
 :::
 
-![Default values](../../../img/lang_default_values.png)
+![Default values](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/lang_default_values.png)
 
 * **Edit** - button used to edit a language
 
-![Edit](../../../img/edit_languages.png)
+![Edit](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/edit_languages.png)
 
 * **Delete** - button used to delete a language
 
@@ -40,4 +40,4 @@ To add a new language, follow the next steps:
 3. Choose a new **language** from the list.
 4. Click **Add** after you finish.
 
-![](../../../img/adding_new_language.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/adding_new_language.gif)

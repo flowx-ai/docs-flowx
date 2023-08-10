@@ -14,7 +14,7 @@ To use the notification plugin for sending emails with attachments, you must def
 
 Let's pick a simple use-case. Imagine we need to send a copy of a contract signed by a new customer. Before setting the action for the notification, another action must be defined, so the first one will save the new contract using the documents plugin.
 
-![](../../../../img/send_email_notif_attach.jpeg)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/send_email_notif_attach.jpeg)
 
 [Uploading a new document](../../documents-plugin/using-documents-plugin/uploading-a-new-document.md)
 
@@ -34,7 +34,7 @@ The steps for sending the notification are the following:
 
 The message to be sent to Kafka will look something like:
 
-```
+```json
 {
   "templateName" : "contractCopy",
   "identifier" : "text",
