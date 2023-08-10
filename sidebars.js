@@ -470,8 +470,19 @@ const sidebars = {
                 {
                   type: "doc",
                   id: "building-blocks/ui-designer/ui-component-types/indicators"
-                }
+                },
+
+
+                {
+                  type: "doc",
+                  id: "building-blocks/ui-designer/ui-component-types/typography"
+                },
+
+
+                
               ],
+
+              
             },
 
             { 

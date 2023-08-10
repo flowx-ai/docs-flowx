@@ -2,7 +2,7 @@
 
 As we've seen in the previous chapter, Business Process Model and Notation ([**BPMN**](intro-to-bpmn/)) is used to define business processes as a sequence of activities. If we need to branch off different process paths, we use gateways. These have rules attached to them in order to decide on which outgoing path should the process continue on.
 
-![Process with gateways](./img/process_with_gateways.png)
+![Process with gateways](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/process_with_gateways.png)
 
 :::info
 For more information on how to define DMN gateway decisions, check the [**Exclusive gateway node**](../../../building-blocks/node/exclusive-gateway-node.md) section.
@@ -25,7 +25,7 @@ You can now define a DMN Business Rule Action directly in FLOWX Designer. For mo
 **The Business Process Model and Notation** is used to create the majority of process models **(BPMN)**. The DMN standard was developed to complement BPMN by providing a mechanism for modeling decision-making represented by a Task within a process model. DMN does not have to be used in conjunction with BPMN, but it is highly compatible.
 
 :::warning
-FLOWX.AI  supports [DMN 1.3](https://www.omg.org/spec/DMN/1.3/) version.
+FLOWX.AI supports [DMN 1.3](https://www.omg.org/spec/DMN/1.3/) version.
 :::
 
 ### DMN Elements
@@ -39,7 +39,7 @@ There are 4 basic elements of the **Decision Model** **and Notation**:
 
 
 
-![Basic DMN Diagram](./img/dmn_diagram.png)
+![Basic DMN Diagram](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/dmn_diagram.png)
 
 #### Decision
 

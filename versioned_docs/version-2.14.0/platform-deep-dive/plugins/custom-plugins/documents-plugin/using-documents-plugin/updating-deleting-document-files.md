@@ -13,15 +13,15 @@ The documents plugin can also be used to make updates to the files stored for th
 1. Create a process in which you add a [**Kafka send event node**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) and a [**Kafka receive event node**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) (one to send the request, one to receive the reply).
 2. Configure the first node (Kafka send event) - add a **Kafka send action**.
 
-![](../../../../img/doc_update_params.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/doc_update_params.png)
 
 3. Add the [**Kafka topic**](../../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md#kafka-configuration) where to send the request:
 
-![](../../../../img/doc_update_topic.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/doc_update_topic.png)
 
 4. Fill in the body message request:
 
-![](../../../../img/doc_update_body.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/doc_update_body.png)
 
 * `fileId`- the id of the file 
 * `customId` - the client ID
@@ -42,7 +42,7 @@ The Engine is listening for messages on topics with names of a certain pattern, 
 
 ### Receiving the reply
 
-![](../../../../img/doc_update_ceva.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/doc_update_ceva.png)
 
 Values expected in the reply body:
 
@@ -78,17 +78,17 @@ Used to delete files after bulk upload.
 1. Create a process in which you add a [**Kafka send event node**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) and a [**Kafka receive event node**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) (one to send the request, one to receive the reply).
 2. Configure the first node (Kafka send event) - add a **Kafka send action**.
 
-![](../../../../img/doc_delete_general.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/doc_delete_general.png)
 
 3. Add the [**Kafka topic**](../../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md#kafka-configuration) where to send the request:
 
-![](../../../../img/doc_delete_topic.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/doc_delete_topic.png)
 
 4. Fill in the body message request:
 
-![](../../../../img/delete_doc_body.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/delete_doc_body.png)
 
-* `fileId`- the id of the file 
+* `fileId`- the ID of the file 
 * `customId` - the client ID
 * `documentType` - document type
 
@@ -106,7 +106,7 @@ The Engine is listening for messages on topics with names of a certain pattern, 
 
 ### Receiving the reply
 
-![](../../../../img/delete_doc_reply.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/delete_doc_reply.png)
 
 Values expected in the reply body:
 
@@ -115,7 +115,7 @@ Values expected in the reply body:
 * documentType = document type
 * error = error description
 
-Example:
+Example: d
 
 ```json
 {
