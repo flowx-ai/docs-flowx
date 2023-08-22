@@ -4,9 +4,9 @@ In modern application development, the ability to create dynamic and interactive
 
 ## Dynamic values
 
-Dynamic values refer to the capability of dynamically populating element properties in the user interface based on process parameters or substitution tags. These values can be customized at runtime, allowing the application to adapt to specific scenarios or user input. With dynamic values, you can personalize labels, placeholders, error messages, and other properties of UI elements, providing a tailored experience for users.
+Dynamic values exemplify the capacity to dynamically populate various properties of UI elements in response to process parameters or substitution tags. This dynamic customization occurs at runtime, allowing the application to adapt to specific scenarios or user inputs. With dynamic values, the UI can be tailored down to details, including labels, placeholders, error messages, and other properties.
 
-You can now utilize process parameters or [**substitution tags**](../../platform-deep-dive/core-components/core-extensions/content-management/substitution-tags.md) with the following UI elements and their properties:
+This capability is now extended to an array of UI elements and their corresponding properties, utilizing process parameters or [**substitution tags**](../../platform-deep-dive/core-components/core-extensions/content-management/substitution-tags.md):
 
 
 | Element                                                                 | Property                                                         | Accepts Params/Subst Tags |
@@ -35,7 +35,7 @@ You can now utilize process parameters or [**substitution tags**](../../platform
 
 #### Business rule example
 
-In the above example, the following MVEL business rule was used to populate the keys with values from the task:
+In the preceding example, an MVEL business rule demonstrates the population of specific keys with dynamic values from the task. This JSON object, assigned to the "app" key, captures the values for various UI properties:
 
 ```json
 ///assigning a JSON object containing dynamic values for the specified keys to the "app" key 
@@ -61,19 +61,19 @@ output.put("app",{"label":"This is a label",
 ```
 
 :::caution
-Please note that for releases **<= 3.3.0**, it is not possible to concatenate process parameters with substitution tags when using dynamic values.
+Note that for releases **<= 3.3.0**, concatenating process parameters with substitution tags isn't supported when utilizing dynamic values.
 :::
 
 ## Computed values
 
-Computed values take the concept of dynamic values a step further by allowing you to generate values dynamically using JavaScript expressions. Rather than relying solely on predefined values, computed values enable the calculation, transformation, and manipulation of data based on specific rules or conditions. 
+Computed values present a method to dynamically generate values using JavaScript expressions. Beyond adhering to predefined values, computed values enable the manipulation, calculation, and transformation of data grounded in particular rules or conditions.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/computed1.png)
 
-Computed values can be created by writing JavaScript expressions that operate on process parameters or other variables within the application. 
+Computed values can be created via JavaScript expressions that operate on process parameters or other variables within the application.
 
 :::info
-To add a computed value, you have to explicitly check “Computed value” option (represented by the **f(x)** icon), which will transform the desired field into a JavaScript editor.
+To introduce a computed value, you simply toggle the "Computed value" option (represented by the **f(x)** icon). This will transform the chosen field into a JavaScript editor.
 
 <div class = "image-scaled">
 
@@ -87,11 +87,11 @@ By enabling computed values, the application provides flexibility and the abilit
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release-notes/computed.gif)
 
-### Slider example
+### Slider example (parsing keys as integers)
 
-The above example demonstrates the usage of computed values for a Slider element, where JavaScript expressions are used to compute the minimum and maximum values based on a value entered in an input UI element (linked by the process key `${application.client.amount}`).
+The instance above showcases computed values' usage in a Slider element. JavaScript expressions are used to dynamically compute minimum and maximum values based on a value sourced from a linked input UI element (connected via the process key `${application.client.amount}`).
 
-#### Min Value
+#### Minimum Value
 
 ```js
 if ( !isNaN(parseInt(${application.client.amount})) ) {
@@ -101,8 +101,12 @@ if ( !isNaN(parseInt(${application.client.amount})) ) {
 }
 ```
 
-#### Max Value
+* `!isNaN(parseInt(${application.client.amount}))`: This part ascertains whether the value in the input field `(${application.client.amount})` can be effectively converted to an integer using `parseInt`. Moreover, it validates that the outcome isn't `NaN` (i.e., not a valid number), ensuring input validity.
+* If the input is a valid number, the minimum value for the slider is calculated as 15% of the entered value `(0.15 * parseInt(${application.client.amount}))`.
+* If the input is not a valid number `(NaN)`, the minimum value for the slider is set to 10000.
 
+
+#### Maximum Value
 
 ```js
 if ( !isNaN(parseInt(${application.client.amount})) ) {
@@ -112,23 +116,61 @@ if ( !isNaN(parseInt(${application.client.amount})) ) {
 }
 ```
 
-#### Example details
-
-The code snippets check whether the value of `${application.client.amount}` key can be successfully parsed as an integer. Here's a step-by-step explanation:
-
-* The `parseInt()` function is used to attempt to convert `${application.client.amount}` into an integer.
-* The `isNaN()` function is then used to check if the result of the conversion is `NaN` (not a number).
-* If the value is not `NaN`, it means `${application.client.amount}` is a valid numeric value.
-* In that case, the code calculates the computed value by multiplying the parsed integer by `0.15` (the minimum percentage value for the down payment or with 0.35, the maximum percentage value of the down payment). The result is returned as the computed value for the expression.
-* If the value is `NaN` (or `${application.client.amount}` couldn't be successfully parsed as an integer), the code executes the else block and returns a default value of `10000`.
-
-In summary, the JS expressions demonstrates how a computed value can be derived based on a conditional calculation. It first checks if a specific process parameter `(${application.client.amount})` is a valid numeric value, and if so, it computes the value by multiplying it by 0.15 or 0.35. Otherwise, it falls back to a default value of `10000` or `20000`.
+* Similar to the previous expression, it checks if the value entered on the input field is a valid number using `!isNaN(parseInt(${application.client.amount}))`.
+* If the input is a valid number, the maximum value for the slider is calculated as 35% of the entered value `(0.35 * parseInt(${application.client.amount}))`.
+* If the input is not a valid number `(NaN)`, the maximum value for the slider is set to 20000.
 
 
-### Usage
+#### Summary
 
-The UI Designer now allows JavaScript expressions to create computed values used on the following UI elements with their properties:
+In summary, the above expressions provide a dynamic range for the slider based on the value entered on the input field. If a valid numeric value is entered, the slider's range will be dynamically adjusted between 15% and 35% of that value. If the input is not a valid number, a default range of 10000 to 20000 is set for the slider. This can be useful for scenarios where you want the slider's range to be proportional to a user-provided value.
 
+
+### Text example (using computed strings)
+
+The following scenario outlines the functionality and implementation of dynamically displaying property types (using a text UI element) based on the selected loan type (using a select UI element) in a user interface.
+
+The following scenario outlines the functionality and implementation of dynamically displayed property types via a text UI element. This is done based on the chosen loan type through a select UI element in a user interface.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/dynamic_string.gif)
+
+#### Scenario
+
+The UI in focus showcases two primary UI elements:
+
+* Select Element - "Loan type": This element allows users to choose from different loan types, including "Conventional," "FHA," "VA," and "USDA."
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/loan_type.png#left) ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/select_values.png#right)
+
+* Text Element - "Property type": This element displays property types based on the selected loan type.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/property_type.png)
+
+The following code snippet illustrates how the dynamic property types are generated based on the selected loan type (JavaScript is used): 
+
+```javascript
+if ("${application.loanType}" == "conventional") {
+    return "Single-Family Home, Townhouse CondoMulti-Family, Dwelling";
+} else if ("${application.loanType}" == "fha") {
+    return "Single-Family Home, Townhouse, Condo, Manufactured Home";
+} else if ("${application.loanType}" == "va") {
+    return "Single-Family Home, Townhouse, Condo, Multi-Family Dwelling";
+} else if ("${application.loanType}" == "usda") {
+    return "Single-Family Home, Rural Property, Farm Property";
+} else {
+    return "Please select a loan type first";
+}
+```
+
+#### Summary
+
+* **Loan Type Selection**: Users interact with the "Loan Type Select Element" to choose a loan type, such as "Conventional," "FHA," "VA," or "USDA."
+* **Property Types Display**: Once a loan type is selected, the associated property types are dynamically generated and displayed in the "Text Element."
+* **Fallback Message**: If no loan type is selected or an invalid loan type is chosen, a fallback message "Please select a loan type first" is displayed.
+
+### Integration across the UI elements
+
+The UI Designer allows the inclusion of JavaScript expressions for generating computed values. This functionality extends to the following UI elements and their associated properties:
 
 | Element                                | Properties                          |
 | -------------------------------------- | ----------------------------------- |
@@ -145,7 +187,6 @@ The UI Designer now allows JavaScript expressions to create computed values used
 - **Text**: The content of a text element can be set using JavaScript expressions, allowing for dynamic text generation or displaying process-related information.
 - **Link**: The link text can also accept JavaScript expressions, enabling dynamic generation of the link text based on process parameters or other conditions.
 
-Please note that these settings are specifically applicable to numeric values and are not intended for date or string values.
 
 :::caution
 For input elements (e.g., text input), you may require a default value from a process variable, while a number input may need a computed value.

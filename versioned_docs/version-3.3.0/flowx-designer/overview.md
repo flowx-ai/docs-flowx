@@ -51,6 +51,10 @@ sidebar_position: 2
 
 [Example here](../platform-deep-dive/core-components/core-extensions/content-management/using-the-service.md#example-request-a-label-by-language-or-source-system-code)
 
+#### Media Library
+
+* serves as a centralized hub for managing and organizing various types of media files, including images, GIFs, and more
+
 </details>
 
 <details>

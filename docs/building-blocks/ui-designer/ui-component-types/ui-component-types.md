@@ -59,6 +59,8 @@ Understanding these component types will help you to better utilize the UI Desig
 * [Checkbox](form-elements/checkbox-form-field.md)
 * [Radio](form-elements/radio-form-field.md)
 * [Switch](./form-elements/switch-form-field.md)
+* [Segmented button](./form-elements/segmented-button.md)
+* [Slider](./form-elements/slider.md)
 * [Datepicker](form-elements/datepicker-form-field.md)
 
 </details>
@@ -67,7 +69,7 @@ Understanding these component types will help you to better utilize the UI Desig
 
 <summary>Indicators</summary>
 
-* Message
+* [Message](./indicators.md)
 
 </details>
 

@@ -51,6 +51,14 @@ sidebar_position: 2
 
 [Example here](../platform-deep-dive/core-components/core-extensions/content-management/using-the-service.md#example-request-a-label-by-language-or-source-system-code)
 
+#### Media Library
+
+* serves as a centralized hub for managing and organizing various types of media files, including images, GIFs, and more
+
+#### Font files
+
+* Font management allows you to upload and manage multiple font files, which can be later utilized when configuring UI templates using the UI Designer
+
 </details>
 
 <details>
