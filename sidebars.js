@@ -125,13 +125,7 @@ const sidebars = {
                   }
                 
                 ],
-              },
-
-              {
-                type: "doc",
-                id: "platform-overview/frameworks-and-standards/timer-expressions"
               }
-
           ],
           
         },
@@ -280,6 +274,37 @@ const sidebars = {
                   type: "doc",
                   id: "building-blocks/node/message-events/message-catch-start-event"
                 }      
+              ],
+            },
+
+            {
+              type: "category",
+              label: "Timer events",
+              link: {
+                type: "doc",
+                id: "building-blocks/node/timer-events/timer-events"
+              } ,
+              items: 
+              [ 
+                { 
+                  type: "doc",
+                  id: "building-blocks/node/timer-events/timer-start-event"
+                },
+
+                { 
+                  type: "doc",
+                  id: "building-blocks/node/timer-events/timer-intermediate-event"
+                },  
+                
+                { 
+                  type: "doc",
+                  id: "building-blocks/node/timer-events/timer-boundary-event"
+                }, 
+                
+                {
+                  type: "doc",
+                  id: "building-blocks/node/timer-events/timer-expressions"
+                }
               ],
             },
 

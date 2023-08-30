@@ -15,6 +15,10 @@ A cron expression is a string made up of **six mandatory subexpressions (fields)
 A field may be an asterisk (`*`), which always stands for “first-last”. For the day-of-the-month or day-of-the-week fields, a question mark (`?`) may be used instead of an asterisk.
 :::
 
+:::caution
+Important: Only Spring cron expressions are permissible for configuration. Refer to the [<u>**official documentation**</u>](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/scheduling/support/CronExpression.html) for detailed information on configuring Spring Cron expressions.
+:::
+
 Subexpressions:
 
 1. Seconds
@@ -33,9 +37,9 @@ More details:
 
 #### Cron Expressions are used in the following example:
 
-* [**Process definition**](../../building-blocks/process/process-definition.md) - **Expiry time** - a user can set up a `expiryTime` function on a process, for example, a delay of 30s will be set up like:
+* [**Process definition**](../../../building-blocks/process/process-definition.md) - **Expiry time** - a user can set up a `expiryTime` function on a process, for example, a delay of 30s will be set up like:
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-overview/frameworks-and-standards/timer_process_settings.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/timer_process_settings.png)
 
 ### **ISO 8601**
 
@@ -43,11 +47,13 @@ ISO 8601 is an international standard covering the worldwide exchange and commun
 
 More details:
 
-[ISO 8601](https://www.digi.com/resources/documentation/digidocs/90001437-13/reference/r_iso_8601_duration_format.htm)
+[ISO 8601 date format](https://www.digi.com/resources/documentation/digidocs/90001488-13/reference/r_iso_8601_date_format.htm)
+
+[ISO 8601 duration format](https://www.digi.com/resources/documentation/digidocs//90001488-13/reference/r_iso_8601_duration_format.htm)
 
 #### ISO 8601 format is used in the following examples:
 
-* [**Node config**](../../building-blocks/node/node.md) - **Response Timeout** - can be triggered if, for example, a topic that you define and add in the **Data stream topics** tab does not respect the pattern
+* **Node config** - **Response Timeout** - can be triggered if, for example, a topic that you define and add in the **Data stream topics** tab does not respect the pattern
 
 ISO 8601 dates and times:
 
@@ -64,6 +70,6 @@ ISO 8601 dates and times:
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-overview/frameworks-and-standards/timer_response_timeout.png)
 
-* [**Actions**](../../building-blocks/actions/actions.md) - **Timer expression** - it can be used if a delay is required on that action
+* [**Actions**](../../actions/actions.md) - **Timer expression** - it can be used if a delay is required on that action
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-overview/frameworks-and-standards/timer_action_edit.png)

@@ -343,3 +343,23 @@ This service account does not require client roles.
 3. Assign the necessary service account roles, including `FLOWX_ROLE`.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/iam14.png)
+
+### Scheduler service account
+
+:::info
+This service account is used for Start Timer Event node. The registered timers in the scheduler require sending a process start message to Kafka. Authentication is also necessary for this operation.
+:::
+
+Follow these steps to add a **scheduler service account**:
+
+1. Add a new client by selecting **Clients** then click **Create**.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/process_engine_sa.png)
+
+2. Next, set **Access type** as **confidential** and enable **Service Accounts**.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/iam11.png)
+
+3. Assign the necessary service account roles, including `FLOWX_ROLE`.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/iam14.png)

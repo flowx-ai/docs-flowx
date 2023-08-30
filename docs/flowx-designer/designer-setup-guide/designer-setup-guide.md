@@ -1,6 +1,6 @@
 # Designer setup guide
 
-The **FLOWX Designer** app is made up of a backend microservice and a frontend app. The backend microservice handles saving and editing process definitions. It provides the REST API used by the [**FLOWX Designer**](../../terms/flowx-ai-designer). The processes defined here will be handled by the [FLOWX Engine](../../platform-deep-dive/core-components/flowx-engine.md).
+The **FLOWX Designer** app is made up of a backend microservice (admin) and a frontend app. The admin part is managing process related entities. It provides the REST API used by the [**FLOWX Designer**](../../terms/flowx-ai-designer). The processes defined here will be handled by the [FLOWX Engine](../../platform-deep-dive/core-components/flowx-engine.md).
 
 Follow to next steps in order to set them up in your environment.
 
@@ -132,8 +132,6 @@ spec:
         path: /api/events(/|$)(.*)
 ```
 
-
-
 3. For accessing the REST API of the backend microservice
 
 ```jsx
@@ -195,11 +193,11 @@ To store process definitions the Admin microservice connects to the same Postgre
 
 The following configuration details need to be added using environment variables:
 
-`SPRING_DATASOURCE_URL`
+* `SPRING_DATASOURCE_URL` - This environment variable is used to specify the URL of the database that the Admin microservice and Engine connect to. The URL typically includes the necessary information to connect to the database server, such as the host, port, and database name. It follows the format of the database's JDBC URL, which is specific to the type of database being used (e.g., PostgreSQL or Oracle).
 
-`SPRING_DATASOURCE_USERNAME`
+* `SPRING_DATASOURCE_USERNAME` - This environment variable sets the username that the Admin microservice and Engine used to authenticate themselves when connecting to the database. The username is used to identify the user account that has access to the specified database.
 
-`SPRING_DATASOURCE_PASSWORD`
+* `SPRING_DATASOURCE_PASSWORD` - This environment variable specifies the password associated with the username provided in the `SPRING_DATASOURCE_USERNAME` variable. The password is used to authenticate the user and grant access to the database.
 
 :::danger
 You will need to make sure that the user, password, connection link and db name are configured correctly, otherwise, you will receive errors at start time.
@@ -213,60 +211,60 @@ The database schema is managed by a [liquibase](https://www.liquibase.org/) scri
 
 [**Kafka**](../../terms/flowx-kafka) is used only for saving audit logs. Only a producer needs to be configured. The environment variables that need to be set are:
 
-`KAFKA_BOOTSTRAP_SERVERS` - the Kafka bootstrap servers URL
+* `KAFKA_BOOTSTRAP_SERVERS` - the Kafka bootstrap servers URL
 
-`KAFKA_TOPIC_AUDIT_OUT` - topic key for sending audit logs. Default value: `ai.flowx.audit.log`
+*  `KAFKA_TOPIC_AUDIT_OUT` - topic key for sending audit logs. Default value: `ai.flowx.audit.log`
 
 
 ### Redis configuration
 
 The following values should be set with the corresponding Redis-related values:
 
-`SPRING_REDIS_HOST`
+* `SPRING_REDIS_HOST`
 
-`SPRING_REDIS_PASSWORD`
+* `SPRING_REDIS_PASSWORD`
 
 ### Logging
 
 The following environment variables could be set in order to control log levels:
 
-`LOGGING_LEVEL_ROOT` - root spring boot microservice logs
+* `LOGGING_LEVEL_ROOT` - root spring boot microservice logs
 
-`LOGGING_LEVEL_APP` - app level logs
+* `LOGGING_LEVEL_APP` - app level logs
 
 ### Authorization & access roles
 
 The following variables need to be set in order to connect to the identity management platform:
 
-`SECURITY_OAUTH2_BASE_SERVER_URL`
+* `SECURITY_OAUTH2_BASE_SERVER_URL`
 
-`SECURITY_OAUTH2_CLIENT_CLIENT_ID`
+* `SECURITY_OAUTH2_CLIENT_CLIENT_ID`
 
-`SECURITY_OAUTH2_REALM`
+* `SECURITY_OAUTH2_REALM`
 
 A specific service account should be configured in the OpenID provider to allow the Admin microservice to access realm-specific data. It can be configured using the following environment variables:
 
-`SECURITY_OAUTH2_SERVICE_ACCOUNT_ADMIN_CLIENT_ID` - the openid service account username
+* `SECURITY_OAUTH2_SERVICE_ACCOUNT_ADMIN_CLIENT_ID` - the openid service account username
 
-`SECURITY_OAUTH2_SERVICE_ACCOUNT_ADMIN_CLIENT_SECRET` - the openid service account client secret
+* `SECURITY_OAUTH2_SERVICE_ACCOUNT_ADMIN_CLIENT_SECRET` - the openid service account client secret
 
 Configuration needed to clear the offline sessions of a user session from the identity provider solution:
 
-`FLOWX_AUTHENTICATE_CLIENTID` 
+* `FLOWX_AUTHENTICATE_CLIENTID` 
 
 [Configuring access rights for admin](configuring-access-rights-for-admin)
 
 ### Elasticsearch
 
-`SPRING_ELASTICSEARCH_REST_URIS`
+* `SPRING_ELASTICSEARCH_REST_URIS`
 
-`SPRING_ELASTICSEARCH_REST_DISABLESSL`
+* `SPRING_ELASTICSEARCH_REST_DISABLESSL`
 
-`SPRING_ELASTICSEARCH_INDEX_SETTINGS_NAME` 
+* `SPRING_ELASTICSEARCH_INDEX_SETTINGS_NAME` 
 
-`SPRING_ELASTICSEARCH_REST_USERNAME`
+* `SPRING_ELASTICSEARCH_REST_USERNAME`
 
-`SPRING_ELASTICSEARCH_REST_PASSWORD`
+* `SPRING_ELASTICSEARCH_REST_PASSWORD`
 
 
 ### Undo/redo actions

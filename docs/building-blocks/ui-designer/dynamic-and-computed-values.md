@@ -189,6 +189,10 @@ The UI Designer allows the inclusion of JavaScript expressions for generating co
 
 
 :::caution
+When working with computed values, it's important to note that they are designed to be displayed as integers and strings.
+:::
+
+:::caution
 For input elements (e.g., text input), you may require a default value from a process variable, while a number input may need a computed value.
 :::
 

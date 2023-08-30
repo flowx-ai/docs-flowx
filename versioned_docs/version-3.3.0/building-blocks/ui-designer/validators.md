@@ -136,7 +136,7 @@ currentOrLastYear: function currentOrLastYear(AC: AbstractControl): { [key: stri
 
 ##### smallerOrEqualsToNumber
 
-Below is another custom validator example that returns `AsyncValidatorFn` param, which is a function that can be used to validate form input asynchronously. The validator is called `smallerOrEqualsToNumber` and takes an array of `params$` as an input.
+Below is another custom validator example that returns `AsyncValidatorFn` param, which is a function that can be used to validate form input asynchronously. The validator is called `smallerOrEqualsToNumber` and takes an array of `params` as an input.
 
 :::info
 For this custom validator the execution type should be marked as `async` using the UI Designer.

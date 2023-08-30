@@ -181,7 +181,7 @@ In the General settings, you can edit the process definition name, include the p
 
 For more information about **Cron Expressions** and **ISO 8601** formatting, check the following section;
 
-[Timer Expressions](../../platform-overview/frameworks-and-standards/timer-expressions.md)
+[Timer Expressions](../node/timer-events/timer-expressions.md)
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/process_settings.png)
 
