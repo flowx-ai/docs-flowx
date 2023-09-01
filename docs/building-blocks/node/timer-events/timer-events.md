@@ -65,7 +65,7 @@ More information about timer expressions you can find in the below section:
 
 ## Configuration
 
-For each node type, the following timer types can be configured:
+For each node type, the following timer types can be configured:![Alt text](https://files.slack.com/files-pri/T01EA7963GS-F05QQ93NLGG/image.png)
 
 | Node Type               | Date | Duration | Cycle |
 |-------------------------|------|----------|-------|
