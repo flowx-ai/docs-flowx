@@ -28,3 +28,7 @@ Sub-processes can have an action configured on them which will append their resu
 The sub-processes can be started in async or sync mode, by setting a specific action parameter, named _startedAsync,_ on the action that triggers the subprocess.
 
 If the subprocesses are started in sync mode, they will notify the parent process when they are completed and the parent process will handle receiving the process data from the child and resuming its flow.
+
+[Subprocess node](../node/subprocess-run-node.md)
+
+[Start a subprocess action](../actions/start-subprocess-action.md)

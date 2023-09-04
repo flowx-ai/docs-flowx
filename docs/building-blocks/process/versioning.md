@@ -2,31 +2,31 @@
 
 ## Process Definition list
 
+ You can easily track your process definition's evolution. 
+
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/versioning.png)
 
-1. Overview:
+1. **Overview:**
    - The tab provides a summary of all accessible process definitions in the current environment.
 
-2. Streamlined Data Display:
+2. **Streamlined Data Display:**
    - Information displayed in the list is retrieved from both the published version and work in progress.
 
-3. Key Information Included:
+3. **Key Information Included:**
    - View details like process definition name, published version branch name, and published version state with the following convention: 
+
         - work in progress - dotted
         - submitted - full
         - main branch - blue 
-        - secondary branch - yellow.
+        - secondary branch - yellow
 
-4. Actions:
+4. **Actions:**
    - Interact with each process definition through actions such as opening the BPMN tab in edit mode, starting instances, and displaying branching options.
    - Contextual menu actions offer options to edit, open settings, view data modal, and delete process definitions.
 
+## Branching and Committing
 
-## Branching and Commits
-
-"Branching Modal" feature provides more visibility and control over the process definitions. 
-
-The process definition header includes details about the current version, such as its state (work in progress or submitted changes) and branch name.
+"Branching Modal" feature provides more visibility and control over the process definitions. The process definition header includes details about the current version, such as its state (work in progress or submitted changes) and branch name.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/process_definition_header.png)
 
@@ -34,7 +34,7 @@ A "publish icon" will be displayed if the current version is set as published. Y
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/branching_modal.gif)
 
-## Starting a new version (work-in-progress)
+### Starting a new version (work-in-progress)
 
 The Work-in-Progress (WIP) Versioning feature enhances the version control capabilities by allowing you to manage ongoing updates without interfering with already submitted versions.
 
@@ -53,7 +53,7 @@ You can initiate a new work-in-progress version while keeping the submitted vers
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/manual_wip.gif)
 
 
-## Submitting changes
+### Submitting changes
 
 You can submit changes exclusively on work-in-progress (WIP) versions. Changes can be submitted using the designated action within the version menu. Upon triggering the submission action, a modal window appears, prompting you to provide a commit message.
 
@@ -63,11 +63,11 @@ A string of maximum 50 characters, mandatory for submission. Only letters, numbe
 
 The placeholder indicating work-in-progress is replaced with a "submitted" state within the graph view.
 
-### Updating submit messages
+#### Updating submit messages
 
 You have the flexibility to modify submit messages after changes are submitted. This can be accomplished using the action available in the version menu.
 
-## Creating a new branch
+### Creating a new branch
 
 Using versioning you can work on a stable copy of the process definition, isolated from ongoing updates by other users. You can create a new branch starting from a specific submit point.
 The initiation of new branches is achieved using the dedicated action located in the left menu of the chosen submit point (used as the starting point for the branch).
@@ -76,7 +76,7 @@ The initiation of new branches is achieved using the dedicated action located in
 A string of maximum 16 characters, mandatory for branch creation.
 :::
 
-## Merging changes
+### Merging changes
 
 You can incorporate updates made on a secondary branch into the main branch or another secondary branch. To ensure successful merging of changes, adhere to the following criteria:
 
@@ -100,7 +100,7 @@ You can incorporate updates made on a secondary branch into the main branch or a
 
 The graph representation is updated to display the new version on the selected parent branch and the merged version is automatically selected, facilitating further development and tracking.
 
-## Managing conflicts
+### Managing conflicts
 
 The Conflict Resolution and Version Comparison feature provides a mechanism to identify and address conflicts between two process versions that, if merged, could potentially disrupt the integrity of the process definition. 
 
@@ -114,16 +114,58 @@ The system displays both the version to be merged and the current version on a s
 Not all changes are considered conflicts, changes in node positions are not treated as conflicts. Primary causes lie in identifying differences within business rules, expressions, and other scripts.
 :::
 
-## Read-only state
+### Setting published version
 
-## Version audit log
+You can specify which version will run by default from a container app.
 
-#### Branching graph
+When a process is created, the default published version settings are as follows:
 
-Branching graph view provides an enhanced view over the process definitions. You can easily track your process definition's evolution. 
+* **Branch**: Main
+* **Version**: Work in progress on the Main branch.
 
-The graph contains all versions of the process definition. Each row in the graph view displays information such as branch name, published tag, version point properties, submit message, and user initials.
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/main_wip.png)
 
-Connections between versions are established in cases like new branch creation, new submit on the same branch, or merge.
+
+You can change the branch and version used as the default by the container app. 
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/set_publish_info.gif)
+
+This is done through the following settings:
+
+* Branch: A dropdown menu displaying available branches (both opened and merged).
+* Version: The type of version that should be used:
+   
+   * **Latest Work in Progress**
+      * Displayed if the selected branch is not merged into another branch.
+      * This configuration is used when there is a work-in-progress (WIP) version on the selected branch or when there is no WIP version on the selected branch due to either work in progress being submitted or the branch being merged.
+      * In such cases, the latest available configuration on the selected branch is used as the default.
+
+   * **Latest Submitted Work**
+      * Displayed if the selected branch contains submitted versions.
+      * This configuration is used when there is submitted work on the selected branch, and the current branch has been submitted on another branch (latest submitted work on the selected branch is not the merged version).
+
+   * **Custom Version**
+      * Displayed if the selected branch contains submitted versions.
+      * Users can select from a dropdown menu containing submitted versions on the selected branch.
+      * Each option in the dropdown includes:
+         * Submit message
+         * Submit date and time
+         * Submit author
+
+:::info
+Options are ordered reverse chronologically by submit datetime.
+:::
+
+### Read-only state
+
+The Read-Only State feature allows you to access and view submitted versions of your process definitions while safeguarding the configuration from unintended modifications. By recognizing the visual indicators of the read-only state, you can confidently work within a controlled environment, ensuring the integrity of process definitions.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/versioning_read_only.png)
+
+### Version audit log
+
+## Process settings
+
+
 
 
