@@ -16,7 +16,7 @@ The FLOWX.AI platform includes an intuitive **UI Designer** for creating diverse
 3. Click the **Edit** **process** button.
 4. Select a **node** then click the **brush icon** in the Process Designer navigation menu to open the **UI Designer**.
 
-![](./img/access_ui_designer.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/access_ui_designer.gif)
 
 :::caution
 The UI designer is available for [**User task**](../node/user-task-node/user-task-node.md) nodes and [**Milestone**](../node/milestone-node.md) nodes (nodes that require human interaction).
@@ -28,7 +28,7 @@ After adding a specific component to the node, the right-side menu will display 
 Depending on the [component type](./ui-component-types) different properties are available for configuration.
 :::
 
-![](./img/use_ui_designer3.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/use_ui_designer3.gif)
 
 ## UI components
 
@@ -43,7 +43,7 @@ FLOWX.AI offers a wide range of [UI components](./ui-component-types) that can b
 
 <div className= "image-scaled">
 
-![](./img/ui_designer_settings.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/ui_designer_settings.png)
 
 </div>
 
@@ -66,7 +66,7 @@ Layout configuration is available for components that group children: [root comp
    * Wrap - content will wrap to the next line when it reaches the end of a line within the element
    * Gap - the gap property defines the size of the gap between the rows and between the columns
 
-![](./img/layout_styling.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/layout_styling.gif)
 
 [Layout](https://tburleson-layouts-demos.firebaseapp.com/#/docs)
 
@@ -79,7 +79,7 @@ When adjusting the Fit W and Fit H settings, users can control the size and shap
 * Fit W: fill, fixed or auto
 * Fit H: fill, fixed or auto
 
-![](./img/ui_sizing.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/ui_sizing.gif)
 
 ### Spacing
 
@@ -88,7 +88,7 @@ Margin and padding are CSS properties used to create space between elements in a
 * margin - the space outside of an element
 * padding - the space inside of an element
 
-![](./img/ui_spacing.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/ui_spacing.gif)
 
 [Margin](https://www.w3schools.com/css/css_margin.asp)
 
@@ -109,7 +109,7 @@ Margin and padding are CSS properties used to create space between elements in a
 
 <div className= "image-scaled">
 
-![](./img/ui_designer_styling.gif#center)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/ui_designer_styling.gif#center)
 
 </div>
 
@@ -124,7 +124,7 @@ The Tree View panel displays the component hierarchy, allowing users to easily n
 
 Clicking on a specific component in the tree will highlight the selection in the editor, making it easy to locate and modify.
 
-![](./img/ui_designer_tree1.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/ui_designer_tree1.gif)
 
 For more information on the different types of components available in FLOWX.AI, please refer to the next section:
 

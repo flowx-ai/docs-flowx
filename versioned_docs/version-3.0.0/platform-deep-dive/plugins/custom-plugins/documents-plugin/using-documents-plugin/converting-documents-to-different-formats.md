@@ -16,15 +16,15 @@ To create a process that converts from PDF to JPEG format:
 1. Create a process in which you add a [**Kafka send event**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) node and a [**Kafka receive event**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) node (one to send the request, one to receive the reply). 
 
 2. Configure the first node (**Kafka send event**) - add a **Kafka send action**. 
-![](../../../../img/pdf_to_jpeg.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/pdf_to_jpeg.png)
 
 3. Add the [**Kafka topic**](../../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md#kafka-configuration) where to send the request:
 
-![](../../../../img/doc_kafka_topic.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/doc_kafka_topic.png)
 
 4. Fill in the body message request:
 
-![](../../../../img/doc_message_body.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/doc_message_body.png)
 
 * `fileId` = file ID that will be converted 
 * `to` = file extension to convert to
@@ -53,7 +53,7 @@ You can view the response by accessing the **Audit log** menu.
 
 The response will be sent on the out Kafka topic (defined on the Kafka receive event node), as available below:
 
-![](../../../../img/convert_updates.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/convert_updates.png)
 
 Values expected in the reply body:
 
@@ -65,7 +65,7 @@ Values expected in the reply body:
 * downloadPath = download path for the converted file
 
 
-![](../../../../img/document_convert_pdf.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/document_convert_pdf.png)
 
 Response:
 

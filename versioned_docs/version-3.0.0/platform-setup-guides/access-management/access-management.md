@@ -50,13 +50,13 @@ For more information on how to add roles and how to configure an IdP solution, c
 
 In all cases, IdP authentication is mandatory but otherwise, all attribute mapping is configurable, including roles and groups or the entire authorization can be performed by keycloak.
 
-![](../../platform-deep-dive/img/LDAP_keycloak.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/LDAP_keycloak.png)
 
 #### AD or LDAP provider
 
 In Lightweight Directory Access Protocol (LDAP) and Active Directory, Keycloak functionality is called federation or external storage. Keycloak includes an LDAP/AD provider.
 
-![](../../platform-deep-dive/img/LDAP_federation.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/LDAP_federation.png)
 
 More details:
 

@@ -16,27 +16,27 @@ Let's go through the main components of the FLOWX.AI platform:
 
 * **FLOWX.AI Engine** - is the core of the platform. It runs the business processes, coordinating integrations and the UI
 * **FLOWX.AI Admin** - used to store/edit process definitions (FLOWX.AI Admin Microservice connects to the same Postgres / Oracle database as the FLOWX.AI Engine)
-* **FLOWX.AI Scheduler** (part of the core components) - used to store/edit process definitions&#x20;
+* **FLOWX.AI Scheduler** (part of the core components) - used to store/edit process definitions
 * **FLOWX.AI Content Management** (part of the core components) - can be quickly deployed on the chosen infrastructure, preloaded with the needed taxonomies or contents, and then connected to the FLOWX Engine through Kafka events
 * **FLOWX.AI License Manager** (part of the core components) - is used for displaying reports regarding the usage of the platform in the FLOWX.AI Designer
 * **FLOWX.AI Plugins** - the platform comes with some ready-made integrations, such as a [document management] solution, a plugin for sending various types of [notifications](../platform-deep-dive/plugins/custom-plugins/notifications-plugin/notifications-plugin.md), an [OCR](../platform-deep-dive/plugins/custom-plugins/ocr-plugin.md) plugin, and a task management plugin
 
-![](./img/architecture_diagram.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/architecture_diagram.png)
 
 ### FLOWX.AI Engine
 
 We call it the engine because it’s a nice analogy, once deployed on an existing stack, FLOWX.AI becomes the core of your digital operating model.
 
-![](./img/engine_architecture.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/engine_architecture.png)
 
 You can use FLOWX.AI Engine to do the following:
 
-* create any type of external or internal facing application&#x20;
+* create any type of external or internal facing application
 * redesign business processes from analog, paper-based ones to fully digital and automated processes
 * manage integrations, so you can hook it up to existing CRMs, ERPs, KYC, transaction data and many more
 * to read process definitions (if it is connected to the same DB as FLOWX.AI Admin)
 
-[FLOWX.AI Engine](../platform-deep-dive/core-components/flowx-engine/flowx-engine.md) runs the business processes, coordinating integrations and the omnichannel UI. It is a [Kafka-based](./frameworks-and-standards/event-driven-architecture-frameworks/intro-to-kafka-concepts) event-driven platform, that is able to orchestrate, generate and integrate with any type of legacy system, without expensive or risky upgrades.&#x20;
+[FLOWX.AI Engine](../platform-deep-dive/core-components/flowx-engine/flowx-engine.md) runs the business processes, coordinating integrations and the omnichannel UI. It is a [Kafka-based](./frameworks-and-standards/event-driven-architecture-frameworks/intro-to-kafka-concepts) event-driven platform, that is able to orchestrate, generate and integrate with any type of legacy system, without expensive or risky upgrades.
 
 This is extremely important because often, digital apps used by a bank’s clients, for example, are limited by the load imposed by the core banking system. And the customers see blocked screens and endlessly spinning flywheels. FLOWX.AI buffers this load, offering a 0.2s response time, thus the customer never has to wait for data to load.
 
@@ -108,7 +108,7 @@ Plugins are bits of functionality that allow you to expand the functionality of 
 * [FLOWX.AI OCR Plugin](../platform-deep-dive/plugins/custom-plugins/ocr-plugin.md)
 * [FLOWX.AI Task Management Plugin](../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md)
 
-![](./img/plugins_architecture.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/plugins_architecture.png)
 
 [Plugins](../platform-deep-dive/plugins/plugins.md)
 
@@ -117,7 +117,7 @@ Plugins are bits of functionality that allow you to expand the functionality of 
 
 Connecting your legacy systems or third-party apps to the FLOWX.AI Engine is easily done through [custom integrations](../platform-deep-dive/integrations/integrations.md). These can be developed using your preferred tech stack, the only requirement is that they connect to Kafka. These could include legacy APIs, custom file exchange solutions, or RPA.
 
-![](./img/integrations_architecture.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/integrations_architecture.png)
 
 
 [Integrations](../platform-deep-dive/integrations/integrations.md)

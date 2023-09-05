@@ -2,7 +2,7 @@
 
 Process Definitions in FLOWX Designer can be edited with ease. To keep track of updates and changes, each definition is assigned a version number and state.
 
-![](../img/pf_proc_def_state.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/pf_moving_token_bw.gif)
 
 A Process Definition is unique and can be identified by its name and version number. It can have one of the following states:
 
@@ -17,7 +17,7 @@ Deleting a draft or published version will automatically delete all versions of 
 
 When a new version is obtained through cloning or importing, the old versions become deprecated. Importing or cloning a definition increments the maximum version number. If importing/cloning for the first time in a new environment, the definition will be saved with the version number in the imported content. If no version number is present, it will be automatically set to 1.
 
-![](../img/pf_proc_def_archi.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/pf_proc_def_archi.png)
 
 ## Testing draft versions
 

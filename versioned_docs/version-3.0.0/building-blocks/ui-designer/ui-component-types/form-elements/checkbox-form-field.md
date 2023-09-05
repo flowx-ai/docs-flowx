@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Checkbox
 
-![](../../img/checkbox_form_field.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/checkbox_form_field.png)
 
 A checkbox form field is an interactive element in a web form that provides users with multiple selectable options. It allows users to choose one or more options from a pre-determined set by simply checking the corresponding checkboxes. 
 
@@ -33,7 +33,7 @@ The available configuration options for this form element are:
 * **Label** - the label that appears on the checkbox
 * **Helpertext** - additional information about the checkbox (can be hidden inside an infopoint)
 
-![](../../img/checkbox_properties.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/checkbox_properties.png)
 
 #### Datasource
 
@@ -41,13 +41,13 @@ The available configuration options for this form element are:
 * **Source Type** - it can be Static, Enumeration, or Process Data
 * **Add option** - label - value pairs can be defined here
 
-![](../../img/checkbox_datasource.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/checkbox_datasource.png)
 
 #### Validators 
 
 The following validators can be added to a checkbox: `required` and `custom` (more details [here](../../validators.md)).
 
-![](../../img/checkbox_validators.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/checkbox_validators.png)
 
 #### Expressions
 
@@ -85,4 +85,4 @@ For more valid CSS properties, click [here](../../#styling).
 
 A clear checkbox element with three options added, and a column layout will look like as it follows:
 
-![](../../img/checkbox_styling.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/checkbox_styling.png)
