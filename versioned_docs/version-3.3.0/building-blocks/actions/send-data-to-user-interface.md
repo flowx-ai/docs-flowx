@@ -80,7 +80,7 @@ If you are defining this action on a [**subprocess**](../node/subprocess-run-nod
 **Data to send** option is configurable only when the action **trigger type** is **Manual**.
 :::
 
-![](../node/img/websocket_data_to_send.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.3/websocket_data_to_send.gif)
 
 #### Send Update Data example
 
@@ -92,4 +92,4 @@ To send the latest value from the [process instance](../process/active-process/p
    * `{ "name": "${application.client.firstName}" }`
 4. Choose the **Target Process**.
 
-![](../node/img/websocket_send_update_data.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.3/websocket_send_update_data.gif)

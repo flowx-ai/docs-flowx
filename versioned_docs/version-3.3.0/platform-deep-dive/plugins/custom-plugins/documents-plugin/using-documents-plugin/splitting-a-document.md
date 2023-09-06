@@ -48,7 +48,7 @@ The Engine listens for messages on topics with specific names. Make sure to use 
 
 You can view the response by accessing the Audit log menu. The reply will be sent to the Kafka topic specified in the Kafka receive event node.
 
-![](../../../../img/split_updates.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/split_updates.png)
 
 The response body will contain the following values:
 

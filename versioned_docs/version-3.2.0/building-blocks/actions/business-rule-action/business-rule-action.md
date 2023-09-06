@@ -14,12 +14,12 @@ Business rules can be attached to a node by using actions with [**action rules**
 
 [Supported scripts](../../supported-scripts.md)
 
-![Business rule action](./img/business_rule_action.png)
+![Business rule action](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/business_rule_action.png)
 
 
 You can also test your rules by using the **Test Rule** function.
 
-![](./img/test_rule_function.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/test_rule_function.png)
 
 ### Example
 

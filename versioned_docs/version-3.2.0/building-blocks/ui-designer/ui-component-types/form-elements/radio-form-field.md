@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Radio 
 
-![](../../img/radio_form_field.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/radio_form_field.png)
 
 Radio buttons are normally presented in radio groups (a collection of radio buttons describing a set of related options). Only one radio button in a group can be selected at the same time.
 
@@ -38,7 +38,7 @@ The available configuration options for this form element are:
 * **Source Type** - it can be Static, Enumeration, or Process Data
 * **Add option** - label - value pairs can be defined here
 
-![](../../img/radio_properties.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/radio_properties.png)
 
 #### Validators
 
@@ -55,7 +55,7 @@ The radio's element behavior can be defined using JavaScript expressions for hid
 It's important to make sure that disabled fields have the same expression configured under the path expressions → hide.
 :::
 
-![](../../img/radio_validators.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/radio_validators.png)
 
 #### UI actions
 
@@ -81,7 +81,7 @@ For more valid CSS properties, click [here](../../#styling).
 
 A Radio element with two options added, and with a layout configuration set to horizontal will look like as it follows:
 
-![Radio Form element example](../../img/radio_form_styling.png)
+![Radio Form element example](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/radio_form_styling.png)
 
 
 

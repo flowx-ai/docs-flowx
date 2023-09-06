@@ -23,7 +23,7 @@ Integrations are used with the following nodes: [task nodes](../../../../buildin
 
 You can easily create or import an integration using the **Integration management** feature just by accessing **FLOWX Designer → Integration management**.
 
-![Integration management](../../../img/integrations.png)
+![Integration management](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/integrations.png)
 
 ## Accessing Integration management
 
@@ -34,7 +34,7 @@ To access Integration management:
 3. From the list, select an **Integration**.
 4. Click the **arrow** icon to expand the list with the scenarios.
 
-![Integration management](../../../img/accessing_integration_mngmnt.gif)
+![Integration management](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/accessing_integration_mngmnt.gif)
 
 ### Configuring Access Rights for Integrations Management
 
@@ -54,7 +54,7 @@ To create a new integration, see the steps described in [Accessing Integration m
 
 <div class="image-scaled">
 
-![Add new integration](../../../img/%20add_new_integration.png)
+![Add new integration](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/%20add_new_integration.png)
 
 </div>
 
@@ -67,7 +67,7 @@ After you added a new integration, you can configure scenarios by following the 
 3. Click **+ Add new scenario** button and fill in the **name** of the scenario.
 
 
-![Add new scenario](../../../img/add_new_scenario.png)
+![Add new scenario](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/add_new_scenario.png)
 
 ### Configuring scenarios
 
@@ -101,7 +101,7 @@ Topics are defined depending on the environment where you want to use them. You 
 
 <div class="image-scaled">
 
-![](../../../img/add_send_topics.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/add_send_topics.png)
 
 </div>
 
@@ -116,7 +116,7 @@ Topics are defined depending on the environment where you want to use them. You 
 
 **RECEIVE scenario**: The output data model represents the content of the message that FLOWX.AI Engine sends to the adapters or plugins.
 
-![](../../../img/send_message_dat_model.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/send_message_dat_model.png)
 
 To configure a new message data model, follow the next steps:
 
@@ -132,10 +132,10 @@ The following details need to be configured:
   * NUMBER
   * BOOLEAN
   * OBJECT - you can add multiple values types inside an OBJECT
-![](../../../img/intgr_object.png) 
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/intgr_object.png) 
   * OBJECT_REF - used for values that are already defined in the process
   * ARRAY - for arrays you must specify the **Item type**
-![](../../../img/input_model_item_type.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/input_model_item_type.png)
   * ARRAY_REF - used for values that are already defined in the process
   * ENUM - a special data type that enables for a variable to be a set of predefined constants
 
@@ -145,7 +145,7 @@ The following details need to be configured:
 
 <div class="image-scaled">
 
-![](../../../img/input_properties_attributes.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/input_properties_attributes.png)
 
 </div>
 
@@ -168,11 +168,11 @@ Use predefined integrations, that you have already configured, on different proc
 
 * Node → Actions → **Kafka Send Action** (to send data to the integration)
 
-![](../../../img/using_integrations.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/using_integrations.gif)
 
 * Node → Node config → **Data stream topics** (the topic name where the [process engine](../../flowx-engine/) listens for the response)
 
-![](../../../img/integrations_node_config.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/integrations_node_config.png)
 
 :::info
 Data stream topics are used to select the integration and the key on which the response is saved.
@@ -180,4 +180,4 @@ Data stream topics are used to select the integration and the key on which the r
 
 If your integration has scenarios that are already used in another process, you will always be notified.
 
-![](../../../img/integrations_in_use.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/integrations_in_use.png)

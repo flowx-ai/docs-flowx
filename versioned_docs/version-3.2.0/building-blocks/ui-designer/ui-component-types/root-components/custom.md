@@ -8,7 +8,7 @@ Custom components are developed in the web application and referenced here by co
 
 To add a custom component in the template config tree, we need to know its unique identifier and the data it should receive from the process model.
 
-![](../../img/ui_designer_custom.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/ui_designer_custom.png)
 
 The properties that can be configured are as follows:
 
@@ -19,7 +19,7 @@ The properties that can be configured are as follows:
 
 <div className= "image-scaled">
 
-![](../../img/ui_designer_custom_settings.png#center)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/ui_designer_custom_settings.png#center)
 
 </div>
 

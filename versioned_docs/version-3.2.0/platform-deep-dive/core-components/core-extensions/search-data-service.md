@@ -21,7 +21,7 @@ Use case:
 1. Create a process using Process Designer.
 2. From the newly created process where you want to perform the search, add a [Task node](../../../building-blocks/node/task-node). 
 3. Configure a send event via a [Kafka send action](../../../building-blocks/node/message-send-received-task-node.md#example-of-a-message-send-event).
-![](../../img/kafka_send_action_search.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/kafka_send_action_search.png)
 4. Configure the following items:
     + **Topic name** - the Kafka topic on which the search service listens for requests; ❗️respect the [naming pattern](../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#configuring-kafka)
 	+ **Data to send** - (key) - used when data is sent from the frontend via an action to validate the data (you can find more information in the User Task configuration section)
@@ -46,7 +46,7 @@ Use case:
 
 * Example (dummy values extracted from a process):
 
-![](../../img/topics_headers_body.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/topics_headers_body.png)
 
 5. A custom microservice (a core extension) will receive this event and will search the value of the process in the elastic search.
 6. It will respond to the engine via a Kafka topic.
@@ -75,7 +75,7 @@ The **body message** of the response will look like this:
 To access the view of your process variables, tokens and subprocesses go to **FLOWX.AI Designer > Active process > Process Instances**. Here you will find the response.
 ::: 
 
-![](../../img/search_data_no_result.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/search_data_no_result.png)
     
 	❗️If there is a list of results:
 
@@ -96,7 +96,7 @@ To access the view of your process variables, tokens and subprocesses go to **FL
 
 * Example (dummy values extracted from a process):
 
-![](../../img/search_data_response.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/search_data_no_result.png)
 
 
 Let's go now through the steps needed to deploy and set up the service:

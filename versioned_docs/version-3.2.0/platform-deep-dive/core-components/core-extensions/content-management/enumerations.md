@@ -6,7 +6,7 @@ sidebar_position: 2
 
 A collection of values that can be utilized as content in UI components or templates is managed using **enumerations**. Values can be defined for certain [source systems](source-systems) or [languages](languages).
 
-![](../../../img/enumerations.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/enumerations.png)
 
 On the main screen inside **Enumerations**, you have the following elements:
 
@@ -25,7 +25,7 @@ For each entry (when you hit the **Open** button) inside an enumeration we have 
 * **Labels** - strings that are displayed in the end-user interface, according to the language set for the generated solution
 * **External source systems codes** - values that are set for each external system that might consume data from the process; these codes are further used by connectors, in other to send to an external system a value that it can validate
 
-![](../../../img/enumerations1.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/enumerations1.png)
 
 ### Adding a new enumeration
 
@@ -35,7 +35,7 @@ To add a new enumeration, follow the next steps:
 2. Select **Enumerations** from the list.
 3. Add a suggestive name for your enumeration and then click **Add**.
 
-![](../../../img/adding_new_enum.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/adding_new_enum.png)
 
 ### Configuring an enumeration
 
@@ -50,13 +50,13 @@ To configure an enumeration value, follow the next steps:
    * **Labels** - set the value of the string for each language you would like to use
    * **Source Systems** - values that are set for each external system that might consume data from the process
 
-![](../../../img/enum_configuration.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/enum_configuration.gifs)
 
 ### Creating a child collection
 
 Enumerations can also be defined as a hierarchy - for each entry, we can define a list of children values (for example, name of the countries defined under the continents' enumeration values); hierarchies further enable cascading values in the end-user interface (for example, after selecting a continent in the first select [UI component](../../../../building-blocks/ui-designer/ui-component-types), the second select component will contain only the children of this continent).
 
-![](../../../img/enum_child_collection.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/enum_child_collection.png)
 
 ### Importing/exporting an enumeration
 
@@ -65,7 +65,7 @@ You can use the import/export feature to import or export enumerations using the
 * JSON
 * CSV
 
-![](../../../img/import_export_enum.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/import_export_enum.png)
 
 ### Enumerations example
 
@@ -157,4 +157,4 @@ We have the following example for _**Activity Domain Companies**_:
 
 This is the output after adding all the lists/collections from above:
 
-![](../../../img/enumerations_output.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/enumerations_output.gif)

@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Switch
 
-![](../../img/switch_form_field.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/switch_form_field.gif)
 
 A switch, a toggle switch, is another form element that can be utilized to create an intuitive user interface. The switch allows users to select a response by toggling it between two states. Based on the selection made by the user, the corresponding Boolean value of either true or false will be recorded and stored in the process instance values for future reference.
 
@@ -40,7 +40,7 @@ The available configuration options for this form element are:
 
 The following validators can be added to a radio: `requiredTrue` and `custom` (more details [here](../../validators.md)).
 
-![](../../img/switch_details.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/switch_details.png)
 
 #### Expressions
 
@@ -62,7 +62,7 @@ For more details on how to configure a UI action, click [here](../../ui-actions.
 
 The label of the switch can be positioned either as `start` or `end`.
 
-![](../../img/switch_styling.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/switch_styling.gif)
 
 :::info
 For more valid CSS properties, click [here](../../#styling).

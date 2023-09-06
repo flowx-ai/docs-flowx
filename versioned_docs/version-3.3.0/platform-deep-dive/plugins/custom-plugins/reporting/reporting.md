@@ -81,7 +81,7 @@ To connect Superset to a database, follow the next steps:
 3. After you selected the DB, click **Connect this database with a SQLAlchemy URI string instead?**.
 4. Fill in the **SQLALCHEMY URI** and then click **Connect**.
 
-![](../../../img/superset_db_URI.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/superset_db_URI.png)
 
 :::caution
 **SQLAlchemy URI** represents the URI of **reporting-db**. The format would look like this: `postgresql://postgres:XXXXXXXXXX@reporting-plugin-postgresql:{{port}}/reporting`.

@@ -38,7 +38,7 @@ if (closedClientType.contains(clientType)) {
 
 The previous example could be easily transformed into a DMN Business Rule action - represented by the decision table:
 
-![DMN Decision Table](./img/dmn_decision_table.png)
+![DMN Decision Table](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.3/dmn_decision_table.png)
 
 In the example above we used FEEL expression language in order to write the rules that should be met in order for the output to happen. FEEL defines a syntax for expressing conditions that input data should be evaluated against.
 

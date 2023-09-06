@@ -8,7 +8,7 @@ The engine is the core of the platform, it is the service that runs instances of
 
 ## A high-level overview
 
-![](../../img/image%20(20).png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/image%20%2820%29.png)
 
 ## Orchestration
 

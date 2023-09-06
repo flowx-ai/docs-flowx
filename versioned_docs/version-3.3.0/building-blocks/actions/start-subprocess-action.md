@@ -76,7 +76,7 @@ The following properties must be configured for a **Start subprocess** action:
 Let's create a main [**process**](../../terms/flowx-process), in this process we will add a user task node that will represent a menu page. In this newly added node we will add multiple subprocess actions that will represent menu items. When you select a menu item, a subprocess will run representing that particular menu item.
 
 
-![](../img/subprocess_menu.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.3/subprocess_menu.png)
 
 To start a subprocess, we can, for example, create the following minimum configuration in a user task node (now we configure the process where we want to start a subprocess):
 

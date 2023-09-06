@@ -155,7 +155,7 @@ Using the content management feature you can perform multiple actions that enabl
 
 The Task Manager [**plugin**](../terms/flowx-plugins) has the scope to show a process that you defined in Designer, offering a more business-oriented view. It also offers interactions at the assignment level.
 
-![Task Management](./img/designer_task_manager.png)
+![Task Management](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/designer_task_manager.png)
 
 [Task Management](../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md)
 
@@ -171,7 +171,7 @@ The notification templates plugin can be viewed, edited, and activated/inactivat
 
 One of the main features of the [document management plugin](../platform-deep-dive/plugins/custom-plugins/documents-plugin/documents-plugin.md) is the ability to generate new documents based on custom templates and prefilled with data related to the current process instance.
 
-![Document templates plugin](./img/designer_documents.png)
+![Document templates plugin](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/designer_documents.png)
 
 [Document management](../platform-deep-dive/plugins/custom-plugins/documents-plugin/documents-plugin.md)
 
@@ -189,7 +189,7 @@ The maximum length of an input value is 255 characters.
 
 Access Management is used to administrate users, roles and groups, directly in FLOWX Designer. Access Management helps you to access the identity management solution (keycloak/[RH-SSO](https://access.redhat.com/products/red-hat-single-sign-on)) through its API, extracting all the necessary details. Access Management is based on user roles that need to be configured in the identity management solution.
 
-![Access Management](./img/designer_access_mng.png)
+![Access Management](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/designer_access_mng.png)
 
 [Configuring access rights for admin](designer-setup-guide/configuring-access-rights-for-admin)
 

@@ -52,7 +52,7 @@ Depending on which **Source location** is selected, different configurations are
 
 ### External
 
-![](../img/image_external.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/image_external.png)
 
 - **Source Type**: it can be either a **URL** or a **Base 64 string**
 - **Image source**: the valid URL of the image.

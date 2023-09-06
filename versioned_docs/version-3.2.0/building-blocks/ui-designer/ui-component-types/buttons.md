@@ -9,7 +9,7 @@ There are two types of buttons available, each with a different purpose. These t
 * [Basic button](#basic-button)
 * [File upload button](#file-upload)
 
-![](../img/basic_buttons.png#center)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/basic_buttons.png#center)
 
 ## Basic button
 
@@ -37,7 +37,7 @@ Here, you can define the UI action that the button will trigger.
 * **Event** - possible value: `CLICK`
 * **Action Type** - select the action type
 
-![](../img/button1.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/button1.png)
 
 
 More details on how to configure UI actions can be found [here](../ui-actions.md).
@@ -53,8 +53,7 @@ This section enables you to select the type of button using the styling tab in t
 * Ghost
 * Text
 
-![](../img/button_type.gif)
-
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/button_type.gif)
 
 :::info
 For more information on valid CSS properties, click [here](../ui-designer.md#styling)
@@ -64,7 +63,6 @@ For more information on valid CSS properties, click [here](../ui-designer.md#sty
 
 This button will be used to select a file and do custom validation on it. Only the Flowx props will be different. 
 
-
 ### Configuring a file upload button
 
 When configuring a file upload button, you can customize the button's settings by using the following options:
@@ -72,7 +70,6 @@ When configuring a file upload button, you can customize the button's settings b
 - [**Properties**](#properties)
 - [**UI action**](#ui-actions)
 - [**Button styling**](#button-styling)
-
 
 Sections that can be configured regarding general settings:
 
@@ -95,7 +92,7 @@ Sections that can be configured regarding general settings:
 
 Example of an upload file button that accepts image files:
 
-![](../img/file_upload_img.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/file_upload_img.png)
 
 #### UI action 
 
@@ -104,7 +101,7 @@ Here, you can define the UI action that the button will trigger.
 * **Event** - possible value: `CLICK`
 * **Action Type** - select the action type
 
-![](../img/file_upload_action.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/file_upload_action.png)
 
 :::info
 More details on how to configure UI actions can be found [here](../ui-actions.md).
@@ -112,5 +109,5 @@ More details on how to configure UI actions can be found [here](../ui-actions.md
 
 ### Button styling
 
-The file upload button can be styled using valid CSS properties (more details [here](../ui-designer.md#styling)
+The file upload button can be styled using valid CSS properties (more details [here](../ui-designer.md#styling)).
 

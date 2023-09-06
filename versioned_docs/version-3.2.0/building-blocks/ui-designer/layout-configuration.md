@@ -4,7 +4,7 @@ Layout settings will be available for all components that can group other types 
 
 These settings allow users to customize properties as the layout direction, alignment, gap, sizing, and spacing.
 
-![Layout configuration](./img/layout_configuration.png#center)
+![Layout configuration](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/layout_configuration.png#center)
 
 These settings can be applied practically in various ways, depending on the context and purpose of the design. For example:
 

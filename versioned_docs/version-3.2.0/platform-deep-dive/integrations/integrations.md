@@ -8,7 +8,7 @@ Integrations can be used for anything from legacy APIs, custom file exchange sol
 
 #### High-level architecture 
 
-![](../img/intgr_final.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/intgr_final.png)
 
 Since they involve interaction with legacy systems and custom logic, they need to be developed the first time you need to integrate one into your FLOWX.AI setup.
 

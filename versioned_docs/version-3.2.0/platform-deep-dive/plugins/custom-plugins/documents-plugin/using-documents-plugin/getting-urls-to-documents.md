@@ -14,15 +14,15 @@ For example, get documents URLs to send to the notification plugin and attach th
 * a [**user task node**](../../../../../building-blocks/node/user-task-node.md)
 * [**start / end milestone**](../../../../../building-blocks/node/milestone-node.md) nodes to [create a modal](../../../../../building-blocks/node/milestone-node.md#modal)
 
-![](../../../../img/getting_urls_proc.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/getting_urls_proc.png)
 
 2. Configure the **user task node**, and add an [**Upload action**](../../../../../building-blocks/actions/upload-file-action.md) to it.
 
-![](../../../../img/getting_urls_upload_ac.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/getting_urls_upload_ac.png)
 
 3. Configure the **Upload action** parameters:
 
-![](../../../../img/getting_urls_upload_params.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/getting_urls_upload_params.png)
 
 :::info
 For more details on how to upload a document and how to configure an upload action, check the following sections:
@@ -34,18 +34,18 @@ For more details on how to upload a document and how to configure an upload acti
 
 4. Configure the Kafka send event node - add a **Kafka send action** and configure the [**Kafka topic**](../../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md#kafka-configuration) where to send the request:
 
-![](../../../../img/getting_urls_topic.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/getting_urls_topic.png)
 
 5. Fill in the body message request of the action:
 
-![](../../../../img/getting_urls_message.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/getting_urls_message.png)
 
 * `types` - list of document types
 
 
 6. Configure the [**Kafka receive event node**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) by adding the kafka topic on which the response will be sent.
 
-![](../../../../img/getting_urls_reply_topic.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/getting_urls_reply_topic.png)
 
 :::info
 Kafka topic names can be set by using environment variables:
@@ -64,7 +64,7 @@ The Engine is listening for messages on topics with names of a certain pattern, 
 
 ## Receiving the reply
 
-![](../../../../img/getting_urls_response.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/getting_urls_response.png)
 
 Values expected in the reply body:
 

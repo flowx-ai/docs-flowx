@@ -6,7 +6,7 @@ sidebar_position: 3
 
 Validators are an essential part of building robust and reliable applications. They ensure that the data entered by the user is accurate, complete, and consistent. In Angular applications, validators provide a set of pre-defined validation rules that can be used to validate various form inputs such as text fields, number fields, email fields, date fields, and more.
 
-![](./img/validators_gen.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/validators_gen.png)
 
 Angular provides default validators such as:
 
@@ -34,64 +34,62 @@ It's also possible to build [custom validators](#custom-validators) inside the c
 
 This validator checks whether a value exists in the input field. 
 
-![](./img/validatorss.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/validatorss.png)
 
 It is recommended to use this validator with other validators like [minlength](#minlength-validator) to check if there is no value at all.
 
-![required validator](./img/validators.png)
+![required validator](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/validators.png)
 
 ### minlength validator
 
 This validator checks whether the input value has a minimum number of characters. If there are no characters at all, this validator will not trigger. It is advisable to use this validator with a [required](#required-validator) validator.
 
-![minlength validator](./img/validator_minlength.png#center)
+![minlength validator](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/validator_minlength.png#center)
 
 
 ### maxlength validator
 
 This validator checks whether the input value has a maximum number of characters. If there are no characters at all, this validator will not trigger. It is advisable to use this validator with a [required](#required-validator) validator.
 
-![maxlength validator](./img/validator_maxlength.png#center)
+![maxlength validator](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/validator_maxlength.png#center)
 
 ### min validator
 
 This validator checks whether a numeric value is smaller than the specified value. If there are no characters at all, this validator will not trigger. It is advisable to use this validator with a [required](#required-validator) validator.
 
-![min validator](./img/validator_min.png#center)
+![min validator](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/validator_min.png#center)
 
 ### max validator
 
 This validator checks whether a numeric value is larger than the specified value. If there are no characters at all, this validator will not trigger. It is advisable to use this validator with a [required](#required-validator) validator.
 
-![max validator](./img/validator_max.png#center)
-
+![max validator](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/validator_max.png#center)
 
 ### email validator
 
 This validator checks whether the input value is a valid email. If there are no characters at all, this validator will not trigger. It is advisable to use this validator with a [required](#required-validator) validator.
 
-![email validator](./img/validator_email.png#center)
+![email validator](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/validator_email.png#center)
 
 
 ### pattern validator
 
 This validator checks whether the input value matches the specified pattern (for example, a [regex expression](https://www.regexbuddy.com/regex.html)).
 
-![](./img/validator_pattern.png#center)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/validator_pattern.png#center)
 
 
 ### datepicker - isSameOrBeforeToday 
 
 This validator can be used to validate [datepicker](./ui-component-types/form-elements/datepicker-form-field.md) inputs. It checks whether the selected date is today or in the past. If there are no characters at all, this validator will not trigger. It is advisable to use this validator with a [required](#required-validator) validator.
 
-![isSameOrBeforeToday](./img/validator_issameday.png)
+![isSameOrBeforeToday](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/validator_issameday.png)
 
 ### datepicker - isSameOrAfterToday
 
 This validator can be used to validate datepicker inputs. It checks whether the selected date is today or in the future. If there are no characters at all, this validator will not trigger. It is advisable to use this validator with a [required](#required-validator) validator.
 
-![](./img/validator_issamedayafter.png)
-
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/validator_issamedayafter.png)
 
 ## Custom validators
 
@@ -107,7 +105,7 @@ Additionally, custom validators can be created within the web application and re
 The error that the validator returns **MUST** match the validator name.
 :::
 
-![custom validator](./img/validator_custom.png#center)
+![custom validator](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/validator_custom.png#center)
 
 #### Custom validator example
 
@@ -130,6 +128,7 @@ currentOrLastYear: function currentOrLastYear(AC: AbstractControl): { [key: stri
     }
 
     return null;
+}
 ```
 
 ##### smallerOrEqualsToNumber
