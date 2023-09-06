@@ -31,7 +31,7 @@ To create a new node on an existing process:
    * Click the node, select the **arrow** command
    * Click the node that you wish to link to the newly added node
 
-![](../img/process_flow_adding_a_node.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/process_flow_adding_a_node.gif)
 
 For each new node, you can set its name, and a set of values (timeout, topic name, key name) and you can also add various [actions](../../building-blocks/actions/actions.md) to it.
 

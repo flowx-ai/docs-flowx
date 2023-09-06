@@ -4,7 +4,7 @@
 
 The File Preview UI element is a user interface component that enables users to preview the contents of files quickly and easily without fully opening them. It can save time and enhance productivity, providing a glimpse of what's inside a file without having to launch it entirely.
 
-![](../img/doc_preview_upload.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/doc_preview_upload.gif)
 
 File Preview UI elements offer various benefits such as conveying information, improving the aesthetic appeal of an interface, providing visual cues and feedback or presenting complex data or concepts in a more accessible way.
 
@@ -14,7 +14,7 @@ A File Preview element can be configured for both mobile and web applications.
 
 ### File Preview properties (web)
 
-![](../img/doc_preview_upload.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/doc_preview_upload.gif)
 
 The File Preview element settings consist of the following properties:
 
@@ -48,7 +48,7 @@ Both iOS and Android devices support the share button.
 
 <div className= "gif-scaled">
 
-![](../img/doc_preview_ios.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/doc_preview_ios.gif)
 
 </div>
 
@@ -56,7 +56,7 @@ Both iOS and Android devices support the share button.
 
 <div className= "gif-scaled">
 
-![](../img/doc_preview_android.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/doc_preview_android.gif)
 
 </div>
     
@@ -72,7 +72,7 @@ When drag and drop a File Preview element in UI Designer, it comes with the foll
 * **Fit W** - auto
 * **Fit H** - fixed / Height - 400 px
 
-![](../img/doc_preview_styling.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/doc_preview_styling.png)
 
 
 ## File Preview example
@@ -84,4 +84,4 @@ Below is an example of a File Preview UI element with the following properties:
 * **Default view** - Expanded
 * **Source Type** - Static
 
-![](../img/doc_preview_example.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/doc_preview_example.gif)

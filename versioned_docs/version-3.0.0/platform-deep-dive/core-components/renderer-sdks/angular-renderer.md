@@ -260,16 +260,16 @@ The component is the main container of the UI, which will build and render the c
 
 #### Parameters:
 
-| Name             | Description                                                                                                                                                                             | Type    | Mandatory | Default value | Example                                          |
-| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | --------- | ------------- | ------------------------------------------------ |
-| baseApiUrl       | Your base url                                                                                                                                                                           | string  | true      | -             | [https://yourDomain.dev](https://yourdomain.dev) |
-| processApiPath   | Engine API prefix                                                                                                                                                                       | string  | true      | -             | /onboarding                                      |
-| processName      | Identifies a process                                                                                                                                                                    | string  | true      | -             | client\_identification                           |
-| processStartData | Data required to start the process                                                                                                                                                      | json    | true      | -             | { "firstName": "John", "lastName": "Smith"}      |
-| debugLogs        | When set to true this will print WS messages in the console                                                                                                                             | boolean | false     | false         | -                                                |
-| language         | Language used to localize the application.                                                                                                                                              | string  | false     | ro-RO         | -                                                |
-| keepState        | <p>By default all process data is reset when the process renderer component gets destroyed. Setting this to true will keep process data even if the viewport gets destroyed</p><p></p>  | boolean | false     | false         | -                                                |
-| isDraft          | When true allows starting a process in draft state. \*Note that isDraft = true requires that processName be the **id** (number) of the process and NOT the name.                        | boolean | false     | false         | -                                                |
+| Name             | Description                                                                                                                                                                            | Type    | Mandatory | Default value | Example                                          |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | --------- | ------------- | ------------------------------------------------ |
+| baseApiUrl       | Your base url                                                                                                                                                                          | string  | true      | -             | [https://yourDomain.dev](https://yourdomain.dev) |
+| processApiPath   | Engine API prefix                                                                                                                                                                      | string  | true      | -             | /onboarding                                      |
+| processName      | Identifies a process                                                                                                                                                                   | string  | true      | -             | client\_identification                           |
+| processStartData | Data required to start the process                                                                                                                                                     | json    | true      | -             | { "firstName": "John", "lastName": "Smith"}      |
+| debugLogs        | When set to true this will print WS messages in the console                                                                                                                            | boolean | false     | false         | -                                                |
+| language         | Language used to localize the application.                                                                                                                                             | string  | false     | ro-RO         | -                                                |
+| keepState        | <p>By default all process data is reset when the process renderer component gets destroyed. Setting this to true will keep process data even if the viewport gets destroyed</p><p></p> | boolean | false     | false         | -                                                |
+| isDraft          | When true allows starting a process in draft state. \*Note that isDraft = true requires that processName be the **id** (number) of the process and NOT the name.                       | boolean | false     | false         | -                                                |
 
 #### Data and actions
 
@@ -287,7 +287,7 @@ export class CustomComponentComponent  {
   }
 ```
 
-Component actions are always found under `data` -> `actionsFn` key.
+Component actions are always found under `data` → `actionsFn` key.
 
 Action names are configurable via the process editor.&#x20;
 

@@ -6,7 +6,7 @@ sidebar_position: 9
 
 All the media files (such as images, GIFs etc.) used on the processes that were uploaded to processes are listed in the media library. This is where you can manage all existing media files or upload new files.
 
-![](../../../../../../release-notes/img/media_library.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release-notes/media_library.gif)
 
 :::info
 You can also upload an image directly to the Media Library on the spot when configuring a process using the [**UI Designer**](../../../../building-blocks/ui-designer). More information [**here**](../../../../building-blocks/ui-designer/ui-component-types/image#media-library).
@@ -22,7 +22,7 @@ To upload an asset to the Media Library, follow the next steps:
     * **Upload item** - opens a local file browser
     * **Key** - the key must be unique, you cannot change it afterwards
 
-![](../../../../building-blocks/ui-designer/img/media_library_add_new.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/media_library_add_new.png)
 
 4. Click **Upload item** button and select a file from your local browser.
 5. Click **Upload item** button again to upload the asset.
@@ -45,19 +45,19 @@ You have the following information about assets:
 * Edited at 
 * Edited by
 
-![](../../../img/media_library_preview.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/media_library_preview.png)
 
 ### Searching assets
 
 You can search an asset by using its key (full or substring).
 
-![](../../../img/search_asset.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/search_asset.png)
 
 ### Replacing assets
 
 You can replace an item on a specific key (this will not break references to process definitions).
 
-![](../../../img/replace_asset.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/replace_asset.gif)
 
 ### Referencing assets in UI Designer
 
@@ -68,7 +68,7 @@ You have the following options when configuring image components using [UI Desig
     * Option 1: trigger a dropdown with images keys - you can type and filter options or can select from the initial list in dropdown 
     * Option 2: open a popup with images thumbnails and keys then you can type and filter options or can select from the initial list
 
-![](../../../img/media_library_options.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/media_library_options.png)
 
 :::info
 More details on how to configure an image component using UI Designer - [**here**](../../../../building-blocks/ui-designer/ui-component-types/image).

@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Text area
 
-![Input](../../img/input_form_field.png)
+![Input](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/input_form_field.png)
 
 A text area is a form element used to capture multi-line input from users in a conversational interface. The text area component is typically used for longer inputs such as descriptions, comments, or feedback, providing users with more space to type their responses. 
 
@@ -42,7 +42,7 @@ The default value for the element can be configured here, this will autofill the
 
 There are multiple validators can be added to a text area element (more details [here](../../validators.md)).
 
-![](../../img/text_area_props.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/text_area_props.png)
 
 #### Expressions  
 
@@ -55,7 +55,7 @@ The text area's behavior can be defined using JavaScript expressions for hiding 
 It's important to make sure that disabled fields have the same expression configured under the path expressions → hide.
 :::
 
-![](../../img/input_expressions.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/input_expressions.png)
 
 #### UI actions
 
@@ -64,7 +64,7 @@ UI actions can be added to the text area field to define its behavior and intera
 * **Event** - possible value: `CHANGE`
 * **Action Type** - select the action type
 
-![](../../img/text_area_props1.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/text_area_props1.png)
 
 :::info
 For more details on how to configure a UI action, click [**here**](../../ui-actions).

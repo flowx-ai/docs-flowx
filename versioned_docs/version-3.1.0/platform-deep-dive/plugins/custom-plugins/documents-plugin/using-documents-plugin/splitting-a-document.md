@@ -12,17 +12,17 @@ Split a document into multiple parts. This might be the case, for example, when 
 1. Create a process in which you add a [**Kafka send event node**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) and a [**Kafka receive event node**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) (one to send the request, one to receive the reply).
 2. Configure the first node (Kafka send event) - add a **Kafka send action**.
 
-![](../../../../img/kafka_split_action.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/kafka_split_action.png)
 
 3. Add the [**Kafka topic**](../../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md#kafka-configuration) where to send the request:
 
-![](../../../../img/kafka_split_topic.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/kafka_split_topic.png)
 
 4. Fill in the body message request:
 
-![](../../../../img/split_doc_body.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/split_doc_body.png)
 
-* `fileId`- the id of the file to be split
+* `fileId`- the ID of the file to be split
 * `parts` - a list of info about the expected document parts
   * `documentType` - document type
   * `customId` - the client ID
@@ -52,7 +52,7 @@ You can view the response by accessing the **Audit log** menu.
 
 The response will be sent on the out Kafka topic (defined on the Kafka receive event node), as available below:
 
-![](../../../../img/split_updates.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/split_updates.png)
 
 Values expected in the reply body:
 
@@ -64,7 +64,7 @@ Values expected in the reply body:
   * downloadPath - download path for the document
   * noOfPages - number of pages
 
-![](../../../../img/split_doc_reply.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/split_doc_reply.png)
 
 Response:
 

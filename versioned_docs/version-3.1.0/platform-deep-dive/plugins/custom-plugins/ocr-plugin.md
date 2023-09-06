@@ -36,11 +36,11 @@ If you choose to use a specific flow on FLOWX.AI, there are some advantages:
 
 [Generating documents based on templates](./documents-plugin/using-documents-plugin/generate-docs-based-on-templates)
 
-![](../../img/ocr_doc_template.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/ocr_doc_template.gif)
 
 2. Create a process and add a [**Kafka Send Action**](../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) on a [**Message event send**](../../../building-blocks/node/message-send-received-task-node.md#message-send-task) node. Here you add the [**kafka topic**](../../../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-kafka-concepts.md#topics) (address) where the template will be generated.
 
-![](../../img/ocr_kafka_send.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/ocr_kafka_send.png)
 
 :::info
 The Kafka topic where you want to generate the template must match the topic defined on the **`KAFKA_TOPIC_DOCUMENT_GENERATE_HTML_IN`** variable. Click [**here**](../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#configuring-kafka) for more details on how to configure kafka topics. For more information, check the [**Documents plugin setup guide**](../plugins-setup-guide/documents-plugin-setup).
@@ -55,12 +55,12 @@ The Kafka topic where you want to generate the template must match the topic def
 * **includeBarcode** = true/false
 * **data** = a map containing the values that should be replaced in the document template; the keys used in the map should match the ones defined in the HTML template
 
-![](../../img/ocr_message_body.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/ocr_message_body.png)
 
 :::info
 [**`data` parameters**](../wysiwyg.md) must be defined first in the document template that you use. For more information, check the [**WYSIWYG Editor**](../wysiwyg.md) section.
 
-![](../../img/ocr_data_model.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/ocr_data_model.png)
 
 :::
 
@@ -77,11 +77,11 @@ The Kafka topic where you want to generate the template must match the topic def
  The topic must be the one that is defined at the **`KAFKA_TOPIC_DOCUMENT_GENERATE_HTML_OUT`** variable. 
 :::
 
-![](../../img/ocr_receive_response.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/ocr_receive_response.png)
 
 6. Add a [**user task node**](../../../building-blocks/node/user-task-node) and configure an [**Upload file action**](../../../building-blocks/actions/upload-file-action.md) - the action will send the file on the topic (defined at the **`KAFKA_TOPIC_DOCUMENT_PERSIST_IN`**) to the [Min.io](https://min.io/) - storage solution.
 
-![](../../img/ocr_upload_file.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/ocr_upload_file.png)
 
 7. The response will be sent back to the kafka topic defined at **`KAFKA_TOPIC_DOCUMENT_PERSIST_OUT`** environment variable through a callback action/ subprocess.
 8. Next, send the response to the OCR Kafka topic defined at **`KAFKA_TOPIC_OCR_IN`** variable (representing the path to the Min.io file)

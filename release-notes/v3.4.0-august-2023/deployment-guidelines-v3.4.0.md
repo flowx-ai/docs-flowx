@@ -79,6 +79,48 @@ Compatibility Matrix:
 
 This section outlines the supplementary configurations required to leverage the newly introduced features within FLOWX.AI.
 
+## Data Model Update Procedure
+
+:::danger IMPORTANT
+When deploying the new version, it's mandatory to migrate the data model index using the following procedure.
+:::
+
+Follow the next steps:
+
+1. **Access Kibana**: Start by connecting to Kibana and locate the data model index, which is typically named "process-data-model."
+
+2. **Open Kibana Devtools**: Navigate to Kibana → Devtools. In the Console tab, you should proceed with the following steps.
+
+3. **Check Index Documents**: Copy and paste the following script into the left-hand window, replacing any existing content, and then execute it. This script will retrieve the existing documents in the index to validate that the index name is correct.
+
+```json
+GET process-data-model/_search
+{
+  "query": {
+    "match_all": {}
+  }
+}
+```
+
+4. **Update Documents**: Replace any existing content in the left window with the following script, and then run it. This script updates the documents in the index by adding a new attribute, "processDefinitionVersionId," with the same value as "processDefinitionId."
+
+```json
+POST process-data-model/_update_by_query?wait_for_completion=false
+{
+    "query": {
+        "match_all": {}
+    },
+    "script": {
+        "source": "ctx._source.processDefinitionVersionId=ctx._source.processDefinitionId",
+        "lang": "painless"
+    }
+}
+```
+
+5. **Verify the Update**: Re-run the script from step 3 to confirm that the new attribute, "processDefinitionVersionId," has been added with the same value as "processDefinitionId."
+
+These steps will ensure a smooth migration of the data model index when deploying the new version.
+
 ## Access rights for Fonts
 
 In order to utilize the new fonts feature in the CMS microservice, it's mandatory to configure the following access rights:

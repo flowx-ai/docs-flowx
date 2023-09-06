@@ -6,7 +6,7 @@ sidebar_position: 1
 
 A container is a versatile element that allows you to group components and align them as desired.
 
-![](../../img/ui_designer_container.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/ui_designer_container.gif)
 
 The following properties can be configured in the container:
 
@@ -14,7 +14,7 @@ The following properties can be configured in the container:
 
 * **Expressions (Hide)** - JavaScript expressions used to hide components when they evaluate to true
 
-![](../../img/ui_designer_container_settings.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/ui_designer_container_settings.png)
 
 ### Styling
 
@@ -31,7 +31,7 @@ More layout demos available below:
 
 When you apply the above properties, you can generate the following output, with the button appearing on the right side of the container, underneath the form with three form elements:
 
-![](../../img/container_styling.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/container_styling.png)
 
 For more information about styling and layout configuration, check the following section:
 

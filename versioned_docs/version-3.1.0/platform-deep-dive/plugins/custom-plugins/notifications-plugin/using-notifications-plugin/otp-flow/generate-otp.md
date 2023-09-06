@@ -4,7 +4,7 @@ There are some cases when you will need to generate an OTP (One Time Password) f
 
 The notifications plugin handles both the actual OTP code generation and sending the code to the user using a defined [notification template](../managing-notification-templates.md).
 
-![](../../../../../img/otp_archi.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/otp_archi.png)
 
 ## Define needed Kafka topics
 
@@ -26,14 +26,14 @@ Values expected in the request body:
 * recipient: notification receiver: email / phone number
 * notification template content parameters (for example, clientId): parameters that should be replaced in the [notification template](../managing-notification-templates.md)
 
-![](../../../../../img/notifications_params.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/notifications_params.png)
 
 ## Response from generate OTP
 
 Values expected in the reply body:
 
 * processInstanceId = process instance ID
-* clientId = the client id (in this case the SSN number of the client)
+* clientId = the client ID (in this case the SSN number of the client)
 * channel = notification channel used
 * otpSent = confirmation if the notification was sent: true or false
 * error = error description, if any
@@ -41,7 +41,7 @@ Values expected in the reply body:
 
 Example:
 
-![](../../../../../img/otp_response.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/otp_response.png)
 
 ## Example: generate an OTP from a business flow
 
@@ -52,9 +52,9 @@ It is important to identify what is the business identifier that you are going t
 3. Use the FLOWX.AI Designer to add a new Kafka send event to the correct node in the process definition.
 4. Add the proper configuration to the action, the Kafka topic, and configure the body message.
 
-![](../../../../../img/kafka_config_otp.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/kafka_config_otp.png)
 
 5. Add a node to the process definition (for the Kafka receive event).
 6. Configure on what key you want to receive the response on the process instance params.
 
-![](../../../../../img/otp_config1.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/otp_config1.png)

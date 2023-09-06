@@ -8,7 +8,7 @@ sidebar_position: 3
 
 Task management is a plugin that enables back-officers and supervisors to easily track and assign tasks within a company. It provides a business-oriented view of a process defined using FLOWX.AI Designer and allows interactions at the assignment level.
 
-![Task Manager](../../../img/task_management_overview.gif)
+![Task Manager](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/task_management_overview.gif)
 
 Inside the **Task Manager → All tasks** you can find the **Activities** tab which consists of the following items:
 
@@ -20,7 +20,7 @@ Inside the **Task Manager → All tasks** you can find the **Activities** tab wh
 * **Last updated** - timestamp for latest updates
 * **Search** - the search function is used to look for keys stored on the process
 
-![](../../../img/indexed_keys.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/indexed_keys.png)
 
 The **Task details** tab within the **Task Manager** displays key information about a process, such as:
 
@@ -30,7 +30,7 @@ The **Task details** tab within the **Task Manager** displays key information ab
 * **Comments** - comments left by the users
 * **History** - information like who created a task, when a task was created or when the status changed
 
-![Task details](../../../img/task_mngmnt_task_details.png)
+![Task details](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/task_mngmnt_task_details.png)
 
 :::caution
 It is important to note that specific roles must be defined in a process to use all the task management features. More information about configuring access roles for processes can be found in the [Configuring access roles for processes](../../../../platform-setup-guides/flowx-engine-setup-guide/configuring-access-roles-for-processes.md) section.
@@ -97,7 +97,7 @@ Standard information that is sent to Task Management plugin:
 3. Select a **node** (after reaching this particular node task manager will trigger the updates).
 4. Switch on the **Update task management?** button.
 
-![Update task management](../../../img/task_mngmnt_response.png)
+![Update task management](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/task_mngmnt_response.png)
 
 :::info
 Some actions might not be available as they can be performed based on user roles/access rights.

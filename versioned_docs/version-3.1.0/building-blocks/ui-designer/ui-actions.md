@@ -10,7 +10,7 @@ UI actions create a link between an [**action**](../actions/actions.md) and a UI
 
 The UI action informs the UI element to execute the given action when triggered. Other options are available for configuration when setting an action to a button and are detailed below.
 
-![](./img/ui_actions.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/ui_actions.gif)
 
 There are two main types of UI Actions:
 
@@ -34,7 +34,7 @@ First, we need to configure the [manual action](../actions/actions.md) that will
    * First, this is a prefix of the keys that will send back by the UI Action link to this action. For example, if we have a big form with a lot of elements, but we need an action that just sends the email back (maybe creating email validation functionality) we will add just the key of that field: `application.client.email`; if we need a button that will send back all the form elements that have keys that start with application.client we can add just this part
    * Second, a backend validation will be run to accept and persist just the data that start with this prefix. If we have three explicit keys, `application.client.email`, `application.client.phone`, `application.client.address` and we send `application.client.age`this key will not be persisted
 
-![](./img/ui_action_key.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/ui_action_key.png)
 
 When this prerequisite is ready we can define the UI Action.
 
@@ -58,7 +58,7 @@ Multiple configurations are available - **ACTION** type example:
 
 <div className= "image-scaled">
 
-![](./img/ui_actions_multiple_configs.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/ui_actions_multiple_configs.png)
 
 </div>
 
@@ -68,7 +68,7 @@ Multiple configurations are available - **ACTION** type example:
 
 You can add an event depending on the element that you select. There are two events types available: **CLICK** and **CHANGE**.
 
-![](../img/../ui-designer/img/ui_action_events.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/ui_action_events.gif)
 
 :::info
 :exclamation:Not available for _UI Actions_ on [Custom Components](./ui-component-types/root-components/custom.md).
@@ -93,7 +93,7 @@ If we toggle the EXTERNAL type, a few new options are available:
 1. **URL** - web URL that will be used for the external action
 2. **Open in new tab** - this option will be available to decide if we want to run the action in the current tab or open a new one
 
-![](./img/ui_action_external.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/ui_action_external.png)
 
 For more information on how to add actions and how to configure a UI, check the following section:
 

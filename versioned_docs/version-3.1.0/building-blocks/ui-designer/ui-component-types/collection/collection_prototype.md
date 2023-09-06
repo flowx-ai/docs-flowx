@@ -13,11 +13,11 @@ For example, suppose you are creating a piece of UI in which the user is present
 
 ## Example
 
-![Collection with two prototypes](../../img/collection_prototype.png)
+![Collection with two prototypes](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/collection_prototype.png)
 
-![Collection prototype for normal product](../../img/collection_prototype1.png) 
+![Collection prototype for normal product](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/collection_prototype1.png) 
 
-![Collection prototype for recommended product](../../img/collection_prototype2.png)
+![Collection prototype for recommended product](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/collection_prototype2.png)
 
 Source collection data example for products:
 
@@ -48,7 +48,7 @@ products: [
 
 The above configuration will render:
 
-![Collection with two prototypes as rendered by the SDK](../../img/collection_prototype_render.png)
+![Collection with two prototypes as rendered by the SDK](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/collection_prototype_render.png)
 
 ## Adding elements with UI Actions
 
@@ -56,7 +56,7 @@ There are a few differences you need to take into consideration when configuring
 
 To showcase these differences, we'll use the next example:
 
-![Rendered Collection which lists two employees](../../img/collection_prototype_elements.png)
+![Rendered Collection which lists two employees](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/collection_prototype_elements.png)
 
 We have a [Collection](collection.md) with two employees and we want to provide the user with the option of selecting one of the employees (eg. to allow for further processing in the next steps of the process).
 
@@ -64,7 +64,7 @@ We have a [Collection](collection.md) with two employees and we want to provide 
 
 To select one employee from the list, we first must add an [Action](../../../actions/actions.md) to the [User Task Node](../../../node/user-task-node.md) this UI is attached to:
 
-![Node Action that saves the selected employee to the process's data.](../../img/col_prototype_node_action.png)
+![Node Action that saves the selected employee to the process's data.](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/col_prototype_node_action.png)
 
 This **save-item** action is **manual** (since it will be triggered by the user) and **optionally** (since selecting an employee is not a requirement to go to the next [Node](../../../node/) in the process).
 
@@ -76,7 +76,7 @@ Keep in mind to check the **Data to send** section. Here we are telling the plat
 
 Now that we have a [Node Action](../../../actions/actions.md) defined, we can go ahead and add the **Select** button in the UI of the [User Task](../../../node/user-task-node.md) which contains the Employees Collection.
 
-![Select employee button and its UI Action configuration](../../img/col_prototype_add_button.png)
+![Select employee button and its UI Action configuration](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/col_prototype_add_button.png)
 
 **Collection Item Save Key** field has an important role in the UI Action configuration of the **Select** button. This field represents how we pass the value of the **Employee** that the user has selected to the [Node Action](../../../actions/actions.md) that we created in [**Step 1**](#step-1---defining-the-node-action), named _save-item_.
 
@@ -92,8 +92,8 @@ The button and UI action are mostly configured as any other Button and UI Action
 
 This is how the process data looked before we pressed the **Select** button for an employee:
 
-![Process data before selecting an employee](../../img/col_prototype_result.png)
+![Process data before selecting an employee](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/col_prototype_result.png)
 
 This is how the process data looks after we selected an employee from the list (notice the new field `selectedEmployee`):
 
-![Process data after selecting an employee](../../img/col_prototype_result1.png)
+![Process data after selecting an employee](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/col_prototype_result1.png)
