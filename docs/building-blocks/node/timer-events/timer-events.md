@@ -58,6 +58,13 @@ Examples:
 Important: Only Spring cron expressions are permissible for configuration. Refer to the [<u>**official documentation**</u>](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/scheduling/support/CronExpression.html) for detailed information on configuring Spring Cron expressions.
 :::
 
+Scheduled timer events are clearly indicated within the process definition list, as illustrated in the following example:
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/process_with_scheduled_timer.png)
+
+To manage timers efficiently, you have the option to activate or suspend them through the convenient quick actions menu located in the process page header:
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/activate_suspend_timer.gif)
 
 More information about timer expressions you can find in the below section:
 
@@ -65,7 +72,7 @@ More information about timer expressions you can find in the below section:
 
 ## Configuration
 
-For each node type, the following timer types can be configured:![Alt text](https://files.slack.com/files-pri/T01EA7963GS-F05QQ93NLGG/image.png)
+For each node type, the following timer types can be configured:
 
 | Node Type               | Date | Duration | Cycle |
 |-------------------------|------|----------|-------|
@@ -74,11 +81,20 @@ For each node type, the following timer types can be configured:![Alt text](http
 | Timer Boundary Event    | Yes  | Yes      | No    |
 
 
+
 :::caution
 A process definition version should have a single Timer Start Event.
 :::
 
+For comprehensive details on each timer event node in this section, please refer to the corresponding documentation:
 
+[Timer Start Event (interrupting)](./timer-start-event.md)
+
+[Timer Intermediate Event](./timer-intermediate-event.md)
+
+[Timer Boundary Events](./timer-boundary-event.md)
+
+[Timer expressions](./timer-expressions.md)
 
 
 
