@@ -46,17 +46,60 @@ After the exclusive portion of the process, where one path is chosen over anothe
 
 ### MVEL Example
 
-Let's take the following example, we need to create a process displaying 2 screens and one modal, the gateway will move the token either to a path where a switch element (in our case the VAT) is toggled to true or false. If it 
+Let's consider the following example: we want to create a process that displays 2 screens and one modal. The gateway will direct the token down a path based on whether a switch element (in our case, VAT) is toggled to true or false.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/vat_example.png)
+
+If, during the second screen, the VAT switch is toggled on, the token will follow the second path, displaying a modal.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/vat_on.gif) 
+
+After interacting with the modal, the token will return to the main path, and the process will continue its primary flow.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/process_run_xor.png)
+
+#### Example configuration
+
+* **Language**: MVEL
+* **Expression**: 
+
+```java
+input.application.company.vat == true
+```
+
+:::info
+Essentially, you are accessing a specific value or property within a structured data object. The format is usually `input.{{key from where you want to access a value}}`. In simpler terms, it's a way to verify if a particular property within your input data structure (input.application.company.vat) is set to the value true. If it is, the condition is met and returns true; otherwise, it returns false.
+:::
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/config_example_xor.png)
+
+:::info
+The `application.company.vat` key corresponds to the switch UI element.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/VAT_key.png)
+:::
+
 
 
 ### DMN Example
 
-#### Configuring a DMN Exclusive Gateway Node
+If you prefer to use [DMN](/docs/platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-dmn.md) to define your gateway decisions, you can do so using exclusive gateways.
 
-If you prefer to use [DMN](/docs/platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-dmn.md) for defining gateway decisions, you can do so using exclusive gateways.
+![Gateway Decisions](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/dmn_gif.gif)
 
-![Gateway Decisions](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/exclusive_gateway_DMN.gif)
+**Gateway Decision - DMN example** [(Applicable only for Exclusive Gateway - XOR)](exclusive-gateway-node.md)
 
-**Gateway Decision - DMN example** [(applicable only for Exclusive Gateway - XOR)](exclusive-gateway-node.md)
+![Gateway Decision](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/xor_dmn_decision.png)
 
-![Gateway Decision](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/exclusive_gateway_decision.png)
+#### Example configuration
+
+* **Language**: DMN
+* **Expression**: `application.company.vat`
+
+:::info
+In our case, the expression field will be filled in with `application.company.vat` key, which corresponds to the switch UI element.
+:::
+
+* **Hit Policy**: Unique
+* **Type**: Boolean
+* **Next Node name**: Enter the name of the nodes to which you prefer the token to be directed.
