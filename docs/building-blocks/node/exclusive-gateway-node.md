@@ -14,7 +14,7 @@ To configure this node effectively, it's essential to set up both the **input** 
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/gateway_exclusive_diagram.png)
 
-#### General Configuration
+### General Configuration
 
 * **Node name**: Give your node a meaningful name.
 * **Can go back**: Enabling this option allows users to revisit this step after completing it.
@@ -29,7 +29,7 @@ When a step has "Can Go Back" set to false, all preceding steps become inaccessi
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/gateway_exclusive_stages.png)
 
-#### Gateway Decisions
+### Gateway Decisions
 
 * **Language**: When configuring conditions, you can use [MVEL](/docs/platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md) (or [DMN](#configuring-a-dmn-exclusive-gateway-node)) expressions that evaluate to either **true** or **false**.
 * **Conditions**: In the **Gateway Decisions** tab, you can see that the conditions (**if, else if, else**) are already built-in and you can **select** the destination node when the condition is **true**.
@@ -44,7 +44,7 @@ After the exclusive portion of the process, where one path is chosen over anothe
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/end_other_FLOW.png)
 
-### MVEL Example
+## MVEL Example
 
 Let's consider the following example: we want to create a process that displays 2 screens and one modal. The gateway will direct the token down a path based on whether a switch element (in our case, VAT) is toggled to true or false.
 
@@ -60,11 +60,11 @@ After interacting with the modal, the token will return to the main path, and th
 
 #### Example configuration
 
-* **Language**: MVEL
+* **Language**: MVEL 
 * **Expression**: 
 
 ```java
-input.application.company.vat == true
+input.application.company.vat == true // you can use the same method to access a value for other supported scripts in our platform: JavaScript, Python and Groovy
 ```
 
 :::info
@@ -79,9 +79,7 @@ The `application.company.vat` key corresponds to the switch UI element.
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/VAT_key.png)
 :::
 
-
-
-### DMN Example
+## DMN Example
 
 If you prefer to use [DMN](/docs/platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-dmn.md) to define your gateway decisions, you can do so using exclusive gateways.
 
@@ -91,7 +89,7 @@ If you prefer to use [DMN](/docs/platform-overview/frameworks-and-standards/busi
 
 ![Gateway Decision](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/xor_dmn_decision.png)
 
-#### Example configuration
+#### Configuration example
 
 * **Language**: DMN
 * **Expression**: `application.company.vat`
