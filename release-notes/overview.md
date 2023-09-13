@@ -1,6 +1,5 @@
 ---
 sidebar_position: 1
-slug: /
 ---
 
 # 📄 Release Notes 
@@ -13,7 +12,7 @@ Hi there! 👋 Follow the Release Notes space to find all the information on the
 
 <summary>Q3 - August 2023</summary>
 
-- [<u>v3.4.0</u>](/release-notes/v3.4.0-august-2023)
+- [<u>v3.4.0</u>](/release-notes/v3.4.0-september-2023)
 
 </details>
 

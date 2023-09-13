@@ -51,7 +51,7 @@ A decision service is a high-level decision with well-defined inputs that is mad
 
 #### Business Knowledge Model
 
-It portrays a specific knowledge within the business. It stores the origin of the information. Decisions that have the same logic but depend on different sub-input data or sub-decisions use business knowledge models to determine which procedure to follow.
+It portrays specific knowledge within the business. It stores the origin of the information. Decisions that have the same logic but depend on different sub-input data or sub-decisions use business knowledge models to determine which procedure to follow.
 
 **Example:** a decision, rule, or standard table.
 

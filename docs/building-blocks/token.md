@@ -27,7 +27,7 @@ The current process instance status can be retrieved using the FLOWX Designer. I
 
 In case more details are needed about the token, you can click the **Process status** view button, choose a token then click the **view button** again:
 
-![](./img/token_view_button.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/token_view_button.gif)
 
 ### Token status details
 

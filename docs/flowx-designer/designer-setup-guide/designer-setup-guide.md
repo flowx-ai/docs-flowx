@@ -1,10 +1,10 @@
-# Designer setup guide
+# Setting up FLOWX Designer
 
-The **FLOWX Designer** app is made up of a backend microservice (admin) and a frontend app. The admin part is managing process related entities. It provides the REST API used by the [**FLOWX Designer**](../../terms/flowx-ai-designer). The processes defined here will be handled by the [FLOWX Engine](../../platform-deep-dive/core-components/flowx-engine.md).
+**FLOWX Designer** is composed of a backend microservice (admin) and a frontend app. The admin part manages process-related entities and provides the REST API used by the [**FLOWX Designer**](../../terms/flowx-ai-designer). The processes defined here will be handled by the [FLOWX Engine](../../platform-deep-dive/core-components/flowx-engine.md).
 
-Follow to next steps in order to set them up in your environment.
+To set up FLOWX Designer in your environment, follow these steps:
 
-## **Managing Prerequisites**
+## **Prerequisites Management**
 
 The backend microservice uses most of the same resources as the FLOWX Engine.
 
@@ -14,15 +14,11 @@ The backend microservice connects to the same Postgres / Oracle database as the 
 
 ### Kafka cluster
 
-The backend microservice needs to be able to connect to the Kafka cluster in case you want to use the audit functionality. If connected to Kafka, it will send details about all database transactions on a configured Kafka topic.
+If you intend to use the audit functionality, ensure that the backend microservice can connect to the Kafka cluster. When connected to Kafka, it sends details about all database transactions to a configured Kafka topic.
 
 ### NGINX
 
-It would be best if the FLOWX Designer used a separate [NGINX](../../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-nginx.md) load balancer from the [**Engine**](../../terms/flowxai-process-engine). This is used in order to route API calls from the [SPA](designer-setup-guide.md#for-configuring-the-spa) (single page application) to the backend service, to the engine and to various plugins.
-
-This is used in order to route API calls from the SPA (single page application) to the backend service, to the engine, and to various plugins.
-
-The FLOWX Designer SPA will use the backend service to manage the platform via REST calls, will use API calls to manage specific content for the plugins and will use REST and SSE calls to connect to the engine.
+For optimal operation the FLOWX Designer should use a separate [NGINX](../../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-nginx.md) load balancer from the [**Engine**](../../terms/flowxai-process-engine). This routing mechanism handles API calls from the [SPA](designer-setup-guide.md#for-configuring-the-spa) (single page application) to the backend service, to the engine and to various plugins.
 
 Here's an example/suggestion of an NGINX setup:
 
@@ -58,7 +54,7 @@ spec:
 
 #### For routing calls to the engine
 
-Three different configs are needed:
+Three different configurations are needed:
 
 1. For viewing the current instances of processes running in the Engine:
 
@@ -84,7 +80,7 @@ spec:
           servicePort: 80
 ```
 
-2. For testing process definitions from the FLOWX Designer, we need to route API calls and SSE communication to the Engine backend.
+2. For testing process definitions from the FLOWX Designer, route API calls and SSE communication to the Engine backend.
 
 Setup for routing REST calls:
 
@@ -209,11 +205,17 @@ The database schema is managed by a [liquibase](https://www.liquibase.org/) scri
 
 ### Kafka configuration
 
-[**Kafka**](../../terms/flowx-kafka) is used only for saving audit logs. Only a producer needs to be configured. The environment variables that need to be set are:
+[**Kafka**](../../terms/flowx-kafka) is used for saving audit logs and for using scheduled timer events. Only a producer needs to be configured. The environment variables that need to be set are:
 
 * `KAFKA_BOOTSTRAP_SERVERS` - the Kafka bootstrap servers URL
 
-*  `KAFKA_TOPIC_AUDIT_OUT` - topic key for sending audit logs. Default value: `ai.flowx.audit.log`
+* `KAFKA_TOPIC_AUDIT_OUT` - topic key for sending audit logs. Default value: `ai.flowx.audit.log`
+
+* `KAFKA_TOPIC_PROCESS_START_FOR_EVENT_IN`
+
+* `KAFKA_TOPIC_PROCESS_SCHEDULED_TIMER_EVENTS_OUT_SET`
+
+* `KAFKA_TOPIC_PROCESS_SCHEDULED_TIMER_EVENTS_OUT_STOP`
 
 
 ### Redis configuration

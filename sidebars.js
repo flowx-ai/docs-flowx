@@ -827,7 +827,7 @@ const sidebars = {
           [ 
             {
               type: "category",
-              label: "Custom Plugins",
+              label: "Custom plugins",
               link: {
                 type: "doc",
                 id: "platform-deep-dive/plugins/custom-plugins/custom-plugins"

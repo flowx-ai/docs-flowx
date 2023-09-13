@@ -88,6 +88,7 @@ export async function generatePdfFiles(
       );
     }
   }
+  versionInfos.push({version: 'default', urlAddIn: '', sidebarFile:`${CMD}/releases.sidebars.js`})
 
   // Start local webserver and host files in docusaurus build folder
   const app = express();

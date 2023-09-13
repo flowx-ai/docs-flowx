@@ -194,7 +194,7 @@ Example:
 
 2. Web socket progress message
 
-```
+```json
 {
   "progressUpdateDTO": {
     "processInstanceUuid": "db573705-71dd-4216-9d94-5ba2fb36ff2a",

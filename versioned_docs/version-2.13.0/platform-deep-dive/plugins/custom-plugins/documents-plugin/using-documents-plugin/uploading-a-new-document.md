@@ -104,7 +104,7 @@ Values expected in the reply body:
 You can view the response by accessing the **Audit log** menu.
 :::
 
-![](../../../../img/audit_log_doc_upload.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/audit_log_doc_upload.png)
 
 ```json
     {

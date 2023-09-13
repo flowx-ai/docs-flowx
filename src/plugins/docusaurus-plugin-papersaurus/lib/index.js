@@ -104,11 +104,12 @@ function default_1(_context, pluginOptions) {
             if (pdfname.indexOf('/') >= 0) {
               pdfname = pdfname.substr(pdfname.lastIndexOf('/') + 1);
             }
+            pdfname = pdfname.replace('.','');
 
             var downloadItems = [];
             downloadItems.push({
               title: 'Download this chapter (' + activePageSidebarLink.text() +')',
-              slug: pdfname,
+              slug: slugFunction(pdfname),
               type: 'page'
             });
 
@@ -130,7 +131,7 @@ function default_1(_context, pluginOptions) {
                   });
                   downloadItems.push({
                     title: 'Download section (' + activePageSidebarLink.text() +')',
-                    slug: slug,
+                    slug: slugFunction(slug),
                     type: 'section'
                   });
                 }

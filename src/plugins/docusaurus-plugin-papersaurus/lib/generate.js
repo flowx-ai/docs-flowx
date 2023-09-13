@@ -80,6 +80,8 @@ async function generatePdfFiles(pluginOptions, siteConfig) {
             });
         }
     }
+    versionInfos.push({version: 'releases', urlAddIn: '', sidebarFile:`${CWD}/releases.sidebars.js`})
+
     // Start local webserver and host files in docusaurus build folder
     const app = express();
     const httpServer = await app.listen();
@@ -105,6 +107,9 @@ async function generatePdfFiles(pluginOptions, siteConfig) {
         fs.ensureDirSync(versionBuildDir);
         // Build URL to root document of that version
         let rootDocUrl = `${siteAddress}docs/`;
+        if (versionInfo.version === 'releases') {
+            rootDocUrl = `${siteAddress}release-notes/`;
+        }
         if (versionInfo.urlAddIn) {
             rootDocUrl = `${rootDocUrl}${versionInfo.urlAddIn}/`;
         }
@@ -123,7 +128,7 @@ async function generatePdfFiles(pluginOptions, siteConfig) {
         for (const sidebarName of pluginOptions.sidebarNames) {
             console.log(`${pluginLogPrefix}Start processing sidebar named '${sidebarName}' in version '${versionInfo.version}'`);
             let versionedSidebarName = sidebarName;
-            if (versionInfo.version !== 'next') {
+            if (versionInfo.version !== 'next' && versionInfo.version !== 'releases') {
                 versionedSidebarName = `version-${versionInfo.version}/${sidebarName}`;
             }
             let sidebar = sideBars[versionedSidebarName];
@@ -131,6 +136,10 @@ async function generatePdfFiles(pluginOptions, siteConfig) {
                 // sidebar name in version-x.x-sidebars.json file not always has a version prefix, try again without version 
                 sidebar = sideBars[sidebarName];
             }
+            let rootDirHTML = 'docs'
+            if (versionInfo.version === 'releases') {
+                rootDirHTML =  'release-notes'
+            } 
             if (sidebar) {
                 // Create a fake category with root of sidebar
                 const rootCategory = {
@@ -141,7 +150,8 @@ async function generatePdfFiles(pluginOptions, siteConfig) {
                     collapsible: true
                 };
                 // Browse through all documents of this sidebar
-                let htmlDir = join(docusaurusBuildDir, 'docs', versionInfo.urlAddIn);
+               
+                let htmlDir = join(docusaurusBuildDir, rootDirHTML , versionInfo.urlAddIn);
                 pickHtmlArticlesRecursive(rootCategory, [], versionInfo.version, rootDocUrl, rootDocId, htmlDir, siteConfig);
                 // Create all PDF files for this sidebar
                 await createPdfFilesRecursive(rootCategory, [], versionInfo.version, pluginOptions, siteConfig, versionBuildDir, browser, siteAddress);

@@ -16,7 +16,7 @@ This guide will walk you through the process of setting up the Scheduler service
 
 The service comes with most of the needed configuration properties filled in, but there are a few that need to be set up using some custom environment variables.
 
-## Dependencies <a href="#2939ce6e-c291-40c2-b3d6-1e789b1617d7" id="2939ce6e-c291-40c2-b3d6-1e789b1617d7"></a>
+## Dependencies 
 
 ### MongoDB helm example
 
@@ -52,7 +52,7 @@ scheduler-mdb:
 This service needs to connect to a Mongo database that has replicas, in order to work correctly.
 :::
 
-## Configuration <a href="#bad24571-ff23-4ec3-83d9-8a2ace74a6b4" id="bad24571-ff23-4ec3-83d9-8a2ace74a6b4"></a>
+## Configuration 
 
 ### Configuring MongoDB
 
@@ -60,7 +60,7 @@ The MongoDB database is used to persist scheduled messages until they are sent b
 
 * `SPRING_DATA_MONGODB_URI` - the URI for the MongoDB database
 
-### Configuring Kafka <a href="#63673403-7b21-440b-a173-211fd5c9a86e" id="63673403-7b21-440b-a173-211fd5c9a86e"></a>
+### Configuring Kafka 
 
 The following Kafka related configurations can be set by using environment variables:
 

@@ -95,7 +95,6 @@ const config = {
       },
 
       
-
       
       
       navbar: {
@@ -115,7 +114,7 @@ const config = {
 
           {
             type: 'doc',
-            docId: 'release-notes',
+            docId: 'overview',
             docsPluginId: 'release-notes',
             position: 'left',
             label: 'Release Notes',
@@ -271,9 +270,10 @@ const config = {
       require.resolve('./src/plugins/docusaurus-plugin-papersaurus/lib'),
       {
         keepDebugHtmls: false,
-        sidebarNames: ['tutorialSidebar'],
+        sidebarNames: ['releaseNotes'],
         rootDocIds: [
-          { version: 'current', rootDocId: '/docs/intro'}
+          { version: 'current', rootDocId: '/docs/intro'},
+          { version: 'default', rootDocId: '/release-notes'}
         ],
         addDownloadButton: true,
         autoBuildPdfs: false,

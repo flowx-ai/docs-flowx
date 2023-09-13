@@ -53,7 +53,6 @@ After setting up your preferred identity provider solution, you will need to add
 
 ### Restricting process instance access based on business filters
 
-
 [Business filters](../../user-roles-management/business-filters.md)
 
 Before they can be used in the process definition the business filter attributes need to be set in the identity management platform. They have to be configured as a list of filters and should be made available on the authorization token. Application users will also have to be assigned this value.
