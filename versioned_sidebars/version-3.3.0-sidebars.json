@@ -96,10 +96,6 @@
                   "id": "platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-redis"
                 }
               ]
-            },
-            {
-              "type": "doc",
-              "id": "platform-overview/frameworks-and-standards/timer-expressions"
             }
           ]
         },
@@ -468,10 +464,6 @@
             {
               "type": "doc",
               "id": "flowx-designer/managing-a-process-flow/export-import-a-process-definition"
-            },
-            {
-              "type": "doc",
-              "id": "flowx-designer/managing-a-process-flow/process-definition-states-and-versioning"
             }
           ]
         },

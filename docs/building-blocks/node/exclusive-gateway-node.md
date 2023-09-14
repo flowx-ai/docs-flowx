@@ -46,6 +46,8 @@ After the exclusive portion of the process, where one path is chosen over anothe
 
 ## MVEL Example
 
+### Getting input from a Switch UI element
+
 Let's consider the following example: we want to create a process that displays 2 screens and one modal. The gateway will direct the token down a path based on whether a switch element (in our case, VAT) is toggled to true or false.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/vat_example.png)
@@ -68,7 +70,7 @@ input.application.company.vat == true // you can use the same method to access a
 ```
 
 :::info
-Essentially, you are accessing a specific value or property within a structured data object. The format is usually `input.{{key from where you want to access a value}}`. In simpler terms, it's a way to verify if a particular property within your input data structure (input.application.company.vat) is set to the value true. If it is, the condition is met and returns true; otherwise, it returns false.
+Essentially, you are accessing a specific value or property within a structured data object. The format is usually `input.{{key from where you want to access a value}}`. In simpler terms, it's a way to verify if a particular property within your input data structure (input.application.company.vat key attached to Switch UI element) is set to the value true. If it is, the condition is met and returns true; otherwise, it returns false.
 :::
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/config_example_xor.png)
@@ -81,9 +83,12 @@ The `application.company.vat` key corresponds to the switch UI element.
 
 ## DMN Example
 
+
 If you prefer to use [DMN](/docs/platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-dmn.md) to define your gateway decisions, you can do so using exclusive gateways.
 
 ![Gateway Decisions](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/dmn_gif.gif)
+
+### Getting input from a Switch UI element 
 
 **Gateway Decision - DMN example** [(Applicable only for Exclusive Gateway - XOR)](exclusive-gateway-node.md)
 
@@ -101,3 +106,21 @@ In our case, the expression field will be filled in with `application.company.va
 * **Hit Policy**: Unique
 * **Type**: Boolean
 * **Next Node name**: Enter the name of the nodes to which you prefer the token to be directed.
+
+### Getting input from multiple UI elements 
+
+Consider another scenario in which the process relies on user-provided information, such as age and membership status, to determine eligibility for a discount. This decision-making process utilizes a DMN (Decision Model and Notation) decision table, and depending on the input, it may either conclude or continue with other flows.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/dmn_input.gif)
+
+#### Configuration example
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/dmn_multiple_UI_elements.png)
+
+:::info
+In our case, the expressions fields will be populated with the `application.company.vat` and `application.client.membership` keys, which correspond to the user input collected on the initial screen.
+:::
+
+The process is visualized as follows:
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/dmn_example.gif)

@@ -270,7 +270,7 @@ const config = {
       require.resolve('./src/plugins/docusaurus-plugin-papersaurus/lib'),
       {
         keepDebugHtmls: false,
-        sidebarNames: ['releaseNotes'],
+        sidebarNames: ['tutorialSidebar','releaseNotes'],
         rootDocIds: [
           { version: 'current', rootDocId: '/docs/intro'},
           { version: 'default', rootDocId: '/release-notes'}
