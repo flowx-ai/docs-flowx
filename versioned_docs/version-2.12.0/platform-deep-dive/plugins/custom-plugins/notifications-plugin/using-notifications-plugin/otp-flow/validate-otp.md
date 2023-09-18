@@ -41,7 +41,7 @@ Values expected in the reply body:
 
 Example:
 
-![](../../../../../img/otp_validate_audit.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/otp_validate_audit.png)
 
 ## Example: validate an OTP from a business flow
 
@@ -51,9 +51,9 @@ Similar to the generation of the OTP you can validate the OTP that was generated
 2. Add the actions for sending the request to validate the OTP on the node that contains the 'Generate OTP' actions
 3. Add the proper configuration to the action, the Kafka topic and configure the body message.
 
-![](../../../../../img/validate_otp_temp.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/validate_otp_temp.png)
 
 4. Add a node to the process definition (for the [Kafka receive event](../../../../../../building-blocks/node/message-send-received-task-node.md#message-receive-task))
 5. Configure on what key you want to receive the response on the process instance parameters
 
-![](../../../../../img/validate_otp3.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/validate_otp3.png)

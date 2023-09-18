@@ -10,7 +10,7 @@ Documents upload can be integrated into a process definition by adding a user ta
 User task nodes allow you to define and configure UI templates and possible actions for a certain template config node (ex: upload file button).
 :::
 
-![](../../../../img/docs_upload_proc.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/docs_upload_proc.png)
 
 To upload a document using a process, follow the next steps.
 
@@ -48,7 +48,7 @@ A naming pattern must be defined on the process engine configuration to use the 
 **Key Name** - will hold the result received from the external system, if the key already exists in the process values, it will be overwritten
 
 
-![](../../../../img/doc_upload_file_con.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/doc_upload_file_con.png)
 
 #### **Actions**
 
@@ -60,7 +60,7 @@ A naming pattern must be defined on the process engine configuration to use the 
 * **Reputable** - should be checked if the action can be triggered multiple times
 * **Autorun Children** - when this is switched on, the child actions (the ones defined as mandatory and automatic) will run immediately after the execution of the parent action is finalized
 
-![](../../../../img/action_edit_doc_plugin.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/action_edit_doc_plugin.png)
 
 ##### Parameters
 
@@ -80,13 +80,13 @@ The above examples of topics are extracted from an internal testing environment,
 
 :::
 
-![](../../../../img/doc_plugin_upload_param.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/doc_plugin_upload_param.png)
 
 ### Milestone node
 
 You can configure a start milestone node and an end milestone node before and after a user task. After adding the milestones, you can add a modal template (in this case a **Page**) to the start milestone node to display a modal screen (like in the example above).
 
-![](../../../../../building-blocks/node/img/milestone_page.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/milestone_page.png)
 
 ## Receiving the reply
 
@@ -104,7 +104,7 @@ Values expected in the reply body:
 You can view the response by accessing the **Audit log** menu.
 :::
 
-![](../../../../img/audit_log_doc_upload.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/audit_log_doc_upload.png)
 
 ```json
     {

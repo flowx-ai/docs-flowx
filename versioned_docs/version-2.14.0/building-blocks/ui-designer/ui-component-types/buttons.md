@@ -17,7 +17,7 @@ Sections that can be configured regarding general settings:
    * **Type** - button type: fill/flat
 2. **Add UI Action** - defines what action the button will trigger ([more details on how to configure UI actions](../ui-actions.md))
 
-![Button configuration for a save action](../img/button_config.png)
+![Button configuration for a save action](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/button_config.png)
 
 ### File Upload Button
 
@@ -31,4 +31,4 @@ Additional properties:
 * Max file size error
 * Add UI Action 
 
-![](../img/file_upload_button.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/file_upload_button.png)

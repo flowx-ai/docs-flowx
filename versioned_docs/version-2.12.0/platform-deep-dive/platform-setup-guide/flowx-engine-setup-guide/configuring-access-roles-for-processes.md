@@ -20,7 +20,7 @@ The defined roles will then be available to be used in the process definition se
 
 A **Default** swimlane comes with two default permissions assigned based on a specific role.
 
-![](../../img/swimlane_default_roles.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/swimlane_default_roles.png)
 
 * **execute** - the user will be able to start process instances and run actions on them
 * **self-assign** - the user can assign a process instance to them and start working on it
@@ -37,7 +37,7 @@ Other **Permissions** can be added manually, depending on the needs of the user.
 * **hold** - user can mark the process instance as on hold (this operation is only accessible through the **Task management** plugin)
 * **unhold** - user can mark the process instance as not on hold (this operation is only accessible through the **Task management** plugin)
 
-![](../../img/process_permissions.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/process_permissions.png)
 
 :::warning
 **< 2.11.0 platform release** - if no role is configured on an operation, no restrictions will be applied.
@@ -47,12 +47,11 @@ Other **Permissions** can be added manually, depending on the needs of the user.
 
 After setting up your preferred identity provider solution, you will need to add the desired access roles in the application configuration for the FLOWX Engine.
 
-![example configuration of roles for a regular user](../../img/regular_user_roles.png)
+![example configuration of roles for a regular user](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/regular_user_roles.png)
 
-![example configuration of roles for an admin user](../../img/admin_user_roles.png)
+![example configuration of roles for an admin user](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/admin_user_roles.png)
 
 ### Restricting process instance access based on business filters
-
 
 [Business filters](../../user-roles-management/business-filters.md)
 

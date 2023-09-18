@@ -6,7 +6,7 @@ sidebar_position: 1
 
 Once a process is defined and added on the platform, it can be executed, monitored and optimized. When a business process starts, we create an **instance** of the definition. 
 
-![](../../img/proc_instance_progress.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/process/proc_instance_progress.png)
 
 Think of the process instance as if the process definition is the blueprint of a house and the instance is the house.
 
@@ -24,7 +24,7 @@ The engine is also responsible with updating the UI when some actions occur. Thi
 
 The new instances will be started by making a request to the  [FLOWX.AI Engine](../../../../platform-deep-dive/core-components/flowx-engine). This will be handled by the web / mobile application that was created.
 
-![](../../img/process_instance_diagram.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/process/process_instance_diagram.png)
 
 To be able to start a new process instance, the current user needs to have the appropriate role/permissions:
 

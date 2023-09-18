@@ -8,7 +8,7 @@ Do not forget, when upgrading to a new platform version, always check and make s
 After updating to **3.0.0** FLOWX.AI release, importing old processes definitions in the new platform release is not possible (available for exports from **<= 3.0.0** releases).
 :::
 
-![](../img/release_platform_version_check.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release-notes/release_platform_version_check.png)
 
 ## Component versions
 

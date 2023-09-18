@@ -52,24 +52,24 @@ Replacing the name should not affect the deployment process, but may affect repo
 | Plugin   | \[svc-]customer-management | **customer-management-plugin**|
 | Web      | flowx-process-renderer     | **designer**             |
 
-![](../img/200_containers.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release-notes/200_containers.png)
 
-### Change Deployment  / Service Naming
+### Change Deployment / Service Naming
 
 :exclamation: Change deployment names and services to match with new naming. Eg Change onboarding to process-engine:
 
-![](../img/200_service_naming.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release-notes/200_service_naming.png)
 
 :exclamation: Service name inside helm charts default to legacy component name. They also need to be renamed, and for this you just need to override the `service.name` variable. Eg. For onboarding there are actually two names:
 
-![](../img/200_service_naming1.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release-notes/200_service_naming1.png)
 
-:exclamation: Ingress/route resources are created outside helm charts and they need to be updated to use the correct backend service name as target. Make sure both admin/public resources are updated.  Eg Changing onboarding:
+:exclamation: Ingress/route resources are created outside helm charts and they need to be updated to use the correct backend service name as target. Make sure both admin/public resources are updated.  E.g.: Changing onboarding:
 
-![](../img/200_service_naming2.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release-notes/200_service_naming2.png)
 
 :::caution
-**Make sure to validate before applying that all Ingress/Route -> Service -> Deployments match.**&#x20;
+**Make sure to validate before applying that all Ingress/Route ⇾ Service → Deployments match.**
 :::
 
 ### (Optional) Change onboarding base-path
@@ -78,11 +78,11 @@ Currently web apps use /onboarding base path for any process-engine api requests
 
 1. Update ingress/route configs and make sure both admin/public resources are updated:
 
-![](../img/200_onboarding.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release-notes/200_onboarding.png)
 
 2. Update designer (and other custom frontends) to use the new path. Eg **PROCESS_API_PATH** variable for designer chart:
 
-![](../img/200_onboarding1.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release-notes/200_onboarding1.png)
 
 ## Spring Boot Environment Configuration
 

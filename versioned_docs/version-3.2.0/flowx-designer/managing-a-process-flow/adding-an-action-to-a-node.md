@@ -28,7 +28,7 @@ To create an action:
   * `{"processInstanceId": ${processInstanceId}}`
 * if you want some values to be replaced before sending them to Kafka, they should be marked as such in the action params
 
-![](../img/process_flowx_adding_an_action.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/process_flowx_adding_an_action.gif)
 
 :::info
 The nodes that support actions are [task nodes](../../building-blocks/node/task-node.md), [user task nodes](../../building-blocks/node/user-task-node.md), and [message send nodes](../../building-blocks/node/message-send-received-task-node.md).

@@ -51,6 +51,14 @@ sidebar_position: 2
 
 [Example here](../platform-deep-dive/core-components/core-extensions/content-management/using-the-service.md#example-request-a-label-by-language-or-source-system-code)
 
+#### Media Library
+
+* serves as a centralized hub for managing and organizing various types of media files, including images, GIFs, and more
+
+#### Font files
+
+* Font management allows you to upload and manage multiple font files, which can be later utilized when configuring UI templates using the UI Designer
+
 </details>
 
 <details>
@@ -113,7 +121,7 @@ sidebar_position: 2
 </details>
 
 
-![FLOWX Designer](./img/designer_overview.gif#center)
+![FLOWX Designer](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/flowx-designer/designer_overview.gif#center)
 
 :::info
 Depending on your access rights, some tabs might not be visible. For more information, check [Configuring access rights for Admin](designer-setup-guide/configuring-access-rights-for-admin.md) section.
@@ -123,9 +131,9 @@ Depending on your access rights, some tabs might not be visible. For more inform
 
 A [**process definition**](../terms/flowx-process-definition) is uniquely identified by its name and version number.
 
-![Process Definitions](./img/designer_process_definitions.gif)
+![Process Definitions](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/flowx-designer/designer_process_definitions.gif)
 
-[Process definition](../building-blocks/process/process-definition/process-definition.md)
+[Process definition](../building-blocks/process/process-definition.md)
 
 [Managing a process flow](./managing-a-process-flow/managing-a-process-flow.md)
 
@@ -133,15 +141,15 @@ A [**process definition**](../terms/flowx-process-definition) is uniquely identi
 
 The complete list of active [**process instances**](../terms/flowx-process-instance) is visible from the FLOWX Designer. They can be filtered by [**process definition**](../terms/flowx-process-definition) names and searched by their unique ID. You can also view the current process instance status and data.
 
-![Active process](./img/designer_active_process.png)
+![Active process](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/flowx-designer/designer_active_process.png)
 
-[Process instance](../building-blocks/process/active-process/process-instance/process-instance.md)
+[Process instance](../building-blocks/process/active-process/process-instance.md)
 
 ## Managing CMS
 
 Using the content management feature you can perform multiple actions that enable manipulation of the content and simplification of it. You need first to deploy the CMS service in your infrastructure, so you can start defining and using the custom content types described in the **Content Management** tab above.
 
-![Content Management](./img/designer_cms.gif)
+![Content Management](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/flowx-designer/designer_cms.gif)
 
 [Headless CMS](../platform-deep-dive/core-components/core-extensions/content-management/content-management.md)
 
@@ -151,7 +159,7 @@ Using the content management feature you can perform multiple actions that enabl
 
 The Task Manager [**plugin**](../terms/flowx-plugins) has the scope to show a process that you defined in Designer, offering a more business-oriented view. It also offers interactions at the assignment level.
 
-![Task Management](./img/designer_task_manager.png)
+![Task Management](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/flowx-designer/designer_task_manager.png)
 
 [Task Management](../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md)
 
@@ -159,7 +167,7 @@ The Task Manager [**plugin**](../terms/flowx-plugins) has the scope to show a pr
 
 The notification templates plugin can be viewed, edited, and activated/inactivated from the [**FLOWX Designer**](../terms/flowx-ai-designer).
 
-![](./img/designer_notification_templates.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/flowx-designer/designer_notification_templates.png)
 
 [Notifications](../platform-deep-dive/plugins/custom-plugins/notifications-plugin/notifications-plugin.md)
 
@@ -167,7 +175,7 @@ The notification templates plugin can be viewed, edited, and activated/inactivat
 
 One of the main features of the [document management plugin](../platform-deep-dive/plugins/custom-plugins/documents-plugin/documents-plugin.md) is the ability to generate new documents based on custom templates and prefilled with data related to the current process instance.
 
-![Document templates plugin](./img/designer_documents.png)
+![Document templates plugin](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/flowx-designer/designer_documents.png)
 
 [Document management](../platform-deep-dive/plugins/custom-plugins/documents-plugin/documents-plugin.md)
 
@@ -175,7 +183,7 @@ One of the main features of the [document management plugin](../platform-deep-di
 
 Through the [**FLOWX Designer**](../terms/flowx-ai-designer), you can edit generic parameters, and import or export them. You can set generic parameters and assign the environment(s) where they should apply.
 
-![Generic Parameters](./img/designer_generic_params.png)
+![Generic Parameters](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/flowx-designer/designer_generic_params.png)
 
 :::caution
 The maximum length of an input value is 255 characters.
@@ -185,7 +193,7 @@ The maximum length of an input value is 255 characters.
 
 Access Management is used to administrate users, roles and groups, directly in FLOWX Designer. Access Management helps you to access the identity management solution (keycloak/[RH-SSO](https://access.redhat.com/products/red-hat-single-sign-on)) through its API, extracting all the necessary details. Access Management is based on user roles that need to be configured in the identity management solution.
 
-![Access Management](./img/designer_access_mng.png)
+![Access Management](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/flowx-designer/designer_access_mng.png)
 
 [Configuring access rights for admin](designer-setup-guide/configuring-access-rights-for-admin)
 
@@ -193,13 +201,13 @@ Access Management is used to administrate users, roles and groups, directly in F
 
 Integration management enables you to keep track of each integration and its correspondent component and different scenarios used: creating an OTP, document generation, notifications, etc.
 
-![](./img/designer_integrations.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/flowx-designer/designer_integrations.png)
 
 ## Checking platform status
 
 You can quickly check the health status of all the [**FLOWX services**](../terms/microservices) and all of your custom connectors.
 
-![Platform Status](./img/designer_platform_status.png)
+![Platform Status](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/flowx-designer/designer_platform_status.png)
 
 Check the next section to learn how to create and manage a process from scratch:
 

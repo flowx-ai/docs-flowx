@@ -68,4 +68,4 @@ This is the configuration to apply the above scenario:
 
 * **Show Target Process** - `${parentProcessInstanceId}`to copy the data on the parent of this subprocess
 
-![](../node/img/append_params_example.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/append_params_example.png)

@@ -6,7 +6,7 @@ Used to generate documents based on previously defined document templates. The f
 
 Use the [WYSIWYG](../../../../wysiwyg.md) editor to create a document template.
 
-![](../../../../../img/ocr_doc_template.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/ocr_doc_template.gif)
 
 ## Sending the request
 
@@ -19,7 +19,7 @@ Use the [WYSIWYG](../../../../wysiwyg.md) editor to create a document template.
 
 4. Fill in the Message. Values expected in the request body:
 
-![](../../../../../img/html_generate_param.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/html_generate_param.png)
 
 * **documentList** - list of documents to be generated with properties (name and value to be replaced in the document templates)
 * **customId** - client ID
@@ -50,7 +50,7 @@ You can view the response by accessing the **Audit log** menu.
 
 The response will be sent on the out Kafka topic (defined on the Kafka receive event node), as available below:
 
-![](../../../../../img/html_generate_reply.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/html_generate_reply.png)
 
 Values expected in the event body:
 

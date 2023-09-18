@@ -27,4 +27,4 @@ There are a few configuration options available in order to decide which of the 
 * `restartFromSnapshot` - if set to true, the process parameter values will be reset to the values they had before the first execution of that action
 * `keysForRestart`- an array of process parameter values keys to be copied from the initial execution of that process part
 
-![](../img/pf_moving_token_bw.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/pf_moving_token_bw.gif)

@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Checkbox Form field
 
-![](../../img/checkbox_form_field.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/checkbox_form_field.png)
 
 A checkbox is a form element that allows users to select one or more options from the given options.
 
@@ -19,8 +19,8 @@ The available configuration options for this form element are:
    * **Default Value** - the default value of the checkbox
    * **Source Type** - it can be Static, Enumeration, or Process Data
 4. **Expressions**
-   * **Hide** - javascript expressions used to hide components when they're truthy
-   * **Disabled expressions** - javascript expressions that should be evaluated as true or false. It's important to make sure that hidden fields also have the same expression configured under expressions -> hide
+   * **Hide** - Javascript expressions used to hide components when they're truthy
+   * **Disabled expressions** - Javascript expressions that should be evaluated as true or false. It's important to make sure that hidden fields also have the same expression configured under expressions → hide
 
 #### Checkbox styling
 
@@ -28,4 +28,4 @@ The available configuration options for this form element are:
 
 A checkbox with three options and a column layout will look like this.&#x20;
 
-![](../../img/checkbox_styling.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/checkbox_styling.png)

@@ -8,7 +8,7 @@
 
 ### Configuring an Append Params to Parent Process
 
-After you create a process designed to be used as a [subprocess](../../process/subprocess.md), you can configure the action. To do this, you need to add an **Append Params to Parent Process** on a [**Task Node**](./) in the subprocess.
+After you create a process designed to be used as a [subprocess](../../process/subprocess.md), you can configure the action. To do this, you need to add an **Append Params to Parent Process** on a [**Task Node**](./task-node.md) in the subprocess.
 
 The following properties must be configured:
 
@@ -35,7 +35,7 @@ The following properties must be configured:
 #### **Parameters**
 
 * **Copy from current state** - data that you want to be copied back to the parent process
-* **Destination in the parent state** -  on what key to copy the param values
+* **Destination in the parent state** - on what key to copy the param values
 
 :::success
 To recap: if you have a **Copy from current state** with a simple **JSON** -`{"age": 17}`, that needs to be available in the parent process, on the `application.client.age` key, you will need to set this field (**Destination in the parent state**) with `application.client`, which will be the key to append to in the parent process.
@@ -43,29 +43,29 @@ To recap: if you have a **Copy from current state** with a simple **JSON** -`{"a
 
 **Advanced configuration**
 
-* **Show Target Process** -  ID of the parent process where you need to copy the params, this was made available on to the `${parentProcessInstanceId}` variable, if you defined it when you [started the subprocess](start-subprocess-action.md)
+* **Show Target Process** - ID of the parent process where you need to copy the params, this was made available on to the `${parentProcessInstanceId}` variable, if you defined it when you [started the subprocess](start-subprocess-action.md)
 
 #### Data to send
 
 * **Keys** - are used when data is sent from the frontend via an action to validate the data (you can find more information in the [User Task configuration](../user-task-node/) section)
 
 :::warning
-**Data to send** option is configurable only when the action **trigger type** is **Manual.**
+**Data to send** option is configurable only when the action **trigger type** is **Manual**.
 :::
 
 ### Example
 
-We have a subprocess that allows us to enter the age of the client on the **data.client.age** key, and we want to copy the value back to the parent process. The key to which we want to receive this value in the parent process is **application.client.age**.&#x20;
+We have a subprocess that allows us to enter the age of the client on the **data.client.age** key, and we want to copy the value back to the parent process. The key to which we want to receive this value in the parent process is **application.client.age**.
 
 This is the configuration to apply the above scenario:
 
 **Parameters**
 
-* **Copy from current state** - `{"client": ${data.client.age}}` to copy the age of the client (the param value we want to copy)&#x20;
-* **Destination in the parent state**  - `application` to append the data o to the **application** key on the parent process
+* **Copy from current state** - `{"client": ${data.client.age}}` to copy the age of the client (the param value we want to copy)
+* **Destination in the parent state** - `application` to append the data o to the **application** key on the parent process
 
 **Advanced configuration**
 
-* **Show Target Process** -  `${parentProcessInstanceId}`to copy the data on the parent of this subprocess&#x20;
+* **Show Target Process** - `${parentProcessInstanceId}`to copy the data on the parent of this subprocess;
 
-![](../img/append_params_example.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/append_params_example.png)

@@ -9,11 +9,11 @@ Let's go through all the options for configuring start and end nodes for a proce
 
 The start node represents the beginning of a process and it is mandatory to add one when creating a process.
 
-![Start node](./img/start_node.png#center)
+![Start node](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/start_node.png#center)
 
 A process can have one or more start nodes. If you defined multiple start nodes, each should have a start condition value configured. When starting a new process instance the desired start condition should be used.
 
-![](./img/start_node_example.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/start_node_example.png)
 
 ### Configuring a start node
 
@@ -25,7 +25,7 @@ Node configuration is done by accessing the **Node Config** tab. You have the fo
 #### General Config
 
 * **Node name** - the name of the node
-* **Can go back** -  switching this option to true will allow users to return to this step after completing it
+* **Can go back** - switching this option to true will allow users to return to this step after completing it
 
 :::info
 When encountering a step with `canGoBack` switched to false, all steps found behind it will become unavailable.
@@ -38,7 +38,7 @@ When encountering a step with `canGoBack` switched to false, all steps found beh
 
 The start condition should be set as a string value. This string value will need to be set on the payload for the start process request on the `startCondition` key.
 
-![](./img/start_node_condition.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/start_node_condition.png)
 
 To test the start condition, we can send a start request via REST:
 
@@ -77,7 +77,7 @@ A response with the error code `bad request` and title `Start node for process d
 
 ## End node
 
-![End Event](./img/end-event.png#center)
+![End Event](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/end-event.png#center)
 
 An end node is used to mark where the process finishes. When the process reaches this node, the process is considered completed and its status will be set to `Finished`.
 
@@ -85,4 +85,4 @@ An end node is used to mark where the process finishes. When the process reaches
 
 Multiple end nodes can be used to show different end states. The configuration is similar to the start node.
 
-![End node](./img/end_node.png)
+![End node](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/end_node.png)

@@ -16,6 +16,6 @@ Now that we've covered the [**main components**](../../terms/microservices) and 
 
 [Adding more flow branches](adding-more-flow-branches)
 
-[Create a user interface](creating-a-user-interface)
+[Creating a user interface](creating-a-user-interface)
 
 After following all the above steps you should be able to replicate an end-to-end process flow and know how FLOWX Designer works. :pencil2:

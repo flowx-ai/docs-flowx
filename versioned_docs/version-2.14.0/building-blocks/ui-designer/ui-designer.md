@@ -18,7 +18,7 @@ To access the UI Designer, follow the next steps:
 3. Click the **Edit** **process** button.
 4. Select a **node** and then from the **Process Designer** navigation menu click the **brush** icon to open the **UI Designer**.
 
-![](./img/access_ui_designer.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/access_ui_designer.gif)
 
 :::caution
 The UI designer is available for [User task](../node/user-task-node/user-task-node.md) nodes and [Milestone](../node/milestone-node.md) nodes (nodes that require human interaction).
@@ -32,7 +32,7 @@ After adding a specific component to the node, the right-side menu will display 
 Depending on the component type different properties are available for configuration.
 :::
 
-![](./img/use_ui_designer.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/use_ui_designer.gif)
 
 For example, for a [card](./ui-component-types/root-components/card.md) element (as in the example above), the following properties can be configured:
 
@@ -45,7 +45,7 @@ For example, for a [card](./ui-component-types/root-components/card.md) element 
 
 <div className= "image-scaled">
 
-![](./img/ui_designer_settings.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/ui_designer_settings.png)
 
 </div>
 
@@ -64,7 +64,7 @@ For example, for a [card](./ui-component-types/root-components/card.md) element 
 
 <div className= "image-scaled">
 
-![](./img/ui_designer_styling.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/ui_designer_styling.gif)
 
 </div>
 
@@ -72,7 +72,7 @@ For example, for a [card](./ui-component-types/root-components/card.md) element 
 
 This panel is used for displaying component hierarchy. Clicking on a specific component in the component tree will highlight the selection in the editor.
 
-![](./img/ui_designer_tree.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/ui_designer_tree.gif)
 
 For more information about Component types, check the next section:
 

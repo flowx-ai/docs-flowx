@@ -8,7 +8,7 @@ A generated [button](./ui-component-types/buttons.md) or [custom component](./ui
 
 UI actions create a link between an [**action**](../actions.md) and a [**button**](./ui-component-types/buttons.md) component or a [**custom component**](./ui-component-types/root-components/custom.md). This informs the button to execute the given action when pressed. Other options are available for configuration when setting an action to a button and are detailed below:
 
-![](./img/ui_actions.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/ui_actions.gif)
 
 There are two main types of UI Actions:
 
@@ -16,7 +16,7 @@ There are two main types of UI Actions:
 
 This is a UI Action that describes how a Button (generated or custom) should interact with a process Manual action.
 
-First of all, we need to configure the (manual) Action that will be referred from the UI Action. For this Action the important elements that we need to configure from a User task point of view are:
+First, we need to configure the (manual) Action that will be referred from the UI Action. For this Action the important elements that we need to configure from a User task point of view are:
 
 The first thing before configuring the UI action is to create the [Action](../actions.md) from the Actions tab in Process Designer. For more information on how to add an action to a node check the following section:
 
@@ -25,16 +25,16 @@ The first thing before configuring the UI action is to create the [Action](../ac
 
 1. The action **type** should be **manual**
 2. **Keys** - it has two important implications
-   * Firstly, this is a prefix of the keys that will send back by the UI Action link to this action. For example, if we have a big form with a lot of elements but we need an action that just sends the email back (maybe creating email validation functionality) we will add just the key of that field: `application.client.email`; if we need a button that will send back all the form elements that have keys that start with application.client we can add just this part
+   * Firstly, this is a prefix of the keys that will send back by the UI Action link to this action. For example, if we have a big form with a lot of elements but we need an action that just sends the email back (maybe creating email validation functionality) we will add just the key of that field: `application.client.email`; if we need a button that will send back all the form elements that have keys that start with `application.client` we can add just this part
    * Second, a backend validation will be run to accept and persist just the data that start with this prefix. If we have three explicit keys, `application.client.email`, `application.client.phone`, `application.client.address` and we send `application.client.age`this key will not be persisted
 
-![](./img/ui_action_key.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/ui_action_key.png)
 
 When this prerequisite is ready we can define the UI Action (:exclamation:**Important: UI Actions and Actions should be configured on the same node**).
 
 Multiple configurations are available:
 
-![](./img/ui_actions_multiple_configs.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/ui_actions_multiple_configs.png)
 
 1. **Events** - you can add an event depending on the element that you select (CLICK, CHANGE, SCROLL) :exclamation:not available for _UI Actions_ on [Custom Components](./ui-component-types/root-components/custom.md)
 2. **Action Type** - this dropdown will be pre-filled for Process UI Actions: DISMISS, ACTION, START\_PROCESS\_INHERIT, UPLOAD, [EXTERNAL](ui-actions.md#external-ui-actions)
@@ -49,12 +49,12 @@ Multiple configurations are available:
 
 Used to create an action that will open a link in a new tab
 
-If we toggle the EXTERNAL type  a few new options are available:
+If we toggle the EXTERNAL type a few new options are available:
 
 1. **URL** - web URL that will be used for the external action
 2. **Open in new tab** - this option will be available to decide if we want to run the action in the current tab or open a new one
 
-![](./img/ui_action_external.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/ui_action_external.png)
 
 For more information on how to add actions and how to configure a UI, check the following section:
 

@@ -54,7 +54,7 @@ The following properties must be configured:
 **Data to send** option is configurable only when the action **trigger type** is **Manual**.
 :::
 
-![](../img/subprocess_action_data.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/subprocess_action_data.png)
 
 ### Example
 
@@ -68,6 +68,6 @@ To start a subprocess, we can, for example, create the following minimum configu
 
 * **Target process (parentProcessInstanceId)** - `${processInstanceId}` **** - current process ID
 
-![](../img/subprocess_action_example.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/subprocess_action_example.png)
 
 

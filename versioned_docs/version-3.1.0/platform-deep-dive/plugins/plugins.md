@@ -4,7 +4,7 @@
 
 **Adding new capabilities to the core platform** can be easily done by using plugins. FLOWX.AI Plugins represent **already-built functionality** that can be added to a FLOWX.AI platform deployment.
 
-![](../img/plugins.diagram.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/plugins.diagram.png)
 
 These could be either one of the provided custom plugins that we've already built or building your desired plugin.
 
@@ -12,7 +12,7 @@ On our roadmap, we’re also looking to enhance the **plugins library** with 3rd
 
 ## High-level architecture
 
-![](../img/plugins_diagram.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/plugins_diagram.png)
 
 The plugins are microservice apps that can be developed using any tech stack. The only requirement is that they need to be able to connect to the core platform using Kafka events.
 

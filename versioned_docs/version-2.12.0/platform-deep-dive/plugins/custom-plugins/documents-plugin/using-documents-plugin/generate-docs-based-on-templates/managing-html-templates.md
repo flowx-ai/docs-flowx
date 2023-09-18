@@ -9,7 +9,7 @@ The template can support the following types of parameters:
 
 Use case: include the company name and registration number in an offer document
 
-![](../../../../../img/docplugin_managing_html_template.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/docplugin_managing_html_template.png)
 
 HTML template specifications:
 
@@ -32,11 +32,11 @@ Data specifications:
 
 Use case: display in a table as many rows as the elements of a generated list of objects; in the example below we are listing the name and value of all the benefits included in a commercial offer
 
-![](../../../../../img/dynamic_tables_plugin_doc.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/dynamic_tables_plugin_doc.png)
 
 Html template specifications:
 
-```
+```html
 <table>
     <thead>
         <tr class="headings">
@@ -54,7 +54,7 @@ Html template specifications:
 
 Data specifications:
 
-```
+```json
 "data": {
    "offerValuesHeader": [ 
      "Name", 
@@ -75,11 +75,11 @@ Data specifications:
 
 Use case: display a table as many times as the elements of a generated list of objects; in the example below we are listing the consumption points registered through the process
 
-![](../../../../../img/dynamic_table_reusable_table.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/dynamic_table_reusable_table.png)
 
 HTML template specifications:
 
-```
+```html
 <p>Offer:</p>
 <div th:each="type: ${consumptionPoints}">
 <table> 
@@ -114,7 +114,7 @@ HTML template specifications:
 
 Data specifications:
 
-```
+```json
   "data": {
     "consumptionPoints": [
       {
@@ -151,11 +151,11 @@ Data specifications:
 
 Use case: display a paragraph only when a certain condition is met; in the example below, we display a section only if the client type is PJ
 
-![](../../../../../img/docplugin_type_of_client.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/docplugin_type_of_client.png)
 
 HTML template specifications:
 
-```
+```html
 <span th:if="${pjCLient==true}">
     <p><b>PJ section, visible only if pjCLient = true</b></p>
     <p><span th:text="${termTechnicalServices}"></span></p>
@@ -169,7 +169,7 @@ HTML template specifications:
 
 Data specifications:
 
-```
+```json
  "data": {
     "pjCLient": true
   }
@@ -179,17 +179,17 @@ Data specifications:
 
 Use case: include in the final document images that are generated throughout the process; in the example below, we are attaching to the document the holograph signature of the client
 
-![](../../../../../img/docplugin_images.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/docplugin_images.png)
 
 Html template specifications:
 
-```
+```html
 <td class='align'><img th:src="*{'data:image/png;base64,'+signature}" alt=\"\" height='100px'/></td>
 ```
 
 Data specifications:
 
-```
+```json
 "data": {
     "signature": "INSERT_BASE64_IMAGE"
   }
@@ -203,11 +203,11 @@ Data specifications:
 
 Use case: display a bulleted list with values from selected items in a checkbox; in the example below we are listing the source of income:
 
-![](../../../../../img/docplugin_income_source.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/docplugin_income_source.png)
 
 HTML template specifications:
 
-```
+```html
   <div th:if="${incomeSource != null}">
     <h3>Income source:</h3>
     <ul>
@@ -218,7 +218,7 @@ HTML template specifications:
 
 Data specifications:
 
-```
+```json
 {
     "data": {
         "incomeSource": [

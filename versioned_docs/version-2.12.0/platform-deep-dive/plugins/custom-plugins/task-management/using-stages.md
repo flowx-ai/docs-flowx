@@ -11,7 +11,7 @@ To create a new stage, follow the next steps:
 3. Click **New Stage.**
 4. Fill in the required details.
 
-![Create new stage](../../../img/stages_add_new.png)
+![Create new stage](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/stages_add_new.png)
 
 ### Assigning a node to a stage
 
@@ -22,5 +22,5 @@ To assign a node to a stage, follow the next steps:
 3. Scroll down until you find the **Stage** field and click the dropdown button.
 4. Choose the stage you want to assign.
 
-![Node Assigning](../../../img/stages_node_assigning.png)
+![Node Assigning](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/stages_node_assigning.png)
 

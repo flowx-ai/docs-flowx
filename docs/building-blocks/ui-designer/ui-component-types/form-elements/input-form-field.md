@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Input
 
-![Input](../../img/input_form_field.png)
+![Input](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/input_form_field.png)
 
 An input field is a form element that enables users to input data with validations and can be hidden or disabled.
 
@@ -33,23 +33,32 @@ The Input Field offers the following configuration options:
 * **Type** - the type of data that the input field can accept, such as text, number, email, or password
 * **Prefix** - a label that appears as a prefix to the input field
 * **Suffix** - a label that appears as a suffix to the input field
+* **Has clear** - 
 * **Helpertext** - additional information about the input field (can be hidden inside an infopoint)
 
-![](../../img/input_props.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/input_props.png)
 
 #### Datasource
 
 The default value for the element can be configured here, this will autofill the input field when you will run the process.
 
-![](../../img/input_datasource1.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/input_datasource1.png)
 
-![](../../img/input_datasource.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/input_datasource.png)
+
+##### Computed datasource value
+
+To add a computed value, you have to explicitly check “Computed value” option (represented by the `f(x)` icon), which will transform the desired field into a JavaScript editor.
+
+Check the following example:
+
+[Computed values](../../dynamic-and-computed-values.md#computed-values)
 
 #### Validators
 
 There are multiple validators can be added to an input (more details [here](../../validators.md)).
 
-![](../../img/input_validators.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/input_validators.png)
 
 #### Expressions  
 
@@ -62,7 +71,7 @@ The input field's behavior can be defined using JavaScript expressions for hidin
 It's important to make sure that disabled fields have the same expression configured under the path expressions → hide.
 :::
 
-![](../../img/input_expressions.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/input_expressions.png)
 
 #### UI actions
 
@@ -71,7 +80,7 @@ UI actions can be added to the Input Field to define its behavior and interactio
 * **Event** - possible value: `CHANGE`
 * **Action Type** - select the action type
 
-![](../../img/input_ui_actions.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/input_ui_actions.gif)
 
 :::info
 For more details on how to configure a UI action, click [**here**](../../ui-actions).
@@ -85,7 +94,7 @@ For more details on how to configure a UI action, click [**here**](../../ui-acti
 * **Icon Color** - select the color of the icon using the color picker 
 
 :::info
-When setting the color, the entire icon is filled with that color, the SVG's fill.
+When setting the color, the entire icon is filled with that color, the SVG's fill. Avoid changing colors for multicolor icons.
 :::
 
 You have the option to enhance the Input element by incorporating two types of icons:
@@ -95,8 +104,22 @@ You have the option to enhance the Input element by incorporating two types of i
 
 By utilizing these two types of icons, you can provide users with a more intuitive and visually appealing experience when interacting with the Input element.
 
-![](../../../../platform-deep-dive/img/input_icons.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/input_icons.png)
 
-* The Input Field can be styled using valid CSS properties (more details [here](../../#styling))
+#### Typography
 
-![](../../img/input_form_field_styling.gif)
+You can customize the typography for the following properties:
+
+* Label
+* Text
+* Helper & errors
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/input_typography.png)
+
+For more details on how to upload and manage fonts, check the following section:
+
+[Font management](../../../../platform-deep-dive/core-components/core-extensions/content-management/font-files.md)
+
+The Input Field can be styled using valid CSS properties (more details [here](../../#styling))
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/input_form_field_styling.gif)

@@ -2,7 +2,7 @@
 
 As we've seen in the previous chapter, Business Process Model and Notation ([**BPMN**](intro-to-bpmn/)) is used to define business processes as a sequence of activities. If we need to branch off different process paths, we use gateways. These have rules attached to them in order to decide on which outgoing path should the process continue on.
 
-![Process with gateways](./img/process_with_gateways.png)
+![Process with gateways](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/process_with_gateways.png)
 
 :::info
 For more information on how to define DMN gateway decisions, check the [**Exclusive gateway node**](../../../building-blocks/node/exclusive-gateway-node.md) section.
@@ -39,7 +39,7 @@ There are 4 basic elements of the **Decision Model** **and Notation**:
 
 
 
-![Basic DMN Diagram](./img/dmn_diagram.png)
+![Basic DMN Diagram](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/dmn_diagram.png)
 
 #### Decision
 
@@ -51,7 +51,7 @@ A decision service is a high-level decision with well-defined inputs that is mad
 
 #### Business Knowledge Model
 
-It portrays a specific knowledge within the business. It stores the origin of the information. Decisions that have the same logic but depend on different sub-input data or sub-decisions use business knowledge models to determine which procedure to follow.
+It portrays specific knowledge within the business. It stores the origin of the information. Decisions that have the same logic but depend on different sub-input data or sub-decisions use business knowledge models to determine which procedure to follow.
 
 **Example:** a decision, rule, or standard table.
 

@@ -6,7 +6,7 @@ sidebar_position: 4
 
 To add business decisions in the flow and use them to pick between a flow branch or another, we can use [exclusive gateways](../../building-blocks/node/exclusive-gateway-node.md).
 
-![Exclusive Gateway](../../building-blocks/node/img/gateway_exclusive.png#center)
+![Exclusive Gateway](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/gateway_exclusive.png#center)
 
 ### Steps for creating a flow with exclusive branches
 
@@ -28,7 +28,7 @@ To create flow with exclusive branches:
 
 For [business rules](../../building-blocks/node/task-node/business-rule-action/business-rule-action.md), you need to check certain values from the process and pick an outgoing node in case the condition is met. The gateway node must be connected to the next nodes before configuring the rule.
 
-![Visual Guide Exclusive Gateway](../img/visual_guide_exclusive_gateway.gif)
+![Visual Guide Exclusive Gateway](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/visual_guide_exclusive_gateway.gif)
 
 [Exclusive Gateway Node](../../building-blocks/node/exclusive-gateway-node.md)
 

@@ -2,7 +2,7 @@
 
 A card is a simple element that allows component grouping and alignment. It has the option to enable/disable an accordion element.
 
-![](../../../../../../release-notes/img/card_element1.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release-notes/card_element1.gif)
 
 Properties that can be configured:
 
@@ -19,7 +19,7 @@ Accordion element is not available for mobile.
 
 <div className= "image-scaled">
 
-![](../../img/card_component_settings.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/card_component_settings.png)
 
 </div>
 

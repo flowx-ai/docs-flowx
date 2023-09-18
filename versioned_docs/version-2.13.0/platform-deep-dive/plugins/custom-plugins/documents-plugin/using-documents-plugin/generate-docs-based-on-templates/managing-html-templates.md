@@ -9,7 +9,7 @@ The template can support the following types of parameters:
 
 Use case: include the company name and registration number in an offer document
 
-![](../../../../../img/docplugin_managing_html_template.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/docplugin_managing_html_template.png)
 
 HTML template specifications:
 
@@ -32,7 +32,7 @@ Data specifications:
 
 Use case: display in a table as many rows as the elements of a generated list of objects; in the example below we are listing the name and value of all the benefits included in a commercial offer
 
-![](../../../../../img/dynamic_tables_plugin_doc.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/dynamic_tables_plugin_doc.png)
 
 HTML template specifications:
 
@@ -75,7 +75,7 @@ Data specifications:
 
 Use case: display a table as many times as the elements of a generated list of objects; in the example below we are listing the consumption points registered through the process
 
-![](../../../../../img/dynamic_table_reusable_table.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/dynamic_table_reusable_table.png)
 
 HTML template specifications:
 
@@ -151,7 +151,7 @@ Data specifications:
 
 Use case: display a paragraph only when a certain condition is met; in the example below, we display a section only if the client type is PJ
 
-![](../../../../../img/docplugin_type_of_client.png)
+![](.https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/docplugin_type_of_client.png)
 
 HTML template specifications:
 
@@ -179,7 +179,7 @@ Data specifications:
 
 Use case: include in the final document images that are generated throughout the process; in the example below, we are attaching to the document the holograph signature of the client
 
-![](../../../../../img/docplugin_images.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/docplugin_images.png)
 
 HTML template specifications:
 
@@ -203,7 +203,7 @@ Data specifications:
 
 Use case: display a bulleted list with values from selected items in a checkbox; in the example below we are listing the source of income:
 
-![](../../../../../img/docplugin_income_source.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/docplugin_income_source.png)
 
 HTML template specifications:
 

@@ -10,7 +10,7 @@ There might be cases when extra functionality is needed on certain nodes.
 
 A node that provides advanced options for starting subprocesses.
 
-![](./img/subprocess_run_node.png#center)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/subprocess_run_node.png#center)
 
 [Subprocess](../process/subprocess.md)
 
@@ -30,11 +30,11 @@ The start mode can be chosen when configuring the subprocess run node.
 
 In case the parent process needs to wait for the subprocess to finish and retrieve some results from it, the parent process key that will hold the results must be defined using the _output key_ node config value_._
 
-![](./img/subprocess_run_config.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/subprocess_run_config.png)
 
 This node type can also be used for starting a set of subprocesses that will be started and run at the same time. This will prove useful in case we have an array of values in the parent process parameters and we want to start a sub-process for each of the elements in that array.
 
-![](./img/subprocess_run_config1.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/subprocess_run_config1.png)
 
 In order to do this, we need to select the parallel multi instance option. The _collection key_ name from the parent process also needs to be specified.
 

@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Input field
 
-![Input](../../img/input_form_field.png)
+![Input](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/input_form_field.png)
 
 ## What is Input field?
 
@@ -38,21 +38,21 @@ The available configuration options for this form element are the following:
 * **Suffix** - a label that will be added as a suffix
 * **Prefix** - a label that will be added like a prefix
 
-![](../../img/input_props.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/input_props.png)
 
 #### **Validators** 
 
 There are multiple validators can be added to an input (more details [here](../../validators.md)).
 
-![](../../img/input_validators.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/input_validators.png)
 
 #### **Datasource** 
 
 The default value for the element can be configured here, this will autofill the input field when you will run the process.
 
-![](../../img/input_datasource1.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/input_datasource1.png)
 
-![](../../img/input_datasource.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/input_datasource.png)
 
 #### **Expressions**  
 
@@ -61,13 +61,13 @@ The following properties can be configured for expressions:
 * **Hide** - JavaScript expressions used to hide components when they're truthy
 * **Disabled** - JavaScript expressions that should be evaluated as true or false. It's important to make sure that disabled fields have the same expression configured under the path expressions → hide
 
-![](../../img/input_expressions.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/input_expressions.png)
 
 #### UI Actions
 
 You can add UI actions to the input element.
 
-![](../../img/input_ui_actions.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/input_ui_actions.png)
 
 You can find more information on how to configure a UI Action by checking the following section:
 
@@ -77,4 +77,4 @@ You can find more information on how to configure a UI Action by checking the fo
 
 * valid CSS properties (more details [here](../../#styling))
 
-![](../../img/input_form_field_styling.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/input_form_field_styling.png)

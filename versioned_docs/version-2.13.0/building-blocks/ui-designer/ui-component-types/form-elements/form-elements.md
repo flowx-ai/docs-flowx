@@ -2,7 +2,7 @@
 
 Form elements are used to capture user input. There are many types of form elements such as simple form, input, textarea, select, checkbox, radio, switch, and datepicker.
 
-![Form elements](../../img/form_elements.png#center)
+![Form elements](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/form_elements.png#center)
 
 
 [Input form field](input-form-field.md)

@@ -4,51 +4,123 @@ sidebar_position: 5
 
 # Exclusive gateway
 
-[**Flow**](../../terms/flowx-process) decisions can be configured using an Exclusive Gateway. Using this [**node**](../../terms/flowx-node) will make `if condition then go to this node` constructions are available.
+In the world of process [flows](../../terms/flowx-process), decisions play a crucial role, and that's where the Exclusive Gateway comes into play. This powerful tool enables you to create conditional pathways with ease.
 
 ## Configuring an Exclusive gateway node
 
-![Exclusive gateway](./img/gateway_exclusive.png#center)
+![Exclusive gateway](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/gateway_exclusive.png#center)
 
-To configure this kind of node, it is useful to previously configure the **in** and **out** sequence from the gateway process.
+To configure this node effectively, it's essential to set up both the **input** and **output** sequences within the gateway process.
 
-![](./img/gateway_exclusive_diagram.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/gateway_exclusive_diagram.png)
 
-#### General Config
+### General Configuration
 
-* **Node name** - the name of the node
-* **Can go back** - setting this to true will allow users to return to this step after completing it
+* **Node name**: Give your node a meaningful name.
+* **Can go back**: Enabling this option allows users to revisit this step after completing it.
 
 :::info
-When encountering a step with `canGoBack` switched to false, all steps found behind it will become unavailable.
+When a step has "Can Go Back" set to false, all preceding steps become inaccessible.
 :::
 
-* [**Swimlane**](../../platform-deep-dive/user-roles-management/swimlanes.md) - choose a swimlane (if there are multiple swimlanes on the process) to make sure only certain user roles have access only for certain process nodes- if there are no multiple swimlanes, the value is **Default**
-* [**Stage** ](../../platform-deep-dive/plugins/custom-plugins/task-management/using-stages.md)- assign a stage to the node
+* [**Swimlane**](../../platform-deep-dive/user-roles-management/swimlanes.md): Choose a swimlane, ensuring that specific user roles have access only to certain process nodes. If there are no multiple swimlanes, the value is **Default**.
 
-![](./img/gateway_exclusive_stages.png)
+* [**Stage** ](../../platform-deep-dive/plugins/custom-plugins/task-management/using-stages.md): Assign a stage to the node.
 
-#### Gateway Decisions
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/gateway_exclusive_stages.png)
 
-* **Language** - when configuring the condition, [MVEL](/docs/platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md) (or [DMN](#configuring-a-dmn-exclusive-gateway-node)) will be used and you should enter an expression that will be evaluated as **true** or **false**
-* **Conditions** - selecting the **Gateway Decisions** tab of the gateway we can see that we can configure a list of conditions (**if, else if, else**) and **select** from a dropdown where we should go if the condition is **true**
+### Gateway Decisions
+
+* **Language**: When configuring conditions, you can use [MVEL](/docs/platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md) (or [DMN](#configuring-a-dmn-exclusive-gateway-node)) expressions that evaluate to either **true** or **false**.
+* **Conditions**: In the **Gateway Decisions** tab, you can see that the conditions (**if, else if, else**) are already built-in and you can **select** the destination node when the condition is **true**.
 
 :::warning
-Expression order is important because the first **true** evaluation will stop the execution and the token will move to the selected node.
+The order of expressions matters; the first **true** evaluation stops execution, and the token moves to the selected node.
 :::
 
-![](./img/gateway_exclusive_conditions.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/gateway_rule.png)
 
-After the exclusive part of the process (where a path or another will be used), you need to end each path or join back to a single process using a new exclusive gateway without any configuration on it.
+After the exclusive portion of the process, where one path is chosen over another, you'll need to either end each path (as in the example below) or reunite them into a single process (as in the example above) using a new exclusive gateway without any specific configuration.
 
-![](./img/exclusive_gateway_configuration.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/end_other_FLOW.png)
 
-#### Configuring a DMN Exclusive Gateway node
+## MVEL Example
 
-You can use [DMN](/docs/platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-dmn.md) to define gateway decisions, using exclusive gateways.
+### Getting input from a Switch UI element
 
-![Gateway Decisions](./img/exclusive_gateway_DMN.gif)
+Let's consider the following example: we want to create a process that displays 2 screens and one modal. The gateway will direct the token down a path based on whether a switch element (in our case, VAT) is toggled to true or false.
 
-**Gateway Decision - DMN example** [(applicable only for exclusive gateway - XOR)](exclusive-gateway-node.md)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/vat_example.png)
 
-![Gateway Decision](./img/exclusive_gateway_decision.png)
+If, during the second screen, the VAT switch is toggled on, the token will follow the second path, displaying a modal.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/vat_on.gif) 
+
+After interacting with the modal, the token will return to the main path, and the process will continue its primary flow.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/process_run_xor.png)
+
+#### Example configuration
+
+* **Language**: MVEL 
+* **Expression**: 
+
+```java
+input.application.company.vat == true // you can use the same method to access a value for other supported scripts in our platform: JavaScript, Python and Groovy
+```
+
+:::info
+Essentially, you are accessing a specific value or property within a structured data object. The format is usually `input.{{key from where you want to access a value}}`. In simpler terms, it's a way to verify if a particular property within your input data structure (input.application.company.vat key attached to Switch UI element) is set to the value true. If it is, the condition is met and returns true; otherwise, it returns false.
+:::
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/config_example_xor.png)
+
+:::info
+The `application.company.vat` key corresponds to the switch UI element.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/VAT_key.png)
+:::
+
+## DMN Example
+
+
+If you prefer to use [DMN](/docs/platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-dmn.md) to define your gateway decisions, you can do so using exclusive gateways.
+
+![Gateway Decisions](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/dmn_gif.gif)
+
+### Getting input from a Switch UI element 
+
+**Gateway Decision - DMN example** [(Applicable only for Exclusive Gateway - XOR)](exclusive-gateway-node.md)
+
+![Gateway Decision](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/xor_dmn_decision.png)
+
+#### Configuration example
+
+* **Language**: DMN
+* **Expression**: `application.company.vat`
+
+:::info
+In our case, the expression field will be filled in with `application.company.vat` key, which corresponds to the switch UI element.
+:::
+
+* **Hit Policy**: Unique
+* **Type**: Boolean
+* **Next Node name**: Enter the name of the nodes to which you prefer the token to be directed.
+
+### Getting input from multiple UI elements 
+
+Consider another scenario in which the process relies on user-provided information, such as age and membership status, to determine eligibility for a discount. This decision-making process utilizes a DMN (Decision Model and Notation) decision table, and depending on the input, it may either conclude or continue with other flows.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/dmn_input.gif)
+
+#### Configuration example
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/dmn_multiple_UI_elements.png)
+
+:::info
+In our case, the expressions fields will be populated with the `application.company.vat` and `application.client.membership` keys, which correspond to the user input collected on the initial screen.
+:::
+
+The process is visualized as follows:
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/dmn_example.gif)

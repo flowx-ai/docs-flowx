@@ -22,7 +22,7 @@ Set the dependency rule to `Up To Next Major` and add package.
 
 If you are developing a framework and use FlowX as a dependency, add to your `Package.swift` file:
 
-```
+```yaml
 dependencies: [
     .package(url: "https://github.com/flowx-ai/flowx-ios-sdk", .upToNextMajor(from: "0.96.0"))
 ]

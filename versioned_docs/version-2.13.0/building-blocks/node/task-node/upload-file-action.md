@@ -30,7 +30,7 @@ Multiple options are available for this type of action and can be configured via
 * **Repeatable** - should be checked if the action can be triggered multiple times
 * **Autorun Children** - when this is switched on, the child actions (the ones defined as mandatory and automatic) will run immediately after the execution of the parent action is finalized
 
-![](../img/upload_file_action_edit.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/upload_file_action_edit.png)
 
 #### **Back in steps**
 
@@ -65,4 +65,4 @@ An example of **Upload File Action** is to send a file to the [document plugin](
 
 * **Headers** - headers will send extra metadata to this topic -`{"processInstanceId": ${processInstanceId}, "destinationId": "curentNodeName"}`
 
-![](../img/upload_file_action_params.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/upload_file_action_params.png)

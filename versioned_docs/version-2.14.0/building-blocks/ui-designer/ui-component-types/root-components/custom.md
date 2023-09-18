@@ -8,7 +8,7 @@ Custom components are developed in the web application and referenced here by co
 
 To add a custom component in the template config tree, we need to know its unique identifier and the data it should receive from the process model.
 
-![](../../img/ui_designer_custom.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/ui_designer_custom.png)
 
 The properties that can be configured are as follows:
 
@@ -16,7 +16,7 @@ The properties that can be configured are as follows:
 2. **Input keys** - used to define the process model paths from which the components will receive their data
 3. [**UI Actions**](../../ui-actions.md) - actions defined here will be made available to the custom component
 
-![](../../img/ui_designer_custom_settings.png#center)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/ui_designer_custom_settings.png#center)
 
 #### When will a user task display a user interface element?
 

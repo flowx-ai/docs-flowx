@@ -12,7 +12,7 @@ sidebar_position: 3
 **Why is it useful?** The Task Management plugin has the scope to show a process that you defined using FLOWX.AI Designer, using a more business-oriented view. It also offers interactions at the assignment level.
 :::
 
-![Task Manager](../../../img/task_management_overview.gif)
+![Task Manager](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/task_management_overview.gif)
 
 Inside the **Task details** tab you can find the following information about a process:
 
@@ -22,7 +22,7 @@ Inside the **Task details** tab you can find the following information about a p
 * **Comments** - comments left by the users
 * **History** - information like who created a task, when a task was created or when the status changed
 
-![Task details](../../../img/task_mngmnt_task_details.png)
+![Task details](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/task_mngmnt_task_details.png)
 
 :::caution
 Specific roles need to be defined in a process to use all the task management features. For more details, check the [Configuring access roles for processes](../../../../platform-setup-guides/flowx-engine-setup-guide/configuring-access-roles-for-processes.md) section.
@@ -63,7 +63,7 @@ You can also set Task Manager to send more information about your process by swi
 3. Select a **node** (after reaching this particular node task manager will trigger the updates).
 4. Switch on the **Update task management?** button.
 
-![Update task management](../../../img/task_mngmnt_response.png)
+![Update task management](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/task_mngmnt_response.png)
 
 :::info
 Some actions might not be available as they can be performed based on user roles/access rights.

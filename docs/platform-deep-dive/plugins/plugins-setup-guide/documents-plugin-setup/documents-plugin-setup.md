@@ -1,6 +1,6 @@
 # Documents plugin setup
 
-The Documents plugin provides functionality for generating, persisting, combining, and manipulating documents within the FLOWX.AI system.
+The Documents plugin provides functionality for generating, persisting, combining, and manipulating documents within the [**FLOWX.AI**](../../../../terms/flowx) system.
 
 The plugin is available as a docker image.
 
@@ -172,7 +172,22 @@ Depending on your use case, you can choose either a file system or an S3-compati
 Make sure to follow the recommended [bucket naming rules](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html) when choosing the bucket prefix name.
 :::
 
-You can set the maximum file size allowed for uploads using the `SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE` and `SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE` variables.
+### Setting maximum file size
+
+To control the maximum file size permitted for uploads, configure the `SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE` and `SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE` variables.
+
+:::info
+The limit is set by default to 50MB:
+
+```yml
+spring:
+  servlet:
+    contextPath: /
+    multipart:
+      max-file-size: ${MULTIPART_MAX_FILE_SIZE:50MB}    #increase the multipart file size on the request
+      max-request-size: ${MULTIPART_MAX_FILE_SIZE:50MB} #increase the request size
+```
+:::
 
 ### Custom font path for PDF templates
 

@@ -144,7 +144,7 @@ The configuration related to consumers (group ids and thread numbers) can be con
 
 It is important to know that all the events that start with a configured pattern will be consumed by the engine. This makes it possible to create a new integration and connect it to the engine without changing the configuration of the engine.
 
-![](../../img/engine_kafka_pattern.svg) 
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/engine_kafka_pattern.svg) 
 
 `KAFKA_TOPIC_PROCESS_NOTIFY_ADVANCE` - Kafka topic used internally by the engine
 

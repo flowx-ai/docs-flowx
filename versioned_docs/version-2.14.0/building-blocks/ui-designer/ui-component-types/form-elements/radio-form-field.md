@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Radio Form field
 
-![](../../img/radio_form_field.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/radio_form_field.png)
 
 Radio buttons are normally presented in radio groups (a collection of radio buttons describing a set of related options). Only one radio button in a group can be selected at the same time.
 
@@ -29,7 +29,7 @@ The available configuration options for this form element are:
 
 A Radio with two options and a no layout will look like this (default the layout will be row).
 
-![Radio Form element example](../../img/radio_form_styling.png)
+![Radio Form element example](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/radio_form_styling.png)
 
 
 

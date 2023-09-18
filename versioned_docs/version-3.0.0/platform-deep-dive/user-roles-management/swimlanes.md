@@ -12,7 +12,7 @@ sidebar_position: 1
 
 In some cases it might be necessary to restrict access to process nodes based on user roles. This can be done by adding the nodes on different swimlanes. The swimlanes will be configured to only allow access for certain user roles defined in the chosen identity provider platform.
 
-![](../img/swimlanes.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/swimlanes.png)
 
 Depending on the type of node added in a swimlane, only the users that have the necessary swimlane roles will be able to start process instances, view process instances and execute actions on process instances.
 

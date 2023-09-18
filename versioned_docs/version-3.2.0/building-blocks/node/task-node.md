@@ -14,7 +14,7 @@ This type of node will be used in several cases:
 
 ## Configuring task nodes
 
-![Task node](./img/service_task.png#center)
+![Task node](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/service_task.png#center)
 
 One or more actions can be configured on a task node. The actions are executed in the configured order.
 
@@ -25,7 +25,7 @@ Node configuration is done by accessing the **Node Config** tab. You have the fo
 * **Node name** - the name of the node
 * **Can go back** - switching this option to true will allow users to return to this step after completing it
 
-![](./img/task_node_general_config.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/task_node_general_config.png)
 
 :::info
 When encountering a step with `canGoBack` switched to false, all steps found behind it will become unavailable.
@@ -38,7 +38,7 @@ When encountering a step with `canGoBack` switched to false, all steps found beh
 
 * **Response timeout** - can be triggered if, for example, a topic that you define and add in the [Data stream topics](./#data-stream-topics) tab does not respect the pattern, the format used for this is [ISO 8601 duration format](https://www.w3.org/TR/NOTE-datetime)(for example, a delay of 30s will be set up like `PT30S`)
 
-![](./img/task_node_response_timeout.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/task_node_response_timeout.png)
 
 #### Data stream topics
 
@@ -54,7 +54,7 @@ A naming pattern must be defined on the [process engine configuration](../../pla
 
 * **Update task management** - force [Task Manager Plugin](../../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md) to update information about this process after this node
 
-![](./img/task_node_task_management.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/task_node_task_management.png)
 
 ## Configuring task nodes actions
 
@@ -77,7 +77,7 @@ Depending on the type of the [**action**](../actions/actions.md), different prop
 6. **Required type** - (options are Mandatory/Optional) - automatic actions can only be defined as mandatory. Manual actions can be defined as mandatory or optional.
 7. **Repeatable** - should be checked if the action can be triggered multiple times
 
-![](./img/task_node_action_edit.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/task_node_action_edit.png)
 
 #### Parameters
 
@@ -85,7 +85,7 @@ Depending on the type of the [**action**](../actions/actions.md), different prop
 Depending on the type of the [**action**](../actions/actions.md), different properties are available. We refer to a **Business rule** as an example
 :::
 
-1. **Business Rules** - business rules can be attached to a node by using actions with action rules on them, these can be specified using [DMN rules](../actions/business-rule-action/dmn-business-rule-action.md), [MVEL](../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md) expressions, or scripts written in Javascript, Python, or Groovy.
+1. **Business Rules** - business rules can be attached to a node by using actions with action rules on them, these can be specified using [DMN rules](../actions/business-rule-action/dmn-business-rule-action.md), [MVEL](../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md) expressions, or scripts written in JavaScript, Python, or Groovy.
 
 [Supported scripting languages](../../building-blocks/supported-scripts.md)
 

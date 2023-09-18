@@ -6,7 +6,7 @@ sidebar_position: 1
 
 The document plugin can be easily added to your custom FLOWX.AI deployment to **enhance the core platform capabilities with functionality specific to document handling**.
 
-![](../../../img/doc_plugin_general.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/doc_plugin_general.png)
 
 The plugin offers the possibility to:
 
@@ -14,11 +14,11 @@ The plugin offers the possibility to:
 * generate documents based on predefined templates and custom process related data
 * create various templates using the [WYSIWYG](../../wysiwyg.md) editor
 
-![](../../../img/doc_plugin_wysiwyg.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/doc_plugin_wysiwyg.png)
     
 * import already created templates from other environments
 
-![](../../../img/doc_plugin_create_import.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/doc_plugin_create_import.png)
 
 :::caution
 After exporting a document template, it is transformed into a json that can be imported later.

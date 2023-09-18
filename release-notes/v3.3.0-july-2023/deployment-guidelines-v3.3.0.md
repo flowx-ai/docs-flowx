@@ -8,7 +8,7 @@ Do not forget, when upgrading to a new platform version, always ensure that your
 After updating to **3.3.0** FLOWX.AI release, it is not possible to import old process definitions into the new platform release (available for exports from releases **<= 3.3.0**).
 :::
 
-![](../img/release_platform_version_check.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release-notes/release_platform_version_check.png)
 
 ## Component versions   
 
@@ -136,6 +136,15 @@ For more details please check the following section:
 
 [Process Instance Indexing through Kafka transport](../../docs/platform-setup-guides/flowx-engine-setup-guide/configuring-elasticsearch-indexing)
 
+
+
+#### New service account
+
+Added a new service account `flowx-process-engine-sa`. This service account is needed so the use of Start Catch Event node is possible.
+
+[Service accounts](../../docs/platform-setup-guides/access-management/configuring-an-iam-solution#process-engine-service-account)
+
+
 ### Events gateway
 
 Added a new **events-gateway** microservice, which requires the following configuration.
@@ -191,6 +200,7 @@ To replace the functionality provided by socket.io-client, you will need to use 
 npm install event-source-polyfill@1.0.31
 ```
 
+
 ### Message events
 
 #### Topics related to message events
@@ -217,12 +227,12 @@ New kafka topics that should be added in the process-engine configuration, relat
     "operations": [
     {
        "operationType": "TERMINATE",
-        "processInstanceUuid": "6ae8274a-2778-4ff9-8fcb-6c84a5eb2bc6"
+        "processInstanceUuid": "6ae8274a-2778-4ff9-8fcb-6c84a5eb2bc6",
         "taskId": "doesn't matter"
     },
     {
        "operationType": "HOLD",
-        "processInstanceUuid": "6ae8274a-2778-4ff9-8fcb-6c84a5eb2bc6"
+        "processInstanceUuid": "6ae8274a-2778-4ff9-8fcb-6c84a5eb2bc6",
         "taskId": "doesn't matter"
     }
     ]

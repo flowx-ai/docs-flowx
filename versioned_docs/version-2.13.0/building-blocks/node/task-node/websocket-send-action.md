@@ -34,7 +34,7 @@ Multiple options are available for this type of action and can be configured via
 
 * **Allow BACK on this action** - back in process is a functionality that allows you to go back in a business process and redo a series of previous actions in the process. For more details, check [Moving a token backwards in a process](../../../flowx-designer/managing-a-process-flow/moving-a-token-backwards-in-a-process.md) section.
 
-![](../img/websocket_action_edit.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/websocket_action_edit.png)
 
 #### Parameters
 
@@ -80,7 +80,7 @@ If you are defining this action on a [**subprocess**](../../process/subprocess),
 **Data to send** option is configurable only when the action **trigger type** is **Manual**.
 :::
 
-![](../img/websocket_data_to_send.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/websocket_data_to_send.gif)
 
 #### Send Update Data example
 
@@ -92,4 +92,4 @@ To send the latest value from the [process instance](../../process/active-proces
    * `{ "name": "${application.client.firstName}" }`
 4. Choose the **Target Process**.
 
-![](../img/websocket_send_update_data.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/websocket_send_update_data.gif)

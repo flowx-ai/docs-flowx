@@ -10,7 +10,7 @@ The document management plugin securely stores documents, facilitates document g
 
 It offers an easy-to-use interface for handling documents on event-based Kafka streams.
 
-![high level architecture](../../img/document_service_architecture.svg)
+![high level architecture](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/document_service_architecture.svg)
 
 [More about Documents plugin](../../plugins/custom-plugins/documents-plugin/documents-plugin.md)
 
@@ -26,7 +26,7 @@ The plugin handles various types of notifications:
 
 It can also be used to forward custom notifications to external outgoing services. It offers an intuitive interface for defining templates for each kind of notification and handles sending and auditing notifications easily.
 
-![high level architecture](../../img/custom_plugins_architecture.svg)
+![high level architecture](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/custom_plugins_architecture.svg)
 
 [More about Notifications plugin](../../../platform-deep-dive/plugins/custom-plugins/notifications-plugin/notifications-plugin.md)
 
@@ -42,7 +42,7 @@ The Task Management plugin has the scope to show a process that you defined usin
 
 Light CRM uses an elasticSearch engine to retrieve user details using partial matches on intricate databases.
 
-![](../../img/crm_plugin_archi.svg)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/crm_plugin_archi.svg)
 
 [More about Customer management plugin](./customer-management/customer-management.md)
 
@@ -53,7 +53,7 @@ Light CRM uses an elasticSearch engine to retrieve user details using partial ma
 
 Used to easily read barcodes or extract handwritten signatures from PDF documents.
 
-![](../../img/ocr_plugin_archi.svg)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/ocr_plugin_archi.svg)
 
 [More about OCR plugin](../custom-plugins/ocr-plugin.md)
 
@@ -63,7 +63,7 @@ Used to easily read barcodes or extract handwritten signatures from PDF document
 
 Use reporting plugin to build and bootstrap custom reports built on generic information about usage and processes.
 
-![](../../img/reporting_diag.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/reporting_diag.png)
 
 [More about Reporting plugin](../custom-plugins/reporting)
 

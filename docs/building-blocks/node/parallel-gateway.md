@@ -4,12 +4,29 @@ sidebar_position: 6
 
 # Parallel gateway
 
-If multiple operations can be done in parallel a Parallel Gateway can be used. This kind of node will open a parallel section of the [**process**](../../terms/flowx-process-definition), very useful for integrations that can be done in parallel, without waiting for each other. Each parallel section should be also closed by another parallel Gateway node.
+When you have multiple operations that can be executed concurrently, the Parallel Gateway becomes a valuable tool. This type of node creates a parallel section within the [**process**](../../terms/flowx-process-definition), particularly useful for tasks that can run independently without waiting for each other. It's essential to close each parallel section with another Parallel Gateway node.
 
-## Configuring a Parallel gateway node
+## Configuring parallel paths
 
-![](./img/gateway_parallel.png#center)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/gateway_parallel.png#center)
 
-This kind of [**node**](../../terms/node) has no special configuration and can start 2 or more parallel paths. It is important to keep in mind that the close Parallel node, required to close the parallel section will wait for all branches to finish before moving to next node.
+This node requires no special configuration and can initiate two or more parallel paths. It's important to note that the closing Parallel node, which is required to conclude the parallel section, will wait for all branches to complete before advancing to the next node.
 
-![](./img/gateway_parallel_config.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/parallel_gateways.png)
+
+### Configuration example
+
+Let's consider a scenario involving a Paid Time Off (PTO) request. We have two distinct flows: one for the HR department and another for the manager. Initially, two tokens are generated—one for each parallel path. A third token is created when both parallel paths converge at the closing parallel gateway.
+
+In the HR flow, in our example, the request is automatically approved.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/hr_flow.gif)
+
+Now, we await the second flow, which requires user input.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/manager_flow.gif)
+
+After the tokens from the parallel paths have completed their execution, a third token initiates from the closing parallel gateway.
+
+
+

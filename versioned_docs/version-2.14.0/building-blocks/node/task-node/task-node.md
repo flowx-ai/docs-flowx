@@ -14,7 +14,7 @@ This type of node will be used in several cases:
 
 ## Configuring task nodes
 
-![Task node](../img/service_task.png#center)
+![Task node](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/service_task.png#center)
 
 One or more actions can be configured on a task node. The actions are executed in the configured order.
 
@@ -25,7 +25,7 @@ Node configuration is done by accessing the **Node Config** tab. You have the fo
 * **Node name** - the name of the node
 * **Can go back** - switching this option to true will allow users to return to this step after completing it
 
-![](../img/task_node_general_config.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/task_node_general_config.png)
 
 :::info
 When encountering a step with `canGoBack` switched to false, all steps found behind it will become unavailable.
@@ -38,7 +38,7 @@ When encountering a step with `canGoBack` switched to false, all steps found beh
 
 * **Response timeout** - can be triggered if, for example, a topic that you define and add in the [Data stream topics](./#data-stream-topics) tab does not respect the pattern, the format used for this is [ISO 8601 duration format ](https://www.digi.com/resources/documentation/digidocs/90001437-13/reference/r\_iso\_8601\_duration\_format.htm)(for example, a delay of 30s will be set up like `PT30S`)
 
-![](../img/task_node_response_timeout.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/user_task_node_response_timeout.png)
 
 #### Data stream topics
 
@@ -52,9 +52,9 @@ A naming pattern must be defined on the [process engine configuration](../../../
 
 #### Task Management
 
-* **Update task management** - force [Task Manager Plugin](../../../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md)to update information about this process after this node
+* **Update task management** - force [Task Manager Plugin](../../../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md) to update information about this process after this node
 
-![](../img/task_node_task_management.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/user_task_node_response_timeout.png)
 
 ## Configuring task nodes actions
 
@@ -73,13 +73,13 @@ Multiple options are available when configuring an action on a task node. To con
 6. **Required type** - (options are Mandatory/Optional) - automatic actions can only be defined as mandatory. Manual actions can be defined as mandatory or optional.&#x20;
 7. **Repeatable** - should be checked if the action can be triggered multiple times
 
-![](../img/task_node_action_edit.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/task_node_action_edit.png)
 
 ### Business Rule Action
 
 A [business rule](business-rule-action/) is a Task action that allows a script to run. For now, the following script languages are supported:
 
-* [Mvel](../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md)
+* [MVEL](../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md)
 * JavaScript
 * Python
 * Groovy
@@ -113,7 +113,7 @@ For more details on how to configure a Business Rule Action, check the following
 
 [Start subprocess action](start-subprocess-action.md)
 
-### Append Params to Parent Process&#x20;
+### Append Params to Parent Process
 
 Used for copying data in the subprocess from its parent process.
 For more details about the configuration, check the following section:

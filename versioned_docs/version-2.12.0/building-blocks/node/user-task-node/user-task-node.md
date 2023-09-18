@@ -8,7 +8,7 @@ This node represents an interaction with the user. It is used to display a piece
 
 ### Configuring a user task node
 
-![User Task Node](../img/user_task_node.png#center)
+![User Task Node](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/user_task_node.png#center)
 
 User task nodes allow you to define and configure UI templates and possible [actions](../../actions.md) for a certain template config node (ex: [button components](../../ui-designer/ui-component-types/buttons.md)).
 
@@ -18,7 +18,7 @@ User task nodes allow you to define and configure UI templates and possible [act
 * **Can go back** - setting this to true will allow users to return to this step after completing it. When encountering a step with `canGoBack` false, all steps found behind it will become unavailable.
 * **Flow Names** - leave this field empty if the node should be included in all flows
 
-![](../img/user_task_general_config.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/user_task_general_config.png)
 
 :::info
 When encountering a step with `canGoBack` switched to false, all steps found behind it will become unavailable.
@@ -31,7 +31,7 @@ When encountering a step with `canGoBack` switched to false, all steps found beh
 
 * **Response timeout** - can be triggered if, for example, a topic that you define and add in the [Data stream topics](./#data-stream-topics) tab does not respect the pattern, the format used for this is [ISO 8601 duration format ](https://www.digi.com/resources/documentation/digidocs/90001437-13/reference/r\_iso\_8601\_duration\_format.htm)(for example, a delay of 30s will be set up like `PT30S`)
 
-![](../img/user_task_node_response_timeout.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/user_task_node_response_timeout.png)
 
 #### Data stream topics
 
@@ -47,7 +47,7 @@ A naming pattern must be defined on the [process engine configuration](../../../
 
 * **Update task management** - force [Task Manager Plugin](../../../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md) to update information about this process after this node
 
-![](../img/user_task_node_task_mngmnt.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/user_task_node_task_mngmnt.png)
 
 ### Configuring the UI
 
@@ -62,7 +62,7 @@ To access the UI Designer, follow the next steps:
 3. Click the **Edit** **process** button.
 4. Select a **user task** **node** from the Process Designer then click the **brush** icon to open the **UI Designer**.
 
-![](../img/task_node_ui_designer.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/task_node_ui_designer.gif)
 
 [Configure a template config element](../../ui-designer/ui-designer.md#)
 

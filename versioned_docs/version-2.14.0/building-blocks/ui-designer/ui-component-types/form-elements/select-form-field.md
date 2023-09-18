@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Select Form field
 
-![](../../img/select_form_field.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/select_form_field.png)
 
 This is a select element that allows a user to select from a predefined list.
 
@@ -39,7 +39,7 @@ The available configuration options for this form element are:
    * **Hide** - JavaScript expressions used to hide components when they're truthy
    * **Disabled expressions** - JavaScript expressions that should be evaluated as true or false. It's important to make sure that hidden fields also have the same expression configured under expressions → hide
 
-![](../../img/select_form_field_settings.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/select_form_field_settings.png)
 
 #### Select styling
 
@@ -47,7 +47,7 @@ The available configuration options for this form element are:
 
 A FORM with a [layout](../../layout-configuration.md) direction of row warp and some inputs and a select element will look like this:
 
-![](../../img/select_form_field.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/select_form_field.png)
 
 ### Example - Dynamic dropdowns
 
@@ -58,15 +58,15 @@ To create this kind of process, we need the following elements:
 * a [**start**](../../../node/start-end-node.md#start-node) node and an [**end**](../../../node/start-end-node.md#end-node) node
 * a [**start milestone**](../../../node/start-end-node.md#start-node) UI element to it and an [**end milestone**](../../../node/milestone-node.md) node
 
-![](../../img/dynamic_dropdown1.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/dynamic_dropdown1.gif)
 
 * a [**task node**](../../../node/task-node/task-node.md) (this will be used to set which data will be displayed on the dropdowns)
 
-![](../../img/dynamic_dropdown2.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/dynamic_dropdown2.png)
 
 * a [**user task node**](../../../node/user-task-node/user-task-node.md) (here we have the client forms and here we add the SELECT elements)
 
-![](../../img/dynamic_dropdown3.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/dynamic_dropdown3.gif)
 
 #### Creating the process
 
@@ -85,7 +85,7 @@ Follow the next steps to create the process from scratch:
    * **Mandatory**
    * **Language** (we used an [**MVEL**](../../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md) script to create a list of objects)
 
-![](../../img/configure_nodes_dropdown.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/configure_nodes_dropdown.gif)
 
 3.  On the **user task node,** add a new **Action** (submit action, this will validate the forms and save the date) with the following properties:
 
@@ -94,7 +94,7 @@ Follow the next steps to create the process from scratch:
     * **Mandatory**
     * **Data to send** (the key where the data will be sent) - `application`
 
-![](../../img/dynamic6.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/dynamic6.gif)
 
 Below you can find the MVEL script used in the above example:
 
@@ -182,8 +182,8 @@ Follow the next steps to configure the UI needed:
    * **Type** - fill
    * **Add UI action** - add the submit action attached earlier to the user task node
 
-![](../../img/dynamic_dropdowns_4.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/dynamic_dropdowns_4.gif)
 
 8. Test and run the process by clicking **Start process**.
 
-![](../../img/dynamic_dropdowns5.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/dynamic_dropdowns5.gif)

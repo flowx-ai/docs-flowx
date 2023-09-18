@@ -6,7 +6,7 @@ sidebar_position: 1
 
 Once a process is defined and added on the platform, it can be executed, monitored and optimized. When a business process starts, we create an **instance** of the definition. 
 
-![](../../img/proc_instance_progress.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/proc_instance_progress.png)
 
 Think of the process instance as if the process definition is the blueprint of a house and the instance is the house.
 
@@ -25,14 +25,14 @@ The engine is also responsible with updating the UI when some actions occur. Thi
 To check the status of your process or to debug/troubleshoot a failed process, follow the next steps:
 
 1. Open **FLOWX Designer**.
-2. Go to **Processes -> Active Process -> Process instances**.
+2. Go to **Processes → Active Process → Process instances**.
 3. Click **Process status** button.
 
-![](../../img/process_status.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/process_status.png)
 
 ### Process status data
 
-![](../../img/process_status_data.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/process_status_data.png)
 
 * **Status** - status of the process instance
   * CREATED
@@ -40,15 +40,15 @@ To check the status of your process or to debug/troubleshoot a failed process, f
   * DISMISSED
   * EXPIRED
   * FINISHED
-* **Process definition** -  the name of the process
+* **Process definition** - the name of the process
 * **Active process instance** - process instance UUID (a copy action is also available)
 * **Variables** - variables are displayed as an expanded JSON
 
-![](../../img/process_variables.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/process_variables.png)
 
 * **Tokens** - a token represents a state within a process instance (it describes the current position in the process flow)
 
-![](../../img/process_tokens.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/process_variables.png)
 
 :::info
 For more information about token status details, [here](../../../token).
@@ -57,7 +57,7 @@ For more information about token status details, [here](../../../token).
 * **Subprocesses** - :exclamation:displayed only if the current [process instance](process-instance.md) generated a [subprocess](../../subprocess.md) instance
 * **Exceptions** - are errors that are letting you know where the process is blocked (they also allow you to access directly the node where the process is breaking so you can edit it); :exclamation:displayed only if exceptions were thrown on the process
 
-![](../../img/process_exceptions.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/process_exceptions.png)
 
 :::info
 For more information about **Exceptions**, check the following section:
@@ -67,7 +67,7 @@ For more information about **Exceptions**, check the following section:
 
 * **Audit Log** - display events registered for process instances, tokens, tasks and exceptions reverse chronologically by timestamp
 
-![](../../img/process_status_audit.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/process_status_audit.png)
 
 [Audit](../../../../platform-deep-dive/core-components/core-extensions/audit)
 
@@ -78,7 +78,7 @@ Inside the breadcrumb menu (top-right corner):
 * **Started** - when the process instance started
 * **Ended** - when the process instance ended
 
-![](../../img/process_export_smth.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/process_export_smth.png)
 
 ### Color coding
 
@@ -87,13 +87,13 @@ Inside the **Process status** view, some nodes are highlighted with different co
 * **Green** - nodes highlighted with green mark the nodes passed by the [token](../../../token.md)
 * **Red** - the node highlighted with red marks the node where the token is stuck (process failure)
 
-![](../../img/color_coding.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/color_coding.gif)
 
 ## Starting a new process instance
 
 The new instances will be started by making a request to the [FLOWX.AI Engine](../../../../platform-deep-dive/core-components/flowx-engine). This will be handled by the web / mobile application that was created.
 
-![](../../img/process_instance_diagram.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/process_instance_diagram.png)
 
 To be able to start a new process instance, the current user needs to have the appropriate role/permissions:
 

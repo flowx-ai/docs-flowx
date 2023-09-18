@@ -45,7 +45,7 @@ We'll take as a business process example a credit card application. It will have
 
 This is what the BPMN diagram looks like:
 
-![Request a new credit card](./img/request_a_new_credit_card.png)
+![Request a new credit card](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/request_a_new_credit_card.png)
 
 :::tip
 Download sample [here](./assets/sample_bpmn_process_new_credit_card.bpmn).

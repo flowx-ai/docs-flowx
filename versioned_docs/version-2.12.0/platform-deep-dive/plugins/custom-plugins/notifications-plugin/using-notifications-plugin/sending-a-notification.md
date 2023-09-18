@@ -32,7 +32,7 @@ The following values are expected in the request body:
 Check the detailed example below.
 :::
 
-![](../../../../img/notification_archi_send.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/notification_archi_send.png)
 
 ### Define needed Kafka topics
 
@@ -44,13 +44,13 @@ Kafka topic names can be set by using environment variables:
 
 ## Example: send a notification from a business flow
 
-![](../../../../img/send_a_notification_proc.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/send_a_notification_proc.png)
 
 Let's pick a simple use-case, say we need to send a new welcome letter when we onboard a new customer. The steps are the following:
 
 1. Configure the template that you want to use for the welcome email, see the previous section, [Managing notification templates](managing-notification-templates.md) for more information.
 
-![](../../../../img/send_a_notif_from_business_flow.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/send_a_notif_from_business_flow.gif)
 
 2. Use the FLOWX.AI Designer to add a [**Message send task**](../../../../../building-blocks/node/message-send-received-task-node.md#message-send-task) and a [**Message received task**](../../../).
 3. On the **Message send task** add a proper configuration to the action, the Kafka topic and request body message to be sent:
@@ -63,20 +63,20 @@ Let's pick a simple use-case, say we need to send a new welcome letter when we o
     * receivers
 * **Headers** - it is always `{"processInstanceId": ${processInstanceId}}`
 
-![](../../../../img/notif_params_send.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/notif_params_send.png)
 
 4. On the **Message received task** add the needed topic to receive the kafka response - `KAFKA_TOPIC_NOTIFICATION_INTERNAL_OUT` - `ai.flowx.updates.qa.notification.request.v1`.
 
-![](../../../../img/generate_notif_receive.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/generate_notif_receive.png)
 
 5. Run the process and look for the response (you can view it via the **Audit log**) or checking the responses on the Kafka topic defined at `KAFKA_TOPIC_NOTIFICATION_INTERNAL_OUT` variable.
 
-![](../../../../img/notif_send_resp.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/notif_send_resp.png)
 
 
 Response example at `KAFKA_TOPIC_NOTIFICATION_INTERNAL_OUT`:
 
-```
+```json
 {
   "identifier": null,
   "templateName": "welcomeLetter",

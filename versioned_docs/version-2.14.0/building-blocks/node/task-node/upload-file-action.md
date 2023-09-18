@@ -30,7 +30,7 @@ Multiple options are available for this type of action and can be configured via
 * **Repeatable** - should be checked if the action can be triggered multiple times
 * **Autorun Children** - when this is switched on, the child actions (the ones defined as mandatory and automatic) will run immediately after the execution of the parent action is finalized
 
-![](../img/upload_file_action_edit.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/upload_file_action_edit.png)
 
 #### **Back in steps**
 
@@ -38,8 +38,8 @@ Multiple options are available for this type of action and can be configured via
 
 #### Parameters
 
-* **Address**  - the Kafka topic where the file will be posted
-* **Document Type** - other metadata that can be set (useful for the [document plugin](../../../platform-deep-dive/plugins/custom-plugins/documents-plugin/documents-plugin.md)
+* **Address** - the Kafka topic where the file will be posted
+* **Document Type** - other metadata that can be set (useful for the [document plugin](../../../platform-deep-dive/plugins/custom-plugins/documents-plugin/documents-plugin.md))
 * **Folder** - allows you to configure a value by which the file will be identified in the future
 * **Advanced configuration (Show headers)** - this represents a JSON value that will be sent on the headers of the Kafka message
 
@@ -59,10 +59,10 @@ An example of **Upload File action** is to send a file to the [document plugin](
 
 * **Address (topicName)** - will be set to (the id of the document plugin service) `ai.flowx.in.document.persist.v1`
 * **Document Type** - metadata used by the document plugin, here we will set it to`BULK`
-* **Folder** - the value by which we want to identify this file in the future (here we use the **client.id** value available on the process instance data: `${application.client.id}`
+* **Folder** - the value by which we want to identify this file in the future (here we use the **client.id** value available on the process instance data: `${application.client.id}`)
 
 **Advanced configuration**
 
 * **Headers** - headers will send extra metadata to this topic -`{"processInstanceId": ${processInstanceId}, "destinationId": "curentNodeName"}`
 
-![](../img/upload_file_action_params.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/upload_file_action_params.png)

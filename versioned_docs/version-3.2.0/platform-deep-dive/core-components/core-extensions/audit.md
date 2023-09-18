@@ -66,7 +66,7 @@ The Audit Log service provides a centralized location for all audit events. The 
 * **Status** - the outcome of the event (e.g. success or failure)
 
 
-![](../../img/audit_log_new.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/audit_log_new.png)
 
 ## Filtering
 
@@ -74,7 +74,7 @@ Users can filter audit records by event date and by selecting specific options f
 
 * Filter by event date 
 
-![](../../img/audit_filter_by_event.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/audit_filter_by_event.png)
 
 * User - single selection, type at least 4 characters
 * Subject - single selection
@@ -85,9 +85,9 @@ Users can filter audit records by event date and by selecting specific options f
 To view additional details for a specific event, users can click the eye icon on the right of the event in the list. Additional information available in the audit log details window includes
 Here you have the following information:
 
-* Event - the specific action that occured
+* Event - the specific action that occurred
 * URL - the URL associated with the event
 * Body - any additional data or information related to the event
 
-![](../../img/audit_log_details.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/audit_log_details.pngg)
 

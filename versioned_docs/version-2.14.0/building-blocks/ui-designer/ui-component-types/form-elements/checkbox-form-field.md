@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Checkbox Form field
 
-![](../../img/checkbox_form_field.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/checkbox_form_field.png)
 
 A checkbox is a form element that allows users to select one or more options from the given options.
 
@@ -28,4 +28,4 @@ The available configuration options for this form element are:
 
 A checkbox with three options and a column layout will look like this.
 
-![](../../img/checkbox_styling.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/checkbox_styling.png)

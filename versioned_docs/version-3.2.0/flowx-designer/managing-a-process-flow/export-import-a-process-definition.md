@@ -6,13 +6,13 @@ To copy process definitions and move them between different environments, you ca
 
 You can export a process definition as a JSON file directly from the process definitions list in the FLOWX Designer:
 
-![](../img/pf_export_definition.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/pf_export_definition.gif)
 
 ## Import a process definition
 
 You can then import the process definition from the FLOWX Designer. This will add a new definition to your database and set it as a draft. You can then check the imported definition and publish the process to be able to use it from the engine.
 
-![](../img/pf_import_proc.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/pf_import_proc.gif)
 
 In case a definition with the same name and version already exists in the environment, the version of the imported process will be incremented.
 

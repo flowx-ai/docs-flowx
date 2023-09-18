@@ -35,13 +35,13 @@ Example:
 
 Values expected in the reply body:
 
-* client id = the user unique id in the system
+* client id = the user unique ID in the system
 * channel = notification channel used
 * otpValid = confirmation if the provided OTP code was the same as the one sent from the system
 
 Example:
 
-![](../../../../../img/otp_validate_audit.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/otp_validate_audit.png)
 
 ## Example: validate an OTP from a business flow
 
@@ -51,9 +51,9 @@ Similar to the generation of the OTP you can validate the OTP that was generated
 2. Add the actions for sending the request to validate the OTP on the node that contains the 'Generate OTP' actions
 3. Add the proper configuration to the action, the Kafka topic and configure the body message.
 
-![](../../../../../img/validate_otp_temp.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/validate_otp_temp.png)
 
 4. Add a node to the process definition (for the [Kafka receive event](../../../../../../building-blocks/node/message-send-received-task-node.md#message-receive-task))
 5. Configure on what key you want to receive the response on the process instance parameters
 
-![](../../../../../img/validate_otp3.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/validate_otp3.png)

@@ -192,3 +192,21 @@ div[class^="announcementBar"][role="banner"] {
   color: #888;
   cursor: pointer;
 }
+
+
+.sidebar-title {
+  margin-top: 12px;
+}
+
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible a:not(.menu__link--active){ 
+  color: #000;
+  margin-top:10px;
+  font-weight:600;
+}
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible a{ 
+  font-weight:600;
+}
+.menu__link--active {
+  font-weight: 600;
+}
+

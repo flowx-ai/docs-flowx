@@ -6,7 +6,7 @@ sidebar_position: 1
 
 FLOWX Designer is the FLOWX.AI no-code visual development environment. It allows users to create web and mobile applications without having to know how to code.
 
-![image alt](./img/flowx-designer.png#center)
+![image alt](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/flowx-designer.png#center)
 
 
 With the FLOWX Designer, you can:
@@ -16,7 +16,7 @@ With the FLOWX Designer, you can:
 * Define business rules and validations via [DMN](../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-dmn.md) files or via [MVEL](../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md), or using other supported scripting languages
 * Create integration connectors in a visual manner
 * Create data models for your applications
-* Adding new capabilitiesby using [plugins](../platform-deep-dive/plugins/plugins.md)
+* Adding new capabilities by using [plugins](../platform-deep-dive/plugins/plugins.md)
 * Manage users access
 
 This section will go through the steps to set up the FLOWX Designer and how to use it.

@@ -15,7 +15,7 @@ Available scopes:
 
 2. **Manage-taxonomies** - for configuring access for manipulating taxonomies
 
-Available scopes
+Available scopes:
 
 * read - users are able to show languages/source systems
 * edit - users are able to edit languages/source systems
@@ -23,11 +23,21 @@ Available scopes
 
 3. **Manage-media-library** - for configuring access rights to use Media Library
 
-Available scopes
+Available scopes:
+
 * import - users are able to import assets
 * read - users are able to view assets
 * edit - users are able to edit assets
 * admin - users are able to delete assets
+
+4. **Manage-themes** - for configuring access rights to use fonts
+
+Available scopes:
+
+* import - users are able to import fonts
+* read - users are able to view fonts
+* edit - users are able to edit fonts
+* admin - users are able to delete fonts
 
 The CMS service is preconfigured with the following default users roles for each of the access scopes mentioned above:
 
@@ -46,6 +56,7 @@ The CMS service is preconfigured with the following default users roles for each
     * ROLE\_CMS\_CONTENT\_ADMIN
   * admin:
     * ROLE_CMS_CONTENT_ADMIN
+
 * **manage-taxonomies**
   * import:
     * ROLE_CMS_TAXONOMIES_IMPORT
@@ -61,11 +72,12 @@ The CMS service is preconfigured with the following default users roles for each
     * ROLE_CMS_TAXONOMIES_ADMIN
   * admin:
     * ROLE_CMS_TAXONOMIES_ADMIN
+
 * **manage-media-library**
   * import: 
     * ROLE_MEDIA_LIBRARY_IMPORT
     * ROLE_MEDIA_LIBRARY_EDIT
-    * ROLE_MEDIA_LIBRARY_EDIT
+    * ROLE_MEDIA_LIBRARY_ADMIN
   * read:
     * ROLE_MEDIA_LIBRARY_READ
     * ROLE_MEDIA_LIBRARY_EDIT
@@ -77,6 +89,22 @@ The CMS service is preconfigured with the following default users roles for each
   * admin:
     * ROLE_MEDIA_LIBRARY_ADMIN
 
+
+* **manage-themes**
+  * import: 
+    * ROLE_THEMES_IMPORT
+    * ROLE_THEMES_EDIT
+    * ROLE_THEMES_ADMIN
+  * read:
+    * ROLE_THEMES_READ
+    * ROLE_THEMES_EDIT
+    * ROLE_THEMES_ADMIN
+    * ROLE_THEMES_IMPORT
+  * edit:
+    * ROLE_THEMES_EDIT
+    * ROLE_THEMES_ADMIN
+  * admin:
+    * ROLE_THEMES_ADMIN
 
 :::caution
 The needed roles should be defined in the chosen identity provider solution.

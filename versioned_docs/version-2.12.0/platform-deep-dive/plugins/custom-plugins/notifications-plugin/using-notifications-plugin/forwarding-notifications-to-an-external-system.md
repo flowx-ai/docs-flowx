@@ -33,17 +33,17 @@ Make sure that the **Forward on Kafka** checkbox is ticked, so the notification 
 * **Language** - choose the language for your notification template
 * **Subject** - enter a subject
 
-![](../../../../img/notification_email.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/docplugin_income_source.png)
 
 
-![](../../../../img/data_model_notif.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/data_model_notif.png)
 
 4. Use the FLOWX.AI Designer to create a process definition.
 5. Add a [**Kafka send event node**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) and a [**Kafka receive event node**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) (one to send the request, one to receive the reply).
 5. Check if the needed topic (defined at the following environment variable) is configured correctly: `KAFKA_TOPIC_NOTIFICATION_INTERNAL_IN`.
 6. Add the proper configuration to the action, the Kafka topic, and the body message.
 
-![](../../../../img/notif_params_send.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/notif_params_send.png)
 
 :::info
 **Forward on Kafka** option will forward the notification to an external adapter, make sure the needed Kafka topic for forwarding is defined/overwritten using the following environment variable: `KAFKA_TOPIC_EXTERNAL_OUT`.
@@ -51,7 +51,7 @@ Make sure that the **Forward on Kafka** checkbox is ticked, so the notification 
 
 7. Run the process and look for the response (you can view it via the **Audit log**) or by checking the responses on the Kafka topic
 
-![](../../../../img/notif_send_resp.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.12/notif_send_resp.png)
 
 
 Response example at `KAFKA_TOPIC_NOTIFICATION_INTERNAL_OUT`:

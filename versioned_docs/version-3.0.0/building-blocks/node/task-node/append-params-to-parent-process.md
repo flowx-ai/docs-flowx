@@ -62,10 +62,10 @@ This is the configuration to apply the above scenario:
 **Parameters**
 
 * **Copy from current state** - `{"client": ${data.client.age}}` to copy the age of the client (the param value we want to copy)
-* **Destination in the parent state**  - `application` to append the data o to the **application** key on the parent process
+* **Destination in the parent state** - `application` to append the data o to the **application** key on the parent process
 
 **Advanced configuration**
 
 * **Show Target Process** - `${parentProcessInstanceId}`to copy the data on the parent of this subprocess
 
-![](../img/append_params_example.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/append_params_example.png)

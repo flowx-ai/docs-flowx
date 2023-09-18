@@ -16,7 +16,7 @@ To create and attach a DMN business rule action to a task node, you must do the 
 5. From the dropdown menu choose the action type - **Business Rule**.
 6. In the **Language** dropdown menu, select **DMN**.
 
-![](./img/create_dmn_business_rule_action.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/create_dmn_business_rule_action.gif)
 
 ### **Using a DMN Business Rule action**
 
@@ -33,12 +33,13 @@ if (closedClientType.contains(clientType)) {
     alertTitle = "Customer no longer with the bank";
     alertDescription = "Hey! This person was a client before. For a new account modify the CIF.";
     output.put("applications", {"client": {"alertTitle": alertTitle, "alertDescription": alertDescription}});
+}
 
 ```
 
 The previous example could be easily transformed into a DMN Business Rule action - represented by the decision table:
 
-![DMN Decision Table](./img/dmn_decision_table.png)
+![DMN Decision Table](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.14/dmn_decision_table.png)
 
 In the example above we used FEEL expression language in order to write the rules that should be met in order for the output to happen. FEEL defines a syntax for expressing conditions that input data should be evaluated against.
 

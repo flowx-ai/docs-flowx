@@ -1,91 +1,107 @@
-# DMN Business Rule action
+# Configuring a DMN Business Rule Action
 
-For a brief introduction to [**Decision Model and Notation**](../../../terms/dmn), check the following section:
+If you're new to the concept of [**Decision Model and Notation (DMN)**](../../../terms/dmn), you can get started with a brief overview in the [Intro to DMN](../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-dmn.md) section.
 
-[Intro to DMN](../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-dmn.md)
 
 ### Creating a DMN Business Rule action
 
-To create and attach a DMN [**business rule**](../../../terms/business-rules) action to a task [**node**](../../../terms/flowx-node), you must do the following:
+To create and link a DMN [**business rule**](../../../terms/business-rules) action to a task [**node**](../../../terms/flowx-node) in FLOWX, follow these steps:
 
-1. Open [**FLOWX Designer**](../../../terms/flowx-ai-designer) and go to [**Process Definitions**](../../../terms/flowx-process-definition).
-2. Select your process from the list and click **Edit process**.
-3. Select a **task node** then click the **edit button** (the key icon) - this will open the node configuration menu.
-4. In the opened menu, go to the [**Actions**](../../../terms/flowx-actions) tab then click the "**+**" button.
-5. From the dropdown menu choose the action type - **Business Rule**.
-6. In the **Language** dropdown menu, select **DMN**.
+1. Launch [**FLOWX Designer**](../../../terms/flowx-ai-designer) and navigate to [**Process Definitions**](../../../terms/flowx-process-definition).
+2. Locate and select your specific process from the list, then click on **Edit Process**.
+3. Choose a **task node**, and click the **Edit** button (represented by a key icon). This action will open the node configuration menu.
+4. Inside the node configuration menu, head to the [**Actions**](../../../terms/flowx-actions) tab and click the "**+**" button to add a new action.
+5. From the dropdown menu, select the action type as **Business Rule**.
+6. In the **Language** dropdown menu, pick **DMN**.
 
-![](./img/create_dmn_business_rule_action.gif)
 
-### Using a DMN Business Rule action
+For a visual guide, refer to the following recording:
 
-We have the following scenario, a bank needs to perform client identification tasks/actions. This action can be defined as a [**business rule**](../../../terms/business-rules) inside a [**BPMN**](../../../terms/bpmn) process using [**FLOWX Designer**](../../../terms/flowx-ai-designer).
+![Creating a DMN Business Rule Action](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/create_dmn_business_rule_action.gif)
 
-A business person or specialist can use DMN to design this business rule, without having to go deep into technical definitions.
+### Using a DMN Business Rule Action
 
-Here is an example of an [MVEL](../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md) script - defined as a business rule action inside a [Service Task](../../node/task-node.md) node:
+Consider a scenario where a bank needs to perform client information tasks/actions to send salutations, similar to what was previously created using MVEL [here](./business-rule-action.md#mvel-example). 
+
+A business person or specialist can use DMN to design this business rule, without having to delve into technical definitions.
+
+Here is an example of an [MVEL](../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md) script defined as a business rule action inside a [Service Task](../../node/task-node.md) node:
 
 ```java
-closedClientType = ["PF_CLOSED", "PF_SPECIAL", "PF_ABC", "PJ_CLOSED"];
-clientType = input.get("application").get("client").get("clientType");
-if (closedClientType.contains(clientType)) {
-    alertTitle = "Customer no longer with the bank";
-    alertDescription = "Hey! This person was a client before. For a new account modify the CIF.";
-    output.put("applications", {"client": {"alertTitle": alertTitle, "alertDescription": alertDescription}});
+if (input.application.client.gender == 'F') {
+    output.put("application", {
+        "client": {
+            "salutation": "Ms"
+        }
+    });
+} else if (input.application.client.gender == 'M') {
+    output.put("application", {
+        "client": {
+            "salutation": "Mr"
+        }
+    });
+} else {
+    output.put("application", {
+        "client": {
+            "salutation": "Mx"
+        }
+    });
 }
-
 ```
 
-The previous example could be easily transformed into a DMN Business Rule action - represented by the decision table:
+The previous example can be easily transformed into a DMN Business Rule action represented by the decision table:
 
-![DMN Decision Table](./img/dmn_decision_table.png)
+![DMN Decision Table](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/dmn_decision_ex.png)
 
-In the example above we used FEEL expression language in order to write the rules that should be met in order for the output to happen. FEEL defines a syntax for expressing conditions that input data should be evaluated against.
+In the example above, we used FEEL expression language to write the rules that should be met for the output to occur. FEEL defines a syntax for expressing conditions that input data should be evaluated against.
 
-**Input** - In the example above we used as inputs the type of clients (inside a bank) using the `application.client` key
+**Input** - In the example above, we used the user-selected gender from the first screen as input, bound to the `application.client.gender` key.
 
-**Output** - In the example above we used as inputs the type of clients (inside a bank) using the `application.client` key
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/dmn_screen.png)
+
+**Output** - In the example above, we used the salutation (bound to `application.client.salutation`) computed based on the user's gender selection.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/dmn_salutation.png)
 
 DMN also defines an XML schema that allows DMN models to be used across multiple DMN authoring platforms. The following output is the XML source of the decision table example from the previous section:
 
 ```xml
-// Decision Table XML source
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="Definitions_06nober" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.0.0">
-  <decision id="closed_CIF" name="Decision table">
-    <decisionTable id="decisionTable_1">
-      <input id="input_1" label="application.client.clientType" biodi:width="277">
-        <inputExpression id="inputExpression_1" typeRef="string">
-          <text></text>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" id="definitions_04nvgw7" name="definitions" namespace="http://camunda.org/schema/1.0/dmn" exporter="dmn-js (https://demo.bpmn.io/dmn)" exporterVersion="11.0.1">
+  <decision id="decision_0jwmnrf" name="">
+    <decisionTable id="decisionTable_1bfocm1">
+      <input id="input1" label="">
+        <inputExpression id="inputExpression1" typeRef="string">
+          <text>application.client.gender</text>
         </inputExpression>
       </input>
-      <output id="output_1" label="alert_title" typeRef="string" />
-      <output id="OutputClause_043h9fw" label="alert_description" typeRef="string" />
-      <rule id="DecisionRule_10bh1zx">
-        <inputEntry id="UnaryTests_0a6rf6l">
-          <text>IN ("PF_CLOSED", "PF_SPECIAL", "PF_ABC", "PJ_CLOSED")</text>
+      <output id="output1" label="" name="application.client.salutation" typeRef="string" />
+      <rule id="DecisionRule_0ajc5qs">
+        <inputEntry id="UnaryTests_1txivb8">
+          <text>"M"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0xszo8x">
-          <text>Customer no longer with the bank.</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0l2bioo">
-          <text>Hey! This person was a client before. For a new account, modify the CIF</text>
+        <outputEntry id="LiteralExpression_19vv224">
+          <text>"Mr"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1jj1rv2">
-        <inputEntry id="UnaryTests_0cf2e91">
-          <text></text>
+      <rule id="DecisionRule_0crxiem">
+        <inputEntry id="UnaryTests_0lj9euc">
+          <text>"F"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_1b9jkr4">
-          <text></text>
+        <outputEntry id="LiteralExpression_1nyw87v">
+          <text>"Ms"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_12hua2f">
-          <text></text>
+      </rule>
+      <rule id="DecisionRule_1o4wvbu">
+        <inputEntry id="UnaryTests_05j2uy2">
+          <text>"O"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1rw5tva">
+          <text>"Mx"</text>
         </outputEntry>
       </rule>
     </decisionTable>
   </decision>
 </definitions>
-```
 
-You can use this XML example with FLOWX Designer, adding it to a Business Rule Action - using an MVEL script. Then you can switch to DMN if you need to generate a graphical representation of the model.
+```

@@ -24,13 +24,13 @@ Multiple options are available for this type of action and can be configured via
 * **Name** - used internally to make a distinction between different actions on nodes in the process. We recommend defining an action naming standard to be able to quickly find the process actions
 * **Order** - if multiple actions are defined on the same node, the running order should be set using this option
 * **Timer expression** - it can be used if a delay is required on that action. The format used for this is [ISO 8601 duration format ](https://www.w3.org/TR/NOTE-datetime)(for example, a delay of 30 seconds will be set up as `PT30S`)
-* **Action type** - should be set to **Upload File**&#x20;
+* **Action type** - should be set to **Upload File**
 * **Trigger type** (options are Automatic/Manual) - choose if this action should be triggered automatically (when the process flow reaches this step) or manually (triggered by the user); in most use cases, this will be set to automatic
-* **Required type** (options are Mandatory/Optional) - automatic actions can only be defined as mandatory. Manual actions can be defined as mandatory or optional.&#x20;
-* **Repeatable** - should be checked if the action can be triggered multiple times&#x20;
+* **Required type** (options are Mandatory/Optional) - automatic actions can only be defined as mandatory. Manual actions can be defined as mandatory or optional.
+* **Repeatable** - should be checked if the action can be triggered multiple times
 * **Autorun Children** - when this is switched on, the child actions (the ones defined as mandatory and automatic) will run immediately after the execution of the parent action is finalized
 
-![](../img/upload_file_action_edit.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/upload_file_action_edit.png)
 
 #### **Back in steps**
 
@@ -38,10 +38,10 @@ Multiple options are available for this type of action and can be configured via
 
 #### Parameters
 
-* **Address**  - the Kafka topic where the file will be posted
-* **Document Type** - other metadata that can be set (useful for the [document plugin](../../../platform-deep-dive/plugins/custom-plugins/documents-plugin/documents-plugin.md)
+* **Address** - the Kafka topic where the file will be posted
+* **Document Type** - other metadata that can be set (useful for the [document plugin](../../../platform-deep-dive/plugins/custom-plugins/documents-plugin/documents-plugin.md))
 * **Folder** - allows you to configure a value by which the file will be identified in the future
-* **Advanced configuration (Show headers)**- this represents a JSON value that will be sent on the headers of the Kafka message&#x20;
+* **Advanced configuration (Show headers)**- this represents a JSON value that will be sent on the headers of the Kafka message
 
 #### Data to send
 
@@ -59,10 +59,10 @@ An example of **Upload File Action** is to send a file to the [document plugin](
 
 * **Address (topicName)** - will be set to (the id of the document plugin service) `ai.flowx.in.document.persist.v1`
 * **Document Type** - metadata used by the document plugin, here we will set it to`BULK`
-* **Folder** - the value by which we want to identify this file in the future (here we use the **client.id** value available on the process instance data: `${application.client.id}`
+* **Folder** - the value by which we want to identify this file in the future (here we use the **client.id** value available on the process instance data: `${application.client.id}`)
 
 **Advanced configuration**
 
 * **Headers** - headers will send extra metadata to this topic -`{"processInstanceId": ${processInstanceId}, "destinationId": "curentNodeName"}`
 
-![](../img/upload_file_action_params.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/upload_file_action_params.png)

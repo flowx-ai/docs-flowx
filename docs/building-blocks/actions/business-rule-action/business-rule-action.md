@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Business Rule action
+# Business Rule actions
 
 :::info
 **What is it?**  A business rule is an action type that allows you to configure a script on a [**BPMN**](../../../terms/bpmn) task [**node**](../../../terms/flowx-node). When the [**process instance**](../../../terms/flowx-process-instance) [**token**](../../../terms/token) reaches this task, the defined script will be executed.
@@ -10,18 +10,30 @@ sidebar_position: 1
 **Why is it useful?** The script can read and write the data available on the process at the moment the script is executed. For this reason, it is very important to understand what data is available on the process when the script is executed.
 :::
 
-Business rules can be attached to a node by using actions with [**action rules**](../actions.md#action-rules) on them. These can be specified using [DMN rules](dmn-business-rule-action.md), [MVEL](../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md) expressions, or scripts written in Javascript, Python, or Groovy.
+## Supported languages
+
+Business rules can be attached to a node by using actions with [**action rules**](../actions.md#action-rules) on them. These can be specified using [DMN rules](dmn-business-rule-action.md), [MVEL](../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md) expressions, or scripts written in JavaScript, Python, or Groovy.
+
+![Business rule action](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/business_rule_action.png)
+
+For more information about supported scripting languages, see the next section:
 
 [Supported scripts](../../supported-scripts.md)
 
-![Business rule action](./img/business_rule_action.png)
-
-
 You can also test your rules by using the **Test Rule** function.
 
-![](./img/test_rule_function.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/test_rule_function.png)
 
-### Example
+## Configuration
+
+To use a Business Rules Action, follow these steps:
+
+1. **Select a BPMN Task Node**: Choose the BPMN task node to which you want to attach the Business Rules Action. This could be a Service Task, User Task, or another task type that supports actions.
+2. **Define the Action**: In the task node properties, configure the "Business Rules Action" field and select the desired language (MVEL, Java, JavaScript or Python).
+3. **Write the Business Rule**: In the selected language, write the business rule or decision logic. This rule should take input data, process it, and possibly generate an output or result.
+4. **Input and Output Variables**: Ensure that the task node can access the necessary input variables from the BPMN process context and store any output or result variables as needed.
+5. **Execution**: When the BPMN process reaches the task node, the attached Business Rules Action is executed, and the defined business rule is evaluated.
+6. **Result**: The result of the business rule execution may affect the flow of the BPMN process, update process variables, or trigger other actions based on the logic defined in the rule.
 
 Let's take look at the following example. We have some data about the gender of a user and we need to create a business rule that computes the formal title based on the gender:
 
@@ -40,17 +52,30 @@ Let's take look at the following example. We have some data about the gender of 
         }
     }
     ```
-2.  When the token reaches this node the following script (defined for the business rule is executed). The language used here for scripting is MVEL.
+2.  When the token reaches this node the following script (defined for the business rule) is executed. The language used here for scripting is MVEL.
 
-    ```java
-    if(input.?get("application.client.gender")== "F"){
-        output.put("application.client.salutation", "Ms");
-    } else if(input.?get("application.client.gender")== "M") {
-        output.put("application.client.salutation", "Mr");
-    } else {
-        output.put("application.client.salutation", "Mx");
-    }
-    ```
+```java
+if (input.application.client.gender == 'F') {
+    output.put("application", {
+        "client": {
+            "salutation": "Ms"
+        }
+    });
+} else if (input.application.client.gender == 'M') {
+    output.put("application", {
+        "client": {
+            "salutation": "Mr"
+        }
+    });
+} else {
+    output.put("application", {
+        "client": {
+            "salutation": "Mx"
+        }
+    });
+}
+```
+
 3. After the script is executed, the process instance data will look like this:
 
 ```json
@@ -66,52 +91,125 @@ Let's take look at the following example. We have some data about the gender of 
 }
 ```
 
-### :warning: Flattened vs unflattened keys
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/mvel_example.gif)
+
+## :warning: Flattened vs unflattened keys
 
 :::warning
 With version [**2.5.0**](/release-notes/v2.5.0-april-2022) we introduced unflattened keys inside business rules. Flattened keys are now obsolete. You are notified when you need to delete and recreate a business rule so it contains an unflattened key.
 :::
 
-![Obsolete business rule](./img/obsolete_business_rule.png)
+![Obsolete business rule](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/obsolete_business_rule.png)
 
-1. Here is an example of a flattened key inside a business rule:
-
-:::danger
-Example for deprecated versions previous to [**v2.5.0**](/release-notes/v2.5.0-april-2022)
-:::
-
-```java
-def createActionForCustomer (name, cnp)
-{
-    return{
-     "name":name,
-      "cnp:cnp
-  }
- }
- String cif = input.get("clientIdentification.cif");
- output.put("clientIdentification.personalIdentifactionNumber",cif)
- output.put("identificationData", createActionForCustomer("action1",input.get("clientIdentifaction.cnp")));
-```
-
-2. Here is an example of an unflattened key inside a business rule:
+## Business rules examples
 
 :::success
-Example available for [**v2.5.0**](/release-notes/v2.5.0-april-2022) version and higher
+Examples available for [**v2.5.0**](/release-notes/v2.5.0-april-2022) version and higher
 :::
 
-```java
-def createActionForCustomer (name, cnp)
-{
-  return {
-    "name": name,
-    "cnp": cnp
-  }
-}
-String cif = input.clientIdentification.cif;
-output.put("clientIdentification", {"personalIdentificationNumber": cif} );
-output.put("identificationData", createActionForCustomer("action1", input.clientIdentification.cnp));
-```
+We will use the MVEL example used above to rewrite it in other scripting languages formats:
 
-For more information about each type of Business Rule Action, check the following sections:
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import { MDXProvider } from '@mdx-js/react';
+
+
+<Tabs>
+
+<TabItem value="mvel" label="MVEL" default>
+
+```Java
+if (input.application.client.gender == 'F') {
+        output.put("application", {
+            "client": {
+                "salutation": "Ms"
+            }
+         });
+    } else if (input.application.client.gender == 'M') {
+        output.put("application", {
+            "client": {
+                "salutation": "Mr"
+            }
+         });
+    } else {
+        output.put("application", {
+            "client": {
+                "salutation": "Mx"
+            }
+        });
+    }
+```
+</TabItem>
+  
+<TabItem value="python" label="Python"> 
+
+```python
+    if input.get("application").get("client").get("gender") == "F":
+        output.put("application", {
+            "client" : {
+                "salutation" : "Ms"
+            }
+        })
+    elif input.get("application").get("client").get("gender") == "M":
+        output.put("application", {
+            "client" : {
+                "salutation" : "Mr"
+            }
+        })
+    else:
+        output.put("application", {
+                "client" : {
+                    "salutation" : "Mx"
+                }
+            })
+```    
+</TabItem>
+
+<TabItem value="javascript" label="JS"> 
+
+```js
+if (input.application.client.gender === 'F') {
+    output.application = {
+        client: {
+            salutation: 'Ms'
+        }
+    };
+} else if (input.application.client.gender === 'M') {
+    output.application = {
+        client: {
+            salutation: 'Mr'
+        }
+    };
+} else {
+    output.application = {
+        client: {
+            salutation: 'Mx'
+        }
+    };
+}
+```    
+</TabItem>
+
+<TabItem value="Groovy" label="Groovy"> 
+
+```groovy
+if (input.application.client.gender === 'F') {
+def gender = input.application.client.gender
+switch (gender) {
+    case 'F':
+        output.application = [client: [salutation: 'Ms']]
+        break
+    case 'M':
+        output.application = [client: [salutation: 'Mr']]
+        break
+    default:
+        output.application = [client: [salutation: 'Mx']]
+}
+```    
+</TabItem>
+
+</Tabs>
+
+For more detailed information on each type of Business Rule Action, refer to the following sections:
 
 [DMN Business Rule Action](dmn-business-rule-action.md)

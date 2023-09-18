@@ -16,7 +16,7 @@ To create a stepper structure:
 6. Add an **end milestone** for both the step and the stepper.
 7. End your process with an **end node**.
 
-![Stepper Structure](../img/process_flowx_create_UI.gif)
+![Stepper Structure](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/process_flowx_create_UI.gif)
 
 ## Configuring the UI
 
@@ -26,7 +26,7 @@ To create a stepper structure:
 * For the first step, it will be useful to add also a label
 * Clear the cache to test what we have until now
 
-![](../img/process_flowx_configuring_UI.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/process_flowx_create_UI.gif)
 
 ### Testing the flow that we have
 
@@ -34,7 +34,7 @@ To create a stepper structure:
 2. We will not pass any data to this process so an empty object `{}`.
 3. Click **Start Process** and you will see the first step.
 
-![First step](../img/process_flow_first_step.gif)
+![First step](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/process_flow_first_step.gif)
 
 ## Adding a card with one input
 
@@ -45,7 +45,7 @@ To create a stepper structure:
    * Configure the **key** - you can use the key to retrieve the data form saved on that element
    * Configure a **label**
 
-![Adding input](../img/pf_adding_input.gif)
+![Adding input](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/pf_adding_input.gif)
 
 ### Testing our first input
 
@@ -53,7 +53,7 @@ To create a stepper structure:
 2. The **input** is displayed.
 3. Test the **input**.
 
-![Test the input](../img/pf_tresting_input.gif)
+![Test the input](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/pf_tresting_input.gif)
 
 ## Adding second input and a submit action
 
@@ -63,6 +63,6 @@ To create a stepper structure:
    * we need to keep in mind the name of the action - `saveDataFirstStep`
 3. Go back to the Node UI designer and add a button (we need to link the **button** to the **action** based on the name).
 
-![Second input](../img/pf_second_input.gif)
+![Second input](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/pf_second_input.gif)
 
-![Second input + action](../img/pf_second_input_action.gif)
+![Second input + action](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/pf_second_input_action.gif)

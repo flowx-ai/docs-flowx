@@ -103,13 +103,13 @@ Possible values:
 
 </details>
 
-![](../../../../../release-notes/img/audit_log_new.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release-notes/audit_log_new.png)
 
 Audit records can be filtered by using the following options:
 
 * Filter by event date 
 
-![](../../img/audit_filter_by_event.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/audit_filter_by_event.png)
 
 * User - single selection, type at least 4 characters
 * Subject - single selection
@@ -125,5 +125,5 @@ Here you have the following information:
 * URL
 * Body 
 
-![](../../img/audit_log_details.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/audit_log_details.png)
 
