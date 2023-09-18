@@ -14,10 +14,11 @@ sidebar_position: 1
 
 Business rules can be attached to a node by using actions with [**action rules**](../actions.md#action-rules) on them. These can be specified using [DMN rules](dmn-business-rule-action.md), [MVEL](../../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md) expressions, or scripts written in JavaScript, Python, or Groovy.
 
-[Supported scripts](../../supported-scripts.md)
-
 ![Business rule action](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/business_rule_action.png)
 
+For more information about supported scripting languages, see the next section:
+
+[Supported scripts](../../supported-scripts.md)
 
 You can also test your rules by using the **Test Rule** function.
 
@@ -51,7 +52,7 @@ Let's take look at the following example. We have some data about the gender of 
         }
     }
     ```
-2.  When the token reaches this node the following script (defined for the business rule is executed). The language used here for scripting is MVEL.
+2.  When the token reaches this node the following script (defined for the business rule) is executed. The language used here for scripting is MVEL.
 
 ```java
 if (input.application.client.gender == 'F') {
@@ -100,62 +101,115 @@ With version [**2.5.0**](/release-notes/v2.5.0-april-2022) we introduced unflatt
 
 ![Obsolete business rule](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/obsolete_business_rule.png)
 
-## MVEL example
+## Business rules examples
 
 :::success
-Example available for [**v2.5.0**](/release-notes/v2.5.0-april-2022) version and higher
+Examples available for [**v2.5.0**](/release-notes/v2.5.0-april-2022) version and higher
 :::
 
-```java
+We will use the MVEL example used above to rewrite it in other scripting languages formats:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import { MDXProvider } from '@mdx-js/react';
+
+
+<Tabs>
+
+<TabItem value="mvel" label="MVEL" default>
+
+```Java
 if (input.application.client.gender == 'F') {
-    output.put("application", {
-        "client": {
-            "salutation": "Ms"
-        }
-    });
-} else if (input.application.client.gender == 'M') {
-    output.put("application", {
-        "client": {
-            "salutation": "Mr"
-        }
-    });
-} else {
-    output.put("application", {
-        "client": {
-            "salutation": "Mx"
-        }
-    });
-}
+        output.put("application", {
+            "client": {
+                "salutation": "Ms"
+            }
+         });
+    } else if (input.application.client.gender == 'M') {
+        output.put("application", {
+            "client": {
+                "salutation": "Mr"
+            }
+         });
+    } else {
+        output.put("application", {
+            "client": {
+                "salutation": "Mx"
+            }
+        });
+    }
 ```
-In the given unflattened structure, the code is organized hierarchically using nested objects (typically represented as dictionaries or maps in programming languages). Let's break down the structure step by step:
+</TabItem>
+  
+<TabItem value="python" label="Python"> 
 
-1. Input and Output:
+```python
+    if input.get("application").get("client").get("gender") == "F":
+        output.put("application", {
+            "client" : {
+                "salutation" : "Ms"
+            }
+        })
+    elif input.get("application").get("client").get("gender") == "M":
+        output.put("application", {
+            "client" : {
+                "salutation" : "Mr"
+            }
+        })
+    else:
+        output.put("application", {
+                "client" : {
+                    "salutation" : "Mx"
+                }
+            })
+```    
+</TabItem>
 
-    * There are two primary objects, input and output, representing the input data and the output data, respectively.
+<TabItem value="javascript" label="JS"> 
 
-2. Application Object:
+```js
+if (input.application.client.gender === 'F') {
+    output.application = {
+        client: {
+            salutation: 'Ms'
+        }
+    };
+} else if (input.application.client.gender === 'M') {
+    output.application = {
+        client: {
+            salutation: 'Mr'
+        }
+    };
+} else {
+    output.application = {
+        client: {
+            salutation: 'Mx'
+        }
+    };
+}
+```    
+</TabItem>
 
-    * Within the input object, there is an application object.
-    * Within the output object, there is also an application object.
+<TabItem value="Groovy" label="Groovy"> 
 
-3. Client Object:
+```groovy
+if (input.application.client.gender === 'F') {
+def gender = input.application.client.gender
+switch (gender) {
+    case 'F':
+        output.application = [client: [salutation: 'Ms']]
+        break
+    case 'M':
+        output.application = [client: [salutation: 'Mr']]
+        break
+    default:
+        output.application = [client: [salutation: 'Mx']]
+}
+```    
+</TabItem>
 
-    * Inside the application object, there is a client object.
-    * This client object contains information related to the client.
+</Tabs>
 
-4. Gender Property:
-
-    * Inside the client object, there is a gender property.
-    * The value of the gender property is checked in conditional statements.
-
-5. Conditional Statements:
-
-    * The code contains conditional statements (if, else if, and else) based on the value of `input.application.client.gender`.
-    * If the gender is 'F' (female), the code sets the salutation property to "Ms" inside the `output.application.client` object.
-    * If the gender is 'M' (male), the code sets the salutation property to "Mr" inside the `output.application.client` object.
-    * If the gender is neither 'F' nor 'M', the code sets the salutation property to "Mx" inside the `output.application.client` object.
-    * In summary, this unflattened structure represents a data hierarchy with nested objects, mirroring the organization of information within the input and output objects, with a focus on client-related data and conditional logic based on the client's gender to determine the appropriate salutation to be included in the output.
-
-For more information about each type of Business Rule Action, check the following sections:
+For more detailed information on each type of Business Rule Action, refer to the following sections:
 
 [DMN Business Rule Action](dmn-business-rule-action.md)
