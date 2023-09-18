@@ -161,11 +161,3 @@ Options are ordered reverse chronologically by submit datetime.
 The Read-Only State feature allows you to access and view submitted versions of your process definitions while safeguarding the configuration from unintended modifications. By recognizing the visual indicators of the read-only state, you can confidently work within a controlled environment, ensuring the integrity of process definitions.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/versioning_read_only.png)
-
-### Version audit log
-
-## Process settings
-
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/subprocess_versioning.png)
-
-

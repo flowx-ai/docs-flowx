@@ -101,7 +101,7 @@ const config = {
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo-big.svg',
-          width: 110
+          width: 105
         },
         items: [
 
