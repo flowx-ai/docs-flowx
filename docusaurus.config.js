@@ -88,7 +88,7 @@ const config = {
       announcementBar: {
         id: 'banner_release',
         content:
-         '🆕  Check our latest release <a target="_blank" rel="noopener noreferrer" href="https://docs.flowx.ai/release-notes/v3.3.0-july-2023/"> 3.3.0 </a>  🔍',
+         '🆕  Check our latest release <a target="_blank" rel="noopener noreferrer" href="https://docs.flowx.ai/release-notes/v3.4.0-september-2023/"> 3.4.0 </a>  🔍',
         backgroundColor: '#E7A811',
         textColor: '#FFFF',
         isCloseable: true,
@@ -127,7 +127,6 @@ const config = {
             dropdownActiveClassDisabled: true,
           },
        
-          {to: '/faqs', label: 'FAQs', position: 'right'},
           {to: 'https://flowxai.canny.io/documentation-feedback', label: 'Feedback', position: 'right'},
           {to: 'https://discord.gg/qUAhnGwY', label: 'Discord', position: 'right', className: 'discord-link' },
 
@@ -191,6 +190,10 @@ const config = {
               {
                 label: 'Support',
                 to: 'https://support.flowx.ai/',
+              },
+              {
+                label: 'FAQs',
+                to: '/faqs',
               },
             ],
           },
@@ -277,7 +280,7 @@ const config = {
         ],
         addDownloadButton: true,
         autoBuildPdfs: false,
-        downloadButtonText: 'Download as PDF',
+        downloadButtonText: 'Download PDF',
         ignoreDocs: ['licenses', 'glossary','survey'],
         stylesheets: [],
         scripts: [],

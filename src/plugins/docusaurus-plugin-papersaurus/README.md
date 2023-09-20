@@ -48,7 +48,7 @@ plugins: [
         ],
         addDownloadButton: true,
         autoBuildPdfs: true,
-        downloadButtonText: 'Download as PDF',
+        downloadButtonText: 'Download PDF',
         ignoreDocs: ['licenses'],
         stylesheets: [],
         scripts: [],
