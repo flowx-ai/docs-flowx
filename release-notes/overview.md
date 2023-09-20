@@ -10,7 +10,7 @@ Hi there! 👋 Follow the Release Notes space to find all the information on the
 
 <details>
 
-<summary>Q3 - August 2023</summary>
+<summary>Q3 - September 2023</summary>
 
 - [<u>v3.4.0</u>](/release-notes/v3.4.0-september-2023)
 
