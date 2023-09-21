@@ -1,99 +1,92 @@
 # Collection Prototype
 
-## Description
+## Overview
 
-This additional container type is needed to allow multiple prototypes to be defined for a single [Collection](./). This allows elements from the same collection to be displayed differently.&#x20;
+A Collection Prototype is an additional container type that allows you to define multiple prototypes for a single Collection. This feature enables you to display elements from the same collection differently.
 
-For example, suppose you are creating a piece of UI in which the user is presented a list of possible products from which to choose, but you want one of the products to be highlighted as the recommended one. This example requires a collection with two **collection prototypes** (one for the normal product and one for the recommended one).
+For instance, imagine you are designing a user interface where users can browse a list of products, with one product deserving special emphasis as the recommended choice. In this scenario, you can employ a collection containing different collection prototypes, each tailored for regular and recommended products
 
 ## Configurable properties:
 
-1. **Prototype Identifier Key** - the key where to look in the iterated object to determine the prototype to be shown - in the below example the key is "type"
-2. Prototype Identifier Value - the value that should be present at the **Prototype Identifier Key** when this `COLLECTION_PROTOTYPE` should be displayed - in the below example the value is "normal" or "recommended"
+1. **Prototype Identifier Key** - This key instructs the system on where to look within the iterated object to identify the prototype to display. In the example below, the key is "type."
+2. **Prototype Identifier Value** - This value should be present at the Prototype Identifier Key when this `COLLECTION_PROTOTYPE` should be displayed. In the example below, the value can be "normal" or "recommended."
 
 ## Example
 
-![Collection with two prototypes](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/collection_prototype.png)
+Let's revisit the example we used in the Collection section:
 
-![Collection prototype for normal product](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/collection_prototype1.png) 
+![Collection prototype for normal product](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/c.prototype1.png) 
 
-![Collection prototype for recommended product](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/collection_prototype2.png)
+![Collection prototype for recommended product](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/c.prototype2.png)
 
-Source collection data example for products:
+Sample source collection data for products:
 
-```javascript
-products: [
+```java
+output.put("processData", 
+{
+  "products": [ 
     {
-      name: 'Product One Plus',
-      description: 'The plus option'
-      type: 'normal'
+      "name": "Product One Plus",
+      "description": "The plus option",
+      "type": "normal"
     },
     {
-      name: 'Product Two Premium',
-      description: 'This is premium product'
-      type: 'recommended',
+      "name": "Product Two Premium",
+      "description": "This is premium product",
+      "type": "recommended" // source for type - recommended
     },
     {
-      name: 'Product Basic',
-      description: 'The most basic option'
-      type: 'normal'
+      "name": "Product Basic",
+      "description": "The most basic option",
+      "type": "normal" //source for type - normal
     },
     {
-      name: 'Gold Product',
-      description: 'The gold option'
-      type: 'normal',
+      "name": "Gold Product",
+      "description": "The gold option",
+      "type": "normal"
     }
   ]
+}
+);
 ```
-
 The above configuration will render:
 
-![Collection with two prototypes as rendered by the SDK](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/collection_prototype_render.png)
+![Collection with two prototypes as rendered by the SDK](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/render_collection.gif)
 
 ## Adding elements with UI Actions
 
-There are a few differences you need to take into consideration when configuring elements that make use of **UI Actions** inside a **Collection Prototype**.
-
-To showcase these differences, we'll use the next example:
-
-![Rendered Collection which lists two employees](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/collection_prototype_elements.png)
-
-We have a [Collection](collection.md) with two employees and we want to provide the user with the option of selecting one of the employees (eg. to allow for further processing in the next steps of the process).
+When configuring elements that incorporate UI Actions there are a few considerations to keep in mind. These adjustments are necessary to enable users to select products for further processing in subsequent steps of the workflow.
 
 ### Step 1 - Defining the Node Action
 
-To select one employee from the list, we first must add an [Action](../../../actions/actions.md) to the [User Task Node](../../../node/user-task-node.md) this UI is attached to:
+To facilitate the selection of a product from the list, you must first add an [Action](../../../actions/actions.md) to the [User Task Node](../../../node/user-task-node.md) associated with this UI element:
 
-![Node Action that saves the selected employee to the process's data.](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/col_prototype_node_action.png)
+![Node Action that saves the selected product to the process's data.](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/col_prot_action.png)
 
-This **save-item** action is **manual** (since it will be triggered by the user) and **optionally** (since selecting an employee is not a requirement to go to the next [Node](../../../node/) in the process).
+This **save-item** action is categorized as **manual** since it is user-triggered and **mandatory** because product selection is a prerequisite for proceeding to the next [Node](../../../node/) in the process. Additionally, it is marked as **Repeatable** to allow users to change their selected product.
 
-To allow the user to change his mind about the selected employee, this action is also marked as **Repeatable**.
+Pay attention to the **Data to send** section, which specifies where in the **process data** the selected product (the one the user clicked on) should be saved. In this example, it is saved under the `selectedProduct` key.
 
-Keep in mind to check the **Data to send** section. Here we are telling the platform where we want the selected employee (for which the user pressed the **Select** button) to be saved in the **process data**. In this example, we want it to be saved under the `selectedEmployee` key.
+### Step 2 - Adding the UI Action
 
-### Step 2 - Adding the Button & UI Action
+Now that you have a [Node Action](../../../actions/actions.md) defined, you can proceed to add a UI action to the collection prototype. This UI action can be added directly to the collection prototype UI element or other UI elements within it that support UI actions. For more information on UI actions, click [<u>**here**</u>](../../ui-actions.md).
 
-Now that we have a [Node Action](../../../actions/actions.md) defined, we can go ahead and add the **Select** button in the UI of the [User Task](../../../node/user-task-node.md) which contains the Employees Collection.
+![Select product element and its UI Action configuration](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/add_ui_action_col_prot.png)
 
-![Select employee button and its UI Action configuration](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/col_prototype_add_button.png)
+**Collection Item Save Key** field has an important role in the UI Action configuration of element with the UI action. This field represents how we pass the value of the **Product** that the user has selected to the [Node Action](../../../actions/actions.md) that we created in [**Step 1**](#step-1---defining-the-node-action), named _save-item_.
 
-**Collection Item Save Key** field has an important role in the UI Action configuration of the **Select** button. This field represents how we pass the value of the **Employee** that the user has selected to the [Node Action](../../../actions/actions.md) that we created in [**Step 1**](#step-1---defining-the-node-action), named _save-item_.
-
-In our example, we set **Collection Item Save Key** to be `selectedEmployee`.
+In our example, we set **Collection Item Save Key** to be `selectedProduct`.
 
 :::warning
-**IMPORTANT:** `selectedEmployee` key is how we expose the data from the **Collection** to the [Node Action](../../../actions/actions.md) It is **imperative** that the name in the **Collection Item Save Key** is the same as the one used in the **Data to send** input in the Node Action.
+**IMPORTANT**: The `selectedProduct` key is how we expose the data from the **Collection** to the [Node Action](../../../actions/actions.md) It is **imperative** that the name in the **Collection Item Save Key** is the same as the one used in the **Data to send** input in the Node Action.
 :::
-
-The button and UI action are mostly configured as any other Button and UI Action would be configured.
 
 ### Result
 
-This is how the process data looked before we pressed the **Select** button for an employee:
+Before clicking the collection prototype UI element with the attached UI action, this is how the process data appears:
 
-![Process data before selecting an employee](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/col_prototype_result.png)
+![Process data before selecting a product](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/c.prototype_result.png)
 
-This is how the process data looks after we selected an employee from the list (notice the new field `selectedEmployee`):
+After selecting a product from the list (notice the new field`selectedProduct`):
 
-![Process data after selecting an employee](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/col_prototype_result1.png)
+![Process data after selecting a product](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/c.prototype_result_final.png)
