@@ -25,7 +25,11 @@ Node configuration is done by accessing the **Node Config** tab. You have the fo
 * **Node name** - the name of the node
 * **Can go back** - switching this option to true will allow users to return to this step after completing it
 
+<div class = "image-scaled">
+
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/task_node_general_config.png)
+
+</div>
 
 :::info
 When encountering a step with `canGoBack` switched to false, all steps found behind it will become unavailable.
@@ -77,7 +81,11 @@ Depending on the type of the [**action**](../actions/actions.md), different prop
 6. **Required type** - (options are Mandatory/Optional) - automatic actions can only be defined as mandatory. Manual actions can be defined as mandatory or optional.
 7. **Repeatable** - should be checked if the action can be triggered multiple times
 
+<div class = "image-scaled">
+
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/task_node_action_edit.png)
+
+</div>
 
 #### Parameters
 
