@@ -54,6 +54,32 @@ This service needs to connect to a Mongo database that has replicas, in order to
 
 ## Configuration 
 
+```yaml
+scheduler:
+  batchSize: 100
+  cronExpression: "*/10 * * * * *" #every 10 seconds
+
+timer-event-scheduler: //used for timer events nodes
+  batchSize: 100
+  cronExpression: "*/1 * * * * *" #every 1 seconds
+
+flowx:
+  timer-calculator:
+    delay-max-repetitions: 1000000
+```
+
+* **cronExpression** is a schedule expression that determines when the cleanup process runs. In this case, it runs every day during the night (between 12:00 AM and 5:59 AM) and every 5 minutes, at the start of the minute. 
+* **batchSize** specifies the number of processes to be cleaned up in one batch.
+
+### Recovery mechanism
+
+:::info EXAMPLE
+You have a "next execution" set for 10:25, and the cycle step is 10 minutes. If the instance goes down for 2 hours, the next execution time should be 12:25, not 10:35. To calculate this, you add 10 minutes repeatedly to 10:25 until you reach the current time. So, it would be 10:25 + 10 min + 10 min + 10 min, until you reach the current time of 12:25. This ensures that the next execution time is adjusted correctly after the downtime.
+:::
+
+* `FLOWX_TIMER_CALCULATOR_DELAY_MAX_REPETITIONS` - This means that, for example, if our cycle step is set to one second and the system experiences a downtime of two weeks, which is equivalent to 1,209,600 seconds, and we have the "max repetitions" set to 1,000,000, it will attempt to calculate the next schedule. However, when it reaches the maximum repetitions, an exception is thrown, making it impossible to calculate the next schedule. As a result, the entry remains locked and needs to be rescheduled. This scenario represents a critical case where the system experiences extended downtime, and the cycle step is very short (e.g., 1 second), leading to the inability to determine the next scheduled event.
+
+
 ### Configuring MongoDB
 
 The MongoDB database is used to persist scheduled messages until they are sent back. The following configurations need to be set using environment variables:
@@ -85,3 +111,7 @@ The following environment variables could be set in order to control log levels:
 * `LOGGING_LEVEL_ROOT` - root spring boot microservice logs
 
 * `LOGGING_LEVEL_APP` - app level logs
+
+
+
+
