@@ -218,7 +218,13 @@ kafka:
       group-id: stop-scheduled-timer-events
 ```
 
-### New timer-event-scheduler (Cron)
+### New service account
+
+A new service account has been introduced. This service account is essential for enabling the usage of the Start Timer Event node. Detailed information is available in the following section:
+
+[Service accounts](../../docs/platform-setup-guides/access-management/configuring-an-iam-solution#scheduler-service-account)
+
+## Scheduler: New timer-event-scheduler (Cron)
 
 Introducing a new timer event scheduler designed to manage timer events. This scheduler scans for expired messages every second, processing batches of 100 messages per iteration. For situations with higher message volumes, the scheduler ensures thorough message consumption:
 
@@ -226,27 +232,22 @@ Introducing a new timer event scheduler designed to manage timer events. This sc
 timer-event-scheduler:
   batchSize: 100 
   cronExpression: "*/1 * * * * *" #every 1 seconds
+```
 
+## Scheduler: new recovery mechanism
+
+```yaml
 flowx:
   timer-calculator:
     delay-max-repetitions: 1000000
 ```
 
-New recovery mechanism:
-
 :::info EXAMPLE
 You have a "next execution" set for 10:25, and the cycle step is 10 minutes. If the instance goes down for 2 hours, the next execution time should be 12:25, not 10:35. To calculate this, you add 10 minutes repeatedly to 10:25 until you reach the current time. So, it would be 10:25 + 10 min + 10 min + 10 min, until you reach the current time of 12:25. This ensures that the next execution time is adjusted correctly after the downtime.
 :::
 
-
 * `FLOWX_TIMER_CALCULATOR_DELAY_MAX_REPETITIONS` - This means that, for example, if our cycle step is set to one second and the system experiences a downtime of two weeks, which is equivalent to 1,209,600 seconds, and we have the "max repetitions" set to 1,000,000, it will attempt to calculate the next schedule. However, when it reaches the maximum repetitions, an exception is thrown, making it impossible to calculate the next schedule. As a result, the entry remains locked and needs to be rescheduled. This scenario represents a critical case where the system experiences extended downtime, and the cycle step is very short (e.g., 1 second), leading to the inability to determine the next scheduled event.
 
-
-### New service account
-
-A new service account has been introduced. This service account is essential for enabling the usage of the Start Timer Event node. Detailed information is available in the following section:
-
-[Service accounts](../../docs/platform-setup-guides/access-management/configuring-an-iam-solution#scheduler-service-account)
 
 
 
