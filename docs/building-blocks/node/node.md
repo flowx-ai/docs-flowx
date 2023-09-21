@@ -31,7 +31,11 @@ Let's go through the most important types of nodes. These can be selected when a
 
 Advanced node types:​
 
+<div class = "image-scaled">
+
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/subprocess_node.png)
+
+</div>
 
 * ​**​Subprocess run node**​ - a node that provides advanced options for starting subprocessesAfter you get a broader overview of each node, you can play with them to create a process, more details are in the below section:
 

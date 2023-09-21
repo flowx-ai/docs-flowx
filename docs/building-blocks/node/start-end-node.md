@@ -9,7 +9,11 @@ Let's go through all the options for configuring start and end nodes for a proce
 
 The start node represents the beginning of a process and it is mandatory to add one when creating a process.
 
+<div class = "image-scaled">
+
 ![Start node](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/start_node.png#center)
+
+</div>
 
 A process can have one or more start nodes. If you defined multiple start nodes, each should have a start condition value configured. When starting a new process instance the desired start condition should be used.
 
@@ -77,7 +81,11 @@ A response with the error code `bad request` and title `Start node for process d
 
 ## End node
 
+<div class = "image-scaled">
+
 ![End Event](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/end-event.png#center)
+
+</div>
 
 An end node is used to mark where the process finishes. When the process reaches this node, the process is considered completed and its status will be set to `Finished`.
 
