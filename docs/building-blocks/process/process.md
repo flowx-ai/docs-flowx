@@ -7,19 +7,25 @@ sidebar_position: 1
 
 The FLOWX.AI Process Designer workspace is designed for creating and editing business processes, the menu contains all elements required to create a process.
 
-When a process definition is displayed, the name contains the following:
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/versioning.png)
 
-* Process definition name 
-* Version number
-* State
+When you encounter a process definition menu, it encompasses the following essential elements:
+
+1. **Process definition name**(*foodOrder_process*): This serves as the name of the process definition, providing a clear identifier for the workflow.
+2. **Version - main (Work In Progress)**: This section displays both the version branch name and the current state of the published version. It offers insights into the active development state of the workflow.
+3. **Branching Icon**: When selected, this icon opens up additional options to enhance visibility and control over the various process definitions and their branches.
+4. **Submit Changes**: To commit alterations to the workflow, you can employ this designated action found within the version menu. Triggering the submission action prompts the appearance of a modal window, inviting you to provide a commit message for context.
+5. **Autosaved**: This reassuring notification indicates that any modifications made to the workflow have been automatically saved, eliminating the need for manual user intervention. It ensures the safety of your work.
+6. **Start**: This option signifies the ability to initiate the execution of a process definition, setting it in motion.
+7. **Lock Icon**: Utilize this icon to switch the current work mode from "Edit mode" to "Readonly." It empowers you to control the accessibility and editing permissions for the workflow.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/process_designer_overview.png)
 
 We have designed FLOWX.AI components to closely resemble their BPMN counterparts for ease of use. In the following sections, we will provide more details on how to use the process designer.
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/process/process_def.png)
-
 Check the following section for more details about nodes and how to use them:
 
-[Node](../node/node.md)
+[Nodes](../node/node.md)
 
 ## Process definition
 
