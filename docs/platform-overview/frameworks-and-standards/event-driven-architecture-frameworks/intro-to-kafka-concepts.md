@@ -4,11 +4,11 @@
 
 Apache Kafka is an open-source distributed event streaming platform that can handle a high volume of data and enables you to pass messages from one end-point to another.
 
-Kafka is a unified platform for handling all the real-time data feeds. Kafka supports low latency message delivery and gives a guarantee for fault tolerance in the presence of machine failures. It can handle a large number of diverse consumers. Kafka is very fast, and performs 2 million writes/sec. Kafka persists all data to the disk, which essentially means that all the writes go to the page cache of the OS (RAM). This makes it very efficient to transfer data from a page cache to a network socket.
+Kafka is a unified platform for handling all the real-time data feeds. Kafka supports low latency message delivery and gives a guarantee for fault tolerance in the presence of machine failures. It can handle many diverse consumers. Kafka is very fast, and performs 2 million writes/sec. Kafka persists all data to the disk, which essentially means that all the writes go to the page cache of the OS (RAM). This makes it very efficient to transfer data from a page cache to a network socket.
 
 ### Benefits of using Kafka
 
-* **Reliability** − Kafka is distributed, partitioned, replicated, and fault tolerant
+* **Reliability** − Kafka is distributed, partitioned, replicated, and fault-tolerant
 * **Scalability** − Kafka messaging system scales easily without downtime
 * **Durability** − Kafka uses Distributed commit log which means messages persist on disk as fast as possible
 * **Performance** − Kafka has high throughput for both publishing and subscribing messages. It maintains a stable performance even though many TB of messages are stored.

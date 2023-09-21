@@ -45,7 +45,7 @@ There are 3 types of events:
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-bpmn/bpmn-basic-concepts/user_task.png#center) | ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-bpmn/bpmn-basic-concepts/service_task.png#center) |
 | a task that requires the human to perform an action                                                                                                                                         | a task that uses a Web service, an automated application, or other kinds of service in completing the task.                                                                                    |
-|                                                                                                                                                                                             |                                                                                                                                                                                                |
+
 
 **Send Task**
 

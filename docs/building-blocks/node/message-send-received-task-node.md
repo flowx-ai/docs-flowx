@@ -9,7 +9,7 @@ sidebar_position: 2
 
 This node is used to configure messages that should be sent to external systems.
 
-![Message send task](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_send_task.png)
+![Message send task](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_send_task.png#center)
 
 ### Configuring a message send task node
 
