@@ -201,7 +201,7 @@ The suggested topic pattern naming convention is the following:
 
 * `KAFKA_TOPIC_PROCESS_OPERATIONS_IN` - used for receiving calls from the task management plugin with information regarding operations performed
 
-##### Response example
+##### Request example
 
 ```json
 {
@@ -222,24 +222,43 @@ The suggested topic pattern naming convention is the following:
 
 * `KAFKA_TOPIC_PROCESS_OPERATIONS_BULK_IN` - on this topic, you can perform operations from the "KAFKA_TOPIC_PROCESS_OPERATIONS_IN" topic and send them as an array, allowing you to send multiple operations at once
 
-##### Response example
+##### Request example 
 
 ```json
 {
-    "operations": [
+
+  "operations": [
     {
-       "operationType": "TERMINATE",
-        "processInstanceUuid": "6ae8274a-2778-4ff9-8fcb-6c84a5eb2bc6"
-        "taskId": "some task id"
+      "operationType": "HOLD",
+      "taskId": "some task id",
+      "processInstanceUuid": "d3aabfd8-d041-4c62-892f-22d17923b223", // the id of the process instance
+      "swimlaneName": "Default", //name of the swimlane
+      "owner": null,
+      "author": "john.doe@flowx.ai",
+      "requestID": "1234567891"
     },
     {
-       "operationType": "HOLD",
-        "processInstanceUuid": "6ae8274a-2778-4ff9-8fcb-6c84a5eb2bc6"
-        "taskId": "some task id"
+      "operationType": "HOLD",
+      "taskId": "some task id",
+      "processInstanceUuid": "d3aabfd8-d041-4c62-892f-22d17923b223",
+      "swimlaneName": "Default", //name of the swimlane
+      "owner": null,
+      "author": "jonh.doe@flowx.ai",
+      "requestID": "1234567890"
     }
-    ]
-}
+  ]
+}      
 ```      
+
+:::info
+A response should be sent on a `callbackTopic` if it is mentioned in the headers, as in the following example:
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/tsk_callbacktopic.png)
+
+```json
+{"processInstanceId": ${processInstanceId}, "callbackTopic": "test.operations.out"}
+```
+:::
 
 
 | Default parameter (env var)            | Default FLOWX.AI value (can be overwritten)    |
@@ -250,11 +269,9 @@ The suggested topic pattern naming convention is the following:
 
 
 :::info
-Task manager operations could be the following: assignment, unassignment, hold, and unhold, it is matched with the `...operations_out` topic on the engine side. For more information check the Task Management plugin documentation:
+Task manager operations could be the following: assignment, unassignment, hold, unhold, terminate and it is matched with the `...operations.out` topic on the engine side. For more information check the Task Management plugin documentation:
 
-📄 [<u>**Task management plugin**</u>](../../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md)
-
-
+📄[<u>**Task management plugin**</u>](../../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md)
 :::
 
 

@@ -4,86 +4,93 @@ sidebar_position: 3
 
 # 📦 Task management
 
-### What is Task management plugin?
+## Overview
 
 The Task Management plugin is a powerful plugin that enables back-officers and supervisors to efficiently track and assign tasks within a company. It provides a business-oriented view of a [**process**](../../../../terms/flowx-process) defined using [**FLOWX.AI Designer**](../../../../terms/flowx-ai-designer) and allows for seamless interactions at the assignment level.
 
 ![Task Manager](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/task_management_overview.gif)
 
-### Activities
+## Activities
 
-Inside the **Task Manager → All tasks** you can find the **Activities** tab which consists of the following items:
+Within the **Task Manager** section, particularly under **All Tasks**, you'll find the **Activities** tab, featuring:
 
-* **Title** - the title of the task
-* **Stage** - the specific [stages](./using-stages.md) during the execution of a process
-* **Assignee** - the assignee of the process
-* **Status** - the status of the process, more details can be found [here](#process-status-updates)
-* **Priority** - allows you to prioritize the tasks
-* **Last updated** - timestamp for the latest updates
-* **Search** - the search function is used to look for keys stored in the process
+* **Title**: The task's title.
+* **Stage**: The specific [stages](./using-stages.md) during process execution.
+* **Assignee**: The person responsible for the process.
+* **Status**: The current process status (details in [Process Status Updates](#process-status-updates)).
+* **Priority**: Allows task prioritization.
+* **Last Updated**: Timestamp for the latest updates.
+* **Search**: A search function to find process keys stored in the process.
+
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/indexed_keys.png)
 
-### Task Details
+## Task Details
 
-The **Task details** tab within the **Task Manager** displays key information about a process, including:
+The **Task Details** tab within **Task Manager** provides key process information, including:
 
-* **Priority** - enable prioritization of tasks
-* **Status** - the current status of the process
-* **Stage** - specific stages during the execution of a process
-* **Comments** - comments left by the users
-* **History** - information such as who created a task, when a task was created, or when the status changed
+* **Priority**: Enables task prioritization.
+* **Status**: The current process status.
+* **Stage**: Specific stages during process execution.
+* **Comments**: User comments.
+* **History**: Information such as task creation, creator, and status changes.
+
 
 ![Task details](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/task_mngmnt_task_details.png)
 
 :::caution
-Please note that specific roles must be defined in a process to utilize all the task management features. For more information on configuring access roles for processes, refer to the [<u>**Configuring access roles for processes**</u>](../../../../platform-setup-guides/flowx-engine-setup-guide/configuring-access-roles-for-processes.md).
+Please note that specific roles must be defined in a process to utilize all task management features. For configuration details, see [**Configuring Access Roles for Processes**](../../../../platform-setup-guides/flowx-engine-setup-guide/configuring-access-roles-for-processes.md).
 :::
 
 
-### Statuses & Definitions in Task Manager
+## Process status updates
 
-Task Manager displays multiple statuses based on the state of the process.
-
-#### Process status updates
-
-| Status        | Definition                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Created**   | This status is visible only if there is an issue with the process creation. If the process is error-free in its configuration, you will see the **Started** status instead.                                                                                                                                                                                                                                                                                                                         |
-| **Started**   | Indicates that the process is in progress and running.                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| **Finished**  | The process has reached an end node and completed its execution.                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| **Failed**    | This status is displayed when a [CronJob](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/) is configured and enabled within the [FLOWX engine](../../../core-components/flowx-engine/). For example, if a CronJob is triggered at a particular hour, and the instance is not finished by then, all the tasks will be moved to the `FAILED` status.                                                                                                                             |
-| **Expired**   | <p>This status is displayed when <code>expiryTime</code> field is defined within the process definition. To set up an <code>expiryTime</code> function, follow these steps</p><ol><li>Go to <strong>FLOWX Designer > Processes > Definitions</strong>.</li><li>Select a process and click the "<strong>⋮</strong>" <strong></strong> button, then choose <strong>Settings.</strong></li><li>Inside the <strong>General</strong> tab, you can edit the <strong>Expiry time</strong> field.</li></ol> |
-| **Aborted**   | This status is available for processes that also contain subprocesses. When a subprocess is running (and the [token is moved backward](https://docs.flowx.ai/flowx-designer/managing-a-process-flow/moving-a-token-backwards-in-a-process) to redo a series of previous actions) - the subprocess will be aborted.                                                                                                                                                                                  |
-| **Dismissed** | This status is available for processes that contain subprocesses. It is displayed when a user stops a subprocess.                                                                                                                                                                                                                                                                                                                                                                                   |
-| **On hold**   | The process cannot be edited anymore. A superuser can trigger this status to block actions on the process until further clarification or unfreeze.                                                                                                                                                                                                                                                                                                                                                  |
+Task Manager displays various statuses based on process state:
 
 
-#### Swimlanes updates
+| Status         | Definition                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Created**    | This status is visible only if there is an issue with the process creation. If the process is error-free in its configuration, you will see the **Started** status instead.                                                                                                                                                                                                                                                                                                          |
+| **Started**    | Indicates that the process is in progress and running.                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| **Finished**   | The process has reached an end node and completed its execution.                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| **Failed**     | Displayed when a [CronJob](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/) is enabled in the [FLOWX engine](../../../core-components/flowx-engine/). For example, if a CronJob is triggered but not completed on time, tasks move to the `FAILED` status.                                                                                                                                                                                                      |
+| **Expired**    | <p>Displayed when <code>expiryTime</code> field is defined within the process definition. To set up an <code>expiryTime</code> function, follow these steps</p><ol><li>Go to <strong>FLOWX Designer > Processes > Definitions</strong>.</li><li>Select a process and click the "<strong>⋮</strong>" <strong></strong> button, then choose <strong>Settings.</strong></li><li>Inside the <strong>General</strong> tab, you can edit the <strong>Expiry time</strong> field.</li></ol> |
+| **Aborted**    | This status is available for processes that also contain subprocesses. When a subprocess is running (and the [token is moved backward](https://docs.flowx.ai/flowx-designer/managing-a-process-flow/moving-a-token-backwards-in-a-process) to redo a series of previous actions) - the subprocess will be aborted.                                                                                                                                                                   |
+| **Dismissed**  | Available for processes that contain subprocesses. It is displayed when a user stops a subprocess.                                                                                                                                                                                                                                                                                                                                                                                   |
+| **On hold**    | Freezes the process, blocking further actions. A superuser can trigger this status for clarification or unfreeze.                                                                                                                                                                                                                                                                                                                                                                    |
+| **Terminated** | A request is sent via Kafka to terminate a process instance, ending all active tokens in the current process or subprocesses.                                                                                                                                                                                                                                                                                                                                                        |
 
-| Status             | Definition                            |
-| ------------------ | ------------------------------------- |
-| **Swimlane enter** | When the token enters a new swimlane. |
-| **Swimlane exit**  | When the token exits a swimlane.      |
-
-
-#### Stages updates 
-
-| Status          | Definition                         |
-| --------------- | ---------------------------------- |
-| **Stage enter** | When the token enters a new stage. |
-| **Stage exit**  | When the token exits a stage.      |
-
+## Swimlanes and Stages Updates
 
 
-### Using the plugin
+Task Manager also tracks swimlane and stage changes:
 
-The Task Manager plugin allows users to view a list of tasks and perform various actions based on their roles, including:
+### Swimlanes Updates
 
-* Assigning/unassigning tasks
-* Putting the process on hold
-* Adding comments
-* Viewing the application URL (could be also a generic parameter defined as a URL)
+| Status             | Definition                           |
+| ------------------ | ------------------------------------ |
+| **Swimlane Enter** | Marks token entering a new swimlane. |
+| **Swimlane Exit**  | Indicates token exiting a swimlane.  |
+
+
+### Stages Updates 
+
+| Status          | Definition                        |
+| --------------- | --------------------------------- |
+| **Stage Enter** | Marks token entering a new stage. |
+| **Stage Exit**  | Indicates token exiting a stage.  |
+
+
+## Using the plugin
+
+The Task Manager plugin offers a range of features tailored to different roles, including:
+
+
+* [Assigning and Unassigning Tasks](#assigningunassigning-tasks)
+* [Managing On-Hold Projects](#managing-on-hold-projects)
+* [Adding Comments](#adding-comments)
+* [Viewing the application URL](#viewing-the-application)
+* [Bulk Updates (via Kafka)](#bulk-updates)
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/task_operations.png)
 
@@ -93,30 +100,108 @@ You can configure Task Manager to send information about your process by enablin
 
 **To set up Task Management to send updates on your process, follow these steps:**
 
-1. Go to **Flowx.AI Designer** and open the desired **process definition**.
-2. From the left sidebar menu select the **Settings** tab.
-4. Enable the **Use process in task management** toggle button.
+1. In **FLOWX.AI Designer**, open the desired **process definition**.
+2. Select the **Settings** tab from the left sidebar menu.
+3. Enable the **Use process in task management** toggle butto
 
 ![Update task management](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/task_mngmnt_response.png)
 
 :::caution
-Please note that some actions may not be available based on user roles and access rights.
+Some actions may be restricted based on user roles and access rights.
 :::
 
 **To set up Task Management to send extra updates on your process using only some specific areas of your process:**
 
-1. Go to **Flowx.AI Designer** and open your process definition.
-2. Click **Edit** button.
-3. Select a node (the Task Manager will trigger the updates after reaching this node).
+1. In **FLOWX.AI Designer**, open your process definition.
+2. Click the **Edit** button.
+3. Select a node for Task Manager to trigger updates upon reaching.
 4. Enable the **Update task management?** switch.
 
 :::info
-You can set up this action for multiple nodes.
+You can configure this action for multiple nodes.
 :::
 
 ![Update task management](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/task_mngmnt_response1.png)
 
-
-For more detailed information on configuring the Task Manager plugin, refer to the [Task Management plugin setup](../../plugins-setup-guide/task-management-plugin-setup/) section.
+For detailed configuration steps, refer to the [Task Management Plugin Setup](../../plugins-setup-guide/task-management-plugin-setup/) section.
 
 [Task Management plugin setup](../../plugins-setup-guide/task-management-plugin-setup/task-management-plugin-setup.md)
+
+## Task Assignment and Reassignment 
+
+Consider this scenario: you're the HR manager overseeing the onboarding process for new employees. In order to streamline this operation, you've opted to leverage a task manager plugin. This process consists of two key phases: the Initiation Stage and the Account Setup Stage, each requiring a designated team member.
+
+The Initiation Stage has successfully concluded, marking the transition to the Account Setup Stage. At this juncture, it's essential to reassign the task, originally assigned to John Doe, to Jane Doe, a valuable member of the backoffice team.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/tsk_assign.gif)
+
+## Managing On-Hold Projects
+
+As a project manager overseeing various ongoing projects, you may need to temporarily pause one due to unforeseen circumstances. To manage this, you use the "On Hold" status.
+
+## Adding Comments 
+
+When handling on-hold projects, document the reasons, inform the team, and plan for resumption. This pause helps address issues and ensures a smoother project flow upon resuming. Never forget to add comments:
+
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/tsk_hold_comment.gif)
+
+## Viewing the Application
+
+In the task management tab, paste the application URL where the process is loaded, following this format:
+
+```
+{baseURL}/processes/instance
+```
+
+Example:
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/tsk_view_app.png)
+
+
+:::info 
+You can also use a defined generic parameter as a URL: `${genericParameter}`.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/tsk_generic_param.png)
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/tsk_generic_param1.png)
+
+:::
+
+## Bulk updates
+
+Send bulk update requests via Kafka (using Process Engine) to perform multiple operations at once. Use the Kafka topic:
+
+* `KAFKA_TOPIC_PROCESS_OPERATIONS_BULK_IN` (defined in Process Engine) to send operations from "KAFKA_TOPIC_PROCESS_OPERATIONS_IN" as an array, allowing multiple operations at once. More details [**here**](../../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#topics-related-to-the-task-management-plugin).
+
+Example of a bulk request:
+
+```json
+{
+
+  "operations": [
+    {
+      "operationType": "HOLD",
+      "taskId": "some task id",
+      "processInstanceUuid": "d3aabfd8-d041-4c62-892f-22d17923b223", // the id of the process instance
+      "swimlaneName": "Default", //name of the swimlane
+      "owner": null,
+      "author": "john.doe@flowx.ai",
+      "requestID": "1234567891"
+    },
+    {
+      "operationType": "HOLD",
+      "taskId": "some task id",
+      "processInstanceUuid": "d3aabfd8-d041-4c62-892f-22d17923b223",
+      "swimlaneName": "Default", //name of the swimlane
+      "owner": null,
+      "author": "jonh.doe@flowx.ai",
+      "requestID": "1234567890"
+    }
+  ]
+}      
+```
+
+For more information on bulk updates configuration, see Process Engine Setup:
+
+[Process Engine Setup](../../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#topics-related-to-the-task-management-plugin)

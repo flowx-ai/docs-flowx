@@ -40,6 +40,9 @@ The process status data includes the following:
   * DISMISSED - the status is available for processes with subprocesses, it is displayed when a user stops a subprocess
   * EXPIRED - the status is displayed when the "expiryTime" field is defined in the process definition and the defined time has passed.
   * FINISHED - the process has successfully completed its execution
+  * TERMINATED - a request was sent to the instance to be terminated.
+  * ON HOLD - the process cannot be edited anymore.
+  * FAILED - if a CronJob is triggered at a particular hour, and the instance is not finished by then the status will change to `FAILED` 
 * **Process definition** - the name of the process definition
 * **Active process instance** - the UUID of the process instance, with a copy action available
 * **Variables** - displayed as an expanded JSON

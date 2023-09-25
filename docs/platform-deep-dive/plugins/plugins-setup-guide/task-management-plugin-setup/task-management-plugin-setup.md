@@ -120,7 +120,7 @@ Each action available in the service corresponds to a Kafka event. A separate Ka
 
 `KAFKA_TOPIC_PROCESS_START_OUT` - is used for running hooks, the engine receives a start process request for a hook on this topic, and it needs to be matched with the corresponding `...start_in` topic on the engine side
 
-`KAFKA_TOPIC_PROCESS_OPERATIONS_OUT`- is used to update the engine on task manager operations such as assignment, unassignment, hold, and unhold, it is matched with the `...operations_in` topic on the engine side
+`KAFKA_TOPIC_PROCESS_OPERATIONS_OUT`- is used to update the engine on task manager operations such as assignment, unassignment, hold, unhold and terminate it is matched with the `...operations_in` topic on the engine side
 
 `KAFKA_TOPIC_PROCESS_SCHEDULE_IN`- is used to receive a message from the task manager when it's time to run a hook (for hooks configured with SLA, for more details on how to configure a hook with SLA, click [here](../../custom-plugins/task-management/using-hooks.md#types-of-hooks))
 
