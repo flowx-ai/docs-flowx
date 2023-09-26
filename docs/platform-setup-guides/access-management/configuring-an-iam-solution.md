@@ -74,7 +74,7 @@ To create a new user in a realm and generate a temporary password:
 
 ## Adding clients
 
-Clients represent trusted browser apps and web services in a realm. To add clients:
+A Client represents an instance of an application. A client is attached to a specific realm. First, add `platform-authenticate` client - will be used for login/logout/refresh token by web and mobile apps.
 
 1. Click **Clients** in the top left menu, then click **Create**.
 2. Set a client ID as `{example}-authenticate`, which will be used for login, logout, and refresh token operations.
@@ -84,10 +84,9 @@ Clients represent trusted browser apps and web services in a realm. To add clien
 
 3. Open the newly created **client** and edit the following properties:
 
-* Set **Access type** to **public** (this will not require a secret)
-* Set **Valid redirect URIs**, specifying a valid URI pattern that a browser can redirect to after a successful login or logout, simple wildcards are allowed
-* Enable **Direct Access Grants** and **Implicit Flow** by setting them to **ON**.
-* Switch **Backchannel Logout Session Required** to **OFF**
+* Set **Access type** to **public** (this will not require a secret).
+* Set **Valid redirect URIs**, specifying a valid URI pattern that a browser can redirect to after a successful login or logout, simple wildcards are allowed.
+* Enable **Direct Access Grants** and **Implicit Flow Enabled** by setting them to **ON**.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/keycloak_authenticate_settings.png)
 
@@ -233,7 +232,11 @@ security:
 :::info
 **What is a service account?**
 
-A service account is an account that grants direct access to the Keycloak API for a specific component.
+A service account is an account that grants direct access to the Keycloak API for a specific component. 
+
+Each client has a built-in service account which allows it to obtain an access token. To use this feature you must set the **Access Type** of your client to **confidential**. When you do this, the **Service Accounts Enabled** switch will appear.
+:::
+
 :::
 
 ### Admin service account
@@ -255,6 +258,8 @@ Follow these steps to add an **admin service account**:
 * **view-users**
 * **query-groups**
 * **query-users**
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/realm_management.png)
 
 4. Assign the necessary **service account roles**:
 
@@ -307,7 +312,6 @@ The task management microservice requires a service account to make direct calls
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/tsk-sa.png)
 
 
-
 In the provided example, the **task management service account** can have the following assigned roles, depending on the required access scopes:
 
 * **view-users**
@@ -340,7 +344,7 @@ Follow these steps to add a **process engine service account**:
 This service account does not require client roles.
 :::
 
-3. Assign the necessary service account roles, including `FLOWX_ROLE`.
+3. Assign the `FLOWX_ROLE` ((this is needed to run process instances)).
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/iam14.png)
 
@@ -360,6 +364,7 @@ Follow these steps to add a **scheduler service account**:
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/iam11.png)
 
-3. Assign the necessary service account roles, including `FLOWX_ROLE`.
+3. Assign the `FLOWX_ROLE` as service account role (this is needed to run process instances)
+
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/iam14.png)
