@@ -65,7 +65,7 @@ Also, in order to successfully link the pdf viewer, add the following declaratio
 
 Once installed, FlxProcessModule will be imported in the `AppModule FlxProcessModule.forRoot({})`. 
 
-You MUST also import the dependencies of `FlxProcessModule: HttpClientModule` from `@angular/common/http` and **IconModule** from `@flowxai/ui-toolkit`.
+You MUST also import the dependencies of `FlxProcessModule: HttpClientModule` from `@angular/common/http` and **FlxIconModule** from `@flowx/ui-toolkit`.
 
 **Using Paperflow web components**
 
@@ -97,9 +97,9 @@ themePaths: {
     tokens: 'assets/theme/theme_tokens.json',
   },
 ```
-The **assets/theme/theme_tokens.json** - should hold the design tokens (e.g. colors, fonts) used in the theme. An example can be found here.
+The **assets/theme/theme_tokens.json** - should hold the design tokens (e.g. colors, fonts) used in the theme.
 
-The **assets/theme/theme_components.json** - holds metadata used to describe component styles. An example can be found here.
+The **assets/theme/theme_components.json** - holds metadata used to describe component styles. 
 
 
 For **Task Management** theming is done through the ppf-theme mixin that accepts as an argument a list of colors grouped under **primary**, **status** and **background**

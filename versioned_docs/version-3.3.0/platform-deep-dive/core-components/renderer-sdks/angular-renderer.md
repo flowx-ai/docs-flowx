@@ -63,7 +63,7 @@ Also, in order to successfully link the pdf viewer, add the following declaratio
 
 Once installed, FlxProcessModule will be imported in the `AppModule FlxProcessModule.forRoot({})`. 
 
-You MUST also import the dependencies of `FlxProcessModule: HttpClientModule` from `@angular/common/http` and **IconModule** from `@flowxai/ui-toolkit`.
+You MUST also import the dependencies of `FlxProcessModule: HttpClientModule` from `@angular/common/http` and **FlxIconModule** from `@flowx/ui-toolkit`.
 
 **Using Paperflow web components**
 

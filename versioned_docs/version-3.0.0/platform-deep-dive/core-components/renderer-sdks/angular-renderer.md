@@ -39,7 +39,7 @@ Use the following command to install the **renderer** library and its required d
 ```bash
 npm install 
   flowx/ui-sdk@3.2.1
-  @flowxai/ui-toolkit@3.2.1
+  @flowx/ui-toolkit@3.2.1
   @flowx/ui-theme@3.2.1
   paperflow-web-components 
   vanillajs-datepicker@^1.2.0 
@@ -54,7 +54,7 @@ npm install
 Starting with **FLOWX.AI 3.0** release `flowx-process-renderer` is transformed to `@flowx\ui-sdk.`
 
 :::info
-Also, starting with`paperflow-web-components` lib is no longer maintained. The new components are moved into `@flowxai/ui-toolkit@3.0`.
+Also, starting with`paperflow-web-components` lib is no longer maintained. The new components are moved into `@flowx/ui-toolkit@3.0`.
 :::
 ::::
 
@@ -76,7 +76,7 @@ The above command installs several packages to use in your web development proje
 
 Once installed, FlxProcessModule will be imported in the `AppModule FlxProcessModule.forRoot({})`. 
 
-You MUST also import the dependencies of `FlxProcessModule: HttpClientModule` from `@angular/common/http` and **IconModule** from `@flowxai/ui-toolkit`.
+You MUST also import the dependencies of `FlxProcessModule: HttpClientModule` from `@angular/common/http` and **FlxIconModule** from `@flowx/ui-toolkit`.
 
 **Using Paperflow web components**
 
