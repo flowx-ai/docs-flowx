@@ -8,8 +8,8 @@ sidebar_position: 2
 
 The minimum requirements are:
 
-* iOS 14
-* Swift 5.0
+* iOS 15
+* Swift 5.7
 
 ## Installing the library
 
@@ -24,7 +24,7 @@ If you are developing a framework and use FlowX as a dependency, add to your `Pa
 
 ```yaml
 dependencies: [
-    .package(url: "https://github.com/flowx-ai/flowx-ios-sdk", .upToNextMajor(from: "0.96.0"))
+    .package(url: "https://github.com/flowx-ai-external/flowx-ios-renderer", .upToNextMajor(from: "2.2.0"))
 ]
 ```
 
@@ -39,7 +39,7 @@ dependencies: [
 Add the private trunk repo to your local Cocoapods installation with the command:
 
 ```
-pod repo add flowx-specs git@github.com:flowx-ai/flowx-ios-specs.git
+pod repo add flowx-specs git@github.com:flowx-ai-external/flowx-ios-specs.git
 ```
 
 #### Adding the dependency
@@ -60,10 +60,9 @@ pod 'FlowX'
 
 The iOS Renderer library depends on the following libraries:
 
-* Socket.IO-Client-Swift
 * Alamofire
-* SVProgressHUD
 * SDWebImageSwiftUI
+* SDWebImageSVGCoder
 
 ## Configuring the library
 
@@ -89,7 +88,7 @@ This config is used for general purpose properties.
 
 **Sample**
 
-```
+```Swift
 FXConfig.sharedInstance.configure { (config) in
     config.baseURL = myBaseURL
     config.imageBaseURL = myImageBaseURL
@@ -114,7 +113,7 @@ The library expects a session instance managed by the container app. Request ada
 
 #### Sample
 
-```
+```Swift
 FXSessionConfig.sharedInstance.configure { config in
     config.sessionManager = mySessionManager
     config.token = myAccessToken
@@ -145,7 +144,7 @@ You can start a process by calling the method below.
 
 The container app is responsible with presenting the navigation controller holding the process navigation.
 
-```
+```Swift
 public func startProcess(navigationController: UINavigationController,
                          name: String,
                          params: [String: Any]?,
@@ -165,7 +164,7 @@ public func startProcess(navigationController: UINavigationController,
  
 #### Sample
 
-```
+```Swift
 FlowX.sharedInstance.startProcess(navigationController: processNavigationController,
                                   name: processName,
                                   params: startParams,
@@ -179,7 +178,7 @@ self.present(processNavigationController, animated: true, completion: nil)
 
 You can resume a process by calling the method below.
 
-```
+```Swift
 public func continueExistingProcess(uuid: String,
                                     name: String,
                                     navigationController: UINavigationController,
@@ -205,7 +204,7 @@ For example, it could be used for modally displayed processes that are dismissed
 
 #### Sample
 
-```
+```Swift
 FlowX.sharedInstance.stopProcess(name: processName)
 ```
 
@@ -213,7 +212,7 @@ FlowX.sharedInstance.stopProcess(name: processName)
 
 The custom components which the container app provides will contain FlowX actions to be executed. In order to run an action you need to call the following method:
 
-```
+```Swift
 public func runAction(action: ProcessActionModel,
                       params: [String: Any]? = nil)
 ```
@@ -224,7 +223,7 @@ public func runAction(action: ProcessActionModel,
 
 ### How to run an upload action from a custom component
 
-```
+```Swift
 public func runUploadAction(action: ProcessActionModel,
                             image: UIImage)
 ```
@@ -233,7 +232,7 @@ public func runUploadAction(action: ProcessActionModel,
 
 `image` - the image to upload
 
-```
+```Swift
 public func runUploadAction(action: ProcessActionModel,
                             fileURL: URL)
 ```
@@ -244,7 +243,7 @@ public func runUploadAction(action: ProcessActionModel,
 
 ### Getting a substitution tag value by key
 
-```
+```Swift
 public func getTag(withKey key: String) -> String?
 ```
 
@@ -254,7 +253,7 @@ Whenever the container app needs a substitution tag value for populating the UI 
 
 ### Getting a media item url by key
 
-```
+```Swift
 public func getMediaItemURL(withKey key: String) -> String?
 ```
 
@@ -263,7 +262,7 @@ All media items will be retrieved by the SDK before starting the first process a
 Whenever the container app needs a media item url for populating the UI of the custom components, it can request the url using the method above, providing the key.
 
 
-```
+```Swift
 public func getTag(withKey key: String) -> String?
 ```
 
@@ -283,7 +282,7 @@ The data source is a public property of FlowX shared instance.
 
 `public weak var dataSource: FXDataSource?`
 
-```
+```Swift
 public protocol FXDataSource: AnyObject {
     func controllerFor(componentIdentifier: String) -> FXController?
     
@@ -333,11 +332,22 @@ This method is called, on a modally displayed process navigation, when the user 
 
 The container app is responsible with dismissing the UI and calling the stop process APIs.
 
+### Providing a custom component
+
+The container application should decide which custom component view to provide using the `componentIdentifier` configured in the UI designer.
+A custom component received data to populate the view and actions to execute, described in the scenarios below
+
+There are 3 methods to provide a custom component:
+1. Using a subclass of [FXController](#fxcontroller), which is a subclass of UIViewController
+2. Using an instance of [UIView](#fxview), adopting the FXView protocol
+3. Using a [SwiftUI view with a FXCustomComponentViewModel](#swiftui-with-fxcustomcomponentviewmodel) observable object
+
 #### FXController
 
 FXController is an open class, which helps the container app provide UIKit custom component screens to the renderer. It needs to be subclassed for each custom screen.
+This approach should be used when the custom component is the root component of the user task configured in the UI designer.
 
-```
+```Swift
 open class FXController: UIViewController {
     
     internal(set) public var data: [String: Any]?
@@ -364,7 +374,7 @@ open class FXController: UIViewController {
 
 * `internal(set) public var actions: [ProcessActionModel]?`
 
-`actions` is the array of actions provided to the custom component.
+`actions` is the array of FlowX actions provided to the custom component.
 
 * `func titleForScreen() -> String?`
 
@@ -380,11 +390,26 @@ This will happen asynchronously. It is the container app's responsibility to mak
 
 This method is called by the renderer when an already displayed view controller needs to update the data shown.
 
+##### Usage
+
+To declare a FXController custom component, implement the `controllerFor(componentIdentifier:)` method of the `FXDataSource`.
+
+```Swift
+func controllerFor(componentIdentifier: String) -> FXController? {
+    switch componentIdentifier {
+    case "MapComponent":
+        return MyCustomMapViewController()
+    default:
+        return nil
+    }
+}
+```
+
 #### FXView
 
 FXView is a protocol that helps the container app provide custom UIKit subviews of a generated screen to the renderer. It needs to be implemented by `UIView` instances. Similar to `FXController` it has data and actions properties and a populate method.
 
-```
+```Swift
 public protocol FXView: UIView {
     var data: [String: Any]? { get set }
     var actions: [ProcessActionModel]? { get set }
@@ -415,25 +440,46 @@ override var intrinsicContentSize: CGSize {
 }
 ```
 
-#### FXCustomComponentViewModel
+##### Usage
 
-`FXCustomComponentViewModel` is a class implementing the `ObservableObject` protocol. It is used for managing the state of custom SwiftUI views.
+To declare a UIView custom component, implement the `viewFor(componentIdentifier:)` method of the `FXDataSource`.
+
+```Swift
+func viewFor(componentIdentifier: String) -> FXView? {
+    switch componentIdentifier {
+    case "MapComponent":
+        return MyCustomMapView()
+    default:
+        return nil
+    }
+}
+```
+
+
+#### SwiftUI with FXCustomComponentViewModel
+
+A custom component using SwiftUI is displayed by providing a type-erased `AnyView` of your SwiftUI view.
+In order to receive updates regarding `data` and `actions` for the component, the `FXCustomComponentViewModel` instance should be added as an `@ObservedObject` property inside the view.
+
+`FXCustomComponentViewModel` is a class implementing the `ObservableObject` protocol.
 It has two published properties, for data and actions. 
 
-```
+```Swift
     @Published public var data: [String: Any] = [:]
     @Published public var actions: [ProcessActionModel] = []
 ```
 
-Example
+##### Usage
 
-```
-struct SampleView: View {
-    
-    @ObservedObject var viewModel: FXCustomComponentViewModel
-            
-    var body: some View {
-        Text("Lorem")
+To declare a SwiftUI custom component, implement the `viewFor(componentIdentifier:customComponentViewModel:)` method of the `FXDataSource`.
+
+```Swift
+func viewFor(componentIdentifier: String, customComponentViewModel: FXCustomComponentViewModel) -> AnyView? {
+    switch componentIdentifier {
+    case "MapComponent":
+        return AnyView(MyCustomMapView(viewModel: customComponentViewModel))
+    default:
+        return nil
     }
 }
 ```
