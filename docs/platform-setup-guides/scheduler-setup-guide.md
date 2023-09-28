@@ -81,17 +81,21 @@ scheduler:
 
 * A configuration for cleaning up processes.
 
+### Config related to timer events
+
+```yaml
 timer-event-scheduler: //used for timer events nodes
   batchSize: 100
   cronExpression: "*/1 * * * * *" #every 1 seconds
+```
 
+### Recovery mechanism
+
+```yaml
 flowx:
   timer-calculator:
     delay-max-repetitions: 1000000
 ```
-
-
-### Recovery mechanism
 
 :::info EXAMPLE
 You have a "next execution" set for 10:25, and the cycle step is 10 minutes. If the instance goes down for 2 hours, the next execution time should be 12:25, not 10:35. To calculate this, you add 10 minutes repeatedly to 10:25 until you reach the current time. So, it would be 10:25 + 10 min + 10 min + 10 min, until you reach the current time of 12:25. This ensures that the next execution time is adjusted correctly after the downtime.
@@ -116,9 +120,13 @@ The following Kafka related configurations can be set by using environment varia
 
 * `KAFKA_CONSUMER_THREADS` (default: 1) - the number of Kafka consumer threads 
 
-* `KAFKA_CONSUMER_SCHEDULED_TIMER_EVENTS_THREADS` (default: 1) - 
+* `KAFKA_CONSUMER_SCHEDULED_TIMER_EVENTS_THREADS` (default: 1) - the number of Kafka consumer threads related to starting Timer Events
 
-* `KAFKA_CONSUMER_SCHEDULED_TIMER_EVENTS_GROUP_ID` - 
+* `KAFKA_CONSUMER_SCHEDULED_TIMER_EVENTS_GROUP_ID` - group of consumers related to starting timer events
+
+* `KAFKA_CONSUMER_STOP_SCHEDULED_TIMER_EVENTS_THREADS`- (default: 1) - the number of Kafka consumer threads related to stopping Timer events
+
+* `KAFKA_CONSUMER_STOP_SCHEDULED_TIMER_EVENTS_GROUP_ID` - group of consumers related to stopping timer events
 
 * `KAFKA_AUTH_EXCEPTION_RETRY_INTERVAL` - the interval between retries after `AuthorizationException` is thrown by `KafkaConsumer`
 
@@ -126,17 +134,9 @@ The following Kafka related configurations can be set by using environment varia
 
 * `KAFKA_TOPIC_SCHEDULER_IN_STOP` - handles requests from the Admin and Process engine microservices to terminate scheduled messages.
 
-* `KAFKA_TOPIC_SCHEDULED_TIMER_EVENTS_IN_SET`
+* `KAFKA_TOPIC_SCHEDULED_TIMER_EVENTS_IN_SET` - needed to use Timer Events
 
-* `KAFKA_TOPIC_SCHEDULED_TIMER_EVENTS_IN_STOP`
-
-### Upload
-
-To control the maximum file size permitted for uploads:
-
-* `SPRING_KAFKA_PRODUCER_PROPERTIES_MESSAGE_MAX_BYTES` - default: 50MB
-
-* `SPRING_KAFKA_PRODUCER_PROPERTIES_MAX_REQUEST_SIZE` - default: 50MB 
+* `KAFKA_TOPIC_SCHEDULED_TIMER_EVENTS_IN_STOP` - needed to use Timer Events
 
 Each action available in the service corresponds to a Kafka event. A separate Kafka topic must be configured for each use-case.
 
