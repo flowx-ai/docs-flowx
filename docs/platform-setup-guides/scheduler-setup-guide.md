@@ -35,7 +35,7 @@ scheduler-mdb:
       enabled: true
       name: rs0
       pdb:
-        enabled: true
+        enabled: trues
         minAvailable:
           arbiter: 1
           secondary: 1
@@ -95,9 +95,29 @@ The following Kafka related configurations can be set by using environment varia
 
 * `SPRING_KAFKA_CONSUMER_GROUP_ID` - group of consumers
 
-* `KAFKA_CONSUMER_THREADS` - the number of Kafka consumer threads
+* `KAFKA_CONSUMER_THREADS` (default: 1) - the number of Kafka consumer threads 
+
+* `KAFKA_CONSUMER_SCHEDULED_TIMER_EVENTS_THREADS` (default: 1) - 
+
+* `KAFKA_CONSUMER_SCHEDULED_TIMER_EVENTS_GROUP_ID` - 
 
 * `KAFKA_AUTH_EXCEPTION_RETRY_INTERVAL` - the interval between retries after `AuthorizationException` is thrown by `KafkaConsumer`
+
+* `KAFKA_TOPIC_SCHEDULE_IN_SET` - receives scheduled message setting requests from the Admin and Process engine microservices
+
+* `KAFKA_TOPIC_SCHEDULER_IN_STOP` - handles requests from the Admin and Process engine microservices to terminate scheduled messages.
+
+* `KAFKA_TOPIC_SCHEDULED_TIMER_EVENTS_IN_SET`
+
+* `KAFKA_TOPIC_SCHEDULED_TIMER_EVENTS_IN_STOP`
+
+### Upload
+
+To control the maximum file size permitted for uploads:
+
+* `SPRING_KAFKA_PRODUCER_PROPERTIES_MESSAGE_MAX_BYTES` - default: 50MB
+
+* `SPRING_KAFKA_PRODUCER_PROPERTIES_MAX_REQUEST_SIZE` - default: 50MB 
 
 Each action available in the service corresponds to a Kafka event. A separate Kafka topic must be configured for each use-case.
 
