@@ -112,3 +112,7 @@ The following environment variables could be set in order to control log levels:
 * `LOGGING_LEVEL_ROOT` - root spring boot microservice logs
 
 * `LOGGING_LEVEL_APP` - app level logs
+
+
+
+
