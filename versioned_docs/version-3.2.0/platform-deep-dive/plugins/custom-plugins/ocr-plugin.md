@@ -81,7 +81,7 @@ The Kafka topic where you want to generate the template must match the topic def
 
 6. Add a [**user task node**](../../../building-blocks/node/user-task-node) and configure an [**Upload file action**](../../../building-blocks/actions/upload-file-action.md) - the action will send the file on the topic (defined at the **`KAFKA_TOPIC_DOCUMENT_PERSIST_IN`**) to the [Min.io](https://min.io/) - storage solution.
 
-![](../../img/ocr_upload_file.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/ocr_upload_file.pngs)
 
 7. The response will be sent back to the kafka topic defined at **`KAFKA_TOPIC_DOCUMENT_PERSIST_OUT`** environment variable through a callback action/ subprocess.
 8. Next, send the response to the OCR Kafka topic defined at **`KAFKA_TOPIC_OCR_IN`** variable (representing the path to the Min.io file)

@@ -132,7 +132,7 @@ Each action available in the service corresponds to a Kafka event. A separate Ka
 
 `KAFKA_TOPIC_TASK_IN`- used to receive a message from the engine to start a new task. It needs to be matched with the corresponding task_out topic on the engine side.
 
-`KAFKA_TOPIC_EVENTS_GATEWAY_OUT_MESSAGE` - outgoing messages from Events Gateway
+`KAFKA_TOPIC_EVENTS_GATEWAY_OUT_MESSAGE` - outgoing messages for Events Gateway
 
 :::caution
 The Engine is listening for messages on topics with names of a certain pattern, make sure to use correct outgoing topic names when configuring the notifications plugin.

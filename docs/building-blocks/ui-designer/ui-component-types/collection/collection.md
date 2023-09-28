@@ -27,9 +27,9 @@ Source collection data example using an [**MVEL business rule**](../../../action
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/collection_mvel.png)
 
 ```java
-output.put("processData",
+output.put("processData", //this is the key
 {
-  "products": [
+  "products": [ // this is the source that will populate the data on collection
     {
       "name": "Product One Plus",
       "description": "The plus option",

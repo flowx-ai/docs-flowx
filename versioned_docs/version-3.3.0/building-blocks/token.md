@@ -13,7 +13,7 @@ In case of [parallel gateways](./node/parallel-gateway.md), child tokens are cre
 
 The image below shows how a token advances through a process flow:
 
-![](./img/image%20(140)%20(1)%20(1)%20(1)%20(1)%20(1).png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/image%20%28140%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29.png)
 
 The token will only move to the next node when there are no more mandatory actions from the current node that need to be executed. The token will also wait on a node in case the node is set to receive an event from an external system through Kafka.
 
@@ -23,17 +23,17 @@ There will be cases when the token needs to be stopped in a node until some inpu
 
 The current process instance status can be retrieved using the FLOWX Designer. It will display some info on the tokens related to that process instance and the current nodes they are in.
 
-![](./img/check_token_status.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/check_token_status.png)
 
 In case more details are needed about the token, you can click the **Process status** view button, choose a token then click the **view button** again:
 
-![](./img/token_view_button.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/token_view_button.gif)
 
 ### Token status details
 
 The following token details are available when you access and view the JSON file of a token in FLOWX Designer:
 
-```json
+```yaml
 id: 492952
 version: 31
 parentTokenId: null
@@ -74,7 +74,7 @@ uuid: "794954a7-875f-4508-bbcb-8a11cf7a9b37"
 | currentNodeId          | 491660                                                                                                                                   | id of the current node                                                                                                                                                                                                       |
 | state                  | `ACTIVE`, `ON_HOLD`, `INACTIVE`                                                                                                          | state of the token                                                                                                                                                                                                           |
 | statusCurrentNode      | `ARRIVED`, `EXECUTING,EXECUTED_PARTIAL`, `EXECUTED_COMPLETE`,`WAITING_MESSAGE`, `MESSAGE RECEIVED`, `MESSAGE_RESPONSE_TIMED_OUT`         | status of the current node                                                                                                                                                                                                   |
-| syncNodeTokensCount    | `syncNodeTokensCount: 0`                                                                                                                 | number of tokens that are created when reaching a [parallel gateway](./node/parallel-gateway.md)                                                                                                                   |
+| syncNodeTokensCount    | `syncNodeTokensCount: 0`                                                                                                                 | number of tokens that are created when reaching a [parallel gateway](./node/parallel-gateway.md)                                                                                                                             |
 | syncNodeTokensFinished | `syncNodeTokensFinished: 0`                                                                                                              | how many tokens were executed in the parallel path, it is important to keep in mind that the close Parallel node, will wait for all branches to finish before moving to next node                                            |
 | dateUpdated            | "2022-05-18T09:53:28.587930Z"                                                                                                            | date when the token was updated                                                                                                                                                                                              |
 | processInstanceId      | 492902                                                                                                                                   | the id of the process instance                                                                                                                                                                                               |

@@ -14,13 +14,13 @@ Scripts are used to define and run [actions](./actions/actions.md) but also prop
 * [Groovy](supported-scripts.md#groovy)
 * [JavaScript](supported-scripts.md#nashorn-engine-javascript) (Nashorn Engine)
 
-| Scripting Language          | Version |
-| --------------------------- | ------- |
-| Python (Jython)             | 2.7.0   |
-| DMN                         | 1.3     |
-| MVEL                        | 2.4.10  |
-| Groovy                      | 3.0.8   |
-| Nashorn engine (JavaScript) | 15.4    |
+| Scripting Language          | Version      |
+| --------------------------- | ------------ |
+| Python (Jython)             | 2.7.0        |
+| DMN                         | 1.3          |
+| MVEL                        | 2.4.10.Final |
+| Groovy                      | 3.0.8        |
+| Nashorn engine (JavaScript) | 15.4         |
 
 ## Python
 
