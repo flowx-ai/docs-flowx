@@ -10,6 +10,22 @@ const sidebars = {
 
     {
       type: "category",
+      label: "v3.4.1-September 2023",
+      link: {
+        type: "doc",
+        id: "v3.4.1-september-2023/v3.4.1-september-2023"
+    },
+    items: 
+    [ 
+      { 
+        type: "doc",
+        id: "v3.4.1-september-2023/deployment-guidelines-v3.4.1"
+      },
+    ],
+  },
+
+    {
+      type: "category",
       label: "v3.4.0-September 2023",
       link: {
         type: "doc",

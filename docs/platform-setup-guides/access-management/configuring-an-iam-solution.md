@@ -237,8 +237,6 @@ A service account is an account that grants direct access to the Keycloak API fo
 Each client has a built-in service account which allows it to obtain an access token. To use this feature you must set the **Access Type** of your client to **confidential**. When you do this, the **Service Accounts Enabled** switch will appear.
 :::
 
-:::
-
 ### Admin service account
 
 The admin microservice requires an admin service account to make direct calls to the Keycloak API. 
@@ -247,7 +245,7 @@ Follow these steps to add an **admin service account**:
 
 1. Add a new client by selecting **Clients** then click **Create**.
 
-![](.https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/add_new_client.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/add_new_client.png)
 
 2. Next, set **Access type** as **confidential** and enable **Service Accounts**.
 
@@ -259,11 +257,16 @@ Follow these steps to add an **admin service account**:
 * **query-groups**
 * **query-users**
 
+:::info
+Make sure first that you created a realm-management client with the following client roles:
+
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/realm_management.png)
+:::
+
 
 4. Assign the necessary **service account roles**:
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/realm-mngt-admin.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/admin_sa_realm_roles.png)
 
 In the provided example, the **admin service account** can have the following assigned roles, depending on the required access scopes:
 
@@ -301,6 +304,8 @@ The task management microservice requires a service account to make direct calls
 * **query-groups**
 * **query-users**
 
+Example for **view-users**:
+
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/tsk-view-users.png)
 
 4. Configure a **realm roles mapper**:
@@ -309,7 +314,7 @@ The task management microservice requires a service account to make direct calls
 
 5. Assign the necessary service account roles, including `FLOWX_ROLE`.
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/tsk-sa.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/tsk_mng_sar.png)
 
 
 In the provided example, the **task management service account** can have the following assigned roles, depending on the required access scopes:
@@ -334,19 +339,17 @@ Follow these steps to add a **process engine service account**:
 
 1. Add a new client by selecting **Clients** then click **Create**.
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/process_engine_sa.png)
-
 2. Next, set **Access type** as **confidential** and enable **Service Accounts**.
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/iam11.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/process_engine_sa.png)
 
 :::info
 This service account does not require client roles.
 :::
 
-3. Assign the `FLOWX_ROLE` ((this is needed to run process instances)).
+3. Assign the `FLOWX_ROLE` (this is needed to run process instances).
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/iam14.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/process_engine_sar.png)
 
 ### Scheduler service account
 
@@ -358,13 +361,11 @@ Follow these steps to add a **scheduler service account**:
 
 1. Add a new client by selecting **Clients** then click **Create**.
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/process_engine_sa.png)
-
 2. Next, set **Access type** as **confidential** and enable **Service Accounts**.
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/iam11.png)
-
-3. Assign the `FLOWX_ROLE` as service account role (this is needed to run process instances)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/scheduler_sa.png)
 
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/iam14.png)
+3. Assign the `FLOWX_ROLE` as service account role (this is needed to run process instances).
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/scheduler_sar.png)

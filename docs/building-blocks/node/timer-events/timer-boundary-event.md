@@ -42,6 +42,8 @@ For Timer Boundary Events - Non-Interrupting, the following values can be config
 
 ### General Rules
 
+* When a token arrives at a node with a Timer Boundary Event - Non-Interrupting associated:
+    * A trigger is scheduled, but the current token execution remains unaffected.
 * When the token enters the parent activity, a scheduler is set, and it waits for the timer event to be triggered.
 * If the timer is a cycle, it is rescheduled for the specified number of repetitions.
 * The scheduler is canceled if the token leaves the activity before it is triggered.

@@ -81,10 +81,10 @@ In business processes, you typically need to make choices — **business decisio
 
 In many cases, you want to split up the flow within your business process. For example the sales and risk departments may examine a new mortgage application at the same time. This reduces the total cycle time for a case. To express parallel flow in BPMN, you use a **parallel gateway**.
 
-| Exclusive gateway (XOR)                                                                | Parallel gateway (AND)                                                             |
-| -------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/gateway_exclusive.png#center) | ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/gateway_parallel.png#center)                                         |
-| <ul><li>defines a decision point</li></ul>                                             | <ul><li>no decision making; </li><li>all outgoing branches are activated</li></ul> |
+| Exclusive gateway (XOR)                                                                | Parallel gateway (AND)                                                                |
+| -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/gateway_exclusive.png#center) | ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.0/gateway_parallel.png#center) |
+| <ul><li>defines a decision point</li></ul>                                             | <ul><li>no decision making; </li><li>all outgoing branches are activated</li></ul>    |
 
 **Closing gateway**
 

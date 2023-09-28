@@ -35,7 +35,7 @@ scheduler-mdb:
       enabled: true
       name: rs0
       pdb:
-        enabled: true
+        enabled: trues
         minAvailable:
           arbiter: 1
           secondary: 1
@@ -56,22 +56,46 @@ This service needs to connect to a Mongo database that has replicas, in order to
 
 ```yaml
 scheduler:
-  batchSize: 100
+  thread-count: 30  # Configure the number of threads to be used for sending expired messages.
+  callbacks-thread-count: 60 # Configure the number of threads for handling Kafka responses, whether the message was successfully sent or not
   cronExpression: "*/10 * * * * *" #every 10 seconds
+  retry: # new retry mechanism
+    max-attempts: 3
+    seconds: 1
+    thread-count: 3
+    cronExpression: "*/10 * * * * *" #every 10 seconds
+  cleanup:
+    cronExpression: "*/25 * * * * *" #every 25 seconds
+```
 
+* `SCHEDULER_THREAD_COUNT` - Used to configure the number of threads to be used for sending expired.
+* `SCHEDULER_CALLBACKS_THREAD_COUNT` - Used to configure the number of threads for handling Kafka responses, whether the message was successfully sent or not.
+
+### Retry mechanism
+
+* `SCHEDULER_RETRY_THREAD_COUNT` - Specify the number of threads to use for resending messages that need to be retried.
+* `SCHEDULER_RETRY_MAX_ATTEMPTS` - This configuration parameter sets the number of retry attempts. For instance, if it's set to 3, it means that the system will make a maximum of three retry attempts for message resending.
+* `SCHEDULER_RETRY_SECONDS` - This configuration parameter defines the time interval, in seconds, for retry attempts. For example, when set to 1, it indicates that the system will retry the operation after a one-second delay.
+
+### Cleanup
+
+* A configuration for cleaning up processes.
+
+### Config related to timer events
+
+```yaml
 timer-event-scheduler: //used for timer events nodes
   batchSize: 100
   cronExpression: "*/1 * * * * *" #every 1 seconds
+```
 
+### Recovery mechanism
+
+```yaml
 flowx:
   timer-calculator:
     delay-max-repetitions: 1000000
 ```
-
-* **cronExpression** is a schedule expression that determines when the cleanup process runs. In this case, it runs every day during the night (between 12:00 AM and 5:59 AM) and every 5 minutes, at the start of the minute. 
-* **batchSize** specifies the number of processes to be cleaned up in one batch.
-
-### Recovery mechanism
 
 :::info EXAMPLE
 You have a "next execution" set for 10:25, and the cycle step is 10 minutes. If the instance goes down for 2 hours, the next execution time should be 12:25, not 10:35. To calculate this, you add 10 minutes repeatedly to 10:25 until you reach the current time. So, it would be 10:25 + 10 min + 10 min + 10 min, until you reach the current time of 12:25. This ensures that the next execution time is adjusted correctly after the downtime.
@@ -94,9 +118,25 @@ The following Kafka related configurations can be set by using environment varia
 
 * `SPRING_KAFKA_CONSUMER_GROUP_ID` - group of consumers
 
-* `KAFKA_CONSUMER_THREADS` - the number of Kafka consumer threads
+* `KAFKA_CONSUMER_THREADS` (default: 1) - the number of Kafka consumer threads 
+
+* `KAFKA_CONSUMER_SCHEDULED_TIMER_EVENTS_THREADS` (default: 1) - the number of Kafka consumer threads related to starting Timer Events
+
+* `KAFKA_CONSUMER_SCHEDULED_TIMER_EVENTS_GROUP_ID` - group of consumers related to starting timer events
+
+* `KAFKA_CONSUMER_STOP_SCHEDULED_TIMER_EVENTS_THREADS`- (default: 1) - the number of Kafka consumer threads related to stopping Timer events
+
+* `KAFKA_CONSUMER_STOP_SCHEDULED_TIMER_EVENTS_GROUP_ID` - group of consumers related to stopping timer events
 
 * `KAFKA_AUTH_EXCEPTION_RETRY_INTERVAL` - the interval between retries after `AuthorizationException` is thrown by `KafkaConsumer`
+
+* `KAFKA_TOPIC_SCHEDULE_IN_SET` - receives scheduled message setting requests from the Admin and Process engine microservices
+
+* `KAFKA_TOPIC_SCHEDULER_IN_STOP` - handles requests from the Admin and Process engine microservices to terminate scheduled messages.
+
+* `KAFKA_TOPIC_SCHEDULED_TIMER_EVENTS_IN_SET` - needed to use Timer Events
+
+* `KAFKA_TOPIC_SCHEDULED_TIMER_EVENTS_IN_STOP` - needed to use Timer Events
 
 Each action available in the service corresponds to a Kafka event. A separate Kafka topic must be configured for each use-case.
 
