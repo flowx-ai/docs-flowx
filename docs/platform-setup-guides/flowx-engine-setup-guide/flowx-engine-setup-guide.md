@@ -110,7 +110,11 @@ The configuration related to consumers (group ids and thread numbers) can be con
 
 * `KAFKA_CONSUMER_GROUP_ID_SCHEDULER_ADVANCING`- related to a Kafka consumer group that receives messages related to messages sent by the scheduler when a timeout expires, indicating that the advancing should continue (parallel advancing), it is used to configure the group ID for this consumer group
 
+* `KAFKA_CONSUMER_GROUP_ID_MESSAGE_EVENTS` - 
+
 * `KAFKA_CONSUMER_GROUP_ID_PROCESS_START` - related to a Kafka consumer group that receives messages related to starting processes, it is used to configure the group ID for this consumer group
+
+* `KAFKA_CONSUMER_GROUP_ID_PROCESS_START_FOR_EVENT` - 
 
 * `KAFKA_CONSUMER_GROUP_ID_PROCESS_EXPIRE` - related to expiring processes, it is used to configure the group ID for this consumer group
 
@@ -130,6 +134,8 @@ The configuration related to consumers (group ids and thread numbers) can be con
 
 * `KAFKA_CONSUMER_THREADS_PROCESS_START` - the number of threads used by a Kafka consumer application, related to starting processes
 
+* `KAFKA_CONSUMER_THREADS_PROCESS_START_FOR_EVENT` -
+
 * `KAFKA_CONSUMER_THREADS_PROCESS_EXPIRE` - the number of threads used by a Kafka consumer application, related to expiring processes
 
 * `KAFKA_CONSUMER_THREADS_PROCESS_OPERATIONS` - the number of threads used by a Kafka consumer application, related to processing operations from task management
@@ -145,6 +151,7 @@ The configuration related to consumers (group ids and thread numbers) can be con
 | KAFKA_CONSUMER_GROUP_ID_SCHEDULER_RUN_ACTION     | notif123-preview                            |
 | KAFKA_CONSUMER_GROUP_ID_SCHEDULER_ADVANCING      | notif123-preview                            |
 | KAFKA_CONSUMER_GROUP_ID_PROCESS_START            | notif123-preview                            |
+| KAFKA_CONSUMER_GROUP_ID_PROCESS_START_FOR_EVENT  | notif123-preview                            |
 | KAFKA_CONSUMER_GROUP_ID_PROCESS_EXPIRE           | notif123-preview                            |
 | KAFKA_CONSUMER_GROUP_ID_PROCESS_OPERATIONS       | notif123-preview                            |
 | KAFKA_CONSUMER_GROUP_ID_PROCESS_BATCH_PROCESSING | notif123-preview                            |
@@ -154,6 +161,7 @@ The configuration related to consumers (group ids and thread numbers) can be con
 | KAFKA_CONSUMER_THREADS_SCHEDULER_ADVANCING       | 6                                           |
 | KAFKA_CONSUMER_THREADS_SCHEDULER_RUN_ACTION      | 6                                           |
 | KAFKA_CONSUMER_THREADS_PROCESS_START             | 6                                           |
+| KAFKA_CONSUMER_THREADS_PROCESS_START_FOR_EVENT   | 2                                           |
 | KAFKA_CONSUMER_THREADS_PROCESS_EXPIRE            | 6                                           |
 | KAFKA_CONSUMER_THREADS_PROCESS_OPERATIONS        | 6                                           |
 | KAFKA_CONSUMER_THREADS_PROCESS_BATCH_PROCESSING  | 6                                           |
@@ -299,6 +307,18 @@ Task manager operations could be the following: assignment, unassignment, hold, 
 
 [Using the scheduler](../../platform-deep-dive/core-components/core-extensions/scheduler.md#using-the-scheduler)
 
+#### Topics related to Timer Events
+
+| Default parameter (env var)                         | Default FLOWX.AI value (can be overwritten)            |
+| --------------------------------------------------- | ------------------------------------------------------ |
+| KAFKA_TOPIC_PROCESS_SCHEDULED_TIMER_EVENTS_OUT_SET  | ai.flowx.dev.core.trigger.set.timer-event-schedule.v1  |
+| KAFKA_TOPIC_PROCESS_SCHEDULED_TIMER_EVENTS_OUT_STOP | ai.flowx.dev.core.trigger.stop.timer-event-schedule.v1 |
+
+
+* `KAFKA_TOPIC_PROCESS_SCHEDULED_TIMER_EVENTS_OUT_SET` - used to communicate with Scheduler microservice
+
+* `KAFKA_TOPIC_PROCESS_SCHEDULED_TIMER_EVENTS_OUT_STOP` - used to communicate with Scheduler microservice
+
 #### Topics related to the Search Data service
 
 * `KAFKA_TOPIC_DATA_SEARCH_IN` - the topic name that the Engine listens on for requests to search for processes
@@ -335,7 +355,7 @@ Task manager operations could be the following: assignment, unassignment, hold, 
 | KAFKA_TOPIC_PROCESS_START_IN  | ai.flowx.dev.core.trigger.start.process.v1  |
 | KAFKA_TOPIC_PROCESS_START_OUT | ai.flowx.dev.core.confirm.start.process.v1  |
 
-#### Topics related to message events
+#### Topics related to Message Events
 
 | Default parameter (env var)         | Default FLOWX.AI value (can be overwritten)          |
 | ----------------------------------- | ---------------------------------------------------- |
@@ -397,6 +417,7 @@ scheduler:
 * **cronExpression** is a schedule expression that determines when the cleanup process runs. In this case, it runs every day during the night (between 12:00 AM and 5:59 AM) and every 5 minutes, at the start of the minute. 
 * **batchSize** specifies the number of processes to be cleaned up in one batch.
 * **masterElection**: A configuration for electing a master.
+
 
 [Scheduler setup guide](../scheduler-setup-guide.md)
 

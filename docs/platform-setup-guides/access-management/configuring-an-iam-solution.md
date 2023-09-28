@@ -366,6 +366,6 @@ Follow these steps to add a **scheduler service account**:
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/scheduler_sa.png)
 
 
-3. Assign the `FLOWX_ROLE` as service account role (this is needed to run process instances)
+3. Assign the `FLOWX_ROLE` as service account role (this is needed to run process instances).
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/scheduler_sar.png)

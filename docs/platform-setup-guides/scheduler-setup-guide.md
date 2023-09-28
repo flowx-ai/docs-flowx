@@ -54,6 +54,33 @@ This service needs to connect to a Mongo database that has replicas, in order to
 
 ## Configuration 
 
+```yaml
+scheduler:
+  thread-count: 30  # Configure the number of threads to be used for sending expired messages.
+  callbacks-thread-count: 60 # Configure the number of threads for handling Kafka responses, whether the message was successfully sent or not
+  cronExpression: "*/10 * * * * *" #every 10 seconds
+  retry: # new retry mechanism
+    max-attempts: 3
+    seconds: 1
+    thread-count: 3
+    cronExpression: "*/10 * * * * *" #every 10 seconds
+  cleanup:
+    cronExpression: "*/25 * * * * *" #every 25 seconds
+```
+
+* `SCHEDULER_THREAD_COUNT` - Used to configure the number of threads to be used for sending expired.
+* `SCHEDULER_CALLBACKS_THREAD_COUNT` - Used to configure the number of threads for handling Kafka responses, whether the message was successfully sent or not.
+
+### Retry mechanism
+
+* `SCHEDULER_RETRY_THREAD_COUNT` - Specify the number of threads to use for resending messages that need to be retried.
+* `SCHEDULER_RETRY_MAX_ATTEMPTS` - This configuration parameter sets the number of retry attempts. For instance, if it's set to 3, it means that the system will make a maximum of three retry attempts for message resending.
+* `SCHEDULER_RETRY_SECONDS` - This configuration parameter defines the time interval, in seconds, for retry attempts. For example, when set to 1, it indicates that the system will retry the operation after a one-second delay.
+
+### Cleanup
+
+* A configuration for cleaning up processes.
+
 ### Configuring MongoDB
 
 The MongoDB database is used to persist scheduled messages until they are sent back. The following configurations need to be set using environment variables:

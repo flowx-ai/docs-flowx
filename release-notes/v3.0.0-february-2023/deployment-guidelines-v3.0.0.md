@@ -15,7 +15,7 @@ After updating to **3.0.0** FLOWX.AI release, importing old processes definition
 :::danger IMPORTANT
 With the release of **FLOWX.AI 3.0**, there have been some changes that you need to be aware when upgrading to the latest version:
 * The `flowx-process-renderer` has been migrated to `@flowx\ui-sdk`.
-* As of **FLOWX.AI 3.0**, the `paperflow-web-components` library is no longer being maintained. Instead, the new components can be found in `@flowxai/ui-toolkit@3.0`.
+* As of **FLOWX.AI 3.0**, the `paperflow-web-components` library is no longer being maintained. Instead, the new components can be found in `@flowx/ui-toolkit@3.0`.
 :::
 
 | :ballot_box_with_check:        | 3.0.0     | 2.14.0   | 2.13.0  | 2.12.0  | 2.11.0  | 2.10.0  | 2.9.0   | 2.8.1   | 2.8.0   | 2.7.0   | 2.6.0   | 2.5.0   | 2.4.0   | 2.3.0   | 2.2.0   | 2.1.0     |
