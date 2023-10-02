@@ -60,23 +60,3 @@ To ensure proper communication, make sure to:
 * Convert data between different domains (e.g., date formats, list of values, units).
 * Add integration-specific information that is not critical to the process flow (e.g., flags, trace GUIDs).
 
-## Building a Connector
-
-Connectors act as lightweight business logic layers and perform the following tasks:
-
-* Converts data from one domain to another (date formats, list of values, units, etc.)
-* Adds information that is required by the integration but is not important for the process (a flag, generates a GUID for tracing, etc.)
-
-
-To build a Connector, you'll need to:
-
-* Create a Kafka consumer - [**guide here**](./creating-a-kafka-consumer.md)
-* Create a Kafka producer - [**guide here**](./creating-a-kafka-producer.md)
-
-When designing Connectors, keep in mind that the communication between the engine and the Connector is asynchronous in an event-driven architecture. It is essential to design Connectors in a way that avoids bloating the platform. Depending on the communication type between the Connector and the legacy system, you may need to implement custom solutions for load balancing requests, scaling the Connector, etc.
-
-:::caution
-To ensure proper communication with the [**Engine**](../../terms/flowxai-process-engine), make sure to include all received Kafka headers in the response sent back to it.
-:::
-
-For easy process flow tracing, consider adding a minimal setup for Jaeger tracing to your custom Connectors.
