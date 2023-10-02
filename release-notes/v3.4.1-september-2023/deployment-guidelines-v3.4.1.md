@@ -20,9 +20,9 @@ After updating to **3.4.1** FLOWX.AI release, it is not possible to import old p
 | **@flowx/ui-sdk**              | **3.35.2** | 3.33.2 | 3.28.11 | 3.21.1 | 3.15.1 | 3.2.1  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     |
 | **@flowx/ui-toolkit**          | **3.35.2** | 3.33.2 | 3.28.11 | 3.21.1 | 3.15.1 | 3.2.1  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     |
 | **@flowx/ui-theme**            | **3.35.2** | 3.33.2 | 3.28.11 | 3.21.1 | 3.15.1 | 3.2.1  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     |
-| **paperflow-web-components**   | -          | -      | -       | -      | -      | -      | 2.78.4-1 | 2.63.6  | 2.60.7  | 0.2.10  | 0.2.10  | 0.2.10  | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.5   |
+| **paperflow-web-components**   | **3.35.2** | 3.33.2 | 3.28.11 | 3.21.1 | 3.15.1 | 3.2.1  | 2.78.4-1 | 2.63.6  | 2.60.7  | 0.2.10  | 0.2.10  | 0.2.10  | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.6   | 0.2.5   |
 | **flowx-process-renderer**     | -          | -      | -       | -      | -      | -      | 2.78.4-1 | 2.63.6  | 2.60.7  | 2.48.9  | 2.39.2  | 2.33.0  | 2.28.1  | 2.24.2  | 2.23.0  | 2.19.2  | 2.18.2  | 2.17.4  | 2.15.2  | 2.14.4  |
-| **cms-core**                   | 1.3.9      | 1.3.6  | 1.3.0   | 1.2.0  | 1.0.3  | 1.0.2  | 0.2.38   | 0.2.36  | 0.2.33  | 0.2.30  | 0.2.25  | 0.2.23  | 0.2.23  | 0.2.23  | 0.2.23  | 0.2.23  | 0.2.20  | 0.2.20  | 0.2.18  | 0.2.17  |
+| **cms-core**                   | **1.3.9**  | 1.3.6  | 1.3.0   | 1.2.0  | 1.0.3  | 1.0.2  | 0.2.38   | 0.2.36  | 0.2.33  | 0.2.30  | 0.2.25  | 0.2.23  | 0.2.23  | 0.2.23  | 0.2.23  | 0.2.23  | 0.2.20  | 0.2.20  | 0.2.18  | 0.2.17  |
 | **scheduler-core**             | **1.2.4**  | 1.1.0  | 1.0.4   | 1.0.4  | 1.0.4  | 1.0.1  | 0.0.34   | 0.0.34  | 0.0.34  | 0.0.33  | 0.0.28  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.27  | 0.0.24  | 0.0.24  | 0.0.23  | 0.0.23  |
 | **events-gateway**             | **1.1.0**  | 1.0.6  | 1.0.2   | -      | -      | -      | -        | -       | -       | -       | -       | -       | -       | -       | -       | -       | -       | -       | -       | -       |
 | **notification-plugin**        | **2.0.8**  | 2.0.5  | 2.0.4   | 2.0.4  | 2.0.3  | 2.0.1  | 1.0.206  | 1.0.206 | 1.0.206 | 1.0.205 | 1.0.200 | 1.0.198 | 1.0.198 | 1.0.197 | 1.0.194 | 1.0.194 | 1.0.191 | 1.0.191 | 1.0.190 | 1.0.190 |
@@ -106,6 +106,6 @@ scheduler:
 * `SCHEDULER_RETRY_MAX_ATTEMPTS` - This configuration parameter sets the number of retry attempts. For instance, if it's set to 3, it means that the system will make a maximum of three retry attempts for message resending.
 * `SCHEDULER_RETRY_SECONDS` - This configuration parameter defines the time interval, in seconds, for retry attempts. For example, when set to 1, it indicates that the system will retry the operation after a one-second delay.
 
-[Scheduler](../../docs/platform-deep-dive/core-components/core-extensions/scheduler)
+[Scheduler setup guide](../../docs/platform-setup-guides/scheduler-setup-guide)
 
 
