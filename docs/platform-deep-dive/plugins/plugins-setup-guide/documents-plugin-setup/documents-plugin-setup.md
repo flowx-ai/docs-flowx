@@ -166,7 +166,7 @@ Depending on your use case, you can choose either a file system or an S3-compati
 * `APPLICATION_FILE_STORAGE_S3_SECRET_KEY`: The secret key for the S3-compatible server.
 * `APPLICATION_FILE_STORAGE_S3_BUCKET_PREFIX`: The prefix to use for S3 bucket names.
 * `APPLICATION_FILESTORAGE_PARTITIONSTRATEGY`: Set the partition strategy for file storage. Use `NONE` to save documents in `minio/amazon-s3` as before, with a bucket for each process instance. Use `PROCESS_DATE` to save documents in a single bucket with a subfolder structure, for example: `bucket/2022/2022-07-04/process-id-xxxx/customer-id/file.pdf`.      
-
+* `APPLICATION_FILE_STORAGE_S3_TEMP_BUCKET` - Upon file upload, the initial destination is a sandbox, from which it is subsequently transferred to the designated bucket.
 
 :::info
 Make sure to follow the recommended [bucket naming rules](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html) when choosing the bucket prefix name.
@@ -191,13 +191,13 @@ spring:
 
 ### Custom font path for PDF templates
 
-Set the `FLOWX_PDF_GENERATION_FONT_PATH` config to select the font used for generating documents based on PDF templates.
+Set the `FLOWX_HTML_TEMPLATES_PDF_FONT_PATHS` config to select the font used for generating documents based on PDF templates.
 
-### Custom font paths for HTML templates
+### Custom font paths for PDF templates
 
-If you want to use specific fonts in your HTML templates, override the `FLOWX_HTML_TEMPLATES_FONT_PATHS` config. By default, Calibri and DejaVuSans are available fonts.
+If you want to use specific fonts in your PDF templates, override the `FLOWX_HTML_TEMPLATES_PDF_FONT_PATHS` config. By default, Calibri and DejaVuSans are available fonts.
 
-After making these configurations, the fonts will be available for use within HTML templates.
+After making these configurations, the fonts will be available for use within PDF templates.
 
 ### Logging
 
