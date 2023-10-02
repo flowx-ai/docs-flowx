@@ -239,7 +239,9 @@ Each client has a built-in service account which allows it to obtain an access t
 
 ### Admin service account
 
-The admin microservice requires an admin service account to make direct calls to the Keycloak API. 
+:::info
+The admin service account is employed by the admin microservice to establish a connection with Keycloak for the purpose of utilizing user and group management features within the designer.
+::: 
 
 Follow these steps to add an **admin service account**:
 
@@ -253,8 +255,8 @@ Follow these steps to add an **admin service account**:
 
 3. Go to **Clients → realm-management → Roles** and add the following **service account client roles** under **realm-management**: 
 
-* **view-users**
-* **query-groups**
+* **manage-realm**
+* **manage-users**
 * **query-users**
 
 :::info
@@ -284,6 +286,10 @@ For detailed information, refer to the following section:
 [Configuring access rights for admin](../../flowx-designer/designer-setup-guide/configuring-access-rights-for-admin.md)
 
 ### Task management service account
+
+:::info
+The task management service account is utilized to facilitate process initiation, enable the use of the task management plugin (requiring the `FLOWX_ROLE` and role mapper), and access data from Keycloak."
+:::
 
 The task management microservice requires a service account to make direct calls to the Keycloak API. Follow these steps to add a task management service account:
 
@@ -351,6 +357,10 @@ This service account does not require client roles.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/process_engine_sar.png)
 
+4. Add a realm-roles mapper:
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/realm_roles_mapper.gif)
+
 ### Scheduler service account
 
 :::info
@@ -369,3 +379,5 @@ Follow these steps to add a **scheduler service account**:
 3. Assign the `FLOWX_ROLE` as service account role (this is needed to run process instances).
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/scheduler_sar.png)
+
+4. Add a realm-roles mapper (as shown in the example for **process-engine service account**).

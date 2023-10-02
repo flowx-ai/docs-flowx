@@ -44,6 +44,10 @@ A complete list of all the default roles based on modules (access scope):
 | manage-taxonomies                  | read   | ROLE_CMS_TAXONOMIES_READ                             | CMS             |
 | manage-taxonomies                  | edit   | ROLE_CMS_TAXONOMIES_EDIT                             | CMS             |
 | manage-taxonomies                  | admin  | ROLE_CMS_TAXONOMIES_ADMIN                            | CMS             |
+| manage-themes                      | admin  | ROLE_THEMES_ADMIN                                    | CMS             |
+| manage-themes                      | edit   | ROLE_THEMES_EDIT                                     | CMS             |
+| manage-themes                      | read   | ROLE_THEMES_READ                                     | CMS             |
+| manage-themes                      | import | ROLE_THEMES_IMPORT                                   | CMS             |
 | manage-tasks                       | read   | ROLE_TASK_MANAGER_TASKS_READ                         | Task management |
 | manage-hooks                       | import | ROLE_TASK_MANAGER_HOOKS_IMPORT                       | Task management |
 | manage-hooks                       | read   | ROLE_TASK_MANAGER_HOOKS_READ                         | Task management |
