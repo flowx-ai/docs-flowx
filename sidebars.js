@@ -1157,6 +1157,12 @@ const sidebars = {
           } ,
           items: 
           [ 
+
+            { 
+              type: "doc",
+              id: "platform-deep-dive/integrations/building-a-connector"
+            },
+
             { 
               type: "doc",
               id: "platform-deep-dive/integrations/creating-a-kafka-consumer"
