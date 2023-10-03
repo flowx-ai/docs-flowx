@@ -35,9 +35,10 @@ Timers introduce the ability to trigger events at specific time intervals. They 
 
 
 Examples:
-*  `PT15S` - 15 seconds
+
+* `PT15S` - 15 seconds
 * `PT1H30M` - 1 hour and 30 minutes
-*  `P14D` - 14 days
+* `P14D` - 14 days
 * `P3Y6M4DT12H30M5S` - 3 years, 6 months, 4 days, 12 hours, 30 minutes, and 5 seconds
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/timer_events_duration_date.gif)
@@ -85,6 +86,22 @@ For each node type, the following timer types can be configured:
 :::caution
 A process definition version should have a single Timer Start Event.
 :::
+
+
+## Supported timer formats
+
+| Supported formats                                              | Timer type | Timer format               | Timer expression           |
+| -------------------------------------------------------------- | ---------- | -------------------------- | -------------------------- |
+| Date UTC                                                       | DATE       | ISO8601_DATE_TIME          | 2019-10-01T12:00:00Z       |
+| Date with Timezone                                             | DATE       | ISO8601_DATE_TIME          | 2019-10-01T12:00:00+02:00  |
+| ISO8601 period                                                 | DURATION   | ISO8601_PERIOD             | P(n)Y(n)M(n)DT(n)H(n)M(n)S |
+| Fixed number of repetitions w/ start date (UTC or timezone)    | CYCLE      | ISO8601_REPEATING_INTERVAL | R5/2022-01-01T10:00:00/P1D |
+| Infinite number of repetitions w/ start date (UTC or timezone) | CYCLE      | ISO8601_REPEATING_INTERVAL | R/2022-01-01T10:00:00/P1D  |
+| Fixed number of repetitions w/o start date                     | CYCLE      | ISO8601_REPEATING_INTERVAL | R3/P3Y1DT3H2M6S            |
+| Infinite number of repetitions w/o start date                  | CYCLE      | ISO8601_REPEATING_INTERVAL | R/P1DT2M6S                 |
+| Any valid CRON expression                                      | CYCLE      | CRON                       | 0 0 9-17 * * MON-FRI       |
+
+
 
 For comprehensive details on each timer event node in this section, please refer to the corresponding documentation:
 

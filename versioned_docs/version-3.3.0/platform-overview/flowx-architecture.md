@@ -27,7 +27,7 @@ Let's go through the main components of the FLOWX.AI platform:
 
 We call it the engine because it’s a nice analogy, once deployed on an existing stack, FLOWX.AI becomes the core of your digital operating model.
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-overview/engine_architecture.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/archi1.drawio.png)
 
 You can use FLOWX Engine to do the following:
 

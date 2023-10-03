@@ -10,30 +10,43 @@ A Timer Intermediate Event is an event that is triggered based on a specified ti
 
 | Field      | Validations | Accepted Values                  |
 | ---------- | ----------- | -------------------------------- |
-| Definition | Mandatory   | ISO 8601 formats (date/duration) |
-|            |             | Process param                    |
-
-
+| Definition | Mandatory   | ISO 8601 formats (Date/Duration) |
+|            |             | Process Parameters               |
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/intermediate_timer_event.png)
 
-### Timer type:
+### Timer Types
 
-#### Date
+#### Date-based timer
     
-- event triggered on a specific date-time
-- ISO 8601 format (example: `2019-10-01T12:00:00Z` - UTC time, `2019-10-02T08:09:40+02:00` - UTC plus two hours zone offset)
+* This timer triggers an event at a specific date and time.
+* It follows the ISO 8601 format, for example: `2019-10-01T12:00:00Z` (UTC time) or `2019-10-02T08:09:40+02:00` (UTC with a two-hour zone offset).
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/intermediate_timer_date.png)
 
-#### Duration
+#### Duration-based timer
 
-Event triggered after x duration after the token reached the timer node (or parent node) (example: `PT6S`).
+- This timer triggers an event after a specified duration from when the token reaches the timer node (or its parent node).
+- Example: `PT6S` for 6 seconds.
 
-* Definition:
-    * ISO
-    * Cron
-    * Process param
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/6seconds.gif)
+
+##### ISO
+
+:::info
+Example using ISO expressions.
+:::
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/intermediate_definition_iso.png)
+
+
+##### Process parameters
+
+Timers can be configured using process parameters. In this example, we used a service task node to send data to the `timer.expression` key attached to the timer intermediate.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/intermediate_process_param.png)
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/intermediate_process_param.gif)
 
 ## General Rules
 
