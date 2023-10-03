@@ -104,8 +104,40 @@ scheduler:
 
 * `SCHEDULER_RETRY_THREAD_COUNT` - Specify the number of threads to use for resending messages that need to be retried.
 * `SCHEDULER_RETRY_MAX_ATTEMPTS` - This configuration parameter sets the number of retry attempts. For instance, if it's set to 3, it means that the system will make a maximum of three retry attempts for message resending.
-* `SCHEDULER_RETRY_SECONDS` - This configuration parameter defines the time interval, in seconds, for retry attempts. For example, when set to 1, it indicates that the system will retry the operation after a one-second delay.
+* `SCHEDULER_RETRY_SECONDS` - This configuration parameter defines the time interval, in seconds, for retry attempts. For example, when set to 1, it indicates that the system will retry the operation after a one-second delay. 
 
 [Scheduler setup guide](../../docs/platform-setup-guides/scheduler-setup-guide)
+
+## Revised Cache Key Organization
+
+To ensure a smooth transition for the **3.4.1** release, it is crucial to make use of the clear cache endpoint with the following request body:
+
+**Request:**
+```http
+POST /api/internal/cache/clear
+```
+
+:::info DESCRIPTION 
+This endpoint is designed to purge Redis caches selectively. It will exclusively delete caches that are specified in the admin microservice properties under the property key: "application.redis.clearable-caches".
+:::
+
+Request body:
+
+```json
+{
+    "cacheNames": [
+        "events",
+        "admin",
+        "allowedSwimlanes",
+        "initiatedProcessFromStartEvent",
+        "flowx:core"
+        ]
+}
+```
+
+:::caution
+Please take note that after upgrading to the new system version, you should refrain from including the flowx:core cache in the request body when invoking the clear cache endpoint to avoid unintended consequences.
+:::
+
 
 
