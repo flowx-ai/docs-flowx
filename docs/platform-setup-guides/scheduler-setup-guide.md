@@ -8,11 +8,14 @@ This guide will walk you through the process of setting up the Scheduler service
 
 * **MongoDB** - version 4.4 or higher for storing taxonomies and contents
 * **Kafka** - version 2.8 or higher
+* **OpenID Connect Settings** - default settings are for Keycloak
+
 
 ## Dependencies
 
 * [MongoDB](https://www.mongodb.com/2) database
-* ability to connect to a Kafka instance used by the engine
+* Ability to connect to a Kafka instance used by the engine
+* Scheduler service account - needed in order to use Start Timer event node - see [**here**](./access-management/configuring-an-iam-solution.md#scheduler-service-account)
 
 The service comes with most of the needed configuration properties filled in, but there are a few that need to be set up using some custom environment variables.
 
@@ -70,6 +73,12 @@ scheduler:
 
 * `SCHEDULER_THREAD_COUNT` - Used to configure the number of threads to be used for sending expired.
 * `SCHEDULER_CALLBACKS_THREAD_COUNT` - Used to configure the number of threads for handling Kafka responses, whether the message was successfully sent or not.
+
+### OpenID settings
+
+* `SECURITY_OAUTH2_BASE_SERVER_URL` - This setting specifies the base URL of the OpenID server, which is used for authentication and authorization.
+* `SECURITY_OAUTH2_SERVICE_ACCOUNT_ADMIN_CLIENT_ID` - This setting specifies the service account that is essential for enabling the [**Start Timer event node**](../building-blocks/node/timer-events/timer-start-event.md). Ensure that you provide the correct client ID for this service account.
+* `SECURITY_OAUTH2_SERVICE_ACCOUNT_ADMIN_CLIENT_SECRET` - Along with the client ID, you must also specify the client secret associated with the service account for proper authentication.
 
 ### Retry mechanism
 
