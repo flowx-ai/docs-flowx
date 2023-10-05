@@ -1,6 +1,10 @@
 # Building a Connector
 
-Connectors serve as lightweight business logic layers, performing the following essential tasks:
+Connectors play a crucial role in integrating systems by providing a lightweight business logic layer. They perform essential tasks such as data transformation and information enrichment, ensuring seamless communication between different domains. This guide will walk you through the process of creating a Connector step by step.
+
+## Key Connector Functions
+
+Connectors serve two primary functions:
 
 1. **Data Transformation:** Convert data from one format to another, ensuring compatibility between different domains, such as date formats, lists of values, and units.
 
@@ -8,30 +12,37 @@ Connectors serve as lightweight business logic layers, performing the following 
 
 To create a Connector, you will need to follow these steps:
 
-1. **Create a Kafka Consumer:** [Read the guide here](./creating-a-kafka-consumer.md) to set up a Kafka consumer for your Connector.
+## Creating a Connector
 
+### Step 1: Create a Kafka Consumer.
 
-2. **Create a Kafka Producer:** [Refer to this guide](./creating-a-kafka-producer.md) for instructions on configuring a Kafka producer.
+* **Create a Kafka Consumer:** [Read the guide here](./creating-a-kafka-consumer.md) to set up a Kafka consumer for your Connector.
 
-When designing Connectors, it's vital to understand that the communication between the Engine and the Connector is asynchronous within an event-driven architecture. Thus, it's crucial to design Connectors in an efficient way that avoids overloading the platform. Depending on the communication type between the Connector and the legacy system, you may need to implement custom solutions for load balancing requests, scaling the Connector, and more.
+### Step 2: Create a Kafka Producer.
+
+* **Create a Kafka Producer:** [Refer to this guide](./creating-a-kafka-producer.md) for instructions on configuring a Kafka producer.
+
+## Connector Design Considerations
+
+Asynchronous Communication: Communication between the Engine and Connector is asynchronous in an event-driven architecture. Design your Connectors efficiently to avoid overloading the platform.
+
+Custom Solutions: Depending on the communication type between the Connector and the legacy system, you may need to implement custom solutions for load balancing requests, scaling the Connector, and more.
 
 :::caution
-To ensure seamless communication with the [**Engine**](../../terms/flowxai-process-engine), ensure that you include all received Kafka headers in the response sent back to it.
+To ensure seamless communication with the Engine, include all received Kafka headers in the response sent back to it.
 :::
 
-### Connector Configuration Example
+## Connector Configuration Example
 
-Here's a basic setup for a Connector, which can serve as a starting point for FLOWX connectors. This guide includes the following:
+Here's an example of a basic Connector setup that you can use as a starting point for FLOWX Connectors. This example includes configurations for Kafka, Jaeger tracing, and custom health checks.
 
-- Kafka-related configurations and examples of listener and message sender setups.
-- Jaeger-related configurations and examples.
-- Configuration examples for activating custom health checks.
+### Step 1: Choose a Meaningful Name
 
-Please follow these steps and check the TODOs in the code to implement your custom FLOWX connector effectively:
+Select a meaningful name for your Connector service and set it in the configuration file.
 
-1. **Choose a Meaningful Name:** Select a meaningful name for your connector service and set it in the configuration file.
+### Step 2: Select Listening Topic
 
-2. **Select Listening Topic:** Decide what topic your connector should listen to and configure it in the configuration file. If the connector needs to listen to multiple topics, ensure you add settings and configure a separate thread pool executor for each needed topic (refer to `KafkaConfiguration `for an example configuration):
+Decide the topic your Connector should listen to and configure it in the configuration file. For multiple topics, configure separate thread pools. See the `KafkaConfiguration` example below for reference.
 
 ```java
 package ai.flowx.quickstart.connector.config;
@@ -111,9 +122,13 @@ public class KafkaConfiguration {
 ```
 
 
-3. **Define Reply Topic:** Determine the topic to which the connector should reply. This topic's name must match the topic pattern that the Engine listens on.
+### Step 3: Define Reply Topic
 
-4. **Adjust Consumer Threads:** Modify the number of consumer threads as needed. Ensure that the number of instances multiplied by the number of threads equals the number of partitions per topic.
+Determine the topic to which the Connector should reply. Ensure it matches the Engine's listening topic pattern.
+
+### Step 4: Adjust Consumer Threads
+
+Modify the number of consumer threads as needed. Ensure the total threads match the number of partitions per topic.
 
 ```yaml
 kafka:
@@ -124,7 +139,9 @@ kafka:
     out: ai.flowx.updates.currency.exchange
 ```
 
-5. **Define Incoming DTO Format:** Specify the format for incoming data.
+### Step 5: Define Incoming and Outgoing DTO Formats
+
+Specify the format for incoming and outgoing data using DTOs (Data Transfer Objects).
 
 ```java
 package ai.flowx.quickstart.connector.dto;
@@ -142,8 +159,6 @@ public class KafkaRequestMessageDTO {
     private Double amount;
 }
 ```
-
-6. **Define Outgoing DTO Format:** Specify the format for outgoing data.
 
 ```java
 package ai.flowx.quickstart.connector.dto;
@@ -166,29 +181,15 @@ public class KafkaResponseMessageDTO {
 }
 ```
 
-7. **Implement Business Logic:** Develop the business logic for handling messages received from the Engine and sending back replies. Ensure that you include the process instance UUID as a key for the Kafka message.
+### Step 6: Implement Business Logic
 
-Optional Steps:
+Develop the business logic for handling messages received from the Engine and sending back replies. Include the process instance UUID as a key for Kafka messages.
 
-- **Jaeger Tracing:** Decide whether you want to use Jaeger tracing in your setup and choose a prefix name in the configuration file.
+### Optional Steps
 
-- **Health Checks:** Enable health checks for all the services you use in the service.
+* Jaeger Tracing: Decide whether to use Jaeger tracing in your setup and configure it in the YAML file.
 
-For straightforward process flow tracing, consider adding minimal Jaeger tracing setup to your custom Connectors:
-
-#### Basic configuration
-
-```yaml
-spring:
-  application:
-    name: quickstart-connector # TODO 1. choose a meaningful name for your connector service
-  jackson:
-    serialization:
-      write_dates_as_timestamps: false
-      fail-on-empty-beans: false
-
-```
-
+* Health Checks: Enable health checks for the services used in your Connector.
 
 #### Jaeger
 
@@ -210,8 +211,7 @@ management: # TODO optional: enable health check for all the services you use in
     # redis.enabled: true
     # elasticsearch.enabled: true
 ```
-
-### Logging
+#### Logging
 
 ```yaml
 logging:
@@ -223,7 +223,10 @@ logging:
     jdk.event.security: INFO
 ```
 
-Sample:
+
+## Sample YAML Configuration
+
+Here's a sample YAML configuration for reference:
 
 * application.yaml
 
