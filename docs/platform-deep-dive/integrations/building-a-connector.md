@@ -1,10 +1,14 @@
 # Building a Connector
 
+<<<<<<< HEAD
 Connectors play a crucial role in integrating systems by providing a lightweight business logic layer. They perform essential tasks such as data transformation and information enrichment, ensuring seamless communication between different domains. This guide will walk you through the process of creating a Connector step by step.
 
 ## Key Connector Functions
 
 Connectors serve two primary functions:
+=======
+Connectors serve as lightweight business logic layers, performing the following essential tasks:
+>>>>>>> main
 
 1. **Data Transformation:** Convert data from one format to another, ensuring compatibility between different domains, such as date formats, lists of values, and units.
 
@@ -12,6 +16,7 @@ Connectors serve two primary functions:
 
 To create a Connector, you will need to follow these steps:
 
+<<<<<<< HEAD
 ## Creating a Connector
 
 ### Step 1: Create a Kafka Consumer.
@@ -43,6 +48,32 @@ Select a meaningful name for your Connector service and set it in the configurat
 ### Step 2: Select Listening Topic
 
 Decide the topic your Connector should listen to and configure it in the configuration file. For multiple topics, configure separate thread pools. See the `KafkaConfiguration` example below for reference.
+=======
+1. **Create a Kafka Consumer:** [Read the guide here](./creating-a-kafka-consumer.md) to set up a Kafka consumer for your Connector.
+
+
+2. **Create a Kafka Producer:** [Refer to this guide](./creating-a-kafka-producer.md) for instructions on configuring a Kafka producer.
+
+When designing Connectors, it's vital to understand that the communication between the Engine and the Connector is asynchronous within an event-driven architecture. Thus, it's crucial to design Connectors in an efficient way that avoids overloading the platform. Depending on the communication type between the Connector and the legacy system, you may need to implement custom solutions for load balancing requests, scaling the Connector, and more.
+
+:::caution
+To ensure seamless communication with the [**Engine**](../../terms/flowxai-process-engine), ensure that you include all received Kafka headers in the response sent back to it.
+:::
+
+### Connector Configuration Example
+
+Here's a basic setup for a Connector, which can serve as a starting point for FLOWX connectors. This guide includes the following:
+
+- Kafka-related configurations and examples of listener and message sender setups.
+- Jaeger-related configurations and examples.
+- Configuration examples for activating custom health checks.
+
+Please follow these steps and check the TODOs in the code to implement your custom FLOWX connector effectively:
+
+1. **Choose a Meaningful Name:** Select a meaningful name for your connector service and set it in the configuration file.
+
+2. **Select Listening Topic:** Decide what topic your connector should listen to and configure it in the configuration file. If the connector needs to listen to multiple topics, ensure you add settings and configure a separate thread pool executor for each needed topic (refer to `KafkaConfiguration `for an example configuration):
+>>>>>>> main
 
 ```java
 package ai.flowx.quickstart.connector.config;
