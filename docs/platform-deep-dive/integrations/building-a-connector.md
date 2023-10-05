@@ -44,87 +44,24 @@ Select a meaningful name for your Connector service and set it in the configurat
 
 Decide the topic your Connector should listen to and configure it in the configuration file. For multiple topics, configure separate thread pools. See the `KafkaConfiguration` example below for reference.
 
-```java
-package ai.flowx.quickstart.connector.config;
-
-import ai.flowx.quickstart.connector.exception.ExchangeException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.kafka.annotation.EnableKafka;
-import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
-import org.springframework.kafka.core.ConsumerFactory;
-import org.springframework.kafka.listener.SeekToCurrentErrorHandler;
-import org.springframework.kafka.support.converter.RecordMessageConverter;
-import org.springframework.kafka.support.converter.StringJsonMessageConverter;
-import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
-
-import javax.annotation.PostConstruct;
-import java.time.Duration;
-
-@Slf4j
-@Configuration
-@EnableKafka
-public class KafkaConfiguration {
-
-    private ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-
-    @Value(value = "${kafka.consumer.threads}")
-    private Integer threadsNumber;
-
-    @Value(value = "${kafka.auth-exception-retry-interval}")
-    private Long authorizationExceptionRetryInterval;
-
-    @PostConstruct
-    private void configure() {
-        initializeThreadPoolExecutor(executor, "kafka-connector-thread-group", "KafkaConnectorConsumerThread", threadsNumber);
-    }
-
-    private void initializeThreadPoolExecutor(ThreadPoolTaskExecutor threadPoolTaskExecutor, String threadGroupName, String threadNamePrefix, Integer threadsNumbers){
-        threadPoolTaskExecutor.setThreadGroupName(threadGroupName);
-        threadPoolTaskExecutor.setCorePoolSize(threadsNumbers);
-        log.info("Configuring kafka consumers thread pool for group " + threadGroupName + " with " + threadPoolTaskExecutor.getCorePoolSize() + " threads.");
-
-        threadPoolTaskExecutor.setThreadNamePrefix(threadNamePrefix);
-        threadPoolTaskExecutor.setWaitForTasksToCompleteOnShutdown(true);
-        threadPoolTaskExecutor.initialize();
-    }
-
-    @Bean
-    public SeekToCurrentErrorHandler errorHandler() {
-        SeekToCurrentErrorHandler handler = new SeekToCurrentErrorHandler();
-        handler.addNotRetryableExceptions(ExchangeException.class);
-        return handler;
-    }
-
-    @Bean
-    public StringJsonMessageConverter messageConverter(ObjectMapper objectMapper) {
-        return new StringJsonMessageConverter(objectMapper);
-    }
-
-    @Bean
-    public ConcurrentKafkaListenerContainerFactory<String, Object> listenerContainerFactory(ConsumerFactory consumerFactory, RecordMessageConverter messageConverter, SeekToCurrentErrorHandler errorHandler) {
-        ConcurrentKafkaListenerContainerFactory<String, Object> factory =
-                new ConcurrentKafkaListenerContainerFactory<>();
-        factory.setConsumerFactory(consumerFactory);
-        factory.setMessageConverter(messageConverter);
-        factory.setConcurrency(threadsNumber);
-        factory.setErrorHandler(errorHandler);
-        factory.getContainerProperties().setConsumerTaskExecutor(executor);
-        factory.setContainerCustomizer(
-                container -> container.getContainerProperties().setAuthorizationExceptionRetryInterval(
-                        Duration.ofSeconds(authorizationExceptionRetryInterval)));
-        return factory;
-    }
-}
-```
-
-
 ### Step 3: Define Reply Topic
 
-Determine the topic to which the Connector should reply. Ensure it matches the Engine's listening topic pattern.
+Determine the topic to which the Connector should reply. Ensure it matches the Engine's listening topic pattern which is the following:
+
+
+```yaml
+ topic:
+    naming:
+      package: "ai.flowx."
+      environment: "dev."
+      version: ".v1"
+      prefix: ${kafka.topic.naming.package}${kafka.topic.naming.environment}
+      suffix: ${kafka.topic.naming.version}
+      engineReceivePattern: engine.receive.
+
+    pattern: ${kafka.topic.naming.prefix}${kafka.topic.naming.engineReceivePattern}*
+```
+
 
 ### Step 4: Adjust Consumer Threads
 
@@ -132,54 +69,17 @@ Modify the number of consumer threads as needed. Ensure the total threads match 
 
 ```yaml
 kafka:
-  consumer.threads: 3
+  consumer.threads: 3  # TODO - adjust number of consumer threads. make sure number of instances * number of threads = number of partitions per topic
   auth-exception-retry-interval: 10
   topic:
-    in: ai.flowx.currency.exchange.in
-    out: ai.flowx.updates.currency.exchange
+    in: ai.flowx.connector.in # TODO - decide what topic should the connector listen on
+    out: ai.flowx.updates.from_connector # TODO - decide what topic should the connector reply on (this topic name must match the topic pattern the Engine listens on)
+
 ```
 
 ### Step 5: Define Incoming and Outgoing DTO Formats
 
 Specify the format for incoming and outgoing data using DTOs (Data Transfer Objects).
-
-```java
-package ai.flowx.quickstart.connector.dto;
-
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
-@Getter
-@Setter
-@ToString
-public class KafkaRequestMessageDTO {
-    private String fromCurrency;
-    private String toCurrency;
-    private Double amount;
-}
-```
-
-```java
-package ai.flowx.quickstart.connector.dto;
-
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
-@Getter
-@Setter
-@ToString
-@Builder
-public class KafkaResponseMessageDTO {
-    private String fromCurrency;
-    private String toCurrency;
-    private Double initialAmount;
-    private Double exchangedAmount;
-    private String errorMessage;
-}
-```
 
 ### Step 6: Implement Business Logic
 
@@ -244,26 +144,24 @@ server:
 
 spring:
   application:
-    name: currency exchange
+    name: quickstart-connector # TODO 1. choose a meaningful name for your connector service
   jackson:
     serialization:
       write_dates_as_timestamps: false
       fail-on-empty-beans: false
 
 application:
-  jaeger:
-    enabled: true
-    prefix: exchange
+  jaeger:  # TODO optional: decide whether you want to use jaeger tracing in your setup and choose a prefix name
+    enabled: false
+    prefix: connector
 
-management:
+management: # TODO optional: enable health check for all the services you use in case you add any
   health:
     kafka.enabled: true
-
-exchangerate-api:
-  key: YOUR_API_KEY # get your free api key here https://www.exchangerate-api.com/docs/pair-conversion-requests
-  scheme: https
-  host: v6.exchangerate-api.com
-  path: v6/{apiKey}/pair/{fromCurrency}/{toCurrency}/{amount}
+    # db.enabled: true
+    # mongo.enabled: true
+    # redis.enabled: true
+    # elasticsearch.enabled: true
 ```
 
 * application-kafka.yml
@@ -288,9 +186,13 @@ spring:
           classes: io.opentracing.contrib.kafka.TracingConsumerInterceptor
 
 kafka:
-  consumer.threads: 3
+  consumer.threads: 3  # TODO 4. adjust number of consumer threads. make sure number of instances * number of threads = number of partitions per topic
   auth-exception-retry-interval: 10
   topic:
-    in: ai.flowx.currency.exchange.in
-    out: ai.flowx.updates.currency.exchange
+    in: ai.flowx.connector.in # TODO 2. decide what topic should the connector listen on
+    out: ai.flowx.updates.from_connector # TODO 3. decide what topic should the connector reply on (this topic name must match the topic pattern the Engine listens on)
 ```
+
+Below you can find a quickstart guide to help you start build:
+
+[Quickstart Connector Guide](https://github.com/flowx-ai/quickstart-connector)
