@@ -1,8 +1,8 @@
-# Jaeger setup for microservices
+# Setting up Jaeger tracing for microservices
 
 The scope of this document is to present some basic information on how to include Jaeger tracing into a Java based project.
 
-## Required dependencies
+## Required Dependencies
 
 ```xml
 <dependency>
@@ -17,25 +17,34 @@ The scope of this document is to present some basic information on how to includ
 </dependency>
 ```
 
-## Needed configs
+## Configuration
 
-### Add Kafka interceptors for Tracing
+### Adding Kafka Interceptors for Tracing
+
+In distributed tracing setups, Kafka interceptors help trace the flow of messages as they traverse through Kafka.
+
+#### Producer Interceptor Configuration
+
 
 ```yaml
 kafka:
     producer:
-        properties:
+        properties: # this will be added to `spring.kafka.properties` section in the kafka configuration file
             interceptor:
                 classes: io.opentracing.contrib.kafka.TracingProducerInterceptor
+```
 
+#### Consumer Interceptor Configuration
+
+```yaml
 kafka:
     consumer:
-        properties:
+        properties: # this will be added to `spring.kafka.properties` section in the kafka configuration file
             interceptor:
                 classes: io.opentracing.contrib.kafka.TracingConsumerInterceptor
 ```
 
-### Extract Jaeger span context from received Kafka message
+### Extracting Jaeger Span Context from Kafka Messages
 
 ```java
 @KafkaListener(topics = "${TOPIC_NAME}")
@@ -47,13 +56,16 @@ public void listen(ConsumerRecord<String, String> record) {
 ```
 
 :::tip
-Use this context to create child spans of it and log events from adapter:
+Utilize this context to create child spans and log events from the adapter:
+
 ```java
 Span span = tracer.buildSpan(JAEGER_SPAN_NAME).asChildOf(spanContext).start();
 ```
 :::
 
-### Send span context with outgoing Kafka messages
+### Sending span context with outgoing Kafka messages
+
+When sending Kafka messages, ensure that you include the span context for tracing:
 
 ```java
 ProducerRecord<String, Object> producerRecord = new ProducerRecord<>(responseTopic, responseMessage);

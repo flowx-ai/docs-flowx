@@ -12,7 +12,7 @@ Integrations serve various purposes, including working with legacy APIs, impleme
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/intgr_final.png)
 
-Integrations involve interaction with legacy systems and require custom development to integrate them into your FLOWX.AI setup.
+Integrations are the bridges that connect legacy systems or third-party applications to the FLOWX.AI Process Engine, allowing smooth communication using custom code and the Kafka messaging system. They serve various purposes, such as working with legacy APIs, implementing custom file exchange solutions, or integrating with RPAs.
 
 ## Developing a custom integration
 

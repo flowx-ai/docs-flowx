@@ -2,6 +2,23 @@
 
 Connectors play a crucial role in integrating systems by providing a lightweight business logic layer. They perform essential tasks such as data transformation and information enrichment, ensuring seamless communication between different domains. This guide will walk you through the process of creating a Connector step by step.
 
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/intgr_final.png)
+
+## General Structure of the Connector
+
+The connector can be divided into two main parts:
+
+#### Connection to Kafka
+
+This part involves managing the input and output flow to Kafka. Data can be processed, interpreted, or sent to other services.
+
+#### Business Layer
+
+This layer is where business logic is applied. Here, you can perform calculations, machine learning tasks, or make external requests to build Data Transfer Objects (DTOs).
+
+The connector should serve as a transitional layer that packages and shapes the data, while filtering and computation should occur within the FlowX platform, within the business rules.
+
+
 ## Key Connector Functions
 
 Connectors serve two primary functions:
@@ -16,11 +33,11 @@ To create a Connector, you will need to follow these steps:
 
 ### Step 1: Create a Kafka Consumer.
 
-* **Create a Kafka Consumer:** [Read the guide here](./creating-a-kafka-consumer.md) to set up a Kafka consumer for your Connector.
+* **Create a Kafka Consumer:** [**Read the guide here**](./creating-a-kafka-consumer.md) to set up a Kafka consumer for your Connector.
 
 ### Step 2: Create a Kafka Producer.
 
-* **Create a Kafka Producer:** [Refer to this guide](./creating-a-kafka-producer.md) for instructions on configuring a Kafka producer.
+* **Create a Kafka Producer:** [**Refer to this guide**](./creating-a-kafka-producer.md) for instructions on configuring a Kafka producer.
 
 ## Connector Design Considerations
 
@@ -87,9 +104,13 @@ Develop the business logic for handling messages received from the Engine and se
 
 ### Optional Steps
 
-* Jaeger Tracing: Decide whether to use Jaeger tracing in your setup and configure it in the YAML file.
+* **Jaeger Tracing**: Decide whether to use Jaeger tracing in your setup and configure it in the YAML file.
 
-* Health Checks: Enable health checks for the services used in your Connector.
+More details about how to configure interceptors for tracing, below:
+
+[Jaeger Setup](jaeger-setup-for-microservices.md)
+
+* **Health Checks**: Enable health checks for the services used in your Connector.
 
 #### Jaeger
 
@@ -133,7 +154,7 @@ Here's a sample YAML configuration for reference:
 ```yaml
 logging:
   level:
-    ROOT: INFO
+    ROOT: INFO # Sets the root logger level to INFO, which means it will log informational messages.
     ai.flowx.quickstart.connector: INFO
     io.netty: INFO
     reactor.netty: INFO
@@ -145,17 +166,17 @@ server:
 spring:
   application:
     name: quickstart-connector # TODO 1. choose a meaningful name for your connector service
-  jackson:
-    serialization:
-      write_dates_as_timestamps: false
-      fail-on-empty-beans: false
+  jackson: # Configuration related to the Jackson JSON library used for serialization/deserialization.
+    serialization: # 
+      write_dates_as_timestamps: false # Disables writing dates as timestamps in JSON responses, which is often preferred for human readability.
+      fail-on-empty-beans: false # Disables failing when encountering empty beans during serialization. This allows for more flexible JSON handling.
 
-application:
-  jaeger:  # TODO optional: decide whether you want to use jaeger tracing in your setup and choose a prefix name
+application: # This section is for additional application-specific configurations.
+  jaeger:  # TODO optional: decide whether you want to use jaeger tracing in your setup and choose a prefix name.
     enabled: false
-    prefix: connector
+    prefix: connector # Specifies a prefix name for Jaeger tracing if it were to be enabled.
 
-management: # TODO optional: enable health check for all the services you use in case you add any
+management: # TODO optional: enable health check for all the services you use in case you add any.
   health:
     kafka.enabled: true
     # db.enabled: true
@@ -169,18 +190,18 @@ management: # TODO optional: enable health check for all the services you use in
 ```yaml
 spring:
   kafka:
-    bootstrap-servers: localhost:9092
-    security.protocol: "PLAINTEXT"
-    producer:
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    bootstrap-servers: localhost:9092 #This line specifies the Kafka broker's address. In this case, it's running locally on port 9092.
+    security.protocol: "PLAINTEXT" #  This line sets the security protocol for communication with the Kafka broker to "PLAINTEXT," indicating that there is no encryption or authentication in place.
+    producer: # This sub-section configures the Kafka producer settings.
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer # It specifies the serializer to use for serializing keys as strings.
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer # This line specifies the serializer to use for serializing values as JSON.
       properties:
         interceptor:
-          classes: io.opentracing.contrib.kafka.TracingProducerInterceptor
+          classes: io.opentracing.contrib.kafka.TracingProducerInterceptor # This is another sub-section for specifying Kafka producer interceptors. It's using the defined interceptor class for tracing.
     consumer:
       group-id: kafka-connector-group
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer # Specifies the deserializer to use for deserializing keys as strings.
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer # Specifies the deserializer to use for deserializing values as strings.
       properties:
         interceptor:
           classes: io.opentracing.contrib.kafka.TracingConsumerInterceptor
@@ -193,6 +214,6 @@ kafka:
     out: ai.flowx.updates.from_connector # TODO 3. decide what topic should the connector reply on (this topic name must match the topic pattern the Engine listens on)
 ```
 
-Below you can find a quickstart guide to help you start build:
+For Java-based Connector microservices, you can use the following startup code as a quickstart guide:
 
 [Quickstart Connector Guide](https://github.com/flowx-ai/quickstart-connector)
