@@ -35,9 +35,9 @@ Use the following command to install the **renderer** library and its required d
 
 ```bash
 npm install \
-  @flowx/ui-sdk@3.35.6 \
-  @flowx/ui-toolkit@3.35.6 \
-  @flowx/ui-theme@3.35.6 \
+  @flowx/ui-sdk@3.35.9 \
+  @flowx/ui-toolkit@3.35.9 \
+  @flowx/ui-theme@3.35.9  \
   event-source-polyfill@1.0.31 \
   paperflow-web-components@latest \
   vanillajs-datepicker@1.3.1 \
@@ -223,21 +223,24 @@ The entry point of the library is the <flx-process-renderer></flx-process-render
   [debugLogs]="debugLogs"
   [keepState]="keepState"
   [language]="language"
+  [httpVersion]="httpVersion"
 ></flx-process-renderer>
 ```
 
 #### Parameters:
 
-| Name             | Description                                                                                                                                                                            | Type    | Mandatory | Default value | Example                                          |
-| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | --------- | ------------- | ------------------------------------------------ |
-| baseApiUrl       | Your base url                                                                                                                                                                          | string  | true      | -             | [https://yourDomain.dev](https://yourdomain.dev) |
-| processApiPath   | Engine API prefix                                                                                                                                                                      | string  | true      | -             | /onboarding                                      |
-| processName      | Identifies a process                                                                                                                                                                   | string  | true      | -             | client\_identification                           |
-| processStartData | Data required to start the process                                                                                                                                                     | json    | true      | -             | { "firstName": "John", "lastName": "Smith"}      |
-| debugLogs        | When set to true this will print WS messages in the console                                                                                                                            | boolean | false     | false         | -                                                |
-| language         | Language used to localize the application.                                                                                                                                             | string  | false     | ro-RO         | -                                                |
-| keepState        | <p>By default all process data is reset when the process renderer component gets destroyed. Setting this to true will keep process data even if the viewport gets destroyed</p><p></p> | boolean | false     | false         | -                                                |
-| isDraft          | When true allows starting a process in draft state. \*Note that isDraft = true requires that processName be the **id** (number) of the process and NOT the name.                       | boolean | false     | false         | -                                                |
+| Name              | Description                                                                                                                                                                            | Type    | Mandatory | Default value | Example                                          |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | --------- | ------------- | ------------------------------------------------ |
+| baseApiUrl        | Your base url                                                                                                                                                                          | string  | true      | -             | [https://yourDomain.dev](https://yourdomain.dev) |
+| processApiPath    | Engine API prefix                                                                                                                                                                      | string  | true      | -             | /onboarding                                      |
+| processName       | Identifies a process                                                                                                                                                                   | string  | true      | -             | client\_identification                           |
+| processStartData  | Data required to start the process                                                                                                                                                     | json    | true      | -             | { "firstName": "John", "lastName": "Smith"}      |
+| debugLogs         | When set to true this will print WS messages in the console                                                                                                                            | boolean | false     | false         | -                                                |
+| language          | Language used to localize the application.                                                                                                                                             | string  | false     | ro-RO         | -                                                |
+| keepState         | <p>By default all process data is reset when the process renderer component gets destroyed. Setting this to true will keep process data even if the viewport gets destroyed</p><p></p> | boolean | false     | false         | -                                                |
+| isDraft           | When true allows starting a process in draft state. \*Note that isDraft = true requires that processName be the **id** (number) of the process and NOT the name.                       | boolean | false     | false         | -                                                |
+| legacyHttpVersion | Set this to `true` only for HTTP versions < 2 in order for SSE to work properly. Can be omitted otherwise.                                                                             | boolean | false     | false         |  -                                               |
+
 
 #### Data and actions
 
