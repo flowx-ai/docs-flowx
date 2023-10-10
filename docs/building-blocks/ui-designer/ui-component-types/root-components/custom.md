@@ -2,7 +2,9 @@
 sidebar_position: 3
 ---
 
-# Custom
+# Custom Component
+
+## Overview
 
 Custom components are developed in the web application and referenced here by component identifier. This will dictate where the component is displayed in the component hierarchy and what actions are available for the component.
 
@@ -24,106 +26,119 @@ The properties that can be configured are as follows:
 </div>
 
 
-#### Display of User Interface Elements
+## Prerequisites before creation
 
-When a process instance is initiated, the web application receives all the UI elements that can be displayed in the process under the `templateConfig` key.
+* **Angular Knowledge**: You should have a good understanding of Angular, as custom components are created and imported using Angular.
 
-When a user task is reached in the process instance, the [**events-gateway**](../../../../platform-deep-dive/core-components/events-gateway.md) receive requests, triggering it to display the associated UI element.
+* **Angular CLI**: Ensure that you have Angular CLI installed.
+
+* **Development Environment**: Set up a development environment for Angular development, including Node.js and npm (Node Package Manager).
+
+* **Component Identifier**: You need a unique identifier for your custom component. This identifier is used for referencing the component within the application.
+
+## Creating a Custom component
+
+To create a Custom Component in Angular, follow these steps:
+
+1. Create a new Angular component using the Angular CLI or manually.
+2. Implement the necessary HTML structure, TypeScript logic, and SCSS styling to define the appearance and behavior of your custom component.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/loader_comp.png)
+
+## Importing the component
+
+After creating the Custom Component, you need to import it into your application.
+
+In your `app.module.ts` file (located at src → app → app.module.ts), add the following import statement:
+
+```ts
+`import { YourComponent } from '@app/components/yourComponent.component'`
+```
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/import_cus.gif)
+
+## Declaration in AppModule
+
+In the same `app.module.ts` file, declare your Custom Component within the `declarations` array in the `@NgModule` decorator:
+
+```ts
+@NgModule({
+  declarations: [
+    // ...other components
+    YourComponent
+  ],
+  // ...other module configurations
+})
+
+```
+
+## Declaration in FlxProcessModule
+
+To make your Custom Component available for use in processes created in FLOWX Designer, you need to declare it in `FlxProcessModule`.
+
+In your process.module.ts file (located at src > app > modules > process > process.module.ts), add the following import statement:
+
+```ts
+import { YourComponent } from '@app/components/yourComponent.component';
+```
+
+Then, declare your Custom Component in the `FlxProcessModule.forRoot` function:
+
+```ts
+FlxProcessModule.forRoot({
+  components: {
+    // ...other components
+    yourComponent: YourComponent
+  },
+  // ...other module configurations
+})
+
+```
+
+## Using the custom component
+
+Once your Custom Component is declared, you can use it for configuration within your application. 
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/loader_component.gif)
+
+## Data input and actions
+
+The Custom Component accepts input data from processes and can also include actions extracted from a process. These inputs and actions allow you to configure and interact with the component dynamically.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/cst_input_data.png)
+
+## Extracting Data from Processes
+
+There are multiple ways to extract data from processes to use within your Custom Component. You can utilize the data provided by the process or map actions from the BPMN process to Angular actions within your component.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/cst_loader_input.png)
+
+:::danger
+Make sure that the Angular actions that you declare match the names of the process actions.
+:::
+
+## Styling with CSS
+
+To apply CSS classes to UI elements within your Custom Component, you first need to identify the UI element identifiers within your component's HTML structure. Once identified, you can apply defined CSS classes to style these elements as desired.
 
 Example:
 
-1. Starting a process:
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/Screenshot%202023-10-10%20at%2012.29.51.png)
 
-* The following is an example of starting a process instance via a **POST** request to `{{processUrl}}/api/internal/process/DemoProcess/start`:
+## Custom component example
 
-```json
-{
-  "processDefinitionName" : "DemoProcess",
-  "tokens" : [ {
-    "id" : 662631,
-    "startNodeId" : null,
-    "currentNodeId" : 662807,
-    "currentNodeName" : null,
-    "state" : "ACTIVE",
-    "statusCurrentNode" : "ARRIVED",
-    "dateUpdated" : "2023-02-09T12:23:19.464155Z",
-    "uuid" : "ae626fda-8166-49e8-823b-fe24f36524a7"
-  } ],
-  "state" : "CREATED",
-  "templateConfig" : [ {
-    "id" : 630831,
-    "flowxUuid" : "80ea0a85-2b0b-442a-a123-2480c7aa2dce",
-    "nodeDefinitionId" : 662856,
-    "componentIdentifier" : "CONTAINER",
-    "type" : "FLOWX",
-    "order" : 1,
-    "canGoBack" : true,
-    "displayOptions" : {
-      "flowxProps" : { },
-      "style" : null,
-      "flexLayout" : {
-        "fxLayoutGap" : 0,
-        "fxLayoutAlign" : "start stretch",
-        "fxLayout" : "column"
-      },
-      "className" : null,
-      "platform" : "DEFAULT"
-    },
-    "templateConfig" : [ {
-      "id" : 630832,
-      "flowxUuid" : "38e2c164-f8cd-4f6e-93c8-39b7cdd734cf",
-      "nodeDefinitionId" : 662856,
-      "uiTemplateParentId" : 630831,
-      "componentIdentifier" : "TEXT",
-      "type" : "FLOWX",
-      "order" : 0,
-      "key" : "",
-      "canGoBack" : true,
-      "displayOptions" : {
-        "flowxProps" : {
-          "text" : "Demo text"
-        },
-        "style" : null,
-        "flexLayout" : null,
-        "className" : null,
-        "platform" : "DEFAULT"
-      },
-      "expressions" : {
-        "hide" : ""
-      },
-      "templateConfig" : [ ],
-      "dataSource" : {
-        "processData" : {
-          "parentFlowxUuid" : null
-        },
-        "nomenclator" : {
-          "parentFlowxUuid" : null
-        }
-      }
-    } ]
-  } ],
-  "uuid" : "d985d128-ae45-4408-a643-1dd026a644d3",
-  "generalData" : null,
-  "backCounter" : 0,
-  "startedByActionId" : null,
-  "subProcesses" : null,
-  "subprocessesUuids" : null,
-  "baseUrl" : null
-}
-```
-2. The following is an example of a progress message:
+Below you can see an example of a basic custom loader component built with Angular:
 
-```json
-{
-  "progressUpdateDTO": {
-    "processInstanceUuid": "5f24c66f-04a7-433a-b64a-a765d3b8121a",
-    "tokenUuid": "11c32ba6-b3e7-4267-9383-25d69b26492c",
-    "currentNodeId": 662856
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/2023-10-10%2012.01.58.gif)
 
-  }
-}
-```
+## Additional Considerations:
 
-3. **ProgressUpdateDto** will trigger the **SDK** to search for the UI element having the same **nodeId** as the one from the web socket progress event
+* **Naming Conventions**: Be consistent with naming conventions for components, identifiers, and actions. Ensure that Angular actions match the names of process actions as mentioned in the documentation.
 
-4. Additionally, it will ask for data and actions that are required for this component via a GET request `{{processUrl}}/api/process/5f24c66f-04a7-433a-b64a-a765d3b8121aa/data/662856`
+* **Component Hierarchy**: Understand how the component fits into the overall component hierarchy of your application. This will help determine where the component is displayed and what actions are available for it.
+
+* **Documentation and Testing**: Document your custom component thoroughly for future reference. Additionally, testing is crucial to ensure that the component behaves as expected in various scenarios.
+
+* **Security**: If your custom component interacts with sensitive data or performs critical actions, consider security measures to protect the application from potential vulnerabilities.
+
+* **Integration with FLOWX Designer**: Ensure that your custom component integrates seamlessly with FLOWX Designer, as it is part of the application's process modeling capabilities.
