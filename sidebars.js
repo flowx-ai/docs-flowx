@@ -164,6 +164,11 @@ const sidebars = {
             },
 
             {
+              type: "doc",
+              id: "building-blocks/process/navigation-areas"
+            },
+
+            {
               type: "category",
               label: "Active process",
               link: {
@@ -234,11 +239,6 @@ const sidebars = {
             {
               type: "doc",
               id: "building-blocks/node/parallel-gateway"
-            },
-
-            {
-              type: "doc",
-              id: "building-blocks/node/milestone-node"
             },
 
             {

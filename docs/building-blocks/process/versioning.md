@@ -162,6 +162,17 @@ The Read-Only State feature allows you to access and view submitted versions of 
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/versioning_read_only.png)
 
+### Audit view
 
+The "Open Audit View" provides you with a detailed audit log of actions related to work-in-progress (WIP) versions of a process. The primary goal is to ensure transparency and accountability for actions taken before the commit or save process. 
 
+You can quickly access and review the history of WIP versions, facilitating efficient decision-making and collaboration.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/versioning_audit_log.gif)
+
+More details on how to use the audit log, you can find in the following section:
+
+[Audit log](../../platform-deep-dive/core-components/core-extensions/audit.md)
+
+### My Favorites
 

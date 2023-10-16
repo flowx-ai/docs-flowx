@@ -16,8 +16,6 @@ You can choose between a series of available node types below. For an overview o
 * [exclusive gateway](../../building-blocks/node/exclusive-gateway-node.md)
 * [message send event](../../building-blocks/node/message-send-received-task-node.md)
 * [message receive event](../../building-blocks/node/message-send-received-task-node.md)
-* [start milestone](../../building-blocks/node/milestone-node.md)
-* [end milestone](../../building-blocks/node/milestone-node.md)
 
 ### Steps for creating a new node
 

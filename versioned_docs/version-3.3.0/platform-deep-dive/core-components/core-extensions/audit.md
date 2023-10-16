@@ -15,12 +15,28 @@ The Audit Log service provides a centralized location for all audit events. The 
 * Task
 * Exception
 * Process definition
+* Publish Policy
+* Process Version
+* Branch
 * Node
 * Action
 * UI Component
 * General Settings
 * Swimlane
+* Swimlane Permissions
 * Connector
+* Boundary Event
+* Enumeration
+* Enumeration Value
+* Subsitution Tag
+* Content Model
+* Content Model Value
+* Language
+* Source System
+* Image
+* Font file
+* Theme
+* Timer Event
 
 </details>
 
@@ -30,8 +46,10 @@ The Audit Log service provides a centralized location for all audit events. The 
 <summary> Possible values </summary>
 
 * Create
+* Edit submit message
 * Update
 * Update bulk
+* Upload
 * Update state
 * Export
 * Import
@@ -39,6 +57,8 @@ The Audit Log service provides a centralized location for all audit events. The 
 * Clone
 * Start
 * Start with inherit
+* Submit changes
+* Set as published
 * Advance
 * View
 * Expire
@@ -46,6 +66,7 @@ The Audit Log service provides a centralized location for all audit events. The 
 * Message Receive
 * Notification receive
 * Run scheduled action
+* Schedule triggered
 * Execute action
 * Finish
 * Dismiss
@@ -60,8 +81,6 @@ The Audit Log service provides a centralized location for all audit events. The 
 </details>
 
 * **Subject identifier** - the name related to the subject, there are different types of identifiers based on the selected subject
-
-* **Version** - the version of the process definition at the time of the event
 
 * **Status** - the outcome of the event (e.g. success or failure)
 

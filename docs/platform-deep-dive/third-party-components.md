@@ -14,7 +14,7 @@ FLOWX.AI uses a number of third-party software components:
 * [NGINX](third-party-components.md#nginx)
 * [EFK (Elastic Search, Fluentd, Kibana)](third-party-components.md#efk-kibana-fluentd-elastic-search)
 * [S3 (MinIO)](third-party-components.md#s3-minio)
-* [RabbitMQ (for OCR plugin)](third-party-components.md#rabbitmq)
+
 
 ### Not open-source 
 
@@ -38,18 +38,18 @@ Compatibility Matrix:
 
 | FLOWX.AI Platform Version | Component name               | Supported/tested versions    |
 | ------------------------- | ---------------------------- | ---------------------------- |
-| 2.3.0 → 3.3.0             | Keycloak                     | 18.0.x                       |
-| 2.3.0 → 3.3.0             | Kafka / Zookeeper*           | 3.0.1 / 3.6.6                |
-| 2.3.0 → 3.3.0             | Jaeger                       | 1.34.1                       |
-| 2.3.0 → 3.3.0             | AKHQ                         | 0.17.0                       |
-| 2.3.0 → 3.3.0             | PostgreSQL                   | 14.3.0                       |
-| 2.3.0 → 3.3.0             | MongoDB                      | 5.0.8                        |
-| 2.3.0 → 3.3.0             | Redis                        | 6.2.6                        |
-| 2.3.0 → 3.3.0             | NGINX Ingress Controller     | 1.2.0                        |
-| 2.3.0 → 3.3.0             | Elasticsearch                | 7.17                         |
-| 2.3.0 → 3.3.0             | Fluentd                      | 3.3.0                        |
-| 2.3.0 → 3.3.0             | Kibana                       | 7.17                         |
-| 2.3.0 → 3.3.0             | S3 (Min.IO) / minio-operator | 2022-05-26T05-48-41Z / 4.5.4 |
+| 2.3.0 → 3.5.0             | Keycloak                     | 18.2.0                       |
+| 2.3.0 → 3.5.0             | Kafka / Zookeeper*           | 3.2.3/ 3.6.6                 |
+| 2.3.0 → 3.5.0             | Jaeger                       | 1.34.1                       |
+| 2.3.0 → 3.5.0             | AKHQ                         | 0.17.0                       |
+| 2.3.0 → 3.5.0             | PostgreSQL                   | 14.3.0                       |
+| 2.3.0 → 3.5.0             | MongoDB                      | 5.0.8                        |
+| 2.3.0 → 3.5.0             | Redis                        | 6.2.6                        |
+| 2.3.0 → 3.5.0             | NGINX Ingress Controller     | 1.2.0                        |
+| 2.3.0 → 3.5.0             | Elasticsearch                | 7.17.0                       |
+| 2.3.0 → 3.5.0             | Fluentd                      | 3.3.0                        |
+| 2.3.0 → 3.5.0             | Kibana                       | 7.17                         |
+| 2.3.0 → 3.5.0             | S3 (Min.IO) / minio-operator | 2021-02-14T04-01-33Z / 4.5.8 |
 
 
 
@@ -61,7 +61,7 @@ Compatibility Matrix:
 
 
 :::info
-Since Kafka version 2.8, the self-managed (Kraft) mode is available alongside ZooKeeper. It was released as a preview feature in version 3.0. Finally, with several improvements, it has been declared production ready in version 3.3.1. Kafka may deprecate ZooKeeper in version 3.4. 
+*Since Kafka version 2.8, the self-managed (Kraft) mode is available alongside ZooKeeper. It was released as a preview feature in version 3.0. Finally, with several improvements, it has been declared production ready in version 3.3.1. Kafka may deprecate ZooKeeper in version 3.4. 
 :::
 
 ### Summary

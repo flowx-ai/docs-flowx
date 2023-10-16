@@ -1,4 +1,4 @@
-# 🗄️ Reporting
+# Reporting
 
 ## What is Reporting plugin?
 

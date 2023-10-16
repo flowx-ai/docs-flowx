@@ -100,7 +100,6 @@ As mentioned previously, you can create dropdowns including static data, enumera
 To create this kind of process, we need the following elements:
 
 * a [**start**](../../../node/start-end-node.md#start-node) node and an [**end**](../../../node/start-end-node.md#end-node) node
-* a [**start milestone**](../../../node/start-end-node.md#start-node) UI element to it and an [**end milestone**](../../../node/milestone-node.md) node
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/dynamic_dropdown1.gif)
 
@@ -122,7 +121,7 @@ Follow the next steps to create the process from scratch:
 
 ### Configuring the nodes
 
-1. On the **start milestone** node, add a **page** UI element.
+1. Add a **page** UI element using navigation areas.
 2. On the **task node**, add a new **Action** (this will set the data for the dropdowns) with the following properties:
    * Action type - **Business Rule**
    * **Automatic**
