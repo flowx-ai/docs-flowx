@@ -299,7 +299,7 @@ const sidebars = {
                 { 
                   type: "doc",
                   id: "building-blocks/node/timer-events/timer-boundary-event"
-                }, 
+                },   
                 
                 {
                   type: "doc",
@@ -307,6 +307,11 @@ const sidebars = {
                 }
               ],
             },
+
+            { 
+              type: "doc",
+              id: "building-blocks/node/error-events"
+            }, 
 
            
 
