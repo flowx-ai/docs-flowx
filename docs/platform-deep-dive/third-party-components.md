@@ -57,7 +57,7 @@ Compatibility Matrix:
 
 | FLOWX.AI Platform version | Component name | Supported/tested versions |
 | ------------------------- | -------------- | ------------------------- |
-| 2.3.0 → 3.3.0             | OracleDB       | 12C / 18-XE               |
+| 2.3.0 → 3.4.3             | OracleDB       | 12C / 18-XE               |
 
 
 :::info
