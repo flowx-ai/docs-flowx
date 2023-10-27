@@ -138,6 +138,9 @@ In order to utilize the new fonts feature in the CMS microservice, it's mandator
 |               | edit   | ROLE_THEMES_ADMIN  | Content Management |
 | manage-themes | admin  | ROLE_THEMES_ADMIN  | Content Management |
 
+
+[Configuring access rights for CMS](../../docs/platform-setup-guides/cms-setup-guide/configuring-access-rights-for-cms)
+
 ## Markdown support 
 
 New lib added:

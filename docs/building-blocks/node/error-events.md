@@ -6,7 +6,7 @@ Error Events expand the capabilities of process modeling and error handling with
 
 ## Error Intermediate boundary event (catch)
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/intermediate_error_boundary.png#center)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/error_event.png#center)
 
 ### Key Characteristics
 
@@ -50,7 +50,7 @@ When multiple error events are configured for a node, and multiple conditions si
 If the "priority" field is set to "null," the system will randomly select one of the active conditions to trigger the interruption.
 
 :::info
-* `input.application.switch`: This represents a variable or a value called "switch" within the "application" part of the "input." It is typically used to capture input or configuration from a user or a system.
+* `input.application.switch`: This represents a key to bind a value to the Switch UI element within the "application" part of the "input". It is used in this example to capture input or configuration from a user.
 
 * `==`: This is an equality operator, and it checks if the value on the left is equal to the value on the right.
 
@@ -63,6 +63,10 @@ So, when you put it all together, the statement is checking if the value of the 
 
 **Description:** This use case pertains to a page dedicated to collecting client contact data. Specifically, it deals with scenarios where users are given the opportunity to verify their email addresses and phone numbers.
 
+:::info
+In this scenario will create a process to validate a dummy card depending on the CVV entered.
+:::
+
 ### Configuration:
 
 1. **Error Boundary Events:** We will set up two error boundary events associated with a user task.
@@ -70,6 +74,5 @@ So, when you put it all together, the statement is checking if the value of the 
 2. **Error Nodes:** These nodes will be responsible to redirect the user to other flows after the user's email address and phone number are validated based on the conditions defined.
 
 3. **Flow Control:** Depending on the outcome of the validation process, users will be directed to different flows, which may involve displaying error modals as appropriate.
-
 
 ### Use matrix

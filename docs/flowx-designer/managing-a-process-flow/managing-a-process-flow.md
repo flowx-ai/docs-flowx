@@ -2,20 +2,26 @@
 sidebar_position: 3
 ---
 
-# Managing a process flow
+# Designing a process flow
 
-Now that we've covered the [**main components**](../../terms/microservices) and building blocks of the [**FLOWX Platform**](../../terms/flowx), let's go through the steps needed to design a new [**process flow**](../../terms/flowx-process) using the [**FLOWX Designer**](../../terms/flowx-process-designer). 🧗‍♀️
+Having explored the fundamental components and building blocks of the [**FLOWX Platform**](../../terms/flowx), let's delve into the steps necessary to create a new [**process flow**](../../terms/flowx-process) using the intuitive [**FLOWX Designer**](../../terms/flowx-process-designer). 🧗‍♀️
 
-[Creating a new process definition](creating-a-new-process-definition)
+Explore the following topics to guide you through the process:
 
-[Adding a new node](adding-a-new-node)
+[Creating a new Process Definition](creating-a-new-process-definition)
 
-[Adding an action to a node](adding-an-action-to-a-node)
+[Adding a New Node](adding-a-new-node)
 
-[Handling decisions in the flow](handling-decisions-in-the-flow)
+[Incorporating Actions into Nodes](adding-an-action-to-a-node)
 
-[Adding more flow branches](adding-more-flow-branches)
+[Handling Decisions Within the Flow](handling-decisions-in-the-flow)
 
-[Creating a user interface](creating-a-user-interface)
+[Expanding Flow Branches](adding-more-flow-branches)
 
-After following all the above steps you should be able to replicate an end-to-end process flow and know how FLOWX Designer works. :pencil2:
+[Creating a User Interface](creating-a-user-interface)
+
+[Moving a token backwards](moving-a-token-backwards-in-a-process)
+
+[Exporting/importing a process definition version](creating-a-new-process-definition.md)
+
+By following these steps, you will gain the ability to construct end-to-end process flows and become proficient in using FLOWX Designer. :pencil2:
