@@ -56,9 +56,22 @@ Impactful dependencies:
 * **[Coil Image Library](https://coil-kt.github.io/coil/) 2.3.0**
 * **[Gson](https://github.com/google/gson) 2.10.1**
 
-## Configuring the library
+### Public API
 
-The SDK library is managed through the `FlowxSdkApi` singleton instance.
+The SDK library is managed through the `FlowxSdkApi` singleton instance, which exposes the following methods:
+
+| Name                       | Description                                                                                                         |
+|----------------------------|---------------------------------------------------------------------------------------------------------------------|
+| init                       | Initializes the FlowX SDK. Must be called in your application's `onCreate()`                                        |
+| checkRendererCompatibility | Checks the renderer version compatibility with the deployed services                                                |
+| startProcess               | Starts a FlowX process instance, by returning a `@Composable` function where the process is rendered.               |
+| continueProcess            | Continues an existing FlowX process instance,  by returning a `@Composable` function where the process is rendered. |
+| executeAction              | Runs an action from a custom component                                                                              |
+| getMediaResourceUrl        | Extracts a media item URL needed to populate the UI of a custom component                                           |
+| replaceSubstitutionTag     | Extracts a substitution tag value needed to populate the UI of a custom component                                   |
+| updateAccessToken          | Updates the access token inside the renderer                                                                        |
+
+## Configuring the library
 
 To configure it, call this method in your project's application class `onCreate()` method:
 
@@ -119,6 +132,23 @@ The initial configuration properties that should be passed as `ProcessInput` dat
 | validators                        | Custom validators for form elements                                 | Map<String, (String) -> Boolean>? | Optional.                                           |
 | themeTokensJsonFileAssetsPath     | Android assets relative path to the theme tokens json file          | String?                           | Optional. When `null`, internal theme will be used. |
 | themeComponentsJsonFileAssetsPath | Android assets relative path to the theme components json file      | String?                           | Optional. When `null`, internal theme will be used. |
+
+#### Custom validators
+
+The `custom validators` map is a collection of lambda functions, referenced by *name* (i.e. the value of the `key` in this map), each returning a `Boolean` based on the `String` which needs to be validated.
+For a custom validator to be evaluated for a form field, its *name* must be specified in the form field process definition.
+
+By looking at the example from above - ```mapOf("exact_25_in_length" to { it.length == 25 })``` - if a form element should be validated using this lambda function, in the process definition it must specifiy a custom validator named `"exact_25_in_length"`.
+
+#### Theming
+
+To override the renderer's internal theme, the `themeTokensJsonFileAssetsPath` and `themeComponentsJsonFileAssetsPath` parameters should contain some values, representing Android assets relative paths to the corresponding JSON file for [tokens and components](../../../../release-notes/v3.0.0-february-2023/deployment-guidelines-v3.0.0.md).<br/><br/>
+For example, their values could look like in the example from above:
+```kotlin
+themeTokensJsonFileAssetsPath = "theme/tokens.json",
+themeComponentsJsonFileAssetsPath = "theme/components.json"
+```
+For each case, this translates to `file://android_asset/...`, where `...` is the relative path within your project's `assets/` directory.
 
 ## Using the library
 
