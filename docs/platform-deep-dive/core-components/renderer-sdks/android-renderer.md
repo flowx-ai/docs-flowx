@@ -299,19 +299,46 @@ interface CustomComposableComponent {
 }
 ```
 
+The returned `CustomComposable` object is an interface defined like this:
+
+```kotlin
+interface CustomComposable {
+    // `true` for the custom components that are implemented and can be handled
+    // `false` otherwise
+    val isDefined: Boolean
+
+    // `@Composable` definitions for the custom components that can be handled
+    val composable: @Composable () -> Unit
+
+    /**
+     * Called when the data is available for the custom component
+     * (i.e. when the User Task that contains the custom component is displayed)
+     *
+     * @param data used to populate the custom component
+     */
+    fun populateUi(data: JSONObject)
+
+    /**
+     * Called when the actions are available for the custom component
+     * (i.e. when the User Task that contains the custom component is displayed)
+     *
+     * @param actions that need to be attached to the custom component (e.g. onClick events)
+     */
+    fun populateUi(actions: Map<String, CustomComponentAction>)
+}
+```
+
 #### Sample
 
 ```kotlin
 val myCustomComposableComponents = object : CustomComposableComponent {
     override fun provideCustomComposable(componentIdentifier: String) = object : CustomComposable {
-        // returns `true` for the custom components that are implemented and can be handled
         override val isDefined: Boolean = when (componentIdentifier) {
             "some custom component identifier" -> true
             "other custom component identifier" -> true
             else -> false
         }
 
-        // returns the `@Composable` definitions for the custom components that can be handled
         override val composable: @Composable () -> Unit = {
             when (componentIdentifier) {
                 "some custom component identifier" -> { /* add some @Composable implementation  */ }
@@ -319,12 +346,10 @@ val myCustomComposableComponents = object : CustomComposableComponent {
             }
         }
 
-        // Called when the data is available for the custom component (i.e. when the User Task that contains the custom component is displayed)
         override fun populateUi(data: JSONObject) {
             // extract the necessary data to be used for displaying the custom components
         }
 
-        // Called when the actions are available for the custom component (i.e. when the User Task that contains the custom component is displayed)
         override fun populateUi(actions: Map<String, CustomComponentAction>) {
             // extract the available actions that may be executed from the custom components
         }
@@ -342,19 +367,49 @@ interface CustomViewComponent {
 }
 ```
 
+The returned `CustomView` object is an interface defined like this:
+
+```kotlin
+interface CustomView {
+
+    // `true` for the custom components that are implemented and can be handled
+    // `false` otherwise
+    val isDefined: Boolean
+
+    /**
+     * returns the `View`s for the custom components that can be handled
+     */
+    fun getView(context: Context): View
+
+    /**
+     * Called when the data is available for the custom component
+     * (i.e. when the User Task that contains the custom component is displayed)
+     *
+     * @param data used to populate the custom component
+     */
+    fun populateUi(data: JSONObject)
+
+    /**
+     * Called when the actions are available for the custom component
+     * (i.e. when the User Task that contains the custom component is displayed)
+     *
+     * @param actions that need to be attached to the custom component (e.g. onClick events)
+     */
+    fun populateUi(actions: Map<String, CustomComponentAction>)
+}
+```
+
 #### Sample
 
 ```kotlin
 val myCustomViewComponents = object : CustomViewComponent {
     override fun provideCustomView(componentIdentifier: String) = object : CustomView {
-        // returns `true` for the custom components that are implemented and can be handled
         override val isDefined: Boolean = when (componentIdentifier) {
             "some custom component identifier" -> true
             "other custom component identifier" -> true
             else -> false
         }
 
-        // returns the `View`s for the custom components that can be handled
         override fun getView(context: Context): View {
             reeturn when (componentIdentifier) {
                 "some custom component identifier" -> { /* return some View */ }
@@ -362,12 +417,10 @@ val myCustomViewComponents = object : CustomViewComponent {
             }
         }
 
-        // Called when the data is available for the custom component (i.e. when the User Task that contains the custom component is displayed)
         override fun populateUi(data: JSONObject) {
             // extract the necessary data to be used for displaying the custom components
         }
 
-        // Called when the actions are available for the custom component (i.e. when the User Task that contains the custom component is displayed)
         override fun populateUi(actions: Map<String, CustomComponentAction>) {
             // extract the available actions that may be executed from the custom components
         }
