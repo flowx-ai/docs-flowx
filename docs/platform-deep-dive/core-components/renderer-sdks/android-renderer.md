@@ -282,7 +282,98 @@ fun updateAccessToken(token: String)
 
 ## Custom components
 
-TODO
+The container application should decide which custom component view to provide using the `componentIdentifier` configured in the UI designer.<br/>
+A custom component receives data to populate the view and actions to execute, as described below.
+
+There are two methods to provide a custom component:
+1. by implementing the [CustomComposableComponent](#customcomposablecomponent) interface
+2. by implementing the [CustomViewComponent](#customviewcomponent) interface
+
+### CustomComposableComponent
+
+To provide the custom component as a [@Composable](https://developer.android.com/reference/kotlin/androidx/compose/runtime/Composable) function, you have to implement the `CustomComposableComponent` interface:
+
+```kotlin
+interface CustomComposableComponent {
+    fun provideCustomComposable(componentIdentifier: String): CustomComposable
+}
+```
+
+#### Sample
+
+```kotlin
+val myCustomComposableComponents = object : CustomComposableComponent {
+    override fun provideCustomComposable(componentIdentifier: String) = object : CustomComposable {
+        // returns `true` for the custom components that are implemented and can be handled
+        override val isDefined: Boolean = when (componentIdentifier) {
+            "some custom component identifier" -> true
+            "other custom component identifier" -> true
+            else -> false
+        }
+
+        // returns the `@Composable` definitions for the custom components that can be handled
+        override val composable: @Composable () -> Unit = {
+            when (componentIdentifier) {
+                "some custom component identifier" -> { /* add some @Composable implementation  */ }
+                "other custom component identifier" -> { /* add other @Composable implementation */ }
+            }
+        }
+
+        // Called when the data is available for the custom component (i.e. when the User Task that contains the custom component is displayed)
+        override fun populateUi(data: JSONObject) {
+            // extract the necessary data to be used for displaying the custom components
+        }
+
+        // Called when the actions are available for the custom component (i.e. when the User Task that contains the custom component is displayed)
+        override fun populateUi(actions: Map<String, CustomComponentAction>) {
+            // extract the available actions that may be executed from the custom components
+        }
+    }
+}
+```
+
+### CustomViewComponent
+
+To provide the custom component as a classical Android [View](https://developer.android.com/reference/android/view/View) function, you have to implement the `CustomViewComponent` interface:
+
+```kotlin
+interface CustomViewComponent {
+    fun provideCustomView(componentIdentifier: String): CustomView
+}
+```
+
+#### Sample
+
+```kotlin
+val myCustomViewComponents = object : CustomViewComponent {
+    override fun provideCustomView(componentIdentifier: String) = object : CustomView {
+        // returns `true` for the custom components that are implemented and can be handled
+        override val isDefined: Boolean = when (componentIdentifier) {
+            "some custom component identifier" -> true
+            "other custom component identifier" -> true
+            else -> false
+        }
+
+        // returns the `View`s for the custom components that can be handled
+        override fun getView(context: Context): View {
+            reeturn when (componentIdentifier) {
+                "some custom component identifier" -> { /* return some View */ }
+                "other custom component identifier" -> { /* return other View */ }
+            }
+        }
+
+        // Called when the data is available for the custom component (i.e. when the User Task that contains the custom component is displayed)
+        override fun populateUi(data: JSONObject) {
+            // extract the necessary data to be used for displaying the custom components
+        }
+
+        // Called when the actions are available for the custom component (i.e. when the User Task that contains the custom component is displayed)
+        override fun populateUi(actions: Map<String, CustomComponentAction>) {
+            // extract the available actions that may be executed from the custom components
+        }
+    }
+}
+```
 
 ### Execute action
 
