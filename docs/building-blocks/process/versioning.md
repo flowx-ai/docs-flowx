@@ -176,7 +176,7 @@ More details on how to use the audit log, you can find in the following section:
 
 [Audit log](../../platform-deep-dive/core-components/core-extensions/audit.md)
 
-### My Favorites
+### Favorites
 
 My Favorites feature allows you to mark processes as favorites. This is a convenient way to identify and prioritize processes that are important to, streamlining your workflow. With the addition of the favorite process feature, we have included a dedicated tab within the process definition list.
 
@@ -184,15 +184,17 @@ My Favorites feature allows you to mark processes as favorites. This is a conven
 
 
 :::info
-In **My Favorites** tab, the **Branch** tag will always display the most recently modified branch.
+In **Favorites** tab, the **Branch** tag will always display the most recently modified branch.
 :::
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/my_favorites_tab.png)
 
 #### Adding a process to favorites
 
-To add a process to the "My Favorites" tab, simply follow these steps:
+To add a process to the "Favorites" tab, simply follow these steps:
 
-1. Launch FLOWX.AI Designer.
+1. Launch **FLOWX.AI Designer**.
 2. Either open an existing process definition or create a new one.
 3. In the top-right corner, click on the breadcrumbs menu and select **Add to favorites**.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/fav_add.png)

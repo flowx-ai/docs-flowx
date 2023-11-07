@@ -52,7 +52,3 @@ Use this UI configuration to display comprehensive full-page content.
 ### Modal
 
 Modals provide temporary control over user interaction within a process, often as pop-ups or overlays, guiding users through a specific task before returning to the main application or website functionality.
-
-
-
-

@@ -36,6 +36,10 @@ Error Events expand the capabilities of process modeling and error handling with
 
 
 :::info
+To draw a sequence from an error event node and link it to other nodes, simply follow these steps: right-click on the node, and then select the option to "Add Sequence."
+:::
+
+:::info
 When crafting a condition, use a predefined key as illustrated below:
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/error_events_key.gif)
@@ -59,20 +63,36 @@ If the "priority" field is set to "null," the system will randomly select one of
 So, when you put it all together, the statement is checking if the value of the "input.application.switch" is equal to the string "true." If the value of "input.application.switch" is indeed "true" (as a string), the condition is considered true. If the value is anything other than "true," the condition is false and the error is triggered.
 :::
 
-### Use Case: Handling Errors during User Task Execution
+#### Use Case: Handling Errors during User Task Execution
 
 **Description:** This use case pertains to a page dedicated to collecting client contact data. Specifically, it deals with scenarios where users are given the opportunity to verify their email addresses and phone numbers.
 
 :::info
-In this scenario will create a process to validate a dummy card depending on the CVV entered.
+In this scenario we will create a process to throw an error if an email address is not valid.
 :::
 
-### Configuration:
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/error_ev_task.png)
 
-1. **Error Boundary Events:** We will set up two error boundary events associated with a user task.
+##### Example configuration:
 
-2. **Error Nodes:** These nodes will be responsible to redirect the user to other flows after the user's email address and phone number are validated based on the conditions defined.
+1. **Error Boundary Event:** We will set an error boundary event associated with a user task.
+
+2. **Error Node:** The node will be responsible to redirect the user to other flows after the user's email address is validated based on the conditions defined.
+
+```java
+input.application.client.contactData.email.emailAddress  !=  "john.doe@email.com"
+```
+:::info
+The expression checks if the email address configured in `application.client.contactData.email.emailAddress` key is not equal to "john.doe@email.com." If they are not the same, it evaluates to true, indicating a mismatch.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/error_key.png)
+
+:::
+
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/validateEmailerror.png)
 
 3. **Flow Control:** Depending on the outcome of the validation process, users will be directed to different flows, which may involve displaying error modals as appropriate.
 
-### Use matrix
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/error_email.gif)
+

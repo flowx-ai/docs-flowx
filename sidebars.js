@@ -37,7 +37,8 @@ const sidebars = {
         {
           type: 'doc',
           id: 'getting-started/learn-more'
-        },
+        }
+        
       ],
       className: "sidebar-title"
     },
@@ -311,9 +312,7 @@ const sidebars = {
             { 
               type: "doc",
               id: "building-blocks/node/error-events"
-            }, 
-
-           
+            }
 
           ]
         

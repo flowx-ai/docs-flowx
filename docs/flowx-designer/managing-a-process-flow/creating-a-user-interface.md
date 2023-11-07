@@ -21,31 +21,31 @@ For a visual reference, see the image below:
 ![Stepper Structure](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/stepper_structure.gif)
 
 :::info
-All the UI elements are configured via the [**UI designer**](../../terms/flowx-ai-ui-designer).
+All UI elements are configured via the [**UI designer**](../../terms/flowx-ai-ui-designer).
 :::
 
-### Testing the flow that we have
+### Testing the flow
 
 1. From the **process definition**, click the **Start process** button.
-2. We will not pass any data to this process so an empty object `{}`.
-3. Click **Start Process** and you will see the first step.
+2. Click **Start Process** and you will see the first step.
+
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/ui_config_flow.gif)
 
-## Adding a card with one input
+## Adding a card with input
 
-1. Go to your **user task** (this will represent the **first card** of your step).
-2. Add a **`CARD`** (this is the UI card element).
+1. Go to your **user task** (representing the **first card** of your step).
+2. Add a **`CARD`** (the UI card element).
 3. Add a **Form** to it (Form elements group inputs together).
 4. Add an **input** into the form:
-   * Configure the **key** - you can use the key to retrieve the data form saved on that element
-   * Configure a **label**
+   * Configure the **key** - you can use the key to retrieve the data from this element.
+   * Configure a **label**.
 
 ![Adding input](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/adding_input_flow.gif)
 
-### Testing our first input
+### Testing the first input
 
-1. **Start** one more time **the process** that you just configured.
+1. **Start** the process again to see the configured UI.
 2. The **input** is displayed.
 3. Test the **input**.
 
@@ -54,9 +54,9 @@ All the UI elements are configured via the [**UI designer**](../../terms/flowx-a
 ## Adding second input and a submit action
 
 1. Go to your **user task** node and add a new input via **Node UI designer**.
-2. Now go back to the process and add a new [**action rule**](../../building-blocks/actions/actions.md):
-   * first we need to configure the action - the action is called when the button is pressed - the action should be **Manual** (not automatic because it is triggered by a user)
-   * we need to keep in mind the name of the action - `saveDataFirstStep`
-3. Go back to the Node UI designer and add a button (we need to link the **button** to the **action** based on the name).
+2. Return to the process and add a new [**action rule**](../../building-blocks/actions/actions.md):
+   * Configure the action - the action is called when the button is pressed - the action should be **Manual** (not automatic because it is triggered by a user).
+   * Remember the name of the action - `saveDataFirstStep`.
+3. Go back to the Node UI designer and add a button (link the **button** to the **action** based on the name).
 
 ![Second input](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/second_input.gif)

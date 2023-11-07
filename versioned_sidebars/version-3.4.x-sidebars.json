@@ -188,6 +188,10 @@
             },
             {
               "type": "doc",
+              "id": "building-blocks/node/milestone-node"
+            },
+            {
+              "type": "doc",
               "id": "building-blocks/node/subprocess-run-node"
             },
             {

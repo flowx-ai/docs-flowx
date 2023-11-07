@@ -210,3 +210,23 @@ div[class^="announcementBar"][role="banner"] {
   font-weight: 600;
 }
 
+
+/* In a separate CSS file or as inline styles within your component */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+select {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
