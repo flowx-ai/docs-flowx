@@ -39,12 +39,9 @@ After updating to **3.5.0** FLOWX.AI release, it is not possible to import old p
 |      **Android renderer**      |       | 2.1.4  | 2.1.4  | 2.1.4  | 2.0.1   | 2.0.1  | 2.0.1  | 2.0.1  | n/a      | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     | n/a     |
 
 
+import ImprovedTable from '@site/src/components/ImprovedTable.js';
 
-import InteractiveTable from '@site/src/components/InteractiveTable'
-
-<InteractiveTable />
-
-
+<ImprovedTable />
 
 :::danger IMPORTANT
 With the release of **FLOWX.AI 3.0**, there have been some changes that you need to be aware when upgrading to the latest version:

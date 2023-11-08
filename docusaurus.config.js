@@ -100,7 +100,7 @@ const config = {
       navbar: {
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo-big.svg',
+          src: 'img/svgviewer-output.svg',
           width: 105
         },
         items: [
