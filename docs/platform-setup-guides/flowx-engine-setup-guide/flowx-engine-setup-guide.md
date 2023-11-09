@@ -243,28 +243,31 @@ The suggested topic pattern naming convention is the following:
       "swimlaneName": "Default", //name of the swimlane
       "owner": null,
       "author": "john.doe@flowx.ai",
-      "requestID": "1234567891"
     },
+
     {
       "operationType": "HOLD",
       "taskId": "some task id",
       "processInstanceUuid": "d3aabfd8-d041-4c62-892f-22d17923b223",
       "swimlaneName": "Default", //name of the swimlane
       "owner": null,
-      "author": "jonh.doe@flowx.ai",
-      "requestID": "1234567890"
+      "author": "john.doe@flowx.ai",
     }
   ]
 }      
 ```      
 
 :::info
+If you need to send additional keys on the response, attach them in the header, as in the following example, where we used `requestID` key.
+:::
+
+:::info
 A response should be sent on a `callbackTopic` if it is mentioned in the headers, as in the following example:
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/tsk_callbacktopic.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/bulk_requestid.png)
 
 ```json
-{"processInstanceId": ${processInstanceId}, "callbackTopic": "test.operations.out"}
+{"processInstanceId": ${processInstanceId}, "callbackTopic": "test.operations.out", "requestID":"1234567890"}
 ```
 :::
 
