@@ -39,7 +39,7 @@ dependencyResolutionManagement {
 ```
 dependencies {
     ...
-    implementation("ai.flowx.android:android-sdk:2.2.0")
+    implementation("ai.flowx.android:android-sdk:2.2.1")
     ...
 }
 ```
@@ -63,7 +63,7 @@ The SDK library is managed through the `FlowxSdkApi` singleton instance, which e
 
 | Name                       | Description                                                                                                        | Definition                                                                                                                                                                                                 |
 |----------------------------|--------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| init                       | Initializes the FlowX SDK. Must be called in your application's `onCreate()`                                       | `fun init(context: Context, config: SdkConfig, customComposableComponent: CustomComposableComponent? = null, customViewComponent: CustomViewComponent? = null)`                                            |
+| init                       | Initializes the FlowX SDK. Must be called in your application's `onCreate()`                                       | `fun init(context: Context, config: SdkConfig, customComponentsProvider: CustomComponentsProvider? = null)                                                    `                                            |
 | checkRendererCompatibility | Checks the renderer version compatibility with the deployed services                                               | `suspend fun checkRendererCompatibility(action: ((Boolean) -> Unit)?)`                                                                                                                                     |
 | startProcess               | Starts a FlowX process instance, by returning a `@Composable` function where the process is rendered.              | `fun startProcess(processName: String, accessToken: String, params: JSONObject = JSONObject(), isModal: Boolean = false, closeModalFunc: ((processName: String) -> Unit)? = null): @Composable () -> Unit` |
 | continueProcess            | Continues an existing FlowX process instance, by returning a `@Composable` function where the process is rendered. | `fun continueProcess(processUuid: String, accessToken: String, isModal: Boolean = false, closeModalFunc: ((processName: String) -> Unit)? = null): @Composable () -> Unit`                                 |
@@ -80,19 +80,17 @@ To configure it, call this method in your project's application class `onCreate(
 fun init(
     context: Context,
     config: SdkConfig,
-    customComposableComponent: CustomComposableComponent? = null,
-    customViewComponent: CustomViewComponent? = null,
+    customComponentsProvider: CustomComponentsProvider? = null,
 )
 ```
 
 Its params are explained below:
 
-| Name                      | Description                                           | Type                                                             | Requirement                   |
-|---------------------------|-------------------------------------------------------|------------------------------------------------------------------|-------------------------------|
-| context                   | Android application `Context`                         | Context                                                          | Mandatory                     |
-| config                    | SDK configuration parameters                          | ai.flowx.android.sdk.process.model.SdkConfig                     | Mandatory                     |
-| customComposableComponent | Custom components provided as `@Composable` functions | ai.flowx.android.sdk.component.custom.CustomComposableComponent? | Optional. Defaults to `null`. |
-| customViewComponent       | Custom components provided as `View` objects          | ai.flowx.android.sdk.component.custom.CustomViewComponent?       | Optional. Defaults to `null`. |
+| Name                      | Description                                             | Type                                                            | Requirement                   |
+|---------------------------|---------------------------------------------------------|-----------------------------------------------------------------|-------------------------------|
+| context                   | Android application `Context`                           | Context                                                         | Mandatory                     |
+| config                    | SDK configuration parameters                            | ai.flowx.android.sdk.process.model.SdkConfig                    | Mandatory                     |
+| customComponentsProvider  | Provider for the `@Composable`/`View` custom components | ai.flowx.android.sdk.component.custom.customComponentsProvider? | Optional. Defaults to `null`. |
 
 The `custom components` implementation is explained in [its own section](#custom-components).
 
@@ -116,8 +114,7 @@ class MyApplication : Application() {
                 themeTokensJsonFileAssetsPath = "theme/tokens.json",
                 themeComponentsJsonFileAssetsPath = "theme/components.json"
             ),
-            customComposableComponent = object : CustomComposableComponent { ... },
-            customViewComponent = object : CustomViewComponent { ... },
+            customComponentsProvider = object : CustomComponentsProvider {...},
         )
     }
 }
@@ -285,9 +282,31 @@ fun updateAccessToken(token: String)
 The container application should decide which custom component view to provide using the `componentIdentifier` configured in the UI designer.<br/>
 A custom component receives data to populate the view and actions to execute, as described below.
 
+To handle custom components, an *implementation* of the `CustomComponentsProvider` interface should be passed as a parameter when initializing the SDK:
+
+```kotlin
+interface CustomComponentsProvider {
+    fun provideCustomComposableComponent(): CustomComposableComponent?
+    fun provideCustomViewComponent(): CustomViewComponent?
+}
+```
+
 There are two methods to provide a custom component:
 1. by implementing the [CustomComposableComponent](#customcomposablecomponent) interface
 2. by implementing the [CustomViewComponent](#customviewcomponent) interface
+
+#### Sample
+
+```kotlin
+class CustomComponentsProviderImpl : CustomComponentsProvider {
+    override fun provideCustomComposableComponent(): CustomComposableComponent? {
+        return object : CustomComposableComponent {...}
+    }
+    override fun provideCustomViewComponent(): CustomViewComponent? {
+        return object : CustomViewComponent {...}
+    }
+}
+```
 
 ### CustomComposableComponent
 
@@ -331,27 +350,29 @@ interface CustomComposable {
 #### Sample
 
 ```kotlin
-val myCustomComposableComponents = object : CustomComposableComponent {
-    override fun provideCustomComposable(componentIdentifier: String) = object : CustomComposable {
-        override val isDefined: Boolean = when (componentIdentifier) {
-            "some custom component identifier" -> true
-            "other custom component identifier" -> true
-            else -> false
-        }
-
-        override val composable: @Composable () -> Unit = {
-            when (componentIdentifier) {
-                "some custom component identifier" -> { /* add some @Composable implementation  */ }
-                "other custom component identifier" -> { /* add other @Composable implementation */ }
+override fun provideCustomComposableComponent(): CustomComposableComponent? {
+    return object : CustomComposableComponent {
+        override fun provideCustomComposable(componentIdentifier: String) = object : CustomComposable {
+            override val isDefined: Boolean = when (componentIdentifier) {
+                "some custom component identifier" -> true
+                "other custom component identifier" -> true
+                else -> false
             }
-        }
 
-        override fun populateUi(data: JSONObject) {
-            // extract the necessary data to be used for displaying the custom components
-        }
+            override val composable: @Composable () -> Unit = {
+                when (componentIdentifier) {
+                    "some custom component identifier" -> { /* add some @Composable implementation  */ }
+                    "other custom component identifier" -> { /* add other @Composable implementation */ }
+                }
+            }
 
-        override fun populateUi(actions: Map<String, CustomComponentAction>) {
-            // extract the available actions that may be executed from the custom components
+            override fun populateUi(data: JSONObject) {
+                // extract the necessary data to be used for displaying the custom components
+            }
+
+            override fun populateUi(actions: Map<String, CustomComponentAction>) {
+                // extract the available actions that may be executed from the custom components
+            }
         }
     }
 }
@@ -402,27 +423,29 @@ interface CustomView {
 #### Sample
 
 ```kotlin
-val myCustomViewComponents = object : CustomViewComponent {
-    override fun provideCustomView(componentIdentifier: String) = object : CustomView {
-        override val isDefined: Boolean = when (componentIdentifier) {
-            "some custom component identifier" -> true
-            "other custom component identifier" -> true
-            else -> false
-        }
-
-        override fun getView(context: Context): View {
-            reeturn when (componentIdentifier) {
-                "some custom component identifier" -> { /* return some View */ }
-                "other custom component identifier" -> { /* return other View */ }
+override fun provideCustomViewComponent(): CustomViewComponent? {
+    return object : CustomViewComponent {
+        override fun provideCustomView(componentIdentifier: String) = object : CustomView {
+            override val isDefined: Boolean = when (componentIdentifier) {
+                "some custom component identifier" -> true
+                "other custom component identifier" -> true
+                else -> false
             }
-        }
 
-        override fun populateUi(data: JSONObject) {
-            // extract the necessary data to be used for displaying the custom components
-        }
+            override fun getView(context: Context): View {
+                reeturn when (componentIdentifier) {
+                    "some custom component identifier" -> { /* return some View */ }
+                    "other custom component identifier" -> { /* return other View */ }
+                }
+            }
 
-        override fun populateUi(actions: Map<String, CustomComponentAction>) {
-            // extract the available actions that may be executed from the custom components
+            override fun populateUi(data: JSONObject) {
+                // extract the necessary data to be used for displaying the custom components
+            }
+
+            override fun populateUi(actions: Map<String, CustomComponentAction>) {
+                // extract the available actions that may be executed from the custom components
+            }
         }
     }
 }
