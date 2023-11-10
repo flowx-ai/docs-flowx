@@ -433,7 +433,7 @@ override fun provideCustomViewComponent(): CustomViewComponent? {
             }
 
             override fun getView(context: Context): View {
-                reeturn when (componentIdentifier) {
+                return when (componentIdentifier) {
                     "some custom component identifier" -> { /* return some View */ }
                     "other custom component identifier" -> { /* return other View */ }
                 }
