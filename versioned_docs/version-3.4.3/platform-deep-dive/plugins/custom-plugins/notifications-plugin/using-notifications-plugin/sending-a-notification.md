@@ -63,11 +63,8 @@ Let's pick a simple use-case, say we need to send a new welcome letter when we o
     * receivers
 * **Headers** - it is always `{"processInstanceId": ${processInstanceId}}`
 
-<<<<<<<< HEAD:versioned_docs/version-3.4.x/platform-deep-dive/plugins/custom-plugins/notifications-plugin/using-notifications-plugin/sending-a-notification.md
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/notif_params_send.png)
-========
 ![](.https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/notif_params_send.png)
->>>>>>>> fd311b9 (resolved conflicts):versioned_docs/version-3.4.3/platform-deep-dive/plugins/custom-plugins/notifications-plugin/using-notifications-plugin/sending-a-notification.md
+
 
 4. On the **Message received task** add the needed topic to receive the kafka response - `KAFKA_TOPIC_NOTIFICATION_INTERNAL_OUT` - `ai.flowx.updates.qa.notification.request.v1`.
 

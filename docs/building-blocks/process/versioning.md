@@ -165,7 +165,6 @@ The Read-Only State feature allows you to access and view submitted versions of 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/versioning_read_only.png)
 
 ### Audit view
-<<<<<<< HEAD
 
 The "Open Audit View" provides you with a detailed audit log of actions related to work-in-progress (WIP) versions of a process. The primary goal is to ensure transparency and accountability for actions taken before the commit or save process. 
 
@@ -182,40 +181,22 @@ More details on how to use the audit log, you can find in the following section:
 My Favorites feature allows you to mark processes as favorites. This is a convenient way to identify and prioritize processes that are important to, streamlining your workflow. With the addition of the favorite process feature, we have included a dedicated tab within the process definition list.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/my_favorites.gif)
-<<<<<<< HEAD
-=======
->>>>>>> fd311b9 (resolved conflicts)
 
 The "Open Audit View" provides you with a detailed audit log of actions related to work-in-progress (WIP) versions of a process. The primary goal is to ensure transparency and accountability for actions taken before the commit or save process. 
 
-<<<<<<< HEAD
 :::info
 In **Favorites** tab, the **Branch** tag will always display the most recently modified branch.
 :::
-=======
-You can quickly access and review the history of WIP versions, facilitating efficient decision-making and collaboration.
-
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/versioning_audit_log.gif)
-
-More details on how to use the audit log, you can find in the following section:
-
-[Audit log](../../platform-deep-dive/core-components/core-extensions/audit.md)
-
-### My Favorites
->>>>>>> fd311b9 (resolved conflicts)
-=======
 
 
 :::info
 In **My Favorites** tab, the **Branch** tag will always display the most recently modified branch.
 :::
->>>>>>> 2c8b14e (resolved release notes)
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/my_favorites_tab.png)
 
 #### Adding a process to favorites
 
-<<<<<<< HEAD
 To add a process to the "Favorites" tab, simply follow these steps:
 
 1. Launch **FLOWX.AI Designer**.
@@ -223,10 +204,3 @@ To add a process to the "Favorites" tab, simply follow these steps:
 3. In the top-right corner, click on the breadcrumbs menu and select **Add to favorites**.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/fav_add.png)
-=======
-To add a process to the "My Favorites" tab, simply follow these steps:
-
-1. Launch FLOWX.AI Designer.
-2. Either open an existing process definition or create a new one.
-3. In the top-right corner, click on the breadcrumbs menu and select **Add to favorites**.
->>>>>>> 2c8b14e (resolved release notes)
