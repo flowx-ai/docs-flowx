@@ -1,6 +1,9 @@
 # Navigation areas
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2c8b14e (resolved release notes)
 ## Overview
 
 Navigation areas play a pivotal role in user interface design. They enhance the user experience by providing a structured, organized, and efficient way for users to interact with and explore various features and solutions.
@@ -53,6 +56,13 @@ Use this UI configuration to display comprehensive full-page content.
 ### Modal
 
 Modals provide temporary control over user interaction within a process, often as pop-ups or overlays, guiding users through a specific task before returning to the main application or website functionality.
+<<<<<<< HEAD
 =======
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/navigation_areas.gif)
 >>>>>>> fd311b9 (resolved conflicts)
+=======
+
+
+
+
+>>>>>>> 2c8b14e (resolved release notes)

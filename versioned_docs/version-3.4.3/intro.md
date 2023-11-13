@@ -55,12 +55,15 @@ Find about the core platform components:
 See the Release Notes:
 
 [Realease notes](/release-notes/overview)
+<<<<<<< HEAD
 
 
 Build and launch mission critical software products with FLOWX.AI - Learn and share tips and tricks with our community on Discord: 
 
 <iframe src="https://discord.com/widget?id=1064837506459246602&theme=dark" width="300" height="300" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 
+=======
+>>>>>>> 2c8b14e (resolved release notes)
 
 
 Build and launch mission critical software products with FLOWX.AI - Learn and share tips and tricks with our community on Discord: 

@@ -81,12 +81,7 @@ Child actions can be marked as callbacks to be run after a reply from an externa
 
 For example, a callback function might be used to handle a user's interaction with a web page, such as upload a file. When the user performs the action, the callback function is executed, allowing the web application to respond appropriately.
 
-<<<<<<<< HEAD:versioned_docs/version-3.4.x/building-blocks/actions/actions.md
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/callback1.png)
-
-========
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks)
->>>>>>>> fd311b9 (resolved conflicts):versioned_docs/version-3.4.3/building-blocks/actions/actions.md
 
 Child actions can be marked as callbacks to be run after a reply from an external system is received. They will need to be set when defining the interaction with the external system (the Kafka send action).
 

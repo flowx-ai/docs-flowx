@@ -68,8 +68,15 @@ So, when you put it all together, the statement is checking if the value of the 
 **Description:** This use case pertains to a page dedicated to collecting client contact data. Specifically, it deals with scenarios where users are given the opportunity to verify their email addresses and phone numbers.
 
 :::info
+<<<<<<< HEAD
 In this scenario we will create a process to throw an error if an email address is not valid.
 :::
+=======
+In this scenario will create a process to validate a dummy card depending on the CVV entered.
+:::
+
+### Configuration:
+>>>>>>> 2c8b14e (resolved release notes)
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/error_ev_task.png)
 
@@ -94,5 +101,9 @@ The expression checks if the email address configured in `application.client.con
 
 3. **Flow Control:** Depending on the outcome of the validation process, users will be directed to different flows, which may involve displaying error modals as appropriate.
 
+<<<<<<< HEAD
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/error_email.gif)
 
+=======
+### Use matrix
+>>>>>>> 2c8b14e (resolved release notes)

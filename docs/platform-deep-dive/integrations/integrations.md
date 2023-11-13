@@ -10,7 +10,7 @@ Integrations serve various purposes, including working with legacy APIs, impleme
 
 #### High-level architecture 
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/integrations_archi.drawio.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/intgr_final.png)
 
 Integrations involve interaction with legacy systems and require custom development to integrate them into your FLOWX.AI setup.
 
