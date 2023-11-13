@@ -165,6 +165,7 @@ The Read-Only State feature allows you to access and view submitted versions of 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/versioning_read_only.png)
 
 ### Audit view
+<<<<<<< HEAD
 
 The "Open Audit View" provides you with a detailed audit log of actions related to work-in-progress (WIP) versions of a process. The primary goal is to ensure transparency and accountability for actions taken before the commit or save process. 
 
@@ -181,11 +182,26 @@ More details on how to use the audit log, you can find in the following section:
 My Favorites feature allows you to mark processes as favorites. This is a convenient way to identify and prioritize processes that are important to, streamlining your workflow. With the addition of the favorite process feature, we have included a dedicated tab within the process definition list.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/my_favorites.gif)
+=======
+>>>>>>> fd311b9 (resolved conflicts)
 
+The "Open Audit View" provides you with a detailed audit log of actions related to work-in-progress (WIP) versions of a process. The primary goal is to ensure transparency and accountability for actions taken before the commit or save process. 
 
+<<<<<<< HEAD
 :::info
 In **Favorites** tab, the **Branch** tag will always display the most recently modified branch.
 :::
+=======
+You can quickly access and review the history of WIP versions, facilitating efficient decision-making and collaboration.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/versioning_audit_log.gif)
+
+More details on how to use the audit log, you can find in the following section:
+
+[Audit log](../../platform-deep-dive/core-components/core-extensions/audit.md)
+
+### My Favorites
+>>>>>>> fd311b9 (resolved conflicts)
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/my_favorites_tab.png)
 
