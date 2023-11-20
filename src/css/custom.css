@@ -220,22 +220,3 @@ div[class^="announcementBar"][role="banner"] {
   font-weight: 600;
 }
 
-/* Style for the select element */
-.select {
-  border: 1px solid #e4e4e4;
-  border-radius: 4px;
-  padding: 10px;
-  background-color: #f9f9f9;
-  font-size: 1rem;
-  color: #333;
-  width: 100%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-}
-
-/* Style for the select element options */
-.select-element option {
-  background-color: #f9f9f9;
-  font-size: 1rem;
-  color: #333;
-}

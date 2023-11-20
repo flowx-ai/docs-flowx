@@ -8,54 +8,18 @@ const sidebars = {
       id: "overview"
     },
 
-
-<<<<<<< HEAD
-=======
     {
       type: "category",
-      label: "v3.4.4-November 2023",
+      label: "v3.5.0-November 2023",
       link: {
         type: "doc",
-        id: "v3.4.4-november-2023/v3.4.4-november-2023"
+        id: "v3.5.0-november-2023/v3.5.0-november-2023"
     },
     items: 
     [ 
       { 
         type: "doc",
-        id: "v3.4.4-november-2023/deployment-guidelines-v3.4.4"
-      },
-    ],
-  },
-
->>>>>>> main
-    {
-      type: "category",
-      label: "v3.4.4-November 2023",
-      link: {
-        type: "doc",
-        id: "v3.4.4-november-2023/v3.4.4-november-2023"
-    },
-    items: 
-    [ 
-      { 
-        type: "doc",
-        id: "v3.4.4-november-2023/deployment-guidelines-v3.4.4"
-      },
-    ],
-  },
-
-    {
-      type: "category",
-      label: "v3.5.0-October 2023",
-      link: {
-        type: "doc",
-        id: "v3.5.0-october-2023/v3.5.0-october-2023"
-    },
-    items: 
-    [ 
-      { 
-        type: "doc",
-        id: "v3.5.0-october-2023/deployment-guidelines-v3.5.0"
+        id: "v3.5.0-november-2023/deployment-guidelines-v3.5.0"
       },
 
       
@@ -63,34 +27,18 @@ const sidebars = {
   },
 
 
-  {
-    type: "category",
-    label: "v3.4.3-October 2023",
-    link: {
-      type: "doc",
-      id: "v3.4.3-october-2023/v3.4.3-october-2023"
-  },
-  items: 
-  [ 
-    { 
-      type: "doc",
-      id: "v3.4.3-october-2023/deployment-guidelines-v3.4.3"
-    },
-  ],
-},
-
     {
       type: "category",
-      label: "v3.5.0-October 2023",
+      label: "v3.4.4-November 2023",
       link: {
         type: "doc",
-        id: "v3.5.0-october-2023/v3.5.0-october-2023"
+        id: "v3.4.4-november-2023/v3.4.4-november-2023"
     },
     items: 
     [ 
       { 
         type: "doc",
-        id: "v3.5.0-october-2023/deployment-guidelines-v3.5.0"
+        id: "v3.4.4-november-2023/deployment-guidelines-v3.4.4"
       },
     ],
   },
@@ -111,6 +59,7 @@ const sidebars = {
     },
   ],
 },
+
 
     {
       type: "category",
