@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ImprovedTable.css'; // Import CSS file for styling
 
 function ImprovedTable() {
@@ -19,6 +19,7 @@ function ImprovedTable() {
   const [selectedOption1, setSelectedOption1] = useState(dropdownOptions[0]);
   const [selectedOption2, setSelectedOption2] = useState(dropdownOptions[0]);
   const [selectedPackage, setSelectedPackage] = useState(packages[0]);
+  const [changelogs, setChangelogs] = useState({});
 
   const handleDropdownChange1 = (event) => {
     setSelectedOption1(event.target.value);
@@ -31,6 +32,54 @@ function ImprovedTable() {
   const handlePackageChange = (event) => {
     setSelectedPackage(event.target.value);
   };
+
+  const changelogData = {
+    '3.4.4': {
+      'process-engine': [
+        'Changelog entry 1 for process-engine in version 3.4.4',
+        'Changelog entry 2 for process-engine in version 3.4.4',
+        // Add more entries for other packages in this version
+      ],
+      'admin': [
+        'Changelog entry 1 for admin in version 3.4.4',
+        'Changelog entry 2 for admin in version 3.4.4',
+        // Add more entries for other packages in this version
+      ],
+      // Add more packages and their respective changelogs for version 3.4.4
+    },
+    '3.4.3': {
+      'process-engine': [
+        'Changelog entry 1 for process-engine in version 3.4.3',
+        'Changelog entry 2 for process-engine in version 3.4.3',
+        // Add more entries for other packages in this version
+      ],
+      'admin': [
+        'Changelog entry 1 for admin in version 3.4.3',
+        'Changelog entry 2 for admin in version 3.4.3',
+        // Add more entries for other packages in this version
+      ],
+      // Add more packages and their respective changelogs for version 3.4.3
+    },
+    // Add more changelog entries for other versions
+  };
+
+
+  useEffect(() => {
+    // Fetch changelog entries for the selected package and versions
+    const changelog1 = changelogData[selectedOption1]?.[selectedPackage] || [];
+    const changelog2 = changelogData[selectedOption2]?.[selectedPackage] || [];
+
+    // Store changelog entries for both versions in a combined object
+    const combinedChangelogs = {
+      [selectedOption1]: changelog1,
+      [selectedOption2]: changelog2,
+    };
+
+    setChangelogs(combinedChangelogs);
+  }, [selectedOption1, selectedOption2, selectedPackage]);
+
+
+  
 
   const tableData = {
     '3.4.4': {
@@ -163,21 +212,9 @@ function ImprovedTable() {
   'Android renderer': '2.1.4'
 },
 
+
 };
 
-const changelog = {
-  '3.4.3': [
-    'Feature X added',
-    'Bug fix in component Y',
-    // Add more changes for this version
-  ],
-  '3.4.2': [
-    'Improved performance in module Z',
-    'Updated UI for better user experience',
-    // Add more changes for this version
-  ],
-  // Add more changelog entries for other versions
-};
 
 return (
   <div>
@@ -187,7 +224,7 @@ return (
       <div className="table">
         <label>Select Version 1:</label>
         <select className='select-element' value={selectedOption1} onChange={handleDropdownChange1}>
-          {allOptions.map((option) => (
+          {dropdownOptions.map((option) => (
             <option key={option} value={option}>
               {option}
             </option>
@@ -198,7 +235,7 @@ return (
       <div className="table">
         <label>Select Version 2:</label>
         <select className='select-element' value={selectedOption2} onChange={handleDropdownChange2}>
-          {allOptions.map((option) => (
+          {dropdownOptions.map((option) => (
             <option key={option} value={option}>
               {option}
             </option>
@@ -217,49 +254,23 @@ return (
         </select>
       </div>
     </div>
-    {/* Render the table for comparison */}
-    <div className="comparison">
-      {tableData[selectedOption1] && tableData[selectedOption2] && (
-        <table>
-          <thead>
-            <tr>
-              <th>Package</th>
-              <th>{selectedOption1}</th>
-              <th>{selectedOption2}</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>{selectedPackage}</td>
-              <td>{tableData[selectedOption1][selectedPackage]}</td>
-              <td>{tableData[selectedOption2][selectedPackage]}</td>
-            </tr>
-          </tbody>
-        </table>
-      )}
-    </div>
-    {/* Display changelog */}
+    {/* Display changelogs for both selected versions */}
     <div className="changelog">
-      <h3>Changelog</h3>
-      {changelog[selectedOption1] && changelog[selectedOption2] && (
-        <div>
-          <h4>{selectedOption1}</h4>
-          <ul>
-            {changelog[selectedOption1].map((change, index) => (
-              <li key={index}>{change}</li>
-            ))}
-          </ul>
-          <h4>{selectedOption2}</h4>
-          <ul>
-            {changelog[selectedOption2].map((change, index) => (
-              <li key={index}>{change}</li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <h3>Changelog for {selectedPackage}</h3>
+      <div>
+        {Object.entries(changelogs).map(([version, entries]) => (
+          <div key={version}>
+            <h4>Version {version}</h4>
+            <ul>
+              {entries.map((entry, index) => (
+                <li key={index}>{entry}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 );
 }
-
 export default ImprovedTable;
