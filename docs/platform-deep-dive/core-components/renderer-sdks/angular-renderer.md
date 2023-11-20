@@ -35,9 +35,9 @@ Use the following command to install the **renderer** library and its required d
 
 ```bash
 npm install \
-  @flowx/ui-sdk@3.35.18-1\
-  @flowx/ui-toolkit@3.35.18-1 \
-  @flowx/ui-theme@3.35.18-1 \
+  @flowx/ui-sdk@3.35.18-2\
+  @flowx/ui-toolkit@3.35.18-2 \
+  @flowx/ui-theme@3.35.18-2 \
   event-source-polyfill@1.0.31 \
   paperflow-web-components@latest \
   vanillajs-datepicker@1.3.1 \

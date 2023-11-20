@@ -7,8 +7,8 @@ const sidebars = {
       type: "doc",
       id: "overview"
     },
-
-    {
+    
+     {
       type: "category",
       label: "v3.5.0-November 2023",
       link: {
@@ -21,10 +21,24 @@ const sidebars = {
         type: "doc",
         id: "v3.5.0-november-2023/deployment-guidelines-v3.5.0"
       },
-
-      
     ],
   },
+
+    {
+      type: "category",
+      label: "v3.4.5-November 2023",
+      link: {
+        type: "doc",
+        id: "v3.4.5-november-2023/v3.4.5-november-2023"
+    },
+    items: 
+    [ 
+      { 
+        type: "doc",
+        id: "v3.4.5-november-2023/deployment-guidelines-v3.4.5"
+      },
+    ],
+  }, 
 
 
     {
