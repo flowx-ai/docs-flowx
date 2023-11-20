@@ -165,67 +165,101 @@ function ImprovedTable() {
 
 };
 
-  return (
-    <div>
-      <h2>Compare Component Versions</h2>
-      <div className="table-container">
-        {/* Dropdown for Version 1 */}
-        <div className="table">
-          <label>Select Version 1:</label>
-          <select className='select-element' value={selectedOption1} onChange={handleDropdownChange1}>
-            {dropdownOptions.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-        </div>
-        {/* Dropdown for Version 2 */}
-        <div className="table">
-          <label>Select Version 2:</label>
-          <select className='select-element' value={selectedOption2} onChange={handleDropdownChange2}>
-            {dropdownOptions.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-        </div>
-        {/* Dropdown for selecting a Package */}
-        <div className="table">
-          <label>Select Package:</label>
-          <select className='select-element' value={selectedPackage} onChange={handlePackageChange}>
-            {packages.map((pkg) => (
-              <option key={pkg} value={pkg}>
-                {pkg}
-              </option>
-            ))}
-          </select>
-        </div>
+const changelog = {
+  '3.4.3': [
+    'Feature X added',
+    'Bug fix in component Y',
+    // Add more changes for this version
+  ],
+  '3.4.2': [
+    'Improved performance in module Z',
+    'Updated UI for better user experience',
+    // Add more changes for this version
+  ],
+  // Add more changelog entries for other versions
+};
+
+return (
+  <div>
+    <h2>Compare Component Versions</h2>
+    <div className="table-container">
+      {/* Dropdown for Version 1 */}
+      <div className="table">
+        <label>Select Version 1:</label>
+        <select className='select-element' value={selectedOption1} onChange={handleDropdownChange1}>
+          {allOptions.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
       </div>
-      {/* Render the table for comparison */}
-      <div className="comparison">
-        {tableData[selectedOption1] && tableData[selectedOption2] && (
-          <table>
-            <thead>
-              <tr>
-                <th>Package</th>
-                <th>{selectedOption1}</th>
-                <th>{selectedOption2}</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{selectedPackage}</td>
-                <td>{tableData[selectedOption1][selectedPackage]}</td>
-                <td>{tableData[selectedOption2][selectedPackage]}</td>
-              </tr>
-            </tbody>
-          </table>
-        )}
+      {/* Dropdown for Version 2 */}
+      <div className="table">
+        <label>Select Version 2:</label>
+        <select className='select-element' value={selectedOption2} onChange={handleDropdownChange2}>
+          {allOptions.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+      </div>
+      {/* Dropdown for selecting a Package */}
+      <div className="table">
+        <label>Select Package:</label>
+        <select className='select-element' value={selectedPackage} onChange={handlePackageChange}>
+          {packages.map((pkg) => (
+            <option key={pkg} value={pkg}>
+              {pkg}
+            </option>
+          ))}
+        </select>
       </div>
     </div>
-  );
+    {/* Render the table for comparison */}
+    <div className="comparison">
+      {tableData[selectedOption1] && tableData[selectedOption2] && (
+        <table>
+          <thead>
+            <tr>
+              <th>Package</th>
+              <th>{selectedOption1}</th>
+              <th>{selectedOption2}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{selectedPackage}</td>
+              <td>{tableData[selectedOption1][selectedPackage]}</td>
+              <td>{tableData[selectedOption2][selectedPackage]}</td>
+            </tr>
+          </tbody>
+        </table>
+      )}
+    </div>
+    {/* Display changelog */}
+    <div className="changelog">
+      <h3>Changelog</h3>
+      {changelog[selectedOption1] && changelog[selectedOption2] && (
+        <div>
+          <h4>{selectedOption1}</h4>
+          <ul>
+            {changelog[selectedOption1].map((change, index) => (
+              <li key={index}>{change}</li>
+            ))}
+          </ul>
+          <h4>{selectedOption2}</h4>
+          <ul>
+            {changelog[selectedOption2].map((change, index) => (
+              <li key={index}>{change}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  </div>
+);
 }
 
 export default ImprovedTable;

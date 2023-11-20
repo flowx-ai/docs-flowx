@@ -130,3 +130,28 @@
   /* Additional styles for the comparison container can be added here */
     
 
+  .changelog {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .changelog h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .changelog h4 {
+    font-size: 1.2em;
+    margin-top: 15px;
+  }
+  
+  .changelog ul {
+    margin-left: 20px;
+  }
+  
+  .changelog li {
+    margin-bottom: 5px;
+  }
