@@ -6,6 +6,8 @@ sidebar_position: 1
 
 A Timer Start Event initiates a process instance based on a specified time or schedule. 
 
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/timer_start_interrupting.png#center)
+
 
 :::caution
 Please note that a process definition version can accommodate only one Timer Start Event.

@@ -13,6 +13,8 @@ Timer Boundary Events are utilized to incorporate time-related conditions into p
 
 A Timer Boundary Event is an event attached to a specific activity (task or subprocess) that is triggered when a specified time duration or date is reached. It can interrupt the ongoing activity and initiate a transition.
 
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/timer_boundary_event_interrupting.svg#center)
+
 ### Configuration
 
 For Timer Boundary Events - Interrupting, the following values can be configured:
@@ -22,6 +24,8 @@ For Timer Boundary Events - Interrupting, the following values can be configured
 | Definition | Mandatory   | ISO 8601 formats (date/duration) |
 |            |             | Process param                    |
 
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/intermediate_timer_event.png)
+
 ### General Rules
 
 * When the token enters the parent activity, a scheduler is set, and it waits for the timer event to be triggered.
@@ -30,6 +34,8 @@ For Timer Boundary Events - Interrupting, the following values can be configured
 ## Timer Boundary Event - Non-Interrupting
 
 A Timer Boundary Event is an event attached to a specific activity (task or subprocess) that is triggered when a specified time duration or date is reached. It can trigger independently of the ongoing activity and initiate a parallel path.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/timer_boundary_event_non_interrupting.svg#center)
 
 ### Configuration
 
