@@ -6,6 +6,8 @@ sidebar_position: 2
 
 A Timer Intermediate Event is an event that is triggered based on a specified time duration or date. It is placed within the flow of a process and serves as a point of interruption and continuation.
 
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/timer_intermediate_event.png#center)
+
 ## Configuring a timer intermediate event
 
 | Field      | Validations | Accepted Values                  |
@@ -15,7 +17,7 @@ A Timer Intermediate Event is an event that is triggered based on a specified ti
 
 
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/intermediate_timer_event.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/intermediate_timer_eventz.png)
 
 ### Timer type:
 
