@@ -42,6 +42,26 @@ In the headers section you will have something like this:
 
 ## Timer start event
 
+To start a process using a Start Timer Event:
+
+1. Open FLOWX Designer and go to the Processes tab, then select Definitions.
+2. Choose an existing process definition or create a new one.
+3. Add a Start Timer Event and configure it accordingly.
+
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/start_timer_process.png)
+
+:::caution
+Starting a process via registered timers requires sending a process start message to Kafka, necessitating a service account and authentication. For detailed guidance, refer to:
+
+[**<u>Service Accounts</u>**](../../platform-setup-guides/access-management/configuring-an-iam-solution.md#scheduler-service-account)
+:::
+
+For further insights into the Start Timer Event, explore the section below:
+
+[Start Timer Event](../../building-blocks/node/timer-events/timer-start-event.md)
+
+
 ## Message catch start event
 
 ## Task management - via Hooks

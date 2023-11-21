@@ -36,9 +36,9 @@ Timers introduce the ability to trigger events at specific time intervals. They 
 
 
 Examples:
-*  `PT15S` - 15 seconds
+* `PT15S` - 15 seconds
 * `PT1H30M` - 1 hour and 30 minutes
-*  `P14D` - 14 days
+* `P14D` - 14 days
 * `P3Y6M4DT12H30M5S` - 3 years, 6 months, 4 days, 12 hours, 30 minutes, and 5 seconds
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/timer_events_duration_date.gif)
