@@ -25,6 +25,12 @@ Depending on the node type, the following timer types can be configured:
 | ----------------- | ---- | -------- | ----- |
 | Timer Start Event | Yes  | No       | Yes   |
 
+:::caution
+Starting a process via registered timers requires sending a process start message to Kafka, necessitating a service account and authentication. For detailed guidance, refer to:
+
+[**<u>Service Accounts</u>**](../../../platform-setup-guides/access-management/configuring-an-iam-solution.md#scheduler-service-account)
+:::
+
 ### Timer Type Values
 
 * Date
