@@ -218,11 +218,11 @@ function ImprovedTable() {
 
 return (
   <div>
-    <h2>Compare Component Versions</h2>
+    <h2>Changelog</h2>
     <div className="table-container">
       {/* Dropdown for Version 1 */}
       <div className="table">
-        <label>Select Version 1:</label>
+        <label>Select release v1</label>
         <select className='select-element' value={selectedOption1} onChange={handleDropdownChange1}>
           {dropdownOptions.map((option) => (
             <option key={option} value={option}>
@@ -233,7 +233,7 @@ return (
       </div>
       {/* Dropdown for Version 2 */}
       <div className="table">
-        <label>Select Version 2:</label>
+        <label>Select release v2</label>
         <select className='select-element' value={selectedOption2} onChange={handleDropdownChange2}>
           {dropdownOptions.map((option) => (
             <option key={option} value={option}>
