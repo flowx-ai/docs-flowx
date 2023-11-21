@@ -24,4 +24,9 @@ Explore the following topics to guide you through the process:
 
 [Exporting/importing a process definition version](creating-a-new-process-definition.md)
 
+[Starting processes](starting-a-process)
+
 By following these steps, you will gain the ability to construct end-to-end process flows and become proficient in using FLOWX Designer. :pencil2:
+
+
+

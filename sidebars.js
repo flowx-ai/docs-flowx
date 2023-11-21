@@ -626,6 +626,11 @@ const sidebars = {
               id: "flowx-designer/managing-a-process-flow/export-import-a-process-definition"
             },
 
+            { 
+              type: "doc",
+              id: "flowx-designer/managing-a-process-flow/starting-a-process"
+            }
+
           ],
         },
 

@@ -10,14 +10,14 @@ Custom components are developed in the web application and referenced here by co
 
 To add a custom component in the template config tree, we need to know its unique identifier and the data it should receive from the process model.
 
+
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/ui_designer_custom.png)
 
-The properties that can be configured are as follows:
+The customizable properties encompass:
 
-* **Identifier** - this will enable the custom component to be displayed in the component hierarchy and what actions are available for the component
-* **Input keys** - used to define the process model paths from which the components will receive their data
-* [**UI Actions**](../../ui-actions.md) - actions defined here will be made available to the custom component
-
+* **Identifier**: Defines the display placement and available actions for the custom component.
+* **Input Keys**: Specifies the paths within the process model from which the components draw their data.
+* **UI Action**: Empowers the custom component by defining actions accessible to it.
 
 <div className= "image-scaled">
 
