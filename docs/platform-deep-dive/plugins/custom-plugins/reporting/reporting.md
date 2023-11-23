@@ -9,15 +9,17 @@ The plugin runs in a Docker container with the official Superset image.
 
 [Superset Docker](https://hub.docker.com/r/apache/superset)
 
+<div class = "image-scaled">
+
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/reporting.png)
+
+</div>
 
 ## Architecture
 
 Below you can find the architecture of the reporting plugin.
 
-<br></br>
-
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/reporting_diag.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/Reporting_diagram_small2.png)
 
 ## What is Superset?
 
