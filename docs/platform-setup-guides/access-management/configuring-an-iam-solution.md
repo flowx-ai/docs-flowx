@@ -288,7 +288,7 @@ For detailed information, refer to the following section:
 ### Task management service account
 
 :::info
-The task management service account is utilized to facilitate process initiation, enable the use of the task management plugin (requiring the `FLOWX_ROLE` and role mapper), and access data from Keycloak."
+The task management service account is utilized to facilitate process initiation, enable the use of the task management plugin (requiring the `FLOWX_ROLE` and role mapper), and access data from Keycloak.
 :::
 
 The task management microservice requires a service account to make direct calls to the Keycloak API. Follow these steps to add a task management service account:
