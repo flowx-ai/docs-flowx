@@ -1,21 +1,20 @@
-# Reporting setup guide
+# Reporting Setup Guide
 
-The reporting plugin is available a docker image, and it has the following dependencies:
+The reporting plugin, available as a Docker image, relies on specific dependencies:
 
 ## Dependencies
 
-* a reporting [PostgreSQL](https://www.postgresql.org/) instance
-* reporting-plugin helm chart - containing cronJob which performs the following actions:
-  * reads from FLOWX.AI Engine db 
-  * writes in the FLOWX.AI Reporting plugin db
-* Superset:
-  * a Superset PostgreSQL db
-  * a [Redis](https://redis.io/) instance for caching
-  * exposes the UI through an ingress -> host needed
+- **PostgreSQL** instance dedicated to reporting data.
+- **Reporting-plugin Helm Chart**:
+  - Utilizes a CronJob to extract data from the FLOWX.AI Engine database and populate the FLOWX.AI Reporting plugin database.
+- **Superset**:
+  - Requires a dedicated PostgreSQL database for its operation.
+  - Needs a [Redis](https://redis.io/) instance for efficient caching.
+  - Utilizes an ingress to expose its user interface.
 
-### Postgres database
+### Postgres Database Configuration
 
-Basic Postgres configuration:
+#### Basic Postgres Setup:
 
 ```yaml
 postgresql:
@@ -46,91 +45,131 @@ postgresql:
       preemptible: "false"
 
 ```
-### Reporting plugin helm chart (containing CRON)
+### Reporting Plugin Helm Chart Configuration
 
-reporting-plugin helm.yaml 
+#### Without webhook
+
+:::caution
+When opting for Spark Operator deployment without a webhook, leveraging envVars is recommended. This involves managing secrets, which can either be securely mounted or provided in cleartext within the configuration. This approach ensures flexibility in handling sensitive information while maintaining security measures throughout the deployment process.
+:::
 
 ```yaml
-sync:
-  cronjob:
-    image:
-      repository: {{env}}/reporting-plugin
+sparkApplication: #Defines the Spark application configuration.
+  enabled: "true" #Indicates that the Spark application is enabled for deployment.
+  scheduler: "@every 5m" #A cronJob that should run at every 5 minutes.
+  driver: # This section configures the driver component of the Spark application.
+    envVars: #Environment variables for driver setup.
+      ENGINE_DATABASE_USER: flowx
+      ENGINE_DATABASE_URL: postgresql:5432
+      ENGINE_DATABASE_NAME: process_engine
+      ENGINE_DATABASE_TYPE:
+      REPORTING_DATABASE_USER: flowx
+      REPORTING_DATABASE_URL: postgresql:5432
+      REPORTING_DATABASE_NAME: reporting
+      ENGINE_DATABASE_PASSWORD: "password"
+      REPORTING_DATABASE_PASSWORD: "password"
+  executor: #This section configures the executor component of the Spark application.
+    envVars: #Environment variables for executor setup.
+      ENGINE_DATABASE_USER: flowx
+      ENGINE_DATABASE_URL: postgresql:5432
+      ENGINE_DATABASE_NAME: process_engine
+      REPORTING_DATABASE_USER: flowx
+      REPORTING_DATABASE_URL: postgresql:5432
+      REPORTING_DATABASE_NAME: reporting
+      ENGINE_DATABASE_PASSWORD: "password"
+      REPORTING_DATABASE_PASSWORD: "password"
+```
+:::info
+Note: Passwords are currently set as plain strings, which is not secure practice in a production environment.
+:::
 
-    schedule: "*/5 * * * *"
+#### With webhook
 
+:::caution
+When deploying the Spark Operator with a webhook, it's recommended to employ environmental variables (env) along with environmental variables sourced from Secrets. These Secrets could be securely mounted or provided within the configuration file, ensuring a balance between convenience and security in handling sensitive information during the deployment process.
+:::
+
+```yaml
+sparkApplication:
+  enabled: "true"
+  scheduler: "@every 5m"
+  driver:
+    env: #Environment variables for driver setup with secrets.
+      ENGINE_DATABASE_USER: flowx
+      ENGINE_DATABASE_URL: postgresql:5432
+      ENGINE_DATABASE_NAME: process_engine
+      REPORTING_DATABASE_USER: flowx
+      REPORTING_DATABASE_URL: postgresql:5432
+      REPORTING_DATABASE_NAME: reporting
+    extraEnvVarsMultipleSecretsCustomKeys: 
+      - name: postgresql-generic
+        secrets: #Secrets retrieved from a generic source.
+          ENGINE_DATABASE_PASSWORD: postgresql-password
+          REPORTING_DATABASE_PASSWORD: postgresql-password
+  executor:
+    env: #Environment variables for executor setup with secrets.
+      ENGINE_DATABASE_USER: flowx
+      ENGINE_DATABASE_URL: postgresql:5432
+      ENGINE_DATABASE_NAME: process_engine
+      REPORTING_DATABASE_USER: flowx
+      REPORTING_DATABASE_URL: postgresql:5432
+      REPORTING_DATABASE_NAME: reporting
     extraEnvVarsMultipleSecretsCustomKeys:
-      - name: process-engine-application-config
-        secrets:
-          ENGINE_DATABASE_PASSWORD: {{db paswword}}
-        secrets:
-          REPORTING_DATABASE_PASSWORD: {{db password}}
-
-    env:
-      ENGINE_DATABASE_USER: {{engine db user}}
-      ENGINE_DATABASE_URL: {{engine db URL}}
-      ENGINE_DATABASE_NAME: {{engine db name}}
-
-      REPORTING_DATABASE_USER: {{reporting db user}}
-      REPORTING_DATABASE_URL: {{reporting db URL}}
-      REPORTING_DATABASE_NAME: {{reporting db name}}
-
+      - name: postgresql-generic
+        secrets: #Secrets retrieved from a generic source.
+          ENGINE_DATABASE_PASSWORD: postgresql-password
+          REPORTING_DATABASE_PASSWORD: postgresql-password
 ```
 
+#### Database type
 
-### Superset 
+To set the type of engine database type you must also configure the following environment variable:
+
+* `ENGINE_DATABASE_TYPE` : postgres (default value, could be also set for 'oracle')
+
+
+### Superset Configuration
+
+Detailed Superset Configuration Guide:
 
 [Superset configuration](https://github.com/apache/superset/blob/master/helm/superset/README.md)
 
+Refer to Superset Documentation for in-depth information:
+
 [Superset documentation](https://superset.apache.org/docs/intro/)
 
-## After installation
+## Post-Installation Steps
 
-* datasource URL -> FLOWX.AI Reporting database
-* Datasets
-* Dashboards
+After installation, perform the following essential configurations:
 
 ### Datasource configuration
 
-To store data related to document templates and documents the service uses a Postgres database.
+For document-related data storage, configure these environment variables:
 
-The following configuration details need to be added using environment variables:
+* `SPRING_DATASOURCE_URL`
+* `SPRING_DATASOURCE_USERNAME`
+* `SPRING_DATASOURCE_PASSWORD`
 
-`SPRING_DATASOURCE_URL`
-
-`SPRING_DATASOURCE_USERNAME`
-
-`SPRING_DATASOURCE_PASSWORD`
-
-You will need to make sure that the user, password, connection link and db name are configured correctly, otherwise you will receive errors at start time.
-
-The datasource is configured automatically via a liquibase script inside the service. All updates will include migration scripts.
-
-:::info
-Database schema is managed by a liquibase script that will create, manage and migrate future versions.
-:::
+Ensure accurate details to prevent startup errors. The Liquibase script manages schema and migrations.
 
 ### Redis configuration
 
 The following values should be set with the corresponding Redis-related values:
 
-`SPRING_REDIS_HOST`
-
-`SPRING_REDIS_PORT`
+* `SPRING_REDIS_HOST`
+* `SPRING_REDIS_PORT`
 
 ## Keycloak configuration
 
 
-To enable a different user authentication than the regular one (database), you need to override the `AUTH_TYPE` parameter in your `superset` .yml file.
+To implement alternative user authentication:
 
-It would look something like this:
+* Override `AUTH_TYPE` in your `superset.yml` configuration file:
+  * Set `AUTH_TYPE: AUTH_OID`
+* Provide the reference to your `openid-connect` realm:
+  * `OIDC_OPENID_REALM: 'flowx'`
 
-`AUTH_TYPE: AUTH_OID`
-
-You will also need to provide a reference to your `openid-connect` realm:
-
-`OIDC_OPENID_REALM: 'flowx'`
-
-With this configuration, the login page changes to a prompt where the user can select the desired OpenID provider (in our case keycloak)
+With this configuration, the login page changes to a prompt where the user can select the desired OpenID provider.
 
 ### Extend the Security Manager
 
@@ -190,7 +229,7 @@ Further, it replaces the default OpenID authentication view with a custom one:
 
 On authentication, the user is redirected back to Superset. 
 
-### Configure Superset
+### Configure Superset Authentication
 
 Finally, we need to add some parameters to the superset .yml file:
 
