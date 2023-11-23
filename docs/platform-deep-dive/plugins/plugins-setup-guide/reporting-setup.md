@@ -6,7 +6,7 @@ The reporting plugin, available as a Docker image, relies on specific dependenci
 
 - **PostgreSQL** instance dedicated to reporting data.
 - **Reporting-plugin Helm Chart**:
-  - Utilizes a CronJob to extract data from the FLOWX.AI Engine database and populate the FLOWX.AI Reporting plugin database.
+  - Utilizes a Spark Application to extract data from the FLOWX.AI Engine database and populate the FLOWX.AI Reporting plugin database.
 - **Superset**:
   - Requires a dedicated PostgreSQL database for its operation.
   - Needs a [Redis](https://redis.io/) instance for efficient caching.
@@ -47,6 +47,41 @@ postgresql:
 ```
 ### Reporting Plugin Helm Chart Configuration
 
+For your configuration you will need a SparkApplication which is a Kubernetes custom resource provided by the Spark Operator, which manages the execution and lifecycle of Apache Spark applications on Kubernetes clusters. It's a higher-level abstraction that encapsulates the specifications and configurations needed to run Spark jobs on Kubernetes.
+
+#### To install Spark Operator
+
+1. Install kube operator using Helm:
+
+```bash
+helm install local-spark-release spark-operator/spark-operator \
+--namespace spark-operator --create-namespace \
+--set webhook.enable=true \
+--set logLevel=6
+```
+
+2. Apply RBAC configurations:
+
+```bash
+kubectl apply -f spark-rbac.yaml
+```
+
+3. Build the reporting image:
+
+```bash
+docker build ...
+```
+
+4. Update the `reporting-image` URL in the `spark-app.yml` file.
+
+5. Configure the correct database ENV variables in the `spark-app.yml` file.
+
+6. Deploy the application:
+
+```bash
+kubectl apply -f operator/spark-app.yaml
+```
+
 #### Without webhook
 
 :::caution
@@ -62,7 +97,7 @@ sparkApplication: #Defines the Spark application configuration.
       ENGINE_DATABASE_USER: flowx
       ENGINE_DATABASE_URL: postgresql:5432
       ENGINE_DATABASE_NAME: process_engine
-      ENGINE_DATABASE_TYPE:
+      ENGINE_DATABASE_TYPE: postgres # To set the type of engine database, can be also changed to oracle
       REPORTING_DATABASE_USER: flowx
       REPORTING_DATABASE_URL: postgresql:5432
       REPORTING_DATABASE_NAME: reporting
@@ -73,6 +108,7 @@ sparkApplication: #Defines the Spark application configuration.
       ENGINE_DATABASE_USER: flowx
       ENGINE_DATABASE_URL: postgresql:5432
       ENGINE_DATABASE_NAME: process_engine
+      ENGINE_DATABASE_TYPE: postgres # To set the type of engine database, can be also changed to oracle
       REPORTING_DATABASE_USER: flowx
       REPORTING_DATABASE_URL: postgresql:5432
       REPORTING_DATABASE_NAME: reporting
@@ -98,6 +134,7 @@ sparkApplication:
       ENGINE_DATABASE_USER: flowx
       ENGINE_DATABASE_URL: postgresql:5432
       ENGINE_DATABASE_NAME: process_engine
+      ENGINE_DATABASE_TYPE: postgres # To set the type of engine database, can be also changed to oracle     
       REPORTING_DATABASE_USER: flowx
       REPORTING_DATABASE_URL: postgresql:5432
       REPORTING_DATABASE_NAME: reporting
@@ -111,6 +148,7 @@ sparkApplication:
       ENGINE_DATABASE_USER: flowx
       ENGINE_DATABASE_URL: postgresql:5432
       ENGINE_DATABASE_NAME: process_engine
+      ENGINE_DATABASE_TYPE: postgres # To set the type of engine database, can be also changed to oracle
       REPORTING_DATABASE_USER: flowx
       REPORTING_DATABASE_URL: postgresql:5432
       REPORTING_DATABASE_NAME: reporting
@@ -121,11 +159,10 @@ sparkApplication:
           REPORTING_DATABASE_PASSWORD: postgresql-password
 ```
 
-#### Database type
 
-To set the type of engine database type you must also configure the following environment variable:
-
-* `ENGINE_DATABASE_TYPE` : postgres (default value, could be also set for 'oracle')
+:::info
+In Kubernetes-based Spark deployments managed by the Spark Operator, you can define the sparkApplication configuration to customize the behavior, resources, and environment for both the driver and executor components of Spark jobs. The driver section allows fine-tuning of parameters specifically pertinent to the driver part of the Spark application.
+:::
 
 
 ### Superset Configuration
