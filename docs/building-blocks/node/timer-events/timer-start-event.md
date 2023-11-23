@@ -95,4 +95,3 @@ The Start Timer Event supports either ISO 8601 formats or spring cron expression
 * When a new committed version is published or when a WIP published version is updated with new Start Timer Event settings:
     * The scheduler is updated based on the settings in the published version.
     * The scheduler state (active or suspended) remains the same as before.
-
