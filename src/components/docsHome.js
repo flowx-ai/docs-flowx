@@ -44,7 +44,7 @@
                    📌 <b>Architecture</b>
                    </Link>
                    <br></br>
-                   <Link href={useBaseUrl("/release-notes")}>
+                   <Link href={useBaseUrl("release-notes/overview")}>
                    📌 <b>Release Notes</b>
                    </Link>
                  </div>
