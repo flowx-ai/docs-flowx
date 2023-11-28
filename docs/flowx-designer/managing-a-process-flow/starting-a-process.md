@@ -99,47 +99,48 @@ Initiating processes through hooks involves the creation of a hook alongside two
 
 ### Creating a hook
 
-Hooks serve the purpose of extracting stateful logic from a component, enabling independent testing and reuse.
+Hooks play a crucial role in abstracting stateful logic from a component, facilitating independent testing and reusability.
 
 :::info
-Users granted task management permissions can create hooks to initiate specific process instances, like sending notifications upon event occurrences.
+Users granted task management permissions can utilize hooks to initiate specific process instances, such as triggering notifications upon event occurrences.
 :::
 
 Follow the next steps to create a hook:
 
 1. **Create a Hook**: Access FLOWX Designer, navigate to the Plugins tab, and choose Task Manager → Hooks.
 2. **Configure the Hook**:
-    * Name - name of the hook
-    * Parent process - the process definition name of the parent process 
-    * Type - *Process hook*
-    * Trigger - *Process Created*
-    * Triggered Process - the process definition name of the process that we want to trigger
-    * Active
+    * Name: Name of the hook
+    * Parent process: Process definition name of the parent process 
+    * Type: *Process hook*
+    * Trigger: *Process Created*
+    * Triggered Process: Process definition name of the process that we want to trigger
+    * Activation status
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/hook_created%20copy.png)
 
-More information about hooks, you can find in the below section:
+For further details about hooks, refer to the section below:
 
 [Hooks](../../platform-deep-dive/plugins/custom-plugins/task-management/using-hooks.md)
 
 ### Setting up the parent process
 
-1. Navigate to FLOWX Designer, go to the Processes tab, and choose Definitions.
-2. Select an existing process definition or create a new one.
-3. Customize your BPMN process according to your requirements.
-4. Ensure the process is utilized in task management. To enable this, within your Process Definition, access Settings → General and activate **"Use process in task management"**.
+1. In FLOWX Designer, navigate to the Processes tab and select Definitions.
+2. Choose an existing process definition or create a new one.
+3. Customize your BPMN process to align with your requirements.
+4. Ensure the process is integrated with task management. To do this, within your Process Definition, access Settings → General and activate **"Use process in task management"**.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/use_in_task_management.gif)
 
 :::info
-Establishing valid roles and permissions within the parent process (or in the service account used) is crucial for enabling the parent process to trigger another process.
+Establishing appropriate roles and permissions within the parent process (or the service account used) is mandatory to enable it to trigger another process.
 :::
 
-Now it's time to configure the process that will be triggered by the hook.
+Now proceed to configure the process that the hook will trigger.
 
 ### Configuring the triggered process
 
-Repeat the first three steps from the above section.
+To configure the process triggered by the hook, follow the initial three steps above. Ensure that the necessary roles and permissions are set within the process.
 
+Upon running the parent process, instances will be created for both the parent and the child processes.
 
-## Rest API
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/triggered_process_hook.gif)
