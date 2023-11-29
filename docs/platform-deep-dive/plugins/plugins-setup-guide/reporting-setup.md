@@ -1,57 +1,29 @@
 # Reporting Setup Guide
 
-The reporting plugin, available as a Docker image, relies on specific dependencies:
+## Introduction
+
+The Reporting Setup Guide assists in configuring the reporting plugin, relying on specific dependencies and configurations.
 
 ## Dependencies
 
-- **PostgreSQL** instance dedicated to reporting data.
+The reporting plugin, available as a Docker image, requires the following dependencies:
+
+- **PostgreSQL**: Dedicated instance for reporting data storage.
 - **Reporting-plugin Helm Chart**:
-  - Utilizes a Spark Application to extract data from the FLOWX.AI Engine database and populate the FLOWX.AI Reporting plugin database.
+  - Utilizes a Spark Application to extract data from the FLOWX.AI Engine database and populate the Reporting plugin database.
+  - Utilizes Spark Operator (more info [**here**](https://github.com/GoogleCloudPlatform/spark-on-k8s-operator/blob/master/docs/quick-start-guide.md)).
 - **Superset**:
   - Requires a dedicated PostgreSQL database for its operation.
-  - Needs a [Redis](https://redis.io/) instance for efficient caching.
-  - Utilizes an ingress to expose its user interface.
+  - Utilizes Redis for efficient caching.
+  - Exposes its user interface via an ingress.
 
-### Postgres Database Configuration
+## Reporting Plugin Helm Chart Configuration
 
-#### Basic Postgres Setup:
+Configuring the reporting plugin involves several steps:
 
-```yaml
-postgresql:
-  enabled: true
-  postgresqlUsername: {{userName}}
-  postgresqlPassword: ""
-  postgresqlDatabase: "reporting"
-  existingSecret: {{scretName}}
-  persistence:
-    enabled: true
-    storageClass: standard-rwo
-    size: 5Gi
-  resources:
-    limits:
-      cpu: 1000m
-      memory: 1024Mi
-    requests:
-      memory: 256Mi
-      cpu: 100m
-  metrics:
-    enabled: true
-    serviceMonitor:
-      enabled: false
-    prometheusRule:
-      enabled: false
-  primary:
-    nodeSelector:
-      preemptible: "false"
+### Installation of Spark Operator
 
-```
-### Reporting Plugin Helm Chart Configuration
-
-For your configuration you will need a SparkApplication which is a Kubernetes custom resource provided by the Spark Operator, which manages the execution and lifecycle of Apache Spark applications on Kubernetes clusters. It's a higher-level abstraction that encapsulates the specifications and configurations needed to run Spark jobs on Kubernetes.
-
-#### To install Spark Operator
-
-1. Install kube operator using Helm:
+1. Install the Spark Operator using Helm:
 
 ```bash
 helm install local-spark-release spark-operator/spark-operator \
@@ -65,7 +37,6 @@ helm install local-spark-release spark-operator/spark-operator \
 ```bash
 kubectl apply -f spark-rbac.yaml
 ```
-
 3. Build the reporting image:
 
 ```bash
@@ -74,7 +45,7 @@ docker build ...
 
 4. Update the `reporting-image` URL in the `spark-app.yml` file.
 
-5. Configure the correct database ENV variables in the `spark-app.yml` file.
+5. Configure the correct database ENV variables in the `spark-app.yml` file (check them in the above examples with/without webhook).
 
 6. Deploy the application:
 
@@ -82,16 +53,16 @@ docker build ...
 kubectl apply -f operator/spark-app.yaml
 ```
 
-#### Without webhook
+## Spark Operator Deployment Options
 
-:::caution
-When opting for Spark Operator deployment without a webhook, leveraging envVars is recommended. This involves managing secrets, which can either be securely mounted or provided in cleartext within the configuration. This approach ensures flexibility in handling sensitive information while maintaining security measures throughout the deployment process.
-:::
+### Without webhook
+
+For deployments without a webhook, manage secrets and environmental variables for security:
 
 ```yaml
 sparkApplication: #Defines the Spark application configuration.
   enabled: "true" #Indicates that the Spark application is enabled for deployment.
-  scheduler: "@every 5m" #A cronJob that should run at every 5 minutes.
+  schedule: "@every 5m" #A cronJob that should run at every 5 minutes.
   driver: # This section configures the driver component of the Spark application.
     envVars: #Environment variables for driver setup.
       ENGINE_DATABASE_USER: flowx
@@ -119,16 +90,15 @@ sparkApplication: #Defines the Spark application configuration.
 Note: Passwords are currently set as plain strings, which is not secure practice in a production environment.
 :::
 
-#### With webhook
+### With webhook
 
-:::caution
-When deploying the Spark Operator with a webhook, it's recommended to employ environmental variables (env) along with environmental variables sourced from Secrets. These Secrets could be securely mounted or provided within the configuration file, ensuring a balance between convenience and security in handling sensitive information during the deployment process.
-:::
+When using the webhook, employ environmental variables with secrets for a balanced security approach:
+
 
 ```yaml
 sparkApplication:
   enabled: "true"
-  scheduler: "@every 5m"
+  schedule: "@every 5m"
   driver:
     env: #Environment variables for driver setup with secrets.
       ENGINE_DATABASE_USER: flowx
@@ -164,6 +134,81 @@ sparkApplication:
 In Kubernetes-based Spark deployments managed by the Spark Operator, you can define the sparkApplication configuration to customize the behavior, resources, and environment for both the driver and executor components of Spark jobs. The driver section allows fine-tuning of parameters specifically pertinent to the driver part of the Spark application.
 :::
 
+Below are the configurable values within the chart values.yml file (with webhook):
+
+```yml
+apiVersion: "sparkoperator.k8s.io/v1beta2"
+kind: ScheduledSparkApplication
+metadata:
+  name: reporting-plugin-spark-app
+  namespace: dev
+  labels:
+    app.kubernetes.io/component: reporting
+    app.kubernetes.io/instance: reporting-plugin
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: reporting-plugin
+    app.kubernetes.io/release: 0.0.1-FLOWXRELEASE
+    app.kubernetes.io/version: 0.0.1-FLOWXVERSION
+    helm.sh/chart: reporting-plugin-0.1.1-PR-9-4-20231122153650-e
+spec:
+  schedule: '@every 5m'
+  concurrencyPolicy: Forbid
+  template:
+    type: Python
+    pythonVersion: "3"
+    mode: cluster
+    image: eu.gcr.io/prj-cicd-d-flowxai-jx-6401/reporting-plugin:0.1.1-PR-9-4-20231122153650-eb6c
+    imagePullPolicy: IfNotPresent
+    mainApplicationFile: local:///opt/spark/work-dir/main.py
+    sparkVersion: "3.1.1"
+    restartPolicy:
+      type: Never
+      onFailureRetries: 0
+      onFailureRetryInterval: 10
+      onSubmissionFailureRetries: 5
+      onSubmissionFailureRetryInterval: 20
+    driver:
+      cores: 1
+      coreLimit: 1200m
+      memory: 512m
+      labels:
+        version: 3.1.1
+      serviceAccount: spark
+      env:
+        ENGINE_DATABASE_USER: flowx
+        ENGINE_DATABASE_URL: postgresql:5432
+        ENGINE_DATABASE_NAME: process_engine
+        ENGINE_DATABASE_TYPE: postgres # To set the type of engine database, can be also changed to oracle
+        REPORTING_DATABASE_USER: flowx
+        REPORTING_DATABASE_URL: postgresql:5432
+        REPORTING_DATABASE_NAME: reporting
+        ENGINE_DATABASE_PASSWORD: "password"
+        REPORTING_DATABASE_PASSWORD: "password"
+    extraEnvVarsMultipleSecretsCustomKeys: 
+      - name: postgresql-generic
+        secrets: #Secrets retrieved from a generic source.
+          ENGINE_DATABASE_PASSWORD: postgresql-password
+          REPORTING_DATABASE_PASSWORD: postgresql-password
+    executor:
+      cores:  1
+      instances: 3
+      memory: 512m
+      labels:
+        version: 3.1.1
+      env: #Environment variables for executor setup with secrets.
+        ENGINE_DATABASE_USER: flowx
+        ENGINE_DATABASE_URL: postgresql:5432
+        ENGINE_DATABASE_NAME: process_engine
+        ENGINE_DATABASE_TYPE: postgres # To set the type of engine database, can be also changed to oracle
+        REPORTING_DATABASE_USER: flowx
+        REPORTING_DATABASE_URL: postgresql:5432
+        REPORTING_DATABASE_NAME: reporting
+    extraEnvVarsMultipleSecretsCustomKeys:
+      - name: postgresql-generic
+        secrets: #Secrets retrieved from a generic source.
+          ENGINE_DATABASE_PASSWORD: postgresql-password
+          REPORTING_DATABASE_PASSWORD: postgresql-password
+```
 
 ### Superset Configuration
 
