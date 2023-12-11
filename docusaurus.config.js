@@ -42,7 +42,7 @@ const config = {
           lastVersion: 'current',
           versions:{
             current:{
-              label: '3.4.x',
+              label: '3.5.0',
               path: '',
               badge: true,
             },
@@ -100,7 +100,7 @@ const config = {
       navbar: {
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo-big.svg',
+          src: 'img/svgviewer-output.svg',
           width: 105
         },
         items: [

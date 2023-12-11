@@ -13,10 +13,12 @@ Hi there! 👋 Follow the Release Notes space to find all the information on the
 
 <summary>Q4 - November 2023 </summary>
 
+- [<u>v3.5.0</u>](/release-notes/v3.5.0-november-2023)
 - [<u>v3.4.5</u>](/release-notes/v3.4.5-november-2023)
 - [<u>v3.4.4</u>](/release-notes/v3.4.4-november-2023)
 
 </details>
+
 
 <details>
 
@@ -25,10 +27,14 @@ Hi there! 👋 Follow the Release Notes space to find all the information on the
 - [<u>v3.4.3</u>](/release-notes/v3.4.3-october-2023)
 - [<u>v3.4.2</u>](/release-notes/v3.4.2-october-2023)
 
+
 </details>
 
 <details>
+
+
 <summary>Q3 - September 2023</summary>
+
 
 - [<u>v3.4.1</u>](/release-notes/v3.4.1-september-2023)
 - [<u>v3.4.0</u>](/release-notes/v3.4.0-september-2023)

@@ -10,14 +10,14 @@ Custom components are developed in the web application and referenced here by co
 
 To add a custom component in the template config tree, we need to know its unique identifier and the data it should receive from the process model.
 
+
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/ui_designer_custom.png)
 
-The properties that can be configured are as follows:
+The customizable properties encompass:
 
-* **Identifier** - this will enable the custom component to be displayed in the component hierarchy and what actions are available for the component
-* **Input keys** - used to define the process model paths from which the components will receive their data
-* [**UI Actions**](../../ui-actions.md) - actions defined here will be made available to the custom component
-
+* **Identifier**: Defines the display placement and available actions for the custom component.
+* **Input Keys**: Specifies the paths within the process model from which the components draw their data.
+* **UI Action**: Empowers the custom component by defining actions accessible to it.
 
 <div className= "image-scaled">
 
@@ -38,28 +38,59 @@ The properties that can be configured are as follows:
 
 ## Creating a Custom component
 
-To create a Custom Component in Angular, follow these steps:
+Follow these steps to craft a custom component in Angular:
 
-1. Create a new Angular component using the Angular CLI or manually.
-2. Implement the necessary HTML structure, TypeScript logic, and SCSS styling to define the appearance and behavior of your custom component.
+1. Navigate to your preferred directory within the FLOWX.AI project.
+2. Generate a new Angular component either manually or through Angular CLI:
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/loader_comp.png)
+```bash
+ng generate component your-component 
+```
 
-## Importing the component
+This will create a structure akin to the following:
 
-After creating the Custom Component, you need to import it into your application.
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/loader_comp%20copy.png)
 
-In your `app.module.ts` file (located at src → app → app.module.ts), add the following import statement:
+In the above example we created a custom loader component:
+
+```typescript 
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-loader',
+  templateUrl: './loader.component.html',
+  styleUrls: ['./loader.component.scss']
+})
+export class LoaderComponent {
+  @Input() showLoader: boolean = false;
+}
+```
+
+:::info
+For detailed guidance on creating an Angular component, refer to the Angular official documentation:
+
+[**<u>Create a feature component</u>**](https://angular.io/tutorial/tour-of-heroes/toh-pt3)
+:::
+
+3. Define the necessary HTML layout, TypeScript functionalities, and SCSS styles to specify the appearance and behavior of your custom component.
+
+## Importing the custom component
+
+Once you've created your Custom Component, the next step is to import it into your application.
+
+#### Import statement
+
+In your **`app.module.ts`** file (located at **`src → app → app.module.ts`**), add the following import statement:
 
 ```ts
-`import { YourComponent } from '@app/components/yourComponent.component'`
+import { YourComponent } from '@app/components/YourComponent/YourComponent.component'
 ```
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/import_cus.gif)
 
-## Declaration in AppModule
+## Declaring in AppModule
 
-In the same `app.module.ts` file, declare your Custom Component within the `declarations` array in the `@NgModule` decorator:
+Within the same **`app.module.ts`** file, declare your Custom Component within the **`declarations`** array in the **`@NgModule`** decorator:
 
 ```ts
 @NgModule({
@@ -72,17 +103,21 @@ In the same `app.module.ts` file, declare your Custom Component within the `decl
 
 ```
 
-## Declaration in FlxProcessModule
+## Declaring in FlxProcessModule
 
-To make your Custom Component available for use in processes created in FLOWX Designer, you need to declare it in `FlxProcessModule`.
+To ensure your Custom Component is accessible for use in processes within FLOWX Designer, it must be declared within `FlxProcessModule`.
 
-In your process.module.ts file (located at src > app > modules > process > process.module.ts), add the following import statement:
+#### Import Statement
+
+In your **`process.module.ts`** file (located at **`src > app > modules > process > process.module.ts`**), add the following import statement:
 
 ```ts
-import { YourComponent } from '@app/components/yourComponent.component';
+import { YourComponent } from '@app/components/YourComponent/YourComponent.component';
 ```
 
-Then, declare your Custom Component in the `FlxProcessModule.forRoot` function:
+## Declaring in FlxProcessModule.forRoot
+
+Subsequently, declare your Custom Component within the n the `FlxProcessModule.forRoot` function:
 
 ```ts
 FlxProcessModule.forRoot({
@@ -101,13 +136,13 @@ Once your Custom Component is declared, you can use it for configuration within 
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/loader_component.gif)
 
-## Data input and actions
+### Data input and actions
 
 The Custom Component accepts input data from processes and can also include actions extracted from a process. These inputs and actions allow you to configure and interact with the component dynamically.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/cst_input_data.png)
 
-## Extracting Data from Processes
+### Extracting Data from Processes
 
 There are multiple ways to extract data from processes to use within your Custom Component. You can utilize the data provided by the process or map actions from the BPMN process to Angular actions within your component.
 

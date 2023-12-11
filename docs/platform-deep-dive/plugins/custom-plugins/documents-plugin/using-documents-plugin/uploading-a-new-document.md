@@ -17,7 +17,7 @@ To upload a document using a process, follow the next steps.
 ## Defining the process
 
 1. Create a process definition.
-2. Add the necessary nodes, including **start/end nodes**, **start/end milestone nodes**, and a **user task node**.
+2. Add the necessary nodes, including **start/end nodes**, navigation areas and a **user task node**.
 3. Configure the user task node:
     * Configure the node settings.
     * Configure the upload action, including topics, document type, and folder.
@@ -72,11 +72,6 @@ The above examples of topics are extracted from an internal testing environment.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/doc_plugin_upload_param.png)
 
-### Milestone nodes
-
-You can configure start and end milestone nodes before and after the user task. Additionally, you can add a modal template (e.g., a **Page**) to the start milestone node to display a modal screen, as shown in the example above.
-
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/milestone_page.png)
 
 ## Receiving the reply
 

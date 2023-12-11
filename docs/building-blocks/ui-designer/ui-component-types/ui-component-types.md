@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # UI component types
 
-Different UI component types can be configured using UI Designer. The components can be configured only using [user task](../../node/user-task-node.md) nodes or [milestone](../../node/milestone-node.md) nodes.
+Different UI component types can be configured using UI Designer. The components can be configured only using [user task](../../node/user-task-node.md) nodes.
 
 Understanding these component types will help you to better utilize the UI Designer tool and create rich web interfaces efficiently.
 
@@ -73,7 +73,7 @@ Understanding these component types will help you to better utilize the UI Desig
 
 </details>
 
-### Milestone node UI components
+### Navigation Areas
 
 <details>
 
@@ -83,8 +83,5 @@ Understanding these component types will help you to better utilize the UI Desig
 * Stepper
 * Step
 * Modal
-* Container
-
-For more information about Milestone node UI components, click [here](../../node/milestone-node.md).
 
 </details>

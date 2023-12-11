@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# 📦 Notifications plugin
+# Notifications plugin
 
 Notifications plugin can be easily added to your custom FLOWX.AI deployment. The plugin will **enhance the core platform capabilities with functionality specific to sending various notifications**.
 

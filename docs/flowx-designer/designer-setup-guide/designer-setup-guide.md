@@ -280,6 +280,24 @@ flowx:
 	      days: 2   <----- marked as deleted will be deleted when older than days number
 ```
 
+
+
+### Platform
+
+#### Set client and environment
+
+To configure the client and environment settings in the platform, you can use the following environment variables:
+
+* `FLOWX_CLIENT_NAME`
+* `FLOWX_ENVIRONMENT_NAME`
+
+Both configurations must be set for the admin component to retrieve them. In case the environment variables are not overridden, the administrator can manually configure them in FLOWX Designer. Here's how you can do it:
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release-notes/set_client_and_env.gif)
+
+By setting the appropriate values for these environment variables, you ensure that the platform is correctly configured with the desired client and environment settings.
+
+
 ## **Steps to deploy Frontend app**
 
 The FLOWX Designer is an SPA application that is packaged in a docker image with `nginx:1.19.10`. The web application allows an authenticated user to administrate the FLOWX platform.

@@ -10,15 +10,25 @@ To split the [**process flow**](../../terms/flowx-process) into more steps, you 
 
 ### Steps for creating a flow with two branches
 
-To create a flow with two branches:
+To create a flow with two branches, follow these steps:
 
-1. Open [**FLOWX Designer**](../../terms/flowx-ai-designer) and go to the **Definitions** tab.
-2. Click on the **New process** button, using the **breadcrumbs** from the top-right corner.
-3. Add a **start node** and a **parallel gateway node**.
-4. Add two different **task nodes** and link them after the **parallel gateway node**.
-5. Add a **parallel gateway** to merge the two flow branches back into one branch.
-6. Add an **end node**.
+1. Start by adding a **parallel gateway node** to open the parallel processing zone.
+2. Next, introduce two different nodes: **a user task** and a **task node**, and establish connections after the **parallel gateway node**.
+3. Conclude the process by adding another **parallel gateway** to merge the two flow branches back into a single branch.
 
-![Visual Guide Parallel Gateway](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/flowx-designer/process_flow_adding_branches.gif)
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/parallel_process.png)
+
+In the provided example, a user task and a service task execute in parallel when the process begins, resulting in the following outcome:
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/parallel_var.png)
+
+
+:::info
+In the context of parallel gateways, a parent token is initially divided into new child tokens. These child tokens become inactive once all of them have reached the closing node of the parallel gateway, and the parent token is then reactivated.
+:::
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/parallel_tokens.png)
+
 
 [Parallel Gateway](../../building-blocks/node/parallel-gateway.md)

@@ -12,6 +12,10 @@ The following properties can be configured in the container:
 
 ### Settings
 
+* **Message** - a valid JSON that describes the data pushed to the frontend application when the process reaches a specific user task
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/message_json.png)
+
 * **Expressions (Hide)** - JavaScript expressions used to hide components when they evaluate to true
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/ui_designer_container_settings.png)

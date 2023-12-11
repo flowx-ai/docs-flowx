@@ -30,7 +30,7 @@ Explore more:
 
 FLOWX.AI leverages a suite of microservices to drive its functionality:
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-overview/architecture_diagram.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/archi_final_sse.drawio.png)
 
 ### FLOWX.AI Engine
 

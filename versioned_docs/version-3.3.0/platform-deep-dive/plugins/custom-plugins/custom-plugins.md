@@ -1,4 +1,4 @@
-# 📦 Custom plugins
+# Custom plugins
 
 Let's get into a bit more detail about the custom plugins 🎛️
 
