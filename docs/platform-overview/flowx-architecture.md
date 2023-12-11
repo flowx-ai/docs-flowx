@@ -2,6 +2,8 @@
 
 Let's delve into the core components that power the FLOWX.AI platform, providing a comprehensive understanding of its capabilities and functionalities.
 
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/archi_fin_fin.svg)
+
 ## FLOWX.AI Designer
 
 The FLOWX.AI Designer is a collaborative, no-code, web-based application development environment, designed to facilitate the creation of web and mobile applications without the need for coding expertise. It offers a wide range of capabilities:
@@ -30,7 +32,12 @@ Explore more:
 
 FLOWX.AI leverages a suite of microservices to drive its functionality:
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-overview/architecture_diagram.png)
+* [**FLOWX.AI Engine**](#flowxai-engine)
+* [**FLOWX.AI SDKs**](#flowxai-sdks)
+* [**FLOWX.AI Content Management**](#flowxai-content-management)
+* [**FLOWX.AI Scheduler**](#flowxai-scheduler)
+* [**FLOWX.AI License Manager**](#flowxai-scheduler)
+* [**FLOWX.AI Admin**](#flowxai-admin)
 
 ### FLOWX.AI Engine
 

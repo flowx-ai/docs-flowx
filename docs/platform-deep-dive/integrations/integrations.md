@@ -4,7 +4,7 @@
 
 Integrations play a crucial role in **connecting legacy systems** or **third-party applications** to the [**FLOWX.AI Process engine**](../../terms/flowxai-process-engine). They enable seamless communication by leveraging custom code and the [**Kafka**](../../terms/flowx-kafka) messaging system.
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/integrations_hl.jpeg)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/custom_intg.svg)
 
 Integrations serve various purposes, including working with legacy APIs, implementing custom file exchange solutions, or integrating with RPAs.
 
