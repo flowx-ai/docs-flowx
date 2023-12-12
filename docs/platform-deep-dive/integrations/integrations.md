@@ -54,9 +54,3 @@ The suggested naming convention is as follows:
     pattern: ${kafka.topic.naming.prefix}${kafka.topic.naming.engineReceivePattern}*
 ```
 :::
-
-To ensure proper communication, make sure to:
-
-* Convert data between different domains (e.g., date formats, list of values, units).
-* Add integration-specific information that is not critical to the process flow (e.g., flags, trace GUIDs).
-

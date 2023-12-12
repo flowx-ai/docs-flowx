@@ -232,7 +232,7 @@ Prerequisites:
 * the Docker Desktop app
 * an internet browser
 
-## Integrating the Connector in FLOWX.AI Designer
+## Integrating a Connector in FLOWX.AI Designer
 
 To integrate and utilize the connector within FLOWX.AI Designer, follow these steps:
 
@@ -249,3 +249,7 @@ To integrate and utilize the connector within FLOWX.AI Designer, follow these st
 2. **Connector Operations**: The connector identifies and processes the incoming message.
 3. **Handling Response**: Upon receiving a response, the connector serializes and deposits the message onto the specified OUT topic.
 4. **Engine Processing**: The engine detects the new message, captures the entire content, and stores it within its variables based on the configured variable settings.
+
+You can check another example of a more complex connector by checking the following repository:
+
+[Currency Exchange Example Connector](https://github.com/flowx-ai/quickstart-connector/tree/example/currency-exchange)
