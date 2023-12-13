@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# 📦 Task management
+# Task management
 
 ### What is Task management plugin?
 

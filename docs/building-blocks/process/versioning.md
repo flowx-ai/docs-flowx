@@ -15,10 +15,10 @@
 3. **Key Information Included:**
    - View details like process definition name, published version branch name, and published version state with the following convention: 
 
-        - work in progress - dotted
-        - submitted - full
-        - main branch - blue 
-        - secondary branch - yellow
+        - If it's a work in progress, it's represented by a dotted line.
+        - When it's submitted and ready for prime time, you'll see a solid, full line.
+        - Main branches are clearly highlighted in blue.
+        - Secondary branches are distinguishable in yellow.
 
 4. **Actions:**
    - Interact with each process definition through actions such as opening the BPMN tab in edit mode, starting instances, and displaying branching options.
@@ -33,6 +33,8 @@
 A "publish icon" will be displayed if the current version is set as published. You can access the branching modal using a button, and it can also be closed from the right corner close button.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/branching_modal.gif)
+
+
 
 ### Starting a new version (work-in-progress)
 
@@ -162,6 +164,43 @@ The Read-Only State feature allows you to access and view submitted versions of 
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/versioning_read_only.png)
 
+### Audit view
+
+The "Open Audit View" provides you with a detailed audit log of actions related to work-in-progress (WIP) versions of a process. The primary goal is to ensure transparency and accountability for actions taken before the commit or save process. 
+
+You can quickly access and review the history of WIP versions, facilitating efficient decision-making and collaboration.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/versioning_audit_log.gif)
+
+More details on how to use the audit log, you can find in the following section:
+
+[Audit log](../../platform-deep-dive/core-components/core-extensions/audit.md)
+
+### Favorites
+
+My Favorites feature allows you to mark processes as favorites. This is a convenient way to identify and prioritize processes that are important to, streamlining your workflow. With the addition of the favorite process feature, we have included a dedicated tab within the process definition list.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/my_favorites.gif)
+
+The "Open Audit View" provides you with a detailed audit log of actions related to work-in-progress (WIP) versions of a process. The primary goal is to ensure transparency and accountability for actions taken before the commit or save process. 
+
+:::info
+In **Favorites** tab, the **Branch** tag will always display the most recently modified branch.
+:::
 
 
+:::info
+In **My Favorites** tab, the **Branch** tag will always display the most recently modified branch.
+:::
 
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/my_favorites_tab.png)
+
+#### Adding a process to favorites
+
+To add a process to the "Favorites" tab, simply follow these steps:
+
+1. Launch **FLOWX.AI Designer**.
+2. Either open an existing process definition or create a new one.
+3. In the top-right corner, click on the breadcrumbs menu and select **Add to favorites**.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/fav_add.png)

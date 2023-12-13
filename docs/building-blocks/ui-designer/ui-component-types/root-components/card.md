@@ -13,6 +13,9 @@ The following properties that can be configured:
 ### **Settings**
 
 * **Message** - a valid JSON that describes the data pushed to the frontend application when the process reaches a specific user task
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/card_message_json.png)
+
 * **Title** - the title of the card
 * **Subtitle** - the subtitle of the card
 * **Card style** - you can choose between a border or raised style

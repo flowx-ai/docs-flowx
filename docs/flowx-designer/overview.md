@@ -13,7 +13,7 @@ sidebar_position: 2
 #### Process Definitions
 
 * create, view, run and edit [processes](../building-blocks/process/process.md)
-* view versioning history
+* versioning system
 
 #### Active Process
 
@@ -70,21 +70,22 @@ sidebar_position: 2
 * it is a [**plugin**](../terms/flowx-plugins) suitable for back-officers and supervisors as it can be used to easily track and assign activities/tasks inside a company
 * for more information, check the [Task Management](../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md) section
 
-#### Notification templates
+#### Notification plugin (notification templates)
 
-* send various types of notifications: SMS, push notifications to mobile devices, emails
+* send various types of notifications: SMS, emails, etc.
 * forward custom notifications to external outgoing services
 * generate and validate [OTP](../platform-deep-dive/plugins/custom-plugins/notifications-plugin/using-notifications-plugin/otp-flow/otp-flow.md) passwords for user identity verification
 * for more information, check the [Notification templates plugin](../platform-deep-dive/plugins/custom-plugins/notifications-plugin/notifications-plugin.md) section
 
-#### Document templates
+#### Document plugin (documents templates)
 
 * store and make changes to documents
 * generate documents based on predefined templates (docx or HTML) and custom process related data
 * convert documents between various formats
 * splitting bulk documents into smaller separate documents
 * editing documents to add generated barcodes/signatures and pictures
-* for more information, check the [Document templates plugin](../platform-deep-dive/plugins/custom-plugins/documents-plugin/documents-plugin.md) section
+* for more information, check the [<u>**Document plugin**</u>](../platform-deep-dive/plugins/custom-plugins/documents-plugin/documents-plugin.md) section
+
 
 </details>
 

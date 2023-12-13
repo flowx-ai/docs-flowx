@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# 📦 Documents plugin
+# Documents plugin
 
 The document plugin can be easily added to your custom FLOWX.AI deployment to **enhance the core platform capabilities with functionality specific to document handling**.
 

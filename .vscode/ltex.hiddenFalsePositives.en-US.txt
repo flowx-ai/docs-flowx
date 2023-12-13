@@ -6,3 +6,4 @@
 {"rule":"ENGLISH_WORD_REPEAT_RULE","sentence":"^\\QIt's important to make sure that hidden fields also have the same expression configured under expressions → hide\nHide Expression - JavaScript expressions used to hide components when they're truthy\\E$"}
 {"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QEnvironment variables are used to store and access configuration information in a secure and efficient manner.\\E$"}
 {"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QAdd a user task that will represent the first card of our step.\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QMessage send task\\E$"}

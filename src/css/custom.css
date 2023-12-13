@@ -34,7 +34,17 @@
   --ifm-color-primary-lightest: #fed164;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --ifm-font-family-base: 'Rubik', sans-serif;
+  --ifm-menu-color: white;
+
+  /* to change sublist items in TOC */
+  .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible a:not(.menu__link--active) {
+    color: rgb(243 242 242);
+    margin-top: 10px;
+    font-weight: 600;
+  }
 }
+
+
 
 .badge {
   background-color: red;
@@ -119,7 +129,7 @@ div[class^="announcementBar"][role="banner"] {
 }
 
 .dropdown-separator {
-  margin: 0.3rem 0;
+  margin: 0.5rem 0;
 }
 
 .nps-button {

@@ -6,4 +6,4 @@ export default function CardLink({href, title}: {href: string; title: string}) {
   return (
     <Link to={href} className={styles.card}><span style={{userSelect: 'none', marginRight: 10}}>&raquo;</span>{title}</Link>
   );
-}
+} 

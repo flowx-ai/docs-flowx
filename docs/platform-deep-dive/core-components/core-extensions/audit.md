@@ -70,8 +70,6 @@ The Audit Log service provides a centralized location for all audit events. The 
 
 * **Subject identifier** - the name related to the subject, there are different types of identifiers based on the selected subject
 
-* **Version** - the version of the process definition at the time of the event
-
 * **Status** - the outcome of the event (e.g. success or failure)
 
 
