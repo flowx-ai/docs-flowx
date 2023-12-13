@@ -361,6 +361,11 @@ const sidebars = {
             { 
               type: "doc",
               id: "building-blocks/actions/append-params-to-parent-process"
+            },
+
+            { 
+              type: "doc",
+              id: "building-blocks/actions/kafka-send-action"
             }  
           ],
         },
