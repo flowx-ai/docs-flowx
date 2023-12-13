@@ -1,113 +1,102 @@
 ---
 sidebar_position: 2
 ---
-# Message send/Message received task nodes
+# Send Message/Receive Message task nodes
 
-**Message send task** and **message received** [**nodes**](../../terms/flowx-node) are used to handle the interaction between a running process and any external systems.
+**Send Message Task** and **Receive Message Task** [**nodes**](../../terms/flowx-node) are used for managing interactions between running processes and external systems.
 
-## Message send task
+## Send Message Task
 
-This node is used to configure messages that should be sent to external systems.
+The Send Message Task node is dedicated to configuring and dispatching messages to external systems.
 
-![Message send task](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_send_task.png#center)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/send_message_task.png#center)
 
-### Configuring a message send task node
+### Configuring a Send Message Task node
 
-Node configuration is done by accessing the **Node Config** tab. You have the following configuration options for a message send task node:
+Node configuration involves accessing the **Node Config** tab, which provides various options for customizing the message send task node:
 
 #### General Config
 
-Inside the General Config you have the following properties:
+Under General Config, key properties include:
 
-* **Node name** - the name of the node
-* **Can Go Back** - switching this option to true will allow users to return to this step after completing it
+- **Node name** - the designated identifier for the node
+- **Can Go Back** - enabling this option allows users to backtrack to this step after completion
 
 :::info
-When encountering a step with `canGoBack` switched to false, all steps found behind it will become unavailable.
+Setting `canGoBack` to false makes subsequent steps inaccessible upon reaching this point.
 :::
 
-* [**Swimlane**](../../platform-deep-dive/user-roles-management/swimlanes.md) - choose a swimlane (if there are multiple swimlanes on the process) to make sure only certain user roles have access only for certain process nodes - if there are no multiple swimlanes, the value is **Default**
-* [**Stage**](../../platform-deep-dive/plugins/custom-plugins/task-management/using-stages.md) - assign a stage to the node
+- [**Stage**](../../platform-deep-dive/plugins/custom-plugins/task-management/using-stages.md) - assigning a stage to the node
 
-![General Config](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_send_task_action.png)
+![General Config](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/message_send_task_action_new.png)
 
-To configure a message send task node, we first need to add a new node and then configure an [**action**](../../terms/flowx-actions) (**Kafka Send Action** type):
+To configure a message send task node:
 
-1. Open [**Process Designer**](../../terms/flowx-process-designer) and start configuring a process.
-2. Add a **message send task** node.
-3. Select the **message send task** node and open **node configuration**.
-4. Add an [**action**](../../terms/flowx-actions), the type of the action set to **Kafka send**.
-5. :exclamation:A few action parameters will need to be filled in depending on the selected action type.
+1. Access the [**Process Designer**](../../terms/flowx-process-designer) and begin setting up a process.
+2. Incorporate a **Send Message Task** node.
+3. Select the node, access its configuration.
+4. Within the **Actions** tab, add an [**action**](../../terms/flowx-actions) of type **Kafka Send**.
+5. :exclamation: Fill in action-specific parameters depending on the chosen action type.
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_send_node.gif)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/message_send_node_new.gif)
 
-Multiple options are available for this type of action and can be configured via the FLOWX.AI Designer. To configure and [add an action to a node](../../flowx-designer/managing-a-process-flow/adding-an-action-to-a-node.md), use the [**Actions**](../../terms/flowx-actions) tab at the node level, which has the following configuration options:
+Multiple options exist for this action type, adjustable via the FLOWX.AI Designer. Utilize the [**Actions**](../../terms/flowx-actions) tab at the node level for configuration, offering:
 
-* [Action Edit](#action-edit)
-* [Back in steps (for Manual actions)](#back-in-steps)
-* [Parameters](#parameters)
-* [Data to send (for Manual actions)](#data-to-send)
+- [Action Edit](#action-edit)
+- [Parameters](#parameters)
 
 #### Action Edit
 
-* **Name** - used internally to make a distinction between different [actions](../actions/actions.md) on nodes in the process. We recommend defining an action naming standard to be able to easily find the process actions
-* **Order** - if multiple actions are defined on the same node, the running order should be set using this option
-* **Timer expression** - it can be used if a delay is required on that action. The format used for this is [ISO 8601 duration format ](https://www.digi.com/resources/documentation/digidocs/90001437-13/reference/r\_iso\_8601\_duration\_format.htm)(for example, a delay of 30 seconds will be set up as `PT30S`)
-* **Action type** - should be set to **Kafka Send Action** for actions used to send messages to external systems
-* **Trigger type** (options are Automatic/Manual) - choose if this action should be triggered automatically (when the process flow reaches this step) or manually (triggered by the user); in most use cases, this will be set to automatic
-* **Required type** (options are Mandatory/Optional) - automatic actions can only be defined as mandatory. Manual actions can be defined as mandatory or optional.
-* **Repeatable** - should be checked if the action can be triggered multiple times
-* **Autorun Children** - when this is switched on, the child actions (the ones defined as mandatory and automatic) will run immediately after the execution of the parent action is finalized
-
-#### **Back in steps**
-
-* **Allow BACK on this action** - back in process is a functionality that allows you to go back in a business process and redo a series of previous actions in the process, or more details, check [**Moving a token backwards in a process**](../../flowx-designer/managing-a-process-flow/moving-a-token-backwards-in-a-process.md) section
+- **Name** - internally used for distinguishing between different [actions](../actions/actions.md) within the process. Establish a clear naming convention for easy identification.
+- **Order** - sets the running order for multiple actions on the same node.
+- **Timer expression** - facilitates a delay if necessary, using [ISO 8601 duration format](./timer-events/timer-expressions.md#iso-8601) (e.g., `PT30S` for a 30-second delay).
+- **Action type** - designate as **Kafka Send Action** for sending messages to external systems.
+- **Trigger type** (Automatic/Manual) - typically, Kafka Send Actions are automatically triggered when the process reaches this step.
+- **Required type** (Mandatory/Optional) - **automatic** actions are typically set as **mandatory**. Manual actions can be either mandatory or optional.
+- **Repeatable** - allows triggering the action multiple times if required.
+- **Autorun Children** - when activated, child actions (mandatory and automatic) execute immediately after the parent action concludes.
 
 ![Action Edit](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_send_action_edit.png)
 
-#### Data to send
+#### Parameters
 
-* **Keys** - are used when data is sent from the frontend via an action to validate the data (you can find more information in the [User Task configuration](user-task-node/) section)
+Parameters can be added via the **Custom** option or by importing pre-defined parameters from an integration.
 
-:::warning
-**Data to send** option is configurable only when the action **trigger type** is **Manual**.
+:::info
+For detailed information on **Integrations management**, refer to [<u>**this link**</u>](../../platform-deep-dive/core-components/core-extensions/integration-management).
 :::
 
-![Parameters](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/parameters_message_send.gif)
+- **Topics** - specifies the Kafka topics listened to by the external system for requests.
+- **Message** - contains the message payload to be dispatched.
+- **Advanced configuration (headers)** - represents a JSON value sent within the Kafka message headers.
 
-For more information about what Kafka is, check the following sections:
+![Parameters](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/message_send_parameters.png)
 
-[Intro to Kafka](/docs/platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-kafka-concepts)
+### Example of a Send Message Task
 
-[Kafka documentation](https://kafka.apache.org/documentation/)
-
-### Example of a message send event
-
-Send a message to a CRM integration to request a search in the local database:
+To send a message to a CRM integration for a local database search request:
 
 #### Action Edit
 
-* **Name** - pick a name that makes it easy to figure out what this action does, for example, `sendRequestToSearchClient`
-* **Order** - 1
-* **Timer Expression** - this remains empty if we want to action to be triggered as soon as the token reaches this node
-* **Action type** - Kafka Send Action
-* **Trigger type** - _Automatic_ - to trigger this action automatically
-* **Required type** - _Mandatory_ - to make sure this action will be run before advancing to the next node
-* **Repeatable** - false, it only needs to run once
+- **Name** - Choose a descriptive name, e.g., `sendRequestToSearchClient`.
+- **Order** - 1
+- **Timer Expression** - left empty for immediate triggering upon node traversal.
+- **Action type** - Kafka Send Action
+- **Trigger type** - _Automatic_ for automatic triggering
+- **Required type** - _Mandatory_ to ensure execution before advancing to the next node
+- **Repeatable** - false, running once is sufficient
+
 
 #### **Parameters**
 
-:::info
-Parameters can be added either using **Custom** option (where you configure everything on the spot), or by using **From integration** and import parameters already defined in an integration.
-
-More details about **Integrations management** you can find [here](../../platform-deep-dive/core-components/core-extensions/integration-management).
-:::
+In this example we utilized the **Custom** method.
 
 ##### Custom
 
-* **Topics** - `ai.flowx.in.crm.search.v1` the Kafka topic on which the CRM listens for requests
-* **Message** -`{ "clientType": "${application.client.clientType}", "personalNumber": "${personalNumber.client.personalNumber}" }` - the message payload will have two keys, `clientType` and `personalNumber`, both with values from the process instance
-* **Headers** - `{"processInstanceId": ${processInstanceId}}`
+- **Topics** - `ai.flowx.in.crm.search.v1` - the target Kafka topic for CRM requests
+- **Message** - `{ "clientType": "${application.client.clientType}", "personalNumber": "${personalNumber.client.personalNumber}" }` - includes two keys, `clientType` and `personalNumber`, fetching values from the process instance
+- **Headers** - `{"processInstanceId": ${processInstanceId}}`
+
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_send_param1.png)
 
@@ -115,41 +104,40 @@ More details about **Integrations management** you can find [here](../../platfor
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_send_param3.png)
 
-## Message receive task
+## Receive Message Task
 
-This type of node is used when we need to wait for a reply from an external system.
+This node type is used when awaiting a response from an external system.
 
-![Message receive task](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_receive_node.png#center)
+![Receive Message Task](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/receive_message_task.png#center)
 
-The reply from the external system will be saved in the process instance values, on a specified key. If the message needs to be processed at a later time, a timeout can be set using the [ISO 8601](https://www.digi.com/resources/documentation/digidocs/90001437-13/reference/r\_iso\_8601\_duration\_format.htm) format.
+The response received from the external system gets stored in the process instance values, allocated to a specified key. To defer processing the message, a timeout can be established using the [ISO 8601](./timer-events/timer-expressions.md#iso-8601) format.
 
-For example, let's think about a CRM microservice that waits to receive requests to look for a user in a database. It will send back the response when a topic is configured to listen for the response.
+Consider a scenario with a CRM microservice awaiting requests to search for a user in a database. It responds upon listening for the configured topic.
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_receive_example.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/message_receive_example_new.png)
 
-### Configuring a message receive task node
+### Configuring a Receive Message Task node
 
-The values you need to configure for this node are the following:
+Configure the following values for this node:
 
-* **Topic name** - the topic name where the [process engine](../../platform-deep-dive/core-components/flowx-engine.md) listens for the response (this should be added to the platform and match the topic naming rule for the engine to listen to it) - `ai.flowx.out.crm.search.v1`
+- **Topic name** - the topic name where the [process engine](../../platform-deep-dive/core-components/flowx-engine.md) listens for responses. Ensure alignment with the platform's topic naming rule for the engine to process it: `ai.flowx.out.crm.search.v1`
 
 :::warning
-A naming pattern must be defined on the process engine to use the defined topics. It is important to know that all the events that start with a configured pattern will be consumed by the Engine. For example, `KAFKA_TOPIC_PATTERN` is the topic name pattern that the Engine listens to for incoming Kafka events.
+Define a naming pattern on the process engine to utilize the specified topics. Events starting with the configured pattern will be consumed by the Engine. For instance, `KAFKA_TOPIC_PATTERN` is the pattern the Engine uses to listen for incoming Kafka events.
 :::
 
-* **Key Name** - will hold the result received from the external system, if the key already exists in the process values, it will be overwritten - `crmResponse`
+- **Key Name** - stores the received result from the external system. If the key exists in the process values, it will be overwritten: `crmResponse`
 
-For more information about Kafka configuration, click [here](../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#configuring-kafka).
+For further Kafka configuration details, refer [here](../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#configuring-kafka).
 
-![Example of a message receive task for a CRM integration](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_receive_kafka.png)
+![Example of a message receive task for a CRM integration](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/message_receive_parameters.png)
 
+#### From integration
 
-##### From integration
+Upon defining an integration (within [Integration management](../../platform-deep-dive/core-components/core-extensions/integration-management)), compatible nodes can utilize the pre-defined integrations.
 
-After defining one integration (inside [Integration management](../../platform-deep-dive/core-components/core-extensions/integration-management)) you can open a compatible node and start using already defined integrations.
+- **Topics** - topics specified in your integration 
+- **Message** - utilizes the **Message data model** from your integration
+- **Headers** - all integrations include `processInstanceId` as a default header parameter; include other relevant parameters
 
-* **Topics** - topics defined in your integration 
-* **Message** - the **Message data model** from your integration
-* **Headers** - all integrations have `processInstanceId` as a default header parameter, add any other relevant parameters
-
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_send_from_integr.gif)
+![Integration Example](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_send_from_integr.gif)
