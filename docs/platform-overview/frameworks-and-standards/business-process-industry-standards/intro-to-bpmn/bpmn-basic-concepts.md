@@ -1,59 +1,50 @@
-# BPMN basic concepts
+# Understanding BPMN Basic Concepts
 
-Let's get into a bit more details on the main types of BPMN process elements.
+Let's delve into the fundamental elements of BPMN processes.
 
 
-### Events
+## Events
 
-Events are **signals that something happens** – this includes the start and end of a process as well as any interaction with the process’ environment.
-
-There are 3 types of events:
-
-* start events
-* end events
-* intermediate events
+Events are pivotal signals that signify occurrences within a process, encompassing its initiation, conclusion, and interactions with the environment. There are three event types:
 
 ### Start and End events
 
-**Start & End events**
 
-| Start Event Icon                                                                                                                                                                              | End Event Icon                                                                                                                                                                              |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-bpmn/bpmn-basic-concepts/event_start.png#center) | ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-bpmn/bpmn-basic-concepts/event_end.png#center) |
-| event that triggers the process                                                                                                                                                               | event that defines the state that terminates the process                                                                                                                                    |
+| Start Event                                                                                                                                                                                              | End Event                                                                                                                                                                                            |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ![Start Event](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-bpmn/bpmn-basic-concepts/event_start.png#center) | ![End Event](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-bpmn/bpmn-basic-concepts/event_end.png#center) |
+| Triggers the process                                                                                                                                                                                     | Concludes the process                                                                                                                                                                                |                                                                                                                          
 
 ### Intermediate events
 
-#### **Message events**
+#### Send and Receive Tasks
 
-* represents incoming or outgoing messages from external parties - information, email, bank transfer
-* Receive Message Event - incoming message occurring during the process flow, somewhere between start and end
-* Send Message Event - outgoing message
+- **Send Task**: Sends a message to another lane or pool, completing the task once the message is sent.
+- **Receive Task**: Indicates a wait for a message to arrive before continuing the process.
 
-| Send Message Event Icon                                                                                                                                                                        | Receive Message Event Icon                                                                                                                                                                        |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-bpmn/bpmn-basic-concepts/message_send.png#center) | ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-bpmn/bpmn-basic-concepts/message_receive.png#center) |
-| outgoing message                                                                                                                                                                               | incoming message                                                                                                                                                                                  |
+These events involve incoming or outgoing messages from external sources such as information, emails, or bank transfers. They include:
+
+- Receive Message Event: An incoming message occurring within the process flow.
+- Send Message Event: An outgoing message.
+
+
+| Send Message Task Event                                                                | Receive Message Task                                                                      |
+| -------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/send_message_task.png#center) | ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/receive_message_task.png#center) |
+| Outgoing message                                                                       | Incoming message                                                                          |
+
 
 ### Activities
 
-**Task**
+**Tasks** are individual actions within a process flow. They come in various types:
 
-* it is an atomic activity within a process flow. You create a task when the activity cannot be broken down to a finer level of detail. A task can only belong to one lane.
+#### User and Service Tasks
 
-| User task                                                                                                                                                                                   | Service task                                                                                                                                                                                   |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-bpmn/bpmn-basic-concepts/user_task.png#center) | ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-bpmn/bpmn-basic-concepts/service_task.png#center) |
-| a task that requires the human to perform an action                                                                                                                                         | a task that uses a Web service, an automated application, or other kinds of service in completing the task.                                                                                    |
+| User Task                                                                                                                                                                                            | Service Task                                                                                                                                                                                               |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ![User Task](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-bpmn/bpmn-basic-concepts/user_task.png#center) | ![Service Task](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-bpmn/bpmn-basic-concepts/service_task.png#center) |
+| Requires human action                                                                                                                                                                                | Utilizes a web service or automated application                                                                                                                                                            |
 
-
-**Send Task**
-
-* represents a task that sends a Message to another lane or pool. The Task is completed once the Message has been sent.
-
-#### Receive Task
-
-* indicates that the process has to wait for a message to arrive in order to continue. The Task is completed once the message has received.
 
 #### User Task
 
@@ -65,30 +56,32 @@ There are 3 types of events:
 
 ### BPMN Subprocesses
 
-In BPMN, a subprocess is a compound activity that represents a collection of other tasks and subprocesses. Generally, we create BPMN diagrams to communicate processes with others. To facilitate effective communications, we really do not want to make a business process diagram too complex. By using subprocesses, you can split a complex process into multiple levels, which allows you to focus on a particular area in a single process diagram.
+Subprocesses are compound activities that encapsulate multiple tasks and subprocesses. These allow breaking down complex processes into manageable levels within a single diagram, aiding communication.
 
 ### Gateways
 
-Gateways allow to control as well as merge and split the [**process flow**](../../../../terms/flowx-process).
+Gateways control, merge, and split process flow:
 
-#### Exclusive gateways
+| Exclusive Gateway | Parallel Gateway |
+| ----------------- | ---------------- |
+| ![Exclusive Gateway](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-overview/frameworks-and-standards/business-process-industry-standards/gateway_exclusive.png#center) | ![Parallel Gateway](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-overview/frameworks-and-standards/business-process-industry-standards/gateway_parallel.png#center) |
+| Decisive path selection | Simultaneous activation of all branches |
+
+
+#### Exclusive Gateways
 
 In business processes, you typically need to make choices — **business decisions**. The most common type of decision is choosing **either/or**. Exclusive Gateways limit the possible outcome of a decision to a single path, and circumstances choose which one to follow.
 
-#### Parallel gateways
+#### Parallel Gateways
 
-In many cases, you want to split up the flow within your business process. For example the sales and risk departments may examine a new mortgage application at the same time. This reduces the total cycle time for a case. To express parallel flow in BPMN, you use a **parallel gateway**.
+In various scenarios, dividing the flow within your business process proves beneficial. For instance, simultaneous assessment of a new mortgage application by both the sales and risk departments reduces the overall cycle time for a case. To denote parallel flow in BPMN, the **parallel gateway** is employed.
 
-| Exclusive gateway (XOR)                                                                                                                                           | Parallel gateway (AND)                                                                                                                                           |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-overview/frameworks-and-standards/business-process-industry-standards/gateway_exclusive.png#center) | ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-overview/frameworks-and-standards/business-process-industry-standards/gateway_parallel.png#center) |
-| <ul><li>defines a decision point</li></ul>                                                                                                                        | <ul><li>no decision making; </li><li>all outgoing branches are activated</li></ul>                                                                               |
+**Key Attributes of Parallel Gateways:**
 
-**Closing gateway**
-
-* closes gateways by connecting branches with no logic involved
-* symbol used depends on the initial gateway
-* parallel gateways - waits for all input tokens and merges all into one single token
-* inclusive gateways
-  * waits for all active inputs
-  * is informed about all preceding token flows - knows the path selected and are expecting the token from these
+- **Branch Connection**: Closes gateways by linking branches without specific logic involved.
+- **Symbol Variation**: The symbol used varies based on the initial gateway.
+- **Behavior**:
+  - **Parallel Gateways**: Awaits all input tokens and consolidates them into a single token.
+  - **Inclusive Gateways**:
+    - Waits for all active inputs.
+    - Gathers information about preceding token flows, acknowledging the chosen path and expecting the token from these paths.

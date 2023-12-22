@@ -41,7 +41,7 @@ Follow these steps to craft a custom Angular component:
 ```bash
 ng generate component loader
 ```
-:::
+:::info
 The title 'loader' is used for our custom component. You can choose any name.
 :::
 
@@ -113,7 +113,7 @@ import {LoaderComponent} from '@app/components/loader/loader.component';
 
 #### Declaring in FlxProcessModule.forRoot
 
-Subsequently, declare your Custom Component within the `FlxProcessModule.forRoot` function in the same **`process.module.ts` page:
+Subsequently, declare your Custom Component within the `FlxProcessModule.forRoot` function in the same **`process.module.ts`** page:
 
 ```ts
 FlxProcessModule.forRoot({

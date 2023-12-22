@@ -113,14 +113,9 @@
                  <div className="card__body">
                    <Link href={useBaseUrl("/faqs")}>📌 <b>FAQs</b></Link>
                    <br></br>
-                   <Link href={useBaseUrl("")}>
-                   📌 <b>Troubleshooting [TBD]</b>
-                   </Link>
-                   <br></br>
-                   <Link href={useBaseUrl("")}>
-                   📌 <b>Best practices [TBD]</b>
-                   </Link>
-                   <br></br>
+                   <Link href={"https://support.flowx.ai/"}>
+                    📌 <b>Contact our Support</b>
+                  </Link>
                    <br></br>
                  </div>
                </div>
