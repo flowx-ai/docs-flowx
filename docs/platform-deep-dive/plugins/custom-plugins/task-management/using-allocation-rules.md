@@ -2,7 +2,7 @@
 
 Allocation rules are meant to define when tasks should be auto-assigned to users when they reach a [swimlane](../../../user-roles-management/swimlanes.md) that has a specific role configured (for example, specific tasks will be assigned for the _front office_ and specific tasks for the _back office_ only).
 
-![](.https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/allocation_rules.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/allocation_rules.png)
 
 :::info
 Tasks will always be allocated depending on the users load (number of tasks) from current/other processes. If there are two or more users with the same number of assigned tasks, the task will be randomly assigned to one of them.

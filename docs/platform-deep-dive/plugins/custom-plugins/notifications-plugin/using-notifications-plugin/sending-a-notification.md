@@ -63,7 +63,7 @@ Let's pick a simple use-case, say we need to send a new welcome letter when we o
     * receivers
 * **Headers** - it is always `{"processInstanceId": ${processInstanceId}}`
 
-![](.https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/notif_params_send.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/notif_params_send.png)
 
 4. On the **Message received task** add the needed topic to receive the kafka response - `KAFKA_TOPIC_NOTIFICATION_INTERNAL_OUT` - `ai.flowx.updates.qa.notification.request.v1`.
 
