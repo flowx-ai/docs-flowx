@@ -122,15 +122,15 @@ class MyApplication : Application() {
 
 The configuration properties that should be passed as `SdkConfig` data for the `config` parameter above are:
 
-| Name                              | Description                                                         | Type                              | Requirement                                         |
-|-----------------------------------|---------------------------------------------------------------------|-----------------------------------|-----------------------------------------------------|
-| baseUrl                           | URL to connect to the FlowX back-end environment                    | String                            | Mandatory                                           |
-| imageBaseUrl                      | URL to connect to the FlowX Media Library module of the CMS         | String                            | Mandatory                                           |
-| language                          | The language used for retrieving enumerations and substitution tags | String                            | Optional. Defaults to `en`.                         |
-| validators                        | Custom validators for form elements                                 | Map<String, (String) -> Boolean>? | Optional.                                           |
-| themeTokensJsonFileAssetsPath     | Android assets relative path to the theme tokens json file          | String?                           | Optional. When `null`, internal theme will be used. |
-| themeComponentsJsonFileAssetsPath | Android assets relative path to the theme components json file      | String?                           | Optional. When `null`, internal theme will be used. |
-
+| Name                              | Description                                                         | Type                              | Requirement                                        |
+| --------------------------------- | ------------------------------------------------------------------- | --------------------------------- | -------------------------------------------------- |
+| baseUrl                           | URL to connect to the FlowX back-end environment                    | String                            | Mandatory                                          |
+| imageBaseUrl                      | URL to connect to the FlowX Media Library module of the CMS         | String                            | Mandatory                                          |
+| language                          | The language used for retrieving enumerations and substitution tags | String                            | Optional. Defaults to `en`.                        |
+| validators                        | Custom validators for form elements                                 | `Map<String (String) → Boolean>?` | Optional.                                          |
+| themeTokensJsonFileAssetsPath     | Android assets relative path to the theme tokens json file          | String?                           | Optional. When `null` internal theme will be used. |
+| themeComponentsJsonFileAssetsPath | Android assets relative path to the theme components json file      | String?                           | Optional. When `null` internal theme will be used. |
+        
 #### Custom validators
 
 The `custom validators` map is a collection of lambda functions, referenced by *name* (i.e. the value of the `key` in this map), each returning a `Boolean` based on the `String` which needs to be validated.

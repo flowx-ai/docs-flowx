@@ -5,7 +5,7 @@ Do not forget, when upgrading to a new platform version, always check and make s
 :::
 
 :::caution Process compatibility
-After updating to **2.13.0** FLOWX.AI release, importing old processes definitions in the new platform release is not possible (available for exports from **<2.12.0** releases).
+After updating to `**2.13.0**` FLOWX.AI release, importing old processes definitions in the new platform release is not possible (available for exports from `**<2.12.0**` releases).
 :::
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release-notes/release_platform_version_check.png)

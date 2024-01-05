@@ -177,7 +177,7 @@ In summary, the code seems to be processing an uploaded document by checking its
 ```
 
 
-"filePath": This is a key in the object which holds the value ${uploadedDocument.filePath}. The syntax ${...} suggests that it's a variable placeholder that will be replaced with the actual value at runtime.
+"filePath": This is a key in the object which holds the value `${uploadedDocument.filePath}`. The syntax `${...}` suggests that it's a variable placeholder that will be replaced with the actual value at runtime.
 
 After configuring all the nodes and parameters, run the process:
 
