@@ -30,20 +30,23 @@ To check the status of a process or troubleshoot a failed process, follow these 
 
 ## Understanding the Process Status Data
 
-The process status data includes the following:
+Understanding the various elements within process status data is crucial. Here's what each component entails:
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/process/process_status_data.png)
 
-* **Status** - status of the process instance, possible values:
-  * CREATED - the status is visible if there is an error in the process creation. If there is no error, the "Started" status is displayed.
-  * STARTED - indicates that the process is currently running
-  * DISMISSED - the status is available for processes with subprocesses, it is displayed when a user stops a subprocess
-  * EXPIRED - the status is displayed when the "expiryTime" field is defined in the process definition and the defined time has passed.
-  * FINISHED - the process has successfully completed its execution
-  * TERMINATED - a request was sent to the instance to be terminated.
-  * ON HOLD - the process cannot be edited anymore.
-  * FAILED - if a CronJob is triggered at a particular hour, and the instance is not finished by then the status will change to `FAILED` 
-* **Process definition** - the name of the process definition
+* The **Status** field indicates the state of the process instance, offering distinct values:
+
+| Status         | Indicates the state of the process instance. Offers distinct values:                       |
+| -------------- | ------------------------------------------------------------------------------------------ |
+| **CREATED**    | Visible if there's an error during process creation. Displays as "Started" without errors. |
+| **STARTED**    | Indicates the current running status of the process.                                       |
+| **DISMISSED**  | Available for processes with subprocesses, seen when a user halts a subprocess.            |
+| **EXPIRED**    | Shows up when a defined "expiryTime" in the process definition passes.                     |
+| **FINISHED**   | Signifies successful completion of the process execution.                                  |
+| **TERMINATED** | Implies a termination request has been sent to the instance.                               |
+| **ON HOLD**    | Marks a state where the process is no longer editable.                                     |
+| **FAILED**     | Occurs if a CronJob triggers at a specific hour, and the instance isn't finished by then.  |
+
 * **Active process instance** - the UUID of the process instance, with a copy action available
 * **Variables** - displayed as an expanded JSON
 
