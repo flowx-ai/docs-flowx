@@ -264,11 +264,6 @@ const config = {
         },
       ],
       
-    ['@grnet/docusaurus-terminology', {
-      termsDir: './docs/terms',
-      docsDir: './docs',
-      glossaryFilepath: './docs/glossary.md'
-    }],
 
     [
       require.resolve('./src/plugins/docusaurus-plugin-papersaurus/lib'),
