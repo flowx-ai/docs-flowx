@@ -34,6 +34,10 @@ Firstly, create a process where data will be added. Subsequently, the second pro
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/addDataProc.png)
 
+:::caution
+In the "Add Data Process Example" it's crucial to note that we add mock data here to simulate existing data within real processes.
+:::
+
 Example of MVEL Business Rule:
 
 ```json
@@ -78,7 +82,7 @@ output.put ("application", {
 
 Now we can play with this process and create some process instances with different states.
 
-### Search Process Example
+## Search Process Example
 
 Configure the "Search process" to search data in the first created process instances:
 
@@ -89,6 +93,10 @@ Configure the "Search process" to search data in the first created process insta
 output.put("searchResult", {"result": []});
 output.put("resultsNumber", 0);
 ```
+
+:::tip
+For displaying results in the UI, you can also consider utilizing [<u>**Collections**</u>](../../../building-blocks/ui-designer/ui-component-types/collection) UI element.
+:::
 
 3. Add a user task and configure a send event using a [<u>**Kafka send action**</u>](../../../building-blocks/node/message-send-received-task-node.md#example-of-a-message-send-event). Configure the following parameters:
 - **Topic name**: The Kafka topic for the search service requests (defined at `KAFKA_TOPIC_DATA_SEARCH_IN` env variable in your deployment).
@@ -104,7 +112,7 @@ output.put("resultsNumber", 0);
 	"processStartDateAfter": "YYY-MM-DD:THH:MM:SS", //optional, standard ISO 8601 date format
 	"processStartDateBefore": "YYY-MM-DD:THH:MM:SS", //optional, standard ISO 8601 date format
 	"processDefinitionNames": [ "processDef1", "processDef2"],
-	"states": ["ANY",...]
+	"states": ["ANY",...] //optional, if you want to filter process instances based on their status
 }
 ```
 
@@ -115,10 +123,11 @@ Check the Understanding the [<u>**Process Status Data**</u>](../../../building-b
 * `searchKey` - process key used to search data stored in a process
 
 :::caution
-It is mandatory to index this key on the process where resides, so the search data service will be able to localize it. To do this, go to your desired process definition then access **Process Settings → Task Management → Search indexing**.
+Indexing this key within the process is crucial for the search data service to effectively locate it. To enable indexing, navigate to your desired process definition and access **Process Settings → Task Management → Search indexing**.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/indexed_key.png)
 
+❗️ Keys are indexed automatically when the process status changes (e.g., created, started, finished, failed, terminated, expired), when swimlanes are altered, or when stages are modified. To ensure immediate indexing, select the 'Update in Task Management' option either in the **node configuration** or within **Process Settings → General** tab.
 :::
 
 * `value` - the dynamic process key added on our input element that will store and send the data entered by a user to the front end
@@ -139,11 +148,10 @@ If you also use callbackActions, you will need to also add the following headers
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/body_message_search_service.png)
 
 5. A custom microservice (a core extension) will receive this event and search the value in the Elastic Search.
-6. It will respond to the engine via a Kafka topic.
+6. It will respond to the engine via a Kafka topic (defined at `KAFKA_TOPIC_DATA_SEARCH_OUT` env variable in your deployment). Add the topic in the **Node config** of the User task where you previously added the Kafka Send Action.
 
-:::tip
-Define the topic in the Node config of the User task where you added the Kafka Send Action.
-:::
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/search_result_topic.png)
+
 
 The response's body message will look like this:
 
