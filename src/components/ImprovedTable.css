@@ -1,0 +1,153 @@
+/* ImprovedTable.css */
+
+/* Style for the main container */
+.table-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    
+  }
+  
+  /* Style for each table */
+  .table {
+    border: 1px solid #e4e4e4;
+    border-radius: 8px;
+    padding: 18px;
+    margin-right: 25px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style for table labels */
+  label {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.2rem;
+  }
+  
+  /* Style for table headers */
+  table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+    text-align: left;
+    padding: 12px;
+    border-bottom: 2px solid #e4e4e4;
+    
+  }
+  
+  /* Style for table rows */
+  table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  /* Style for table cells */
+  table td {
+    padding: 12px;
+  }
+  
+  /* Style for the differences view container */
+  .diff-container {
+    border: 1px solid #e4e4e4;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  /* Style for the differences view titles */
+  .diff-title {
+    font-weight: bold;
+    margin: 10px 0;
+    color: #333;
+    font-size: 1.4rem;
+  }
+  
+  /* Style for added lines in the differences view */
+  .diff-added {
+    background-color: #e6ffed;
+    padding: 6px;
+    border-left: 4px solid #5cb85c;
+    margin: 4px 0;
+  }
+  
+  /* Style for deleted lines in the differences view */
+  .diff-deleted {
+    background-color: #ffdce0;
+    padding: 6px;
+    border-left: 4px solid #d9534f;
+    margin: 4px 0;
+  }
+  
+
+  .select-element {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    font-size: 1rem;
+    color: #333;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .comparison {
+    border: 1px solid #e4e4e4;
+    border-radius: 8px;
+    padding: 16px;
+    margin-right: 25px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+
+  
+  /* Style for the comparison table headers */
+  .comparison table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  /* Style for the comparison table rows */
+  .comparison table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  /* Style for the comparison table cells */
+  .comparison table td {
+    padding: 8px;
+  }
+  
+  /* Additional styles for the comparison container can be added here */
+    
+
+  .changelog {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+  }
+  
+  .changelog h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .changelog h4 {
+    font-size: 1.2em;
+    margin-top: 15px;
+  }
+  
+  .changelog ul {
+    margin-left: 20px;
+  }
+  
+  .changelog li {
+    margin-bottom: px;
+  }

@@ -8,10 +8,10 @@ FlowxProcessRenderer is a low code library designed to render UI configured via 
 
 ## Angular project requirements
 
-Your app MUST be created using the NG app from the @angular/cli~15 package. It also MUST use SCSS for styling.
+Your app MUST be created using the NG app from the @angular/cli~16 package. It also MUST use SCSS for styling.
 
 ```
-npm install -g @angular/cli@15.0
+npm install -g @angular/cli@16.0
 ng new my-flowx-app
 ```
 
@@ -20,13 +20,13 @@ To install the npm libraries provided by FLOWX you will need to obtain access to
 :::
 
 :::caution
-The library uses Angular version **@angular\~15**, **npm v8.1.2** and **node v16.13.2**.
+The library uses Angular version **@angular\~16**, **npm 9+** and **node 18+**.
 :::
 
 :::caution
-If you are using an older version of Angular (for example, v14), please consult the following link for update instructions: 
+If you are using an older version of Angular (for example, v15), please consult the following link for update instructions: 
 
-[**Update Angular from v14.0 to v15.0**](https://update.angular.io/?v=14.0-15.0)
+[**Update Angular from v15.0 to v16.0**](https://update.angular.io/?v=15.0-16.0)
 :::
 
 ## Installing the library

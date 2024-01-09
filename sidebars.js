@@ -37,7 +37,8 @@ const sidebars = {
         {
           type: 'doc',
           id: 'getting-started/learn-more'
-        },
+        }
+        
       ],
       className: "sidebar-title"
     },
@@ -164,6 +165,11 @@ const sidebars = {
             },
 
             {
+              type: "doc",
+              id: "building-blocks/process/navigation-areas"
+            },
+
+            {
               type: "category",
               label: "Active process",
               link: {
@@ -238,11 +244,6 @@ const sidebars = {
 
             {
               type: "doc",
-              id: "building-blocks/node/milestone-node"
-            },
-
-            {
-              type: "doc",
               id: "building-blocks/node/subprocess-run-node"
             },
 
@@ -299,7 +300,7 @@ const sidebars = {
                 { 
                   type: "doc",
                   id: "building-blocks/node/timer-events/timer-boundary-event"
-                }, 
+                },   
                 
                 {
                   type: "doc",
@@ -308,7 +309,10 @@ const sidebars = {
               ],
             },
 
-           
+            { 
+              type: "doc",
+              id: "building-blocks/node/error-events"
+            }
 
           ]
         
@@ -357,6 +361,11 @@ const sidebars = {
             { 
               type: "doc",
               id: "building-blocks/actions/append-params-to-parent-process"
+            },
+
+            { 
+              type: "doc",
+              id: "building-blocks/actions/kafka-send-action"
             }  
           ],
         },
@@ -621,6 +630,11 @@ const sidebars = {
               type: "doc",
               id: "flowx-designer/managing-a-process-flow/export-import-a-process-definition"
             },
+
+            { 
+              type: "doc",
+              id: "flowx-designer/managing-a-process-flow/starting-a-process"
+            }
 
           ],
         },

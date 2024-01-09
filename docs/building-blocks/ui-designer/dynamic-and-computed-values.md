@@ -9,21 +9,21 @@ Dynamic values exemplify the capacity to dynamically populate various properties
 This capability is now extended to an array of UI elements and their corresponding properties, utilizing process parameters or [**substitution tags**](../../platform-deep-dive/core-components/core-extensions/content-management/substitution-tags.md):
 
 
-| Element                                                                 | Property                                                         | Accepts Params/Subst Tags |
-| ----------------------------------------------------------------------- | ---------------------------------------------------------------- | ------------------------- |
-| [**Form Elements**](./ui-component-types/form-elements)                 | Default Value (except switch)                                    | Yes                       |
-|                                                                         | Label, Placeholder                                               | Yes                       |
-|                                                                         | Helper Text, Validators                                          | Yes                       |
-| [**Document Preview**](./ui-component-types/file-preview.md)            | Title, Subtitle                                                  | Yes                       |
-| [**Card**](./ui-component-types/root-components/card.md)                | Title, Subtitle                                                  | Yes                       |
-| Form                                                                    | Title                                                            | Yes                       |
-| Message                                                                 | Message                                                          | Yes                       |
-| [**Buttons**](./ui-component-types/buttons.md)                          | Label                                                            | Yes                       |
-| Select, Checkbox, Radio,Segmented Button (Static)                       | Label, Value                                                     | Subst Tags Only           |
-| Text                                                                    | Text                                                             | Yes                       |
-| Link                                                                    | Link Text                                                        | Yes                       |
-| [**Modal**](../../building-blocks/node/milestone-node.md#modal)         | Modal Dismiss Alert, Title, Message, Confirm Label, Cancel Label | Yes                       |
-| [**Step**](../../building-blocks/node/milestone-node.md#stepper--steps) | Label                                                            | Yes                       |
+| Element                                                      | Property                                                         | Accepts Params/Subst Tags |
+| ------------------------------------------------------------ | ---------------------------------------------------------------- | ------------------------- |
+| [**Form Elements**](./ui-component-types/form-elements)      | Default Value (except switch)                                    | Yes                       |
+|                                                              | Label, Placeholder                                               | Yes                       |
+|                                                              | Helper Text, Validators                                          | Yes                       |
+| [**Document Preview**](./ui-component-types/file-preview.md) | Title, Subtitle                                                  | Yes                       |
+| [**Card**](./ui-component-types/root-components/card.md)     | Title, Subtitle                                                  | Yes                       |
+| Form                                                         | Title                                                            | Yes                       |
+| Message                                                      | Message                                                          | Yes                       |
+| [**Buttons**](./ui-component-types/buttons.md)               | Label                                                            | Yes                       |
+| Select, Checkbox, Radio,Segmented Button (Static)            | Label, Value                                                     | Subst Tags Only           |
+| Text                                                         | Text                                                             | Yes                       |
+| Link                                                         | Link Text                                                        | Yes                       |
+| **Modal**                                                    | Modal Dismiss Alert, Title, Message, Confirm Label, Cancel Label | Yes                       |
+| **Step**                                                     | Label                                                            | Yes                       |
 
 ### Example using Substitution tags
 

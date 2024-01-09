@@ -12,6 +12,8 @@ sidebar_position: 7
 
 In most cases, the [**token**](../../terms/token) instance will just need to advance forward in the process as the actions on the process are completed.
 
+For more information about what a token is, you can check the following section:
+
 [Token](../../building-blocks/token)
 
 But there might be cases when the token will need to be moved backward in order to redo a series of previous actions in the process.
@@ -25,6 +27,6 @@ The newly created token will copy from the initial token all the information reg
 There are a few configuration options available in order to decide which of the data to keep when resetting the token:
 
 * `restartFromSnapshot` - if set to true, the process parameter values will be reset to the values they had before the first execution of that action
-* `keysForRestart`- an array of process parameter values keys to be copied from the initial execution of that process part
+* `keysForRestart` - an array of process parameter values keys to be copied from the initial execution of that process part
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/flowx-designer/pf_moving_token_bw.gif)

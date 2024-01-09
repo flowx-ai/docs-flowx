@@ -2,7 +2,7 @@
 
 As we've seen in the previous chapter, Business Process Model and Notation ([**BPMN**](intro-to-bpmn/)) is used to define business processes as a sequence of activities. If we need to branch off different process paths, we use gateways. These have rules attached to them in order to decide on which outgoing path should the process continue on.
 
-![Process with gateways](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-overview/frameworks-and-standards/business-process-industry-standards/process_with_gateways.png)
+![Process with gateways](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/process_with_gateways_new.png)
 
 :::info
 For more information on how to define DMN gateway decisions, check the [**Exclusive gateway node**](../../../building-blocks/node/exclusive-gateway-node.md) section.

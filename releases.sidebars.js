@@ -7,6 +7,22 @@ const sidebars = {
       type: "doc",
       id: "overview"
     },
+    
+     {
+      type: "category",
+      label: "v3.5.0-November 2023",
+      link: {
+        type: "doc",
+        id: "v3.5.0-november-2023/v3.5.0-november-2023"
+    },
+    items: 
+    [ 
+      { 
+        type: "doc",
+        id: "v3.5.0-november-2023/deployment-guidelines-v3.5.0"
+      },
+    ],
+  },
 
     {
       type: "category",
@@ -40,6 +56,7 @@ const sidebars = {
     ],
   }, 
 
+
     {
       type: "category",
       label: "v3.4.4-November 2023",
@@ -56,21 +73,23 @@ const sidebars = {
     ],
   },
 
-    {
-      type: "category",
-      label: "v3.4.3-October 2023",
-      link: {
-        type: "doc",
-        id: "v3.4.3-october-2023/v3.4.3-october-2023"
-    },
-    items: 
-    [ 
-      { 
-        type: "doc",
-        id: "v3.4.3-october-2023/deployment-guidelines-v3.4.3"
-      },
-    ],
+
+  {
+    type: "category",
+    label: "v3.4.3-October 2023",
+    link: {
+      type: "doc",
+      id: "v3.4.3-october-2023/v3.4.3-october-2023"
   },
+  items: 
+  [ 
+    { 
+      type: "doc",
+      id: "v3.4.3-october-2023/deployment-guidelines-v3.4.3"
+    },
+  ],
+},
+
 
     {
       type: "category",

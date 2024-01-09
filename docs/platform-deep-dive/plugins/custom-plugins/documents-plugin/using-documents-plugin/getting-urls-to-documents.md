@@ -10,7 +10,6 @@ To retrieve document URLs and use them, for example, in the Notification Plugin 
 * a [**Kafka Send Event Node**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node),
 * a [**Kafka Receive Event Node**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node)
 * a [**User Task Node**](../../../../../building-blocks/node/user-task-node.md)
-* [**Start / End <ilestone**](../../../../../building-blocks/node/milestone-node.md) Nodes to [create a modal](../../../../../building-blocks/node/milestone-node.md#modal)
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/getting_urls_proc.png)
 

@@ -113,7 +113,7 @@ export default function HomepageFeatures() {
   <div className={styles.buttonCard}>
     <h3>FLOWX Designer</h3>
     <p>No-code app creation with FLOWX Designer</p>
-    <Link to="/docs/flowx-designer/">
+    <Link to="/docs/flowx-designer/designer">
       <button className={styles.ctaButton}>FLOWX Designer</button>
     </Link>
   </div>

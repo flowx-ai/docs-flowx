@@ -1,52 +1,52 @@
 ---
 sidebar_position: 2
-title: Building your first process
+title: Creating your first process
 ---
 
-# Building your first process
+# Creating Your First Process
 
 ## Prerequisites
 
-Let's dive into an example. :rocket:
+Let's explore an example: :rocket:
 
--  **Step 1**: [Design a BPMN process](../flowx-designer/managing-a-process-flow)
+- **Step 1**: [Design a BPMN Process](../flowx-designer/managing-a-process-flow)
 
--  **Step 2**: Define and manage a process flow using [**FLOWX Process Designer**](../terms/flowx-process-designer)
+- **Step 2**: Define and manage a process flow using [**FLOWX Process Designer**](../terms/flowx-process-designer)
 
--  **Step 3**: Run a process instance in [**FLOWX Engine**](../terms/flowxai-process-engine)
+- **Step 3**: Run a process instance in [**FLOWX Engine**](../terms/flowxai-process-engine)
 
--  **Step 4**: Create the [**front-end app**](../terms/flowx-frontend-application)
+- **Step 4**: Create the [**Front-End App**](../terms/flowx-frontend-application)
 
--  **Step 5**: Connect [**plugins**](../terms/flowx-plugins)
+- **Step 5**: Connect [**Plugins**](../terms/flowx-plugins)
+
+## Designing the BPMN Process: Requesting a New Credit Card from a Bank App
+
+Let's initiate by designing the BPMN process diagram for a sample use case: requesting a new credit card from a bank app.
+
+## Sample Process Steps
+
+Taking a [**business process example**](../terms/flowx-process) of a credit card application, it involves the following steps:
+
+- A user initiates a request for a new credit card - _**Start Event**_
+- The user fills in a form with their personal data - _**User Task**_
+- The bank system performs a credit score check automatically using a send event that communicates with the credit score adapter, followed by a receive event to collect the response from the adapter - _**Automatic Task**_
+- The process bifurcates based on the credit score using an _**Exclusive Gateway**_
+- Each branch entails a service task that saves the appropriate credit card type to the process data - _**Automatic Task**_
+- The branches reconvene through a _**Closing Gateway**_
+- The user views the credit card details and confirms - _**User Task**_
+- After user confirmation, the process divides into two parallel branches - _**Parallel Gateway**_. One registers the request in the bank's systems (bank system adapter/integration), and the other sends a confirmation email (notification plugin) to the user
+- An additional automatic task follows: a call to an external API to compute the distance between the user's address and the bank locations ([Google Maps Distance Matrix API](https://developers.google.com/maps/documentation/distance-matrix/overview)) - _**Automatic Task**_
+- A task is utilized to sort the location distances and present the top three to the user - _**Automatic Task**_
+- The user selects the card pickup point from the bank location suggestions - _**User Task**_
+- A receive task awaits confirmation from the bank that the user has collected the new card, concluding the process flow - _**End Event**_
 
 
-## Designing the BPMN process: request a new credit card from a bank app
+## Sample Process Diagram
 
-Let's start with designing the BPMN process diagram for our sample use case: requesting a new credit card from a bank app.
+Here's what the [**BPMN**](../terms/bpmn) diagram illustrates:
 
-## Sample process steps
-
-We'll take as a [**business process example**](../terms/flowx-process) a credit card application. It will have the following steps:
-
-* a user makes a request for a new credit card - _**start event**_
-* the user has to fill in a form with their personal data - _**user task**_
-* the bank system must check the users credit score, this is done automatically using a send event that sends a credit score check request to the credit score adapter and a receive event that waits for the reply from the adapter - _**automatic task**_
-* the process is split in two branches depending on the credit score - _**exclusive gateway**_
-* on each of those branches are a service task that saves the appropriate credit card type to the proces data - _**automatic task**_
-* the two branches are merged back into one by a _**closing gateway**_
-* the user is shown the details of the credit card and they have to confirm it - _**user task**_
-* after the user confirmation, the process is split again into two branches, this time they take place in parallel - _**parallel gateway**_. An action to register the request in the banks systems (bank system adapter / integration) and a confirmation email (notification plugin) to be sent to the user
-* another automatic task follows, a call to an external API to compute the distance between the users address and the bank locations ([https://developers.google.com/maps/documentation/distance-matrix/overview](https://developers.google.com/maps/documentation/distance-matrix/overview)) - _**automatic task**_
-* a new task is used to sort the location distances and pick the top three to be displayed to the user - _**automatic task**_
-* the user has to pick the card pickup point from the bank location suggestions - _**user task**_
-* a receive task will wait to the confirmation from the bank that the user has picked up the new card and the process flow ends _- **end event**_
-
-## Sample process diagram
-
-This is what the [**BPMN**](../terms/bpmn) diagram looks like:
-
-![Request a new credit card](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/getting-started/request_a_new_credit_card.png)
+![Request a new credit card](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/request_a_credit_card_new.png)
 
 :::tip
-Download sample [here](./assets/sample_bpmn_process_new_credit_card.bpmn).
+Download the sample [here](./assets/sample_bpmn_process_new_credit_card.bpmn).
 :::

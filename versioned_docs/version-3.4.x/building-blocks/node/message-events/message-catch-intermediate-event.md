@@ -1,0 +1,30 @@
+# Message Catch Intermediate Event
+
+:::info quick intro
+**What is it?** A Message Catch Intermediate Event is a type of event in a process that waits for a specific message before continuing with the process flow.
+
+**Why it is important?** It enables the process to synchronize and control the flow based on the arrival of specific messages, ensuring proper coordination between process instances.
+:::
+
+
+Similar to the Message Catch Boundary Event, the Message Catch Intermediate Event is important because it facilitates the communication and coordination between process instances through messages. By incorporating this event, the process can effectively synchronize and control the flow based on the arrival of specific messages.
+
+:::info
+Message Catch Intermediate Event can be used as a standalone node, this means that it will block a process until it receives an event.
+:::
+
+## Configuring a Message Catch Intermediate Event
+
+Imagine a process where multiple tasks are executed in sequence, but the execution of a particular task depends on the arrival of a certain message. By incorporating a Message Catch Intermediate Event after the preceding task, the process will pause until the expected message is received. This ensures that the subsequent task is not executed prematurely and allows for the synchronization of events within the process.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_catch_intermediate_event.png#center)
+
+#### General config
+
+* **Can go back?** - setting this to true will allow users to return to this step after completing it, when encountering a step with `canGoBack` false, all steps found behind it will become unavailable
+* **Correlate with throwing events** - the dropdown contains all catch messages from the process definitions accessible to the user
+* **Correlation key** - process key used to establish a correlation between the received message and a specific process instance
+* **Receive data** - the process key that will be used to store the data received along with the message
+* **Stage** - assign a stage to the node
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_catch_intermediate_config.png)

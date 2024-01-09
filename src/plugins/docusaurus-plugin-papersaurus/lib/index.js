@@ -62,8 +62,9 @@ function default_1(_context, pluginOptions) {
             unformattedString = unformattedString.toLowerCase();
           
             return unformattedString.trim()
+            .replace(whitespace, '-')
               .replace(specials, '')
-              .replace(whitespace, '-');
+              ;
           }
 
 

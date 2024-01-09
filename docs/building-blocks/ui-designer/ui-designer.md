@@ -19,7 +19,7 @@ The FLOWX.AI platform includes an intuitive **UI Designer** for creating diverse
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/access_ui_designer.gif)
 
 :::caution
-The UI designer is available for [**User task**](../node/user-task-node.md) nodes and [**Milestone**](../node/milestone-node.md) nodes (nodes that require human interaction).
+The UI designer is available for [**User task**](../node/user-task-node.md) nodes (nodes that require human interaction).
 :::
 
 After adding a specific component to the node, the right-side menu will display more configuration options.

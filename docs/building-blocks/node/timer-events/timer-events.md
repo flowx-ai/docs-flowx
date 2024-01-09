@@ -2,18 +2,19 @@
 
 Timer event nodes are a powerful feature in BPMN that allow you to introduce time-based behavior into your processes. These nodes enable you to trigger specific actions or events at predefined time intervals, durations, or cycles. With timer event nodes, you can design processes that respond to time-related conditions, ensuring smoother workflow execution and enhanced automation.
 
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/timer_events.png)
+
 ## Node Types
 
 There are three primary types of timer event nodes:
 
-* **Timer Start Event (interrupting/non-interrupting)**: This node initiates a process instance at a scheduled time, either interrupting or non-interrupting ongoing processes. It allows you to set a specific date, duration, or cycle for the process to start. You can configure it to trigger a process instance just once or repeatedly.
+* **Timer Start Event (interrupting)**: This node initiates a process instance at a scheduled time, either interrupting or non-interrupting ongoing processes. It allows you to set a specific date, duration, or cycle for the process to start. You can configure it to trigger a process instance just once or repeatedly.
 
 * **Timer Intermediate Event**: This node introduces time-based triggers within a process. It's used to pause the process execution until a specified time duration or date is reached. Once triggered, the process continues its execution.
 
 * **Timer Boundary Event (interrupting/non-interrupting)**: Attached to a task or subprocess, this node monitors the passage of time while the task is being executed. When the predefined time condition is met, the boundary event triggers an associated action, interrupting or non-interrupting the ongoing task or subprocess.
 
-
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/timer_events.png)
 
 ## Timers
 
@@ -35,9 +36,9 @@ Timers introduce the ability to trigger events at specific time intervals. They 
 
 
 Examples:
-*  `PT15S` - 15 seconds
+* `PT15S` - 15 seconds
 * `PT1H30M` - 1 hour and 30 minutes
-*  `P14D` - 14 days
+* `P14D` - 14 days
 * `P3Y6M4DT12H30M5S` - 3 years, 6 months, 4 days, 12 hours, 30 minutes, and 5 seconds
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/timer_events_duration_date.gif)
