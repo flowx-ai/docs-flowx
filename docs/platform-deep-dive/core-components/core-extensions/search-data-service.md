@@ -1,104 +1,204 @@
-# Search data service
+# Search Data Service
 
-Search data is a microservice that searches for data in another process.
-
-The new search data microservice enables you to create a process that can perform a search/look for data (using [Kafka send](../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) / [Kafka receive](../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) actions) in other processes.
+The Search Data Service is a microservice that enables data searches within other processes. It facilitates the creation of processes capable of conducting searches and retrieving data by utilizing [Kafka send](../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) / [Kafka receive](../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) actions in tandem with Elastic Search mechanisms.
 
 :::tip
-Using elastic search, the new search microservice will be able to search for keys that are indexed in ES, via existing mechanics.
-::: 
+The new Search Data microservice leverages Elastic Search to execute searches based on indexed keys, using existing mechanisms.
+:::
 
 :::caution
-Elastic search indexing must be switched on the FLOWX.AI Engine configuration. You can find more details in the [**Search data service setup guide**](../../../platform-setup-guides/search-data-service-setup-guide.md).
+Enabling Elastic Search indexing **requires** activating the configuration in the FLOWX.AI Engine. Refer to the [<u>**Search Data Service Setup Guide**</u>](../../../platform-setup-guides/search-data-service-setup-guide.md) for detailed instructions.
 :::
 
-## Using search data
 
-Use case:
-* search for data in other processes
-* display results about other processes where the search key was found
+## Using the Search Data Service
 
-1. Create a process using [**Process Designer**](../../../terms/flowx-process-designer).
-2. From the newly created process where you want to perform the search, add a [Task node](../../../building-blocks/node/task-node). 
-3. Configure a send event via a [Kafka send action](../../../building-blocks/node/message-send-received-task-node.md#example-of-a-message-send-event).
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/kafka_send_action_search.png)
-4. Configure the following items:
-    + **Topic name** - the Kafka topic on which the search service listens for requests; ❗️respect the [naming pattern](../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#configuring-kafka)
-	+ **Data to send** - (key) - used when data is sent from the frontend via an action to validate the data (you can find more information in the User Task configuration section)
-    + **Headers** - required
-    + **Body message**:
+#### Use Case
 
-		+ `searchKey` - it will hold the result received from the elastic search
-		+ `value` - value of the key
-		+ `processDefinitionNames` - the process definition names where to perform the search
-		+ `processStartDateAfter` - the service will look into process definitions created after the defined date
+- Search for data within other processes
+- Display results indicating where the search key was found in other processes
+
+For our example, two process definitions are necessary:
+
+- one process used to search data in another process - in our example *"search_process_CDN"*
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/search_in_another_proc_34.png)
+
+- one process where we look for data - in our example *"add_new_clients"*
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/search_populate_data.png)
+
+## Add Data Process Example
+
+Firstly, create a process where data will be added. Subsequently, the second process will be used to search for data in this initial process.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/addDataProc.png)
+
+:::caution
+In the "Add Data Process Example" it's crucial to note that we add mock data here to simulate existing data within real processes.
+:::
+
+Example of MVEL Business Rule:
 
 ```json
-{
-	"searchKey": "application.client.name",
-	"value": "12344",
-	"processStartDateAfter": "formatDeDataStandard", (opt)
-	"processStartDateBefore": "formatDeDataStandard", (opt)
-	"processDefinitionNames": [ "processDef1", "processDef2" ],
-	"status": ["ANY",...]
-}
+output.put ("application", {
+  "date": "22.08.2022",
+    "client": {
+      "identificationData": {
+        "firstName": "John",
+        "lastName": "Doe",
+        "cityOfBirth": "Anytown",
+        "primaryDocument": {
+          "number": 123456,
+          "series": "AB",
+          "issuedCountry": "USA",
+          "issuedBy": "Local Authority",
+          "issuedAt": "01.01.2010",
+          "type": "ID",
+          "expiresAt": "01.01.2030"
+        },
+        "countryOfBirth": "USA",
+        "personalIdentificationNumber": "1234567890",
+        "countyOfBirth": "Any County",
+        "isResident": true,
+        "residenceAddress": {
+          "country": "USA",
+          "city": "Anytown",
+          "street": "Main Street",
+          "streetNumber": 123
+        },
+        "mailingAddress": {
+          "country": "USA",
+          "city": "Anytown",
+          "street": "Main Street",
+          "streetNumber": 123
+        },
+        "pseudonym": null
+      },
+    }
+    }
+);
 ```
 
-* Example (dummy values extracted from a process):
+Now we can play with this process and create some process instances with different states.
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/topics_headers_body.png)
+## Search Process Example
 
-5. A custom microservice (a core extension) will receive this event and will search the value of the process in the elastic search.
-6. It will respond to the engine via a Kafka topic.
+Configure the "Search process" to search data in the first created process instances:
+
+1. Create a process using the [**Process Designer**](../../../terms/flowx-process-designer).
+2. **OPTIONAL:** Add a [<u>**Task node**</u>](../../../building-blocks/node/task-node) within the process. Configure this node and add a business rule if you want to customize the display of results, e.g:
+
+```java
+output.put("searchResult", {"result": []});
+output.put("resultsNumber", 0);
+```
 
 :::tip
-The topic must be defined in the **Node config** of the **User task** where you previously added the Kafka Send Action.
+For displaying results in the UI, you can also consider utilizing [<u>**Collections**</u>](../../../building-blocks/ui-designer/ui-component-types/collection) UI element.
 :::
 
-The **body message** of the response will look like this:
+3. Add a user task and configure a send event using a [<u>**Kafka send action**</u>](../../../building-blocks/node/message-send-received-task-node.md#example-of-a-message-send-event). Configure the following parameters:
+- **Topic name**: The Kafka topic for the search service requests (defined at `KAFKA_TOPIC_DATA_SEARCH_IN` env variable in your deployment).
 
-	❗️If there is no result:
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/search_in_topic.png)
+
+- **Body message**:
 
 ```json
 {
-	"searchKey": "application.client.name",
-	"result": [],
-	"processStartDate": date,
-	"tooManyResults": true|false
+	"searchKey": "application.client.identificationData.lastName",
+	"value": "12344",
+	"processStartDateAfter": "YYY-MM-DD:THH:MM:SS", //optional, standard ISO 8601 date format
+	"processStartDateBefore": "YYY-MM-DD:THH:MM:SS", //optional, standard ISO 8601 date format
+	"processDefinitionNames": [ "processDef1", "processDef2"],
+	"states": ["ANY",...] //optional, if you want to filter process instances based on their status
 }
 ```
 
+:::info
+Check the Understanding the [<u>**Process Status Data**</u>](../../../building-blocks/process/active-process/process-instance.md#understanding-the-process-status-data) for more example of possible states.
+:::
+
+* `searchKey` - process key used to search data stored in a process
+
+:::caution
+Indexing this key within the process is crucial for the search data service to effectively locate it. To enable indexing, navigate to your desired process definition and access **Process Settings → Task Management → Search indexing**.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/indexed_key.png)
+
+❗️ Keys are indexed automatically when the process status changes (e.g., created, started, finished, failed, terminated, expired), when swimlanes are altered, or when stages are modified. To ensure immediate indexing, select the 'Update in Task Management' option either in the **node configuration** or within **Process Settings → General** tab.
+:::
+
+* `value` - the dynamic process key added on our input element that will store and send the data entered by a user to the front end
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/searchValue.png)
+
+- **Data to send (key)**: Used for validating data sent from the frontend via an action (refer to User Task configuration section) 
+- **Headers**: Mandatory - `{"processInstanceId": ${processInstanceId}}`
+
+:::caution
+If you also use callbackActions, you will need to also add the following headers:
+`{"destinationId": "search_node", "callbacksForAction": "search_for_client"}`
+:::
+
 
 * Example (dummy values extracted from a process):
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/body_message_search_service.png)
+
+5. A custom microservice (a core extension) will receive this event and search the value in the Elastic Search.
+6. It will respond to the engine via a Kafka topic (defined at `KAFKA_TOPIC_DATA_SEARCH_OUT` env variable in your deployment). Add the topic in the **Node config** of the User task where you previously added the Kafka Send Action.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/search_result_topic.png)
+
+
+The response's body message will look like this:
+
+- If there is no result:
+
+```json
+{
+	"result": [],
+	"searchKey": "application.client.name.identificationData.lastName",
+	"tooManyResults": "false",
+	"searchValue": "random"
+
+}
+```
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/noResults.png)
+
+Example (dummy values extracted from a process):
 
 :::tip
 To access the view of your process variables, tokens and subprocesses go to **FLOWX.AI Designer > Active process > Process Instances**. Here you will find the response.
 ::: 
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/search_data_no_result.png)
     
-	❗️If there is a list of results:
+- If there is a list of results:
 
 ```json
+{
 
-	"searchKey": "application.client.name"
+	"searchKey": "application.client.identificationData.personalIdentificationNumber"
 	"result":[{
 			"processInstanceUUID": "UUID",
-			"status": "CREATED",
+			"status": "FINISHED",
 			"processStartDate": date,
 			"data" : {"all data in elastic for that process"}
 	}],
 	"tooManyResults": true|false
 }
 ```
-**NOTE**: You will receive up to 50 results - if `tooManyResults` is true.
+**NOTE**: Up to 50 results will be received if `tooManyResults` is true.
 
 
-* Example (dummy values extracted from a process):
+Example with dummy values extracted from a process:
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/search_data_response.png)
 
 
-Let's go now through the steps needed to deploy and set up the service:
+For deployment and service setup instructions, refer to the:
 
-[Search data service setup guide](../../../platform-setup-guides/search-data-service-setup-guide.md)
+[Search Data Service Setup Guide](../../../platform-setup-guides/search-data-service-setup-guide.md)
