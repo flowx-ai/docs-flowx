@@ -71,7 +71,7 @@ Data specifications:
 
 This type of dynamic table allows you to display a table multiple times based on the elements of a generated list of objects. Here's an example of HTML template specifications:
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/dynamic_table_reusable_table.png
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/dynamic_table_reusable_table.png)
 
 ```html
 <p>Offer:</p>
