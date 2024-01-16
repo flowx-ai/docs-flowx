@@ -1,199 +1,193 @@
 
 # Managing HTML templates
 
-In the Document Management Plugin, you have the flexibility to define and manage HTML templates for generating documents. These templates can incorporate various types of parameters to customize the content. Let's explore the different types of parameters and their specifications:
+The Document Management Plugin offers the flexibility to define and manage HTML templates for document generation, enabling customization through various parameter types. 
 
-## Configuring HTML templates
+Additionally, the platform incorporates a What You See Is What You Get (WYSIWYG) editor, allowing users to have a real-time, visual representation of the document or content during the editing process. Furthermore, you have the capability to test and review your template by downloading it as a PDF.
 
-### Text parameters
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/wysiwyg_example.gif)
 
-Text parameters are used to include dynamic text in the template. For example, you can include the company name and registration number in an offer document. Here's an example of HTML template specifications:
+Explore the different parameter types and their specifications:
+
+## Configuring HTML Templates
+
+1. **Open the WYSIWYG Editor**:
+
+Access the WYSIWYG editor within the Document Management Plugin, found in the **FLOWX Designer → Plugins → Document templates** section.
+
+2. **Design the Document Header**:
+
+Begin by creating a header section for the document, including details such as the company logo and title.
+
+```html
+<header>
+   <img src="https://d22tnnndi9lo60.cloudfront.net/devmain/flowx/flowxlogo/1669299027205_FLOWX.AI%20main%20logo.png" alt="Company Logo" width="150px" height="auto">
+   <h1 th:text="${offerTitle}">Offer Document</h1>
+</header>
+```
+
+Data Specifications (process data):
+
+```json
+"data": {
+    "companyLogo": "INSERT_BASE64_IMAGE",
+    "offerTitle": "Client Offer"
+}
+
+```
+3. **Text Parameters for Client Information**:
+
+Include a section for client-specific information using text parameters.
+
+:::info
+Text parameters enable the inclusion of dynamic text in templates (like the name of the company), allowing for personalized content.
+:::
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/docplugin_managing_html_template.png)
 
 ```html
-<p><strong>Lorem ipsum: <span th:text="${companyName}"></span></strong>, dolor sit amet <strong><span th:text="${cui}"></span></strong>.</p>
+<section>
+   <h2>Client Information</h2>
+   <p><strong>Client Name:</strong> <span th:text="${clientName}"></span></p>
+   <p><strong>Client ID:</strong> <span th:text="${clientId}"></span></p>
+</section>
 ```
 
-Data specifications:
-
-```json
-{
-  "data": {
-    "companyName": "Test Company SRL",
-    "cui": "RO1234567"
-  }
-}
-```
-
-### Dynamic tables - repeatable rows
-
-Dynamic tables are useful when you want to display a table with repeatable rows. Each row can represent a different element from a generated list of objects. Here's an example of HTML template specifications:
-
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/dynamic_tables_plugin_doc.png)
-
-```html
-<table>
-    <thead>
-        <tr class="headings">
-            <th class="column-title">Name</th>
-            <th class="column-title">Value</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr class='even pointer' th:each="row: ${offerValuesRows}" id="tablerow">
-            <td th:each="header: ${offerValuesHeader}" th:text="${row.get(header)}">
-        </tr>
-    </tbody>
-</table>
-```
-
-Data specifications:
+Data Specifications:
 
 ```json
 "data": {
-   "offerValuesHeader": [ 
-     "Name", 
-     "Value" 
-   ], 
-   "offerValuesRows": [ 
-     { "Name": "Price (USD/MWh)", "Value": "25" }, 
-     { "Name": "Distribution rate (USD/MWh)", "Value": "C1 category: 27, C2 category: 29" }, 
-     { "Name": "Subscription price / day / place of consumption", "Value": "C1 category: 1.25, C2 category: 1.32" }, 
-     { "Name": "Period of validity of the price", "Value": "Validity time fixed price Monday, from the start date of delivery to the date of completion of delivery" }, 
-     { "Name": "Payment term", "Value": "90 days" } 
-   ]
- }
-
+    "clientName": "John Doe",
+    "clientId": "JD123456"
+}
 ```
 
-### Dynamic tables - repeatable table
+4. **Dynamic Table for Offer Details:**
 
-This type of dynamic table allows you to display a table multiple times based on the elements of a generated list of objects. Here's an example of HTML template specifications:
-
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/dynamic_table_reusable_table.png)
+Create a dynamic table to showcase various details of the offer. 
 
 ```html
-<p>Offer:</p>
-<div th:each="type: ${consumptionPoints}">
-<table> 
-    <thead>
-       <tr>
-          <th> Usage place </th>
-          <th> Distributor </th>
-          <th> CLC code </th>
-          <th> Usage method input </th>
-          <th> Usage type </th>
-          <th> Usage category \n(MWh) </th>
-          <th> Total usage \n(MWh) </th>
-       </tr>
-    </thead>
-    <tbody>
-       <tr th:if="${type.consumptionPoint.empty}">
-           <td colspan=\"7\"> No information available here! </td>
-        </tr>
-        <tr th:each=\"consumptionPoint : ${type.consumptionPoint}\=">
-           <td><span th:text="${consumptionPoint.consumptionPoint}"> Usage place </span></td>
-           <td><span th:text="${consumptionPoint.distribuitor}"> Distributor </span></td>
-           <td><span th:text="${consumptionPoint.clcCode}"> Cod CLC </span></td>
-           <td><span th:text="${consumptionPoint.consumerInputMethod}"> Usage method input </span></td>
-           <td><span th:text="${consumptionPoint.consumerType}"> Usage type </span></td>
-           <td><span th:text="${consumptionPoint.consumerCategory}"> Usage category \n(MWh) </span></td>
-           <td><span th:text="${consumptionPoint.totalAnnualConsumption}"> Total usage \n(MWh) </span></td>
+<section>
+   <h2>Offer Details</h2>
+   <table>
+      <thead>
+         <tr>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Price</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr th:each="item : ${offerItems}">
+            <td th:text="${item.name}"></td>
+            <td th:text="${item.description}"></td>
+            <td th:text="${item.price}"></td>
          </tr>
       </tbody>
    </table>
-</div>
+</section>
+
 ```
 
-Data specifications:
+Data Specifications:
 
 ```json
-  "data": {
-    "consumptionPoints": [
-      {
-        "consumptionPoint": [
-          {
-            "consumptionPoint": "Lorem ipsum",
-            "distribuitor": "Distributor 1",
-            "clcCode": "123456",
-            "consumerInputMethod": "Lorem ipsum",
-            "consumerType": "Lorem ipsum",
-            "consumerCategory": "Lorem ipsum",
-            "totalAnnualConsumption": "Lorem ipsum"
-          }
-        ]
-      },
-      {
-        "consumptionPoint": [
-          {
-            "consumptionPoint": "Lorem ipsum",
-            "distribuitor": "Distributor 2",
-            "clcCode": "131313",
-            "consumerInputMethod": "Lorem ipsum ipsum",
-            "consumerType": "Lorem ipsum",
-            "consumerCategory": "Lorem ipsum",
-            "totalAnnualConsumption": "Lorem ipsum"
-          }
-        ]
-      }
+"data": {
+    "offerItems": [
+        { "name": "Product A", "description": "Description A", "price": "$100" },
+        { "name": "Product B", "description": "Description B", "price": "$150" },
+        { "name": "Product C", "description": "Description C", "price": "$200" }
     ]
-  }
+}
 ```
 
-### Dynamic sections
+5. **Dynamic Sections for Certain Conditions:**
 
 Dynamic sections allow you to display specific content based on certain conditions. For example, you can display a paragraph only when a certain condition is met. Here's an example of HTML template specifications:
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/docplugin_type_of_client.png)
 
 ```html
-<span th:if="${pjCLient==true}">
-    <p><b>PJ section, visible only if pjCLient = true</b></p>
-    <p><span th:text="${termTechnicalServices}"></span></p>
-</span>
-<span th:if="${pjCLient==false}">
-    <p><b>PF section, visible only if pjCLient = false</b></p>
-    <p><span th:text="${termInsuranceServices}"></span></p>
-</span>
-
-```
-
-Data specifications:
-
-```json
- "data": {
-    "pjCLient": true
-  }
-```
-
-### Images
-
-You can include images in your final document by referencing them in the template. Here's an example of HTML template specifications:
-
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/docplugin_images.png)
-
-```html
-<td class='align'><img th:src="*{'data:image/png;base64,'+signature}" alt=\"\" height='100px'/></td>
+<section>
+    <h2>Dynamic Sections for Certain Conditions</h2>
+    
+    <span th:if="${isPreferredClient}">
+        <p>This is a preferred client. They are eligible for special discounts!</p>
+    </span>
+    
+    <span th:if="${hasSpecialRequest}">
+        <p>The client has specific requests. Please review them carefully.</p>
+    </span>
+    
+    <span th:if="${isActiveContract}">
+        <p>The client has an active contract with us.</p>
+    </span>
+</section>
 ```
 
 Data specifications:
 
 ```json
 "data": {
-    "signature": "INSERT_BASE64_IMAGE"
-  }
+    "clientName": "John Doe",
+    "clientId": "JD123456",
+    "isPreferredClient": true,
+    "hasSpecialRequest": false,
+    "isActiveContract": true
+}
 ```
 
-### Barcodes
+6. **Lists**:
 
-If you want to include a barcode, you can set the `includeBarcode` parameter to true.
+Lists are useful for displaying values from selected items in a checkbox as a bulleted list. Here's an example of HTML template specifications:
 
-For information on how to use barcodes and OCR, check the following section.
+```html
+<section>
+    <h2>Lists</h2>
+    
+    <div th:if="${incomeSources != null}">
+        <h3>Income Sources:</h3>
+        <ul>
+            <li th:each="source : ${incomeSources}" th:text="${source}"></li>
+        </ul>
+    </div>
+</section>
+```
+Data Specifications:
+
+```json
+"data": {
+    "incomeSources": ["Source 1", "Source 2", "Source 3"]
+}
+```
+
+7. **Include Image for Authorized Signature:**
+
+Embed an image for the authorized signature at the end of the document.
+
+```html
+<footer>
+   <p>Authorized Signature:</p>
+   <img th:src="*{'data:image/png;base64,' + signature}" alt="Authorized Signature" width="200px" height="auto">
+</footer>
+
+```
+
+Data Specifications:
+
+```json
+"data": {
+    "signature": "INSERT_BASE64_IMAGE"
+}
+```
+
+7. **Barcodes**:
+
+Set the `includeBarcode` parameter to true if you want to include a barcode.For information on how to use barcodes and OCR plugin, check the following section:
 
 [OCR plugin](../../../ocr-plugin.md)
 
-### Lists
+8. **Lists**:
 
 Lists are useful for displaying values from selected items in a checkbox as a bulleted list. Here's an example of HTML template specifications:
 
