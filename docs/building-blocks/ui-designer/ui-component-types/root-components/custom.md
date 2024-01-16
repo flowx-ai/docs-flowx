@@ -6,7 +6,8 @@ sidebar_position: 3
 
 ## Overview
 
-Custom components are developed in the web application and referenced here by component identifier. This will dictate where the component is displayed in the component hierarchy and what actions are available for the component.
+Custom components are developed in the web application and referenced using a unique identifier. This identifier determines where the component is displayed in the hierarchy and the available actions.
+
 
 To add a custom component in the template config tree, we need to know its unique identifier and the data it should receive from the process model.
 
@@ -25,6 +26,8 @@ The customizable properties include:
 </div>
 
 ## Prerequisites before Creation
+
+Before creating a custom component, ensure you meet the following prerequisites:
 
 * **Angular Knowledge**: You should have a solid understanding of Angular for creating and importing custom components.
 * **Angular CLI**: Ensure Angular CLI is installed.
@@ -47,11 +50,39 @@ The title 'loader' is used for our custom component. You can choose any name.
 
 This generates a structure similar to the following:
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/loader_comp%20copy.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/loader_comp.png)
 
 In the above example, a custom loader component was created:
 
-```typescript 
+```ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-loader',
+  templateUrl: './loader.component.html',
+  styleUrls: ['./loader.component.scss']
+})
+export class LoaderComponent {
+
+}
+
+```
+
+:::info
+For detailed guidance on creating an Angular component, refer to the [**<u>Angular official documentation</u>**](https://angular.io/tutorial/tour-of-heroes/toh-pt3).
+:::
+
+3. Define HTML layout, TypeScript functionalities, and SCSS styles to specify appearance and behavior:
+
+#### TypeScript
+
+Add `@Input() showLoader: boolean = false;` decorator. The `@Input` decorator marks `showLoader` as an input property, allowing the value to be passed into this component from its parent component.
+
+:::info
+Decorators are a design pattern that is used to separate modification or decoration of a class without modifying the original source code.
+:::
+
+```ts
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -64,11 +95,61 @@ export class LoaderComponent {
 }
 ```
 
-:::info
-For detailed guidance on creating an Angular component, refer to the [**<u>Angular official documentation</u>**](https://angular.io/tutorial/tour-of-heroes/toh-pt3).
-:::
+The `showLoader` property is of type boolean and is initialized with a default value of false. This property likely controls whether the loader should be displayed or not.
 
-3. Define HTML layout, TypeScript functionalities, and SCSS styles to specify appearance and behavior.
+
+#### HTML
+
+Create two classes to apply some styling to our component.
+
+```html
+<div class="loader-container">
+    <div class="loader"></div>
+  </div>
+  
+```
+
+#### SCSS
+
+Add SCSS to add styles and behavior for the component.
+
+```scss
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Add a semi-transparent background overlay */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999; /* Ensure the loader is on top of everything */
+  }
+  
+  .loader {
+    border-top: 6px solid #3498db;
+    border-right: 6px solid transparent;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite, color-change 5s infinite alternate;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  @keyframes color-change {
+    0% { border-top-color: #3498db; }
+    25% { border-top-color: #e74c3c; }
+    50% { border-top-color: #27ae60; }
+    75% { border-top-color: #f39c12; }
+    100% { border-top-color: #3498db; }
+  }
+```
 
 ## Importing the Custom Component
 
