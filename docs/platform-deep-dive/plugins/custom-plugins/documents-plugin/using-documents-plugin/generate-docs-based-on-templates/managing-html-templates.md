@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Managing HTML templates
+# Managing HTML Templates
 
 The Document Management Plugin offers the flexibility to define and manage HTML templates for document generation, enabling customization through various parameter types. 
 
@@ -222,7 +222,7 @@ Set the `includeBarcode` parameter to true if you want to include a barcode. For
 
 [OCR plugin](../../../ocr-plugin.md)
 
-9. **Checkboxes for consent**:
+9. **Checkboxes for Consent**:
 
 Consent checkboxes in HTML templates are commonly used to obtain explicit agreement or permission from users before proceeding with certain actions or processing personal data.
 
