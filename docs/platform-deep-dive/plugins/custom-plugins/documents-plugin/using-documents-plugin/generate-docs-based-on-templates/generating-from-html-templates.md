@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # Generating Documents from HTML Templates
 
 The Document Management Plugin simplifies the document generation process through predefined templates. This example focuses on generating documents using HTML templates.
@@ -5,6 +9,10 @@ The Document Management Plugin simplifies the document generation process throug
 ## Creating an HTML Template
 
 To begin the document generation process, HTML templates must be created or imported. Utilize the [<u>**WYSIWYG**</u>](../../../../wysiwyg.md) editor accessible through **FLOWX Designer → Plugins → Document templates**.
+
+Learn more about managing HTML templates:
+
+[Managing HTML Templates](managing-html-templates.md)
 
 :::caution
 Before using templates, ensure they are in a **Published** state. Document templates marked as **Draft/In Progress** will not undergo the generation process.
