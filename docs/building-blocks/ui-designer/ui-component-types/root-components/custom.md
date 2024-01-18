@@ -42,7 +42,7 @@ Follow these steps to craft a custom Angular component:
 2. Generate a new Angular component, either manually or through Angular CLI:
 
 ```bash
-ng generate component loader
+ng generate component components/loader
 ```
 :::info
 The title 'loader' is used for our custom component. You can choose any name.
