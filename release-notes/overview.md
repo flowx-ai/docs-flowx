@@ -8,8 +8,27 @@ Hi there! 👋 Follow the Release Notes space to find all the information on the
 
 ## v.3.x.x
 
+<details>
+
+
+<summary>Q1- January 2024 </summary>
+
+- [<u>v3.4.7</u>](/release-notes/v3.4.7-january-2024/)
+
+</details>
+
 
 <details>
+
+
+<summary>Q4 - December 2023 </summary>
+
+- [<u>v3.4.6</u>](/release-notes/v3.4.6-december-2023)
+
+</details>
+
+<details>
+
 
 <summary>Q4 - November 2023 </summary>
 

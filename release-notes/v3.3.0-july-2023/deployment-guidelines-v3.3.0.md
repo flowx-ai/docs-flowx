@@ -42,7 +42,7 @@ After updating to **3.3.0** FLOWX.AI release, it is not possible to import old p
 :::danger IMPORTANT
 With the release of **FLOWX.AI 3.0**, there have been some changes that you need to be aware when upgrading to the latest version:
 * The `flowx-process-renderer` has been migrated to `@flowx\ui-sdk`.
-* The `paperflow-web-components` library is no longer maintained. Instead, use the new components available in `@flowx/ui-toolkit@3.0`.
+* As of **FLOWX.AI 3.0**, the `paperflow-web-components` library will be deprecated (some components still can be found inside this lib). Instead, the new components can be found in `@flowx/ui-toolkit@3.0`.
 :::
 
 
