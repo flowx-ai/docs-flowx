@@ -8,6 +8,12 @@ sidebar_position: 3
 
 Custom components are developed in the web application and referenced here by component identifier. This will dictate where the component is displayed in the component hierarchy and what actions are available for the component.
 
+:::info
+Starting with **3.4.7** platform version, for User Tasks containing UI Elements, when the page is rendered, the Backend (BE) should, by default, send to the Frontend (FE) all available data as process variables with matching keys.
+
+If the User Task also includes a **custom component**, the BE should send, in addition to default keys, objects mentioned in the "Message" option of the root element.
+:::
+
 To add a custom component in the template config tree, we need to know its unique identifier and the data it should receive from the process model.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/ui_designer_custom.png)
