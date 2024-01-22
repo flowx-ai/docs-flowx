@@ -98,6 +98,14 @@ Set the following values with the corresponding Redis-related values:
 * `SPRING_REDIS_PASSWORD`: The password for the Redis server, if applicable.
 * `REDIS_TTL`: The time-to-live (TTL) value for Redis cache entries.
 
+### Conversion
+
+:::caution
+Configuration available starting with **3.4.7** platform version.
+:::
+
+* `FLOWX_CONVERT_DPI`:	Sets the DPI (dots per inch) for PDF to JPEG conversion. Higher values result in higher resolution images. (Default value: `150`).
+
 ### Kafka configuration
 
 Set the following Kafka-related configurations using environment variables:

@@ -1,8 +1,8 @@
-# FLOWX.AI architecture
+# FLOWX.AI Architecture
 
 Let's delve into the core components that power the FLOWX.AI platform, providing a comprehensive understanding of its capabilities and functionalities.
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.5/archi_fin_fin.svg)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/architecture_diagram_22_01_24.png)
 
 ## FLOWX.AI Designer
 
