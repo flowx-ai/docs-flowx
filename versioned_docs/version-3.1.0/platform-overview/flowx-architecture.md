@@ -1,4 +1,4 @@
-# FLOWX.AI architecture
+# FLOWX.AI Architecture
 
 Let's go through the main components of the FLOWX.AI platform:
 
