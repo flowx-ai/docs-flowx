@@ -73,6 +73,15 @@ In this example, three UI elements, comprising two input fields and a select (dr
 - **customId**: Client ID
 - **templateName**: The name of the template that you want to use (defined in the **Document templates** section)
 - **language**: Should match the language set on the template (a template can be created for multiple languages as long as they are defined in the system, see [**Languages**](../../../../../core-components/core-extensions/content-management/languages.md) section for more information)
+
+:::caution
+When incorporating templates into the execution of a process, the extracted default values will be in accordance with the specifications of the default language configured in the system. For instance, if the default language is set to English, the template's default values will reflect those assigned to the English version. Make sure to match the language of your template with the default language of the system.
+::::tip
+ To verify the default language of the platform, navigate to FLOWX.AI **Designer → Content Management → Languages**.
+::::
+
+:::
+
 - **includeBarcode**: True/False
 - **data**: A map containing the values that should be replaced in the document template (data that comes from user input). The keys used in the map should match the ones defined in the HTML template and your UI elements.
 
@@ -124,3 +133,19 @@ Here is an example of a response after generation (received on `generatedDocumen
 * **downloadPath**: The download path for the converted file. It specifies the location from where the file can be downloaded.
 * **noOfPages**: The number of pages in the generated file.
 * **error**: If there were any errors encountered during the generation process, they would be specified here. In the provided example, the value is null, indicating no errors.
+
+
+## Displaying the Generated Document
+
+Upon document generation, you now have the capability to present it using the Document Preview UI element. To facilitate this, let's optimize the existing process by introducing two supplementary nodes:
+
+* **Task Node**: This node is designated to generate the document path from the storage solution, specifically tailored for the Document Preview.
+
+* **User Task**: In this phase, we seamlessly integrate the Document Preview UI Element. Here, we incorporate a key that contains the download path generated in the preceding node.
+
+For detailed instructions on displaying a generated or uploaded document, refer to the example provided in the following section:
+
+
+
+[Uploading a new document](./../uploading-a-new-document.md)
+

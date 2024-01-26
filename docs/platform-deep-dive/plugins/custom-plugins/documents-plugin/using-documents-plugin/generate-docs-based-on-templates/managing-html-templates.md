@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Managing HTML Templates
 
-The Document Management Plugin offers the flexibility to define and manage HTML templates for document generation, enabling customization through various parameter types. 
+The Document Management Plugin provides the flexibility to define and manage HTML templates for document generation, enabling customization through various parameter types. 
 
 Additionally, the platform incorporates a [<u>**What You See Is What You Get (WYSIWYG)**</u>](../../../../wysiwyg.md) editor, allowing users to have a real-time, visual representation of the document or content during the editing process. Furthermore, you have the capability to test and review your template by downloading it as a PDF.
 
@@ -24,13 +24,21 @@ Explore the different parameter types and their specifications:
 
 In the following example, we will create an example of a template using the HTML View (Source View).
 
-To create a document template, you first need to go to the **Document Templates** section in the **Designer**, select ”**New document**” from the menu in the top-right corner, name your template, and click **Create**.
+To create a document template, navigate to the **Document Templates** section in the **Designer**, select ”**New document**” from the menu in the top-right corner, name your template, and click **Create**.
 
 Now follow the next steps to design a new template:
 
 1. **Open the WYSIWYG Editor**:
 
 Access the WYSIWYG editor within the Document Management Plugin, found in the **FLOWX Designer → Plugins → Document templates** section.
+
+* **Language Configuration**: Create a dedicated template for each language specified in your system.
+
+:::tip
+To confirm the installed languages on the platform, go to **FLOWX.AI Designer → Content Management → Languages**.
+:::
+
+
 
 2. **Design the Document Header**:
 
@@ -129,7 +137,7 @@ Data Specifications:
 
 5. **Dynamic Sections for Certain Conditions:**
 
-Dynamic sections allow you to display specific content based on certain conditions. For example, you can display a paragraph only when a certain condition is met. 
+Dynamic sections allow displaying specific content based on certain conditions. For example, you can display a paragraph only when a certain condition is met. 
 
 ```html
 <!-- Source: -->
@@ -239,7 +247,7 @@ Consent checkboxes in HTML templates are commonly used to obtain explicit agreem
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/checkbox_html.gif)
 
-10. **Data model**:
+10. **Data Model**:
 
 In the documents template we have the **Data Model** tab. Here you define parameters, which are dynamic data fields that will be replaced with the values you define in the payload, like first name, or company name. 
 
