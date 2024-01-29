@@ -47,6 +47,17 @@ In this example, three UI elements, comprising two input fields and a select (dr
 2. Configure the second node (Kafka Send Event) by adding a **Kafka send action**.
 3. Specify the [<u>**Kafka topic**</u>](../../../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md#kafka-configuration) to which the request should be sent, enabling the Process Engine to process it; in our example it is `ai.flowx.in.document.html.in`.
 
+:::tip
+To identify your defined topics in your current environment, follow the next steps:
+
+1. From the FLOWX.AI main screen, navigate to the **Platform Status** menu at the bottom of the left sidebar.
+2. In the FLOWX Components list, scroll to the **document-plugin-mngt** line and press the eye icon on the right side.
+3. In the details screen, expand the `KafkaTopicsHealthCheckIndicator` line and then **details → configuration → topic → document → generate**. Under HTML and PDF you will find the in and out topics for generating HTML or PDF documents.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/kafka_topics_html_generate.png)
+
+:::
+
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/kafka_html_generate.gif)
 
 4. Fill in the message with the expected values in the request body:

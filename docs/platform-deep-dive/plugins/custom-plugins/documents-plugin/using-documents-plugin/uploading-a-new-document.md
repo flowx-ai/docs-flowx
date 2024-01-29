@@ -35,7 +35,64 @@ Consider a scenario where a user inputs data, a document is generated for previe
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/file_upload_proc.png)
 
-2. Configure the preview and upload parts of the process.
+After following the steps you should have something similar to the following request/response examples:
+
+#### Request Message Example
+
+This JSON structure represents a Kafka message sent through the `..in` topic to initiate a request in the Process Engine. It includes information for generating an "AccountCreation" document with a custom ID "119237" in English. The request specifies client details (first name, last name, age, country) and company information (name, registration date).
+
+```json
+{
+  "documentList": [
+    {
+      "customId": "119246",
+      "templateName": "AccountCreation",
+      "language": "en",
+      "data": {
+        "application": {
+          "client": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "age": "33",
+            "country": "AU"
+          },
+          "company": {
+            "name": "ACME",
+            "registrationDate": "24.01.2024"
+          }
+        }
+      },
+      "includeBarcode": false
+    }
+  ]
+}
+```
+
+#### Response Message Example
+
+This JSON structure represents the response received on the `..out` Kafka topic, where the Process Engine expects a reply. It contains details about the generated PDF file corresponding to the custom ID "119237" and the "AccountCreation" template. The response provides file-related information such as file ID, document type, document label, storage path, download path, number of pages, and any potential errors (null if none). The paths provided in the response facilitate access and download of the generated PDF file.
+
+```json
+{
+  "generatedFiles": {
+    "119246": {
+      "AccountCreation": {
+        "customId": "119246",
+        "fileId": "f705ae5b-f301-4700-b594-a63b50df6854",
+        "documentType": "AccountCreation",
+        "documentLabel": "GENERATED_PDF",
+        "minioPath": "flowx-dev-process-id-119246/119246/457_AccountCreation.pdf",
+        "downloadPath": "internal/files/f705ae5b-f301-4700-b594-a63b50df6854/download",
+        "noOfPages": 1,
+        "error": null
+      }
+    }
+  },
+  "error": null
+}
+```
+
+2. Configure the **preview** and **upload** parts of the process.
 
 ![Preview and Upload](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/preview_and_upload.png)
 
@@ -120,6 +177,16 @@ if(downloadPath != null){
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/document_preview_action.png)
 
+Let's see what we have until now:
+
+* The screen where you can fill in the client details:
+
+![Client Details](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/upload_fill_data.gif)
+
+* The screen where you can preview and download the generated document:
+
+![Preview Document](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/preview_document_vis.gif)
+
 #### Upload Document - User Task
 
 ##### **Node Config**
@@ -143,7 +210,7 @@ Configure the following node actions:
 
 ###### Upload File Action
 
-This is a standard predefined FLOWX.AI Node Action for uploading files.
+This is a standard predefined FLOWX.AI Node Action for uploading files. This is done through Kafka and by using `persist` topics.
 
 <details>
 <summary>Configuring the File Upload Action</summary>
@@ -159,8 +226,15 @@ This is a standard predefined FLOWX.AI Node Action for uploading files.
 
 * **Topics**: Kafka topic where the file will be posted, in this example `ai.flowx.in.document.persist.v1`.
 
-:::info
-to be added where to find kafka topics
+:::tip
+To identify your defined topics in your current environment, follow the next steps:
+
+1. From the FLOWX.AI main screen, navigate to the **Platform Status** menu at the bottom of the left sidebar.
+2. In the FLOWX Components list, scroll to the **document-plugin-mngt** line and press the eye icon on the right side.
+3. In the details screen, expand the `KafkaTopicsHealthCheckIndicator` line and then **details → configuration → topic → document → persist**. Here will find the in and out topics for persisting (uploading documents).
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/kafka_topics_persist.png)
+
 :::
 
 * **Document Type**: Metadata for the document plugin, in this example `BULK`.
@@ -270,34 +344,53 @@ Configure the last node action to save all the data.
 * **Trigger Type**: Choose **Manual** to allow user-triggered action.
 * **Required Type**: Set as **Mandatory**.
 
-## Configuring the UI
+
+#### Request Message Example
+
+To initiate the document processing, a Kafka request with the following JSON payload will be sent through `..in` topic:
+
+
+```json
+{
+  "tempFileId": "05081172-1f95-4ece-b2dd-1718936710f7", //a unique identifier for the temporary file
+  "customId": "119246", //a custom identifier associated with the document
+  "documentType": "BULK" //the type of the document 
+}
+```
+
+#### Response Message Example
+
+Upon successful processing, you will receive a JSON response on the `..out` topic with details about the processed document:
+
+```json
+{
+  "customId": "119246",
+  "fileId": "96975e03-7fba-4a03-99b0-3b30c449dfe7",
+  "documentType": "BULK",
+  "documentLabel": null,
+  "minioPath": "flowx-dev-process-id-119246/119246/458_BULK.pdf",
+  "downloadPath": "internal/files/96975e03-7fba-4a03-99b0-3b30c449dfe7/download",
+  "noOfPages": null,
+  "error": null
+}
+```
+Now we have configured the screen where you can upload the signed document:
+
+![Upload File](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/upload_document_signed.gif)
 
 ## Receiving The Reply
 
+The response, containing information about the generated and uploaded documents, as mentioned earlier, is sent to the output Kafka topic defined in the Kafka Receive Event Node. The response includes details such as file IDs, document types, and storage paths.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/final_response.png)
+
 The reply body is expected to contain the following values:
 
-* **customId**: The client ID.
+* **customId**: A custom identifier associated with the document.
 * **fileId**: The ID of the file.
 * **documentType**: The document type.
 * **minioPath**: The path where the uploaded file is saved. It represents the location of the file in the storage system, whether it's a MinIO path or an S3 path, depending on the specific storage solution.
 * **downloadPath**: The download path for the uploaded file. It specifies the location from where the file can be downloaded.
-* **noOfPages**: The number of pages in the document.
+* **noOfPages**: The number of pages in the document (if applicable).
+* **filePath**: The path to the file that we built in our example so we can display the document.
 
-:::info
-You can view the response by accessing the **Audit log** menu.
-:::
-
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/audit_log_doc_upload.png)
-
-```json
-    {
-        "customId" : "1234_727605",
-        "fileId" : 4718,
-        "documentType" : "BULK",
-        "documentLabel" : null,
-        "minioPath" : "bucket-path-qa-process-id-727605/1234_726254/4718_BULK.png",
-        "downloadPath" : "internal/files/4714/download",
-        "noOfPages" : null,
-        "error" : null
-    }
-```
