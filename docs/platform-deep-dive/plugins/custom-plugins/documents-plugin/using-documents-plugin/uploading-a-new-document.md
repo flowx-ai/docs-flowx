@@ -4,10 +4,10 @@ sidebar_position: 2
 
 # Uploading a New Document
 
-This guide provides a detailed walkthrough of seamlessly integrating document uploads into a [**process definition**](../../../../../terms/flowx-process-definition) by incorporating a user task node with an **Upload action**. This feature empowers users to actively engage with the process and select the desired file for upload.
+This guide provides a detailed walkthrough for seamlessly integrating document uploads into a [**process definition**](../../../../../terms/flowx-process-definition) by incorporating a user task node with an **Upload action**. This feature empowers users to actively engage with the process and select the desired file for upload.
 
 :::info
-User task [**nodes**](../../../../../terms/flowx-node) provide a flexible framework to define and configure UI templates and actions for specific template config nodes, such as an upload file button.
+User task [**nodes**](../../../../../terms/flowx-node) provide a flexible framework to defining and configuring UI templates and actions for specific template config nodes, such as an upload file button.
 :::
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/docs_upload_proc.png)
@@ -18,7 +18,7 @@ To upload a document using this process, follow the steps outlined below.
 
 ### Defining the Process
 
-Having explored how to generate documents in the [previous section](./generate-docs-based-on-templates/generating-from-html-templates.md), let's create a process that enables users to generate a document, review/sign it, and subsequently upload it again.
+After exploring how to generate documents in the [previous section](./generate-docs-based-on-templates/generating-from-html-templates.md), let's create a process that enables users to generate a document, review/sign it, and subsequently upload it again.
 
 Consider a scenario where a user inputs data, a document is generated for preview, and the user must then sign and upload it. The following types of nodes are involved:
 
@@ -31,7 +31,7 @@ Consider a scenario where a user inputs data, a document is generated for previe
 
 ### Configuring the process
 
-1. Follow the steps from [Generating from HTML templates](./generate-docs-based-on-templates/generating-from-html-templates.md) to set up the document generation part of the process.
+1. Follow the steps in [Generating from HTML templates](./generate-docs-based-on-templates/generating-from-html-templates.md) to set up the document generation part of the process.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/file_upload_proc.png)
 
@@ -380,7 +380,7 @@ Now we have configured the screen where you can upload the signed document:
 
 ## Receiving The Reply
 
-The response, containing information about the generated and uploaded documents, as mentioned earlier, is sent to the output Kafka topic defined in the Kafka Receive Event Node. The response includes details such as file IDs, document types, and storage paths.
+The response, containing information about the generated and uploaded documents as mentioned earlier, is sent to the output Kafka topic defined in the Kafka Receive Event Node. The response includes details such as file IDs, document types, and storage paths.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/final_response.png)
 
@@ -394,3 +394,4 @@ The reply body is expected to contain the following values:
 * **noOfPages**: The number of pages in the document (if applicable).
 * **filePath**: The path to the file that we built in our example so we can display the document.
 
+ 
