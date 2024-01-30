@@ -2,15 +2,17 @@
 
 <br/>
 
-## Is the Redis instance persistent?
+## What is the impact of clearing Redis?
 
-No. Redis is only used as a caching solution and not for persistent storage. However, advancing through process flows depends on the info cached in Redis. If the cache is emptied while there are active processes, these might become blocked.
+When Redis is cleared, the system will automatically regenerate the Redis information using the available data in the database. However, it's essential to be aware that clearing the entire Redis dataset may lead to a temporary performance degradation until the data is fully recreated.
+
+In extreme scenarios, users might encounter situations where refreshing their screens becomes necessary to resend any data that was lost in transit during the clearance process. It's crucial to consider these factors and communicate them effectively to users to minimize any potential disruptions in the user experience.
 
 <br/>
 
-## How can I generate A4 pdf documents using html templates?
+## How can I generate A4 PDF documents using HTML templates?
 
-You should include the following bit of css in the html template:
+You should include the following bit of CSS in the HTML templates:
 
 ```css
 @page {

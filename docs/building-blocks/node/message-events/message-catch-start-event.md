@@ -14,7 +14,7 @@ A Message Catch Start Event is a special event in a process that initiates the s
 It is mandatory that in order to use this type of node together with task management plugin, to have a service account defined in your identity solution. For more information, check our documentation in how to create service accounts using Keycloak, [**here**](../../../platform-setup-guides/access-management/configuring-an-iam-solution.md#adding-service-accounts)
 :::
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/throw_message_event.png#center)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/start_catch_message_event.png#center)
 
 #### General config
 

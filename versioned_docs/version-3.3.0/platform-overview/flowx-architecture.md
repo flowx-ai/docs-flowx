@@ -1,4 +1,4 @@
-# FLOWX.AI architecture
+# FLOWX.AI Architecture
 
 Let's go through the main components of the FLOWX.AI platform:
 
@@ -21,7 +21,7 @@ Let's go through the main components of the FLOWX.AI platform:
 * **FLOWX.AI License Manager** (part of the core components) - is used for displaying reports regarding the usage of the platform in the FLOWX.AI Designer
 * **FLOWX.AI Plugins** - the platform comes with some ready-made integrations, such as a [document management] solution, a plugin for sending various types of [notifications](../platform-deep-dive/plugins/custom-plugins/notifications-plugin/notifications-plugin.md), an [OCR](../platform-deep-dive/plugins/custom-plugins/ocr-plugin.md) plugin, and a task management plugin
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-overview/architecture_diagram.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/architecture_diagram_22_01_24.png)
 
 ### FLOWX.AI Engine
 

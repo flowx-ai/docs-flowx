@@ -4,22 +4,40 @@ sidebar_position: 2
 
 # Card
 
-A card is a graphical component that allows grouping and alignment of other components. It can also include an accordion element for expanding and collapsing content.
+A card in Flowx is a graphical component designed for the purpose of grouping and aligning various elements. It offers added functionality by incorporating an accordion feature, allowing users to expand and collapse content as needed.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/ui-designer/card_element1.gif)
 
 The following properties that can be configured:
 
-### **Settings**
+### Properties and Settings
 
-* **Message** - a valid JSON that describes the data pushed to the frontend application when the process reaches a specific user task
-* **Title** - the title of the card
-* **Subtitle** - the subtitle of the card
-* **Card style** - you can choose between a border or raised style
-* **Has accordion?** - this feature allows you to add a Bootstrap accordion, which organizes content within collapsible items and displays only one collapsed item at a time
+#### Settings
+
+##### When Used as Root
+
+When utilized as the root component, the card provides the following settings:
+
+* **Message**: A valid JSON describing the data transmitted to the frontend when the process reaches a specific user task.
+* **Title**: The title of the card.
+* **Subtitle**: A subtitle accompanying the card.
+* **Card style**: Choose between a border or raised style for the card.
+* **Has accordion**: This feature introduces a Bootstrap accordion, facilitating the organization of content within collapsible items. It ensures that only one collapsed item is displayed at a time.
+
+
 
 :::caution
-Accordion element is not available for mobile.
+Starting from platform version **3.4.7**, the "Message" property for cards has been replaced with "Custom UI Payload." In User Tasks containing UI Elements, the Backend (BE) automatically dispatches all relevant data as process variables to the Frontend (FE) by default. Explicitly mentioning data to be pushed is no longer required.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/card_custom_ui.png)
+:::
+
+##### When Not Used as Root
+
+When the card is not the root, you can configure: **Title**, **Subtitle**, **Card Style** and **Has Accordion**.
+
+:::caution
+The accordion element is not available for mobile devices.
 :::
 
 <div className= "image-scaled">
@@ -28,7 +46,9 @@ Accordion element is not available for mobile.
 
 </div>
 
-### **Styling**
+By leveraging cards in your design, you can seamlessly organize and present content, enhancing the overall user experience.
+
+### Styling
 
 * **Layout** - This property is available for components that group children and includes the following options:
 
@@ -49,7 +69,7 @@ For more information about styling and layout configuration, check the following
 
 [UI Designer](../../ui-designer.md#styling)
 
-### **Validating elements**
+### Validating elements
 
 To validate all form elements under a card, you need to set the key of the form/element on the property of the button: _Forms To Validate._
 
