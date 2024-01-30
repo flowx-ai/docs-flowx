@@ -10,7 +10,13 @@ This guide provides step-by-step instructions on how to split a document, such a
 
 ## Prerequisites
 
-Before initiating the splitting process, ensure you have the unique ID of the file in the storage solution. This ensures that the splitting is performed on an already uploaded file.
+1. **Access Permissions**: Ensure that you have the necessary permissions to perform updates or deletions on document files. The user account used for these operations should have the required access rights.
+
+2. **Kafka Configuration**: Verify that the Kafka messaging system is properly configured and accessible. The documents plugin relies on Kafka for communication between nodes.
+
+    - **Kafka Topics**: Familiarize yourself with the Kafka topics used for these operations (later in this section)
+
+3. Before initiating the splitting process, ensure you have the unique ID of the file in the storage solution. This ensures that the splitting is performed on an already uploaded file.
 
 :::caution
 Ensure that the uploaded document contains more than one file.
@@ -18,9 +24,9 @@ Ensure that the uploaded document contains more than one file.
 
 You have two options to obtain the file ID:
 
-1. Extract the file ID from a [**Response Message**](./uploading-a-new-document.md#response-message-example-1) of an upload file request. For more details, refer to the [**upload process documentation**](uploading-a-new-document.md).
+- Extract the file ID from a [**Response Message**](./uploading-a-new-document.md#response-message-example-1) of an upload file request. For more details, refer to the [**upload process documentation**](uploading-a-new-document.md).
 
-2. Extract the file ID from a [**Response Message**](./generate-docs-based-on-templates/generating-from-html-templates.md#receiving-the-document-generation-reply) of a generate from template request. For more details, refer to the [**document generation reply documentation**](./generate-docs-based-on-templates/generating-from-html-templates.md).
+- Extract the file ID from a [**Response Message**](./generate-docs-based-on-templates/generating-from-html-templates.md#receiving-the-document-generation-reply) of a generate from template request. For more details, refer to the [**document generation reply documentation**](./generate-docs-based-on-templates/generating-from-html-templates.md).
 
 
 :::info
@@ -37,11 +43,12 @@ In the following example, we will use the `fileId` generated for a document with
   "noOfPages": null,
   "error": null
 }
-
 ```
 :::
 
 ## Configuring the Splitting Process
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/split_document.png)
 
 To create a process that splits a document into multiple parts, follow these steps:
 

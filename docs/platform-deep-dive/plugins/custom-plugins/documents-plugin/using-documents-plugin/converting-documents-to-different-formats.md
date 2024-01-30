@@ -12,13 +12,19 @@ This guide provides step-by-step instructions on how to convert an uploaded file
 
 ## Prerequisites
 
-Before initiating the conversion process, it is essential to identify the file in the storage solution using its unique ID. This ensures that the conversion is performed on an already uploaded file.
+1. **Access Permissions**: Ensure that you have the necessary permissions to use documents plugin. The user account used for these operations should have the required access rights.
+
+2. **Kafka Configuration**: Verify that the Kafka messaging system is properly configured and accessible. The documents plugin relies on Kafka for communication between nodes.
+
+    - **Kafka Topics**: Familiarize yourself with the Kafka topics used for these operations (later in this section)
+
+3. Before initiating the conversion process, it is essential to identify the file in the storage solution using its unique ID. This ensures that the conversion is performed on an already uploaded file.
 
 You have two options to obtain the file ID:
 
-1. Extract the file ID from a [**Response Message**](./uploading-a-new-document.md#response-message-example-1) of an upload file request. For more details, refer to the [**upload process documentation**](uploading-a-new-document.md).
+- Extract the file ID from a [**Response Message**](./uploading-a-new-document.md#response-message-example-1) of an upload file request. For more details, refer to the [**upload process documentation**](uploading-a-new-document.md).
 
-2. Extract the file ID from a [**Response Message**](./generate-docs-based-on-templates/generating-from-html-templates.md#receiving-the-document-generation-reply) of a generate from template request. For more details, refer to the [**document generation reply documentation**](./generate-docs-based-on-templates/generating-from-html-templates.md).
+- Extract the file ID from a [**Response Message**](./generate-docs-based-on-templates/generating-from-html-templates.md#receiving-the-document-generation-reply) of a generate from template request. For more details, refer to the [**document generation reply documentation**](./generate-docs-based-on-templates/generating-from-html-templates.md).
 
 :::info
 In the following example, we will use the `fileId` generated for [<u>**Uploading a New Document**</u>](./uploading-a-new-document.md) scenario.

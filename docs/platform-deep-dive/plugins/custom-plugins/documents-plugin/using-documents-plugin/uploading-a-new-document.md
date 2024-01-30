@@ -12,6 +12,14 @@ User task [**nodes**](../../../../../terms/flowx-node) provide a flexible framew
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/docs_upload_proc.png)
 
+## Prerequisites
+
+1. **Access Permissions**: Ensure that you have the necessary permissions to use documents plugin. The user account used for these operations should have the required access rights.
+
+2. **Kafka Configuration**: Verify that the Kafka messaging system is properly configured and accessible. The documents plugin relies on Kafka for communication between nodes.
+
+    - **Kafka Topics**: Familiarize yourself with the Kafka topics used for these operations (later in this section)
+
 To upload a document using this process, follow the steps outlined below.
 
 ## Uploading and Reviewing a Document - Step by Step

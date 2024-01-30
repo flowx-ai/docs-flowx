@@ -6,6 +6,14 @@ sidebar_position: 2
 
 The Document Management Plugin simplifies the document generation process through predefined templates. This example focuses on generating documents using HTML templates.
 
+## Prerequisites
+
+1. **Access Permissions**: Ensure that you have the necessary permissions to manage documents templates (more details, [<u>**here**</u>](../../../../plugins-setup-guide/documents-plugin-setup/configuring-access-rights-for-documents.md)). The user account used for these operations should have the required access rights.
+
+2. **Kafka Configuration**: Verify that the Kafka messaging system is properly configured and accessible. The documents plugin relies on Kafka for communication between nodes.
+
+    - **Kafka Topics**: Familiarize yourself with the Kafka topics used for these operations (later in this section)
+
 ## Creating an HTML Template
 
 To begin the document generation process, HTML templates must be created or imported. Utilize the [<u>**WYSIWYG**</u>](../../../../wysiwyg.md) editor accessible through **FLOWX Designer → Plugins → Document templates**.
