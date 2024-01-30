@@ -19,7 +19,9 @@ Before adding these actions to your [**process definition**](../../../../../term
 2. For each event type, you will need a corresponding Kafka topic.
 
 :::info
-The topic names configured for the plugin should match [**the ones used when configuring the engine**](../../../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#configuring-kafka). Make sure to use an outgoing topic name that matches the pattern configured in the Engine. The value can be found and overwritten in the `KAFKA_TOPIC_PATTERN` variable. For more details about Kafka topics configuration, click [<u>**here**</u>](../../../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#configuring-kafka).
+The `..in` topic names configured for the plugin should match [**the `..out` topic  names used when configuring the engine**](../../../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#configuring-kafka). Make sure to use an outgoing topic name that matches the pattern configured in the Engine. The value can be found and overwritten in the `KAFKA_TOPIC_PATTERN` variable. 
+
+For more details about Process Engine Kafka topic configuration, click [<u>**here**</u>](../../../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#configuring-kafka).
 
 To make a request to the plugin, the process definition needs to have an action of type [**Kafka send**](../../../../../building-blocks/node/message-send-received-task-node.md#example-of-a-message-send-event) defined on a [**Message event send**](../../../../../building-blocks/node/message-send-received-task-node.md#message-send-task) node. The action parameter should have the key `topicName` and the corresponding topic name as its value.
 

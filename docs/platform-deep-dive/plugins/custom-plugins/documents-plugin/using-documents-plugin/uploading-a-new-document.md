@@ -20,7 +20,7 @@ To upload a document using this process, follow the steps outlined below.
 
 After exploring how to generate documents in the [previous section](./generate-docs-based-on-templates/generating-from-html-templates.md), let's create a process that enables users to generate a document, review/sign it, and subsequently upload it again.
 
-Consider a scenario where a user inputs data, a document is generated for preview, and the user must then sign and upload it. The following types of nodes are involved:
+Consider a scenario where a user inputs data, a document is generated for preview, and the user must then sign and uploads it. The following types of nodes are involved:
 
 - [**Start**](../../../../../building-blocks/node/start-end-node.md#start-node) and [**End**](../../../../../building-blocks/node/start-end-node.md#end-node) nodes
 - [**Milestone**](../../../../../building-blocks/node/milestone-node.md) nodes to configure the [**stepper/steps**](../../../../../building-blocks/node/milestone-node.md#stepper--steps) structure
@@ -33,19 +33,27 @@ Consider a scenario where a user inputs data, a document is generated for previe
 
 1. Follow the steps in [Generating from HTML templates](./generate-docs-based-on-templates/generating-from-html-templates.md) to set up the document generation part of the process.
 
+:::info
+If your goal is to only upload a new file without generating it from templates or requiring user input, you can skip the template generation step.
+:::
+
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/file_upload_proc.png)
 
 After following the steps you should have something similar to the following request/response examples:
 
 #### Request Message Example
 
-This JSON structure represents a Kafka message sent through the `..in` topic to initiate a request in the Process Engine. It includes information for generating an "AccountCreation" document with a custom ID "119237" in English. The request specifies client details (first name, last name, age, country) and company information (name, registration date).
+This JSON structure represents a Kafka message sent through the `..in` topic to initiate a request in the Process Engine. It includes information for generating an "AccountCreation" document with a custom ID "119237" in English. Data specifies client details extracted dynamically from user input (first name, last name, age, country) and company information (name, registration date).
+
+:::info
+This an example of a message that follows the custom integration data model.
+:::
 
 ```json
 {
   "documentList": [
     {
-      "customId": "119246",
+      "customId": "119246", //this will match the name of the folder in the storage solution
       "templateName": "AccountCreation",
       "language": "en",
       "data": {
@@ -81,8 +89,8 @@ This JSON structure represents the response received on the `..out` Kafka topic,
         "fileId": "f705ae5b-f301-4700-b594-a63b50df6854",
         "documentType": "AccountCreation",
         "documentLabel": "GENERATED_PDF",
-        "minioPath": "flowx-dev-process-id-119246/119246/457_AccountCreation.pdf",
-        "downloadPath": "internal/files/f705ae5b-f301-4700-b594-a63b50df6854/download",
+        "minioPath": "flowx-dev-process-id-119246/119246/457_AccountCreation.pdf", // path to the document in the storage solution
+        "downloadPath": "internal/files/f705ae5b-f301-4700-b594-a63b50df6854/download", //link for download
         "noOfPages": 1,
         "error": null
       }
@@ -234,7 +242,6 @@ To identify your defined topics in your current environment, follow the next ste
 3. In the details screen, expand the `KafkaTopicsHealthCheckIndicator` line and then **details → configuration → topic → document → persist**. Here will find the in and out topics for persisting (uploading documents).
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/kafka_topics_persist.png)
-
 :::
 
 * **Document Type**: Metadata for the document plugin, in this example `BULK`.
@@ -349,6 +356,9 @@ Configure the last node action to save all the data.
 
 To initiate the document processing, a Kafka request with the following JSON payload will be sent through `..in` topic:
 
+:::info
+This an example of a message that follows the custom integration data model.
+:::
 
 ```json
 {

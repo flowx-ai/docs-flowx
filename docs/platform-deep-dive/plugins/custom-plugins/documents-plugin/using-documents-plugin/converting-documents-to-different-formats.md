@@ -45,8 +45,8 @@ To create a process that converts a document from PDF to JPEG format, follow the
 
 1. Create a process that includes a [**Message Event Send (Kafka)**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) node and a [**Message Event Receive (Kafka)**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) node:
 
-* The **Message Send** node is used to send the conversion request.
-* The **Receive Node** node is used to receive the reply.
+* Use the **Message Send** node to send the conversion request.
+* Use the **Receive Node** node to receive the reply.
 
 2. Configure the first node (**Message Send**) by adding a **Kafka send action**.
 
@@ -69,6 +69,10 @@ To identify your defined topics in your current environment, follow the next ste
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/convert_action.png)
 
 #### Message Request Example
+
+:::info
+This is an example of a message that follows the custom integration data model.
+:::
 
 ```json
 {
@@ -93,7 +97,7 @@ The response will be sent to this `..out` Kafka topic.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/convert_response.png)
 
-Values expected in the reply body:
+The following values are expected in the reply body:
 
 * **customId**: The client ID.
 * **fileId**: The file ID.
