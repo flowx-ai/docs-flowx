@@ -65,7 +65,7 @@ To identify your defined topics in your current environment, follow the next ste
 
 1. From the FLOWX.AI main screen, navigate to the **Platform Status** menu at the bottom of the left sidebar.
 2. In the FLOWX Components list, scroll to the **document-plugin-mngt** line and press the eye icon on the right side.
-3. In the details screen, expand the `KafkaTopicsHealthCheckIndicator` line and then **details → configuration → topic → document → convert**. Here will find the in and out topics for converting files.
+3. In the details screen, expand the `KafkaTopicsHealthCheckIndicator` line and then **details → configuration → topic → file → convert**. Here will find the in and out topics for converting files.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/kakfa_topics_convert.png)
 :::

@@ -2,40 +2,54 @@
 sidebar_position: 5
 ---
 
-# Updating and Deleting Document Files
+# Deleting Files
 
-The documents plugin provides functionality for updating and deleting files associated with documents. You can update existing files or remove them from a document.
+The documents plugin provides functionality for deleting files.
 
 ## Prerequisites
 
-Before you begin updating or deleting document files, ensure that you have the following prerequisites in place:
+Before you begin  deleting document files, ensure that you have the following prerequisites in place:
 
-1. **Access Permissions**: Ensure that you have the necessary permissions to use documents plugin. The user account used for these operations should have the required access rights.
+1. **Access Permissions**: Make sure you have the necessary permissions to perform updates or deletions on document files. The user account used for these operations should have the required access rights.
 
-2. **Kafka Configuration**: Verify that the Kafka messaging system is properly configured and accessible. The documents plugin relies on Kafka for communication between nodes.
+2. **Kafka Configuration**:
 
-    - **Kafka Topics**: Familiarize yourself with the Kafka topics used for these operations.
+- **Verify Kafka Setup**: Ensure that the Kafka messaging system is properly configured and accessible. The documents plugin relies on Kafka for communication between nodes.
+
+- **Kafka Topics**: Familiarize yourself with the Kafka topics used for these operations.
 
 3.  **File IDs and Document Types**: Prepare the necessary information for updating or deleting files:
-
-    - **Updating Files**:
-      - `fileId`: The ID of the file you want to update.
-      - `customId`: The custom ID associated with the file.
-      - `documentType`: The document type.
-
-    - **Deleting Files**:
-      - `fileId`: The ID of the file you want to delete.
-      - `customId`: The custom ID associated with the file.
-      - `documentType`: The document type.
+ 
+- `fileId`: The ID of the file you want to delete.   
+- `customId`: The custom ID associated with the file.
 
 
 
+:::info
+In the following example, we will use a `fileId` generated for a document using [<u>**Uploading a New Document**</u>](./uploading-a-new-document.md) scenario.
 
-## Updating Files
+```json
+{
+  "docs": [
+    {
+      "customId": "119407",
+      "fileId": "c4e6f0b0-b70a-4141-993b-d304f38ec8e2",
+      "documentType": "BULK",
+      "documentLabel": null,
+      "minioPath": "flowx-dev-process-id-119408/119407/466_BULK.pdf",
+      "downloadPath": "internal/files/c4e6f0b0-b70a-4141-993b-d304f38ec8e2/download",
+      "noOfPages": 2,
+      "error": null
+    }
+  ],
+  "error": null
+}
+```
+:::
+
+## Configuring the Deleting Process
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/update_process.png)
-
-### Sending the request
 
 To update files, follow these steps:
 
@@ -46,55 +60,79 @@ To update files, follow these steps:
 
 2. Configure the **first node (Message Send)** by adding a **Kafka send** action.
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/doc_update_params.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/document_update_action.png)
 
 
 3. Specify the [**Kafka topic**](../../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md#kafka-configuration) where you want to send the update/delete request.
 
+:::tip
+To identify your defined topics in your current environment, follow the next steps:
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/doc_update_topic.png)
+1. From the FLOWX.AI main screen, navigate to the **Platform Status** menu at the bottom of the left sidebar.
+2. In the FLOWX Components list, scroll to the **document-plugin-mngt** line and press the eye icon on the right side.
+3. In the details screen, expand the `KafkaTopicsHealthCheckIndicator` line and then **details → configuration → topic → file → update**. Here will find the in and out topics for updating files.
 
-4. Fill in the body of the request message:
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/doc_update_topics.png)
+:::
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/doc_update_body.png)
+4. Fill in the body of the request message.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/document_update_param.png)
+
+### Message Request Example
+
+```json
+{
+  "customId": "119408",
+  "fileId": "c4e6f0b0-b70a-4141-993b-d304f38ec8e2"
+}
+```
 
 * **fileId**: The ID of the file.
 * **customId**: The custom ID.
-* **documentType**: The document type.
+
+5. Configure the **second node (Message Receive)** by adding a Data stream topic:
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/doc_update_reply.png)
+
+
+:::info
+The response will be sent to this `..out` Kafka topic.
+:::
 
 
 ### Receiving the reply
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/doc_update_ceva.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/doc_update_receive.png)
 
 Values expected in the reply body:
 
-* customId = client ID
-* fileId = file ID
-* documentType = document type
-* documentLabel = document label
-* minioPath = minio path for the updated file
-* downloadPath = download path for the updated file
-* error = error description
+- customId = client ID
+- fileId = file ID
+- documentType = document type
+- documentLabel = document label
+- minioPath = Minio path for the updated file
+- downloadPath = Download path for the updated file
+- error = error description
 
 Example:
 
 ```json
 {
-  "customId": "test_763879",
-  "fileId": 4749,
+  "customId": "119408",
+  "fileId": "c4e6f0b0-b70a-4141-993b-d304f38ec8e2",
   "documentType": "BULK",
-  "documentLabel": null,
-  "minioPath": "qualitance-dev-paperflow-qa-process-id-763879/test_763879/4749_BULK.pdf",
-  "downloadPath": "internal/files/4749/download",
+  "documentLabel": "BULK",
+  "minioPath": "flowx-dev-process-id-119408/119407/466_BULK.pdf",
+  "downloadPath": "internal/files/c4e6f0b0-b70a-4141-993b-d304f38ec8e2/download",
   "noOfPages": null,
   "error": null
 }
 ```
 
-## Deleting files from a document
+## Configuring the Deleting Process
 
-Used to delete files after bulk upload.
+This is used for deleting files after a bulk upload using the documents plugin.
 
 ### Sending the request
 
@@ -103,29 +141,24 @@ Used to delete files after bulk upload.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/doc_delete_general.png)
 
-3. Add the [**Kafka topic**](../../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md#kafka-configuration) where to send the request:
+3. Add the [**Kafka topic**](../../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md#kafka-configuration) where to send the request.
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/doc_delete_topic.png)
+:::tip
+Same as for update, go to **document-plugin-mngt** line in **Platform Status** and press the eye icon on the right side.
+
+In the details screen, expand the **KafkaTopicsHealthCheckIndicator line and then details → configuration → topic → file → delete**. Here will find the in and out topics for updating files.
+:::
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/delete_topics.png)
 
 4. Fill in the body message request:
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/delete_doc_body.png)
 
-* `fileId`- the id of the file 
-* `customId` - the client ID
+* `fileId`- the ID of the file 
+* `customId` - the custom ID
 * `documentType` - document type
 
-:::info
-Kafka topic names can be set by using (overwriting) the following environment variables in the deployment:
-
-`KAFKA_TOPIC_FILE_DELETE_IN` - default value: `ai.flowx.in.qa.document.delete.file.v1`
-
-`KAFKA_TOPIC_FILE_DELETE_OUT` - default value: `ai.flowx.updates.document.delete.file.v1`
-
-
-:::caution
-The Engine is listening for messages on topics with names of a certain pattern, make sure to use an outgoing topic name that matches the pattern configured in the Engine.
-:::
 
 ### Receiving the reply
 

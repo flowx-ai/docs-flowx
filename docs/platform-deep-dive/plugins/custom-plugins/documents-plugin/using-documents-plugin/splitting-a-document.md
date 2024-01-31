@@ -10,7 +10,7 @@ This guide provides step-by-step instructions on how to split a document, such a
 
 ## Prerequisites
 
-1. **Access Permissions**: Ensure that you have the necessary permissions to perform updates or deletions on document files. The user account used for these operations should have the required access rights.
+1. **Access Permissions**: Ensure that you have the necessary permissions to use documents plugin. The user account used for these operations should have the required access rights.
 
 2. **Kafka Configuration**: Verify that the Kafka messaging system is properly configured and accessible. The documents plugin relies on Kafka for communication between nodes.
 
