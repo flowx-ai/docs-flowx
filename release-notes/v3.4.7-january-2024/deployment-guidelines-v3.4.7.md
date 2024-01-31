@@ -14,7 +14,7 @@ After updating to **3.4.7** FLOWX.AI release, it is not possible to import old p
 
 | 🧩                             | 3.4.7          | 3.4.6     | 3.4.5     | 3.4.4     | 3.4.3   | 3.4.2  | 3.4.1  | 3.4.0  | 3.3.0   | 3.2.0  | 3.1.0  | 3.0.0  | 2.14.0   | 2.13.0  | 2.12.0  | 2.11.0  | 2.10.0  |
 | ------------------------------ | -------------- | --------- | --------- | --------- | ------- | ------ | ------ | ------ | ------- | ------ | ------ | ------ | -------- | ------- | ------- | ------- | ------- |
-| **process-engine**             | **4.3.5-2v10** | 4.3.5-2v6 | 4.3.5-2v2 | 4.3.5-2v1 | 4.3.5   | 4.3.2  | 4.3.1  | 4.1.0  | 3.6.0   | 2.2.1  | 2.1.2  | 2.0.7  | 0.4.104  | 0.4.95  | 0.4.90  | 0.4.83  | 0.4.60  |
+| **process-engine**             | **4.3.5-2v11** | 4.3.5-2v6 | 4.3.5-2v2 | 4.3.5-2v1 | 4.3.5   | 4.3.2  | 4.3.1  | 4.1.0  | 3.6.0   | 2.2.1  | 2.1.2  | 2.0.7  | 0.4.104  | 0.4.95  | 0.4.90  | 0.4.83  | 0.4.60  |
 | **admin**                      | **3.3.19-6**   | 3.3.19-4  | 3.3.19-3  | 3.3.19-1  | 3.3.19  | 3.3.10 | 3.3.7  | 3.1.1  | 2.5.2   | 2.2.2  | 2.1.3  | 2.0.8  | 0.3.119  | 0.3.103 | 0.3.92  | 0.3.81  | 0.3.60  |
 | **designer**                   | **3.35.18-5**  | 3.35.18-3 | 3.35.18-2 | 3.35.18-1 | 3.35.18 | 3.35.9 | 3.35.6 | 3.33.2 | 3.28.11 | 3.21.1 | 3.15.1 | 3.2.1  | 2.78.4-1 | 2.63.6  | 2.60.7  | 2.48.9  | 2.39.2  |
 | **@flowx/ui-sdk**              | **3.35.18-5**  | 3.35.18-3 | 3.35.18-2 | 3.35.18-1 | 3.35.18 | 3.35.9 | 3.35.6 | 3.33.2 | 3.28.11 | 3.21.1 | 3.15.1 | 3.2.1  | n/a      | n/a     | n/a     | n/a     | n/a     |
@@ -83,8 +83,15 @@ The DPI value for the PDF to JPEG conversion can now be configured via the `FLOW
 | -------------------- | ------------- | ---------------------------------------------------------------------------------------------------------- |
 | `FLOWX_CONVERT_DPI`  | 150           | Sets the DPI (dots per inch) for PDF to JPEG conversion. Higher values result in higher resolution images. |
 
+### Process Engine
 
+Introducing a new environment variable designed to facilitate the coordinated or independent expiration of subprocesses within a parent process. 
 
+| Environment Variable                | Default Value | Explanation                                                                 |
+| ----------------------------------- | ------------- | --------------------------------------------------------------------------- |
+| `FLOWX_PROCESS_EXPIRE_SUBPROCESSES` | true          | When set to true, expiration of a parent process triggers simultaneous expiration of all associated subprocesses |
+
+For further details, refer to the documentation [<u>**here**</u>](../../docs/platform-setup-guides/flowx-engine-setup-guide#managing-subprocesses-expiration).
 
 
 

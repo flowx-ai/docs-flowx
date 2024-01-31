@@ -424,3 +424,8 @@ scheduler:
 
 [Scheduler setup guide](../scheduler-setup-guide.md)
 
+### Managing Subprocesses Expiration
+
+The `FLOWX_PROCESS_EXPIRE_SUBPROCESSES` environment variable governs subprocess expiration in a parent process. When set to true, the parent process's expiration prompts simultaneous termination of all associated subprocesses. Conversely, when set to false, each subprocess follows its individual expiration configuration or persists indefinitely if not configured.
+
+* `FLOWX_PROCESS_EXPIRE_SUBPROCESS` - default: `true`
