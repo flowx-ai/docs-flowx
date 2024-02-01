@@ -40,7 +40,7 @@ Let's explore a few examples that cover both the configuration and integration w
 
 [Splitting a document](splitting-a-document.md)
 
-[Updating / deleting document files](./updating-deleting-document-files.md)
+[Deleting a file](deleting-a-file.md)
 
 [Getting URLs to documents](getting-urls-to-documents.md)
 

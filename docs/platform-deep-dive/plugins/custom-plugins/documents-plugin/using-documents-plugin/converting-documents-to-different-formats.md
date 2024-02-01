@@ -105,14 +105,14 @@ The response will be sent to this `..out` Kafka topic.
 
 The following values are expected in the reply body:
 
-* **customId**: The client ID.
-* **fileId**: The file ID.
-* **documentType**: The document type.
-* **documentLabel**: The document label (if available).
-* **minioPath**: The path where the converted file is saved. It represents the location of the file in the storage system, whether it's a MinIO path or an S3 path, depending on the specific storage solution.
-* **downloadPath**: The download path for the converted file.
-* **noOfPages**: If applicable.
-* **error**: Any error message in case of an error during the conversion process.
+* **customId**: The unique identifier for your document (it could be for example the ID of a client)
+* **fileId**: The file ID
+* **documentType**: The document type
+* **documentLabel**: The document label (if available)
+* **minioPath**: The path where the converted file is saved. It represents the location of the file in the storage system, whether it's a MinIO path or an S3 path, depending on the specific storage solution
+* **downloadPath**: The download path for the converted file
+* **noOfPages**: If applicable
+* **error**: Any error message in case of an error during the conversion process
 
 
 #### Message Response Example

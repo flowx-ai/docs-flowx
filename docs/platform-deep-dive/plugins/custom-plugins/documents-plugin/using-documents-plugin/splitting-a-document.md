@@ -97,12 +97,12 @@ To identify your defined topics in your current environment, follow the next ste
 }
 ```
 
-* **fileId**: The file ID of the document that will be split.
-* **parts**: A list containing information about the expected document parts.
+* **fileId**: The file ID of the document that will be split
+* **parts**: A list containing information about the expected document parts
   * **documentType**: The document type.
-  * **customId**: The client ID.
-  * **shouldOverride**: A boolean value (true or false) indicating whether to override an existing document if one with the same name already exists.
-  * **pagesNo**: The pages that you want to separate from the document.
+  * **customId**: The unique identifier for your document (it could be for example the ID of a client)
+  * **shouldOverride**: A boolean value (true or false) indicating whether to override an existing document if one with the same name already exists
+  * **pagesNo**: The pages that you want to separate from the document
 
 
 5. Configure the **second node (Message Receive)** by adding a Data stream topic:
