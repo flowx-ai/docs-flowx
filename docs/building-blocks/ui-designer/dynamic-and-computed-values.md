@@ -61,7 +61,7 @@ output.put("app",{"label":"This is a label",
 ```
 
 :::caution
-Note that for releases **<= 3.3.0**, concatenating process parameters with substitution tags isn't supported when utilizing dynamic values.
+Note that for releases **← 3.3.0**, concatenating process parameters with substitution tags isn't supported when utilizing dynamic values.
 :::
 
 ## Computed values

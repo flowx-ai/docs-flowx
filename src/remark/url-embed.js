@@ -1,20 +1,23 @@
-const visit = require('unist-util-visit');
-
-const plugin = (options) => {
+const plugin = async (options) => {
   const transformer = async (root) => {
     let transformed = false;
+
+    // Dynamically import 'unist-util-visit'
+    const { default: visit } = await import('unist-util-visit');
+
     visit(root, 'paragraph', (node, index, parent) => {
       if (parent.type !== "root") return;
       if (node.children.length === 1 && node.children[0].type === 'link') {
         transformed = true;
-        const {url, children: [{value: title}]} = node.children[0];
+        const { url, children: [{ value: title }] } = node.children[0];
         for (const member in node) {
           delete node[member];
         }
         node.type = 'jsx';
-        node.value = `<CardLink href="${url}" title="${title}" />`
+        node.value = `<CardLink href="${url}" title="${title}" />`;
       }
     });
+
     if (root.type === 'root' && transformed) {
       root.children.unshift({
         type: 'import',
@@ -23,7 +26,9 @@ const plugin = (options) => {
       });
     }
   };
+
   return transformer;
 };
 
 module.exports = plugin;
+

@@ -51,7 +51,7 @@ A correlation key is a key that can have the same value across multiple instance
 For example, in an onboarding process for a user, you hold a unique personal identification number (SSN), and someone else needs a portion of your process, specifically the value of your input (SSN).
 :::
 
-The communication works as follows: you receive a message on a Kafka topic - ${kafka.topic.naming.prefix}.core.message.event.process${kafka.topic.naming.suffix}. The engine listens here and writes the response.
+The communication works as follows: you receive a message on a Kafka topic - `${kafka.topic.naming.prefix}.core.message.event.process${kafka.topic.naming.suffix}`. The engine listens here and writes the response.
 
 ### Message events configuration
 

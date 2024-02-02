@@ -2,10 +2,12 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 require('dotenv').config();
-
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const {themes} = require('prism-react-renderer');
+const lightTheme = themes.github;
+const darkTheme = themes.dracula;
 const urlEmbed = require('./src/remark/url-embed');
+
+
 
 const papersaurus = require('./src/plugins/docusaurus-plugin-papersaurus')
 
@@ -42,7 +44,7 @@ const config = {
           lastVersion: 'current',
           versions:{
             current:{
-              label: '3.4.x',
+              label: '3.5.0',
               path: '',
               badge: true,
             },
@@ -81,7 +83,6 @@ const config = {
       docs: {
         sidebar: {
           autoCollapseCategories: true,
-          hideable: true,
         },
       },
 
@@ -206,8 +207,8 @@ const config = {
         copyright: `Copyright © FLOWX.AI ${new Date().getFullYear()}`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: lightTheme,
+        darkTheme: darkTheme,
       },
 
       zoom: {
@@ -263,11 +264,6 @@ const config = {
         },
       ],
       
-    ['@grnet/docusaurus-terminology', {
-      termsDir: './docs/terms',
-      docsDir: './docs',
-      glossaryFilepath: './docs/glossary.md'
-    }],
 
     [
       require.resolve('./src/plugins/docusaurus-plugin-papersaurus/lib'),
