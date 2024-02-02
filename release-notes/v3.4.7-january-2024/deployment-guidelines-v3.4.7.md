@@ -27,8 +27,8 @@ After updating to **3.4.7** FLOWX.AI release, it is not possible to import old p
 | **events-gateway**             | 1.1.0          | 1.1.0     | 1.1.0     | 1.1.0     | 1.1.0   | 1.1.0  | 1.1.0  | 1.0.6  | 1.0.2   | -      | -      | -      | -        | -       | -       | -       | -       |
 | **notification-plugin**        | 2.0.9          | 2.0.9     | 2.0.9     | 2.0.9     | 2.0.9   | 2.0.8  | 2.0.8  | 2.0.5  | 2.0.4   | 2.0.4  | 2.0.3  | 2.0.1  | 1.0.206  | 1.0.206 | 1.0.206 | 1.0.205 | 1.0.200 |
 | **document-plugin**            | **2.0.10-1**   | 2.0.10    | 2.0.10    | 2.0.10    | 2.0.10  | 2.0.8  | 2.0.8  | 2.0.6  | 2.0.4   | 2.0.3  | 2.0.3  | 2.0.2  | 1.0.53   | 1.0.53  | 1.0.53  | 1.0.52  | 1.0.47  |
-| **ocr-plugin**                 | 1.0.12         | 1.0.12    | 1.0.12    | 1.0.12    | 1.0.12  | 1.0.12 | 1.0.12 | 1.0.8  | 1.0.8   | 1.0.2  | 0.1.33 | 0.1.33 | 0.1.33   | 0.1.33  | 0.1.5   | 0.1.5   | 0.1.5   |
-| **license-core**               | **1.1.0**      | 1.0.7     | 1.0.7     | 1.0.7     | 1.0.7   | 1.0.7  | 1.0.7  | 1.0.4  | 1.0.2   | 1.0.2  | 1.0.2  | 1.0.1  | 0.1.28   | 0.1.28  | 0.1.28  | 0.1.27  | 0.1.23  |
+| **ocr-plugin**                 | **1.0.15**     | 1.0.12    | 1.0.12    | 1.0.12    | 1.0.12  | 1.0.12 | 1.0.12 | 1.0.8  | 1.0.8   | 1.0.2  | 0.1.33 | 0.1.33 | 0.1.33   | 0.1.33  | 0.1.5   | 0.1.5   | 0.1.5   |
+| **license-core**               | **1.2.0**      | 1.0.7     | 1.0.7     | 1.0.7     | 1.0.7   | 1.0.7  | 1.0.7  | 1.0.4  | 1.0.2   | 1.0.2  | 1.0.2  | 1.0.1  | 0.1.28   | 0.1.28  | 0.1.28  | 0.1.27  | 0.1.23  |
 | **customer-management-plugin** | 0.2.8          | 0.2.8     | 0.2.8     | 0.2.8     | 0.2.8   | 0.2.8  | 0.2.8  | 0.2.6  | 0.2.4   | 0.2.3  | 0.2.3  | 0.2.1  | 0.1.28   | 0.1.28  | 0.1.28  | 0.1.27  | 0.1.23  |
 | **task-management-plugin**     | 3.0.3          | 3.0.3     | 3.0.3     | 3.0.3     | 3.0.3   | 3.0.3  | 3.0.3  | 3.0.0  | 2.1.2   | 1.0.4  | 1.0.4  | 1.0.1  | 0.0.42   | 0.0.42  | 0.0.40  | 0.0.37  | 0.0.29  |
 | **data-search**                | 0.2.8          | 0.2.8     | 0.2.8     | 0.2.6     | 0.2.6   | 0.2.6  | 0.2.6  | 0.2.3  | 0.2.0   | 0.1.4  | 0.1.4  | 0.1.3  | 0.0.8    | 0.0.8   | 0.0.6   | n/a     | n/a     |
@@ -45,7 +45,7 @@ With the release of **FLOWX.AI 3.0**, there have been some changes that you need
 :::
 
 
-### Recommended Versions for FLOWX.AI 3.4.7 ✅
+### Recommended Versions for FLOWX.AI 3.4.7
 
 | FLOWX.AI Platform Version | Component name    | Recommended version (tested versions) |
 | ------------------------- | ----------------- | ------------------------------------- |
@@ -75,14 +75,6 @@ Compatibility Matrix:
 
 ## Additional Configuration
 
-### Documents Plugin 
-
-The DPI value for the PDF to JPEG conversion can now be configured via the `FLOWX_CONVERT_DPI` environment variable.
-    
-| Environment Variable | Default Value | Explanation                                                                                                |
-| -------------------- | ------------- | ---------------------------------------------------------------------------------------------------------- |
-| `FLOWX_CONVERT_DPI`  | 150           | Sets the DPI (dots per inch) for PDF to JPEG conversion. Higher values result in higher resolution images. |
-
 ### Process Engine
 
 Introducing a new environment variable designed to facilitate the coordinated or independent expiration of subprocesses within a parent process. 
@@ -93,6 +85,33 @@ Introducing a new environment variable designed to facilitate the coordinated or
 
 For further details, refer to the documentation [<u>**here**</u>](../../docs/platform-setup-guides/flowx-engine-setup-guide#managing-subprocesses-expiration).
 
+### Documents Plugin 
+
+The DPI value for the PDF to JPEG conversion can now be configured via the `FLOWX_CONVERT_DPI` environment variable.
+    
+| Environment Variable | Default Value | Explanation                                                                                                |
+| -------------------- | ------------- | ---------------------------------------------------------------------------------------------------------- |
+| `FLOWX_CONVERT_DPI`  | 150           | Sets the DPI (dots per inch) for PDF to JPEG conversion. Higher values result in higher resolution images. |
+
+For further details, refer to the documentation [<u>**here**</u>](../../docs/platform-deep-dive/plugins/plugins-setup-guide/documents-plugin-setup#conversion).
+
+
+### OCR Plugin
+
+The following environment variables were introduced to control the acceptable aspect ratio range for recognizing signed documents in OCR processes. Here's a brief description of each:
+
+
+| Environment Variable      | Definition                                                                                                                                                                                                                              | Default Value |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `OCR_SIGNATURE_MAX_RATIO` | This variable sets the maximum acceptable aspect ratio for a signed scanned document (the OCR plugin will recognize a signature only if the document ratio is greater than or equal to the specified minimum ratio)                             | `1.43`        |
+| `OCR_SIGNATURE_MIN_RATIO` | This variable sets the minimum acceptable aspect ratio for a signed scanned document (in this context, the OCR plugin will consider a detected signature only if the document aspect ratio is less than or equal to the specified maximum ratio) | `1.39`        |
+
+
+:::info KEEP IN MIND
+The plugin has been tested with aspect ratio values between 1.38 and 1.43. However, caution is advised when using untested values outside this range, as they may potentially disrupt the functionality. Adjust these parameters at your own risk and consider potential consequences, as untested values might lead to plugin instability or undesired behavior.
+:::
+
+For further details, refer to the documentation [<u>**here**</u>](../../docs/platform-deep-dive/plugins/plugins-setup-guide/ocr-plugin-setup#control-aspect-ratio).
 
 
 
