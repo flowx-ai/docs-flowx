@@ -1,77 +1,139 @@
-# Generating from HTML templates
+---
+sidebar_position: 2
+---
 
-The Document Management Plugin allows you to generate documents based on previously defined document templates. This example specifically covers generating documents using HTML templates.
+# Generating Documents from HTML Templates
 
-## Creating a template
+The Document Management Plugin simplifies the document generation process through predefined templates. This example focuses on generating documents using HTML templates.
 
-Use the [WYSIWYG](../../../../wysiwyg.md) editor to create a document template.
+## Prerequisites
+
+1. **Access Permissions**: Ensure that you have the necessary permissions to manage documents templates (more details, [<u>**here**</u>](../../../../plugins-setup-guide/documents-plugin-setup/configuring-access-rights-for-documents.md)). The user account used for these operations should have the required access rights.
+
+2. **Kafka Configuration**: Verify that the Kafka messaging system is properly configured and accessible. The documents plugin relies on Kafka for communication between nodes.
+
+    - **Kafka Topics**: Familiarize yourself with the Kafka topics used for these operations (later in this section)
+
+## Creating an HTML Template
+
+To begin the document generation process, HTML templates must be created or imported. Utilize the [<u>**WYSIWYG**</u>](../../../../wysiwyg.md) editor accessible through **FLOWX Designer → Plugins → Document templates**.
+
+Learn more about managing HTML templates:
+
+[Managing HTML Templates](managing-html-templates.md)
+
+:::caution
+Before using templates, ensure they are in a **Published** state. Document templates marked as **Draft/In Progress** will not undergo the generation process.
+:::
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/ocr_doc_template.gif)
 
-## Sending the request
+:::tip ACADEMY COURSES
+We've created a comprehensive course guiding you through the process of **Creating a Document Template in Designer**. Access the course [<u>**here**</u>](https://academy.flowx.ai/catalog/info/id:172) for detailed instructions and insights.
+:::
 
-1. Create a process that includes a [**Kafka send event node**](../../../../../../building-blocks/node/message-send-received-task-node.md#message-send-task) and a [**Kafka receive event node**](../../../../../../building-blocks/node/message-send-received-task-node.md#message-receive-task) (one for sending the request and one for receiving the reply).
-2. Configure the first node (Kafka Send Event) by adding a **Kafka send action**.
-3. Add the [**Kafka topic**](../../../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md#kafka-configuration) to which the request should be sent.
-4. Fill in the message with the following expected values in the request body:
+## Sending a Document Generation Request
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/html_generate_param.png)
-
-* **documentList**: A list of documents to be generated with properties (name and value to be replaced in the document templates)
-* **customId**: Client ID
-* **templateName**: The name of the template to be used
-* **language**
-* **includeBarcode**: True/False
-* **data**: A map containing the values that should be replaced in the document template. The keys used in the map should match the ones defined in the HTML template.
+Consider a scenario where you need to send a personalized document to a customer based on specific details they provide. Create a process involving a [**User task**](../../../../../../building-blocks/node/user-task-node.md), a [**Kafka send event node**](../../../../../../building-blocks/node/message-send-received-task-node.md#message-send-task), and a [**Kafka receive event node**](../../../../../../building-blocks/node/message-send-received-task-node.md#message-receive-task).
 
 :::info
-Kafka topic names can be set by using (overwriting) the following environment variables in the deployment:
-
-* **`KAFKA_TOPIC_DOCUMENT_GENERATE_HTML_IN`** - default value: `ai.flowx.in.qa.document.html.generate.v1` - the topic that listens for the request from the engine
-* **`KAFKA_TOPIC_DOCUMENT_GENERATE_HTML_OUT`** - default value: `ai.flowx.updates.qa.document.html.generate.v1` - the topic on which the engine expects the reply
-
-The above examples of topics are extracted from an internal testing environment. When setting topics for other environments, follow the pattern `ai.flowx.updates.{{environment}}.document.generate.v1`.
+* In the initial user task node, users input information.
+* The second node (Kafka send) creates a request with a specified template and keys corresponding to user-filled values.
+* The third node sends the reply with the generated document under the specified key.
 :::
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/generate_from_htm1l.png)
+
+1. Add a **User task** and configure it with UI elements for user input.
+
+:::info
+In this example, three UI elements, comprising two input fields and a select (dropdown), will be used. Subsequently, leverage the keys associated with these UI elements to establish a binding with the template. This binding enables dynamic adjustments to the template based on user-input values, enhancing flexibility and customization.
+:::
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/data_model_doc_template.gif)
+
+2. Configure the second node (Kafka Send Event) by adding a **Kafka send action**.
+3. Specify the [<u>**Kafka topic**</u>](../../../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md#kafka-configuration) to which the request should be sent, enabling the Process Engine to process it; in our example it is `ai.flowx.in.document.html.in`.
+
+:::tip
+To identify your defined topics in your current environment, follow the next steps:
+
+1. From the FLOWX.AI main screen, navigate to the **Platform Status** menu at the bottom of the left sidebar.
+2. In the FLOWX Components list, scroll to the **document-plugin-mngt** line and press the eye icon on the right side.
+3. In the details screen, expand the `KafkaTopicsHealthCheckIndicator` line and then **details → configuration → topic → document → generate**. Under HTML and PDF you will find the in and out topics for generating HTML or PDF documents.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/kafka_topics_html_generate.png)
+
+:::
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/kafka_html_generate.gif)
+
+4. Fill in the message with the expected values in the request body:
+
+```json
+{ 
+  "documentList": [
+    {
+      "customId": "ClientsFolder",
+      "templateName": "AccountCreation",
+      "language": "en",
+      "data": {
+        "firstInput": "${application.client.firstName}",
+        "secondInput": "${application.client.lastName}",
+        "thirdInput": "${application.client.accountType}"
+      },
+     "includeBarcode": false //if you want to include a barcode, you can set it to true
+    }
+  ]
+}
+```
+
+- **documentList**: A list of documents to be generated with properties (name and value to be replaced in the document templates)
+- **customId**: Client ID
+- **templateName**: The name of the template that you want to use (defined in the **Document templates** section)
+- **language**: Should match the language set on the template (a template can be created for multiple languages as long as they are defined in the system, see [**Languages**](../../../../../core-components/core-extensions/content-management/languages.md) section for more information)
 
 :::caution
-The engine listens for messages on topics with specific naming patterns. Make sure to use an outgoing topic name that matches the pattern configured in the engine.
+When incorporating templates into the execution of a process, the extracted default values will be in accordance with the specifications of the default language configured in the system. For instance, if the default language is set to English, the template's default values will reflect those assigned to the English version. Make sure to match the language of your template with the default language of the system.
+::::tip
+ To verify the default language of the platform, navigate to FLOWX.AI **Designer → Content Management → Languages**.
+::::
+
 :::
 
-## Reply
+- **includeBarcode**: True/False
+- **data**: A map containing the values that should be replaced in the document template (data that comes from user input). The keys used in the map should match the ones defined in the HTML template and your UI elements.
 
-:::info
-You can view the response by accessing the **Audit log** menu.
-:::
+Ultimately, the configuration should resemble the presented image:
 
-The response will be sent on the output Kafka topic defined in the Kafka Receive Event Node. The response will contain the following information:
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/ceva_model.png)
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/html_generate_reply.png)
+5. Configure the third node (Kafka Receive Event): 
 
-Values expected in the event body:
+    *  Add the topic where the response will be sent; in our example `ai.flowx.updates.document.html.generate.v1` and its key: `generatedDocuments`
+  
 
-* **generatedFiles**: List of generated files.
-  * **customId**: Client ID.
-  * **fileId**: The ID of the generated file.
-  * **documentType**: The name of the document template.
-  * **documentLabel**: A label or description for the document.
-  * **minioPath**: The path where the converted file is saved. It represents the location of the file in the storage system, whether it's a MinIO path or an S3 path, depending on the specific storage solution.
-  * **downloadPath**: The download path for the converted file. It specifies the location from where the file can be downloaded.
-  * **noOfPages**: The number of pages in the generated file.
-  * **error**: If there were any errors encountered during the generation process, they would be specified here. In the provided example, the value is null, indicating no errors.
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/receive_topic.png)    
 
-Example of generated file response received on `KAFKA_TOPIC_DOCUMENT_GENERATE_HTML_IN` topic :
+## Receiving the Document Generation Reply
+
+The response, containing information about the generated documents, is sent to the output Kafka topic defined in the Kafka Receive Event Node. The response includes details such as file IDs, document types, and storage paths.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/html_generated_response.png)
+
+Here is an example of a response after generation (received on `generatedDocuments` key):
 
 ```json
 {
   "generatedFiles": {
-    "123456": {
-      "test_doc": {
-        "customId": "123456",
-        "fileId": 4746,
-        "documentType": "test_doc",
+    "ClientsFolder": {
+      "AccountCreation": {
+        "customId": "ClientsFolder",
+        "fileId": "320f4ec2-a509-4aa9-b049-87224594802e",
+        "documentType": "AccountCreation",
         "documentLabel": "GENERATED_PDF",
-        "minioPath": "qualitance-dev-paperflow-qa-process-id-759232/123456/4746_test_doc.pdf", //or S3 path, depending on your storage solution
-        "downloadPath": "internal/files/4746/download",
+        "minioPath": "{{your_bucket}}/2024/2024-01-15/process-id-865759/ClientsFolder/6869_AccountCreation.pdf",
+        "downloadPath": "internal/files/320f4ec2-a509-4aa9-b049-87224594802e/download",
         "noOfPages": 1,
         "error": null
       }
@@ -79,5 +141,30 @@ Example of generated file response received on `KAFKA_TOPIC_DOCUMENT_GENERATE_HT
   },
   "error": null
 }
-
 ```
+
+* **generatedFiles**: List of generated files.
+* **customId**: Client ID.
+* **fileId**: The ID of the generated file.
+* **documentType**: The name of the document template.
+* **documentLabel**: A label or description for the document.
+* **minioPath**: The path where the converted file is saved. It represents the location of the file in the storage system, whether it's a MinIO path or an S3 path, depending on the specific storage solution.
+* **downloadPath**: The download path for the converted file. It specifies the location from where the file can be downloaded.
+* **noOfPages**: The number of pages in the generated file.
+* **error**: If there were any errors encountered during the generation process, they would be specified here. In the provided example, the value is null, indicating no errors.
+
+
+## Displaying the Generated Document
+
+Upon document generation, you now have the capability to present it using the Document Preview UI element. To facilitate this, let's optimize the existing process by introducing two supplementary nodes:
+
+* **Task Node**: This node is designated to generate the document path from the storage solution, specifically tailored for the Document Preview.
+
+* **User Task**: In this phase, we seamlessly integrate the Document Preview UI Element. Here, we incorporate a key that contains the download path generated in the preceding node.
+
+For detailed instructions on displaying a generated or uploaded document, refer to the example provided in the following section:
+
+
+
+[Uploading a new document](./../uploading-a-new-document.md)
+

@@ -99,6 +99,7 @@ You can override the following environment variables:
 | `STORAGE_S3_OCR_SCANS_BUCKET`       | The name of the S3 bucket for storing OCR scans                     | -             | `pdf-scans`                                         |
 | `STORAGE_S3_OCR_SIGNATURE_BUCKET`   | The name of the S3 bucket for storing OCR signatures                | -             | `extracted-signatures`                              |
 | `STORAGE_S3_OCR_SIGNATURE_FILENAME` | The filename pattern for extracted OCR signatures                   | -             | `extracted_signature_{}.png`                        |
+| `STORAGE_S3_ACCESS_KEY`             | The access key for connecting to the S3 storage service             | -             |                                                     |
 | `STORAGE_S3_SECRET_KEY`             | The secret key for connecting to the S3 storage service             | -             |                                                     |
 
 
@@ -131,11 +132,15 @@ Please note that the default values and examples provided here are for illustrat
 
 You can override the following environment variables:
 
-* `REQUESTS_CA_BUNDLE`- the path to the certificate bundle file used for secure requests
+| Environment Variable | Definition                                                                                                  | Default Value     |
+| -------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------- |
+| `REQUESTS_CA_BUNDLE` | The path to the certificate bundle file used for secure requests                                            | `5`               |
+| `CERT_REQUESTS`      | If no activity has occurred for a certain number of seconds, an attempt will be made to refresh the workers | `'CERT_REQUIRED'` |
 
-### Workers behavior
 
-You can override the following environment variables:
+### Workers Behavior
+
+You can override the following environment variables: 
 
 | Environment Variable     | Definition                                                                                                  | Default Value |
 | ------------------------ | ----------------------------------------------------------------------------------------------------------- | ------------- |
@@ -146,4 +151,17 @@ You can override the following environment variables:
 If no worker is released after `OCR_WORK_QUEUE_TIMEOUT` seconds, the application will verify whether any workers have become unresponsive and need to be restarted.
 
 If none of the workers have died, it means they are likely blocked in some process. In this case, the application will terminate all the workers and shut down itself, hoping that the container will be restarted.
+:::
+
+### Control Aspect Ratio
+
+
+| Environment Variable      | Definition                                                                                                                                                                                                                              | Default Value |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `OCR_SIGNATURE_MAX_RATIO` | This variable sets the maximum acceptable aspect ratio for a signed scanned document (the OCR plugin will recognize a signature only if the document ratio is greater than or equal to the specified minimum ratio)                             | `1.43`        |
+| `OCR_SIGNATURE_MIN_RATIO` | This variable sets the minimum acceptable aspect ratio for a signed scanned document (in this context, the OCR plugin will consider a detected signature only if the document aspect ratio is less than or equal to the specified maximum ratio) | `1.39`        |
+
+
+:::info KEEP IN MIND
+The plugin has been tested with aspect ratio values between 1.38 and 1.43. However, caution is advised when using untested values outside this range, as they may potentially disrupt the functionality. Adjust these parameters at your own risk and consider potential consequences, as untested values might lead to plugin instability or undesired behavior.
 :::

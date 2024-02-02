@@ -2,78 +2,146 @@
 sidebar_position: 4
 ---
 
-# Splitting a document
+# Splitting Documents
 
-You can split a document into multiple parts using the Documents Plugin. This feature is useful, for example, when a user uploads a bulk scanned file that needs to be separated into separate files.
+You can split a document into multiple parts using the Documents Plugin.
 
-## Sending the request
+This guide provides step-by-step instructions on how to split a document, such as when a user uploads a bulk scanned file that needs to be separated into distinct files.
 
-To split a document, follow these steps:
+## Prerequisites
 
-1. Create a process and add a [**Kafka send event node**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) and a [**Kafka receive event node**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node). These nodes are used to send the request and receive the reply.
-2. Configure the first node, Kafka send event node by adding a **Kafka send action**.
+1. **Access Permissions**: Ensure that you have the necessary permissions to use documents plugin. The user account used for these operations should have the required access rights.
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/kafka_split_action.png)
+2. **Kafka Configuration**: Verify that the Kafka messaging system is properly configured and accessible. The documents plugin relies on Kafka for communication between nodes.
 
-3. Specify the [**Kafka topic**](../../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md#kafka-configuration) to which you want to send the request.
+    - **Kafka Topics**: Familiarize yourself with the Kafka topics used for these operations (later in this section)
+
+3. Before initiating the splitting process, ensure you have the unique ID of the file in the storage solution. This ensures that the splitting is performed on an already uploaded file.
+
+:::caution
+Ensure that the uploaded document contains more than one file.
+:::
+
+You have two options to obtain the file ID:
+
+- Extract the file ID from a [**Response Message**](./uploading-a-new-document.md#response-message-example-1) of an upload file request. For more details, refer to the [**upload process documentation**](uploading-a-new-document.md).
+
+- Extract the file ID from a [**Response Message**](./generate-docs-based-on-templates/generating-from-html-templates.md#receiving-the-document-generation-reply) of a generate from template request. For more details, refer to the [**document generation reply documentation**](./generate-docs-based-on-templates/generating-from-html-templates.md).
+
+
+:::info
+In the following example, we will use the `fileId` generated for a document with multiple files using [<u>**Uploading a New Document**</u>](./uploading-a-new-document.md) scenario.
+
+```json
+{
+  "customId": "119407",
+  "fileId": "446c69fb-32d2-44ba-a0b2-02dbb55e7eea",
+  "documentType": "BULK",
+  "documentLabel": null,
+  "minioPath": "flowx-dev-process-id-119407/119407/465_BULK.pdf",
+  "downloadPath": "internal/files/446c69fb-32d2-44ba-a0b2-02dbb55e7eea/download",
+  "noOfPages": null,
+  "error": null
+}
+```
+:::
+
+## Configuring the Splitting Process
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/split_document.png)
+
+To create a process that splits a document into multiple parts, follow these steps:
+
+1. Create a process that includes a [**Message Event Send (Kafka)**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) node and [**a Message Event Receive (Kafka)**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) node:
+
+* Use the **Message Send** node to send the splitting request.
+* Use the **Message Receive** node to receive the splitting reply.
+
+2. Configure the **first node (Message Send)** by adding a **Kafka send** action.
+
+3. Specify the [**Kafka topic**](../../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md#kafka-configuration) where you want to send the splitting request.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/kafka_split_topic.png)
 
-4. Fill in the body message request:
+:::tip
+To identify your defined topics in your current environment, follow the next steps:
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/split_doc_body.png)
+1. From the FLOWX.AI main screen, navigate to the Platform Status menu at the bottom of the left sidebar.
+2. In the FLOWX Components list, scroll to the document-plugin-mngt line and press the eye icon on the right side.
+3. In the details screen, expand the `KafkaTopicsHealthCheckIndicator` line and then **details → configuration → topic → document → split**. Here you will find the in and out topics for splitting documents.
 
-* **fileId**: The ID of the file to be split.
-* **parts**: A list containing information about the expected document parts.
-  * **documentType**: The document type.
-  * **customId**: The client ID.
-  * **shouldOverride**: A boolean value (true or false) indicating whether to override an existing document if one with the same name already exists.
-  * **pagesNo**: The pages that you want to separate from the document.
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/kafka_topics_split.png)
 
-:::info
-You can customize the Kafka topic names by overwriting the following environment variables during deployment:
-
-`KAFKA_TOPIC_DOCUMENT_SPLIT_IN` - default value: `ai.flowx.in.qa.document.split.v1` - this is the topic that listens for the request from the engine
-
-`KAFKA_TOPIC_DOCUMENT_SPLIT_OUT` - default value: `ai.flowx.updates.qa.document.split.v1` - this is the topic on which the engine expects the reply
-
-The above examples of topics are extracted from an internal testing environment. When setting topics for other environments, follow this pattern: `ai.flowx.updates.{{environment}}.document.split.v1`.
 :::
 
-:::caution
-The Engine listens for messages on topics with specific names. Make sure to use an outgoing topic name that matches the pattern configured in the Engine.
+4. Fill in the body of the message request.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/split_kafka_action.png)
+
+#### Message Request Example
+
+```json
+{
+  "parts": [
+    {
+      "documentType": "BULK",
+      "customId": "119407",
+      "pagesNo": [
+        1,
+        2
+      ],
+      "shouldOverride": true
+    }
+  ],
+  "fileId": "446c69fb-32d2-44ba-a0b2-02dbb55e7eea"
+}
+```
+
+* **fileId**: The file ID of the document that will be split
+* **parts**: A list containing information about the expected document parts
+  * **documentType**: The document type.
+  * **customId**: The unique identifier for your document (it could be for example the ID of a client)
+  * **shouldOverride**: A boolean value (true or false) indicating whether to override an existing document if one with the same name already exists
+  * **pagesNo**: The pages that you want to separate from the document
+
+
+5. Configure the **second node (Message Receive)** by adding a Data stream topic:
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/split_response_kafka.png)
+
+:::info
+The response will be sent to this `..out` Kafka topic.
 :::
 
 ## Receiving the reply
 
-You can view the response by accessing the Audit log menu. The reply will be sent to the Kafka topic specified in the Kafka receive event node.
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/split_response.png)
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/split_updates.png)
-
-The response body will contain the following values:
+The following values are expected in the reply body:
 
 * **docs**: A list of documents.
-  * **customId**: The client ID.
+  * **customId**: The unique identifier for your document (matching the name of the folder in the storage solution where the document is uploaded).
   * **fileId**: The ID of the file.
   * **documentType**: The document type.
   * **minioPath**: The storage path for the document.
   * **downloadPath**: The download path for the document.
   * **noOfPages**: The number of pages in the document.
-
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/split_doc_reply.png)
+* **error**: Any error message in case of an error during the splitting process.
 
 Here's an example of the response JSON:
+
+#### Message Response Example
 
 ```json
 {
   "docs": [
     {
-      "customId": "1234_759769",
-      "fileId": 4743,
+      "customId": "119407",
+      "fileId": "c4e6f0b0-b70a-4141-993b-d304f38ec8e2",
       "documentType": "BULK",
       "documentLabel": null,
-      "minioPath": "qualitance-dev-paperflow-qa-process-id-759770/1234_759769/4743_BULK.pdf",
-      "downloadPath": "internal/files/4743/download",
+      "minioPath": "flowx-dev-process-id-119408/119407/466_BULK.pdf",
+      "downloadPath": "internal/files/c4e6f0b0-b70a-4141-993b-d304f38ec8e2/download",
       "noOfPages": 2,
       "error": null
     }
@@ -81,3 +149,8 @@ Here's an example of the response JSON:
   "error": null
 }
 ```
+
+
+The splitted document is now available in the storage solution and it can be downloaded:
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/2024-01-30%2013.39.35.gif)

@@ -891,7 +891,7 @@ const sidebars = {
 
                         { 
                           type: "doc",
-                          id: "platform-deep-dive/plugins/custom-plugins/documents-plugin/using-documents-plugin/updating-deleting-document-files"
+                          id: "platform-deep-dive/plugins/custom-plugins/documents-plugin/using-documents-plugin/deleting-a-file"
                         }, 
 
                         { 
