@@ -37,7 +37,7 @@ To configure a user task to be displayed in a Modal:
 
 ![Modal template](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/milestone_node_modal_config1.gif)
 
-## Available Components
+## Available components
 
 ### Modal
 

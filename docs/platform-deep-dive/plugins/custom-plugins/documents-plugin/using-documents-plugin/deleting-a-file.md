@@ -2,15 +2,15 @@
 sidebar_position: 5
 ---
 
-# Deleting Files
+# Deleting files
 
-The documents plugin provides functionality for deleting files.
+The Documents Plugin provides functionality for deleting files.
 
 ## Prerequisites
 
-Before deleting document files, ensure:
+Before deleting files, ensure:
 
-1. **Access Permissions**: Have the necessary permissions for updates or deletions. The user account used should have the required access rights.
+1. **Access Permissions**: Ensure that the user account used has the necessary access rights for updates or deletions.
 
 2. **Kafka Configuration**:
 
@@ -44,11 +44,11 @@ In the example below, we use a `fileId` generated for a document using [<u>**Upl
 ```
 :::
 
-## Configuring the Deletion Process
+## Configuring the deletion process
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/delete_file_proc.png)
 
-To delete files:
+To delete files, follow these steps:
 
 1. Create a process that includes a [**Message Event Send (Kafka)**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) node and [**a Message Event Receive (Kafka)**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) node:
 
@@ -62,10 +62,10 @@ To delete files:
 3. Specify the [**Kafka topic**](../../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md#kafka-configuration) for sending the delete request.
 
 :::tip
-Identify defined topics in your environment:
+To identify defined topics in your environment:
 
-1. Navigate to **Platform Status > FLOWX Components > document-plugin-mngt**  and press the eye icon on the right side.
-3. In the details screen, expand the `KafkaTopicsHealthCheckIndicator` line and then **details → configuration → topic → file → delete**. Here will find the in and out topics for deleting files.
+-  Navigate to **Platform Status > FLOWX Components > document-plugin-mngt** and click the eye icon on the right side.
+-  In the details screen, expand the `KafkaTopicsHealthCheckIndicator` line and then **details → configuration → topic → file → delete**. Here will find the in and out topics for deleting files.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/delete_topics.png)
 :::
@@ -74,7 +74,7 @@ Identify defined topics in your environment:
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/delete_request_message.png)
 
-#### Message Request Example
+#### Message request example
 
 Example of a message following the custom integration data model:
 
@@ -94,22 +94,22 @@ Example of a message following the custom integration data model:
 
 
 :::info
-The response will be sent to this `..out` Kafka topic.
+The response will be sent to `..out` Kafka topic.
 :::
 
 
-### Receiving the Reply
+### Receiving the reply
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/delete_response.png)
 
-Values expected in the reply body:
+The reply body should contain the following values:
 
-- **customId**: The unique identifier for your document
+- **customId**: The unique identifier for your document (it could be for example the ID of a client)
 - **fileId**: The ID of the file
 - **documentType**: The document type
 - **error**: Any error message in case of an error during the deleting process
 
-#### Message Response Example
+#### Message response example
 
 ```json
 {

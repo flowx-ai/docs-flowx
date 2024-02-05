@@ -1,17 +1,17 @@
 # Using the plugin
 
-Once you have deployed the Documents Plugin in your infrastructure, you can start creating various document templates. After selecting a document template, proceed to create a [**process definition**](../../../../../terms/flowx-process-definition) by including Kafka nodes and custom document-related actions in your process flow.
+Once you have deployed the Documents Plugin in your infrastructure, you can start creating various document templates. After selecting a document template, proceed to create a [**process definition**](../../../../../terms/flowx-process-definition) by including [**Message Event Send/Message Event Receive**](../../../../../building-blocks/node/message-send-received-task-node.md) (Kafka nodes) and custom document-related actions in your process flow.
 
 The plugin offers the following actions:
 
-* Generating docs based on templates
+* Generating documents based on templates
 * Uploading documents
 * Converting documents
 * Splitting documents
 * Updating / deleting documents
 * Getting URLs to documents
 * Listing stored documents
-* OCR integration
+* OCR(Optical Character Recognition) Integration
 
 Before adding these actions to your [**process definition**](../../../../../terms/flowx-process-definition), follow these steps:
 
@@ -23,7 +23,7 @@ The `..in` topic names configured for the plugin should match [**the `..out` top
 
 For more details about Process Engine Kafka topic configuration, click [<u>**here**</u>](../../../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#configuring-kafka).
 
-To make a request to the plugin, the process definition needs to have an action of type [**Kafka send**](../../../../../building-blocks/node/message-send-received-task-node.md#example-of-a-message-send-event) defined on a [**Message event send**](../../../../../building-blocks/node/message-send-received-task-node.md#message-send-task) node. The action parameter should have the key `topicName` and the corresponding topic name as its value.
+To make a request to the plugin, the process definition needs to include an action of type [**Kafka send**](../../../../../building-blocks/node/message-send-received-task-node.md#example-of-a-message-send-event) defined on a [**Message event send**](../../../../../building-blocks/node/message-send-received-task-node.md#message-send-task) node. The action parameter should have the key `topicName` and the corresponding topic name as its value.
 
 To receive a reply from the plugin, the process definition needs to include a [**Message event receive**](../../../../../building-blocks/node/message-send-received-task-node.md#message-receive-task) node with a node value having the key `topicName` and the topic name as its value.
 :::
@@ -32,7 +32,7 @@ Once the setup is complete, you can begin adding custom actions to your processe
 
 Let's explore a few examples that cover both the configuration and integration with the engine for all the use cases supported by the plugin:
 
-[Generating docs based on templates](../using-documents-plugin/generate-docs-based-on-templates/generate-docs-based-on-templates.md)
+[Generating documents based on templates](../using-documents-plugin/generate-docs-based-on-templates/generate-docs-based-on-templates.md)
 
 [Uploading a new document](./uploading-a-new-document.md)
 

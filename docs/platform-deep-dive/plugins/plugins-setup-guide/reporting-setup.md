@@ -1,4 +1,4 @@
-# Reporting Setup Guide
+# Reporting setup
 
 ## Introduction
 
@@ -17,7 +17,7 @@ The reporting plugin, available as a Docker image, requires the following depend
   - Utilizes Redis for efficient caching.
   - Exposes its user interface via an ingress.
 
-## Reporting Plugin Helm Chart Configuration
+## Reporting plugin helm chart configuration
 
 Configuring the reporting plugin involves several steps:
 
@@ -53,7 +53,7 @@ docker build ...
 kubectl apply -f operator/spark-app.yaml
 ```
 
-## Spark Operator Deployment Options
+## Spark Operator deployment options
 
 ### Without webhook
 
@@ -210,7 +210,7 @@ spec:
           REPORTING_DATABASE_PASSWORD: postgresql-password
 ```
 
-### Superset Configuration
+### Superset configuration
 
 Detailed Superset Configuration Guide:
 
@@ -220,7 +220,7 @@ Refer to Superset Documentation for in-depth information:
 
 [Superset documentation](https://superset.apache.org/docs/intro/)
 
-## Post-Installation Steps
+## Post-installation steps
 
 After installation, perform the following essential configurations:
 
@@ -253,7 +253,7 @@ To implement alternative user authentication:
 
 With this configuration, the login page changes to a prompt where the user can select the desired OpenID provider.
 
-### Extend the Security Manager
+### Extend the security manager
 
 Firstly, you will want to make sure that flask stops using `flask-openid` and starts using `flask-oidc` instead. 
 
@@ -311,7 +311,7 @@ Further, it replaces the default OpenID authentication view with a custom one:
 
 On authentication, the user is redirected back to Superset. 
 
-### Configure Superset Authentication
+### Configure Superset authentication
 
 Finally, we need to add some parameters to the superset .yml file:
 

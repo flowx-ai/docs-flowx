@@ -111,7 +111,7 @@ For more details on how to configure a Business Rule action, check the following
 
 [Business rule action](../actions/business-rule-action/business-rule-action.md)
 
-### Send data to user interface
+### Send Data to User Interface action
 
 Being an event-driven platform FLOWX uses web socket communication in order to push events from the frontend application.
 For more details on how to configure a Send data to user interface action, check the following section:
@@ -134,7 +134,7 @@ For more details on how to configure a Business Rule action, check the following
 
 [Start subprocess action](../actions/start-subprocess-action.md)
 
-### Append Params to Parent Process
+### Append Params to Parent Process action
 
 Used for copying data in the subprocess from its parent process.
 For more details about the configuration, check the following section:

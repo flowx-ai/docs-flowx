@@ -3,7 +3,7 @@ id: process
 sidebar_position: 1
 ---
 
-# Process designer
+# Process Designer
 
 The FLOWX.AI Process Designer workspace is designed for creating and editing business processes, the menu contains all elements required to create a process.
 

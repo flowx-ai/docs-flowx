@@ -1,4 +1,4 @@
-# License engine setup guide
+# License Engine setup guide
 
 ## Introduction
 

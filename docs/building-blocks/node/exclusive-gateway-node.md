@@ -6,7 +6,7 @@ sidebar_position: 5
 
 In the world of process [flows](../../terms/flowx-process), decisions play a crucial role, and that's where the Exclusive Gateway comes into play. This powerful tool enables you to create conditional pathways with ease.
 
-## Configuring an Exclusive gateway node
+## Configuring an Exclusive Gateway node
 
 ![Exclusive gateway](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/gateway_exclusive.png#center)
 
@@ -14,7 +14,7 @@ To configure this node effectively, it's essential to set up both the **input** 
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/gateway_exclusive_diagram.png)
 
-### General Configuration
+### General configuration
 
 * **Node name**: Give your node a meaningful name.
 * **Can go back**: Enabling this option allows users to revisit this step after completing it.
@@ -29,7 +29,7 @@ When a step has "Can Go Back" set to false, all preceding steps become inaccessi
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/gateway_exclusive_stages.png)
 
-### Gateway Decisions
+### Gateway decisions
 
 * **Language**: When configuring conditions, you can use [MVEL](/docs/platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-mvel.md) (or [DMN](#configuring-a-dmn-exclusive-gateway-node)) expressions that evaluate to either **true** or **false**.
 * **Conditions**: In the **Gateway Decisions** tab, you can see that the conditions (**if, else if, else**) are already built-in and you can **select** the destination node when the condition is **true**.
@@ -44,7 +44,7 @@ After the exclusive portion of the process, where one path is chosen over anothe
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/end_other_FLOW.png)
 
-## MVEL Example
+## MVEL example
 
 ### Getting input from a Switch UI element
 
@@ -81,8 +81,7 @@ The `application.company.vat` key corresponds to the switch UI element.
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/VAT_key.png)
 :::
 
-## DMN Example
-
+## DMN example
 
 If you prefer to use [DMN](/docs/platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-dmn.md) to define your gateway decisions, you can do so using exclusive gateways.
 

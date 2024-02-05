@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Converting Files
+# Converting files
 
 :::caution
 Currently, the supported conversion method is limited to transforming **PDF** files into **JPEG** format.
@@ -12,11 +12,11 @@ This guide provides step-by-step instructions on how to convert an uploaded file
 
 ## Prerequisites
 
-1. **Access Permissions**: Ensure that you have the necessary permissions to use documents plugin. The user account used for these operations should have the required access rights.
+1. **Access Permissions**: Ensure that you have the necessary permissions to use the Documents Plugin. The user account used for these operations should have the required access rights.
 
-2. **Kafka Configuration**: Verify that the Kafka messaging system is properly configured and accessible. The documents plugin relies on Kafka for communication between nodes.
+2. **Kafka Configuration**: Verify that the Kafka messaging system is properly configured and accessible. The Documents Plugin relies on Kafka for communication between nodes.
 
-    - **Kafka Topics**: Familiarize yourself with the Kafka topics used for these operations (later in this section)
+  - **Kafka Topics**: Familiarize yourself with the Kafka topics used for these operations (later in this section)
 
 3. Before initiating the conversion process, it is essential to identify the file in the storage solution using its unique ID. This ensures that the conversion is performed on an already uploaded file.
 
@@ -43,7 +43,7 @@ In the following example, we will use the `fileId` generated for [<u>**Uploading
 ```
 :::
 
-## Configuring the Process
+## Configuring the process
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/convert_pdf_to_jpeg.png)
 
@@ -74,7 +74,7 @@ To identify your defined topics in your current environment, follow the next ste
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/convert_action.png)
 
-#### Message Request Example
+#### Message request example
 
 :::info
 This is an example of a message that follows the custom integration data model.
@@ -88,7 +88,7 @@ This is an example of a message that follows the custom integration data model.
 ```
 
 * `fileId`: The file ID that will be converted 
-* `to`: The file extension to convert to (in this case, "jpeg")
+* `to`: The file extension to convert to (in this case, "JPEG")
 
 
 5. Configure the second node (**Message Receive**) by adding a **Data stream topic**:
@@ -115,7 +115,7 @@ The following values are expected in the reply body:
 * **error**: Any error message in case of an error during the conversion process
 
 
-#### Message Response Example
+#### Message response example
 
 ```json
 {
@@ -134,5 +134,6 @@ The converted file is now available in the storage solution and it can be downlo
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/jpg_final.png)
 
-
-Please note that the actual values in the response will depend on the specific conversion request and the document being converted.
+:::info
+Note that the actual values in the response will depend on the specific conversion request and the document being converted.
+:::

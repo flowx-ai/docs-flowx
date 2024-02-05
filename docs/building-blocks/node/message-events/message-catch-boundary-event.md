@@ -2,7 +2,7 @@
 sidebar_position: 2
 --- 
 
-# Message Catch Boundary Events
+# Message Catch Boundary events
 
 :::info quick intro
 **What is it?** A Message Catch Boundary Event is a special [**event**](../../../terms/events) that can be attached to a user task in a [**process**](../../../terms/flowx-process-definition). 
@@ -21,7 +21,7 @@ There are two types of Message Catch Boundary Events:
 * [**Interrupting**](#message-catch-interrupting-event)  
 * [**Non-Interrupting**](#message-catch-non-interrupting-event)
 
-## Message Catch Interrupting Event
+## Message Catch Interrupting event
 
 <div className = "image-scaled">
 
@@ -35,7 +35,7 @@ It can also be used as a standalone node, see more information on the following 
 
 [Message Catch Intermediate Event](message-catch-intermediate-event.md)
 
-## Message Catch Non-Interrupting Event
+## Message Catch Non-Interrupting event
 
 It is used only as a boundary event and is placed only on a user task. If your process is in that user task and receives [**events**](../../../terms/events), the event is activated, and a new token is created that advances independently. Sections with non-interrupting events should not contain user tasks. You can have multiple non-interrupting events on the same user task, and all of them can be activated simultaneously.
 
@@ -48,7 +48,7 @@ It is used only as a boundary event and is placed only on a user task. If your p
 
 A Non-Interrupting Message Catch Boundary Event also listens for messages while the associated task is being performed. However, in this case, the task is not immediately finished when messages are received. The event captures the messages, allowing the task to continue its execution. Multiple non-interrupting events can be received while the task is still active, and the task will continue until its completion.
 
-## Configuring a Message Catch Interrupting/Non-Interrupting Event
+## Configuring a Message Catch Interrupting/Non-Interrupting event
 
 #### General config
 

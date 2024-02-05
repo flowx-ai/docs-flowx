@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Splitting Documents
+# Splitting documents
 
 You can split a document into multiple parts using the Documents Plugin.
 
@@ -10,11 +10,11 @@ This guide provides step-by-step instructions on how to split a document, such a
 
 ## Prerequisites
 
-1. **Access Permissions**: Ensure that you have the necessary permissions to use documents plugin. The user account used for these operations should have the required access rights.
+1. **Access Permissions**: Ensure that you have the necessary permissions to use the Documents Plugin. The user account used for these operations should have the required access rights.
 
-2. **Kafka Configuration**: Verify that the Kafka messaging system is properly configured and accessible. The documents plugin relies on Kafka for communication between nodes.
+2. **Kafka Configuration**: Verify that the Kafka messaging system is properly configured and accessible. The Documents Plugin relies on Kafka for communication between nodes.
 
-    - **Kafka Topics**: Familiarize yourself with the Kafka topics used for these operations (later in this section)
+  - **Kafka Topics**: Familiarize yourself with the Kafka topics used for these operations (later in this section)
 
 3. Before initiating the splitting process, ensure you have the unique ID of the file in the storage solution. This ensures that the splitting is performed on an already uploaded file.
 
@@ -46,7 +46,7 @@ In the following example, we will use the `fileId` generated for a document with
 ```
 :::
 
-## Configuring the Splitting Process
+## Configuring the splitting process
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/split_document.png)
 
@@ -78,7 +78,7 @@ To identify your defined topics in your current environment, follow the next ste
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/split_kafka_action.png)
 
-#### Message Request Example
+#### Message request example
 
 ```json
 {
@@ -130,7 +130,7 @@ The following values are expected in the reply body:
 
 Here's an example of the response JSON:
 
-#### Message Response Example
+#### Message response example
 
 ```json
 {
@@ -150,7 +150,6 @@ Here's an example of the response JSON:
 }
 ```
 
-
-The splitted document is now available in the storage solution and it can be downloaded:
+The split document is now available in the storage solution and can be downloaded:
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/2024-01-30%2013.39.35.gif)

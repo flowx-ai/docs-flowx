@@ -1,85 +1,123 @@
 # Getting URLs for documents
 
-In certain scenarios, you may need to obtain URLs that point to uploaded documents to be used by other integrations. This requires adding a custom action to your process that requests the URLs from the Documents Plugin.
+In certain scenarios, obtaining URLs pointing to uploaded documents for use in integrations is essential. This process involves adding a custom action to your workflow that requests URLs from the Documents Plugin.
 
-## Sending the request
+## Prerequisites
 
-To retrieve document URLs and use them, for example, in the Notification Plugin to attach them to emails, follow the next steps:
+Before retrieving document URLs, ensure:
 
-1. Create a process and include the following nodes: 
-* a [**Kafka Send Event Node**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node),
-* a [**Kafka Receive Event Node**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node)
-* a [**User Task Node**](../../../../../building-blocks/node/user-task-node.md)
-* [**Start / End <ilestone**](../../../../../building-blocks/node/milestone-node.md) Nodes to [create a modal](../../../../../building-blocks/node/milestone-node.md#modal)
+1. **Access Permissions**: Ensure that the user account has the necessary access rights.
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/getting_urls_proc.png)
+2. **Kafka Configuration**:
 
-2. Configure the **User Task Node** and add an [**Upload Action**](../../../../../building-blocks/actions/upload-file-action.md) to it.
+- **Verify Kafka Setup**: Ensure proper configuration and accessibility of the Kafka messaging system.
+- **Kafka Topics**: Understand the Kafka topics used for these operations.
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/getting_urls_upload_ac.png)
+3.  **File IDs and Document Types**: Prepare information for updating or deleting files:
+ 
+- `fileId`: ID of the file to delete.
+- `customId`: Custom ID associated with the file.
+
+## Configuring the getting URLs process
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/get_urls_proc.png)
+
+To obtain document URLs, follow these steps:
+
+1. Create a process with the following nodes:
+   - [**Message Event Send**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) - to send the get URLs request
+   - [**Kafka Event Receive**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) - to receive the get URLs reply
+   - [**User Task Node**](../../../../../building-blocks/node/user-task-node.md) - where to perform the file upload action
+   - [**Start / End Milestone**](../../../../../building-blocks/node/milestone-node.md) nodes - to [create a page](../../../../../building-blocks/node/milestone-node.md#modal)
+
+2. Configure the **User Task Node**:
+
+#### Node Config
+
+* **Data stream topics**: Add the topic where the response will be sent; in this example `ai.flowx.updates.document.html.persist.v1` and its key: `uploadedDocument`.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/node_config_get_urls.png)
+
+#### Actions
+
+* Upload File action with two child actions:
+    * Business Rule
+    * Send Data to User Interface
+* Save Data action
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/upload_document_actions.png)
 
 3. Configure the parameters for the **Upload Action**:
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/getting_urls_upload_params.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/upload_action_get_urls.png)
 
 :::info
-For more details on uploading a document and configuring an upload action, refer to the following sections:
+For more details on uploading a document and configuring the file upload child actions, refer to the following sections:
 
-[**Upload document**](uploading-a-new-document.md)
-
-[**Upload action**](../../../../../building-blocks/actions/upload-file-action.md)
+* [<u>**Upload document**</u>](uploading-a-new-document.md)
+* [<u>**Upload action**</u>](../../../../../building-blocks/actions/upload-file-action.md)
 :::
 
-4. Configure the Kafka Send Event Node by adding a **Kafka Send Action** and specifying the [**Kafka topic**](../../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md#kafka-configuration) to send the request to:
+4. Next, configure the **Message Event Send** node by adding a **Kafka Send Action** and specifying the `..in` [**Kafka topic**](../../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md#kafka-configuration) to send the request.
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/getting_urls_topic.png)
+:::tip
+Identify defined topics in your environment:
+
+- Navigate to **Platform Status > FLOWX Components > document-plugin-mngt**  and press the eye icon on the right side.
+- In the details screen, expand the `KafkaTopicsHealthCheckIndicator` line and then **details → configuration → topic → document → get**. Here will find the in and out topics for getting URLs for documents.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/get_urls_kafka.png)
+:::
 
 5. Fill in the body of the request message for the action:
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/getting_urls_message.png)
+![Request Message](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/getting_urls_node.png)
 
-* `types` - a list of document types
+- `types`: A list of document types.
 
-6. Configure the [**Kafka Receive Event Node**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) by adding the kafka topic on which the response will be sent.
+#### Message request example
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/getting_urls_reply_topic.png)
+Example of a message following the custom integration data model:
 
-:::info
-Kafka topic names can be set by using environment variables:
+```json
+{
+  "types": [
+    "119435",
+    "119435"
+  ]
+}
+```
 
-* `KAFKA_TOPIC_DOCUMENT_GET_URLS_IN` - `ai.flowx.in.qa.document.urls.v1` - the topic that listens for the request from the engine
+6. Configure the [**Kafka Receive Event Node**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) by adding the `..out` kafka topic on which the response will be sent.
 
-* `KAFKA_TOPIC_DOCUMENT_GET_URLS_OUT` - `ai.flowx.updates.qa.document.urls.v1` - the topic on which the engine will expect the reply
-
-The example topic names above are from an internal testing environment. When setting topics for other environments, follow this pattern: `ai.flowx.updates.{{environment}}.document.urls.v1`.
-:::
-
-:::caution
-The Engine listens for messages on topics with specific naming patterns. Ensure that your outgoing topic name matches the pattern configured in the Engine.
-:::
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/get_urls_stream.png)
 
 ## Receiving the reply
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/getting_urls_response.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/getting_urls_response.png)
 
-The response body is expected to contain the following values:
-
-```json
-[
-    {
-        "success": true,
-        "fullName": "1234_771853/4752_771853.pdf",
-        "fileName": "1234_771853",
-        "fileExtension": "pdf",
-        "url": "<http://SOME_URL/1234_771853/4752_771853.pdf?X-Amz-Algorithm=SOME_ALGORITHM&X-Amz-Credential=SOME_CREDENTIAL&X-Amz-Date=20210223T113621Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=>"
-    }
-]
-```
+The response body should include the following values:
 
 * **success**: A boolean indicating whether the document exists and the URL was generated successfully.
 * **fullName**: The full name of the document file, including the directory path.
 * **fileName**: The name of the document file without the extension.
 * **fileExtension**: The extension of the document file.
 * **url**: The full download URL for the document.
+
+
+#### Message response example
+
+```json
+[
+  {
+    "success": true,
+    "fullName": "1234_119435/476_119435.pdf",
+    "fileName": "1234_119435/476_119435",
+    "fileExtension": "pdf",
+    "url": "http://minio:9000/flowx-dev-process-id-119435/1234_119435/476_119435.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=Ha0wvtOE9gQ2NSzghEcs%2F20240205%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240205T114232Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=da7db0c2a9b0fa5e43af458d5ade76dbe83ac1052ec4ccd738564ddb5ac9c6cd"
+  }
+]
+```
+
 
 

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 ---
-# Message Send/Message Receive Task Nodes
+# Message Send Event/Message Receive Event nodes
 
 **Message Event Send** and **Message Event Receive** [**nodes**](../../terms/flowx-node) are used to handle the interaction between a running process and external systems. This is done using [**Kafka**](../../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-kafka-concepts.md)
 

@@ -25,7 +25,6 @@ The `partition-strategy` property can have two possible values:
 **PROCESS_DATE**: Documents are saved in a single bucket with a subfolder structure based on the process date. For example: `bucket/2022/2022-07-04/process-id-xxxx/customer-id/file.pdf`.
 
 
-
 ## REST API
 
 The Documents Plugin provides the following REST API endpoints for interacting with the stored files:
@@ -38,15 +37,15 @@ The Documents Plugin provides the following REST API endpoints for interacting w
 
 This endpoint returns a list of available buckets.
 
-### List Objects in a Bucket
+### List objects in a bucket
 
 <summary><span class="getcall"><b>GET</b></span><b> documentURL/internal/storage/buckets/BUCKET_NAME </b></summary>
 
 <br></br>
 
-This endpoint retrieves a list of objects stored within a specific bucket. Replace `BUCKET_NAME` with the name of the desired bucket.
+This endpoint retrieves a list of objects stored within a specific bucket. Replace `BUCKET_NAME` with the actual name of the desired bucket
 
-### Download File
+### Download file
 
 <summary><span class="getcall"><b>GET</b></span><b> documentURL/internal/storage/download </b></summary>
 

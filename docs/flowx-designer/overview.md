@@ -65,7 +65,7 @@ sidebar_position: 2
 
 <summary>Plugins</summary>
 
-#### Task manager
+#### Task Management
 
 * it is a [**plugin**](../terms/flowx-plugins) suitable for back-officers and supervisors as it can be used to easily track and assign activities/tasks inside a company
 * for more information, check the [Task Management](../platform-deep-dive/plugins/custom-plugins/task-management/task-management.md) section
