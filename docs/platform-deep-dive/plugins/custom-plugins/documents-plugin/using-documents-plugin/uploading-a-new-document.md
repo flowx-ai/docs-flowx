@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Uploading a New Document
+# Uploading a new document
 
 This guide provides a detailed walkthrough for seamlessly integrating document uploads into a [**process definition**](../../../../../terms/flowx-process-definition) by incorporating a user task node with an **Upload action**. This feature empowers users to actively engage with the process and select the desired file for upload.
 
@@ -14,17 +14,17 @@ User task [**nodes**](../../../../../terms/flowx-node) provide a flexible framew
 
 ## Prerequisites
 
-1. **Access Permissions**: Ensure that you have the necessary permissions to use documents plugin. The user account used for these operations should have the required access rights.
+1. **Access Permissions**: Ensure that you have the necessary permissions to use the Documents Plugin. The user account used for these operations should have the required access rights.
 
-2. **Kafka Configuration**: Verify that the Kafka messaging system is properly configured and accessible. The documents plugin relies on Kafka for communication between nodes.
+2. **Kafka Configuration**: Verify that the Kafka messaging system is properly configured and accessible. The Documents Plugin relies on Kafka for communication between nodes.
 
-    - **Kafka Topics**: Familiarize yourself with the Kafka topics used for these operations (later in this section)
+  - **Kafka Topics**: Familiarize yourself with the Kafka topics used for these operations (later in this section)
 
 To upload a document using this process, follow the steps outlined below.
 
-## Uploading and Reviewing a Document - Step by Step
+## Uploading and reviewing a document - step by step
 
-### Defining the Process
+### Defining the process
 
 After exploring how to generate documents in the [previous section](./generate-docs-based-on-templates/generating-from-html-templates.md), let's create a process that enables users to generate a document, review/sign it, and subsequently upload it again.
 
@@ -39,7 +39,7 @@ Consider a scenario where a user inputs data, a document is generated for previe
 
 ### Configuring the process
 
-1. Follow the steps in [Generating from HTML templates](./generate-docs-based-on-templates/generating-from-html-templates.md) to set up the document generation part of the process.
+1. Follow the steps in [<u>**Generating from HTML templates**</u>](./generate-docs-based-on-templates/generating-from-html-templates.md) to set up the document generation part of the process.
 
 :::info
 If your goal is to only upload a new file without generating it from templates or requiring user input, you can skip the template generation step.
@@ -49,7 +49,7 @@ If your goal is to only upload a new file without generating it from templates o
 
 After following the steps you should have something similar to the following request/response examples:
 
-#### Request Message Example
+#### Request message example
 
 This JSON structure represents a Kafka message sent through the `..in` topic to initiate a request in the Process Engine. It includes information for generating an "AccountCreation" document with a custom ID "119237" in English. Data specifies client details extracted dynamically from user input (first name, last name, age, country) and company information (name, registration date).
 
@@ -84,7 +84,7 @@ This an example of a message that follows the custom integration data model.
 }
 ```
 
-#### Response Message Example
+#### Response message example
 
 This JSON structure represents the response received on the `..out` Kafka topic, where the Process Engine expects a reply. It contains details about the generated PDF file corresponding to the custom ID "119237" and the "AccountCreation" template. The response provides file-related information such as file ID, document type, document label, storage path, download path, number of pages, and any potential errors (null if none). The paths provided in the response facilitate access and download of the generated PDF file.
 
@@ -113,7 +113,7 @@ This JSON structure represents the response received on the `..out` Kafka topic,
 ![Preview and Upload](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/preview_and_upload.png)
 
 
-#### Document Path - Service Task
+#### Document path - Service Task
 
 Configure a business rule to construct a file path for the generated document. Ensure the base admin path is specified.
 
@@ -181,7 +181,7 @@ if(downloadPath != null){
 
 </details>
 
-#### Preview Document - User Task
+#### Preview document - User Task
 
 ##### **Actions**
 
@@ -203,7 +203,7 @@ Let's see what we have until now:
 
 ![Preview Document](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/preview_document_vis.gif)
 
-#### Upload Document - User Task
+#### Upload document - User Task
 
 ##### **Node Config**
 
@@ -224,7 +224,7 @@ Configure the following node actions:
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/upload_document_actions.png)
 
-###### Upload File Action
+###### Upload file action
 
 This is a standard predefined FLOWX.AI Node Action for uploading files. This is done through Kafka and by using `persist` topics.
 
@@ -245,9 +245,9 @@ This is a standard predefined FLOWX.AI Node Action for uploading files. This is 
 :::tip
 To identify your defined topics in your current environment, follow the next steps:
 
-1. From the FLOWX.AI main screen, navigate to the **Platform Status** menu at the bottom of the left sidebar.
-2. In the FLOWX Components list, scroll to the **document-plugin-mngt** line and press the eye icon on the right side.
-3. In the details screen, expand the `KafkaTopicsHealthCheckIndicator` line and then **details → configuration → topic → document → persist**. Here will find the in and out topics for persisting (uploading documents).
+- From the FLOWX.AI main screen, navigate to the **Platform Status** menu at the bottom of the left sidebar.
+- In the FLOWX Components list, scroll to the **document-plugin-mngt** line and press the eye icon on the right side.
+- In the details screen, expand the `KafkaTopicsHealthCheckIndicator` line and then **details → configuration → topic → document → persist**. Here will find the in and out topics for persisting (uploading documents).
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/kafka_topics_persist.png)
 :::
@@ -360,7 +360,7 @@ Configure the last node action to save all the data.
 * **Required Type**: Set as **Mandatory**.
 
 
-#### Request Message Example
+#### Request message example
 
 To initiate the document processing, a Kafka request with the following JSON payload will be sent through `..in` topic:
 
@@ -376,7 +376,7 @@ This an example of a message that follows the custom integration data model.
 }
 ```
 
-#### Response Message Example
+#### Response message example
 
 Upon successful processing, you will receive a JSON response on the `..out` topic with details about the processed document:
 
@@ -392,11 +392,12 @@ Upon successful processing, you will receive a JSON response on the `..out` topi
   "error": null
 }
 ```
-Now we have configured the screen where you can upload the signed document:
+
+Now the screen is configured for uploading the signed document:
 
 ![Upload File](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/upload_document_signed.gif)
 
-## Receiving The Reply
+## Receiving the reply
 
 The response, containing information about the generated and uploaded documents as mentioned earlier, is sent to the output Kafka topic defined in the Kafka Receive Event Node. The response includes details such as file IDs, document types, and storage paths.
 

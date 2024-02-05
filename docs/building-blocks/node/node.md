@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Nodes
 
-## What is a BPMN Node?
+## What is a BPMN node?
 
 A BPMN node is a visual representation of a point in your [**process**](../../terms/flowx-process). Nodes are added at specific process points to denote the entrance or transition of a record within the process.
 
@@ -12,14 +12,14 @@ A BPMN node is a visual representation of a point in your [**process**](../../te
 
 FLOWX platforms support various node types, each requiring distinct configurations to fulfill its role in the business flow.
 
-## Types of BPMN Nodes
+## Types of BPMN nodes
 
 Let's explore the key types of BPMN nodes available in FLOWX:
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/nodes_v2.png)
 
-+ **Start and End Nodes** - Mark the initiation and conclusion of a [process flow](../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-bpmn/intro-to-bpmn.md#bpmn-20-elements). A [process definition](../process/process-definition.md) may have multiple start nodes (each linked with a start condition) and end nodes based on the flow outcomes.
-+ **Message Send and Message Received Tasks** - Used for communication with external systems, integrations, and plugins.
++ **Start and End nodes** - Mark the initiation and conclusion of a [process flow](../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-bpmn/intro-to-bpmn.md#bpmn-20-elements). A [process definition](../process/process-definition.md) may have multiple start nodes (each linked with a start condition) and end nodes based on the flow outcomes.
++ **Message Send and Message Receive Events** - Used for communication with external systems, integrations, and plugins.
 + **Message Events** - Capture interactions between different process participants by referencing messages.
 + **Task Nodes** - Added when a [business rule](../actions/business-rule-action/business-rule-action.md) needs to execute during a process flow.
 + **User Task Nodes** - Configure the appearance and behavior of the UI and send data to custom components.
@@ -37,7 +37,6 @@ Advanced Node Type:
 </div>
 
 * **Subprocess Run Node** - A node providing advanced options for starting subprocesses.
-
 
 After gaining a comprehensive overview of each node, you can experiment with them to create a process. More details are available in the following section:
 

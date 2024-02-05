@@ -276,7 +276,6 @@ nodeDefinitionId" : 662856,
  ...
  ```
     
-
 ## Values 
 
 For more details, please check the following page:

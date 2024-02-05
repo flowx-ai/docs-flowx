@@ -32,7 +32,7 @@ Before using templates, ensure they are in a **Published** state. Document templ
 We've created a comprehensive course guiding you through the process of **Creating a Document Template in Designer**. Access the course [<u>**here**</u>](https://academy.flowx.ai/catalog/info/id:172) for detailed instructions and insights.
 :::
 
-## Sending a Document Generation Request
+## Sending a document generation request
 
 Consider a scenario where you need to send a personalized document to a customer based on specific details they provide. Create a process involving a [**User task**](../../../../../../building-blocks/node/user-task-node.md), a [**Kafka send event node**](../../../../../../building-blocks/node/message-send-received-task-node.md#message-send-task), and a [**Kafka receive event node**](../../../../../../building-blocks/node/message-send-received-task-node.md#message-receive-task).
 
@@ -115,7 +115,7 @@ Ultimately, the configuration should resemble the presented image:
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/receive_topic.png)    
 
-## Receiving the Document Generation Reply
+## Receiving the document generation reply
 
 The response, containing information about the generated documents, is sent to the output Kafka topic defined in the Kafka Receive Event Node. The response includes details such as file IDs, document types, and storage paths.
 
@@ -153,8 +153,7 @@ Here is an example of a response after generation (received on `generatedDocumen
 * **noOfPages**: The number of pages in the generated file.
 * **error**: If there were any errors encountered during the generation process, they would be specified here. In the provided example, the value is null, indicating no errors.
 
-
-## Displaying the Generated Document
+## Displaying the generated document
 
 Upon document generation, you now have the capability to present it using the Document Preview UI element. To facilitate this, let's optimize the existing process by introducing two supplementary nodes:
 
@@ -163,8 +162,6 @@ Upon document generation, you now have the capability to present it using the Do
 * **User Task**: In this phase, we seamlessly integrate the Document Preview UI Element. Here, we incorporate a key that contains the download path generated in the preceding node.
 
 For detailed instructions on displaying a generated or uploaded document, refer to the example provided in the following section:
-
-
 
 [Uploading a new document](./../uploading-a-new-document.md)
 

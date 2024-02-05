@@ -24,7 +24,7 @@
    - Interact with each process definition through actions such as opening the BPMN tab in edit mode, starting instances, and displaying branching options.
    - Contextual menu actions offer options to edit, open settings, view data modal, and delete process definitions.
 
-## Branching and Committing
+## Branching and committing
 
 "Branching Modal" feature provides more visibility and control over the process definitions. The process definition header includes details about the current version, such as its state (work in progress or submitted changes) and branch name.
 

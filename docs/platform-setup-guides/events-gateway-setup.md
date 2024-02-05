@@ -1,4 +1,4 @@
-# Events gateway setup guide
+# Events Gateway setup guide
 
 ## Introduction
 

@@ -1,4 +1,4 @@
-# Message Catch Intermediate Event
+# Message Catch Intermediate event
 
 :::info quick intro
 **What is it?** A Message Catch Intermediate Event is a type of event in a process that waits for a specific message before continuing with the process flow.
@@ -13,7 +13,7 @@ Similar to the Message Catch Boundary Event, the Message Catch Intermediate Even
 Message Catch Intermediate Event can be used as a standalone node, this means that it will block a process until it receives an event.
 :::
 
-## Configuring a Message Catch Intermediate Event
+## Configuring a Message Catch Intermediate event
 
 Imagine a process where multiple tasks are executed in sequence, but the execution of a particular task depends on the arrival of a certain message. By incorporating a Message Catch Intermediate Event after the preceding task, the process will pause until the expected message is received. This ensures that the subsequent task is not executed prematurely and allows for the synchronization of events within the process.
 

@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Message Throw Intermediate Event
+# Message Throw Intermediate event
 
 :::info quick intro
 **What is it?** It's like throwing a message to tell someone about something. After throwing the message, the process keeps going, and other parts of the process can listen to that message.
@@ -10,7 +10,7 @@ sidebar_position: 1
 **Why it is important?** The Message Throw Intermediate Event is important because it allows different parts of a process to communicate and share information with each other. 
 :::
 
-## Configuring a Message Throw Intermediate Event
+## Configuring a Message Throw Intermediate event
 
 A Message Throw Intermediate Event is an event in a process where a message is sent to trigger a communication or action with another part of the process (can be correlated with a catch event). It represents the act of throwing a message to initiate a specific task or notification. The event creates a connection between the sending and receiving components, allowing information or instructions to be transmitted. Once the message is thrown, the process continues its flow while expecting a response or further actions from the receiving component.
 

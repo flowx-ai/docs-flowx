@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Managing HTML Templates
+# Managing HTML templates
 
 The Document Management Plugin provides the flexibility to define and manage HTML templates for document generation, enabling customization through various parameter types. 
 
@@ -20,7 +20,7 @@ A WYSIWYG editor, typically provides two main views:
 
 Explore the different parameter types and their specifications:
 
-## Configuring HTML Templates
+## Configuring HTML templates
 
 In the following example, we will create an example of a template using the HTML View (Source View).
 
@@ -37,8 +37,6 @@ Access the WYSIWYG editor within the Document Management Plugin, found in the **
 :::tip
 To confirm the installed languages on the platform, go to **FLOWX.AI Designer → Content Management → Languages**.
 :::
-
-
 
 2. **Design the Document Header**:
 
@@ -82,7 +80,7 @@ Text parameters enable the inclusion of dynamic text in templates, allowing for 
 <section>
 ```
 
-Data Specifications:
+Data specifications:
 
 ```json
 "data": {
@@ -121,7 +119,7 @@ Create a dynamic table to showcase various details of the offer.
 </section>
 ```
 
-Data Specifications:
+Data specifications:
 
 ```json
 "data": {
@@ -155,7 +153,7 @@ Dynamic sections allow displaying specific content based on certain conditions. 
 <span th:if="${isActiveContract}"> </span></section>
 ```
 
-Data Specifications:
+Data specifications:
 
 ```json
 "data": {
@@ -186,7 +184,7 @@ Lists are useful for displaying values from selected items in a checkbox as a bu
 </section>
 ```
 
-Data Specifications:
+Data specifications:
 
 ```json
 {
@@ -329,7 +327,7 @@ In the end the template will look like this:
 
 ## Samples
 
-### Without Dynamic Data
+### Without dynamic data
 
 The final result after generating the template without dynamic data:
 
@@ -337,7 +335,7 @@ The final result after generating the template without dynamic data:
 Download PDF sample [<u>**here**</u>](../../../../../assets/HTMLExample.pdf).
 :::
 
-### With Dynamic Data
+### With dynamic data
 
 The final result after generating the template with the following dummy process data:
 

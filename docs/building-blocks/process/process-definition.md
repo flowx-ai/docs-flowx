@@ -197,7 +197,7 @@ When you create a new swimlane, it comes with two default permissions assigned b
 
 [Configuring access rights for processes](../../platform-setup-guides/flowx-engine-setup-guide/configuring-access-roles-for-processes.md)
 
-### Task management
+### Task Management
 
 The Task Management plugin offers a business-oriented view of the process you defined in the Designer and allows for interactions at the assignment level. It also includes a generic parameter pointing to the application URL where the Flowx process is loaded and uses process keys to search data stored in the process.
 
