@@ -13,10 +13,9 @@ Before retrieving document URLs, ensure:
 - **Verify Kafka Setup**: Ensure proper configuration and accessibility of the Kafka messaging system.
 - **Kafka Topics**: Understand the Kafka topics used for these operations.
 
-3.  **File IDs and Document Types**: Prepare information for updating or deleting files:
+3.  **Document Types**: Prepare information for updating or deleting files:
  
-- `fileId`: ID of the file to delete.
-- `customId`: Custom ID associated with the file.
+- `types`: A list of document types.
 
 ## Configuring the getting URLs process
 
