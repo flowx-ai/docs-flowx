@@ -54,10 +54,10 @@ To create a process that splits a document into multiple parts, follow these ste
 
 1. Create a process that includes a [**Message Event Send (Kafka)**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) node and [**a Message Event Receive (Kafka)**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) node:
 
-* Use the **Message Send** node to send the splitting request.
-* Use the **Message Receive** node to receive the splitting reply.
+* Use the **Send Message Task** node to send the splitting request.
+* Use the **Receive Message Task** node to receive the splitting reply.
 
-2. Configure the **first node (Message Send)** by adding a **Kafka send** action.
+2. Configure the **first node (Send Message Task)** by adding a **Kafka Send Action**.
 
 3. Specify the [**Kafka topic**](../../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md#kafka-configuration) where you want to send the splitting request.
 
@@ -105,7 +105,7 @@ To identify your defined topics in your current environment, follow the next ste
   * **pagesNo**: The pages that you want to separate from the document
 
 
-5. Configure the **second node (Message Receive)** by adding a Data stream topic:
+5. Configure the **second node (Receive Message Task)** by adding a Data stream topic:
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/split_response_kafka.png)
 

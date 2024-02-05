@@ -81,7 +81,7 @@ The [**`data` parameters**](../wysiwyg.md) must be defined in the document templ
 * to include a **custom barcode**, set `includeBarCode: false` and provide the desired data in the `data` field
 :::
 
-5. Add a [**message received event**](../../../building-blocks/node/message-send-received-task-node.md#message-receive-task) node and specify the topic where you want to receive the response.
+5. Add a [**Receive Message Task**](../../../building-blocks/node/message-send-received-task-node.md#message-receive-task) node and specify the topic where you want to receive the response.
 
 :::caution 
 Ensure that the topic matches the one defined in the **`KAFKA_TOPIC_DOCUMENT_GENERATE_HTML_OUT`** variable. 
@@ -89,7 +89,7 @@ Ensure that the topic matches the one defined in the **`KAFKA_TOPIC_DOCUMENT_GEN
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/ocr_receive_response.png)
 
-6. Add a [**user task node**](../../../building-blocks/node/user-task-node) and configure an [**Upload file action**](../../../building-blocks/actions/upload-file-action.md) to send the file (defined by the **`KAFKA_TOPIC_DOCUMENT_PERSIST_IN`** variable) to the storage solution (for example, S3).
+6. Add a [**User Task**](../../../building-blocks/node/user-task-node) node and configure an [**Upload File**](../../../building-blocks/actions/upload-file-action.md) action to send the file (defined by the **`KAFKA_TOPIC_DOCUMENT_PERSIST_IN`** variable) to the storage solution (for example, S3).
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/ocr_upload_file.png)
 

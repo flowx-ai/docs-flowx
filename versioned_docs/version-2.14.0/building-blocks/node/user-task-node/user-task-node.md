@@ -212,4 +212,4 @@ Example:
 
 For more details, please check the following page:
 
-[Message send receive task](../message-send-received-task-node)
+[Send Message/Receive Message tasks](../message-send-received-task-node)

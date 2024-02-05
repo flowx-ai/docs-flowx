@@ -49,12 +49,12 @@ In the following example, we will use the `fileId` generated for [<u>**Uploading
 
 To create a process that converts a document from PDF to JPEG format, follow these steps:
 
-1. Create a process that includes a [**Message Event Send (Kafka)**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) node and a [**Message Event Receive (Kafka)**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) node:
+1. Create a process that includes a [**Send Message Task (Kafka)**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) node and a [**Receive Message Task (Kafka)**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) node:
 
-* Use the **Message Send** node to send the conversion request.
-* Use the **Receive Node** node to receive the reply.
+* Use the **Send Message Task** node to send the conversion request.
+* Use the **Receive Message Task** node to receive the reply.
 
-2. Configure the first node (**Message Send**) by adding a **Kafka send action**.
+2. Configure the first node (**Send Message Task**) by adding a **Kafka send action**.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/convert_action_name.png)
 
@@ -91,7 +91,7 @@ This is an example of a message that follows the custom integration data model.
 * `to`: The file extension to convert to (in this case, "JPEG")
 
 
-5. Configure the second node (**Message Receive**) by adding a **Data stream topic**:
+5. Configure the second node (**Receive Message Task**) by adding a **Data stream topic**:
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/convert_stream.png)
 

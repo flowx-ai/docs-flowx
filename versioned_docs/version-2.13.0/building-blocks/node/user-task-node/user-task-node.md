@@ -128,7 +128,7 @@ To add a custom component in the template config tree, we need to know its uniqu
 
 More details in the following section:
 
-[Custom](../../ui-designer/ui-component-types/root-components/custom.md
+[Custom](../../ui-designer/ui-component-types/root-components/custom.md)
 
 The sections that can be configured are as follows:
 
@@ -212,4 +212,4 @@ Example:
 
 For more details, please check the following page:
 
-[Message send receive task](../message-send-received-task-node)
+[Send Message Task](../message-send-received-task-node)

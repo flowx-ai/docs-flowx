@@ -14,7 +14,7 @@ Integrations must be compatible with Kafka, so they can communicate with externa
 After defining one integration (inside **Integration management**) you can open a compatible node and start using them.
 
 :::info
-Integrations are used with the following nodes: [task nodes](../../../../building-blocks/node/task-node/task-node.md), [user task nodes](../../../../building-blocks/node/user-task-node/user-task-node.md), [message send tasks](../../../../building-blocks/node/message-send-received-task-node.md#message-send-task), and [message receive tasks](../../../../building-blocks/node/message-send-received-task-node.md#message-receive-task)).
+Integrations are used with the following nodes: [task nodes](../../../../building-blocks/node/task-node/task-node.md), [user task nodes](../../../../building-blocks/node/user-task-node/user-task-node.md), [send message tasks](../../../../building-blocks/node/message-send-received-task-node.md#message-send-task), and [receive message tasks](../../../../building-blocks/node/message-send-received-task-node.md#message-receive-task).
 :::
 
 You can easily create or import an integration using the **Integration management** feature just by accessing **FLOWX.AI Admin → Integration management**.
