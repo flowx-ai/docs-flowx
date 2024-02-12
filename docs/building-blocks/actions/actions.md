@@ -12,16 +12,16 @@ sidebar_position: 3
 
 The FLOWX.AI platform handles the following **types of actions**:
 
-* [Business Rule](./business-rule-action)
+* [Business rule](./business-rule-action)
 * Save Data
-* [Kafka Send](../node/message-send-received-task-node.md)
+* [Kafka send](../node/message-send-received-task-node.md)
 * [Send data to user interface](./send-data-to-user-interface.md)
-* [Upload File](./upload-file-action)
-* [Start Subprocess](./start-subprocess-action)
-* [Append Params to Parent Process](./append-params-to-parent-process)
+* [Upload file](./upload-file-action)
+* [Start subprocess](./start-subprocess-action)
+* [Append params to parent process](./append-params-to-parent-process)
 
 :::info
-You can only define and add actions on the following types of [**nodes**](../../terms/flowx-node): [**Send Message Task**](../node/message-send-received-task-node.md#message-send-task), [**Task**](../node/task-node.md) and [**User task**](../node/user-task-node.md).
+You can only define and add actions on the following types of [**nodes**](../../terms/flowx-node): [**send message task**](../node/message-send-received-task-node.md#message-send-task), [**task**](../node/task-node.md) and [**user task**](../node/user-task-node.md).
 :::
 
 ### Action rules

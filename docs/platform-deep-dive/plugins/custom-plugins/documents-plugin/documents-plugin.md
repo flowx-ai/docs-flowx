@@ -4,19 +4,19 @@ sidebar_position: 1
 
 # Documents plugin
 
-The Documents Plugin can be easily added to your custom FLOWX.AI deployment to **enhance the core platform capabilities with functionality specific to document handling**.
+The Documents plugin can be easily added to your custom FLOWX.AI deployment to **enhance the core platform capabilities with functionality specific to document handling**.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/doc_plugin_general.png)
 
 The plugin offers the following features:
 
-* **Document Storage and Editing**: Easily store and make changes to documents.
-* **Document Generation**: Generate documents using predefined templates and custom process-related data.
-* **WYSIWYG Editor**: Create various templates using a user-friendly ["What You See Is What You Get" (WYSIWYG) editor](../../wysiwyg.md).
+* **Document storage and editing**: Easily store and make changes to documents.
+* **Document generation**: Generate documents using predefined templates and custom process-related data.
+* **WYSIWYG editor**: Create various templates using a user-friendly ["What You See Is What You Get" (WYSIWYG) editor](../../wysiwyg.md).
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/doc_plugin_wysiwyg.png)
     
-* **Template Import**: Import templates created in other environments.
+* **Template import**: Import templates created in other environments.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/doc_plugin_create_import.png)
 
@@ -24,15 +24,15 @@ The plugin offers the following features:
 When exporting a document template, it is transformed into a JSON file that can be imported later.
 :::
 
-* **Document Conversion**: Convert documents from PDF to JPEG format.
-* **Document Splitting**: Split bulk documents into smaller separate documents.
-* **Document Editing**: Add generated barcodes, signatures, and assets to documents.
-* **OCR integration**: When a document requires OCR (Optical Character Recognitionq) processing, the Documents Plugin initiates the interaction by passing the document data or reference to the [**OCR Plugin**](../ocr-plugin.md).
+* **Document conversion**: Convert documents from PDF to JPEG format.
+* **Document splitting**: Split bulk documents into smaller separate documents.
+* **Document editing**: Add generated barcodes, signatures, and assets to documents.
+* **OCR integration**: When a document requires OCR (Optical Character Recognitionq) processing, the Documents Plugin initiates the interaction by passing the document data or reference to the [**OCR plugin**](../ocr-plugin.md).
 
-The Documents Plugin can be easily deployed on your chosen infrastructure, preloaded with industry-specific document templates using an intuitive WYSIWYG editor, and connected to the FLOWX Engine through Kafka events.
+The Documents plugin can be easily deployed on your chosen infrastructure, preloaded with industry-specific document templates using an intuitive WYSIWYG editor, and connected to the FLOWX Engine through Kafka events.
 
-* [<u>**Kafka send event node**</u>](../../../../building-blocks/node/message-send-received-task-node.md#message-send-task)
-* [<u>**Kafka receive event node**</u>](../../../../building-blocks/node/message-send-received-task-node.md#message-receive-task)
+* [<u>**Send message task (kafka)**</u>](../../../../building-blocks/node/message-send-received-task-node.md#message-send-task)
+* [<u>**Receive message task (kafka)**</u>](../../../../building-blocks/node/message-send-received-task-node.md#message-receive-task)
 
 Let's go through the steps needed to deploy and set up the plugin:
 

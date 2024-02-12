@@ -1,4 +1,4 @@
-# Message Catch Intermediate event
+# Message catch intermediate event
 
 :::info quick intro
 **What is it?** A Message Catch Intermediate Event is a type of event in a process that waits for a specific message before continuing with the process flow.
@@ -7,15 +7,15 @@
 :::
 
 
-Similar to the Message Catch Boundary Event, the Message Catch Intermediate Event is important because it facilitates the communication and coordination between process instances through messages. By incorporating this event, the process can effectively synchronize and control the flow based on the arrival of specific messages.
+Similar to the message catch boundary event, the message catch intermediate event is important because it facilitates the communication and coordination between process instances through messages. By incorporating this event, the process can effectively synchronize and control the flow based on the arrival of specific messages.
 
 :::info
 Message Catch Intermediate Event can be used as a standalone node, this means that it will block a process until it receives an event.
 :::
 
-## Configuring a Message Catch Intermediate event
+## Configuring a message catch intermediate event
 
-Imagine a process where multiple tasks are executed in sequence, but the execution of a particular task depends on the arrival of a certain message. By incorporating a Message Catch Intermediate Event after the preceding task, the process will pause until the expected message is received. This ensures that the subsequent task is not executed prematurely and allows for the synchronization of events within the process.
+Imagine a process where multiple tasks are executed in sequence, but the execution of a particular task depends on the arrival of a certain message. By incorporating a message catch intermediate event after the preceding task, the process will pause until the expected message is received. This ensures that the subsequent task is not executed prematurely and allows for the synchronization of events within the process.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_catch_intermediate_event.png#center)
 

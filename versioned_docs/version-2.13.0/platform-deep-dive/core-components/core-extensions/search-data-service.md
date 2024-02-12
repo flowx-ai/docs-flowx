@@ -20,7 +20,7 @@ Use case:
 
 1. Create a process using Process Designer.
 2. From the newly created process where you want to perform the search, add a [Task Node](../../../building-blocks/node/task-node). 
-3. Configure a send event via a [Kafka send action](../../../building-blocks/node/message-send-received-task-node.md#example-of-a-message-send-event).
+3. Configure a Send Message Task via a [Kafka send action](../../../building-blocks/node/message-send-received-task-node.md#example-of-a-message-send-event).
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/kafka_send_action_search.png)
 4. Configure the following items:
     + **Topic name** - the Kafka topic on which the search service listens for requests; ❗️respect the [naming pattern](../../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#kafka-configuration)

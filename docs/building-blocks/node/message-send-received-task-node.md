@@ -1,23 +1,23 @@
 ---
 sidebar_position: 2
 ---
-# Send Message/Receive Message tasks
+# Send message/receive message tasks
 
-**Send Message Task** and **Receive Message Task** [**nodes**](../../terms/flowx-node) are used to handle the interaction between a running process and external systems. This is done using [**Kafka**](../../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-kafka-concepts.md)
+**Send message task** and **receive message task** [**nodes**](../../terms/flowx-node) are used to handle the interaction between a running process and external systems. This is done using [**Kafka**](../../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-kafka-concepts.md)
 
-## Send Message Task
+## Send message task
 
 This node is used to configure messages that should be sent to external systems.
 
 ![Send Message Task](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/send-task_node.svg#center)
 
-### Configuring a Send Message Task
+### Configuring a send message task
 
-Node configuration is done by accessing the **Node Config** tab. You have the following configuration options for a Send Message Task:
+Node configuration is done by accessing the **Node Config** tab. You have the following configuration options for a send message task:
 
-#### General Config
+#### General configuration
 
-Inside the General Config, you have the following properties:
+Inside the **General Config** tab, you have the following properties:
 
 * **Node Name** - the name of the node
 * **Can Go Back** - switching this option to true will allow users to return to this step after completing it
@@ -32,11 +32,11 @@ When encountering a step with `canGoBack` switched to false, all steps found beh
 
 ![General Config](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_send_task_action.png)
 
-To configure a Send Message Task, we first need to add a new node and then configure an [**action**](../../terms/flowx-actions) (**Kafka Send Action** type):
+To configure a send message task, we first need to add a new node and then configure an [**action**](../../terms/flowx-actions) (**Kafka Send Action** type):
 
 1. Open [**Process Designer**](../../terms/flowx-process-designer) and start configuring a process.
-2. Add a **Send Message Task** node.
-3. Select the **Send Message Task** node and open the **Node Configuration**.
+2. Add a **send message task** node.
+3. Select the **send message task** node and open the **Node Configuration**.
 4. Add an [**action**](../../terms/flowx-actions), the type of the action set to **Kafka Send Action**.
 5. :exclamation: A few action parameters will need to be filled in depending on the selected action type.
 
@@ -83,7 +83,7 @@ For more information about Kafka, check the following sections:
 
 [Kafka documentation](https://kafka.apache.org/documentation/)
 
-### Example of a Send Message Task usage
+### Example of a send message task usage
 
 Send a message to a CRM integration to request a search in the local database:
 

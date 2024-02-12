@@ -54,10 +54,10 @@ To create a process that splits a document into multiple parts, follow these ste
 
 1. Create a process that includes a [**Message Event Send (Kafka)**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) node and [**a Message Event Receive (Kafka)**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) node:
 
-* Use the **Send Message Task** node to send the splitting request.
-* Use the **Receive Message Task** node to receive the splitting reply.
+* Use the **send message task** node to send the splitting request.
+* Use the **receive message task** node to receive the splitting reply.
 
-2. Configure the **first node (Send Message Task)** by adding a **Kafka Send Action**.
+2. Configure the **first node (send message task)** by adding a **Kafka Send Action**.
 
 3. Specify the [**Kafka topic**](../../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md#kafka-configuration) where you want to send the splitting request.
 

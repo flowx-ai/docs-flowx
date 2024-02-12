@@ -28,9 +28,9 @@ It can be quickly deployed on the chosen infrastructure, preloaded with the need
 
 It can be easily used and integrated into your business [processes definitions](../../../../building-blocks/process/process-definition/process-definition.md) by using Kafka send/receive event nodes.
 
-[Kafka send event node](../../../../building-blocks/node/message-send-received-task-node.md#message-send-task)
+[Send Message Task](../../../../building-blocks/node/message-send-received-task-node.md#message-send-task)
 
-[Kafka receive event node](../../../../building-blocks/node/message-send-received-task-node.md#message-receive-task)
+[Receive Message Task](../../../../building-blocks/node/message-send-received-task-node.md#message-receive-task)
 
 Let's go through the steps needed to deploy and set up the plugin:
 

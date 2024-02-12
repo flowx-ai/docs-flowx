@@ -98,7 +98,7 @@ output.put("resultsNumber", 0);
 For displaying results in the UI, you can also consider utilizing [<u>**Collections**</u>](../../../building-blocks/ui-designer/ui-component-types/collection) UI element.
 :::
 
-3. Add a user task and configure a send event using a [<u>**Kafka send action**</u>](../../../building-blocks/node/message-send-received-task-node.md#example-of-a-message-send-event). Configure the following parameters:
+3. Add a **user task** and configure a **send message task** using a [<u>**Kafka send action**</u>](../../../building-blocks/node/message-send-received-task-node.md#example-of-a-message-send-event). Configure the following parameters:
 - **Topic name**: The Kafka topic for the search service requests (defined at `KAFKA_TOPIC_DATA_SEARCH_IN` env variable in your deployment).
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/search_in_topic.png)
