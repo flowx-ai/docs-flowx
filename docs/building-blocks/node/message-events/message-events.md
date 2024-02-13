@@ -8,39 +8,20 @@ By leveraging message events, processes can pause their execution until the expe
 
 FLOWX.AI works with the following message events nodes:
 
+* [**Message catch start event**](message-catch-start-event.md) 
 * [**Message throw intermediate event**](message-throw-intermediate-event.md)
-* [**Message catch boundary event**](message-catch-boundary-event.md)
 * [**Message catch intermediate event**](message-catch-intermediate-event.md)
-* [**Message catch start event**](message-catch-start-event.md)
+* [**Message catch boundary event**](message-catch-boundary-event.md)
 
-### Message throw intermediate event
 
-This event throws a message and continues with the process flow.
-It enables the sending of a message to a unique destination.
-
-[Message Throw Intermediate Event](message-throw-intermediate-event.md)
-      
-###  Message catch boundary event
+### Message catch boundary event
 
 This type of event can be triggered at any time while the associated task is being performed.
 For an interrupting event, when the message is received, the user task is finished, and the token advances in the process flow.
 For a non-interrupting event, the user task to which the event is attached is not finished immediately when messages are received. Multiple non-interrupting events can be received while the token is still active in the user task.
 
-
 [Message Catch Boundary Event](message-catch-boundary-event.md)
 
-### Message catch intermediate event
-
-This event waits for a message to be caught before continuing with the process flow.
-
-[Message Catch Intermediate Event](message-catch-intermediate-event.md)
-
-###  Message catch start event
-
-This event starts an instance after receiving a message.
-The correlation key is optional, and if an instance with the same correlation key exists, a new process instance is not created.
-
-[Message Catch Start Event](message-catch-start-event.md)
 
 ### Message events correlation
 

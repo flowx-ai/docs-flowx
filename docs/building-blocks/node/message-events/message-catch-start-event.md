@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Message catch start event
 
 :::info quick intro

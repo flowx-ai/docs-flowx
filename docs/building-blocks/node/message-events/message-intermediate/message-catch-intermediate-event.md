@@ -1,4 +1,10 @@
+---
+sidebar_position: 3
+---
+
 # Message catch intermediate event
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_catch_intermediate_event.png#center)
 
 :::info quick intro
 **What is it?** A Message Catch Intermediate Event is a type of event in a process that waits for a specific message before continuing with the process flow.
@@ -17,7 +23,11 @@ Message Catch Intermediate Event can be used as a standalone node, this means th
 
 Imagine a process where multiple tasks are executed in sequence, but the execution of a particular task depends on the arrival of a certain message. By incorporating a message catch intermediate event after the preceding task, the process will pause until the expected message is received. This ensures that the subsequent task is not executed prematurely and allows for the synchronization of events within the process.
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_catch_intermediate_event.png#center)
+<div class= "image-scaled">
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/message_catch_intrmdt.png)
+
+</div>
 
 #### General config
 
@@ -27,4 +37,4 @@ Imagine a process where multiple tasks are executed in sequence, but the executi
 * **Receive data** - the process key that will be used to store the data received along with the message
 * **Stage** - assign a stage to the node
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_catch_intermediate_config.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/message_catch_intrmdt_cfg.png)
