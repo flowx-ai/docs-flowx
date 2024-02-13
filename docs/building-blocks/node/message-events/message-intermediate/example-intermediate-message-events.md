@@ -4,13 +4,15 @@ Business processes often involve dynamic communication and coordination between 
 
 In the following example, we'll explore a credit card request process that encompasses the initiation of a customer's request, verification based on income rules, approval or rejection pathways, and communication between the client and back office. 
 
-## Credit card request process example
+## Throw and catch on sequence
+
+### Credit card request process example
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/throw_catch_intermediate_process.png)
 
-## Activities
+#### Activities
 
-### Default swimlane (client)
+##### Default swimlane (client)
 
 - **Start Event:** Marks the commencement of the process.
 - **User Task 1:** Customer Requests New Credit Card - Involves the customer submitting a request for a new credit card.
@@ -31,13 +33,13 @@ In the following example, we'll explore a credit card request process that encom
       - **End Event:** Signifies the end of the process for rejected applications.
 
 
-#### Backoffice swimlane
+##### Backoffice swimlane
 
 - **Message Catch Intermediate Event:** The back office department awaits a message to proceed with credit card issuance.
 - **Send Message Task:** Send Rejection Letter - Involves sending a rejection letter to the customer.
 
 
-## Sequence flow
+### Sequence flow
 
 ```mermaid
 graph TD
@@ -56,13 +58,13 @@ graph TD
 ```
 
 
-## Message flows
+### Message flows
 
 A message flow connects the Message Throw Intermediate Event to the Message Catch Intermediate Event, symbolizing the communication of credit card approval from the credit card approval task to the card issuance department.
 
 In summary, when a customer initiates a new credit card request, the bank verifies the information. If approved, a message is thrown to trigger the credit card issuance process. The Message Catch Intermediate Event in the credit card issuance department awaits this message to proceed with issuing and sending the credit card to the customer.
 
-# Configuring the BPMN Process
+### Configuring the BPMN process
 
 To implement the illustrated BPMN process for the credit card request, follow these configuration steps:
 
@@ -119,7 +121,7 @@ Define the content of the rejection letter, the method of notification, and any 
 9. **Validate and Test**: Validate the BPMN diagram for correctness and completeness. Test the process flow by simulating different scenarios, such as positive and negative verifications.
 
 
-##  Configuring the intermediate message events
+### Configuring the intermediate message events
 
 Configuring message events is a crucial step in orchestrating effective communication and synchronization within a business process. Whether you are initiating a message throw or awaiting a specific message with a catch, the configuration process ensures seamless information exchange between different components of the workflow. 
 
@@ -127,7 +129,7 @@ In this section, we explore the essential steps and parameters involved in setti
 
 From correlating events to defining data structures, each configuration choice plays a pivotal role in shaping the flow and coordination of your business processes.
 
-### Message throw intermediate event
+#### Message throw intermediate event
 
 A Message Throw Intermediate Event is an event in a process where a message is sent to trigger communication or action with another part of the process (can be correlated with a catch event). It represents the act of throwing a message to initiate a specific task or notification. The event creates a connection between the sending and receiving components, allowing information or instructions to be transmitted. Once the message is thrown, the process continues its flow while expecting a response or further actions from the receiving component.
 
@@ -137,7 +139,7 @@ A Message Throw Intermediate Event is an event in a process where a message is s
 
 </div>
 
-#### General Configuration
+##### General Configuration
 
 * **Can go back?** - Setting this to true allows users to return to this step after completing it. When encountering a step with `canGoBack` false, all steps found behind it will become unavailable.
 
@@ -167,7 +169,7 @@ In the end, this is what we have:
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/message_throw_config.png)
 
 
-### Message catch intermediate event
+#### Message catch intermediate event
 
 A Message Catch Intermediate Event is a type of event in a process that waits for a specific message before continuing with the process flow. It enables the process to synchronize and control the flow based on the arrival of specific messages, ensuring proper coordination between process instances.
 
@@ -177,7 +179,7 @@ A Message Catch Intermediate Event is a type of event in a process that waits fo
 
 </div>
 
-#### General Configuration
+##### General Configuration
 
 * **Can go back?** - Setting this to true allows users to return to this step after completing it. When encountering a step with `canGoBack` false, all steps found behind it will become unavailable.
 * **Correlate with throwing events** - The dropdown contains all catch messages from the process definitions accessible to the user (must be the same as the one assigned in Message throw intermediate event)
@@ -188,7 +190,7 @@ A Message Catch Intermediate Event is a type of event in a process that waits fo
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/message_catch_intrmdt_cfg.png)
 
 
-## Testing the final result
+### Testing the final result
 
 After configuring the BPMN process and setting up all the nodes, it is crucial to thoroughly test the process to ensure its accuracy and effectiveness. 
 
@@ -201,3 +203,76 @@ We will test the path where the user gets rejected.
 In the end, the user will receive this notification via email:
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/notification_received.png)
+
+
+## Interprocess communication with throw and catch events
+
+Facilitate communication between different processes by using message intermediate events. 
+
+Implement a message throw intermediate event in one process to initiate a message, and complement it with a message catch intermediate event in another process to receive and respond to the message. 
+
+1. Parent Subprocess:
+
+- Contains a subprocess run node.
+- Includes a throw message intermediate event to initiate communication.
+
+2. Child Process:
+
+- Initiated by the subprocess run node in the parent subprocess.
+- Incorporates a message catch intermediate event to receive the message.
+
+#### Steps in Detail:
+
+1. **Parent Subprocess:**
+   - Add a subprocess run node.
+   - Integrate a throw message intermediate event within the subprocess to initiate communication.
+
+2. **Child Process:**
+   - Initiate this process from the subprocess run node in the parent subprocess.
+   - Implement a message catch intermediate event to receive and process the message from the parent.
+
+### Sequence flow
+
+```mermaid
+graph TD
+  subgraph ParentSubprocess
+    a[Start]
+    b(SubprocessRunNode)
+    c[ThrowEvent]
+  end
+
+  subgraph ChildProcess
+    d(CatchEvent)
+    e[End]
+  end
+
+  a --> b --> c --> d --> e
+```
+
+### Message flows
+
+- Parent subprocess triggers the subprocess run node, initiating the child process.
+- Within the child process, a message catch event waits for and processes the message thrown by the parent subprocess.
+
+
+
+### Configuring the Parent Process (throw event)
+
+1. Open **FLOWX.AI Designer** and create a new process.
+2. Add a User Task for User Input:
+
+- Within the designer interface, add a "User Task" element to collect user input. Configure the user task to capture the necessary information that will be sent along with the message.
+
+3. Incorporate a **Subprocess Run Node**:
+
+- Add a "Subprocess Run Node".
+- Configure the subprocess run node by specifying the name of the subprocess you intend to run. The subprocess that you add should contain the message catch event.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/throw_subprocess_config.png)
+
+4. Insert a Throw Event for Message Initiation:
+
+- Add a "Throw Event" to the canvas, indicating the initiation of a message.
+- Connect the user task and subprocess run node to this throw event.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/throw_and_subproces_run.png)

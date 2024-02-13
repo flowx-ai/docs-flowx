@@ -14,15 +14,6 @@ FLOWX.AI works with the following message events nodes:
 * [**Message catch boundary event**](message-catch-boundary-event.md)
 
 
-### Message catch boundary event
-
-This type of event can be triggered at any time while the associated task is being performed.
-For an interrupting event, when the message is received, the user task is finished, and the token advances in the process flow.
-For a non-interrupting event, the user task to which the event is attached is not finished immediately when messages are received. Multiple non-interrupting events can be received while the token is still active in the user task.
-
-[Message Catch Boundary Event](message-catch-boundary-event.md)
-
-
 ### Message events correlation
 
 Messages are not sent directly to process instances. Instead, message correlation is achieved through message subscriptions, which consist of the message name and the correlation key (also referred to as the correlation value).
