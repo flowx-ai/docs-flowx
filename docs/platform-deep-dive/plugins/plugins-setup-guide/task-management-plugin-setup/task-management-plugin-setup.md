@@ -65,9 +65,19 @@ The following variables need to be set in order to connect to the identity manag
 
 A specific service account should be configured in the OpenID provider to allow the Task management microservice to access realm specific data. It can be configured using the following environment variables:
 
-`SECURITY_OAUTH2_SERVICE_ACCOUNT_ADMIN_CLIENT_ID` - the openid service account username
+### OpenID connect settings
 
-`SECURITY_OAUTH2_SERVICE_ACCOUNT_ADMIN_CLIENT_SECRET` - the openid service account client secret
+* `SECURITY_TYPE`: Indicates that OAuth 2.0 is the chosen security type, default value: `oauth2`.
+* `SECURITY_PATHAUTHORIZATIONS_0_PATH`: Defines a security path or endpoint pattern. In this case, it specifies that the security settings apply to all paths under the "/api/" path. The ** is a wildcard that means it includes all subpaths under "/api/**".
+* `SECURITY_PATHAUTHORIZATIONS_0_ROLESALLOWED`: Specifies the roles allowed for accessing the specified path. In this case, the roles allowed are empty (""). This might imply that access to the "/api/**" paths is open to all users or that no specific roles are required for authorization.
+* `SECURITY_OAUTH2_BASE_SERVER_URL`: This setting specifies the base URL of the OpenID server, which is used for authentication and authorization.
+* `SECURITY_OAUTH2_SERVICE_ACCOUNT_ADMIN_CLIENT_ID`: The task management service account is utilized to facilitate process initiation, enable the use of the task management plugin (requiring the `FLOWX_ROLE` and role mapper), and access data from Keycloak.
+* `SECURITY_OAUTH2_SERVICE_ACCOUNT_ADMIN_CLIENT_SECRET`: Along with the client ID, you must also specify the client secret associated with the service account for proper authentication.
+
+More details about the necessary service account, here:
+
+[Task management service account](../../../../platform-setup-guides/access-management/configuring-an-iam-solution.md#task-management-service-account)
+
 
 ### Engine datasource configuration
 
