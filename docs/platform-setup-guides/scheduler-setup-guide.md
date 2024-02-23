@@ -74,17 +74,24 @@ scheduler:
 * `SCHEDULER_THREAD_COUNT` - Used to configure the number of threads to be used for sending expired.
 * `SCHEDULER_CALLBACKS_THREAD_COUNT` - Used to configure the number of threads for handling Kafka responses, whether the message was successfully sent or not.
 
-### OpenID settings
+### OpenID connect settings
 
-* `SECURITY_OAUTH2_BASE_SERVER_URL` - This setting specifies the base URL of the OpenID server, which is used for authentication and authorization.
-* `SECURITY_OAUTH2_SERVICE_ACCOUNT_ADMIN_CLIENT_ID` - This setting specifies the service account that is essential for enabling the [**Start Timer event node**](../building-blocks/node/timer-events/timer-start-event.md). Ensure that you provide the correct client ID for this service account.
-* `SECURITY_OAUTH2_SERVICE_ACCOUNT_ADMIN_CLIENT_SECRET` - Along with the client ID, you must also specify the client secret associated with the service account for proper authentication.
+* `SECURITY_TYPE`: Indicates that OAuth 2.0 is the chosen security type, default value: `oauth2`.
+* `SECURITY_PATHAUTHORIZATIONS_0_PATH`: Defines a security path or endpoint pattern. In this case, it specifies that the security settings apply to all paths under the "/api/" path. The ** is a wildcard that means it includes all subpaths under "/api/**".
+* `SECURITY_PATHAUTHORIZATIONS_0_ROLESALLOWED`: Specifies the roles allowed for accessing the specified path. In this case, the roles allowed are empty (""). This might imply that access to the "/api/**" paths is open to all users or that no specific roles are required for authorization.
+* `SECURITY_OAUTH2_BASE_SERVER_URL`: This setting specifies the base URL of the OpenID server, which is used for authentication and authorization.
+* `SECURITY_OAUTH2_SERVICE_ACCOUNT_ADMIN_CLIENT_ID`:This setting specifies the service account that is essential for enabling the [**Start Timer event node**](../building-blocks/node/timer-events/timer-start-event.md). Ensure that you provide the correct client ID for this service account.
+* `SECURITY_OAUTH2_SERVICE_ACCOUNT_ADMIN_CLIENT_SECRET`: Along with the client ID, you must also specify the client secret associated with the service account for proper authentication.
+
+More details about the necessary service account, here:
+
+[Scheduler service account](../platform-setup-guides/access-management/configuring-an-iam-solution.md#scheduler-service-account)
 
 ### Retry mechanism
 
-* `SCHEDULER_RETRY_THREAD_COUNT` - Specify the number of threads to use for resending messages that need to be retried.
-* `SCHEDULER_RETRY_MAX_ATTEMPTS` - This configuration parameter sets the number of retry attempts. For instance, if it's set to 3, it means that the system will make a maximum of three retry attempts for message resending.
-* `SCHEDULER_RETRY_SECONDS` - This configuration parameter defines the time interval, in seconds, for retry attempts. For example, when set to 1, it indicates that the system will retry the operation after a one-second delay.
+* `SCHEDULER_RETRY_THREAD_COUNT`: Specify the number of threads to use for resending messages that need to be retried.
+* `SCHEDULER_RETRY_MAX_ATTEMPTS`: This configuration parameter sets the number of retry attempts. For instance, if it's set to 3, it means that the system will make a maximum of three retry attempts for message resending.
+* `SCHEDULER_RETRY_SECONDS`: This configuration parameter defines the time interval, in seconds, for retry attempts. For example, when set to 1, it indicates that the system will retry the operation after a one-second delay.
 
 ### Cleanup
 

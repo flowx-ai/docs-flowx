@@ -74,9 +74,24 @@ A basic Postgres configuration can be set up using a helm values.yaml file as it
 * [**Datasource configuration**](../platform-setup-guides-docs.md#datasource-configuration)
 * [**Redis configuration**](../platform-setup-guides-docs.md#redis-configuration)
 * [**Logging**](../platform-setup-guides-docs.md#logging)
-* [**Authorization & access roles**](../platform-setup-guides-docs.md#authorization--access-roles)
 * [**Configuring access roles for processes**](configuring-access-roles-for-processes)
 * [**Kafka configuration**](#configuring-kafka)
+
+### Authorization & access roles
+
+* `SECURITY_TYPE`: Indicates that OAuth 2.0 is the chosen security type, default value: `oauth2`.
+* `SECURITY_PATHAUTHORIZATIONS_0_PATH`: Defines a security path or endpoint pattern. In this case, it specifies that the security settings apply to all paths under the "/api/" path. The ** is a wildcard that means it includes all subpaths under "/api/**".
+* `SECURITY_PATHAUTHORIZATIONS_0_ROLESALLOWED`: Specifies the roles allowed for accessing the specified path. In this case, the roles allowed are empty (""). This might imply that access to the "/api/**" paths is open to all users or that no specific roles are required for authorization.
+* `SECURITY_OAUTH2_BASE_SERVER_URL`: The base URL for the OAuth 2.0 Authorization Server, which is responsible for authentication and authorization for clients and users, it is used to authorize clients, as well as to issue and validate access tokens.
+* `SECURITY_OAUTH2_CLIENT_CLIENT_ID`: A unique identifier for a client application that is registered with the OAuth 2.0 Authorization Server, this is used to authenticate the client application when it attempts to access resources on behalf of a user.
+* `SECURITY_OAUTH2_CLIENT_CLIENT_SECRET`: Secret Key that is used to authenticate requests made by an authorization client.
+* `SECURITY_OAUTH2_REALM`: Security configuration env var in the Spring Security OAuth2 framework, it is used to specify the realm name used when authenticating with OAuth2 providers.
+* `SECURITY_OAUTH2_SERVICE_ACCOUNT_ADMIN_CLIENT_ID`: The process engine requires a process engine service account to make direct calls to the Keycloak API. This setting specifies the service account that is essential so the of [**Start Catch Event**](../../building-blocks/node/message-events/message-catch-start-event.md) node is possible. Ensure that you provide the correct client ID for this service account.
+* `SECURITY_OAUTH2_SERVICE_ACCOUNT_ADMIN_CLIENT_SECRET`: Along with the client ID, you must also specify the client secret associated with the service account for proper authentication.
+
+More details about the necessary service account, here:
+
+[Process engine service account](../../platform-setup-guides/access-management/configuring-an-iam-solution.md#process-engine-service-account)
 
 ### Configuring Kafka
 

@@ -61,16 +61,14 @@ The basic Postgres configuration is specified in the helm values.yaml file. This
         memory: 512Mi
 ```
 
-### Configuring authorization & access roles
+### OpenID connect settings
 
-The following variables need to be set in order to connect to the identity management platform:
-
-* `SECURITY_OAUTH2_BASE_SERVER_URL`
-
-* `SECURITY_OAUTH2_CLIENT_CLIENT_ID`
-
-* `SECURITY_OAUTH2_REALM`
-
+* `SECURITY_TYPE`: Indicates that OAuth 2.0 is the chosen security type, default value: `oauth2`.
+* `SECURITY_PATHAUTHORIZATIONS_0_PATH`: Defines a security path or endpoint pattern. In this case, it specifies that the security settings apply to all paths under the "/api/" path. The ** is a wildcard that means it includes all subpaths under "/api/**".
+* `SECURITY_PATHAUTHORIZATIONS_0_ROLESALLOWED`: Specifies the roles allowed for accessing the specified path. In this case, the roles allowed are empty (""). This might imply that access to the "/api/**" paths is open to all users or that no specific roles are required for authorization.
+* `SECURITY_OAUTH2_BASE_SERVER_URL`: This setting specifies the base URL of the OpenID server, which is used for authentication and authorization.
+* `SECURITY_OAUTH2_CLIENT_CLIENT_ID`: Specifies the client ID associated with the application registered on the OpenID server for authentication and authorization.
+* `SECURITY_OAUTH2_REALM`: Defines the realm for the OAuth 2.0 authorization server. The realm is a protected space where the client's resources are stored. It provides additional context for the authentication process.
 
 [Configuring access roles (old)](configuring-access-roles-old.md)
 
