@@ -77,8 +77,21 @@ scheduler:
 ### OpenID connect settings
 
 * `SECURITY_TYPE`: Indicates that OAuth 2.0 is the chosen security type, default value: `oauth2`.
-* `SECURITY_PATHAUTHORIZATIONS_0_PATH`: Defines a security path or endpoint pattern. In this case, it specifies that the security settings apply to all paths under the "/api/" path. The ** is a wildcard that means it includes all subpaths under "/api/**".
+
+```yaml
+security:
+  type: oauth2
+```
+
+* `SECURITY_PATHAUTHORIZATIONS_0_PATH`: Defines a security path or endpoint pattern. It specifies that the security settings apply to all paths under the "/api/" path. The `**` is a wildcard that means it includes all subpaths under "/api/**".
 * `SECURITY_PATHAUTHORIZATIONS_0_ROLESALLOWED`: Specifies the roles allowed for accessing the specified path. In this case, the roles allowed are empty (""). This might imply that access to the "/api/**" paths is open to all users or that no specific roles are required for authorization.
+
+```yaml
+   pathAuthorizations:
+    - path: "/api/**" 
+      rolesAllowed: "ANY_AUTHENTICATED_USER"
+```
+
 * `SECURITY_OAUTH2_BASE_SERVER_URL`: This setting specifies the base URL of the OpenID server, which is used for authentication and authorization.
 * `SECURITY_OAUTH2_SERVICE_ACCOUNT_ADMIN_CLIENT_ID`:This setting specifies the service account that is essential for enabling the [**Start Timer event node**](../building-blocks/node/timer-events/timer-start-event.md). Ensure that you provide the correct client ID for this service account.
 * `SECURITY_OAUTH2_SERVICE_ACCOUNT_ADMIN_CLIENT_SECRET`: Along with the client ID, you must also specify the client secret associated with the service account for proper authentication.
