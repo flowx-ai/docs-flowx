@@ -9,8 +9,7 @@ By leveraging message events, processes can pause their execution until the expe
 FLOWX.AI works with the following message events nodes:
 
 * [**Message catch start event**](message-catch-start-event.md) 
-* [**Message throw intermediate event**](message-throw-intermediate-event.md)
-* [**Message catch intermediate event**](message-catch-intermediate-event.md)
+* [**Message intermediate events**](../message-events/message-intermediate/)
 * [**Message catch boundary event**](message-catch-boundary-event.md)
 
 

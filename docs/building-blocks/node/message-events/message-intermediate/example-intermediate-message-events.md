@@ -2,11 +2,16 @@
 
 Business processes often involve dynamic communication and coordination between different stages or departments. Intermediate Message Events play an important role in orchestrating information exchange, ensuring effective synchronization, and enhancing the overall efficiency of these processes.
 
+[Throw and catch on sequence - credit card request process example](#throw-and-catch-on-sequence---credit-card-request-process-example)
+
+[Throw and catch - interprocess communication](#interprocess-communication-with-throw-and-catch-events)
+
+
+## Throw and catch on sequence - Credit card request process example
+
+### Business scenario
+
 In the following example, we'll explore a credit card request process that encompasses the initiation of a customer's request, verification based on income rules, approval or rejection pathways, and communication between the client and back office. 
-
-## Throw and catch on sequence
-
-### Credit card request process example
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/throw_catch_intermediate_process.png)
 
@@ -22,11 +27,11 @@ In the following example, we'll explore a credit card request process that encom
     - **End Event:** Denotes the conclusion of the process for approved applications.
   - **Path B (Negative Verification):**
     - **Parallel Gateway Open:** Creates two parallel zones.
-    - **First Zone:**
+    - **First Parallel Zone:**
       - **User Task 3:** Reject Credit Card Application - The bank rejects the credit card application.
       - **Message Throw Intermediate Event:** Signals the rejection, throwing a message to notify the back office department.
       - **End Event:** Signifies the end of the process for rejected applications.
-    - **Second Zone:**
+    - **Second Parallel Zone:**
       - **User Task 3:** Reject Credit Card Application - The bank rejects the credit card application.
       - **Message Catch Intermediate Event:** The back office department is notified about the rejection.
       - **Send Message Task**: A notification is sent via email to the user about the rejection.
@@ -43,26 +48,45 @@ In the following example, we'll explore a credit card request process that encom
 
 ```mermaid
 graph TD
-  Start -->|Start Event| UserTask1[User Task 1: Customer Requests New Credit Card]
-  UserTask1 -->|Income Verification| Gateway1{Exclusive Gateway}
-  Gateway1 -->|Positive Verification| UserTask2[User Task 2: Approve Credit Card Application]
-  UserTask2 -->|Approved| endA[End Event: Approved Applications]
-  Gateway1 -->|Negative Verification| ParallelGateway{Parallel Gateway}
-  ParallelGateway -->|First Zone| UserTask3A[User Task 3: Reject Credit Card Application]
-  UserTask3A -->|Credit Card Rejected| MessageThrow[Message Throw Intermediate Event]
-  MessageThrow -->|Notify Back Office| endB[End Event: Rejected Applications]
-  ParallelGateway -->|Second Zone| UserTask3B[User Task 3: Reject Credit Card Application]
-  UserTask3B -->|Credit Card Rejected| MessageCatch[Message Catch Intermediate Event]
-  MessageCatch -->|Notify User| SendEmailTask[Send Message Task: Send Rejection Letter]
-  SendEmailTask -->|Email Sent| endC[End Event: Rejected Applications]
+
+  subgraph Default Swimlane
+    StartEvent[Start Process]
+    UserTask1[User Task 1: Customer Requests New Credit Card]
+    Gateway1{Exclusive Gateway}
+    UserTask2[User Task 2: Approve Credit Card Application]
+    endA[End Event: End approved scenario]
+    ParallelGateway{Parallel Gateway}
+    UserTask3A[User Task 3: Reject Credit Card Application]
+    MessageThrow[Message Throw Intermediate Event: Throwing a message to notify the back office department.]
+    Gateway2{Close Parallel}
+    endC[End Event: Signifies the end of the process for rejected applications.]
+  end
+
+  subgraph Backoffice Swimlane
+    MessageCatch
+    SendEmailTask
+  end
+
+  StartEvent -->|Start Process| UserTask1
+  UserTask1 -->|Income Verification| Gateway1
+  Gateway1 -->|Positive Verification| UserTask2
+  UserTask2 -->|Approved| endA
+  Gateway1 -->|Negative Verification| ParallelGateway
+  ParallelGateway -->|First Parallel Zone| UserTask3A
+  UserTask3A -->|Credit Card Rejected| MessageThrow
+  MessageThrow --> Gateway2 -->|Second Parallel Zone| MessageCatch
+  MessageCatch --> SendEmailTask
+  SendEmailTask --> Gateway2
+  Gateway2 -->|End| endC
+
 ```
 
 
 ### Message flows
 
-A message flow connects the Message Throw Intermediate Event to the Message Catch Intermediate Event, symbolizing the communication of credit card approval from the credit card approval task to the card issuance department.
+A message flow connects the Message Throw Intermediate Event to the Message Catch Intermediate Event, symbolizing the communication of credit card approval from the credit card approval task to the back office department.
 
-In summary, when a customer initiates a new credit card request, the bank verifies the information. If approved, a message is thrown to trigger the credit card issuance process. The Message Catch Intermediate Event in the credit card issuance department awaits this message to proceed with issuing and sending the credit card to the customer.
+In summary, when a customer initiates a new credit card request, the bank verifies the information. If declined, a message is thrown to notify the back office department. The Message Catch Intermediate Event in the back office awaits this message to proceed with issuing and sending the rejection letter to the customer.
 
 ### Configuring the BPMN process
 
@@ -121,15 +145,13 @@ Define the content of the rejection letter, the method of notification, and any 
 9. **Validate and Test**: Validate the BPMN diagram for correctness and completeness. Test the process flow by simulating different scenarios, such as positive and negative verifications.
 
 
-### Configuring the intermediate message events
+### Configuring intermediate message events
 
-Configuring message events is a crucial step in orchestrating effective communication and synchronization within a business process. Whether you are initiating a message throw or awaiting a specific message with a catch, the configuration process ensures seamless information exchange between different components of the workflow. 
+Configuring message events is a crucial step in orchestrating effective communication and synchronization within a business process. Whether you are initiating a message throw or awaiting a specific message with a catch, the configuration process ensures information exchange between different components of the process. 
 
 In this section, we explore the essential steps and parameters involved in setting up message events to optimize your BPMN processes. 
 
-From correlating events to defining data structures, each configuration choice plays a pivotal role in shaping the flow and coordination of your business processes.
-
-#### Message throw intermediate event
+### Message throw intermediate event
 
 A Message Throw Intermediate Event is an event in a process where a message is sent to trigger communication or action with another part of the process (can be correlated with a catch event). It represents the act of throwing a message to initiate a specific task or notification. The event creates a connection between the sending and receiving components, allowing information or instructions to be transmitted. Once the message is thrown, the process continues its flow while expecting a response or further actions from the receiving component.
 
@@ -139,7 +161,7 @@ A Message Throw Intermediate Event is an event in a process where a message is s
 
 </div>
 
-##### General Configuration
+#### General Configuration
 
 * **Can go back?** - Setting this to true allows users to return to this step after completing it. When encountering a step with `canGoBack` false, all steps found behind it will become unavailable.
 
@@ -169,7 +191,7 @@ In the end, this is what we have:
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/message_throw_config.png)
 
 
-#### Message catch intermediate event
+### Message catch intermediate event
 
 A Message Catch Intermediate Event is a type of event in a process that waits for a specific message before continuing with the process flow. It enables the process to synchronize and control the flow based on the arrival of specific messages, ensuring proper coordination between process instances.
 
@@ -179,7 +201,7 @@ A Message Catch Intermediate Event is a type of event in a process that waits fo
 
 </div>
 
-##### General Configuration
+#### General Configuration
 
 * **Can go back?** - Setting this to true allows users to return to this step after completing it. When encountering a step with `canGoBack` false, all steps found behind it will become unavailable.
 * **Correlate with throwing events** - The dropdown contains all catch messages from the process definitions accessible to the user (must be the same as the one assigned in Message throw intermediate event)
@@ -209,52 +231,55 @@ In the end, the user will receive this notification via email:
 
 Facilitate communication between different processes by using message intermediate events. 
 
-Implement a message throw intermediate event in one process to initiate a message, and complement it with a message catch intermediate event in another process to receive and respond to the message. 
+### Business scenario
 
-1. Parent Subprocess:
+Bank Loan Approval process where the parent process initiates a loan application and, upon completion, throws a message to a subprocess responsible for additional verification.
 
-- Contains a subprocess run node.
-- Includes a throw message intermediate event to initiate communication.
+#### Activities
 
-2. Child Process:
+**Parent Process:**
 
-- Initiated by the subprocess run node in the parent subprocess.
-- Incorporates a message catch intermediate event to receive the message.
+- **Start Event:** A customer initiates a loan application.
+- **Start Subprocess:** Initiates a subprocess for additional verification.
+- **User Task:** Basic verification steps are performed in the parent process.
+- **Throw Message:** After the basic verification, a message is thrown to indicate that the loan application is ready for detailed verification.
+- **End Event:** The parent process concludes.
 
-#### Steps in Detail:
+**Subprocess:**
 
-1. **Parent Subprocess:**
-   - Add a subprocess run node.
-   - Integrate a throw message intermediate event within the subprocess to initiate communication.
-
-2. **Child Process:**
-   - Initiate this process from the subprocess run node in the parent subprocess.
-   - Implement a message catch intermediate event to receive and process the message from the parent.
+- **Start Event:** The subprocess is triggered by the message thrown from the parent process.
+- **Catch Message:** The subprocess catches the message, indicating that the loan application is ready for detailed verification.
+- *(Perform Detailed Verification and Analysis)*
+- **End Event:** The subprocess concludes.
 
 ### Sequence flow
 
 ```mermaid
 graph TD
-  subgraph ParentSubprocess
+  subgraph Parent Process
     a[Start]
-    b(SubprocessRunNode)
-    c[ThrowEvent]
-  end
-
-  subgraph ChildProcess
-    d(CatchEvent)
+    b[Start Subprocess]
+    c[Throw message to another process]
+    d[User Task]
     e[End]
   end
 
+  subgraph Subprocess
+    f[Start]
+    g[Catch event in subprocess]
+    h[End]
+  end
+
   a --> b --> c --> d --> e
+  f --> g --> h
+  c --> g
 ```
+
 
 ### Message flows
 
 - Parent subprocess triggers the subprocess run node, initiating the child process.
 - Within the child process, a message catch event waits for and processes the message thrown by the parent subprocess.
-
-
 
 ### Configuring the Parent Process (throw event)
 
@@ -263,7 +288,7 @@ graph TD
 
 - Within the designer interface, add a "User Task" element to collect user input. Configure the user task to capture the necessary information that will be sent along with the message.
 
-3. Incorporate a **Subprocess Run Node**:
+3. Incorporate a **[<u>Subprocess Run Node</u>](../../../node/subprocess-run-node.md)**:
 
 - Add a "Subprocess Run Node".
 - Configure the subprocess run node by specifying the name of the subprocess you intend to run. The subprocess that you add should contain the message catch event.
