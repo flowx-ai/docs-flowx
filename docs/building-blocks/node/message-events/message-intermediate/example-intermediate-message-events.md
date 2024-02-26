@@ -233,7 +233,7 @@ Facilitate communication between different processes by using message intermedia
 
 ### Business scenario
 
-Bank Loan Approval process where the parent process initiates a loan application and, upon completion, throws a message to a subprocess responsible for additional verification.
+Consider a Bank Loan Approval process where the parent process initiates a loan application. During the execution, it throws a message to a subprocess responsible for additional verification.
 
 #### Activities
 
@@ -278,26 +278,77 @@ graph TD
 
 ### Message flows
 
-- Parent subprocess triggers the subprocess run node, initiating the child process.
+- The parent subprocess triggers the subprocess run node, initiating the child process.
 - Within the child process, a message catch event waits for and processes the message thrown by the parent subprocess.
 
-### Configuring the Parent Process (throw event)
+### Configuring the parent process (throw event)
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/throw_and_catch_subpr.png)
+
 
 1. Open **FLOWX.AI Designer** and create a new process.
-2. Add a User Task for User Input:
+2. Add a User Task for user input:
 
 - Within the designer interface, add a "User Task" element to collect user input. Configure the user task to capture the necessary information that will be sent along with the message.
 
-3. Incorporate a **[<u>Subprocess Run Node</u>](../../../node/subprocess-run-node.md)**:
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/user_task_loan_subrp.gif)
 
-- Add a "Subprocess Run Node".
-- Configure the subprocess run node by specifying the name of the subprocess you intend to run. The subprocess that you add should contain the message catch event.
+3. Integrate a **[<u>Subprocess Run Node</u>](../../../node/subprocess-run-node.md)**:
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/throw_subprocess_config.png)
+- Add a "Subprocess Run Node" and configure it:
+
+  * **Start Async** - Enable this option. When subprocesses are initiated in sync mode, they notify the parent process upon completion. The parent process then manages the reception of process data from the child and resumes its flow accordingly
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/subprocess_run_node_cfg.png)
+
+- Add and configure the "Start Subprocess" action:
+
+  * **Parameters**:
+    * **Subprocess name** - Specify the name of the process containing the catch message event.
+    * **Branch** - Choose the desired branch from the dropdown menu.
+    * **Version** - Indicate the type of version to be utilized within the subprocess.
+
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/throw_subprocess_configuration.png)
+
+For a more comprehensive guide on configuring the "Start Subprocess" action, refer to the following section:
+
+[Start Subprocess action](../../../../building-blocks/actions/start-subprocess-action.md)
 
 4. Insert a Throw Event for Message Initiation:
 
 - Add a "Throw Event" to the canvas, indicating the initiation of a message.
-- Connect the user task and subprocess run node to this throw event.
+- Configure the throw message intermediate event node:
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/throw_and_subproces_run.png)
+  * **Correlate with catch message events** - The dropdown contains all catch messages from the process definitions accessible to the user, in our example: `throwcatchDocs`
+
+  * **Correlation key** - This is a process key that uniquely identifies the instance to which the message is sent. In our example, we utilized the `processInstanceId` as the identifier, dynamically generated at runtime. This key is crucial for establishing a clear and distinct connection between the sender and recipient in the messaging process.
+  * **The Send data field** - This feature empowers you to define a JSON structure containing the data to be transmitted alongside the message. In our illustrative example, we utilized dynamic data originating from user input, specifically bound to some slider UI elements.
+
+```json
+{
+  "client_details": {
+    "clientIncome": ${application.income},
+    "loanAmount": ${application.loan.amount},
+    "loanTerm": ${application.loan.term}
+  }
+}
+```
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/throw_in_anthr_proc.png)
+
+### Configuring the subprocess (catch event)
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/catch_from_anthr_proc.png)
+
+1. Insert an Intermediate Message Catch event and configure it:
+
+* **Correlate with throwing events** - Utilize the same correlation settings added for the associated throw message event.
+* **Correlation Key** - Set the correlation key to the parent process instance ID, identified as `parentProcessInstanceId`.
+* **Receive data** - Specify the process key that will store the data received from the throw event along with the corresponding message.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/catch_interm_from_anthr_prc.png)
+
+2. Integrate and Fine-Tune a Service Task for Additional Verification.
+
+* Incorporate a service task to execute the additional verification process. Tailor the configuration to align with your preferred method of conducting supplementary checks.
