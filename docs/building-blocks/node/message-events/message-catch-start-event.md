@@ -15,7 +15,7 @@ sidebar_position: 1
 A Message Catch Start Event is a special event in a process that initiates the start of a process instance upon receiving a specific message. It acts as the trigger for the process, waiting for the designated message to arrive. Once the message is received, the process instance is created and begins its execution, following the defined process flow from that point onwards. The Message Catch Start Event serves as the entry point for the process, enabling it to start based on the occurrence of the expected message.
 
 :::caution
-It is mandatory that in order to use this type of node together with task management plugin, to have a service account defined in your identity solution. For more information, check our documentation in how to create service accounts using Keycloak, [**here**](../../../platform-setup-guides/access-management/configuring-an-iam-solution.md#adding-service-accounts)
+It is mandatory that in order to use this type of node together with task management plugin, to have a service account defined in your identity solution. For more information, check our documentation in how to create service accounts using Keycloak, [<u>**here**</u>](../../../platform-setup-guides/access-management/configuring-an-iam-solution.md#process-engine-service-account).
 :::
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/start_catch_message_event.png#center)
@@ -25,11 +25,48 @@ It is mandatory that in order to use this type of node together with task manage
 * **Can go back?** - setting this to true will allow users to return to this step after completing it, when encountering a step with `canGoBack` false, all steps found behind it will become unavailable
 * **Correlate with catch events** - the dropdown contains all catch messages from the process definitions accessible to the user
 * **Correlation key** - is a process key that uniquely identifies the instance to which the message is sent
-* **The data field** - allows the user to define a JSON structure with the data to be sent along with the message
-* **Stage** - assign a stage to the node
+* **Send data** - allows the user to define a JSON structure with the data to be sent along with the message
+* **Stage** - assign a stage to the node, if needed
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_catch_start_config.png)
 
 
+## Interprocess communication with throw and message catch start events
+
+### Throw process
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/throw_for_start.png)
 
 
+#### Configuring the throw intermediate event
+
+##### General config
+
+* **Can go back?**  - Setting this to true allows users to return to this step after completion. When encountering a step with canGoBack set to false, all steps found behind it become unavailable.
+* **Correlate with catch events** - Should match the configuration in the message catch start event.
+* **Correlation key** - A process key that uniquely identifies the instance to which the message is sent.
+* **Send data** - Define a JSON structure with the data to be sent along with the message. In our example, we will send a test object:
+
+```json
+{"test": "docs"}
+```
+* **Stage** - Assign a stage to the node if needed.
+
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/throw_for_start_config.png)
+
+### Start with catch process
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/start_catch_message_proc.png)
+
+#### Configuring the message catch start event
+
+:::info
+Remember, it's mandatory to have a service account defined in your identity solution to have the necessary rights to start a process using the message catch start event. Refer to our documentation on how to create service accounts using Keycloak, [<u>**here**</u>](../../../platform-setup-guides/access-management/configuring-an-iam-solution.md#process-engine-service-account).
+:::
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/catch_start_event_config.png)
+
+After running the throw process, the process containing the start catch message event will be triggered. The data is also sent:
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/start_catch_event_response.png)

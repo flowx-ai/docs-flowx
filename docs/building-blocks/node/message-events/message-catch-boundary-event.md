@@ -67,7 +67,6 @@ Establishes correlation between the catch event and the corresponding throw even
 
 * **Correlation Key** - process key used to correlate received messages with specific process instances
 
-
 :::info
 The correlation key associates incoming messages with specific process instances. Upon receiving a message with a matching correlation key, the catch event is triggered.
 :::
@@ -78,3 +77,12 @@ The correlation key associates incoming messages with specific process instances
 :::info
 This received data becomes available within the process instance, facilitating further processing or decision-making.
 :::
+
+
+## Illustrating boundary events (interrupting and non-interrupting)
+
+**Business Scenario:**
+
+A customer initiates the account opening process. Identity verification occurs, and after successful verification, a message is thrown to signal that the account is ready for activation. 
+
+Simultaneously, the account activation process begins. If there are issues during activation, they are handled through the interruption process. The overall process ensures a streamlined account opening experience while handling potential interruptions during activation, and also addresses exceptions through the third lane.

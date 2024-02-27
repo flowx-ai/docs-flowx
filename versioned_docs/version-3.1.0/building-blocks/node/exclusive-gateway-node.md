@@ -41,7 +41,7 @@ Expression order is important because the first **true** evaluation will stop th
 
 After the exclusive part of the process (where a path or another will be used), you need to end each path or join back to a single process using a new exclusive gateway without any configuration on it.
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/exclusive_gateway_configuration.pngg)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/exclusive_gateway_configuration.png)
 
 #### Configuring a DMN Exclusive Gateway node
 

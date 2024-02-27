@@ -6,6 +6,36 @@ Message events serve as a means to incorporate messaging capabilities into busin
 
 By leveraging message events, processes can pause their execution until the expected messages are received, enabling effective coordination and communication between various system components.
 
+
+
+## Intermediate events
+
+| Trigger | Description                                                                                                                                                                                                                                                                                                                                    |                                                                                                                    Marker                                                                                                                    |
+| ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| Message | A Message Intermediate Event serves to send or receive messages. A filled marker denotes a "throw" event, while an unfilled marker indicates a "catch" event. This either advances the process or alters the flow for exception handling. Identifying the Participant is done by connecting the Event to a Participant through a Message Flow. | Throw ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/throw_message_event.png#center) Catch ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_catch_intermediate_event.png#center) |
+ 
+## Boundary events
+
+| Trigger | Description                                                                                                                                                                                                                                                                                                                                    |                                                                                                                    Marker                                                                                                                    |
+| ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| Message | For boundary Events, handling first consists of consuming the Event occurrence. Specifically, Message Catch Boundary Events are triggered by incoming messages and can be configured as either interrupting or non-interrupting. **Non-interrupting**: the event can be triggered at any time while the associated task is being performed. **Interrupting**: the event can be triggered at any time while the associated task is being performed.   | Interrupting ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_catch_interrupting_event.png#center) Non-interrupting ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/%20message_catch_non_interrupting.png#center) |
+
+## Intermediate vs boundary
+
+**Intermediate Events**
+
+- Intermediate events temporarily halt the process instance, awaiting either a message or the expiration of a timer.
+
+**Boundary Interrupting Events**
+
+- These events can only be triggered while the token is active within the parent node.
+- Upon activation, the parent node concludes, and the token progresses based on the boundary flow.
+
+**Boundary Non-Interrupting Events**
+
+- Similar to interrupting events, non-interrupting events can only be triggered while the token is active in the parent node.
+- Upon triggering, the parent node remains active, and a new token is generated to execute the boundary flow concurrently.																																			                     
+
 FLOWX.AI works with the following message events nodes:
 
 * [**Message catch start event**](message-catch-start-event.md) 
@@ -13,7 +43,7 @@ FLOWX.AI works with the following message events nodes:
 * [**Message catch boundary event**](message-catch-boundary-event.md)
 
 
-### Message events correlation
+## Message events correlation
 
 Messages are not sent directly to process instances. Instead, message correlation is achieved through message subscriptions, which consist of the message name and the correlation key (also referred to as the correlation value).
 
@@ -25,14 +55,14 @@ For example, in an onboarding process for a user, you hold a unique personal ide
 
 The communication works as follows: you receive a message on a Kafka topic - `${kafka.topic.naming.prefix}.core.message.event.process${kafka.topic.naming.suffix}`. The engine listens here and writes the response.
 
-### Message events configuration
+## Message events configuration
 
 * `attachedTo`: a property that applies to boundary events
 * `messageName`: a unique name at the database level, should be the same for throw and catch events
 * `correlationKey`: a process variable used to uniquely identify the instance to which the message is sent
 * `data`: allows defining the JSON message body mapping as output and input
 
-#### Data example
+### Data example
 
 ```json
 {
