@@ -1,8 +1,8 @@
-# Building a Connector
+# Building a connector
 
 Connectors are the vital gateway to enhancing FLOWX.AI's capabilities. They seamlessly integrate external systems, introducing new functionalities by operating as independently deployable, self-contained microservices.
 
-## Connector Essentials
+## Connector essentials
 
 At its core, a connector acts as an anti-corruption layer. It manages interactions with external systems and crucial data transformations for integrations.
 
@@ -16,7 +16,7 @@ Connectors act as lightweight business logic layers, performing essential tasks:
 
 2. **Information Enrichment:** Add non-critical integration information like flags and tracing GUIDs.
 
-## Creating a Connector 
+## Creating a connector 
 
 1. **Create a Kafka Consumer:** Follow [**this guide**](./creating-a-kafka-consumer.md) to configure a Kafka consumer for your Connector.
 
@@ -26,7 +26,7 @@ Connectors act as lightweight business logic layers, performing essential tasks:
 Adaptable Kafka settings can yield advantageous event-driven communication patterns. Fine-tuning partition counts and consumers based on load testing is crucial for optimal performance.
 :::
 
-### Design Considerations
+### Design considerations
 
 Efficient Connector design within an event-driven architecture demands:
 
@@ -37,7 +37,7 @@ Efficient Connector design within an event-driven architecture demands:
 Incorporate all received Kafka headers in responses to ensure seamless communication with the [**Engine**](../../terms/flowxai-process-engine).
 :::
 
-### Connector Configuration Sample
+### Connector configuration sample
 
 Here's a basic setup example for a connector:
 
@@ -218,7 +218,7 @@ spring:
         login.callback.handler.class: io.strimzi.kafka.oauth.client.JaasClientOauthLoginCallbackHandler
 ```
 
-## Setting Up the Connector Locally
+## Setting up the connector locally
 
 For detailed setup instructions, refer to the Setting Up FLOWX.AI Quickstart Connector Readme:
 
@@ -232,7 +232,7 @@ Prerequisites:
 * the Docker Desktop app
 * an internet browser
 
-## Integrating a Connector in FLOWX.AI Designer
+## Integrating a connector in FLOWX.AI Designer
 
 To integrate and utilize the connector within FLOWX.AI Designer, follow these steps:
 

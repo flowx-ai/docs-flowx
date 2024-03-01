@@ -22,7 +22,7 @@ The FLOWX.AI platform handles the following **types of actions**:
 * [Append Params to Parent Process](./node/task-node/append-params-to-parent-process.md)
 
 :::warning
-You can only define and add actions on the following types of nodes: [Message send task](./node/message-send-received-task-node.md), [Task](./node/task-node/task-node.md) and [User task](./node/user-task-node/user-task-node.md).
+You can only define and add actions on the following types of nodes: [Send Message Task](./node/message-send-received-task-node.md), [Task](./node/task-node/task-node.md) and [User task](./node/user-task-node/user-task-node.md).
 :::
 
 ### Action rules

@@ -9,8 +9,8 @@ Split a document into multiple parts. This might be the case, for example, when 
 
 ## Sending the request
 
-1. Create a process in which you add a [**Kafka send event node**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) and a [**Kafka receive event node**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) (one to send the request, one to receive the reply).
-2. Configure the first node (Kafka send event) - add a **Kafka send action**.
+1. Create a process in which you add a [**Send Message Task**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) and a [**Receive Message Task**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) (one to send the request, one to receive the reply).
+2. Configure the first node (Send Message Task) - add a **Kafka Send Action**.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/kafka_split_action.png)
 

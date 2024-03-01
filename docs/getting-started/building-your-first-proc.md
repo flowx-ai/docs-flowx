@@ -30,7 +30,7 @@ We'll take as a [**business process example**](../terms/flowx-process) a credit 
 
 * a user makes a request for a new credit card - _**start event**_
 * the user has to fill in a form with their personal data - _**user task**_
-* the bank system must check the users credit score, this is done automatically using a send event that sends a credit score check request to the credit score adapter and a receive event that waits for the reply from the adapter - _**automatic task**_
+* the bank system must check the users credit score, this is done automatically using a **send message task** that sends a credit score check request to the credit score adapter and a **receive message task** that waits for the reply from the adapter - _**automatic task**_
 * the process is split in two branches depending on the credit score - _**exclusive gateway**_
 * on each of those branches are a service task that saves the appropriate credit card type to the proces data - _**automatic task**_
 * the two branches are merged back into one by a _**closing gateway**_

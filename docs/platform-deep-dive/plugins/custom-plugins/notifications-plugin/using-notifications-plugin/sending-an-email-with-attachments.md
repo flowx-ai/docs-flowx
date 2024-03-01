@@ -28,7 +28,7 @@ The steps for sending the notification are the following:
 
 `KAFKA_TOPIC_NOTIFICATION_INTERNAL_OUT`
 
-**Step 3:** Use the [**FLOWX.AI Designer**](../../../../../terms/flowx-ai-designer) to add a new [Kafka send event](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) action to the correct node in the process definition.
+**Step 3:** Use the [**FLOWX.AI Designer**](../../../../../terms/flowx-ai-designer) to add a new [send message task](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) action to the correct node in the process definition.
 
 **Step 4:** Add the proper configuration to the action, the Kafka topic and message to be sent.
 

@@ -277,8 +277,3 @@ nodeDefinitionId" : 662856,
  ```
     
 
-## Values 
-
-For more details, please check the following page:
-
-[Message send receive task](../node/message-send-received-task-node.md)

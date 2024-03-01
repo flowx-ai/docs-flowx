@@ -11,7 +11,7 @@ The plugin can be used for sending many kinds of notifications such as emails or
 To configure a business process that sends notifications you must follow the next steps:
 
 * use FLOWX.AI Designer app to create/edit a [notification template](./managing-notification-templates.md)
-* use Process Designer to add a [**Message send task**](../../../../../building-blocks/node/message-send-received-task-node.md#message-send-task) and a [**Message received task**](../../../)
+* use Process Designer to add a [**Send Message Task**](../../../../../building-blocks/node/message-send-received-task-node.md#message-send-task) and a [**Receive Message Task**](../../../)
 * configure the needed [actions](../../../../../building-blocks/actions.md)
 * configure the request body
 * configure the needed [Kafka topics](../../../plugins-setup-guide/notifications-plugin-setup/notifications-plugin-setup.md)
@@ -52,8 +52,8 @@ Let's pick a simple use-case, say we need to send a new welcome letter when we o
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/send_a_notif_from_business_flow.gif)
 
-2. Use the FLOWX.AI Designer to add a [**Message send task**](../../../../../building-blocks/node/message-send-received-task-node.md#message-send-task) and a [**Message received task**](../../../).
-3. On the **Message send task** add a proper configuration to the action, the Kafka topic and request body message to be sent:
+2. Use the FLOWX.AI Designer to add a [**Send Message Task**](../../../../../building-blocks/node/message-send-received-task-node.md#message-send-task) and a [**Receive Message Task**](../../../).
+3. On the **Send Message Task** add a proper configuration to the action, the Kafka topic and request body message to be sent:
 
 * **Topics** - `KAFKA_TOPIC_NOTIFICATION_INTERNAL_IN` - `flowx-notifications-qa`
 * **Message** (expected parameters):
@@ -65,7 +65,7 @@ Let's pick a simple use-case, say we need to send a new welcome letter when we o
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/notif_params_send.png)
 
-4. On the **Message received task** add the needed topic to receive the kafka response - `KAFKA_TOPIC_NOTIFICATION_INTERNAL_OUT` - `ai.flowx.updates.qa.notification.request.v1`.
+4. On the **Receive Message Task** add the needed topic to receive the kafka response - `KAFKA_TOPIC_NOTIFICATION_INTERNAL_OUT` - `ai.flowx.updates.qa.notification.request.v1`.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/generate_notif_receive.png)
 

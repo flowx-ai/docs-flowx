@@ -1,19 +1,19 @@
 ---
 sidebar_position: 2
 ---
-# Message send/Message received task nodes
+# Send Message Task/Receive Message Task nodes
 
-**Message send task** and **message received** [**nodes**](../../terms/flowx-node) are used to handle the interaction between a running process and any external systems.
+**Send Message Task** and **Receive Message Task** [**nodes**](../../terms/flowx-node) are used to handle the interaction between a running process and any external systems.
 
-## Message send task
+## Send Message Task
 
 This node is used to configure messages that should be sent to external systems.
 
-![Message send task](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_send_task.png#center)
+![Send Message Task](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_send_task.png#center)
 
-### Configuring a message send task node
+### Configuring a Send Message Task node
 
-Node configuration is done by accessing the **Node Config** tab. You have the following configuration options for a message send task node:
+Node configuration is done by accessing the **Node Config** tab. You have the following configuration options for a Send Message Task node:
 
 #### General Config
 
@@ -31,12 +31,12 @@ When encountering a step with `canGoBack` switched to false, all steps found beh
 
 ![General Config](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_send_task_action.png)
 
-To configure a message send task node, we first need to add a new node and then configure an [**action**](../../terms/flowx-actions) (**Kafka Send Action** type):
+To configure a Send Message Task node, we first need to add a new node and then configure an [**action**](../../terms/flowx-actions) (**Kafka Send Action** type):
 
 1. Open [**Process Designer**](../../terms/flowx-process-designer) and start configuring a process.
-2. Add a **message send task** node.
-3. Select the **message send task** node and open **node configuration**.
-4. Add an [**action**](../../terms/flowx-actions), the type of the action set to **Kafka send**.
+2. Add a **Send Message Task** node.
+3. Select the **Send Message Task** node and open **node configuration**.
+4. Add an [**action**](../../terms/flowx-actions), the type of the action set to **Kafka Send Action**.
 5. :exclamation:A few action parameters will need to be filled in depending on the selected action type.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_send_node.gif)
@@ -81,7 +81,7 @@ For more information about what Kafka is, check the following sections:
 
 [Kafka documentation](https://kafka.apache.org/documentation/)
 
-### Example of a message send event
+### Example of a Send Message Task node configuration
 
 Send a message to a CRM integration to request a search in the local database:
 
@@ -115,11 +115,11 @@ More details about **Integrations management** you can find [here](../../platfor
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_send_param3.png)
 
-## Message receive task
+## Receive Message Task
 
 This type of node is used when we need to wait for a reply from an external system.
 
-![Message receive task](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_receive_node.png#center)
+![Receive Message Task](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_receive_node.png#center)
 
 The reply from the external system will be saved in the process instance values, on a specified key. If the message needs to be processed at a later time, a timeout can be set using the [ISO 8601](https://www.digi.com/resources/documentation/digidocs/90001437-13/reference/r\_iso\_8601\_duration\_format.htm) format.
 
@@ -127,7 +127,7 @@ For example, let's think about a CRM microservice that waits to receive requests
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_receive_example.png)
 
-### Configuring a message receive task node
+### Configuring a Receive Message Task node
 
 The values you need to configure for this node are the following:
 
@@ -141,7 +141,7 @@ A naming pattern must be defined on the process engine to use the defined topics
 
 For more information about Kafka configuration, click [here](../../platform-setup-guides/flowx-engine-setup-guide/flowx-engine-setup-guide.md#configuring-kafka).
 
-![Example of a message receive task for a CRM integration](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_receive_kafka.png)
+![Example of a Receive Message Task node for a CRM integration](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_receive_kafka.png)
 
 
 ##### From integration

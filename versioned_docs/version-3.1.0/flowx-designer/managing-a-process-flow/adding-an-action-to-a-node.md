@@ -31,6 +31,6 @@ To create an action:
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.1/process_flowx_adding_an_action.gif)
 
 :::info
-The nodes that support actions are [task nodes](../../building-blocks/node/task-node.md), [user task nodes](../../building-blocks/node/user-task-node.md), and [message send nodes](../../building-blocks/node/message-send-received-task-node.md).
+The nodes that support actions are [task nodes](../../building-blocks/node/task-node.md), [user task nodes](../../building-blocks/node/user-task-node.md), and [send message task nodes](../../building-blocks/node/message-send-received-task-node.md#send-message-task).
 :::
 

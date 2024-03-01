@@ -21,7 +21,7 @@ The FLOWX.AI platform handles the following **types of actions**:
 * [Append Params to Parent Process](./append-params-to-parent-process)
 
 :::info
-You can only define and add actions on the following types of [**nodes**](../../terms/flowx-node): [**Message send task**](../node/message-send-received-task-node.md#message-send-task), [**Task**](../node/task-node.md) and [**User task**](../node/user-task-node.md).
+You can only define and add actions on the following types of [**nodes**](../../terms/flowx-node): [**send message task**](../node/message-send-received-task-node.md#message-send-task), [**task**](../node/task-node.md) and [**user task**](../node/user-task-node.md).
 :::
 
 ### Action rules
@@ -40,7 +40,7 @@ Actions can be:
 
 Some actions can be set to run immediately after another action is performed. In order to achieve this, we need to set the `parentName` field on the action to be used as a callback. The callback actions can be performed when a certain message is received by the Engine. In order for this to happen the `callbacksForAction` header needs to be set on the message. Callback actions can also be configured to run immediately after the parent action is run, by setting the `autoRunChildren` flag to true for the parent action.
 
-[Business Rule Action](./business-rule-action)
+[Business rule action](./business-rule-action)
 
 ### Action parameters
 

@@ -34,11 +34,11 @@ We've created a comprehensive course guiding you through the process of **Creati
 
 ## Sending a document generation request
 
-Consider a scenario where you need to send a personalized document to a customer based on specific details they provide. Create a process involving a [**User task**](../../../../../../building-blocks/node/user-task-node.md), a [**Kafka send event node**](../../../../../../building-blocks/node/message-send-received-task-node.md#message-send-task), and a [**Kafka receive event node**](../../../../../../building-blocks/node/message-send-received-task-node.md#message-receive-task).
+Consider a scenario where you need to send a personalized document to a customer based on specific details they provide. Create a process involving a [**user task**](../../../../../../building-blocks/node/user-task-node.md), a [**send message task**](../../../../../../building-blocks/node/message-send-received-task-node.md#message-send-task), and a [**receive message task**](../../../../../../building-blocks/node/message-send-received-task-node.md#message-receive-task).
 
 :::info
 * In the initial user task node, users input information.
-* The second node (Kafka send) creates a request with a specified template and keys corresponding to user-filled values.
+* The second node (send message task) creates a request with a specified template and keys corresponding to user-filled values.
 * The third node sends the reply with the generated document under the specified key.
 :::
 
@@ -52,7 +52,7 @@ In this example, three UI elements, comprising two input fields and a select (dr
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/data_model_doc_template.gif)
 
-2. Configure the second node (Kafka Send Event) by adding a **Kafka send action**.
+2. Configure the second node (Send Message Task) by adding a **Kafka Send Action**.
 3. Specify the [<u>**Kafka topic**</u>](../../../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md#kafka-configuration) to which the request should be sent, enabling the Process Engine to process it; in our example it is `ai.flowx.in.document.html.in`.
 
 :::tip

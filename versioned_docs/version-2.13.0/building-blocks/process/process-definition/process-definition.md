@@ -68,4 +68,4 @@ The Task Management plugin has the scope to show a process that you defined in D
 * **Application URL** - generic parameter pointing to the application URL where the flowx process is loaded 
 * **Search indexing** - process keys will be used to search data stored in the process
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/process_task_mngmnt.pngg)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/process_task_mngmnt.png)

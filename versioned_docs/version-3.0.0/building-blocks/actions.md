@@ -22,12 +22,12 @@ The FLOWX.AI platform handles the following **types of actions**:
 * [Append Params to Parent Process](./node/task-node/append-params-to-parent-process.md)
 
 :::warning
-You can only define and add actions on the following types of nodes: [Message send task](./node/message-send-received-task-node.md), [Task](./node/task-node/task-node.md) and [User task](./node/user-task-node/user-task-node.md).
+You can only define and add actions on the following types of nodes: [Send Message Task](./node/message-send-received-task-node.md), [Task](./node/task-node/task-node.md) and [User Task](./node/user-task-node/user-task-node.md).
 :::
 
 ### Action rules
 
-Business rules can be attached to a node by using actions with [**action rules**](./node/task-node/business-rule-action/business-rule-action.md) on them. These can be specified using [DMN rules](./node/task-node/business-rule-action/dmn-business-rule-action.md), MVEL expressions, or scripts written in Javascript, Python, or Groovy.
+Business rules can be attached to a node by using actions with [**action rules**](./node/task-node/business-rule-action/business-rule-action.md) on them. These can be specified using [DMN rules](./node/task-node/business-rule-action/dmn-business-rule-action.md), MVEL expressions, or scripts written in JavaScript, Python, or Groovy.
 
 [Supported scripts](./supported-scripts.md)
 

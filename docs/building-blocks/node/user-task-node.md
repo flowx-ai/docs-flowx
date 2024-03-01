@@ -280,4 +280,4 @@ nodeDefinitionId" : 662856,
 
 For more details, please check the following page:
 
-[Message send receive task](../node/message-send-received-task-node.md)
+[Send Message/Receive Message tasks](../node/message-send-received-task-node.md)
