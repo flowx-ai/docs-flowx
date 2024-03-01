@@ -81,6 +81,8 @@ This received data becomes available within the process instance, facilitating f
 
 ## Illustrating boundary events (interrupting and non-interrupting)
 
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/boundary_multiple.png)
+
 **Business Scenario:**
 
 A customer initiates the account opening process. Identity verification occurs, and after successful verification, a message is thrown to signal that the account is ready for activation. 

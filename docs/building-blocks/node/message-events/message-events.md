@@ -24,17 +24,23 @@ By leveraging message events, processes can pause their execution until the expe
 
 **Intermediate Events**
 
-- Intermediate events temporarily halt the process instance, awaiting either a message or the expiration of a timer.
+- Intermediate events temporarily halt the process instance, awaiting a message.
 
 **Boundary Interrupting Events**
 
 - These events can only be triggered while the token is active within the parent node.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/token_interrupting.png)
+
 - Upon activation, the parent node concludes, and the token progresses based on the boundary flow.
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/token_intterrupting_exec.png)
 
 **Boundary Non-Interrupting Events**
 
 - Similar to interrupting events, non-interrupting events can only be triggered while the token is active in the parent node.
-- Upon triggering, the parent node remains active, and a new token is generated to execute the boundary flow concurrently.																																			                     
+- Upon triggering, the parent node remains active, and a new token is generated to execute the boundary flow concurrently.																	
+
 
 FLOWX.AI works with the following message events nodes:
 
