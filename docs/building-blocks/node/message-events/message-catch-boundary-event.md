@@ -1,27 +1,25 @@
 ---
-sidebar_position: 2
+sidebar_position: 4
 --- 
 
-# Message Catch Boundary events
+# Message catch boundary events
 
 :::info quick intro
-**What is it?** A Message Catch Boundary Event is a special [**event**](../../../terms/events) that can be attached to a user task in a [**process**](../../../terms/flowx-process-definition). 
+**What is it?** Boundary [**events**](../../../terms/events) are integral components linked to **user tasks** within a process flow. Specifically, Message Catch Boundary Events are triggered by incoming messages and can be configured as either interrupting or non-interrupting based on your requirements.
 
-**Why it is important?** It allows the process to listen for and capture specific messages during the execution of the associated user task. 
+**Why is it important?** It empowers processes to actively listen for and capture designated messages during the execution of associated user tasks. 
 :::
 
-When used as a boundary event on a [**user task**](../user-task-node.md), message catch boundary event nodes behave similar to an [**exclusive gateway**](../exclusive-gateway-node.md), but they are activated upon receiving an event. This means you can proceed in the process without receiving an event and continue through the sequence initiated from the user task. 
+When an event is received, it progresses through the sequence from the intermediate [**node**](../../../terms/flowx-node). Multiple intermediate boundary events can exist on the same user task, but only one can be activated at a time.
 
-If an event is received, it advances through the sequence from the intermediate [**node**](../../../terms/flowx-node). You can have multiple intermediate boundary events on the same user task, but only one can be activated at a time.
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/message_catch_boundary_multiple.png)
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/message_events_boundaries.png)
-
-There are two types of Message Catch Boundary Events: 
+Message Catch Boundary Events can be categorized by their behavior, resulting in two main classifications:
 
 * [**Interrupting**](#message-catch-interrupting-event)  
-* [**Non-Interrupting**](#message-catch-non-interrupting-event)
+* [**Non-interrupting**](#message-catch-non-interrupting-event)
 
-## Message Catch Interrupting event
+## Message catch interrupting event
 
 <div className = "image-scaled">
 
@@ -29,45 +27,64 @@ There are two types of Message Catch Boundary Events:
 
 </div>
 
-When an Interrupting Message Catch Boundary Event is triggered by receiving a message, it interrupts the associated task that is being performed. The task is immediately finished, and the [**process flow**](../../../terms/flowx-process) continues to advance based on the received message.
+In the case of an Interrupting Message Catch Boundary Event triggered by a received message, it immediately interrupts the ongoing task. The associated task concludes, and the [**process flow**](../../../terms/flowx-process) advances based on the received message. 
 
-It can also be used as a standalone node, see more information on the following section:
+- **Use Cases:**
+  - Suitable for scenarios where the receipt of a specific message requires an immediate interruption of the current activity.
+  - Often used when the received message signifies a critical event that demands prompt attention.
 
-[Message Catch Intermediate Event](message-catch-intermediate-event.md)
 
-## Message Catch Non-Interrupting event
+- **Example:**
+  - A user task is interrupted as soon as a high-priority message is received, and the process flow moves forward to handle the critical event.
 
-It is used only as a boundary event and is placed only on a user task. If your process is in that user task and receives [**events**](../../../terms/events), the event is activated, and a new token is created that advances independently. Sections with non-interrupting events should not contain user tasks. You can have multiple non-interrupting events on the same user task, and all of them can be activated simultaneously.
 
+## Message catch non-interrupting event
 
 <div className = "image-scaled">
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/%20message_catch_non_interrupting.png)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/%20message_catch_non_interrupting.png#center)
 
 </div>
 
-A Non-Interrupting Message Catch Boundary Event also listens for messages while the associated task is being performed. However, in this case, the task is not immediately finished when messages are received. The event captures the messages, allowing the task to continue its execution. Multiple non-interrupting events can be received while the task is still active, and the task will continue until its completion.
+Contrastingly, a Non-Interrupting Message Catch Boundary Event continues to listen for messages during the execution of the associated task without immediate interruption. The task persists in its execution even upon receiving messages. Multiple non-interrupting events can be activated concurrently while the task is still active, allowing the task to continue until its natural completion.
 
-## Configuring a Message Catch Interrupting/Non-Interrupting event
+- **Use Cases:**
+  - Appropriate for scenarios where multiple messages need to be captured during the execution of a user task without disrupting its flow.
+  - Useful when the received messages are important but do not require an immediate interruption of the ongoing activity.
+
+- **Example:**
+  - A user task continues its execution while simultaneously capturing and processing non-critical messages.
+
+## Configuring a message catch interrupting/non-interrupting event
 
 #### General config
 
-* **Correlate with throwing events** - the dropdown contains all throw events from the process definitions accessible to the user
+* **Correlate with Throwing Events** - the dropdown lists all throw events from accessible process definitions
 
 :::info
-It is used to establish the correlation between the catch event and the corresponding throw event.
-By selecting the appropriate throw event, the catch event will be triggered when a message is thrown from that event.
+Establishes correlation between the catch event and the corresponding throw event. Selection of the relevant throw event triggers the catch event upon message propagation.
 :::
 
-* **Correlation key** - process key used to establish a correlation between the received message and a specific process instance
+* **Correlation Key** - process key used to correlate received messages with specific process instances
 
 :::info
-Correlation key serves as a means to correlate the incoming message with the specific process instance it belongs to.
-When a message is received with a matching correlation key, the catch event will be triggered.
+The correlation key associates incoming messages with specific process instances. Upon receiving a message with a matching correlation key, the catch event is triggered.
 :::
 
-* **Receive data (process key)** - the catch event can receive data associated with the message and store it in a process variable with the specified process key
+* **Receive Data (Process Key)** - the catch event can receive and store data associated with the message in a process variable with the specified process key
+
 
 :::info
-This data can then be used within the process instance for further processing or decision-making.
+This received data becomes available within the process instance, facilitating further processing or decision-making.
 :::
+
+
+## Illustrating boundary events (interrupting and non-interrupting)
+
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/boundary_multiple.png)
+
+**Business Scenario:**
+
+A customer initiates the account opening process. Identity verification occurs, and after successful verification, a message is thrown to signal that the account is ready for activation. 
+
+Simultaneously, the account activation process begins. If there are issues during activation, they are handled through the interruption process. The overall process ensures a streamlined account opening experience while handling potential interruptions during activation, and also addresses exceptions through the third lane.

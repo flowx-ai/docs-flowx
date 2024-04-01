@@ -13,9 +13,9 @@ Currently, the supported conversion method is from **PDF** to **JPEG**.
 
 To create a process that converts from PDF to JPEG format:
 
-1. Create a process in which you add a [**Kafka send event**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) node and a [**Kafka receive event**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) node (one to send the request, one to receive the reply). 
+1. Create a process in which you add a [**Send Message Task**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) node and a [**Receive Message Task**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) node (one to send the request, one to receive the reply). 
 
-2. Configure the first node (**Kafka send event**) - add a **Kafka send action**. 
+2. Configure the first node (**Send Message Task**) - add a **Kafka Send Action**. 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/pdf_to_jpeg.png)
 
 3. Add the [**Kafka topic**](../../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md#kafka-configuration) where to send the request:

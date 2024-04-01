@@ -9,18 +9,18 @@ In this case, you will need to add a custom action in the process that will requ
 For example, get documents URLs to send to the notification plugin and attach them to emails.
 
 1. Create a process in which you add the following nodes: 
-* a [**Kafka send event node**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node),
-* a [**Kafka receive event node**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node)
-* a [**user task node**](../../../../../building-blocks/node/user-task-node/user-task-node.md)
-* [**start / end milestone**](../../../../../building-blocks/node/milestone-node.md) nodes to [create a modal](../../../../../building-blocks/node/milestone-node.md#modal)
+* a [**Send Message Task**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node),
+* a [**Receive Message Task**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node)
+* a [**User Task**](../../../../../building-blocks/node/user-task-node/user-task-node.md) node
+* [**Start/End milestones**](../../../../../building-blocks/node/milestone-node.md) nodes to [create a modal](../../../../../building-blocks/node/milestone-node.md#modal)
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/getting_urls_proc.png)
 
-2. Configure the **user task node**, and add an [**Upload action**](../../../../../building-blocks/node/task-node/upload-file-action.md) to it.
+2. Configure the **User Task**, and add an [**Upload File**](../../../../../building-blocks/node/task-node/upload-file-action.md) action to it.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/getting_urls_upload_ac.png)
 
-3. Configure the **Upload action** parameters:
+3. Configure the **Upload File** action parameters:
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/getting_urls_upload_params.png)
 
@@ -32,7 +32,7 @@ For more details on how to upload a document and how to configure an upload acti
 [**Upload action**](../../../../../building-blocks/node/task-node/upload-file-action.md)
 :::
 
-4. Configure the Kafka send event node - add a **Kafka send action** and configure the [**Kafka topic**](../../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md#kafka-configuration) where to send the request:
+4. Configure the Send Message Task node - add a **Kafka Send Action** and configure the [**Kafka topic**](../../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md#kafka-configuration) where to send the request:
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/2.13/getting_urls_topic.png)
 

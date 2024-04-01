@@ -73,7 +73,7 @@ The Kafka topic where you want to generate the template must match the topic def
 * if you want a **custom barcode**, set `includeBarCode: false` and fill in the `data` you want to add to it.
 :::
 
-5. Add a [**message received event**](../../../building-blocks/node/message-send-received-task-node.md#message-receive-task) node where you add the topic where you want to receive the response. 
+5. Add a [**Receive Message Task**](../../../building-blocks/node/message-send-received-task-node.md#message-receive-task) node where you add the topic where you want to receive the response. 
 
 :::caution 
  The topic must be the one that is defined at the **`KAFKA_TOPIC_DOCUMENT_GENERATE_HTML_OUT`** variable. 

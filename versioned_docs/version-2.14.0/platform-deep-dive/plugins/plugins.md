@@ -18,9 +18,9 @@ The plugins are microservice apps that can be developed using any tech stack. Th
 
 [Introduction to Kafka](../../platform-overview/frameworks-and-standards/event-driven-architecture-frameworks/intro-to-kafka-concepts.md)
 
-[Kafka send event node](../../building-blocks/node/message-send-received-task-node.md#message-send-task)
+[Send Message Task (Kafka)](../../building-blocks/node/message-send-received-task-node.md#message-send-task)
 
-[Kafka receive event node](../../building-blocks/node/message-send-received-task-node.md#message-receive-task)
+[Receive Message Task (Kafka)](../../building-blocks/node/message-send-received-task-node.md#message-receive-task)
 
 To interact with plugins, you need to understand a few details about them:
 

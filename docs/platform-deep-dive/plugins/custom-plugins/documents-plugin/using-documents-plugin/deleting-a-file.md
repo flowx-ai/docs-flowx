@@ -50,18 +50,18 @@ In the example below, we use a `fileId` generated for a document using [<u>**Upl
 
 To delete files, follow these steps:
 
-1. Create a process that includes a [**Message Event Send (Kafka)**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) node and [**a Message Event Receive (Kafka)**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) node:
+1. Create a process that includes a [**send message task (Kafka)**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-send-task-node) node and [**a Message Event Receive (Kafka)**](../../../../../building-blocks/node/message-send-received-task-node.md#configuring-a-message-receive-task-node) node:
 
-* Use the **Message Send** node to send the delete request.
-* Use the **Message Receive** node to receive the delete reply.
+* Use the **send message task** node to send the delete request.
+* Use the **receive message task** node to receive the delete reply.
 
-2. Configure the **first node (Message Send)** by adding a **Kafka send** action.
+2. Configure the **first node (send message task)** by adding a **Kafka Send Action**.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/delete_file_action.png)
 
 3. Specify the [**Kafka topic**](../../../plugins-setup-guide/documents-plugin-setup/documents-plugin-setup.md#kafka-configuration) for sending the delete request.
 
-:::tip
+:::tips
 To identify defined topics in your environment:
 
 -  Navigate to **Platform Status > FLOWX Components > document-plugin-mngt** and click the eye icon on the right side.
@@ -88,7 +88,7 @@ Example of a message following the custom integration data model:
 * **fileId**: The ID of the file.
 * **customId**: The custom ID.
 
-5. Configure the **second node (Message Receive)** by adding a Data stream topic:
+5. Configure the **second node (Receive Message Task)** by adding a Data stream topic:
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/delete_stream.png)
 

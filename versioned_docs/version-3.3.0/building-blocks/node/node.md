@@ -8,8 +8,6 @@ sidebar_position: 2
 
 A node is a visual representation of a point in your [**process**](../../terms/flowx-process). To mark the entrance of a record into the process, [**nodes**](../../terms/flowx-node) are added at certain process points.
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/building-blocks/node/node_diagram.png)
-
 FLOWX platforms support different types of nodes, each needing a different configuration to fulfill its purpose in the business flow.
 
 ## Node types
@@ -20,7 +18,7 @@ Let's go through the most important types of nodes. These can be selected when a
 
 
 + **​Start and end nodes**​​​ ​- they mark the beginning and end of a [process flow](../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-bpmn/intro-to-bpmn.md#bpmn-20-elements). A [process definition](../process/process-definition.md) can have one or more start nodes (each linked with a start condition) and also one or more end nodes depending on the flow outcomes
-+ **​Message send tasks and message received tasks** ​- are used to communicate with external systems (integrations and plugins)
++ **Send Message/Receive Message** ​- are used to communicate with external systems (integrations and plugins)
 + **Message events** - designed to capture the interaction between different process participants by referencing messages
 + ​**Task nodes**​​ - can be added when a [business rule](../actions/business-rule-action/business-rule-action.md) needs to be run during a process flow
 + **​User task nodes** ​- these are used to configure the look and behavior of the UI and send data to custom component

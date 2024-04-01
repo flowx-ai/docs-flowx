@@ -49,7 +49,7 @@ It is important to identify what is the business identifier that you are going t
 
 1. Configure the templates that you want to use (for example, an SMS template).
 2. Check that the needed topics are configured correctly: the topic used to generate OTP (`KAFKA_TOPIC_OTP_GENERATE_IN`) and the topic used to receive the response (`KAFKA_TOPIC_OTP_GENERATE_OUT`).
-3. Use the FLOWX.AI Designer to add a new Kafka send event to the correct node in the process definition.
+3. Use the FLOWX.AI Designer to add a new send message task to the correct node in the process definition.
 4. Add the proper configuration to the action, the Kafka topic, and configure the body message.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/platform-deep-dive/kafka_config_otp.png)

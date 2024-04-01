@@ -89,5 +89,5 @@ Here you have the following information:
 * URL - the URL associated with the event
 * Body - any additional data or information related to the event
 
-![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/audit_log_details.pngg)
+![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/audit_log_details.png)
 

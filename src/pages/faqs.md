@@ -97,9 +97,9 @@ FLOWX can connect to any API - SOAP, REST, etc.
 
 ## How does FLOWX orchestrate the data flow?
 
-FLOWX orchestrates the data flow by modeling business processes using BPMN concepts.&#x20;
+FLOWX orchestrates the data flow by modeling business processes using BPMN concepts.
 
-There are "send event" nodes that send events to other systems on an event bus (Kafka). These events are transformed into calls to the various APIs that are orchestrated by FLOWX.
+There are send message task/receive message task nodes that send messages to other systems on an event bus (Kafka). These events are transformed into calls to the various APIs that are orchestrated by FLOWX.
 
 <br/>
 

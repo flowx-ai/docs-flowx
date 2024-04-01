@@ -208,8 +208,3 @@ Example:
 
 4. Additionally it will ask for data and actions that are required for this component via a **GET request** `{{processUrl}}/api/process/db573705-71dd-4216-9d94-5ba2fb36ff2a/data/42062`
 
-## Values 
-
-For more details, please check the following page:
-
-[Message send receive task](../node/message-send-received-task-node.md)

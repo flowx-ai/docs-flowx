@@ -12,17 +12,17 @@ sidebar_position: 3
 
 The FLOWX.AI platform handles the following **types of actions**:
 
-* [Business Rule](./node/task-node/business-rule-action/business-rule-action.md)
+* [Business rule](./node/task-node/business-rule-action/business-rule-action.md)
 * Save Data
-* [Kafka Send action](./node/message-send-received-task-node.md)
-* [Websocket Send action](./node/task-node/websocket-send-action.md)
+* [Kafka send action](./node/message-send-received-task-node.md)
+* [Websocket send action](./node/task-node/websocket-send-action.md)
 * Validate Field
-* [Upload File](./node/task-node/upload-file-action.md)
-* [Start Subprocess](./node/task-node/start-subprocess-action.md)
-* [Append Params to Parent Process](./node/task-node/append-params-to-parent-process.md)
+* [Upload file](./node/task-node/upload-file-action.md)
+* [Start subprocess](./node/task-node/start-subprocess-action.md)
+* [Append params to parent process](./node/task-node/append-params-to-parent-process.md)
 
 :::warning
-You can only define and add actions on the following types of nodes: [Message send task](./node/message-send-received-task-node.md), [Task](./node/task-node/task-node.md) and [User task](./node/user-task-node/user-task-node.md).
+You can only define and add actions on the following types of nodes: [send message task](./node/message-send-received-task-node.md), [task](./node/task-node/task-node.md) and [User task](./node/user-task-node/user-task-node.md).
 :::
 
 ### Action rules

@@ -8,16 +8,16 @@ Once you create a new [**process definition**](../../terms/flowx-process-definit
 
 You can choose between a series of available node types below. For an overview of what each node represents, see [BPMN 2.0 basic concepts](../../platform-overview/frameworks-and-standards/business-process-industry-standards/intro-to-bpmn/bpmn-basic-concepts.md):
 
-* [start event](../../building-blocks/node/start-end-node.md)
-* [end event](../../building-blocks/node/start-end-node.md)
-* [service task](../../building-blocks/node/task-node.md)
-* [user task](../../building-blocks/node/user-task-node.md)
-* [parallel gateway](../../building-blocks/node/parallel-gateway.md)
-* [exclusive gateway](../../building-blocks/node/exclusive-gateway-node.md)
-* [message send event](../../building-blocks/node/message-send-received-task-node.md)
-* [message receive event](../../building-blocks/node/message-send-received-task-node.md)
-* [start milestone](../../building-blocks/node/milestone-node.md)
-* [end milestone](../../building-blocks/node/milestone-node.md)
+* [Start event](../../building-blocks/node/start-end-node.md)
+* [End event](../../building-blocks/node/start-end-node.md)
+* [Service Task](../../building-blocks/node/task-node.md)
+* [User task](../../building-blocks/node/user-task-node.md)
+* [Parallel gateway](../../building-blocks/node/parallel-gateway.md)
+* [Exclusive gateway](../../building-blocks/node/exclusive-gateway-node.md)
+* [Send message task](../../building-blocks/node/message-send-received-task-node.md)
+* [Receive message task](../../building-blocks/node/message-send-received-task-node.md)
+* [Start milestone](../../building-blocks/node/milestone-node.md)
+* [End milestone](../../building-blocks/node/milestone-node.md)
 
 ### Steps for creating a new node
 

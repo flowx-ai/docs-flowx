@@ -44,13 +44,42 @@ You can initiate a new work-in-progress version while keeping the submitted vers
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/wip_process_definition.png)
 
+```mermaid
+    gitGraph
+       checkout main
+       commit
+       commit
+```
+
 * **New Branch Creation**: The creation of a new branch in the system also triggers the creation of a work-in-progress version. This streamlines the process of branching and development, allowing for parallel progress without impacting the main submitted version.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/wip_new_branch.png)
 
+```mermaid
+gitGraph
+  checkout main
+  commit
+  commit
+  branch BranchV1
+  checkout BranchV1
+  commit
+```
+
 * **Manual WIP Version Creation**: Users also have the flexibility to initiate a new work-in-progress version manually. This is particularly useful when building upon the latest version available on a branch.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/manual_wip.gif)
+
+```mermaid
+gitGraph
+  checkout main
+  commit
+  commit
+  branch BranchV1
+  checkout BranchV1
+  commit
+  commit
+  commit
+```
 
 
 ### Submitting changes
@@ -83,6 +112,23 @@ You can incorporate updates made on a secondary branch into the main branch or a
 * You can merge the latest version from a secondary branch into either its direct or indirect parent branch.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/release34/merge_child.gif)
+
+```mermaid
+gitGraph
+  checkout main
+  commit
+  commit
+  branch BranchV1
+  checkout BranchV1
+  commit
+  commit
+  commit
+  branch BranchV1_child
+  checkout BranchV1_child
+  commit
+  commit
+  merge BranchV1
+```
 
 * Versions from the Side Menu can be merged, streamlining the process.
 * Upon triggering the merge action, a modal window appears, giving the possibility to make the following selection:

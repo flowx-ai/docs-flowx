@@ -71,7 +71,7 @@ The Kafka topic where you want to generate the template must match the topic def
 * if you want a **custom barcode**, set `includeBarCode: false` and fill in the `data` you want to add to it.
 :::
 
-5. Add a [**message received event**](../../../building-blocks/node/message-send-received-task-node.md#message-receive-task) node where you add the topic where you want to receive the response. 
+5. Add a [**Receive Message Task**](../../../building-blocks/node/message-send-received-task-node.md#message-receive-task) node where you add the topic where you want to receive the response. 
 
 :::caution 
  The topic must be the one that is defined at the **`KAFKA_TOPIC_DOCUMENT_GENERATE_HTML_OUT`** variable. 
@@ -79,7 +79,7 @@ The Kafka topic where you want to generate the template must match the topic def
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/ocr_receive_response.png)
 
-6. Add a [**user task node**](../../../building-blocks/node/user-task-node) and configure an [**Upload file action**](../../../building-blocks/actions/upload-file-action.md) - the action will send the file on the topic (defined at the **`KAFKA_TOPIC_DOCUMENT_PERSIST_IN`**) to the [Min.io](https://min.io/) - storage solution.
+6. Add a [**User Task**](../../../building-blocks/node/user-task-node) node and configure an [**Upload File**](../../../building-blocks/actions/upload-file-action.md) action - the action will send the file on the topic (defined at the **`KAFKA_TOPIC_DOCUMENT_PERSIST_IN`**) to the [Min.io](https://min.io/) - storage solution.
 
 ![](https://s3.eu-west-1.amazonaws.com/docx.flowx.ai/3.2/ocr_upload_file.pngs)
 

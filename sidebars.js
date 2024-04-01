@@ -255,9 +255,39 @@ const sidebars = {
               } ,
               items: 
               [ 
+
+
                 { 
                   type: "doc",
-                  id: "building-blocks/node/message-events/message-throw-intermediate-event"
+                  id: "building-blocks/node/message-events/message-catch-start-event"
+                },
+
+                {
+                  type: "category",
+                  label: "Message intermediate events",
+                  link: {
+                    type: "doc",
+                    id: "building-blocks/node/message-events/message-intermediate/message-intermediate"
+                  } ,
+                  items: 
+                  [ 
+                    { 
+                      type: "doc",
+                      id: "building-blocks/node/message-events/message-intermediate/message-throw-intermediate-event"
+                    },
+
+                    { 
+                      type: "doc",
+                      id: "building-blocks/node/message-events/message-intermediate/message-catch-intermediate-event"
+                    }, 
+
+                    { 
+                      type: "doc",
+                      id: "building-blocks/node/message-events/message-intermediate/example-intermediate-message-events"
+                    }, 
+    
+ 
+                  ],
                 },
 
                 { 
@@ -265,15 +295,9 @@ const sidebars = {
                   id: "building-blocks/node/message-events/message-catch-boundary-event"
                 },  
                 
-                { 
-                  type: "doc",
-                  id: "building-blocks/node/message-events/message-catch-intermediate-event"
-                },      
+       
 
-                { 
-                  type: "doc",
-                  id: "building-blocks/node/message-events/message-catch-start-event"
-                }      
+   
               ],
             },
 
